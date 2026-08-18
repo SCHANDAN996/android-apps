@@ -1,0 +1,106 @@
+name: pro_kisan
+description: "प्रो किसान — दूध का हिसाब, पशु प्रबंधन, खाद कैलकुलेटर, मंडी भाव, मौसम, सरकारी योजना — सब कुछ ऑफलाइन, 10 भाषाओं में।"
+publish_to: 'none'
+# versionName+versionCode. Play Store needs a NEW versionCode for every upload.
+#
+# +2 (6 अगस्त 2026): पहला AAB 1 अगस्त को बना था और उसमें रात का सारा काम
+# नहीं था। versionCode बढ़ाया है ताकि अगर कभी internal testing में +1 चढ़ चुका
+# हो तो टकराव न हो — Play Store एक ही versionCode दोबारा नहीं लेता।
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  # State Management — BLoC/Cubit (completely different from Mistri's setState)
+  flutter_bloc: ^9.1.0
+  # Database — SQL (completely different from Mistri's SharedPreferences)
+  sqflite: ^2.4.2
+  path: ^1.9.1
+  # Shared Preferences for simple key-value (settings only)
+  shared_preferences: ^2.5.3
+  # Date & Number formatting
+  intl: ^0.20.2
+  # Sharing (WhatsApp bills)
+  share_plus: ^11.0.0
+
+  # ── 🛡️ Google Drive पर अपने आप backup ──────────────────────────────
+  # किसान का हिसाब उसके अपने Google खाते के **छिपे हुए app फ़ोल्डर** में
+  # जाता है (appDataFolder) — उसकी Drive में कहीं दिखता नहीं, और सिर्फ़ यही
+  # ऐप उसे पढ़ सकता है।
+  #
+  # ⚠️ इसी scope (drive.appdata) से Play Store की जाँच आसान रहती है। पूरी
+  # Drive का scope माँगने पर Google हर साल महँगा security assessment
+  # करवाता है — वह हमें नहीं चाहिए।
+  google_sign_in: ^6.2.1
+  googleapis: ^13.2.0
+  extension_google_sign_in_as_googleapis_auth: ^2.0.12
+  # File picker (backup restore)
+  file_picker: ^9.2.2
+  # In-app review
+  in_app_review: ^2.0.10
+  # Path provider for backup files
+  path_provider: ^2.1.5
+  # URL launcher for phone calls & WhatsApp — Issue 5
+  url_launcher: ^6.3.1
+  # Local notifications reminder system
+  flutter_local_notifications: ^18.0.1
+  timezone: ^0.9.4
+  # Weather API client & Device Location fetching
+  http: ^1.2.2
+  geolocator: ^13.0.1
+  # PDF bill generation & Printing/Sharing
+  pdf: ^3.10.7
+  printing: ^5.11.1
+  # News parsing & Text-to-Speech
+  xml: ^6.6.1
+  flutter_tts: ^4.2.2
+  # Supply Trend Analytics Charts
+  fl_chart: ^0.70.2
+  # Interactive Tour/Walkthrough guide
+  tutorial_coach_mark: ^1.2.9
+  # Excel export
+  excel: ^4.0.0
+  # पशु की फ़ोटो लगाने के लिए
+  image_picker: ^1.0.4
+  # ग्राहक जोड़ते समय "कॉन्टैक्ट से चुनें" (नाम + नंबर सीधे भरना)
+  flutter_contacts: ^1.1.9+2
+  # सर्वर के self-signed सर्टिफ़िकेट का fingerprint मिलाने के लिए
+  # (transitive भी आता है, पर सीधा लिखना सुरक्षित — देखें ssl_pinning.dart)
+  crypto: ^3.0.3
+  # खेत नापने का नक्शा — OpenStreetMap/Esri टाइल्स, कोई API key नहीं, कोई बिल नहीं
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  # ⚠️ सिर्फ़ जाँच के लिए — ऐप में नहीं जाता, APK/AAB का आकार नहीं बढ़ता।
+  # इसके बिना sqflite कंप्यूटर पर नहीं चलता, इसलिए migration और backup की
+  # जाँचें असली database पर नहीं हो पातीं।
+  sqflite_common_ffi: ^2.3.3
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    # सेटिंग पेज पर दिखने वाला ऐप icon
+    - assets/icon/
+    - assets/images/
+
+  fonts:
+    - family: Mukta
+      fonts:
+        - asset: assets/fonts/Mukta-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Mukta-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Mukta-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Mukta-Bold.ttf
+          weight: 700

@@ -1,0 +1,74 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file("key.properties")
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+android {
+    namespace = "com.chandansingh.jameen_napi"
+    compileSdk = 36
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    defaultConfig {
+        // MUST stay com.chandansingh.kisan_calculator — this is the package of the
+        // already-published app. Changing it would create a brand-new app on Play
+        // and lose all installs/reviews. Only the DISPLAY name (android:label) is
+        // changed to "जमीन नापी".
+        applicationId = "com.chandansingh.kisan_calculator"
+        minSdk = flutter.minSdkVersion
+        // Play requires new releases to target API 36 from 31 Aug 2026.
+        targetSdk = 36
+        versionCode = 5
+        versionName = "1.0.4"
+    }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging = false
+        }
+    }
+
+    signingConfigs {
+        release {
+            if (keystorePropertiesFile.exists()) {
+                keyAlias = keystoreProperties["keyAlias"]
+                keyPassword = keystoreProperties["keyPassword"]
+                storeFile = keystoreProperties["storeFile"] ? file(keystoreProperties["storeFile"]) : null
+                storePassword = keystoreProperties["storePassword"]
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            // Test build ko alag package naam do. Isse phone par पहले से installed
+            // asli app (com.chandansingh.kisan_calculator) ke upar nahi chadhta —
+            // signature match na hone par use uninstall karna padta, aur uska
+            // saved data (bhasha, rajya) chala jaata.
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-debug"
+        }
+        release {
+            signingConfig = keystorePropertiesFile.exists() ? signingConfigs.release : signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}

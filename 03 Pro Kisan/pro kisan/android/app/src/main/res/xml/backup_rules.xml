@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android Auto Backup (Android 11 और नीचे) — यही असली "uninstall protection" है।
+
+  उपयोगकर्ता के Google खाते में ऐप का data अपने-आप बैकअप होता है और ऐप दोबारा
+  install करने पर वापस आ जाता है। हमारा सारा हिसाब-किताब SQLite database में
+  है (databases/), सेटिंग shared_prefs में — दोनों यहाँ शामिल हैं।
+-->
+<full-backup-content>
+    <include domain="database" path="." />
+    <include domain="sharedpref" path="." />
+    <include domain="file" path="ProKisan_Backups" />
+    <!--
+      ⚠️ 7 अगस्त 2026 को जोड़ा। पशु की फ़ोटो app_flutter/pashu_photos/ में
+      रहती है और पहले यहाँ थी ही नहीं — इसलिए फ़ोन बदलने पर पशु तो लौट आते
+      थे पर उनकी फ़ोटो हमेशा के लिए चली जाती थी।
+    -->
+    <include domain="file" path="pashu_photos" />
+</full-backup-content>

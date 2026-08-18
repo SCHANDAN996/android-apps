@@ -1,0 +1,53 @@
+# Flutter / Dart
+**/build/
+build/
+**/.dart_tool/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+
+# Android & Gradle
+**/.gradle/
+.gradle/
+**/local.properties
+local.properties
+**/GeneratedPluginRegistrant.java
+*.dex
+*.class
+
+# Binaries & Bundles (Exclude large compiled outputs to stay under GitHub limits)
+*.apk
+*.aab
+*.so
+
+# Python virtual environments & cache
+__pycache__/
+*.py[cod]
+.env
+.venv
+env/
+venv/
+
+# IDE & Editor files
+.idea/
+**/.idea/
+.vscode/
+**/.vscode/
+*.iml
+*.iws
+*.ipr
+*.swp
+*.swo
+
+# Crash & Replay logs
+*.log
+hs_err_pid*.log
+replay_pid*.log
+
+# OS generated
+.DS_Store
+Thumbs.db
+ehthumbs.db

@@ -1,0 +1,23 @@
+/// State to primary crops mapping for sorting advisories.
+const Map<String, List<String>> kStatePrimaryCrops = {
+  'UP': ['paddy', 'wheat', 'sugarcane', 'potato', 'mustard'],
+  'BR': ['paddy', 'wheat', 'maize', 'lentil', 'onion'],
+  'MP': ['soybean', 'wheat', 'gram', 'mustard', 'cotton'],
+  'RJ': ['mustard', 'bajra', 'wheat', 'guar', 'barley'],
+  'HR': ['wheat', 'paddy', 'cotton', 'mustard', 'sugarcane'],
+  'PB': ['wheat', 'paddy', 'cotton', 'maize', 'mustard'],
+  'MH': ['cotton', 'soybean', 'sugarcane', 'onion', 'jowar'],
+  'WB': ['paddy', 'jute', 'potato', 'tea', 'mustard'],
+  'TS': ['paddy', 'cotton', 'maize', 'chilli', 'turmeric'],
+  'AP': ['paddy', 'cotton', 'chilli', 'groundnut', 'tobacco'],
+  'KA': ['ragi', 'paddy', 'jowar', 'coconut', 'coffee'],
+  'TN': ['paddy', 'coconut', 'sugarcane', 'banana', 'groundnut'],
+  'GJ': ['cotton', 'groundnut', 'mustard', 'bajra', 'castor'],
+  'CG': ['paddy', 'maize', 'soybean', 'pulses'],
+  'JH': ['paddy', 'maize', 'pulses', 'vegetables'],
+  'UK': ['paddy', 'wheat', 'sugarcane', 'potato'],
+  'KL': ['coconut', 'blackpepper', 'rubber', 'cardamom', 'tea'],
+  'OD': ['paddy', 'pulses', 'coconut', 'jute'],
+  'AS': ['tea', 'paddy', 'jute', 'mustard'],
+  'JK': ['apple', 'saffron', 'paddy', 'maize'],
+};

@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prank Blaster - Premium SMS & WhatsApp Gateway Bomber</title>
+    <!-- Google Fonts: Outfit for UI, JetBrains Mono for Console -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #080b11;
+            --card-bg: rgba(17, 24, 39, 0.55);
+            --card-border: rgba(255, 255, 255, 0.06);
+            --primary: #ff007f;
+            --primary-glow: rgba(255, 0, 127, 0.35);
+            --secondary: #8b5cf6;
+            --secondary-glow: rgba(139, 92, 246, 0.35);
+            --accent: #00f2fe;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --info: #3b82f6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(255, 0, 127, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(0, 242, 254, 0.03) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.01);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 0, 127, 0.4);
+        }
+
+        header {
+            padding: 2.5rem 1rem 1.5rem 1rem;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo-container i {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-right: 0.75rem;
+            filter: drop-shadow(0 0 15px var(--primary-glow));
+            animation: pulse-glow 2.5s infinite alternate;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            background: linear-gradient(135deg, #fff 30%, #a78bfa 70%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+
+        main {
+            flex: 1;
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 1.5rem 3rem 1.5rem;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 968px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0.8;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 1rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .card-title i {
+            color: var(--primary);
+            filter: drop-shadow(0 0 5px var(--primary-glow));
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-main);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        label span.optional {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-wrapper i.prefix-icon {
+            position: absolute;
+            left: 1rem;
+            color: var(--text-muted);
+            font-size: 1rem;
+            pointer-events: none;
+        }
+
+        input[type="text"], 
+        textarea, 
+        select {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 0.875rem 1rem 0.875rem 2.75rem;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        textarea {
+            padding-left: 1rem;
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        input[type="text"]:focus, 
+        textarea:focus, 
+        select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.15);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 1rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .password-toggle:hover {
+            color: #fff;
+        }
+
+        .btn-inline {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 0.75rem 1.25rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-inline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .api-setup-row {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .api-setup-row .input-wrapper {
+            flex: 1;
+        }
+
+        /* Connection status badge */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            align-self: flex-start;
+            margin-top: -0.5rem;
+        }
+
+        .status-badge.disconnected {
+            color: var(--text-muted);
+        }
+
+        .status-badge.connecting {
+            color: var(--warning);
+            border-color: rgba(245, 158, 11, 0.2);
+            background: rgba(245, 158, 11, 0.05);
+        }
+
+        .status-badge.connected {
+            color: var(--success);
+            border-color: rgba(16, 185, 129, 0.2);
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .status-badge.error {
+            color: var(--error);
+            border-color: rgba(239, 68, 68, 0.2);
+            background: rgba(239, 68, 68, 0.05);
+        }
+
+        .mode-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .checkbox-card {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-card:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .checkbox-card.active {
+            border-color: var(--primary);
+            background: rgba(255, 0, 127, 0.05);
+        }
+
+        .checkbox-card input[type="checkbox"] {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--text-muted);
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-card input[type="checkbox"]:checked {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .checkbox-card input[type="checkbox"]:checked::after {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #fff;
+            font-size: 0.7rem;
+        }
+
+        .checkbox-card span {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .checkbox-card i {
+            font-size: 1.1rem;
+            margin-left: auto;
+            color: var(--text-muted);
+        }
+
+        .checkbox-card.active i.fa-comment-sms {
+            color: #00f2fe;
+            filter: drop-shadow(0 0 5px rgba(0, 242, 254, 0.5));
+        }
+
+        .checkbox-card.active i.fa-whatsapp {
+            color: #25d366;
+            filter: drop-shadow(0 0 5px rgba(37, 211, 102, 0.5));
+        }
+
+        .slider-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .slider-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .slider-header span.val {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            outline: none;
+            appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            cursor: pointer;
+            box-shadow: 0 0 8px var(--primary-glow);
+            transition: transform 0.1s ease;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        /* Preset templates */
+        .preset-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        .preset-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 0.6rem 0.8rem;
+            color: var(--text-main);
+            font-size: 0.8rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .preset-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .char-counter {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            align-self: flex-end;
+            margin-top: -0.25rem;
+        }
+
+        /* Action Buttons */
+        .action-row {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 1rem 1.5rem;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            border: none;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-start {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 4px 15px var(--primary-glow);
+        }
+
+        .btn-start:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 127, 0.5);
+            filter: brightness(1.1);
+        }
+
+        .btn-start:disabled {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            box-shadow: none;
+            cursor: not-allowed;
+            transform: none;
+            filter: none;
+        }
+
+        .btn-stop {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            color: var(--error);
+        }
+
+        .btn-stop:hover:not(:disabled) {
+            background: rgba(239, 68, 68, 0.25);
+            border-color: var(--error);
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn-stop:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Progress Area */
+        .progress-container {
+            display: none;
+            flex-direction: column;
+            gap: 0.5rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .progress-bar-bg {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+            transition: width 0.3s ease;
+        }
+
+        /* Console styling */
+        .console-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            background: #05070a;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            overflow: hidden;
+            min-height: 250px;
+            max-height: 450px;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .console-header {
+            background: rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .console-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .console-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .console-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+
+        .console-log {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            user-select: text;
+        }
+
+        .log-entry {
+            line-height: 1.4;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            word-break: break-all;
+        }
+
+        .log-time {
+            color: var(--text-muted);
+            flex-shrink: 0;
+        }
+
+        .log-text {
+            flex: 1;
+        }
+
+        .log-info { color: #f3f4f6; }
+        .log-pending { color: #57b3ff; }
+        .log-success { color: var(--success); text-shadow: 0 0 4px rgba(16, 185, 129, 0.2); }
+        .log-warning { color: var(--warning); }
+        .log-error { color: var(--error); text-shadow: 0 0 4px rgba(239, 68, 68, 0.2); }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        footer a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        @keyframes pulse-glow {
+            0% { filter: drop-shadow(0 0 5px var(--primary-glow)); }
+            100% { filter: drop-shadow(0 0 15px var(--primary-glow)); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <i class="fa-solid fa-fire-flame-curved"></i>
+            <h1>Prank Blaster</h1>
+        </div>
+        <div class="subtitle">SMS & WhatsApp Mobile Gateway Prank Engine</div>
+    </header>
+
+    <main>
+        <!-- Column 1: Config Form -->
+        <div class="card">
+            <div class="card-title">
+                <i class="fa-solid fa-sliders"></i>
+                Blaster Configurations
+            </div>
+
+            <!-- API Key -->
+            <div class="form-group">
+                <label for="api_key">
+                    SMS Mobile API Key
+                    <span class="optional"><a href="https://smsmobileapi.com" target="_blank" style="color: var(--accent); text-decoration: none;">Get Key <i class="fa-solid fa-up-right-from-square" style="font-size: 0.7rem;"></i></a></span>
+                </label>
+                <div class="api-setup-row">
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-key prefix-icon"></i>
+                        <input type="password" id="api_key" value="{{ config.api_key }}" placeholder="Enter API Key from App..." style="padding-left: 2.75rem;">
+                        <i class="fa-solid fa-eye password-toggle" id="toggle_password" onclick="togglePasswordVisibility()"></i>
+                    </div>
+                    <button class="btn-inline" id="btn_test_key" onclick="testApiKey()">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Test
+                    </button>
+                </div>
+                <div id="connection_status" class="status-badge disconnected">
+                    <i class="fa-solid fa-circle-notch fa-spin" style="display:none;" id="status_spinner"></i>
+                    <i class="fa-solid fa-circle" id="status_dot"></i>
+                    <span id="status_text">Not Connected</span>
+                </div>
+            </div>
+
+            <!-- Target Numbers -->
+            <div class="form-group">
+                <label for="targets">
+                    Target Numbers
+                    <span class="optional">Comma or newline separated</span>
+                </label>
+                <textarea id="targets" placeholder="e.g. 9876543210&#10;9876543211&#10;+919988776655">{{ config.targets }}</textarea>
+            </div>
+
+            <!-- Dispatch Modes -->
+            <div class="form-group">
+                <label>Bombing Channel</label>
+                <div class="mode-row">
+                    <div class="checkbox-card {% if config.send_sms %}active{% endif %}" id="card_sms" onclick="toggleChannel('sms')">
+                        <input type="checkbox" id="send_sms" {% if config.send_sms %}checked{% endif %} onclick="event.stopPropagation()">
+                        <span>SMS</span>
+                        <i class="fa-solid fa-comment-sms"></i>
+                    </div>
+                    <div class="checkbox-card {% if config.send_wa %}active{% endif %}" id="card_wa" onclick="toggleChannel('wa')">
+                        <input type="checkbox" id="send_wa" {% if config.send_wa %}checked{% endif %} onclick="event.stopPropagation()">
+                        <span>WhatsApp</span>
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sliders -->
+            <div class="slider-container">
+                <div class="slider-header">
+                    <span>Cycles (Messages per target)</span>
+                    <span class="val" id="count_val">{{ config.count }}</span>
+                </div>
+                <input type="range" id="count" min="1" max="100" value="{{ config.count }}" oninput="updateSliderValue('count')">
+            </div>
+
+            <div class="slider-container">
+                <div class="slider-header">
+                    <span>Cycle Delay (seconds)</span>
+                    <span class="val" id="delay_val">{{ config.delay }}s</span>
+                </div>
+                <input type="range" id="delay" min="1" max="60" value="{{ config.delay }}" step="0.5" oninput="updateSliderValue('delay')">
+            </div>
+        </div>
+
+        <!-- Column 2: Message & Progress Logs -->
+        <div class="card">
+            <div class="card-title">
+                <i class="fa-solid fa-paper-plane"></i>
+                Prank Dispatcher & Terminal
+            </div>
+
+            <!-- Prank Message -->
+            <div class="form-group">
+                <label for="message">Prank Message Content</label>
+                <textarea id="message" maxlength="320" oninput="updateCharCount()" placeholder="Enter custom message here...">{{ config.message }}</textarea>
+                <div class="char-counter"><span id="char_count">0</span> / 320 chars</div>
+            </div>
+
+            <!-- Predefined Templates -->
+            <div class="form-group">
+                <label>Funny Presets</label>
+                <div class="preset-grid">
+                    <button class="preset-btn" onclick="applyPreset('lottery')">
+                        <i class="fa-solid fa-trophy" style="color: #ffd700;"></i> Lottery Win
+                    </button>
+                    <button class="preset-btn" onclick="applyPreset('otp')">
+                        <i class="fa-solid fa-shield-halved" style="color: #6366f1;"></i> Fake OTP Spoof
+                    </button>
+                    <button class="preset-btn" onclick="applyPreset('bank')">
+                        <i class="fa-solid fa-wallet" style="color: #f43f5e;"></i> Bank Debit Alert
+                    </button>
+                    <button class="preset-btn" onclick="applyPreset('courier')">
+                        <i class="fa-solid fa-box-open" style="color: #06b6d4;"></i> Package Arriving
+                    </button>
+                </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="action-row">
+                <button class="btn btn-start" id="btn_start" onclick="startPrank()">
+                    <i class="fa-solid fa-bolt"></i> Start Blasting
+                </button>
+                <button class="btn btn-stop" id="btn_stop" onclick="stopPrank()" disabled>
+                    <i class="fa-solid fa-circle-stop"></i> Stop
+                </button>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container" id="progress_wrapper">
+                <div class="progress-header">
+                    <span>Blasting Progress</span>
+                    <span id="progress_percentage">0%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progress_fill"></div>
+                </div>
+            </div>
+
+            <!-- Retro Console Terminal -->
+            <div class="console-container">
+                <div class="console-header">
+                    <div class="console-title">
+                        <i class="fa-solid fa-terminal"></i> Live Stream Console
+                    </div>
+                    <div class="console-dots">
+                        <div class="console-dot dot-red"></div>
+                        <div class="console-dot dot-yellow"></div>
+                        <div class="console-dot dot-green"></div>
+                    </div>
+                </div>
+                <div class="console-log" id="console_log">
+                    <div class="log-entry">
+                        <span class="log-time">[00:00:00]</span>
+                        <span class="log-text log-info">System initialized. Ready to Blast.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Designed for lighthearted fun and educational purposes. Always use responsibly. | <a href="https://smsmobileapi.com" target="_blank">SMS Mobile API</a>
+    </footer>
+
+    <script>
+        let eventSource = null;
+        let totalRequests = 0;
+        let completedRequests = 0;
+
+        // Initialize UI values
+        window.addEventListener('DOMContentLoaded', () => {
+            updateCharCount();
+            if (document.getElementById('api_key').value) {
+                // If API key exists, do a background check
+                testApiKey(true);
+            }
+        });
+
+        // Hide/Show API key
+        function togglePasswordVisibility() {
+            const apiField = document.getElementById('api_key');
+            const eyeIcon = document.getElementById('toggle_password');
+            if (apiField.type === 'password') {
+                apiField.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                apiField.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+
+        // Toggle checkbox cards styling
+        function toggleChannel(channel) {
+            const checkbox = document.getElementById(`send_${channel}`);
+            const card = document.getElementById(`card_${channel}`);
+            checkbox.checked = !checkbox.checked;
+            
+            if (checkbox.checked) {
+                card.classList.add('active');
+            } else {
+                card.classList.remove('active');
+            }
+        }
+
+        // Handle checkbox triggers manually to sync cards
+        document.getElementById('send_sms').addEventListener('change', (e) => {
+            const card = document.getElementById('card_sms');
+            if (e.target.checked) card.classList.add('active');
+            else card.classList.remove('active');
+        });
+        document.getElementById('send_wa').addEventListener('change', (e) => {
+            const card = document.getElementById('card_wa');
+            if (e.target.checked) card.classList.add('active');
+            else card.classList.remove('active');
+        });
+
+        // Update values dynamically from sliders
+        function updateSliderValue(id) {
+            const val = document.getElementById(id).value;
+            const suffix = id === 'delay' ? 's' : '';
+            document.getElementById(`${id}_val`).innerText = val + suffix;
+        }
+
+        // Char count for textarea
+        function updateCharCount() {
+            const text = document.getElementById('message').value;
+            document.getElementById('char_count').innerText = text.length;
+        }
+
+        // Presets data
+        const presets = {
+            lottery: "Badhai ho! Aapne Rs. 1,00,000 ki lottery jeeti hai. Claim karne ke liye is number par turant call karein! 💸🎁",
+            otp: "CRITICAL ALERT: Your verification code is 482091. If you did not request this OTP, change your password immediately.",
+            bank: "ALERT: Your Bank Account has been debited by Rs. 84,200 towards shopping at Zara. Current balance: Rs 1.48. Contact branch if not done by you.",
+            courier: "Express Delivery: Your package from Delhi is arriving today. Delivery agent: Sunil Kumar (+91-9988776655). Please keep Rs. 450 COD ready."
+        };
+
+        // Apply selected template preset
+        function applyPreset(type) {
+            if (presets[type]) {
+                document.getElementById('message').value = presets[type];
+                updateCharCount();
+                appendConsoleLog("Preset applied: " + type, "info");
+            }
+        }
+
+        // Append line to retro terminal
+        function appendConsoleLog(message, status = "info", timestamp = null) {
+            const consoleLog = document.getElementById('console_log');
+            const time = timestamp || new Date().toLocaleTimeString();
+            
+            const logEntry = document.createElement('div');
+            logEntry.className = 'log-entry';
+            
+            logEntry.innerHTML = `
+                <span class="log-time">[${time}]</span>
+                <span class="log-text log-${status}">${message}</span>
+            `;
+            
+            consoleLog.appendChild(logEntry);
+            consoleLog.scrollTop = consoleLog.scrollHeight;
+        }
+
+        // Check if API Key is correct
+        async function testApiKey(silent = false) {
+            const apiKey = document.getElementById('api_key').value;
+            const statusDiv = document.getElementById('connection_status');
+            const spinner = document.getElementById('status_spinner');
+            const dot = document.getElementById('status_dot');
+            const text = document.getElementById('status_text');
+            const testBtn = document.getElementById('btn_test_key');
+
+            if (!apiKey) {
+                if (!silent) alert("Please enter an API Key first.");
+                return;
+            }
+
+            statusDiv.className = "status-badge connecting";
+            spinner.style.display = "inline-block";
+            dot.style.display = "none";
+            text.innerText = "Testing Connection...";
+            testBtn.disabled = true;
+
+            try {
+                const response = await fetch('/api/test-key', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ api_key: apiKey })
+                });
+                const result = await response.json();
+                
+                spinner.style.display = "none";
+                dot.style.display = "inline-block";
+                testBtn.disabled = false;
+
+                if (result.success) {
+                    statusDiv.className = "status-badge connected";
+                    text.innerText = "Connected & Active";
+                    if (!silent) appendConsoleLog("API Credentials valid. Gateway ready.", "success");
+                } else {
+                    statusDiv.className = "status-badge error";
+                    text.innerText = "Invalid Key / Failure";
+                    if (!silent) appendConsoleLog("API Validation Failed: " + result.message, "error");
+                }
+            } catch (err) {
+                spinner.style.display = "none";
+                dot.style.display = "inline-block";
+                testBtn.disabled = false;
+                statusDiv.className = "status-badge error";
+                text.innerText = "Network Error";
+                if (!silent) appendConsoleLog("Failed to reach test API server.", "error");
+            }
+        }
+
+        // Start bombing
+        async function startPrank() {
+            const apiKey = document.getElementById('api_key').value.trim();
+            const targets = document.getElementById('targets').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const count = parseInt(document.getElementById('count').value);
+            const delay = parseFloat(document.getElementById('delay').value);
+            const sendSms = document.getElementById('send_sms').checked;
+            const sendWa = document.getElementById('send_wa').checked;
+
+            if (!apiKey) {
+                alert("API Key is required!");
+                return;
+            }
+            if (!targets) {
+                alert("Target phone number is required!");
+                return;
+            }
+            if (!message) {
+                alert("Prank message content is required!");
+                return;
+            }
+            if (!sendSms && !sendWa) {
+                alert("Please check at least one channel (SMS or WhatsApp)!");
+                return;
+            }
+
+            // Calculate totals for progress bar
+            const cleanTargets = targets.replace(/\n/g, ',').split(',').map(p => p.trim()).filter(p => p.length > 0);
+            totalRequests = cleanTargets.length * count;
+            completedRequests = 0;
+
+            // Reset progress bar
+            document.getElementById('progress_wrapper').style.display = 'flex';
+            document.getElementById('progress_fill').style.style = "0%";
+            document.getElementById('progress_percentage').innerText = "0%";
+
+            // Toggle interface buttons
+            document.getElementById('btn_start').disabled = true;
+            document.getElementById('btn_stop').disabled = false;
+
+            appendConsoleLog("Starting Prank Bombing session...", "info");
+
+            try {
+                const response = await fetch('/api/start', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        api_key: apiKey,
+                        targets: targets,
+                        message: message,
+                        count: count,
+                        delay: delay,
+                        send_sms: sendSms,
+                        send_wa: sendWa
+                    })
+                });
+                
+                const result = await response.json();
+                if (result.success) {
+                    // Connect SSE Stream
+                    connectLogStream();
+                } else {
+                    appendConsoleLog("Failed to start session: " + result.message, "error");
+                    resetButtons();
+                }
+            } catch (err) {
+                appendConsoleLog("Network error initiating session: " + err.message, "error");
+                resetButtons();
+            }
+        }
+
+        // Stop bombing
+        async function stopPrank() {
+            appendConsoleLog("Stopping Blast requests...", "warning");
+            document.getElementById('btn_stop').disabled = true;
+
+            try {
+                const response = await fetch('/api/stop', { method: 'POST' });
+                const result = await response.json();
+                appendConsoleLog(result.message, "warning");
+            } catch (err) {
+                appendConsoleLog("Failed to send stop command: " + err.message, "error");
+            }
+        }
+
+        function resetButtons() {
+            document.getElementById('btn_start').disabled = false;
+            document.getElementById('btn_stop').disabled = true;
+        }
+
+        // Establish real-time console streaming using Server-Sent Events (SSE)
+        function connectLogStream() {
+            if (eventSource) {
+                eventSource.close();
+            }
+
+            eventSource = new EventSource('/api/stream');
+
+            eventSource.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                
+                // If it is a keep-alive ping, just check running state
+                if (data.ping) {
+                    if (!data.running) {
+                        finalizeStream();
+                    }
+                    return;
+                }
+
+                // If regular log entry
+                if (data.message) {
+                    appendConsoleLog(data.message, data.status, data.time);
+                    
+                    // Increment progress on success or fail response line
+                    if (data.status === 'success' || data.status === 'error') {
+                        completedRequests++;
+                        const percent = Math.min(Math.round((completedRequests / totalRequests) * 100), 100);
+                        document.getElementById('progress_fill').style.width = percent + "%";
+                        document.getElementById('progress_percentage').innerText = percent + "%";
+                    }
+                }
+
+                // Check if session completed
+                if (!data.running) {
+                    finalizeStream();
+                }
+            };
+
+            eventSource.onerror = function(err) {
+                console.error("SSE Connection Error", err);
+                finalizeStream();
+            };
+        }
+
+        function finalizeStream() {
+            if (eventSource) {
+                eventSource.close();
+                eventSource = null;
+            }
+            resetButtons();
+            appendConsoleLog("Blast session connection closed.", "info");
+        }
+    </script>
+</body>
+</html>

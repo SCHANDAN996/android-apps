@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App logo का असली हरा — adaptive icon का background।
+         यही रंग होने से logo का चौकोर किनारा background में घुल जाता है
+         और गोल/चौकोर किसी भी मास्क में सिर्फ़ चित्र दिखता है। -->
+    <color name="ic_launcher_background">#24802F</color>
+</resources>

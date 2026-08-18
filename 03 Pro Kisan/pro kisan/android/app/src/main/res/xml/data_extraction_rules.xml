@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android 12+ (API 31+) का नया रूप — ऊपर वाली backup_rules.xml जैसा ही।
+
+  • cloud-backup : Google खाते में बैकअप (ऐप हटाकर दोबारा लगाने पर data वापस)
+  • device-transfer : पुराने फ़ोन से नए फ़ोन में data ले जाना
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <include domain="database" path="." />
+        <include domain="sharedpref" path="." />
+        <include domain="file" path="ProKisan_Backups" />
+        <!-- पशु की फ़ोटो — 7 अगस्त 2026 को जोड़ी (पहले छूट गई थी) -->
+        <include domain="file" path="pashu_photos" />
+    </cloud-backup>
+    <device-transfer>
+        <include domain="database" path="." />
+        <include domain="sharedpref" path="." />
+        <include domain="file" path="ProKisan_Backups" />
+        <!-- पशु की फ़ोटो — 7 अगस्त 2026 को जोड़ी (पहले छूट गई थी) -->
+        <include domain="file" path="pashu_photos" />
+    </device-transfer>
+</data-extraction-rules>

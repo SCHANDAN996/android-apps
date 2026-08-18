@@ -1,0 +1,1062 @@
+{
+  "addCustomer": {
+    "hi": "ग्राहक जोड़ें",
+    "en": "Add Customer"
+  },
+  "addCustomerFirst": {
+    "hi": "पहले ग्राहक जोड़ें — बिना ग्राहक के एंट्री नहीं हो सकती",
+    "en": "Add a customer first — entries need a customer"
+  },
+  "addFirstCustomer": {
+    "hi": "पहला ग्राहक जोड़ें",
+    "en": "Add your first customer"
+  },
+  "addNew": {
+    "hi": "नया जोड़ें",
+    "en": "Add New"
+  },
+  "advance": {
+    "hi": "एडवांस",
+    "en": "Advance"
+  },
+  "allSettled": {
+    "hi": "सबका हिसाब बराबर है",
+    "en": "Everyone is settled up"
+  },
+  "amount": {
+    "hi": "कुल राशि",
+    "en": "Total Amount"
+  },
+  "amountRupees": {
+    "hi": "रकम (₹)",
+    "en": "Amount (₹)"
+  },
+  "appName": {
+    "hi": "प्रो किसान",
+    "en": "Pro Kisan"
+  },
+  "app_name_caps": {
+    "hi": "प्रो किसान",
+    "en": "Pro Kisan"
+  },
+  "averageFat": {
+    "hi": "औसत फैट",
+    "en": "Avg Fat"
+  },
+  "avgFat": {
+    "hi": "औसत फैट",
+    "en": "Avg Fat"
+  },
+  "backup": {
+    "hi": "बैकअप लें",
+    "en": "Take Backup"
+  },
+  "backupCloudNote": {
+    "hi": "Google खाते का ऑटो-बैकअप भी चालू है — ऐप हटाकर दोबारा लगाने पर डेटा वापस आ जाता है।",
+    "en": "Google account auto-backup is also on — your data returns when you reinstall the app."
+  },
+  "backupLocationLabel": {
+    "hi": "बैकअप यहाँ सुरक्षित है",
+    "en": "Backup is saved here"
+  },
+  "backupRestore": {
+    "hi": "बैकअप और रीस्टोर",
+    "en": "Backup & Restore"
+  },
+  "badge_both": {
+    "hi": "🔄 दोनों",
+    "en": "🔄 Both"
+  },
+  "badge_buyer": {
+    "hi": "🛒 खरीदार",
+    "en": "🛒 Buyer"
+  },
+  "badge_supplier": {
+    "hi": "🌾 आपूर्तिकर्ता",
+    "en": "🌾 Supplier"
+  },
+  "cancel": {
+    "hi": "रद्द करें",
+    "en": "Cancel"
+  },
+  "changeBtn": {
+    "hi": "बदलें",
+    "en": "Change"
+  },
+  "chooseCustomerTitle": {
+    "hi": "ग्राहक चुनें",
+    "en": "Choose customer"
+  },
+  "contactPermissionDenied": {
+    "hi": "कॉन्टैक्ट की अनुमति नहीं मिली — फ़ोन की सेटिंग से अनुमति दें",
+    "en": "Contacts permission denied — allow it from phone settings"
+  },
+  "customDateRange": {
+    "hi": "कस्टम तारीख सीमा",
+    "en": "Custom Date Range"
+  },
+  "customRange": {
+    "hi": "कस्टम रेंज",
+    "en": "Custom Range"
+  },
+  "customerName": {
+    "hi": "ग्राहक का नाम",
+    "en": "Customer Name"
+  },
+  "customer_delete_confirm": {
+    "hi": "क्या आप सच में {name} को हटाना चाहते हैं?",
+    "en": "Do you really want to delete {name}?"
+  },
+  "customer_generate_pdf_tooltip": {
+    "hi": "PDF बिल जनरेट करें",
+    "en": "Generate PDF Bill"
+  },
+  "customer_name_empty_error": {
+    "hi": "कृपया नाम डालें",
+    "en": "Please enter name"
+  },
+  "customers": {
+    "hi": "ग्राहक सूची",
+    "en": "Customer List"
+  },
+  "dairy_estimated_result": {
+    "hi": "📊 अनुमानित परिणाम",
+    "en": "📊 Estimated Result"
+  },
+  "dairy_litres_unit": {
+    "hi": "लीटर",
+    "en": "Litres"
+  },
+  "dashEntryPending": {
+    "hi": "एंट्री बाकी",
+    "en": "Entry pending"
+  },
+  "dashGoodEvening": {
+    "hi": "शुभ संध्या, किसान जी 🌱",
+    "en": "Good evening, Kisan ji 🌱"
+  },
+  "dashGoodMorning": {
+    "hi": "सुप्रभात, किसान जी 🌱",
+    "en": "Good morning, Kisan ji 🌱"
+  },
+  "dashTodayMilk": {
+    "hi": "आज का दूध",
+    "en": ""
+  },
+  "days": {
+    "hi": "दिन",
+    "en": "days"
+  },
+  "defaultQtyLabel": {
+    "hi": "रोज का दूध (लीटर)",
+    "en": "Daily Milk (Litres)"
+  },
+  "delete": {
+    "hi": "हटाएं",
+    "en": "Delete"
+  },
+  "direction_buy": {
+    "hi": "🛒 खरीद (मैंने लिया)",
+    "en": "🛒 Purchase (I bought)"
+  },
+  "direction_label": {
+    "hi": "📌 लेन-देन का प्रकार",
+    "en": "📌 Transaction Type"
+  },
+  "direction_sell": {
+    "hi": "💰 बिक्री (मेरा दूध)",
+    "en": "💰 Sale (My Milk)"
+  },
+  "doodhwalaMode": {
+    "hi": "दूधवाला मोड (ग्राहक)",
+    "en": "Milkman Mode (Customers)"
+  },
+  "doodhwalaModeDesc": {
+    "hi": "मैं ग्राहकों को दूध बांटता हूँ (अलग-अलग खाते)",
+    "en": "I deliver milk to customers (multi ledger)"
+  },
+  "due": {
+    "hi": "बाकी",
+    "en": "Due"
+  },
+  "duplicateDesc": {
+    "hi": "इस तारीख और शिफ्ट में पहले से एंट्री है। आप क्या करना चाहते हैं?",
+    "en": "An entry already exists for this date and shift. What would you like to do?"
+  },
+  "duplicateTitle": {
+    "hi": "एंट्री पहले से मौजूद है",
+    "en": "Entry Already Exists"
+  },
+  "edit": {
+    "hi": "बदलें",
+    "en": "Edit"
+  },
+  "entryCount": {
+    "hi": "कुल एंट्रियां",
+    "en": "Total Entries"
+  },
+  "entryPendingCta": {
+    "hi": "आज की एंट्री करें",
+    "en": ""
+  },
+  "entry_change_rate_title": {
+    "hi": "रेट बदलें",
+    "en": "Change Rate"
+  },
+  "entry_select_party_hint": {
+    "hi": "ग्राहक / सप्लायर चुनें",
+    "en": "Select Customer / Supplier"
+  },
+  "entry_valid_qty_error": {
+    "hi": "कृपया सही लीटर डालें",
+    "en": "Please enter valid litres"
+  },
+  "evening": {
+    "hi": "शाम",
+    "en": "Evening"
+  },
+  "fat": {
+    "hi": "फैट (%)",
+    "en": "Fat (%)"
+  },
+  "fatBased": {
+    "hi": "फैट आधारित",
+    "en": "Fat Based"
+  },
+  "fcrBad": {
+    "hi": "⚠️ FCR ज़्यादा — दाना बर्बाद हो रहा है या बीमारी है",
+    "en": "⚠️ FCR too high — feed wastage or disease"
+  },
+  "fcrBirds": {
+    "hi": "कितने पक्षी",
+    "en": "Number of birds"
+  },
+  "fcrBroiler": {
+    "hi": "ब्रॉयलर (मांस)",
+    "en": "Broiler (meat)"
+  },
+  "fcrCalcHint": {
+    "hi": "दाना कितना लगा, कमाई कितनी हुई — एक नज़र में",
+    "en": "How much feed went in, how much came back"
+  },
+  "fcrCalcTitle": {
+    "hi": "मुर्गी का हिसाब (FCR)",
+    "en": "Poultry maths (FCR)"
+  },
+  "fcrCostPerEgg": {
+    "hi": "प्रति अंडा दाना-लागत",
+    "en": "Feed cost per egg"
+  },
+  "fcrCostPerKg": {
+    "hi": "प्रति किग्रा दाना-लागत",
+    "en": "Feed cost per kg"
+  },
+  "fcrEggPrice": {
+    "hi": "अंडे का भाव (₹)",
+    "en": "Egg price (₹)"
+  },
+  "fcrEggs": {
+    "hi": "कुल अंडे",
+    "en": "Total eggs"
+  },
+  "fcrFeedCost": {
+    "hi": "कुल दाना-ख़र्च",
+    "en": "Total feed cost"
+  },
+  "fcrFeedKg": {
+    "hi": "कुल दाना (किग्रा)",
+    "en": "Total feed (kg)"
+  },
+  "fcrFeedPerEgg": {
+    "hi": "प्रति अंडा दाना (ग्राम)",
+    "en": "Feed per egg (g)"
+  },
+  "fcrFeedRate": {
+    "hi": "दाने का भाव (₹/किग्रा)",
+    "en": "Feed rate (₹/kg)"
+  },
+  "fcrGood": {
+    "hi": "✅ बढ़िया FCR — दाना सही लग रहा है",
+    "en": "✅ Good FCR — feed is being used well"
+  },
+  "fcrIncome": {
+    "hi": "कुल आमदनी",
+    "en": "Total income"
+  },
+  "fcrLayer": {
+    "hi": "लेयर (अंडा)",
+    "en": "Layer (eggs)"
+  },
+  "fcrNote": {
+    "hi": "यह हिसाब सिर्फ़ दाने का है — चूज़े, दवा, बिजली और मज़दूरी अलग से घटाएँ।",
+    "en": "This covers feed only — deduct chicks, medicine, power and labour separately."
+  },
+  "fcrOk": {
+    "hi": "🙂 ठीक है — थोड़ा और सुधर सकता है",
+    "en": "🙂 Fair — there is room to improve"
+  },
+  "fcrPerBird": {
+    "hi": "प्रति पक्षी मुनाफ़ा",
+    "en": "Profit per bird"
+  },
+  "fcrProfit": {
+    "hi": "मुनाफ़ा (दाने के बाद)",
+    "en": "Profit (after feed)"
+  },
+  "fcrResultFcr": {
+    "hi": "FCR (दाना ÷ वज़न)",
+    "en": "FCR (feed ÷ weight)"
+  },
+  "fcrSellRate": {
+    "hi": "बिक्री भाव (₹/किग्रा)",
+    "en": "Selling rate (₹/kg)"
+  },
+  "fcrWeightKg": {
+    "hi": "कुल जीवित वज़न (किग्रा)",
+    "en": "Total live weight (kg)"
+  },
+  "flat": {
+    "hi": "फ्लैट रेट (फिक्स)",
+    "en": "Flat Rate (Fixed)"
+  },
+  "flatRateLabel": {
+    "hi": "फ्लैट रेट (₹)",
+    "en": "Flat Rate (₹)"
+  },
+  "fullLedgerExcelBtn": {
+    "hi": "पूरा हिसाब Excel में",
+    "en": "Full ledger to Excel"
+  },
+  "fullLedgerExcelHint": {
+    "hi": "ग्राहक, हर एंट्री, भुगतान और डेयरी प्रोडक्ट — सब एक फ़ाइल में",
+    "en": "Customers, every entry, payments and dairy products — all in one file"
+  },
+  "fullLedgerTitle": {
+    "hi": "पूरा हिसाब",
+    "en": "Full Ledger"
+  },
+  "grandTotal": {
+    "hi": "कुल योग",
+    "en": "Grand total"
+  },
+  "history": {
+    "hi": "इतिहास",
+    "en": "History"
+  },
+  "home_farmer_default": {
+    "hi": "किसान खाता",
+    "en": "Farmer Account"
+  },
+  "home_today_label": {
+    "hi": "📅 आज",
+    "en": "📅 Today"
+  },
+  "home_today_shift_pending": {
+    "hi": "— एंट्री नहीं हुई —",
+    "en": "— Entry pending —"
+  },
+  "home_today_yesterday": {
+    "hi": "📅 कल",
+    "en": "📅 Yesterday"
+  },
+  "home_total_due": {
+    "hi": "बकाया",
+    "en": "Total Due"
+  },
+  "kisanMode": {
+    "hi": "किसान मोड (डेयरी)",
+    "en": "Farmer Mode (Dairy)"
+  },
+  "kisanModeDesc": {
+    "hi": "मैं डेयरी को दूध बेचता हूँ (एक ही खाता)",
+    "en": "I sell milk to one dairy (single ledger)"
+  },
+  "language": {
+    "hi": "भाषा बदलें",
+    "en": "Change Language"
+  },
+  "litres": {
+    "hi": "लीटर",
+    "en": "Litres"
+  },
+  "milkDashTitle": {
+    "hi": "दूध का हिसाब",
+    "en": "Milk Ledger"
+  },
+  "milkReceivedPaid": {
+    "hi": "पैसा मिला",
+    "en": "Payment Received"
+  },
+  "modeChangeWarning": {
+    "hi": "मोड बदलने से आपका पुराना डेटा सुरक्षित रहेगा, लेकिन वर्तमान मोड बदल जाएगा। क्या आप सहमत हैं?",
+    "en": "Changing mode will preserve old data but switch current interface. Do you agree?"
+  },
+  "moneyToCollect": {
+    "hi": "💰 इनसे पैसा लेना है",
+    "en": "💰 Money to collect"
+  },
+  "monthLabel": {
+    "hi": "महीना",
+    "en": "Month"
+  },
+  "monthReportReadyBody": {
+    "hi": "{month} की रिपोर्ट Excel में सेव हो गई",
+    "en": "{month} report saved as Excel"
+  },
+  "monthReportReadyTitle": {
+    "hi": "🧾 महीने का हिसाब तैयार",
+    "en": "🧾 Monthly ledger ready"
+  },
+  "monthlyReport": {
+    "hi": "महीने का हिसाब",
+    "en": "Monthly Report"
+  },
+  "monthlyReportTitle": {
+    "hi": "मासिक रिपोर्ट",
+    "en": "Monthly Report"
+  },
+  "morning": {
+    "hi": "सुबह",
+    "en": "Morning"
+  },
+  "navBhavSub": {
+    "hi": "ताज़ा मंडी भाव",
+    "en": "Latest Mandi Rates"
+  },
+  "navHomeHint": {
+    "hi": "मुख्य पेज व मौसम",
+    "en": "Home & Weather"
+  },
+  "navKhetiHint": {
+    "hi": "खेत नापें व खाद कैलकुलेटर",
+    "en": "Land measurement & Fertilizer"
+  },
+  "navKhetiSub": {
+    "hi": "खेत नापें व खाद",
+    "en": "Land & Fertilizer"
+  },
+  "navMilkHint": {
+    "hi": "दूध का हिसाब व ग्राहक",
+    "en": "Milk records & Customers"
+  },
+  "navMilkSub": {
+    "hi": "हिसाब व ग्राहक",
+    "en": "Entries & Customers"
+  },
+  "navMoreHint": {
+    "hi": "रिपोर्ट, सेटिंग्स व मदद",
+    "en": "Reports, Settings & Help"
+  },
+  "navPashuHint": {
+    "hi": "पशु स्वास्थ्य व ब्याना तारीख़",
+    "en": "Cattle health & Calving"
+  },
+  "navPashuSub": {
+    "hi": "स्वास्थ्य व ब्याना",
+    "en": "Health & Calving"
+  },
+  "net_balance": {
+    "hi": "नेट बैलेंस",
+    "en": "Net Balance"
+  },
+  "no": {
+    "hi": "नहीं",
+    "en": "No"
+  },
+  "noContactsFound": {
+    "hi": "कोई कॉन्टैक्ट नहीं मिला",
+    "en": "No contacts found"
+  },
+  "noCustomersYetEntry": {
+    "hi": "अभी कोई ग्राहक नहीं — एंट्री आपके अपने खाते में सेव होगी",
+    "en": "No customers yet — entry will be saved to your own account"
+  },
+  "noEntries": {
+    "hi": "इस महीने कोई एंट्री नहीं है।",
+    "en": "No entries for this month."
+  },
+  "noEntriesPeriod": {
+    "hi": "इस अवधि में कोई एंट्री नहीं",
+    "en": "No entries in this period"
+  },
+  "no_party_found": {
+    "hi": "⚠️ इस श्रेणी में कोई पार्टी नहीं है।",
+    "en": "⚠️ No party found in this category."
+  },
+  "no_party_hint": {
+    "hi": "कृपया \"ग्राहक सूची\" में जाकर सही प्रकार (खरीदार/आपूर्तिकर्ता) से पार्टी जोड़ें।",
+    "en": "Please go to \"Customer List\" and add a party with the correct type (Buyer/Supplier)."
+  },
+  "openSettings": {
+    "hi": "सेटिंग खोलें",
+    "en": "Open settings"
+  },
+  "paid": {
+    "hi": "पैसा मिला",
+    "en": "Payment Received"
+  },
+  "palanBreeds": {
+    "hi": "नस्लें",
+    "en": "Breeds"
+  },
+  "palanCost": {
+    "hi": "लागत",
+    "en": "Cost"
+  },
+  "palanDisease": {
+    "hi": "आम बीमारियाँ",
+    "en": "Common diseases"
+  },
+  "palanEconomics": {
+    "hi": "लागत और मुनाफ़ा",
+    "en": "Cost and profit"
+  },
+  "palanFeed": {
+    "hi": "चारा-दाना",
+    "en": "Feed"
+  },
+  "palanFeedQty": {
+    "hi": "कितना",
+    "en": "How much"
+  },
+  "palanFeedStage": {
+    "hi": "अवस्था",
+    "en": "Stage"
+  },
+  "palanFeedWhat": {
+    "hi": "क्या दें",
+    "en": "What to feed"
+  },
+  "palanHint": {
+    "hi": "किसका पालन करना है? पूरी जानकारी — नस्ल, चारा, टीका, कमाई",
+    "en": "What do you want to rear? Breeds, feed, vaccines, economics"
+  },
+  "palanHousing": {
+    "hi": "आवास / शेड",
+    "en": "Housing / shed"
+  },
+  "palanIncome": {
+    "hi": "आमदनी",
+    "en": "Income"
+  },
+  "palanIntro": {
+    "hi": "परिचय",
+    "en": "Overview"
+  },
+  "palanProduction": {
+    "hi": "उत्पादन बढ़ाने के उपाय",
+    "en": "Boosting production"
+  },
+  "palanProfit": {
+    "hi": "अनुमानित मुनाफ़ा",
+    "en": "Estimated profit"
+  },
+  "palanSelling": {
+    "hi": "कहाँ और कैसे बेचें",
+    "en": "Where and how to sell"
+  },
+  "palanTab": {
+    "hi": "अन्य पालन",
+    "en": "Other farming"
+  },
+  "palanTitle": {
+    "hi": "पशु-पक्षी पालन",
+    "en": "Livestock & Poultry Farming"
+  },
+  "palanVaccine": {
+    "hi": "टीकाकरण",
+    "en": "Vaccination"
+  },
+  "palanVaccineWhat": {
+    "hi": "कौन सा टीका",
+    "en": "Vaccine"
+  },
+  "palanVaccineWhen": {
+    "hi": "कब",
+    "en": "When"
+  },
+  "party_type_both": {
+    "hi": "🔄 दोनों (आपसी लेन-देन)",
+    "en": "🔄 Both (Mutual transactions)"
+  },
+  "party_type_buyer": {
+    "hi": "💰 खरीदार (मुझे पैसे देंगे)",
+    "en": "💰 Buyer (Will pay me)"
+  },
+  "party_type_label": {
+    "hi": "🤝 यह पार्टी क्या है?",
+    "en": "🤝 What is this party?"
+  },
+  "party_type_supplier": {
+    "hi": "🌾 आपूर्तिकर्ता (मुझे दूध देंगे)",
+    "en": "🌾 Supplier (Will give me milk)"
+  },
+  "pashuBee": {
+    "hi": "मधुमक्खी",
+    "en": "Bee"
+  },
+  "pashuBhed": {
+    "hi": "भेड़",
+    "en": "Sheep"
+  },
+  "pashuFish": {
+    "hi": "मछली",
+    "en": "Fish"
+  },
+  "pashuMurgi": {
+    "hi": "मुर्गी",
+    "en": "Poultry"
+  },
+  "pashuSuar": {
+    "hi": "सुअर",
+    "en": "Pig"
+  },
+  "paymentNote": {
+    "hi": "विवरण (जैसे: ऑनलाइन, नगद)",
+    "en": "Notes (e.g. cash, online)"
+  },
+  "pdfBillTitle": {
+    "hi": "दूध बिल / पर्ची",
+    "en": "Milk Bill"
+  },
+  "pdfFooterNote": {
+    "hi": "प्रो किसान ऐप से बना बिल",
+    "en": "Bill generated with Pro Kisan app"
+  },
+  "pdfSignCustomer": {
+    "hi": "ग्राहक के हस्ताक्षर",
+    "en": "Customer signature"
+  },
+  "pdfSignDairy": {
+    "hi": "दूधवाला / डेयरी हस्ताक्षर",
+    "en": "Dairy signature"
+  },
+  "periodAllTime": {
+    "hi": "पूरा समय",
+    "en": "All time"
+  },
+  "periodFortnight": {
+    "hi": "15 दिन",
+    "en": "15 days"
+  },
+  "periodLast": {
+    "hi": "अंत तक",
+    "en": "to end"
+  },
+  "periodWeek": {
+    "hi": "सप्ताह",
+    "en": "Week"
+  },
+  "permAllow": {
+    "hi": "ठीक है, आगे बढ़ें",
+    "en": "OK, continue"
+  },
+  "permContacts": {
+    "hi": "📇 कॉन्टैक्ट — ग्राहक जोड़ते समय नाम-नंबर भरने के लिए",
+    "en": "📇 Contacts — to fill name & number while adding a customer"
+  },
+  "permIntro": {
+    "hi": "ये अनुमतियाँ किसलिए चाहिए, पहले जान लें:",
+    "en": "Here is what each one is used for:"
+  },
+  "permLater": {
+    "hi": "अभी नहीं",
+    "en": "Not now"
+  },
+  "permLoc": {
+    "hi": "📍 लोकेशन — आपके गाँव का सही मौसम और खेत की नाप",
+    "en": "📍 Location — accurate weather for your village & field measurement"
+  },
+  "permNote": {
+    "hi": "आपका कोई भी डेटा किसी सर्वर पर नहीं भेजा जाता — सब आपके फ़ोन में ही रहता है। मना करने पर भी ऐप चलता रहेगा।",
+    "en": "None of your data is sent to any server — everything stays on your phone. The app works even if you decline."
+  },
+  "permNotif": {
+    "hi": "🔔 सूचना — सुबह/शाम दूध की एंट्री का रिमाइंडर",
+    "en": "🔔 Notifications — morning/evening milk entry reminders"
+  },
+  "permTitle": {
+    "hi": "ऐप को कुछ अनुमतियाँ चाहिए",
+    "en": "The app needs a few permissions"
+  },
+  "phoneNumber": {
+    "hi": "मोबाइल नंबर (वैकल्पिक)",
+    "en": "Phone Number (Optional)"
+  },
+  "pickFromContacts": {
+    "hi": "कॉन्टैक्ट से चुनें",
+    "en": "Pick from contacts"
+  },
+  "preparingFile": {
+    "hi": "फ़ाइल तैयार हो रही है…",
+    "en": "Preparing file…"
+  },
+  "rate": {
+    "hi": "रेट (₹/लीटर)",
+    "en": "Rate (₹/L)"
+  },
+  "ratePerFat": {
+    "hi": "रेट प्रति फैट पॉइंट",
+    "en": "Rate Per Fat Point"
+  },
+  "rateType": {
+    "hi": "रेट का प्रकार",
+    "en": "Rate Type"
+  },
+  "recentEntries": {
+    "hi": "हाल की एंट्रियां",
+    "en": "Recent Entries"
+  },
+  "removeReminder": {
+    "hi": "रिमाइंडर हटाएँ",
+    "en": "Remove reminders"
+  },
+  "replace": {
+    "hi": "बदलें (पुराना हटाकर)",
+    "en": "Replace (Overwrite)"
+  },
+  "reportCustomerWise": {
+    "hi": "ग्राहक-वार",
+    "en": "Customer-wise"
+  },
+  "reportDayWise": {
+    "hi": "दिन-वार",
+    "en": "Day-wise"
+  },
+  "reportGeneratedOn": {
+    "hi": "रिपोर्ट बनी",
+    "en": "Report generated"
+  },
+  "reportHistoryHint": {
+    "hi": "हर महीने का पूरा हिसाब — PDF या Excel में",
+    "en": "Every month\\"
+  },
+  "reportHistoryTitle": {
+    "hi": "महीनेवार रिपोर्ट",
+    "en": "Monthly reports"
+  },
+  "reportSavedAt": {
+    "hi": "रिपोर्ट सेव हुई",
+    "en": "Report saved at"
+  },
+  "report_customer_details": {
+    "hi": "ग्राहकों का विवरण",
+    "en": "Customer Details"
+  },
+  "report_daily_record": {
+    "hi": "रोज का रिकॉर्ड",
+    "en": "Daily Record"
+  },
+  "report_table_amount": {
+    "hi": "राशि (₹)",
+    "en": "Amount (₹)"
+  },
+  "report_table_date": {
+    "hi": "तारीख",
+    "en": "Date"
+  },
+  "report_table_milk": {
+    "hi": "दूध (ली)",
+    "en": "Milk (L)"
+  },
+  "report_table_shift": {
+    "hi": "शिफ्ट",
+    "en": "Shift"
+  },
+  "restore": {
+    "hi": "रीस्टोर करें",
+    "en": "Restore Backup"
+  },
+  "role_both": {
+    "hi": "🔄 दोनों करता हूँ (आढ़तिया / बड़ा डेयरी)",
+    "en": "🔄 I do both (Commission Agent / Big Dairy)"
+  },
+  "role_buy": {
+    "hi": "🛒 दूध खरीदता हूँ (दूधवाला / व्यापारी)",
+    "en": "🛒 I buy milk (Milkman / Trader)"
+  },
+  "role_selection_hint": {
+    "hi": "यह सेटिंग आपकी एंट्री स्क्रीन को आसान बना देगी। बाद में सेटिंग्स में बदल सकते हैं।",
+    "en": "This will simplify your entry screen. You can change it later in Settings."
+  },
+  "role_sell": {
+    "hi": "🥛 दूध बेचता हूँ (किसान / सप्लायर)",
+    "en": "🥛 I sell milk (Farmer / Supplier)"
+  },
+  "save": {
+    "hi": "सेव करें",
+    "en": "Save"
+  },
+  "searchContactHint": {
+    "hi": "नाम या नंबर खोजें…",
+    "en": "Search name or number…"
+  },
+  "seeAllEntries": {
+    "hi": "सारी एंट्रियाँ देखें",
+    "en": "See all entries"
+  },
+  "selectCustomerFirst": {
+    "hi": "पहले ग्राहक चुनें",
+    "en": "Select a customer first"
+  },
+  "selectMode": {
+    "hi": "अपना मोड चुनें",
+    "en": "Select Your Mode"
+  },
+  "settings": {
+    "hi": "सेटिंग्स",
+    "en": "Settings"
+  },
+  "sharePlainTextTooltip": {
+    "hi": "सादा टेक्स्ट शेयर करें",
+    "en": "Share Plain Text"
+  },
+  "shareText": {
+    "hi": "WhatsApp पर भेजें",
+    "en": "Share on WhatsApp"
+  },
+  "snf": {
+    "hi": "SNF (%)",
+    "en": "SNF (%)"
+  },
+  "speciesGoat": {
+    "hi": "बकरी",
+    "en": "Goat"
+  },
+  "speciesPig": {
+    "hi": "सुअर",
+    "en": "Pig"
+  },
+  "speciesSheep": {
+    "hi": "भेड़",
+    "en": "Sheep"
+  },
+  "summaryLabel": {
+    "hi": "सारांश",
+    "en": "Summary"
+  },
+  "tableDue": {
+    "hi": "बाकी",
+    "en": "Due"
+  },
+  "tableName": {
+    "hi": "नाम",
+    "en": "Name"
+  },
+  "tablePaid": {
+    "hi": "प्राप्त",
+    "en": "Received"
+  },
+  "tagline": {
+    "hi": "हर किसान, प्रो किसान",
+    "en": "Every farmer, a pro"
+  },
+  "thisMonth": {
+    "hi": "इस महीने",
+    "en": "This Month"
+  },
+  "todayDone": {
+    "hi": "आज का काम पूरा",
+    "en": ""
+  },
+  "todayEntry": {
+    "hi": "आज की एंट्री",
+    "en": "Today\\"
+  },
+  "totalAmount": {
+    "hi": "कुल राशि",
+    "en": "Total Amount"
+  },
+  "totalDistribution": {
+    "hi": "कुल वितरण",
+    "en": "Total Distribution"
+  },
+  "totalDue": {
+    "hi": "कुल बाकी",
+    "en": "Total Due"
+  },
+  "totalEntries": {
+    "hi": "कुल एंट्रियां",
+    "en": "Total Entries"
+  },
+  "totalLitres": {
+    "hi": "कुल दूध",
+    "en": "Total Milk"
+  },
+  "totalMilk": {
+    "hi": "कुल दूध",
+    "en": "Total Milk"
+  },
+  "totalPaid": {
+    "hi": "कुल मिला",
+    "en": "Total Paid"
+  },
+  "totalReceived": {
+    "hi": "कुल प्राप्त",
+    "en": "Total Received"
+  },
+  "totalSaleAmount": {
+    "hi": "कुल बिक्री राशि",
+    "en": "Total Sales"
+  },
+  "total_payable": {
+    "hi": "📥 देय (खरीद)",
+    "en": "📥 Payable (Purchases)"
+  },
+  "total_purchase": {
+    "hi": "कुल खरीद",
+    "en": "Total Purchase"
+  },
+  "total_receivable": {
+    "hi": "📤 प्राप्त होने वाला (बिक्री)",
+    "en": "📤 Receivable (Sales)"
+  },
+  "total_sale": {
+    "hi": "कुल बिक्री",
+    "en": "Total Sale"
+  },
+  "tour_cust_party_desc": {
+    "hi": "खरीदार (Buyer) वह है जो आपसे दूध लेता है।\\nआपूर्तिकर्ता (Supplier) वह है जिससे आप दूध लेते हैं।\\nसही प्रकार चुनने से एंट्री करते समय आपको आसानी होगी।",
+    "en": "Buyer is who takes milk from you.\\nSupplier is who gives milk to you.\\nChoosing the right type simplifies your entry screen later."
+  },
+  "tour_cust_party_title": {
+    "hi": "🤝 पार्टी का प्रकार चुनें",
+    "en": "🤝 Choose Party Type"
+  },
+  "tour_entry_direction_desc": {
+    "hi": "अगर आप दूध *बेच* रहे हैं तो \"बिक्री\" चुनें।\\nअगर आप दूध *खरीद* रहे हैं तो \"खरीद\" चुनें।\\nइसके अनुसार नीचे ग्राहक/सप्लायर की लिस्ट अपने आप बदल जाएगी।",
+    "en": "Select \"Sale\" if you are *selling* milk.\\nSelect \"Purchase\" if you are *buying* milk.\\nThe customer/supplier list below will auto-filter."
+  },
+  "tour_entry_direction_title": {
+    "hi": "📌 बिक्री या खरीद? चुनें",
+    "en": "📌 Sell or Buy? Choose"
+  },
+  "tour_nav_home_desc": {
+    "hi": "आपका आज का हिसाब — कितना दूध, कितना पैसा, और मौसम। रोज़ यहीं आइए।",
+    "en": "Your day at a glance — milk, money and weather. Come here every day."
+  },
+  "tour_nav_home_title": {
+    "hi": "यहाँ से शुरू",
+    "en": "Start here"
+  },
+  "tour_nav_kheti_desc": {
+    "hi": "खाद-बीज कितना डालें, खेत कितना बड़ा है, और आज का मंडी भाव — सब यहाँ।",
+    "en": "How much fertilizer and seed, how big your field is, and mandi rates for today."
+  },
+  "tour_nav_kheti_title": {
+    "hi": "खेती का काम",
+    "en": "Farm work"
+  },
+  "tour_nav_milk_desc": {
+    "hi": "रोज़ की सुबह-शाम की एंट्री यहाँ लिखिए। ग्राहक का जमा-बाक़ी भी यहीं दिखेगा।",
+    "en": "Write the morning and evening entry here. Customer dues show up here too."
+  },
+  "tour_nav_milk_title": {
+    "hi": "दूध का हिसाब",
+    "en": "Milk records"
+  },
+  "tour_nav_more_desc": {
+    "hi": "सरकारी योजना, मौसम, समाचार और सेटिंग यहाँ मिलेंगे।",
+    "en": "Government schemes, weather, news and settings are here."
+  },
+  "tour_nav_more_title": {
+    "hi": "और सब कुछ",
+    "en": "Everything else"
+  },
+  "tour_nav_pashu_desc": {
+    "hi": "गाय-भैंस की जानकारी रखिए। ब्याने और टीके की तारीख़ ऐप ख़ुद याद दिला देगा।",
+    "en": "Keep cattle details here. The app will remind you of calving and vaccine dates."
+  },
+  "tour_nav_pashu_title": {
+    "hi": "आपके पशु",
+    "en": "Your cattle"
+  },
+  "vaccineReminderAsk": {
+    "hi": "बच्चे कब आए / जन्म की तारीख़?",
+    "en": "When did the batch arrive / date of birth?"
+  },
+  "vaccineReminderBtn": {
+    "hi": "🔔 टीके का रिमाइंडर लगाएँ",
+    "en": "🔔 Set vaccine reminders"
+  },
+  "vaccineReminderNone": {
+    "hi": "इस पालन के लिए तय टीका-सूची नहीं है",
+    "en": "No fixed vaccine schedule for this species"
+  },
+  "vaccineReminderOff": {
+    "hi": "रिमाइंडर हटा दिए गए",
+    "en": "Reminders removed"
+  },
+  "vaccineReminderSet": {
+    "hi": "✅ {n} टीकों का रिमाइंडर लग गया",
+    "en": "✅ Reminders set for {n} vaccines"
+  },
+  "wGpsDenied": {
+    "hi": "लोकेशन की अनुमति नहीं मिली",
+    "en": "Location permission denied"
+  },
+  "wGpsDeniedForever": {
+    "hi": "लोकेशन बंद है — सेटिंग में जाकर अनुमति दें",
+    "en": "Location blocked — allow it in Settings"
+  },
+  "wGpsFailed": {
+    "hi": "जगह नहीं मिल पाई — खुले आसमान के नीचे दोबारा कोशिश करें",
+    "en": "Could not get a fix — try again under open sky"
+  },
+  "wGpsFinding": {
+    "hi": "आपकी जगह ढूँढ़ी जा रही है…",
+    "en": "Finding your location…"
+  },
+  "wGpsOff": {
+    "hi": "फ़ोन का लोकेशन (GPS) बंद है — चालू करें",
+    "en": "Phone location (GPS) is off — turn it on"
+  },
+  "wGpsUpdated": {
+    "hi": "✅ आपकी जगह का मौसम आ गया",
+    "en": "✅ Weather for your location is ready"
+  },
+  "wSearchNoResult": {
+    "hi": "कोई जगह नहीं मिली",
+    "en": "No place found"
+  },
+  "wSearchOffline": {
+    "hi": "भारतीय शहर",
+    "en": "Indian cities"
+  },
+  "wSearchOfflineBadge": {
+    "hi": "ऑफलाइन",
+    "en": "OFFLINE"
+  },
+  "wSearchOnline": {
+    "hi": "दुनिया-भर",
+    "en": "Worldwide"
+  },
+  "wSearchOnlineBadge": {
+    "hi": "ऑनलाइन",
+    "en": "ONLINE"
+  },
+  "wSearchRecent": {
+    "hi": "हाल में देखे हुए",
+    "en": "Recent searches"
+  },
+  "wSearchStartHint": {
+    "hi": "शहर, ज़िले या राज्य का नाम लिखें\\n(हिंदी या English में)",
+    "en": "Type a city, district or state name\\n(in Hindi or English)"
+  },
+  "wUseGps": {
+    "hi": "मेरी जगह",
+    "en": "My location"
+  },
+  "warning": {
+    "hi": "चेतावनी",
+    "en": "Warning"
+  },
+  "whatDoYouDoWithMilk": {
+    "hi": "दूध के साथ आप क्या करते हैं?",
+    "en": "What do you do with milk?"
+  },
+  "yes": {
+    "hi": "हाँ",
+    "en": "Yes"
+  }
+}

@@ -1,0 +1,52 @@
+name: dudh_ka_hisab
+description: "दूध का हिसाब — Milk Record Book for Dairy Farmers & Doodhwalas"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  # State Management — BLoC/Cubit (completely different from Mistri's setState)
+  flutter_bloc: ^9.1.0
+  # Database — SQL (completely different from Mistri's SharedPreferences)
+  sqflite: ^2.4.2
+  path: ^1.9.1
+  # Shared Preferences for simple key-value (settings only)
+  shared_preferences: ^2.5.3
+  # Date & Number formatting
+  intl: ^0.20.2
+  # Sharing (WhatsApp bills)
+  share_plus: ^11.0.0
+  # File picker (backup restore)
+  file_picker: ^9.2.2
+  # Ads
+  google_mobile_ads: ^9.0.0
+  # In-app review
+  in_app_review: ^2.0.10
+  # Path provider for backup files
+  path_provider: ^2.1.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  
+  fonts:
+    - family: Mukta
+      fonts:
+        - asset: assets/fonts/Mukta-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Mukta-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Mukta-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Mukta-Bold.ttf
+          weight: 700
