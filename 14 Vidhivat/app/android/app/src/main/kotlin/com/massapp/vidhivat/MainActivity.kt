@@ -1,0 +1,5 @@
+package com.massapp.vidhivat
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity : FlutterActivity()

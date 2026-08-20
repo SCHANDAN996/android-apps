@@ -1,0 +1,180 @@
+{
+  "_padho_pehle": [
+    "यह फ़ाइल इंजन की सबसे ज़रूरी जाँच है।",
+    "",
+    "दो अलग-अलग स्रोत, दो अलग काम — इन्हें गड्डमड्ड मत करना:",
+    "",
+    "1) Drik Panchang (drikpanchang.com) — हमारी *गणित* की जाँच।",
+    "   वो भी दृक् गणित से चलता है, हमारी तरह। फ़र्क़ = हमारी ग़लती।",
+    "   नीचे की सारी तारीख़ें वहीं से हैं, और सब मिल चुकी हैं।",
+    "",
+    "2) त्योहार की तारीख़ें — *परंपरा* की जाँच। यह अलग चीज़ है और",
+    "   सिर्फ़ तिथि से तय नहीं होती, व्यापिनी नियम से होती है।",
+    "   देखो: test/festival_notes.md",
+    "",
+    "और तारीख़ें कैसे जोड़ें:",
+    "   dart run tool/panchang_cli.dart --fill",
+    "   drikpanchang.com से मिलाकर expected भरो, फिर dart test",
+    "",
+    "तिथि 1–30 (शुक्ल प्रतिपदा = 1, पूर्णिमा = 15, कृष्ण प्रतिपदा = 16, अमावस्या = 30)",
+    "नक्षत्र 1–27 (अश्विनी = 1) · योग 1–27 (विष्कुम्भ = 1)",
+    "समय स्थानीय (IST), 24 घंटे वाला"
+  ],
+
+  "_kya_dhaka_hai": [
+    "11 तारीख़ें भरी हुई हैं — पाँचों शहर, चारों मौसम, और दस साल आगे की एक।",
+    "दिल्ली 28.6°N · पटना 25.6°N (सबसे पूरब) · जयपुर 26.9°N ·",
+    "नागपुर 21.1°N · चेन्नई 13.1°N (सबसे दक्षिण)",
+    "",
+    "चेन्नई और नागपुर ख़ास तौर पर ज़रूरी हैं — वहाँ अमांत पद्धति चलती है,",
+    "और अक्षांश बहुत अलग है। दोनों जगह सूर्योदय सेकंड तक मिला।"
+  ],
+
+  "_sahnshilta": [
+    "समय की जाँच में 2 मिनट की छूट रखी है।",
+    "Drik अपने समय मिनट तक ही दिखाता है, और हमारे-उसके बीच लगभग",
+    "30–60 सेकंड का एक पक्का फ़र्क़ रह जाता है। चंद्र की तालिका Meeus की",
+    "अपनी मिसाल से 0.11 विकला तक सही है और अयनांश Drik से 0.00001° तक",
+    "मिलता है — तो यह फ़र्क़ शायद ΔT से है। एक मिनट किसी की पूजा नहीं",
+    "बिगाड़ता। असली गड़बड़ी घंटों में दिखेगी, और यह जाँच उसे पकड़ लेगी।"
+  ],
+
+  "cities": {
+    "delhi": { "name": "दिल्ली", "lat": 28.6139, "lon": 77.2090 },
+    "patna": { "name": "पटना", "lat": 25.5941, "lon": 85.1376 },
+    "jaipur": { "name": "जयपुर", "lat": 26.9124, "lon": 75.7873 },
+    "nagpur": { "name": "नागपुर", "lat": 21.1458, "lon": 79.0882 },
+    "chennai": { "name": "चेन्नई", "lat": 13.0827, "lon": 80.2707 }
+  },
+
+  "entries": [
+    {
+      "date": "2026-01-14", "city": "delhi",
+      "note": "मकर संक्रांति · Drik",
+      "expected": {
+        "tithi": 26, "tithiEndsAt": "17:52",
+        "nakshatra": 17, "nakshatraEndsAt": "03:03",
+        "yoga": 10,
+        "sunrise": "07:15", "sunset": "17:45",
+        "masa": "माघ", "paksha": "कृष्ण"
+      }
+    },
+    {
+      "date": "2026-04-01", "city": "patna",
+      "note": "पटना — सबसे पूरब का शहर · Drik",
+      "expected": {
+        "tithi": 14, "tithiEndsAt": "07:06",
+        "nakshatra": 12, "nakshatraEndsAt": "16:17",
+        "yoga": 11,
+        "sunrise": "05:41", "sunset": "18:06",
+        "masa": "चैत्र", "paksha": "शुक्ल"
+      }
+    },
+    {
+      "date": "2026-05-15", "city": "jaipur",
+      "note": "जयपुर · Drik",
+      "expected": {
+        "tithi": 28, "tithiEndsAt": "08:31",
+        "nakshatra": 1, "nakshatraEndsAt": "20:14",
+        "yoga": 3,
+        "sunrise": "05:39", "sunset": "19:07",
+        "masa": "ज्येष्ठ", "paksha": "कृष्ण"
+      }
+    },
+    {
+      "date": "2026-06-01", "city": "delhi",
+      "note": "अधिक (पुरुषोत्तम) मास · Drik दोनों पद्धतियों में \"Jyeshtha (Adhik)\" लिखता है, और \"Purushottam Masa Day 16\" भी",
+      "expected": {
+        "tithi": 16, "tithiEndsAt": "16:37",
+        "paksha": "कृष्ण", "masa": "अधिक ज्येष्ठ"
+      }
+    },
+    {
+      "date": "2026-06-21", "city": "delhi",
+      "note": "साल का सबसे लंबा दिन · Drik",
+      "expected": {
+        "tithi": 7, "tithiEndsAt": "15:20",
+        "nakshatra": 11, "nakshatraEndsAt": "09:31",
+        "yoga": 16,
+        "sunrise": "05:24", "sunset": "19:22",
+        "masa": "ज्येष्ठ", "paksha": "शुक्ल"
+      }
+    },
+    {
+      "date": "2026-07-10", "city": "nagpur",
+      "note": "नागपुर — अमांत इलाक़ा · Drik (अमांत मास ज्येष्ठ, पूर्णिमांत आषाढ़)",
+      "expected": {
+        "tithi": 25, "tithiEndsAt": "08:16",
+        "nakshatra": 2, "nakshatraEndsAt": "13:15",
+        "yoga": 8,
+        "sunrise": "05:39", "sunset": "18:59",
+        "masa": "आषाढ़", "paksha": "कृष्ण"
+      }
+    },
+    {
+      "date": "2026-08-20", "city": "delhi",
+      "note": "Drik",
+      "expected": {
+        "tithi": 8, "tithiEndsAt": "21:18",
+        "nakshatra": 16, "nakshatraEndsAt": "09:08",
+        "yoga": 26,
+        "sunrise": "05:53", "sunset": "18:56",
+        "masa": "श्रावण", "paksha": "शुक्ल"
+      }
+    },
+    {
+      "date": "2026-09-15", "city": "chennai",
+      "note": "चेन्नई — सबसे दक्षिण, 13°N · Drik",
+      "expected": {
+        "tithi": 4, "tithiEndsAt": "07:44",
+        "nakshatra": 15, "nakshatraEndsAt": "15:21",
+        "yoga": 26,
+        "sunrise": "05:58", "sunset": "18:10",
+        "masa": "भाद्रपद", "paksha": "शुक्ल"
+      }
+    },
+    {
+      "date": "2026-10-10", "city": "delhi",
+      "note": "अमावस्या · Drik (अमांत भाद्रपद, पूर्णिमांत आश्विन)",
+      "expected": {
+        "tithi": 30, "tithiEndsAt": "21:19",
+        "nakshatra": 13, "nakshatraEndsAt": "21:42",
+        "yoga": 26,
+        "sunrise": "06:19", "sunset": "17:57",
+        "masa": "आश्विन", "paksha": "कृष्ण"
+      }
+    },
+    {
+      "date": "2026-11-05", "city": "patna",
+      "note": "छठ का महीना · Drik (अमांत आश्विन, पूर्णिमांत कार्तिक)",
+      "expected": {
+        "tithi": 26, "tithiEndsAt": "10:35",
+        "nakshatra": 12, "nakshatraEndsAt": "03:55",
+        "yoga": 26,
+        "sunrise": "06:00", "sunset": "17:06",
+        "masa": "कार्तिक", "paksha": "कृष्ण"
+      }
+    },
+    {
+      "date": "2026-12-21", "city": "delhi",
+      "note": "साल का सबसे छोटा दिन · Drik",
+      "expected": {
+        "tithi": 12, "tithiEndsAt": "17:36",
+        "nakshatra": 2, "nakshatraEndsAt": "13:08",
+        "yoga": 21,
+        "sunrise": "07:10", "sunset": "17:29",
+        "masa": "मार्गशीर्ष", "paksha": "शुक्ल"
+      }
+    },
+    {
+      "date": "2036-01-14", "city": "delhi",
+      "note": "दस साल आगे — दूर की तारीख़ पर भी गणित टिकता है या नहीं · Drik",
+      "expected": {
+        "tithi": 16, "tithiEndsAt": "12:58",
+        "nakshatra": 8, "nakshatraEndsAt": "21:25",
+        "sunrise": "07:15", "sunset": "17:45",
+        "paksha": "कृष्ण"
+      }
+    }
+  ]
+}

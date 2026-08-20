@@ -1,0 +1,10 @@
+name: panchang_engine
+description: विधिवत का पंचांग इंजन — शुद्ध Dart, कोई Flutter निर्भरता नहीं।
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+
+dev_dependencies:
+  test: ^1.25.0
