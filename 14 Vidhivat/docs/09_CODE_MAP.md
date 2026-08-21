@@ -269,12 +269,12 @@ Flutter, package `com.massapp.vidhivat`। इंजन `path` dependency की
 app/
 ├── assets/vidhi/          पूजा का कंटेंट — JSON, ऐप में बंडल
 │   ├── _suchi.json        बारह पूजाओं की हल्की सूची
-│   ├── satyanarayan.json  एक पूरी पूजा
+│   ├── satyanarayan.json  … और ग्यारह और, एक-एक पूजा
 │   └── audio/             मंत्रों की रिकॉर्डिंग (अभी ख़ाली)
 │
 ├── test/
-│   ├── vidhi_test.dart          21 — कंटेंट का ढाँचा
-│   └── vidhi_screens_test.dart  20 — स्क्रीनों पर उँगली चलाकर
+│   ├── vidhi_test.dart          कंटेंट का ढाँचा — बारहों पूजाएँ
+│   └── vidhi_screens_test.dart  स्क्रीनों पर उँगली चलाकर
 │
 └── lib/
     ├── main.dart          छह पन्नों की पट्टी (NavigationBar)
@@ -306,8 +306,9 @@ app/
 | `Vidhi` | एक पूरी पूजा — `charan`, `samagri`, `sawaal`, `strot`, `jaanch` |
 | `Charan` | एक कदम — शीर्षक, विवरण, मंत्र, `vishesh` |
 | `CharanVishesh` | `saada` · **`sankalp`** · `katha` · `aarti` |
-| `Mantra` | देवनागरी, रोमन, अर्थ, ऑडियो, स्रोत, `sthiti` |
+| `Mantra` | देवनागरी, रोमन, अर्थ, ऑडियो, स्रोत, `bharosa`, `vikalp`, `sthiti` |
 | `MantraSthiti` | `khaali` · `draft` · `paas` |
+| `Bharosa` | `uncha` · `madhyam` · `kam` — पंडित जी की जाँच से पहले कितना भरोसा (→ D-025) |
 | `Samagri` | वस्तु, मात्रा, इकाई, ज़रूरी/वैकल्पिक, समूह |
 | `VidhiSuchiEntry` | सूची की एक पंक्ति + `taiyar` झंडी |
 | `VidhiFormatException` | ग़लत JSON — **संदेश में फ़ाइल का नाम आता है** |

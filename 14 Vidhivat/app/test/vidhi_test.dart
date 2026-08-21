@@ -155,6 +155,30 @@ void main() {
           expect(v.strot.kshetra.trim(), isNotEmpty);
         });
 
+        test('हर लिखे हुए मंत्र के साथ स्रोत और भरोसे का दर्जा है', () {
+          // बिना स्रोत के लिखा पाठ ड्राफ़्ट नहीं, अंदाज़ा है (→ D-022)।
+          for (final c in v.charan) {
+            final m = c.mantra;
+            if (m == null || !m.hasPath) continue;
+            expect(m.strot.trim(), isNotEmpty,
+                reason: '"${c.shirshak}" के मंत्र का स्रोत नहीं लिखा');
+            expect(m.arth.trim(), isNotEmpty,
+                reason: '"${c.shirshak}" के मंत्र का सरल अर्थ नहीं लिखा');
+            expect(m.roman.trim(), isNotEmpty,
+                reason: '"${c.shirshak}" के मंत्र का रोमन रूप नहीं लिखा');
+          }
+        });
+
+        test('जो मंत्र ख़ाली है उस पर वजह लिखी है', () {
+          // ख़ाली छोड़ना ठीक है — चुपचाप ख़ाली छोड़ना नहीं।
+          for (final c in v.charan) {
+            final m = c.mantra;
+            if (m == null || m.hasPath) continue;
+            expect(m.vikalp.trim(), isNotEmpty,
+                reason: '"${c.shirshak}" का मंत्र ख़ाली है पर वजह नहीं लिखी');
+          }
+        });
+
         test('जिस मंत्र की रिकॉर्डिंग लिखी है वो फ़ाइल मौजूद है', () {
           for (final c in v.charan) {
             final audio = c.mantra?.audio ?? '';
@@ -196,6 +220,27 @@ void main() {
         () => Vidhi.parse('जाँच', _vidhiWithMantra('''
           "devanagari": "कुछ पाठ", "roman": "", "arth": "",
           "audio": "", "strot": "", "sthiti": "khaali"
+        ''')),
+        throwsA(isA<VidhiFormatException>()),
+      );
+    });
+
+    test('बिना स्रोत के मंत्र "draft" भी नहीं हो सकता', () {
+      expect(
+        () => Vidhi.parse('जाँच', _vidhiWithMantra('''
+          "devanagari": "कुछ पाठ", "roman": "", "arth": "",
+          "audio": "", "strot": "", "sthiti": "draft"
+        ''')),
+        throwsA(isA<VidhiFormatException>()),
+      );
+    });
+
+    test('ग़लत bharosa वाला मंत्र नहीं चलेगा', () {
+      expect(
+        () => Vidhi.parse('जाँच', _vidhiWithMantra('''
+          "devanagari": "कुछ पाठ", "roman": "", "arth": "",
+          "audio": "", "strot": "कोई किताब", "bharosa": "bahut-uncha",
+          "sthiti": "draft"
         ''')),
         throwsA(isA<VidhiFormatException>()),
       );
@@ -253,13 +298,22 @@ void main() {
       final paas = suchi.where((e) => e.paas).length;
 
       var mantraKul = 0, mantraBhare = 0, mantraAudio = 0;
+      final bharosaGinti = <Bharosa, int>{};
       for (final e in taiyar) {
         final path = '$dir/${e.id}.json';
         final v = Vidhi.parse(path, File(path).readAsStringSync());
         mantraKul += v.mantraKul;
         mantraBhare += v.mantraBhareHue;
         mantraAudio += v.mantraAudioWale;
+        for (final c in v.charan) {
+          final m = c.mantra;
+          if (m == null || !m.hasPath) continue;
+          bharosaGinti[m.bharosa] = (bharosaGinti[m.bharosa] ?? 0) + 1;
+        }
       }
+      final bharosaLine = Bharosa.values
+          .map((b) => '${b.naam} ${bharosaGinti[b] ?? 0}')
+          .join(' · ');
 
       // ignore: avoid_print
       print('''
@@ -267,7 +321,8 @@ void main() {
   🚧 कंटेंट की हालत
      पूजाएँ       ${taiyar.length} / ${suchi.length} की फ़ाइल बनी
      पंडित जी से  $paas / ${suchi.length} पास
-     मंत्र        $mantraBhare / $mantraKul का पाठ भरा
+     मंत्र        $mantraBhare / $mantraKul का पाठ भरा (ड्राफ़्ट)
+     भरोसा        $bharosaLine
      रिकॉर्डिंग   $mantraAudio / $mantraKul
      ➜ रिलीज़ के लिए: बारहों पास, हर मंत्र भरा और रिकॉर्ड किया हुआ
 ''');

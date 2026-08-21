@@ -54,6 +54,7 @@ class _VidhiListScreenState extends State<VidhiListScreen> {
 
           final suchi = snap.data!;
           final taiyar = suchi.where((e) => e.taiyar).length;
+          final paas = suchi.where((e) => e.paas).length;
 
           return Panna(
             children: [
@@ -69,10 +70,19 @@ class _VidhiListScreenState extends State<VidhiListScreen> {
                     ),
                   ),
 
-              // सच्चाई साफ़ लिखी है — कितनी तैयार हैं और कितनी नहीं।
+              // सच्चाई साफ़ लिखी है — और सबसे ज़रूरी संख्या पंडित जी वाली है,
+              // कितनी पूजाएँ लिखी जा चुकीं वो नहीं।
               Text(
-                '$taiyar / ${suchi.length} पूजाएँ तैयार हैं। बाक़ी पर काम चल '
-                'रहा है — हर विधि पंडित जी से जाँच करवाकर ही जोड़ी जाती है।',
+                taiyar < suchi.length
+                    ? '$taiyar / ${suchi.length} पूजाएँ जुड़ चुकी हैं, बाक़ी पर '
+                        'काम चल रहा है।'
+                    : paas == suchi.length
+                        ? 'सारी ${suchi.length} पूजाएँ पंडित जी से जाँची हुई हैं।'
+                        : 'सारी ${suchi.length} पूजाएँ जुड़ चुकी हैं, पर अभी '
+                            '$paas / ${suchi.length} ही पंडित जी से जाँची गई '
+                            'हैं। जो नहीं जाँची, उन पर खोलते ही चेतावनी दिखती '
+                            'है — और मंत्र वहीं तक लिखे हैं जहाँ तक भरोसेमंद '
+                            'स्रोत मिला।',
                 style: Theme.of(context).textTheme.bodySmall,
               ),
             ],

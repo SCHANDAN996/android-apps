@@ -354,10 +354,17 @@ class _MantraKhand extends StatelessWidget {
     final theme = Theme.of(context);
 
     if (!mantra.hasPath) {
-      return const Chetavni(
-        'इस कदम का मंत्र अभी ऐप में नहीं जोड़ा गया है। जब तक प्रामाणिक '
-        'स्रोत से न आ जाए, हम अंदाज़े से कुछ नहीं लिखेंगे — तब तक अपनी '
-        'पूजा-पुस्तिका से पढ़ें, या मन ही मन भगवान का नाम लें।',
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Chetavni(
+            'इस कदम का मंत्र अभी ऐप में नहीं जोड़ा गया है। जब तक प्रामाणिक '
+            'स्रोत से न आ जाए, हम अंदाज़े से कुछ नहीं लिखेंगे — तब तक अपनी '
+            'पूजा-पुस्तिका से पढ़ें, या मन ही मन भगवान का नाम लें।',
+          ),
+          if (mantra.vikalp.isNotEmpty)
+            Text(mantra.vikalp, style: theme.textTheme.bodySmall),
+        ],
       );
     }
 
@@ -421,10 +428,25 @@ class _MantraKhand extends StatelessWidget {
         const SizedBox(height: 12),
 
         if (mantra.needsPanditReview)
-          const Chetavni(
-            'यह मंत्र अभी पंडित जी से पास नहीं हुआ है।',
+          Chetavni(
+            'यह मंत्र अभी पंडित जी से पास नहीं हुआ है '
+            '(भरोसा — ${mantra.bharosa.naam})।',
             serious: true,
           ),
+
+        // ── जहाँ एक से ज़्यादा चलन हैं, वो छिपाना नहीं है ──
+        //
+        // पंडित जी के लिए यही सबसे काम की लाइन है — वे यहीं बता देंगे कि
+        // आपके घर में कौन सा रूप चलता है।
+        if (mantra.vikalp.isNotEmpty)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: Text(
+              'दूसरा चलन — ${mantra.vikalp}',
+              style: theme.textTheme.bodySmall?.copyWith(height: 1.5),
+            ),
+          ),
+
         if (mantra.strot.isNotEmpty)
           Text(
             'स्रोत — ${mantra.strot}',

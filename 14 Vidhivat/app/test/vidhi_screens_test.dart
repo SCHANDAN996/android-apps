@@ -45,11 +45,19 @@ void main() {
   }
 
   /// किसी चीज़ तक स्क्रॉल करो — जैसे यूज़र उँगली से करता है।
+  ///
+  /// ⚠️ विधि प्लेयर में **दो** scrollable होते हैं — बाहर का `PageView`
+  /// (जो बग़ल में चलता है) और हर पन्ने के अंदर वाली सूची (जो ऊपर-नीचे)।
+  /// `find.byType(Scrollable).first` बाहर वाला पकड़ लेता है और ऊपर-नीचे
+  /// स्क्रॉल करने पर कुछ होता ही नहीं। इसलिए यहाँ साफ़-साफ़ `ListView`
+  /// के अंदर वाला चुना जाता है।
   Future<void> scrollTak(WidgetTester tester, Finder tak) async {
     await tester.scrollUntilVisible(
       tak,
       160,
-      scrollable: find.byType(Scrollable).first,
+      scrollable: find
+          .descendant(of: find.byType(ListView), matching: find.byType(Scrollable))
+          .first,
     );
     await tester.pumpAndSettle();
   }
@@ -109,18 +117,27 @@ void main() {
       expect(find.text('सत्यनारायण पूजा और कथा'), findsOneWidget);
     });
 
-    testWidgets('जो तैयार नहीं उस पर "जल्द आएगी" लिखा है और वो दबती नहीं',
-        (tester) async {
+    testWidgets('बारहों पूजाएँ सूची में हैं और खुलती हैं', (tester) async {
       phoneNaap(tester);
       await tester.pumpWidget(app(const VidhiListScreen()));
       await tester.pumpAndSettle();
 
-      expect(find.text('जल्द आएगी'), findsWidgets);
+      // अब कोई "जल्द आएगी" नहीं बची — सब जुड़ चुकी हैं।
+      expect(find.text('जल्द आएगी'), findsNothing);
 
-      // बंद पूजा पर टैप करने से कुछ नहीं खुलना चाहिए।
-      await tester.tap(find.text('गणेश पूजन'), warnIfMissed: false);
+      await tester.tap(find.text('गणेश पूजन'));
       await tester.pumpAndSettle();
-      expect(find.text('पूजा विधि'), findsOneWidget);
+      expect(find.text('विधि शुरू करें'), findsOneWidget);
+    });
+
+    testWidgets('कोई भी पूजा अभी पंडित जी से पास नहीं दिखती', (tester) async {
+      // यह गिनती ही असली हालत है — कितनी लिखी गईं वो नहीं (→ D-022)।
+      phoneNaap(tester);
+      await tester.pumpWidget(app(const VidhiListScreen()));
+      await tester.pumpAndSettle();
+
+      await scrollTak(tester, find.textContaining('पंडित जी से जाँची'));
+      expect(find.textContaining('0 / 12 ही पंडित जी से जाँची'), findsOneWidget);
     });
   });
 
@@ -258,21 +275,47 @@ void main() {
       expect(find.text('आगे'), findsNothing);
     });
 
-    testWidgets('जिस कदम का मंत्र ख़ाली है वहाँ बना हुआ मंत्र नहीं दिखता',
+    testWidgets('ड्राफ़्ट वाला मंत्र स्रोत और भरोसे के दर्जे के साथ दिखता है',
         (tester) async {
-      // अंदाज़े से मंत्र लिखना इस प्रोजेक्ट की सबसे बड़ी मनाही है।
       await kholoPlayer(tester);
 
       await tester.tap(find.text('आगे')); // 2 — चौकी सजाना
       await tester.pumpAndSettle();
-      await tester.tap(find.text('आगे')); // 3 — आचमन, यहाँ ख़ाली मंत्र है
+      await tester.tap(find.text('आगे')); // 3 — आचमन, यहाँ ड्राफ़्ट मंत्र है
       await tester.pumpAndSettle();
 
+      expect(find.text('मंत्र'), findsOneWidget);
+      expect(find.textContaining('केशवाय नमः'), findsOneWidget);
+
+      // ड्राफ़्ट कभी चुपचाप "तैयार" जैसा नहीं दिखना चाहिए (→ D-022)।
+      await scrollTak(tester, find.textContaining('पंडित जी से पास नहीं हुआ'));
+      expect(find.textContaining('पंडित जी से पास नहीं हुआ'), findsOneWidget);
+      expect(find.textContaining('स्रोत —'), findsOneWidget);
+    });
+
+    testWidgets('जिस कदम का मंत्र ख़ाली है वहाँ बना हुआ मंत्र नहीं दिखता',
+        (tester) async {
+      // अंदाज़े से मंत्र लिखना इस प्रोजेक्ट की सबसे बड़ी मनाही है।
+      // सातवाँ कदम नवग्रह का है — उसके नौ मंत्र जान-बूझकर नहीं लिखे गए।
+      await kholoPlayer(tester);
+
+      for (var i = 0; i < 6; i++) {
+        await tester.tap(find.text('आगे'));
+        await tester.pumpAndSettle();
+      }
+
+      expect(find.text('7 / 14'), findsOneWidget);
       expect(find.text('मंत्र'), findsNothing);
+
+      await scrollTak(
+          tester, find.textContaining('मंत्र अभी ऐप में नहीं जोड़ा गया'));
       expect(
         find.textContaining('मंत्र अभी ऐप में नहीं जोड़ा गया'),
         findsOneWidget,
       );
+      // ख़ाली छोड़ने की वजह भी दिखनी चाहिए।
+      await scrollTak(tester, find.textContaining('नौ ग्रहों के नौ अलग मंत्र'));
+      expect(find.textContaining('नौ ग्रहों के नौ अलग मंत्र'), findsOneWidget);
     });
   });
 

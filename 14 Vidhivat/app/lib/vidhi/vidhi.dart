@@ -86,6 +86,37 @@ enum Kathinai {
       );
 }
 
+/// इस पाठ पर कितना भरोसा है — **पंडित जी की जाँच से पहले।**
+///
+/// सारे मंत्र एक जैसे पक्के नहीं होते। कुछ हर पद्धति में हूबहू एक जैसे
+/// मिलते हैं (आचमन, गणेश का वैदिक मंत्र), कुछ में क्षेत्र और परिवार से
+/// शब्द बदलते हैं (षोडशोपचार के श्लोक, आरती)।
+///
+/// यह दर्जा पंडित जी को बताता है कि **कहाँ ध्यान से देखना है** — ताकि
+/// बैठक में समय वहीं लगे जहाँ ज़रूरत है।
+enum Bharosa {
+  /// कई प्रामाणिक स्रोतों में हूबहू एक जैसा मिला।
+  uncha('ऊँचा'),
+
+  /// स्रोत मिले, पर पाठ में जगह-जगह छोटे फ़र्क़ हैं।
+  madhyam('मध्यम'),
+
+  /// पद्धति से बहुत बदलता है — पंडित जी ही तय करें।
+  kam('कम');
+
+  final String naam;
+  const Bharosa(this.naam);
+
+  static Bharosa parse(String file, String raw) => Bharosa.values.firstWhere(
+        (b) => b.name == raw,
+        orElse: () => throw VidhiFormatException(
+          file,
+          'bharosa "$raw" ग़लत है। चलेंगी: '
+          '${Bharosa.values.map((b) => b.name).join(", ")}',
+        ),
+      );
+}
+
 /// मंत्र किस हालत में है।
 ///
 /// यही वो जगह है जहाँ "अधूरी चीज़ आधी बनाकर मत दिखाना" लागू होता है।
@@ -139,6 +170,13 @@ class Mantra {
   /// पाठ कहाँ से लिया — किताब का नाम, या "पंडित जी ने बोलकर लिखवाया"।
   final String strot;
 
+  /// पंडित जी की जाँच से पहले इस पाठ पर कितना भरोसा है।
+  final Bharosa bharosa;
+
+  /// जहाँ पाठ के एक से ज़्यादा चलन हैं, वो यहाँ साफ़ लिखा है — ताकि
+  /// पंडित जी बता सकें कि आपके घर में कौन सा चलता है।
+  final String vikalp;
+
   final MantraSthiti sthiti;
 
   const Mantra({
@@ -147,6 +185,8 @@ class Mantra {
     required this.arth,
     required this.audio,
     required this.strot,
+    required this.bharosa,
+    required this.vikalp,
     required this.sthiti,
   });
 
@@ -183,6 +223,15 @@ class Mantra {
         'कम से कम "draft" करो।',
       );
     }
+    // ड्राफ़्ट भी बिना स्रोत के नहीं चलेगा। पाठ लिखा है तो यह बताना ही
+    // पड़ेगा कि कहाँ से आया — वरना वो अंदाज़ा है, ड्राफ़्ट नहीं (→ D-022)।
+    if (sthiti == MantraSthiti.draft && strot.trim().isEmpty) {
+      throw VidhiFormatException(
+        file,
+        'मंत्र "draft" है पर strot ख़ाली है। बिना स्रोत के लिखा पाठ '
+        'ड्राफ़्ट नहीं, अंदाज़ा है।',
+      );
+    }
 
     return Mantra(
       devanagari: devanagari,
@@ -190,6 +239,11 @@ class Mantra {
       arth: _str(file, j, 'arth', required: false),
       audio: _str(file, j, 'audio', required: false),
       strot: strot,
+      bharosa: Bharosa.parse(
+        file,
+        _str(file, j, 'bharosa', required: false, fallback: 'kam'),
+      ),
+      vikalp: _str(file, j, 'vikalp', required: false),
       sthiti: sthiti,
     );
   }
