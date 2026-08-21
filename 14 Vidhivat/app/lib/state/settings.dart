@@ -74,6 +74,40 @@ class AppSettings extends ChangeNotifier {
     notifyListeners();
   }
 
+  // ── सामग्री की टिक ──
+  //
+  // यूज़र बाज़ार जाते वक़्त सूची में टिक लगाता है। वो टिक अगली बार भी
+  // दिखनी चाहिए — पर सिर्फ़ इसी फ़ोन में। हर पूजा की अपनी सूची।
+
+  static String _samagriKey(String pujaId) => 'samagri.$pujaId';
+
+  /// किस-किस सामग्री पर टिक लगी है (सूची में उसका क्रमांक)।
+  Set<int> samagriTicks(String pujaId) =>
+      (_prefs?.getStringList(_samagriKey(pujaId)) ?? const [])
+          .map(int.tryParse)
+          .whereType<int>()
+          .toSet();
+
+  Future<void> setSamagriTick(String pujaId, int index, bool tick) async {
+    final ab = samagriTicks(pujaId);
+    if (tick) {
+      ab.add(index);
+    } else {
+      ab.remove(index);
+    }
+    await _prefs?.setStringList(
+      _samagriKey(pujaId),
+      ab.map((i) => i.toString()).toList(),
+    );
+    notifyListeners();
+  }
+
+  /// सारी टिक हटा दो — अगली बार पूजा करते वक़्त काम आता है।
+  Future<void> clearSamagriTicks(String pujaId) async {
+    await _prefs?.remove(_samagriKey(pujaId));
+    notifyListeners();
+  }
+
   /// आज का पंचांग, चुनी हुई जगह और पद्धति से।
   Panchang panchangFor(DateTime day) => computePanchang(
         day.year,

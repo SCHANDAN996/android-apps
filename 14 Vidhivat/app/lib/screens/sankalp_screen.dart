@@ -31,7 +31,7 @@ class _SankalpScreenState extends State<SankalpScreen> {
     final day = DateTime.now();
     final p = settings.panchangFor(day);
 
-    if (!settings.hasYajman) return _NaamPoochho(onDone: () => setState(() {}));
+    if (!settings.hasYajman) return NaamPoochho(onDone: () => setState(() {}));
 
     final sankalp = buildSankalp(
       p,
@@ -155,7 +155,7 @@ class _SankalpScreenState extends State<SankalpScreen> {
               subtitle: const Text('बदलने के लिए दबाएँ'),
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (_) => _NaamPoochho(onDone: () {
+                  builder: (_) => NaamPoochho(onDone: () {
                     Navigator.of(context).pop();
                     setState(() {});
                   }),
@@ -170,16 +170,18 @@ class _SankalpScreenState extends State<SankalpScreen> {
 }
 
 /// नाम और गोत्र पूछने वाला पन्ना — एक बार भरो, फिर हमेशा याद।
-class _NaamPoochho extends StatefulWidget {
+///
+/// विधि प्लेयर भी इसी को खोलता है, इसलिए यह सार्वजनिक है।
+class NaamPoochho extends StatefulWidget {
   final VoidCallback onDone;
 
-  const _NaamPoochho({required this.onDone});
+  const NaamPoochho({super.key, required this.onDone});
 
   @override
-  State<_NaamPoochho> createState() => _NaamPoochhoState();
+  State<NaamPoochho> createState() => NaamPoochhoState();
 }
 
-class _NaamPoochhoState extends State<_NaamPoochho> {
+class NaamPoochhoState extends State<NaamPoochho> {
   late final _naam = TextEditingController(text: settings.name);
   late String _gotra = settings.gotra;
 

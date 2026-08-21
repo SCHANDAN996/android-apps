@@ -5,6 +5,7 @@ import 'screens/calendar_screen.dart';
 import 'screens/muhurta_screen.dart';
 import 'screens/sankalp_screen.dart';
 import 'screens/settings_screen.dart';
+import 'screens/vidhi_list_screen.dart';
 import 'state/settings.dart';
 import 'theme.dart';
 
@@ -43,7 +44,11 @@ class HomeShell extends StatefulWidget {
 class _HomeShellState extends State<HomeShell> {
   int _index = 0;
 
+  // विधि सबसे पहले — यही ऐप का दिल है (→ D-002) और यही इकलौती चीज़ है
+  // जो किसी प्रतियोगी के पास नहीं (→ D-012)। पंचांग सहारा है, बिकने
+  // वाली चीज़ नहीं।
   static const _pages = [
+    VidhiListScreen(),
     AajScreen(),
     CalendarScreen(),
     SankalpScreen(),
@@ -59,6 +64,11 @@ class _HomeShellState extends State<HomeShell> {
         selectedIndex: _index,
         onDestinationSelected: (i) => setState(() => _index = i),
         destinations: const [
+          NavigationDestination(
+            icon: Icon(Icons.local_fire_department_outlined),
+            selectedIcon: Icon(Icons.local_fire_department),
+            label: 'विधि',
+          ),
           NavigationDestination(
             icon: Icon(Icons.wb_sunny_outlined),
             selectedIcon: Icon(Icons.wb_sunny),

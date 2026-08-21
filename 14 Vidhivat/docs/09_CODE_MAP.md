@@ -266,18 +266,66 @@ Flutter, package `com.massapp.vidhivat`। इंजन `path` dependency की
 है — **ऐप में एक भी गणना नहीं, सब इंजन से आता है।**
 
 ```
-app/lib/
-├── main.dart              पाँच पन्नों की पट्टी (NavigationBar)
-├── theme.dart             हल्दी · सिंदूर · तुलसी — और हर जगह बड़े अक्षर
-├── state/settings.dart    जगह, पद्धति, यजमान + 35 शहर
-├── widgets/common.dart    Khand · Pankti · Chetavni · Panna + समय के औज़ार
-└── screens/
-    ├── aaj_screen.dart       आज का पूरा पंचांग (दिन आगे-पीछे कर सकते हैं)
-    ├── calendar_screen.dart  महीना + साल के त्योहार (दो tab)
-    ├── sankalp_screen.dart   ⭐ संकल्प — नाम/गोत्र पूछकर पूरा वाक्य
-    ├── muhurta_screen.dart   चौघड़िया + होरा + "अभी क्या चल रहा है"
-    └── settings_screen.dart  शहर, अमांत/पूर्णिमांत, यजमान
+app/
+├── assets/vidhi/          पूजा का कंटेंट — JSON, ऐप में बंडल
+│   ├── _suchi.json        बारह पूजाओं की हल्की सूची
+│   ├── satyanarayan.json  एक पूरी पूजा
+│   └── audio/             मंत्रों की रिकॉर्डिंग (अभी ख़ाली)
+│
+├── test/
+│   ├── vidhi_test.dart          21 — कंटेंट का ढाँचा
+│   └── vidhi_screens_test.dart  20 — स्क्रीनों पर उँगली चलाकर
+│
+└── lib/
+    ├── main.dart          छह पन्नों की पट्टी (NavigationBar)
+    ├── theme.dart         हल्दी · सिंदूर · तुलसी — और हर जगह बड़े अक्षर
+    ├── state/settings.dart    जगह, पद्धति, यजमान, सामग्री की टिक + 35 शहर
+    ├── widgets/common.dart    Khand · Pankti · Chetavni · Panna + समय के औज़ार
+    ├── vidhi/
+    │   ├── vidhi.dart     पूजा का ढाँचा + JSON पढ़ना + जाँच
+    │   └── bhandar.dart   assets से पढ़ने वाला (याद भी रखता है)
+    └── screens/
+        ├── vidhi_list_screen.dart    पूजाओं की सूची — पहला पन्ना
+        ├── vidhi_screen.dart         एक पूजा का विवरण
+        ├── samagri_screen.dart       सामग्री — टिक + WhatsApp
+        ├── vidhi_player_screen.dart  ⭐ विधि प्लेयर
+        ├── aaj_screen.dart       आज का पूरा पंचांग (दिन आगे-पीछे कर सकते हैं)
+        ├── calendar_screen.dart  महीना + साल के त्योहार (दो tab)
+        ├── sankalp_screen.dart   ⭐ संकल्प — नाम/गोत्र पूछकर पूरा वाक्य
+        ├── muhurta_screen.dart   चौघड़िया + होरा + "अभी क्या चल रहा है"
+        └── settings_screen.dart  शहर, अमांत/पूर्णिमांत, यजमान
 ```
+
+### कंटेंट की परत — `lib/vidhi/`
+
+गणना नहीं, सिर्फ़ कंटेंट पढ़ना और जाँचना। **इंजन में क्यों नहीं → D-021**
+(Flutter assets सिर्फ़ Flutter पैकेज से बंडल होते हैं)।
+
+| नाम | क्या |
+|---|---|
+| `Vidhi` | एक पूरी पूजा — `charan`, `samagri`, `sawaal`, `strot`, `jaanch` |
+| `Charan` | एक कदम — शीर्षक, विवरण, मंत्र, `vishesh` |
+| `CharanVishesh` | `saada` · **`sankalp`** · `katha` · `aarti` |
+| `Mantra` | देवनागरी, रोमन, अर्थ, ऑडियो, स्रोत, `sthiti` |
+| `MantraSthiti` | `khaali` · `draft` · `paas` |
+| `Samagri` | वस्तु, मात्रा, इकाई, ज़रूरी/वैकल्पिक, समूह |
+| `VidhiSuchiEntry` | सूची की एक पंक्ति + `taiyar` झंडी |
+| `VidhiFormatException` | ग़लत JSON — **संदेश में फ़ाइल का नाम आता है** |
+| `vidhiBhandar` | पूरे ऐप के लिए एक ही भंडार |
+
+⚠️ **ढाँचा ख़ुद रखवाली करता है।** बिना पाठ/स्रोत के मंत्र `paas` नहीं हो
+सकता, कच्चे मंत्र वाली पूजा `paas` नहीं हो सकती, `taiyar` झूठ नहीं बोल
+सकती। पूरी सूची → D-021।
+
+### विधि प्लेयर — `screens/vidhi_player_screen.dart`
+
+⛔ **इस स्क्रीन पर विज्ञापन कभी नहीं** (→ D-008)। कोई ad widget मत जोड़ना।
+
+- एक कदम, एक पन्ना (`PageView`)
+- विवरण 20px, मंत्र 26px — दो फ़ुट दूर से पढ़ने लायक
+- `WakelockPlus` — पूजा के बीच स्क्रीन बंद नहीं होती
+- चौथा कदम संकल्प का है — वहीं पंचांग से पूरा वाक्य बनता है (→ D-006)
+- मंत्र ख़ाली हो तो **चेतावनी दिखती है, बना हुआ मंत्र नहीं** (→ D-022)
 
 ### साझा widgets — `widgets/common.dart`
 | नाम | क्या |
@@ -311,9 +359,17 @@ app/lib/
 2. नया widget → `widgets/common.dart` में, ताकि हर जगह एक जैसा दिखे
 3. समय दिखाओ तो `dinKaNishan()` ज़रूर लगाओ
 4. नई स्क्रीन → `main.dart` की `_pages` सूची में जोड़ो
+5. **जाँच लिखो** — `app/test/` में, फ़ोन के नाप (360×800 dp) पर (→ D-024)
+
+### नई पूजा जोड़नी हो तो
+1. `assets/vidhi/satyanarayan.json` की नक़ल करो
+2. `_suchi.json` में entry डालो और `taiyar` सच करो
+3. `flutter test` — ढाँचा ख़ुद बता देगा क्या छूट रहा है
+4. `docs/06_CONTENT_TRACKER.md` अपडेट करो
+5. ⚠️ **मंत्र याददाश्त से मत लिखना** — `sthiti: "khaali"` छोड़ दो (→ D-022)
 
 ```bash
-cd app && flutter analyze && flutter run -d <device-id>
+cd app && flutter analyze && flutter test && flutter run -d <device-id>
 ```
 
 ⚠️ `adb` PATH में नहीं है: `H:\Android\Sdk\platform-tools\adb.exe`

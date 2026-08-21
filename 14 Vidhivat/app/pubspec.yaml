@@ -14,6 +14,9 @@ dependencies:
   shared_preferences: ^2.2.2
   share_plus: ^11.1.0
 
+  # विधि प्लेयर के लिए — पूजा के बीच स्क्रीन बंद नहीं होनी चाहिए
+  wakelock_plus: ^1.2.8
+
   # पंचांग इंजन — शुद्ध Dart, कोई Flutter निर्भरता नहीं
   panchang_engine:
     path: ../engine
@@ -25,3 +28,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  # पूजा का कंटेंट — सब ऐप के अंदर बंडल, कोई डाउनलोड नहीं (→ D-004)
+  #
+  # ⚠️ पहली रिकॉर्डिंग आते ही यहाँ `- assets/vidhi/audio/` भी जोड़ना
+  # पड़ेगा — Flutter सिर्फ़ इसी फ़ोल्डर की फ़ाइलें लेता है, अंदर वाले
+  # फ़ोल्डर की नहीं। (अभी नहीं जोड़ा क्योंकि ख़ाली फ़ोल्डर पर build टूटता है।)
+  assets:
+    - assets/vidhi/

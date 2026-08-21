@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+
+  "_note": "v1 की बारह पूजाएँ (→ D-009)। जो बन चुकी उन पर taiyar सच है और उसी नाम की .json फ़ाइल इसी फ़ोल्डर में है। जो नहीं बनी वो सूची में 'जल्द आएगी' के साथ दिखती है। पूरी हालत docs/06_CONTENT_TRACKER.md में।",
+
+  "poojayein": [
+    {
+      "id": "nitya_pooja",
+      "naam": "नित्य पूजा",
+      "shreni": "nitya",
+      "ekLine": "रोज़ की सरल घर की पूजा",
+      "taiyar": false,
+      "paas": false
+    },
+    {
+      "id": "satyanarayan",
+      "naam": "सत्यनारायण पूजा और कथा",
+      "shreni": "tyohar",
+      "ekLine": "घर में की जाने वाली सबसे आम पूजा",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "ganesh_poojan",
+      "naam": "गणेश पूजन",
+      "shreni": "nitya",
+      "ekLine": "हर शुभ काम की शुरुआत",
+      "taiyar": false,
+      "paas": false
+    },
+    {
+      "id": "grih_pravesh",
+      "naam": "गृह प्रवेश",
+      "shreni": "sanskar",
+      "ekLine": "नए घर में पहला प्रवेश",
+      "taiyar": false,
+      "paas": false
+    },
+    {
+      "id": "lakshmi_poojan",
+      "naam": "दीपावली लक्ष्मी-गणेश पूजन",
+      "shreni": "tyohar",
+      "ekLine": "साल का सबसे बड़ा पूजन",
+      "taiyar": false,
+      "paas": false
+    },
+    {
+      "id": "kalash_sthapana",
+      "naam": "नवरात्रि कलश स्थापना",
+      "shreni": "tyohar",
+      "ekLine": "नवरात्रि के नौ दिनों की शुरुआत",
+      "taiyar": false,
+      "paas": false
+    },
+    {
+      "id": "mundan",
+      "naam": "मुंडन संस्कार",
+      "shreni": "sanskar",
+      "ekLine": "बच्चे के पहले बाल उतारना",
+      "taiyar": false,
+      "paas": false
+    },
+    {
+      "id": "karwa_chauth",
+      "naam": "करवा चौथ पूजन",
+      "shreni": "vrat",
+      "ekLine": "चाँद निकलने तक का व्रत",
+      "taiyar": false,
+      "paas": false
+    },
+    {
+      "id": "shraadh",
+      "naam": "श्राद्ध और तर्पण",
+      "shreni": "pitru",
+      "ekLine": "पितरों के लिए सरल घरेलू विधि",
+      "taiyar": false,
+      "paas": false
+    },
+    {
+      "id": "rudrabhishek",
+      "naam": "शिवरात्रि और सरल रुद्राभिषेक",
+      "shreni": "tyohar",
+      "ekLine": "शिवलिंग पर अभिषेक",
+      "taiyar": false,
+      "paas": false
+    },
+    {
+      "id": "vahan_pooja",
+      "naam": "वाहन पूजा",
+      "shreni": "sanskar",
+      "ekLine": "नई गाड़ी की छोटी पूजा",
+      "taiyar": false,
+      "paas": false
+    },
+    {
+      "id": "upanayan",
+      "naam": "उपनयन (जनेऊ) संस्कार",
+      "shreni": "sanskar",
+      "ekLine": "यज्ञोपवीत धारण",
+      "taiyar": false,
+      "paas": false
+    }
+  ]
+}
