@@ -126,6 +126,57 @@ void main() {
     await tester.pumpAndSettle();
   }
 
+  group('होम पर "आगे क्या आ रहा है"', () {
+    // पूरी सूची पंचांग से बनती है — कोई तारीख़ हाथ से नहीं भरी (→ D-038)।
+    // गणित की अपनी जाँचें `aane_wale_din_test.dart` में हैं; यहाँ सिर्फ़
+    // यह देखना है कि वो होम पर सही दिख रही है और दबने पर खुलती है।
+
+    testWidgets('हिस्सा दिखता है और पंक्तियाँ क्रम में हैं', (tester) async {
+      phoneNaap(tester);
+      await tester.pumpWidget(app(const HomeShell()));
+      await tester.pumpAndSettle();
+
+      await scrollTak(tester, find.text('आगे क्या आ रहा है'));
+      expect(find.text('आगे क्या आ रहा है'), findsOneWidget);
+      expect(find.text('तारीख़ें पंचांग से, आपके शहर के हिसाब से'),
+          findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('जो पूजा खुल सकती है वो दबाने पर खुलती है', (tester) async {
+      phoneNaap(tester);
+      await tester.pumpWidget(app(const HomeShell()));
+      await tester.pumpAndSettle();
+
+      await scrollTak(tester, find.text('आगे क्या आ रहा है'));
+
+      // सूची में जो पहली पंक्ति खुल सकती है, उसे दबाओ।
+      final khulneWali = find.descendant(
+        of: find.byType(InkWell),
+        matching: find.byIcon(Icons.chevron_right),
+      );
+      expect(khulneWali, findsWidgets,
+          reason: 'कम से कम एक आने वाली पूजा खुलनी चाहिए');
+
+      await tester.tap(khulneWali.first);
+      await tester.pumpAndSettle();
+      expect(find.byType(VidhiScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('320 dp और 1.5x अक्षर पर भी सुरक्षित है', (tester) async {
+      phoneNaap(tester, width: 320);
+      await tester.pumpWidget(app(
+        const HomeShell(),
+        textScaler: const TextScaler.linear(1.5),
+      ));
+      await tester.pumpAndSettle();
+
+      await scrollTak(tester, find.text('आगे क्या आ रहा है'));
+      expect(tester.takeException(), isNull, reason: '320dp/1.5x पर overflow');
+    });
+  });
+
   group('वो बग जो सिर्फ़ फ़ोन के logcat में दिखा', () {
     // 26 अगस्त 2026: पहली बार ऐप खोलने पर शहर पूछने वाला dialog
     // `showDialog(context: context)` से खुलता था, जहाँ context

@@ -414,7 +414,7 @@ String _vidhiWithMantra(String mantraFields) => '''
   "shreni": "nitya",
   "scope": "self_guided",
   "parichay": "सिर्फ़ जाँच के लिए",
-  "kabKarein": { "saral": "कभी भी", "tithiSuchi": [], "vaarSuchi": [], "note": "" },
+  "kabKarein": { "saral": "कभी भी", "tithiSuchi": [], "vaarSuchi": [], "note": "", "dohrata": true },
   "samayMinute": 2,
   "kathinai": "aasan",
   "sankalpPurpose": "",

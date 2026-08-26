@@ -446,11 +446,31 @@ class KabKarein {
   /// कोई और बात, जैसे "किसी शुभ काम के बाद भी की जाती है"
   final String note;
 
+  /// **यह नियम सचमुच दोहराता है या नहीं** (→ D-038)।
+  ///
+  /// यह फ़र्क़ बहुत ज़रूरी है। दोनों पूजाओं में `vaarSuchi` भरी होती है,
+  /// पर उसका मतलब अलग होता है:
+  ///
+  /// - **हनुमान पूजा** — हर मंगल और शनि को सचमुच की जाती है → `true`
+  /// - **गृह प्रवेश** — `vaarSuchi` का मतलब सिर्फ़ यह है कि *कौन से वार
+  ///   शुभ माने जाते हैं*। गृह प्रवेश हर बुधवार को नहीं होता, वो ज़िंदगी
+  ///   में एक बार होता है और तारीख़ पंडित जी तय करते हैं (→ D-019) →
+  ///   `false`
+  ///
+  /// यही बात तिथि पर भी लागू है — सत्यनारायण हर पूर्णिमा को होती है
+  /// (`true`), पर करवा चौथ साल में एक बार, भले ही कृष्ण चतुर्थी हर महीने
+  /// आती हो (`false`)।
+  ///
+  /// `false` वाली पूजाएँ "आगे क्या आ रहा है" में नहीं आतीं। वे त्योहार
+  /// के नियम से आती हैं, या नहीं आतीं।
+  final bool dohrata;
+
   const KabKarein({
     required this.saral,
     required this.tithiSuchi,
     required this.vaarSuchi,
     required this.note,
+    required this.dohrata,
   });
 
   factory KabKarein.fromJson(String file, Map<String, dynamic> j) {
@@ -471,6 +491,7 @@ class KabKarein {
       tithiSuchi: tithis,
       vaarSuchi: vaars,
       note: _str(file, j, 'note', required: false),
+      dohrata: _bool(file, j, 'dohrata'),
     );
   }
 }

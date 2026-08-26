@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../state/settings.dart';
 import '../theme.dart';
+import '../vidhi/aane_wale_din.dart';
 import '../vidhi/bhandar.dart';
 import '../vidhi/devotional_assets.dart';
 import '../vidhi/vidhi.dart';
@@ -97,10 +98,28 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
       if (!popular.any((item) => item.id == entry.id)) popular.add(entry);
     }
 
+    // ── आगे कौन सी पूजा कब है ──
+    //
+    // पूरी सूची पंचांग से बनती है — त्योहार इंजन के व्यापिनी नियम से,
+    // और बाक़ी हर पूजा की अपनी `kabKarein` से। कोई तारीख़ हाथ से नहीं
+    // भरी, इसलिए दस साल बाद भी सही रहेगी (→ D-038)।
+    final sabhiVidhi = <Vidhi>[];
+    for (final entry in ready) {
+      sabhiVidhi.add(await vidhiBhandar.vidhi(entry.id));
+    }
+    final aage = aaneWaliPujaayein(
+      pujaayein: sabhiVidhi,
+      place: settings.place,
+      masaSystem: settings.masaSystem,
+      kitne: 5,
+      dinAage: 45,
+    );
+
     return _DashboardData(
       featuredEntry: featuredEntry,
       featuredVidhi: featuredVidhi,
       popular: popular,
+      aageAaneWale: aage,
     );
   }
 
@@ -156,6 +175,18 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                     ),
                     const SizedBox(height: VidhivatSpacing.lg),
                     const _PanchangPanel(),
+                    if (data.aageAaneWale.isNotEmpty) ...[
+                      const SizedBox(height: VidhivatSpacing.xxl),
+                      const VidhivatSectionHeader(
+                        title: 'आगे क्या आ रहा है',
+                        supportingText: 'तारीख़ें पंचांग से, आपके शहर के हिसाब से',
+                      ),
+                      const SizedBox(height: VidhivatSpacing.md),
+                      _AageAaneWali(
+                        avsar: data.aageAaneWale,
+                        onOpen: _openPuja,
+                      ),
+                    ],
                     const SizedBox(height: VidhivatSpacing.xl),
                     const VidhivatSectionHeader(
                       title: 'जल्दी करें',
@@ -731,9 +762,124 @@ class _DashboardData {
   final Vidhi featuredVidhi;
   final List<VidhiSuchiEntry> popular;
 
+  /// आगे आने वाली पूजाएँ, नज़दीक से दूर के क्रम में (→ D-038)।
+  final List<PujaAvsar> aageAaneWale;
+
   const _DashboardData({
     required this.featuredEntry,
     required this.featuredVidhi,
     required this.popular,
+    required this.aageAaneWale,
   });
+}
+
+/// **आगे क्या आ रहा है** — आज, कल, परसों और उसके बाद की पूजाएँ, क्रम से।
+///
+/// हर पंक्ति में तीन चीज़ें हैं: कब (आज/कल/12 दिन बाद), क्या (पूजा या
+/// त्योहार का नाम), और क्यों (पूर्णिमा, मंगलवार, त्योहार)।
+///
+/// ⚠️ जिस त्योहार की विधि ऐप में नहीं बनी, वो **दिखता तो है पर खुलता
+/// नहीं** — और उस पर साफ़ लिखा है "विधि अभी नहीं"। तारीख़ बता देना अपने
+/// आप में काम की चीज़ है; उसके लिए विधि होना ज़रूरी नहीं।
+class _AageAaneWali extends StatelessWidget {
+  final List<PujaAvsar> avsar;
+  final void Function(String id) onOpen;
+
+  const _AageAaneWali({required this.avsar, required this.onOpen});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = VidhivatTheme.colorsOf(context);
+
+    return VidhivatSurfaceCard(
+      padding: EdgeInsets.zero,
+      child: Column(
+        children: [
+          for (var i = 0; i < avsar.length; i++) ...[
+            if (i > 0)
+              Divider(height: 1, thickness: 1, color: colors.borderSubtle),
+            _AvsarPankti(
+              avsar: avsar[i],
+              onOpen: onOpen,
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+class _AvsarPankti extends StatelessWidget {
+  final PujaAvsar avsar;
+  final void Function(String id) onOpen;
+
+  const _AvsarPankti({required this.avsar, required this.onOpen});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = VidhivatTheme.colorsOf(context);
+    final text = Theme.of(context).textTheme;
+    final aajHai = avsar.kitneDinBaad == 0;
+
+    final semantics = avsar.khulSaktiHai
+        ? '${avsar.naam}, ${avsar.kabLikha}, ${avsar.kyon}. खोलने के लिए दबाएँ'
+        : '${avsar.naam}, ${avsar.kabLikha}, ${avsar.kyon}. इसकी विधि अभी ऐप में नहीं है';
+
+    return Semantics(
+      button: avsar.khulSaktiHai,
+      label: semantics,
+      excludeSemantics: true,
+      child: InkWell(
+        onTap: avsar.khulSaktiHai ? () => onOpen(avsar.pujaId) : null,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: VidhivatSpacing.lg,
+            vertical: VidhivatSpacing.md,
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // ── कब ──
+              SizedBox(
+                width: 76,
+                child: Text(
+                  avsar.kabLikha,
+                  style: text.labelLarge?.copyWith(
+                    fontWeight: aajHai ? FontWeight.w700 : FontWeight.w600,
+                    color: aajHai ? colors.primary : colors.textSecondary,
+                  ),
+                ),
+              ),
+              // ── क्या और क्यों ──
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      avsar.naam,
+                      style: text.bodyLarge?.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: colors.textPrimary,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      avsar.khulSaktiHai
+                          ? avsar.kyon
+                          : '${avsar.kyon} · विधि अभी नहीं',
+                      style: text.bodySmall?.copyWith(
+                        color: colors.textSecondary,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              if (avsar.khulSaktiHai)
+                Icon(Icons.chevron_right, color: colors.textSecondary),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
