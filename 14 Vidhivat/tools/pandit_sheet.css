@@ -1,0 +1,399 @@
+/* ─────────────────────────────────────────────────────────────
+   विधिवत जाँच-पत्र
+   काग़ज़ पहले, स्क्रीन बाद में। रंग ऐप के theme.dart से ही लिए हैं —
+   हल्दी, सिंदूर, तुलसी, स्याही, काग़ज़।
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  --kagaz:      #FDF8F0;
+  --kagaz-2:    #F6EFE2;
+  --ink:        #2A1F14;
+  --ink-soft:   #6B5D4D;
+  --ink-faint:  #9A8B77;
+  --haldi:      #B8860B;
+  --sindoor:    #9B2C1E;
+  --tulsi:      #2E6B4F;
+  --rekha:      #DFD3BE;
+  --rekha-2:    #EBE2D2;
+  --likhne-ki:  #C9BBA3;
+
+  --sanskrit: "Tiro Devanagari Sanskrit", "Nirmala UI", "Noto Serif Devanagari", serif;
+  --body:     "Mukta", "Nirmala UI", "Noto Sans Devanagari", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --kagaz:     #16120D;
+    --kagaz-2:   #1F1A14;
+    --ink:       #EDE4D6;
+    --ink-soft:  #B5A794;
+    --ink-faint: #7E7263;
+    --haldi:     #D9A441;
+    --sindoor:   #D1705F;
+    --tulsi:     #6BB694;
+    --rekha:     #3A3129;
+    --rekha-2:   #2A241D;
+    --likhne-ki: #4A4036;
+  }
+}
+
+:root[data-theme="dark"] {
+  --kagaz:     #16120D;
+  --kagaz-2:   #1F1A14;
+  --ink:       #EDE4D6;
+  --ink-soft:  #B5A794;
+  --ink-faint: #7E7263;
+  --haldi:     #D9A441;
+  --sindoor:   #D1705F;
+  --tulsi:     #6BB694;
+  --rekha:     #3A3129;
+  --rekha-2:   #2A241D;
+  --likhne-ki: #4A4036;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--kagaz);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.patra {
+  max-width: 190mm;
+  margin: 0 auto;
+  padding: 26px 22px 80px;
+}
+
+/* ── शीर्ष ── */
+
+.shirsh {
+  border-top: 3px solid var(--haldi);
+  padding-top: 18px;
+  margin-bottom: 26px;
+}
+
+.shirsh .eyebrow {
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--haldi);
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+h1 {
+  font-family: var(--sanskrit);
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 400;
+  margin: 0 0 10px;
+  text-wrap: balance;
+}
+
+.shirsh p {
+  margin: 0 0 8px;
+  max-width: 62ch;
+  color: var(--ink-soft);
+}
+
+.bharne-wale {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rekha);
+  font-size: 13.5px;
+}
+
+.bharne-wale span { color: var(--ink-faint); }
+
+.bharne-wale b {
+  font-weight: 500;
+  color: var(--ink);
+  border-bottom: 1px solid var(--likhne-ki);
+  display: inline-block;
+  min-width: 130px;
+}
+
+/* ── भाग ── */
+
+.bhaag {
+  margin-top: 34px;
+  break-before: page;
+}
+.bhaag:first-of-type { break-before: auto; }
+
+.bhaag > h2 {
+  font-family: var(--sanskrit);
+  font-size: 21px;
+  font-weight: 400;
+  margin: 0;
+  padding: 7px 0 7px 12px;
+  border-left: 4px solid var(--haldi);
+  background: var(--kagaz-2);
+}
+
+.bhaag > .bhoomika {
+  margin: 12px 0 20px;
+  max-width: 64ch;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+/* ── एक मंत्र का डिब्बा ── */
+
+.khand {
+  border: 1px solid var(--rekha);
+  border-radius: 3px;
+  margin-bottom: 16px;
+  break-inside: avoid;
+  background: var(--kagaz);
+}
+
+.khand > header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--rekha-2);
+  background: var(--kagaz-2);
+}
+
+.ank {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--haldi);
+  min-width: 2.4em;
+}
+
+.khand > header h3 {
+  margin: 0;
+  font-size: 16.5px;
+  font-weight: 600;
+  flex: 1;
+}
+
+.darja {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.darja.uncha  { color: var(--tulsi);   border: 1px solid var(--tulsi); }
+.darja.madhyam{ color: var(--haldi);   border: 1px solid var(--haldi); }
+.darja.kam    { color: var(--sindoor); border: 1px solid var(--sindoor); background: color-mix(in srgb, var(--sindoor) 8%, transparent); }
+
+.khand > .andar { padding: 14px; }
+
+.paath {
+  font-family: var(--sanskrit);
+  font-size: 19px;
+  line-height: 2.05;
+  white-space: pre-line;
+  margin: 0 0 12px;
+}
+
+.roman {
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--ink-faint);
+  white-space: pre-line;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.arth {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+  padding-left: 12px;
+  border-left: 2px solid var(--rekha);
+  max-width: 66ch;
+}
+
+.chhota-lebal {
+  font-size: 10.5px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.strot, .vikalp {
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  margin: 0 0 10px;
+  max-width: 70ch;
+}
+.vikalp { color: var(--ink-soft); }
+.vikalp .chhota-lebal { color: var(--sindoor); }
+
+.khaali-hai {
+  font-family: var(--sanskrit);
+  font-size: 17px;
+  color: var(--sindoor);
+  margin: 0 0 10px;
+}
+
+/* ── जहाँ पंडित जी लिखेंगे ── */
+
+.likho {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--rekha);
+}
+
+.tick-line {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.dabba {
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid var(--ink-soft);
+  border-radius: 2px;
+  flex: none;
+}
+
+.lakeer {
+  border-bottom: 1px solid var(--likhne-ki);
+  height: 26px;
+}
+.lakeer + .lakeer { margin-top: 4px; }
+
+/* ── तालिका ── */
+
+.tal-wrap { overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  break-inside: auto;
+}
+
+th {
+  text-align: left;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  padding: 6px 9px;
+  border-bottom: 1.5px solid var(--haldi);
+  white-space: nowrap;
+}
+
+td {
+  padding: 9px;
+  border-bottom: 1px solid var(--rekha-2);
+  vertical-align: top;
+}
+
+tr { break-inside: avoid; }
+
+td.n {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+  font-weight: 600;
+  width: 2.2em;
+}
+
+td.roop {
+  font-family: var(--sanskrit);
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+td.byakaran { color: var(--ink-soft); font-size: 12.5px; }
+
+td.likhne { width: 26%; border-bottom: 1px solid var(--likhne-ki); }
+
+tr.shak td { background: color-mix(in srgb, var(--sindoor) 6%, transparent); }
+tr.shak td.roop { color: var(--sindoor); font-weight: 500; }
+
+/* ── चेतावनी ── */
+
+.dhyan {
+  border-left: 4px solid var(--sindoor);
+  background: color-mix(in srgb, var(--sindoor) 7%, transparent);
+  padding: 13px 16px;
+  margin: 18px 0;
+  border-radius: 0 3px 3px 0;
+  break-inside: avoid;
+}
+.dhyan h4 {
+  margin: 0 0 6px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--sindoor);
+}
+.dhyan p { margin: 0 0 8px; font-size: 13.5px; max-width: 64ch; }
+.dhyan p:last-child { margin-bottom: 0; }
+
+.antim {
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 3px solid var(--haldi);
+  break-inside: avoid;
+}
+.antim h2 { font-family: var(--sanskrit); font-size: 19px; font-weight: 400; margin: 0 0 12px; }
+.antim ol { margin: 0 0 20px; padding-left: 22px; font-size: 14px; }
+.antim li { margin-bottom: 6px; }
+
+.dastkhat {
+  display: flex;
+  gap: 34px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+.dastkhat div { flex: 1 1 190px; }
+.dastkhat .lakeer { height: 40px; }
+.dastkhat span {
+  font-size: 11px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+.chaap-sanket {
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  border: 1px dashed var(--rekha);
+  padding: 9px 13px;
+  border-radius: 3px;
+  margin-bottom: 22px;
+}
+
+/* ── छापते वक़्त ── */
+
+@page { size: A4; margin: 14mm 13mm; }
+
+@media print {
+  body { background: #fff; color: #000; font-size: 10.5pt; }
+  .patra { max-width: none; padding: 0; }
+  .chaap-sanket { display: none; }
+  .khand, .dhyan, tr, .antim { break-inside: avoid; }
+  .bhaag { break-before: page; }
+  .bhaag:first-of-type { break-before: auto; }
+  h1 { font-size: 20pt; }
+  .bhaag > h2 { font-size: 14pt; }
+  .paath { font-size: 13pt; line-height: 1.95; }
+  a { text-decoration: none; color: inherit; }
+}

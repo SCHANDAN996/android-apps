@@ -8,6 +8,8 @@
 > **14 छोटे टुकड़े, हर एक पर हाँ या ना।** (→ D-020)
 
 **बनाया:** 21 अगस्त 2026 · **कोड:** `engine/lib/src/sankalp.dart`
+**छापने वाली शीट:** `docs/12_PANDIT_SHEET.html` — यह पन्ना उसके भाग २ में
+अपने आप चला जाता है (`python tools/banao_pandit_sheet.py`)
 **हालत:** ⬜ पंडित जी से जाँच बाक़ी — `Sankalp.needsPanditReview` अभी भी `true`
 
 ---
