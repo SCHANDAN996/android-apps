@@ -1,4 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- केवल app खुले होने पर पंचांग की जगह पहचानने के लिए। Background tracking नहीं। -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
         android:label="vidhivat"
         android:name="${applicationName}"

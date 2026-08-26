@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "_note": "v1 की बारह पूजाएँ (→ D-009)। जो बन चुकी उन पर taiyar सच है और उसी नाम की .json फ़ाइल इसी फ़ोल्डर में है। जो नहीं बनी वो सूची में 'जल्द आएगी' के साथ दिखती है। पूरी हालत docs/06_CONTENT_TRACKER.md में।",
+  "_note": "v1 की बारह पूजाएँ (→ D-009) और Phase A की छह (→ docs/14)। जो बन चुकी उन पर taiyar सच है और उसी नाम की .json फ़ाइल इसी फ़ोल्डर में है। जो अभी नहीं बनीं वे lib/vidhi/planned_puja_catalog.dart में हैं — जान-बूझकर इस फ़ाइल से बाहर, ताकि नाम को verified विधि न समझ लिया जाए। पूरी हालत docs/06_CONTENT_TRACKER.md में।",
   "poojayein": [
     {
       "id": "nitya_pooja",
@@ -12,7 +12,7 @@
     },
     {
       "id": "satyanarayan",
-      "naam": "सत्यनारायण पूजा और कथा",
+      "naam": "सत्यनारायण पूजा",
       "shreni": "tyohar",
       "ekLine": "घर में की जाने वाली सबसे आम पूजा",
       "taiyar": true,
@@ -76,9 +76,9 @@
     },
     {
       "id": "rudrabhishek",
-      "naam": "शिवरात्रि और सरल रुद्राभिषेक",
+      "naam": "शिवरात्रि और सरल शिव अभिषेक",
       "shreni": "tyohar",
-      "ekLine": "शिवलिंग पर अभिषेक",
+      "ekLine": "शिवलिंग पर सरल जलाभिषेक",
       "taiyar": true,
       "paas": false
     },
@@ -95,6 +95,54 @@
       "naam": "उपनयन (जनेऊ) संस्कार",
       "shreni": "sanskar",
       "ekLine": "यज्ञोपवीत धारण",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "hanuman_pooja",
+      "naam": "हनुमान पूजा",
+      "shreni": "nitya",
+      "ekLine": "मंगलवार-शनिवार की सरल पूजा",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "surya_arghya",
+      "naam": "सूर्य अर्घ्य",
+      "shreni": "nitya",
+      "ekLine": "सुबह उगते सूरज को जल",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "tulsi_pooja",
+      "naam": "तुलसी पूजा",
+      "shreni": "nitya",
+      "ekLine": "रोज़ की छोटी सेवा",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "saraswati_pooja",
+      "naam": "सरस्वती पूजा",
+      "shreni": "tyohar",
+      "ekLine": "वसंत पंचमी और विद्या की पूजा",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "ram_pooja",
+      "naam": "राम पूजा",
+      "shreni": "tyohar",
+      "ekLine": "राम नवमी और रोज़ का पूजन",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "krishna_pooja",
+      "naam": "कृष्ण पूजा",
+      "shreni": "tyohar",
+      "ekLine": "जन्माष्टमी और लड्डू गोपाल",
       "taiyar": true,
       "paas": false
     }

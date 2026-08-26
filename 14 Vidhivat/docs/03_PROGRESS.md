@@ -672,3 +672,501 @@ A4 पर छापने लायक। हर मंत्र, संकल�
 - जाँच-शीट छापकर पंडित जी से भरवाना
 - संकल्प में महिला यजमान वाला सुधार (पंडित जी की पुष्टि के बाद)
 - पहली रिकॉर्डिंग आते ही ऑडियो प्लेयर
+
+## 2026-08-25 · Phase 1 — Premium design-system foundation
+
+**स्क्रीनें फिर से नहीं बनाई गईं।** इस चरण में सिर्फ़ वह साझा आधार जोड़ा
+गया है जिस पर अगली screen phases बनेंगी। पूजा का JSON, मंत्र, चेतावनियाँ,
+नेविगेशन के छह पन्ने और business logic ज्यों के त्यों हैं।
+
+### क्या जोड़ा
+- `theme.dart` में semantic colour roles, Hindi/Sanskrit typography, spacing,
+  radius, restrained elevation और icon-size tokens
+- dark theme को primary product mode बनाया; light theme भविष्य की preference
+  के लिए बनी रही
+- `widgets/design_system.dart` में CTA, icon action, surface-card, status chip
+  और quiet divider primitives
+- `test/design_system_test.dart` में token/component contract tests
+
+### Phase 1 review — 25 अगस्त 2026
+- Flutter 3.44.4 / Dart 3.12.2 मिला; `flutter pub get` साफ़ चला।
+- `flutter analyze` — **No issues found**।
+- पूरा `flutter test` — **exit 0**।
+- Review में दो असली सुधार हुए: legacy colour aliases को const-expression
+  compile error से मुक्त किया गया, और selectable card की accessibility
+  semantics को child text से सही तरह अलग किया गया।
+- touch-target, chip icon और focus-stroke की बची हुई numeric values को भी
+  semantic tokens में रखा गया।
+
+**अब:** Phase 1 review पास है। `IMPLEMENT PHASE 2` के बिना कोई screen या
+navigation redesign शुरू नहीं करनी है।
+
+## 2026-08-25 · Phase 2 — विधि home + bottom navigation polish
+
+### क्या बदला
+- `vidhi_list_screen.dart` अब existing catalogue को featured नित्य पूजा,
+  दैनिक पूजा, festival discovery rail और विशेष पूजा/संस्कार rows में रखती है।
+- featured card का समय और चरण `Vidhi` model से आता है; बाकी copy सूची की
+  मौजूदा `ekLine` से। कोई पूजा data हाथ से नहीं लिखा गया।
+- reusable `VidhivatSectionHeader` जोड़ा गया।
+- छः-tab `IndexedStack` रखा गया; `NavigationBar` में labels हमेशा दिखते हैं।
+- 360×800 dp widget checks में festival rail का long-text overflow मिला और
+  ठीक किया गया।
+
+### जाँच
+- `flutter analyze` — **No issues found**।
+- `test/vidhi_screens_test.dart` — **exit 0**।
+- wider `flutter test` regression run भी शुरू किया गया; इस handoff में उसका
+  exit status दर्ज नहीं किया गया है।
+
+**अब:** `REVIEW PHASE 2` तक Puja Detail, सामग्री या guided player को नहीं
+छूना है।
+
+### Phase 2 review — 25 अगस्त 2026
+- 320, 360, 393 और 412 dp पर विधि home की discovery layers की widget जाँच
+  जोड़ी; 320 dp पर छहों bottom-navigation labels भी जाँचे गए।
+- 1.5× text scale पर एक असली overflow मिला: featured full-width CTA में icon
+  और label साथ नहीं समा रहे थे। `VidhivatButton` अब full-width action में
+  label को flexible बनाता है, और festival rail user के text scale के साथ
+  ऊँची होती है।
+- featured CTA की assistive label में वास्तविक पूजा का नाम जोड़ा गया और उसकी
+  semantics जाँच भी जोड़ी गई।
+- `flutter analyze` — **exit 0, No issues found**।
+- पूरा `flutter test` — **168 tests, exit 0**।
+- `app/assets`, `engine/`, पूजा JSON, मंत्र, ritual steps और source references
+  की Phase 2 diff जाँच — **कोई बदलाव नहीं**।
+- Android device/emulator उपलब्ध नहीं था; real-device visual QA अभी बाकी है।
+
+**अब:** Phase 2 review pass है। `IMPLEMENT PHASE 3` के स्पष्ट निर्देश के
+बिना Puja Detail या सामग्री का redesign शुरू नहीं करना है।
+
+## 2026-08-25 · Phase 3 — Puja Detail + सामग्री preparation
+
+### क्या बदला
+- Detail अब preparation hierarchy में है: नाम/परिचय → real metadata → जाँच
+  notice → कब करें → सामग्री preview → steps preview → FAQs/source।
+- primary sticky action "पूजा की तैयारी करें" सामग्री तक ले जाता है; secondary
+  direct-start action existing player तक वैसा ही पहुँचाता है।
+- सामग्री में existing local checklist ticks और groups ज्यों के त्यों हैं,
+  लेकिन preparation progress, grouped checklist surfaces और sticky "पूजा शुरू
+  करें" action जोड़े गए। कोई नया storage या धार्मिक enforcement नहीं।
+- Phase 3 review में compact section-action की infinite-width constraint और
+  320dp/1.5× progress-row overflow मिले; दोनों shared/button layout में ठीक हुए।
+
+### जाँच
+- `flutter analyze` — **exit 0, No issues found**।
+- पूरा `flutter test` — **170 tests, exit 0**।
+- Detail/material navigation, local checklist, unchecked start और 320dp/1.5×
+  text-scale cover करने वाली widget tests updated हैं।
+- `app/assets`, `engine/`, Puja JSON, मंत्र, ritual steps, source और
+  verification data की diff जाँच — **कोई बदलाव नहीं**।
+
+**अब:** `REVIEW PHASE 3` तक guided Puja step screens, audio, completion या
+progress persistence नहीं बदलनी है।
+
+### Phase 3 review — 25 अगस्त 2026
+- Detail → सामग्री → player, direct Detail → player और सामग्री से back करके
+  उसी Detail पर लौटने की route checks जोड़ी गईं।
+- 320/1.5× के साथ 360/1.3×, 393/1.0× और 412/1.0× constrained checks ने
+  title, source panel, sticky actions और preparation surface को cover किया।
+- Source panel की raw label-width को `VidhivatSpacing.massive` token में
+  बदला गया; कोई hardcoded layout value नहीं बची।
+- Checklist का native `CheckboxListTile` checked/unchecked affordance, local
+  tick state, optional filtering और unchecked start फिर जाँचे गए; कोई user
+  धार्मिक रूप से block नहीं होता।
+- `flutter analyze` — **exit 0, No issues found**।
+- पूरा `flutter test` — **174 tests, exit 0**।
+- `app/assets`, `engine/`, Puja JSON, मंत्र, ritual steps, source और
+  verification data — **कोई diff नहीं**।
+- Android device/emulator उपलब्ध नहीं था; real-device visual QA pending है।
+
+**अब:** Phase 3 review pass है। `IMPLEMENT PHASE 4` के स्पष्ट निर्देश के
+बिना guided Puja player redesign शुरू नहीं करना है।
+
+## 2026-08-25 · Phase 4 — guided Puja step-by-step player
+
+### क्या बदला
+- Existing `PageView`, step order, wakelock, संकल्प flow और all Puja data को
+  बनाए रखते हुए हर screen पर चरण क्रम/progress, step title और "अब क्या करें"
+  instruction hierarchy जोड़ी गई।
+- मंत्र की existing Devanagari, roman, अर्थ, draft warning, alternate practice
+  और source को premium readable surfaces में रखा गया; कोई धार्मिक text नया,
+  बदला या हटाया नहीं गया।
+- चरणों की accessible bottom sheet वास्तविक existing steps से बनती है। उसका
+  completed/current marker केवल इस खुले हुए session का navigation state है;
+  इसे saved Puja progress नहीं माना जाता।
+- पहले चरण पर single primary "आगे बढ़ें" है; बाकी चरणों पर पीछे/आगे। अंतिम
+  "पूजा पूर्ण करें" existing pop handoff से पिछली route पर लौटता है;
+  completion screen अभी नहीं जोड़ी गई।
+
+### जाँच
+- `flutter analyze` — **exit 0, No issues found**।
+- पूरा `flutter test` — **177 tests, exit 0**।
+- Player widget checks में step semantics, overview jump, final handoff,
+  draft/empty-mantra transparency और 320dp/1.3× तथा 393dp normal text-scale
+  checks जोड़े गए।
+
+**अब:** `REVIEW PHASE 4` के बिना completion experience, audio या persistent
+Puja progress नहीं बनानी है।
+
+### Phase 4 review — 25 अगस्त 2026
+- Long overview list में वास्तविक defect मिला: `shrinkWrap` layout से नीचे के
+  चरण clip हो सकते थे। Sheet अब bounded 72%-height scrollable list है; 320dp/
+  1.5× पर आख़िरी real step तक scroll test pass है।
+- Overview का check-circle धार्मिक रूप से "पूर्ण" लग सकता था। अब labels और
+  icons केवल session-navigation states बताते हैं: देखा गया, खुला, आगे का।
+- Final action पर duplicate route-pop guard जोड़ा; direct Detail और Materials
+  दोनों launch paths की handoff tests में जाँची गईं।
+- Draft mantra की Devanagari, roman, अर्थ और source exact source strings के
+  साथ render होने की regression test जोड़ी; rendering कोई transformation नहीं
+  करती।
+- Parser का no-step guard regression test से covered है; empty asset Puja
+  player तक नहीं पहुँचती।
+- `flutter analyze` — **exit 0, No issues found**; पूरा `flutter test` —
+  **183 tests, exit 0**।
+
+**अब:** Phase 4 review pass है। `IMPLEMENT PHASE 5` के स्पष्ट निर्देश के
+बिना completion experience, audio या persisted Puja progress नहीं बनानी है।
+
+## 2026-08-25 · Phase 5 — completion experience + safe resume
+
+### क्या बदला
+- Final player action अब duplicate-safe `pushReplacement` से calm Completion
+  screen खोलता है। Copy सिर्फ़ app-guide state बताती है: “मार्गदर्शिका पूरी
+  हुई” और “आपने इस मार्गदर्शिका के सभी चरण देख लिए हैं।” Primary action existing
+  app root पर लौटता है, इसलिए final ritual step फिर नहीं खुलता।
+- Existing `AppSettings` / `SharedPreferences` में `playerProgress.v1` map
+  जोड़ा गया। Per-`Vidhi.id` technical fields हैं `lastReachedStepIndex`,
+  `totalStepsAtSave`, `updatedAt`; furthest step rule है।
+- Detail पर एक ही calm resume decision point है। “यहीं से जारी रखें” safe saved
+  index से player खोलता है; “शुरू से करें” active record हटाकर Step 1 खोलता है।
+  Completion active record हटाता है; कोई history, streak या religious completion
+  persistence नहीं है।
+- stale/corrupt storage safe है और changed step count clamp होता है। Wakelock
+  player के disposal पर existing lifecycle से release होता है; Completion उसे
+  नहीं रखती।
+- 320dp/1.5× test में actual `VidhivatStatusChip` overflow मिला; shared chip
+  label अब flexible/wrap-safe है।
+
+### जाँच
+- `dart format` — changed Dart files clean।
+- `flutter analyze` — **exit 0, No issues found**।
+- Focused Phase 5 tests — **54 tests, exit 0**: per-Puja storage isolation,
+  malformed/out-of-range state, furthest rule, start-over, resume, completion,
+  direct/Materials routing और 320dp/1.5× resume/completion checks।
+- पूरा `flutter test` — **193 tests, exit 0**। `app/assets`, `engine/`, Puja
+  JSON, Sanskrit, मंत्र, transliteration, meaning, ritual order, source और
+  verification warnings इस phase में नहीं बदले।
+
+**अब:** `REVIEW PHASE 5` तक Phase 6, audio, AI, gamification या धार्मिक content
+नहीं बदलना है।
+
+### Phase 5 review — 25 अगस्त 2026
+- Completion clear और late final-step save के बीच actual async ordering risk
+  मिला। Player अब अपनी आख़िरी pending progress write को await करके ही active
+  Puja record clear और Completion route शुरू करता है।
+- rapid “शुरू से करें” पर duplicate Player route का practical risk मिला;
+  Detail action अब clear के दौरान guarded/loading है और regression test सिर्फ़
+  एक Step 1 player खोलना verify करता है।
+- Completion integration test में दूसरे Puja की saved position explicitly
+  बची रहने की जाँच भी जोड़ी गई।
+- `flutter analyze` — **exit 0, No issues found**। Focused Phase 5 suite —
+  **55 tests, exit 0**। पूरा `flutter test` — **194 tests, exit 0**।
+- Android target उपलब्ध नहीं था; real-device QA pending है।
+
+**अब:** Phase 5 review pass है। `IMPLEMENT PHASE 6` के स्पष्ट निर्देश के बिना
+remaining screen redesign, audio, AI, gamification या धार्मिक content नहीं बदलना है।
+
+## 2026-08-25 · Phase 6 — utility screens visual redesign
+
+### क्या बदला
+- Aaj में daily identity hero, scan-friendly Panchang, sun/moon और time sections
+  हैं; values वही existing Panchang engine outputs हैं।
+- Calendar month navigation और festival entries premium surfaces/semantics में हैं;
+  कोई festival marker, rule या date नया नहीं बनाया गया।
+- Sankalp में date/context, purpose choice, generated text और yajman edit की
+  hierarchy साफ़ हुई; generated Sanskrit/logic untouched है।
+- Choghadiya में current period, textual शुभ/अशुभ status, day/night grouping और
+  hora sections स्पष्ट हैं। Settings practical section hierarchy में है।
+
+### जाँच
+- `flutter analyze` — **exit 0, No issues found**।
+- Phase 6 screen checks — **4 tests, exit 0**; 320/360/393/412 widths और large
+  text cases cover किए गए।
+- पूरा `flutter test` — **198 tests, exit 0**।
+- `app/assets`, `engine/`, Panchang/Muhurta logic, festival data, Sankalp text,
+  mantra और source references में कोई diff नहीं। Android QA pending है।
+
+**अब:** `REVIEW PHASE 6` तक Phase 7, audio, AI, gamification या धार्मिक content
+नहीं बदलना है।
+
+### Phase 6 review — 25 अगस्त 2026
+- Calendar implementation में बड़ा UX gap मिला: month view अभी भी vertical
+  day-list था और selected date/selected-day detail/real event markers नहीं थे।
+  अब 7-column responsive grid, ≥44dp date targets, today/selected visual और
+  semantic states, वास्तविक festival marker/name तथा selected-day Panchang
+  summary है। Rapid month shifts selected day को target month में safely clamp
+  करते हैं; ambiguous engine candidate दोनों वास्तविक dates पर discoverable है।
+  Year-festival और date-Panchang results relevant city/masa context के साथ
+  memory-cache हैं, इसलिए selection/month rebuild engine work दोहराता नहीं।
+- Aaj पर केवल उपलब्ध engine festival result दिखता है। Sankalp का long exact
+  output selectable/untruncated है और 320dp/1.5× पर format control vertical होकर
+  overflow से बचता है। Name input keyboard के साथ scroll/save test में covered
+  है।
+- Choghadiya current/row semantics में existing name, time और textual शुभ/अशुभ
+  हैं; day/night list का engine order नहीं बदला। Settings का representative
+  अमांत persistence interaction और six-tab Calendar state preservation जाँचे।
+- Repeated card padding और raw Phase 6 layout literals हटाकर established spacing,
+  radius, surface, typography, icon-action और status-chip tokens अपनाए गए।
+
+### जाँच
+- `dart format` — review के changed Dart files clean।
+- `flutter analyze` — **exit 0, No issues found**।
+- Focused Phase 6 suite — **9 tests, exit 0**।
+- पूरा `flutter test` — **203 tests, exit 0**।
+- `git diff --check` — **exit 0**।
+- `app/assets`, `engine/`, JSON religious data, mantra/Puja content, Sankalp
+  template/generation, Panchang/Muhurta/festival calculation और source references
+  में **कोई Phase 6 review diff नहीं**।
+- Android target/emulator उपलब्ध नहीं था; real-device QA pending है।
+
+**अब:** Phase 6 review pass है। `IMPLEMENT PHASE 7` के स्पष्ट निर्देश के बिना
+final polish, audio, AI, gamification अथवा धार्मिक content नहीं बदलना है।
+
+## 2026-08-25 · Phase 7 — full product polish + release-quality UX audit
+
+### क्या बदला
+- Vidhi home/detail की raw spinners और technical exception strings को shared,
+  calm loading/error states से बदला। Error copy factual है और religious data
+  का fallback गढ़ती नहीं।
+- Theme में semantic motion और progress/snackbar/sheet/dialog treatment जोड़ा;
+  legacy unused `Khand` हटाया और `Pankti`, `Chetavni`, app-bar actions तथा
+  remaining utility-screen literals established tokens पर लाए।
+- Calendar selection subtle और reduced-motion-aware है। Calendar/Aaj caches
+  bounded और context-correct हैं। Choghadiya existing period boundary पर
+  lifecycle-safe one-shot refresh करता है; per-second polling नहीं।
+- Guided player motion reduced-motion मानता है, embedded Sankalp controls narrow/
+  large text पर responsive हैं, और bottom action safe area explicit है। Completion
+  semantics duplicate announcement से बचती हैं।
+- Settings sheet keyboard/safe-area friendly है और privacy copy future network/
+  ads के बारे में blanket claim नहीं करती।
+
+### जाँच
+- `dart format` — changed Dart files clean।
+- `flutter analyze` — **exit 0, No issues found**।
+- Phase 7 focused suite — **5 tests, exit 0**: calm loading/error, raw exception
+  hiding, 320dp/2.0× Calendar reduced-motion semantics, Choghadiya boundary/
+  lifecycle timer और 320dp/2.0× Player/Completion।
+- Phase 6 regression — **9 tests, exit 0**; Vidhi screen regression — **51 tests,
+  exit 0**; design-system regression — **3 tests, exit 0**।
+- पूरा `flutter test` — **208 tests, exit 0**। `git diff --check` — **exit 0**।
+  Religious JSON, mantra/Sanskrit/transliteration/meaning, ritual order, source,
+  verification flags और engine calculations नहीं बदले।
+- 25 अगस्त 2026 को vivo V2553i (Android 16) पर release APK install करके
+  cold-launch और smoke test किया: छहों tabs, Vidhi Detail, Player का चरण 1 →
+  चरण 2, back navigation और resume clear. `com.massapp.vidhivat` foreground
+  रहा, fatal/E-flutter crash नहीं मिला और Player का screen-bright wakelock
+  exit पर release हुआ। Universal release APK **49.3 MB** है; उसके तीन ABI
+  builds में से vivo पर **17.5 MB arm64-v8a** APK replace-install और cold-launch
+  verify किया गया।
+
+**अब:** implementation complete है। `REVIEW PHASE 7` के बिना audio, AI,
+gamification, religious content अथवा कोई नया feature नहीं बनाना है।
+
+---
+
+## 2026-08-25 · Visual transformation pass
+
+### क्या बदला
+- पूरे dark palette को midnight/slate base, antique gold primary और muted maroon
+  devotional depth में बदला; semantic colors, radii, cards और primary CTA एक ही
+  shared design system से आते हैं।
+- Home featured Puja, Puja Detail, Guided Player और Completion को native,
+  asset-ready sacred hero/backdrop मिला। Generic cards अब richer surface,
+  section marker, restrained elevation और clear CTA hierarchy रखते हैं।
+- Aaj, Calendar, Sankalp, Choghadiya, Samagri और Settings ने same backdrop/surface
+  treatment लिया। कोई route, calculations, checklist/progress persistence,
+  source/verification status अथवा religious text नहीं बदला।
+- 320dp और large-text Player/Sankalp regression cases सुरक्षित रखे गए।
+
+### जाँच
+- `dart format` — changed Dart files clean।
+- `flutter analyze` — **exit 0, No issues found**।
+- पूरा `flutter test` — **208 tests, exit 0**।
+- Current ABI release rebuild सफल है: arm64-v8a **17.5 MB**, armeabi-v7a
+  **15.0 MB**, x86_64 **18.9 MB**। इस visual build का physical-device smoke test
+  ADB device reconnect पर बाकी है।
+
+---
+
+## 2026-08-25 · devotional image integration
+
+### क्या बदला
+- Downloads के recent generated artwork को visually review किया; केवल 16
+  devotional candidates की project copies बनाईं। Personal screenshots और अन्य
+  Downloads files untouched रहे।
+- `assets/images/devotional/` में optimized local JPEG assets और `pubspec.yaml`
+  directory declaration जोड़े। `DevotionalAssets` stable Puja id → asset mapping
+  रखता है; unknown id का neutral diya fallback है।
+- Home featured hero, festival rail, Puja Detail hero और Completion hero में
+  safe local `Image.asset` integration है। Missing asset quiet icon fallback
+  देता है; Player जानबूझकर text-first है।
+- Text-heavy Satyanarayan, Vahan, Karwa Chauth और Shraddha posters copied review
+  references हैं, लेकिन UI mapping में नहीं हैं। इससे embedded/unverified text
+  धर्म-संबंधी app copy की तरह present नहीं होता।
+
+### जाँच
+- `dart format` — changed Dart files clean।
+- `flutter analyze` — **exit 0, No issues found**।
+- Resolver/widget regressions सहित पूरा `flutter test` — **210 tests, exit 0**।
+- Current release rebuild सफल है: arm64-v8a **20.8 MB**, armeabi-v7a **18.3 MB**
+  और x86_64 **22.2 MB**। ~3.3 MB optimized devotional bundle के अनुरूप arm64
+  size पिछले visual build से लगभग 3.3 MB बढ़ा; ADB device reconnect पर final
+  install/smoke test बाकी है।
+
+---
+
+## 2026-08-25 · Transparent artwork and catalogue UX correction
+
+### क्या बदला
+- Hard-black-background JPEG project copies हटाई गईं; Downloads की original
+  files छुई नहीं गईं। App अब केवल alpha-preserving PNG artwork use करती है, इसलिए
+  illustration surface पर floating rectangle की तरह नहीं दिखती।
+- Grih Pravesh, Mundan और Upanayan के लिए neutral, no-text ceremonial artwork
+  जोड़ा गया; Ganesh, Shiva, Lakshmi, Vishnu और diya art के साथ stable Puja-id
+  resolver हर catalogue card, Home feature, Detail और Completion में reusable है.
+- Home के दैनिक, त्योहार और विशेष/संस्कार sections को consistent responsive
+  2-column image-led grid बनाया। Art top-right की bounded safe area में है और
+  copy अलग lower area में रहती है; overlap नहीं। 320dp और large Hindi text के
+  लिए card height adaptive है।
+- Accent palette gold-heavy से restrained warm-copper/muted-plum पर बदली। Gold
+  केवल illustration का हिस्सा हो सकता है, UI chrome का default नहीं। Player
+  text-first रहा; ritual/mantra data नहीं बदला।
+
+### जाँच
+- `flutter analyze` — **No issues found**।
+- पूरा `flutter test` — **210 tests, exit 0**; इसमें 320dp/1.5x catalogue grid
+  overflow regression और नई artwork mappings शामिल हैं।
+- `flutter build apk --release --split-per-abi` सफल: armeabi-v7a **24.9 MB**,
+  arm64-v8a **27.5 MB**, x86_64 **28.9 MB**। APK primarily new transparent
+  artwork bundle के कारण बढ़ी, लेकिन old JPEG bundle release में नहीं है।
+- इस build के समय ADB device connected नहीं मिला; new APK का on-device visual
+  smoke test pending है।
+
+---
+
+## 2026-08-26 · Puja-specific centred artwork pass
+
+### क्या बदला
+- Reference screens की composition अपनाई: Puja Detail में पहले नाम/परिचय, फिर
+  large centered devotional artwork और उसके बाद factual metadata तथा procedure
+  है। Artwork side में छोटा नहीं रहता।
+- Home की सभी 2-column category cards में artwork अब center में, larger scale और
+  restrained circular glow के साथ है; card पर केवल Puja का नाम रहता है।
+  Supporting one-line copy हटाई गई, इसलिए image और Hindi label आपस में नहीं
+  टकराते।
+- Transparent, no-text PNG artwork (`800px`, alpha-preserving) बनाया और map किया:
+  नित्य पूजा थाली, करवा चौथ, श्राद्ध/तर्पण, रुद्राभिषेक शिवलिंग और वाहन पूजा।
+  पहले से present Ganesh, Vishnu/Satyanarayan, Lakshmi, Kalash/Grih Pravesh,
+  Mundan और Upanayan artwork अपने specific cards में हैं।
+- कोई mantra, ritual order, religious claim, source/verification state या player
+  content नहीं बदला।
+
+### जाँच
+- `flutter analyze` — **No issues found**।
+- focused visual/regression suite — **53 tests, exit 0**।
+- पूरा `flutter test` — **210 tests, exit 0**।
+- `flutter build apk --release --split-per-abi` सफल: armeabi-v7a **30.2 MB**,
+  arm64-v8a **32.7 MB**, x86_64 **34.1 MB**। Increase five new transparent
+  specific-art assets के लिए है; old black JPEG files release में नहीं हैं।
+- Build के बाद ADB से install/relaunch check किया, पर इस समय कोई device
+  connected नहीं था; final on-phone smoke test pending है।
+
+
+---
+
+## 2026-08-26 (ग्यारहवाँ) · audit की P0 ग़लतियाँ ठीक, और छह नई पूजाएँ
+
+**पहले क्या मिला**
+
+पिछले session के बाद ऐप का पूरा UI दोबारा बना (चार tab, dashboard, design
+system, completion screen, artwork, progress persistence — 221 जाँचें), और
+तीन बड़े दस्तावेज़ बने: `PROJECT_AUDIT.md`, `docs/13_CONTENT_VERIFICATION_AUDIT.md`,
+`docs/14_PUJA_LIBRARY_EXPANSION_PLAN.md`, `docs/15_HOME_DASHBOARD_PLAN.md`।
+
+**पर audit read-only था — एक भी P0 ग़लती ठीक नहीं हुई थी।** नापकर देखा:
+ग़लत ऋग्वेद citation ग्यारह फ़ाइलों में, बारहों में घोषित समय जोड़ से कम,
+करवा चौथ में निर्जल बनाम आचमन का टकराव, गायब सामग्री — सब जस के तस।
+
+**क्या किया — पहले नींव**
+
+### 1. गणपति मंत्र का स्रोत (→ D-037)
+audit के दावे को **पहले ख़ुद जाँचा** — ऋग्वेद २.२३.१ आगे "कविं
+कवीनामुपमश्रवस्तमम्" चलती है, हमारे पाठ जैसी नहीं। audit सही था। स्रोत
+में पूरी बात लिखी, भरोसा `uncha` से `madhyam` किया, और अर्थ दोबारा लिखा।
+
+### 2. समय का एक नियम (→ D-036)
+घोषित समय अब हमेशा कदमों का जोड़। `Vidhi.fromJson` मेल न खाने पर फ़ाइल
+पढ़ने से मना कर देता है — दोबारा बिगड़ नहीं सकता।
+
+### 3. `scope` (→ D-035)
+हर पूजा अब बताती है कि वो कहाँ तक अपने आप की जा सकती है। **उपनयन, गृह
+प्रवेश, मुंडन और श्राद्ध पर "विधि शुरू करें" वाला बटन अब दिखता ही नहीं** —
+उनकी सामग्री, कब करें और सवाल-जवाब दिखते रहते हैं।
+
+### 4. बाक़ी P0
+- गणेश में पंचामृत की पाँचों चीज़ें जोड़ीं (कदम में माँगी थीं, सूची में नहीं थीं)
+- कलश, करवा चौथ, शिव अभिषेक में दूर्वा जोड़ी; श्राद्ध में पिंड का आटा
+- दूर्वा और मोदक का "ज़रूरी बनाम FAQ" वाला टकराव हटाया
+- गणेश का वार `[2]` से `[2,3]` किया (note मंगल+बुध कहता था)
+- कलश के संकल्प से व्रत वाला टकराव हटाया
+- **करवा चौथ** — निर्जल व्रत में आचमन अब "जल पिए बिना" साफ़ लिखा है
+- **रुद्राभिषेक → "सरल शिव अभिषेक"** — रुद्राष्टाध्यायी है ही नहीं, तो
+  नाम भी वैसा नहीं रहना चाहिए
+- **सत्यनारायण** — नाम से "और कथा" हटाया (कथा ऐप में नहीं है), और
+  "षोडशोपचार" वाला कदम "उपचार पूजन" हुआ क्योंकि बारह उपचार हैं, सोलह नहीं
+- रोमन पाठ को हर फ़ाइल में "सिर्फ़ पढ़ने की सहायता" कहा
+
+**फिर — Phase A की छह नई पूजाएँ** (→ `docs/14`)
+
+```
+हनुमान पूजा  25·12·58मि   सूर्य अर्घ्य  6·5·15मि   तुलसी पूजा  11·7·19मि
+सरस्वती पूजा 22·11·50मि   राम पूजा     22·11·58मि  कृष्ण पूजा  24·12·70मि
+```
+
+सब `self_guided`। इंजन में छह नई संकल्प-कुंजियाँ जुड़ीं। छहों `planned`
+सूची से हटाई गईं ताकि एक नाम दो जगह न दिखे — और **एक जाँच अब यही पहरा
+देती है** कि कोई id दोनों जगह न हो।
+
+**मंत्रों में क्या भरा, क्या नहीं**
+- नाम-मंत्र (ॐ हं हनुमते नमः, ॐ तुलस्यै नमः…) — सबसे सुरक्षित श्रेणी
+- हनुमान का ध्यान-श्लोक (रामरक्षास्तोत्र से, `madhyam`)
+- **ख़ाली छोड़े:** सरस्वती का "या कुन्देन्दुतुषार…" (संस्करण-दर-संस्करण
+  फ़र्क़), आदित्यहृदय, राम-गायत्री, हर आरती
+- सरस्वती की क्षमा प्रार्थना भी **ख़ाली** — जो पाठ ऐप में है वो पुल्लिंग
+  (परमेश्वर, जनार्दन) है, और देवी के लिए शब्द यंत्रवत् बदलना मना है
+  (audit 4.3)
+
+**सुरक्षा की बातें जो कंटेंट में डाली गईं**
+सूर्य को सीधे न घूरना · जल कहाँ गिराएँ · तुलसी में ज़्यादा पानी से जड़
+सड़ना · दीपक हवा और पत्तियों से दूर · सिंदूर-चमेली का तेल बच्चों से दूर ·
+मूर्ति से पंचामृत अच्छी तरह साफ़ करना · गरमी में दूध का प्रसाद
+
+**कोई फल का वादा नहीं** — सरस्वती पूजा के सवाल-जवाब में साफ़ लिखा है कि
+यह ऐप नंबरों का कोई दावा नहीं करता।
+
+**हालत**
+- इंजन: 157 जाँचें पास
+- ऐप: **337 जाँचें पास** (221 से), `flutter analyze` साफ़
+- कंटेंट: **18 पूजाएँ · 463 सामग्री · 197 कदम · 79/126 मंत्र ड्राफ़्ट**
+- scope: 10 self_guided · 4 regional_profile · 3 preparation_only · 1 expert_assisted
+- पंडित जी से पास: **0 / 18**
+
+**⚠️ जो बाक़ी है**
+नई छह पूजाओं वाला ऐप **फ़ोन पर नहीं चलाया गया** — APK बन गया, पर उस वक़्त
+डिवाइस जुड़ा नहीं था।
+
+**अगला**
+- फ़ोन पर छहों नई पूजाएँ और `preparation_only` वाला रुका हुआ बटन देखना
+- जाँच-शीट में छह नई पूजाएँ जोड़कर पंडित जी से भरवाना
+- audit के बचे हुए काम: IAST, संकल्प का व्याकरण, कथा का लाइसेंस

@@ -586,3 +586,334 @@ widget जाँच सिर्फ़ यह करती है कि फ़�
 `draft` हालत में भी **स्रोत लिखना ज़रूरी है** — बिना स्रोत के लिखा पाठ
 ड्राफ़्ट नहीं, अंदाज़ा है। और जो मंत्र ख़ाली छोड़ा गया है, उस पर **वजह
 लिखना ज़रूरी है** — चुपचाप ख़ाली छोड़ना मना है। दोनों जाँच में हैं।
+
+---
+
+## D-026 · पहले shared design system, फिर screen redesign
+**तारीख़:** 25 अगस्त 2026 · **स्थिति:** लागू
+
+Premium redesign को सीधे अलग-अलग screens पर नहीं लिखा जाएगा। पहले theme में
+semantic colour/type/spacing/radius tokens और छोटे reusable primitives बनेंगे;
+फिर हर screen उन्हीं से बनेगी।
+
+### क्यों
+- अलग screens में अपनी-अपनी gold shade, font size और rounded card लिखने पर
+  ऐप फिर generic और असंगत हो जाता।
+- पूजा की screen में functional readability और religious warnings पहले से
+  काम कर रही हैं; Phase 1 में उन्हें छूना regression risk है।
+- Hindi/Sanskrit के लिए एक ही typography scale जरूरी है, खासकर mantra के लिए।
+
+### फैसला
+- Premium dark mode product default है; light theme भविष्य की user preference
+  के लिए बची रहती है।
+- कोई external font/package नहीं जोड़ा गया। Android की Devanagari-capable
+  system fallbacks को प्राथमिकता दी गई।
+- ordinary card पर border/shadow नहीं; surface contrast और spacing पहले।
+- content, Puja JSON, verification warnings, navigation और business logic
+  Phase 1 में नहीं बदलेंगे।
+
+---
+
+## D-027 · विधि home में खोज की प्राथमिकता, navigation में स्थिरता
+**तारीख़:** 25 अगस्त 2026 · **स्थिति:** लागू
+
+विधि का पहला पन्ना अब category database की तरह नहीं, पूजा चुनने की जगह है:
+पहले नित्य पूजा की real featured विधि, फिर दैनिक, त्योहार और विशेष पूजा/
+संस्कार। नाम, सार, समय और चरण सभी मौजूदा asset data से आते हैं।
+
+### navigation का फैसला
+नीचे के छह destinations को पाँच करने के लिए "अधिक" का नया route/state
+layer बनाना पड़ता। वह इस phase में screen-polish से बड़ा risk था, इसलिए
+छह-tab `IndexedStack` ज्यों का त्यों रखा गया। सिर्फ़ label visibility और
+Phase 1 selected/unselected styling साफ़ की गई।
+
+### क्यों
+- tab state, back behaviour और पहले से जाँची हुई deep Puja navigation नहीं
+  टूटती।
+- कोई नकली "आज का त्योहार" अथवा hand-written पूजा metadata नहीं जोड़ा गया।
+- festival rail और special rows एक जैसे bordered cards की दीवार बनने से
+  बचाते हैं, फिर भी पूरी catalogue discoverable रहती है।
+
+---
+
+## D-028 · पूजा detail में तैयारी पहले, लेकिन सीधे शुरू करने का रास्ता खुला
+**तारीख़:** 25 अगस्त 2026 · **स्थिति:** लागू
+
+पूजा खोलने पर primary action अब सामग्री/तैयारी है; वहीं से साफ़ "पूजा शुरू
+करें" action existing player तक ले जाता है। Detail पर secondary "अभी विधि
+शुरू करें" भी रहता है — कोई सामग्री न होने पर यूज़र को धार्मिक रूप से रोका
+नहीं जाएगा।
+
+### क्यों
+- सामग्री जुटाना इस product journey का असली अगला काम है; उसे article के नीचे
+  या अलग, छिपे button में नहीं रहना चाहिए।
+- checklist की device-local ticks पहले से उपयोगी व्यवहार हैं। Phase 3 ने उन्हें
+  न नया बनाया, न उनके storage नियम बदले।
+- पूरा checklist अनिवार्य करने का दावा app को धार्मिक authority दे देता; वह
+  data या business logic में कहीं नहीं है।
+
+### फैसला
+- Detail पर title, real metadata, सत्यापन स्थिति, कब करें, सामग्री preview और
+  steps preview data से दिखेंगे; नया धार्मिक copy/data नहीं।
+- Detail और सामग्री दोनों पर sticky, safe-area-aware CTA है।
+- source और पंडित-जाँच नीचे शांत surface में दिखेंगे, छिपेंगे नहीं।
+
+---
+
+## D-029 · guided player में साफ़ in-session चरण-दिशा, स्थायी प्रगति नहीं
+**तारीख़:** 25 अगस्त 2026 · **स्थिति:** लागू
+
+Guided Puja player में हर वर्तमान चरण के लिए उसका क्रम, वास्तविक कुल चरण,
+शीर्षक, मौजूदा निर्देश, मौजूदा मंत्र/अर्थ/source और पिछले/अगले action साफ़
+दिखेंगे। चरणों की सूची खुल सकती है और `PageView` की पहले से उपलब्ध किसी भी
+चरण पर ले जा सकती है।
+
+### क्यों
+- पूजा के बीच व्यक्ति को हमेशा पता होना चाहिए कि वह कहाँ है और आगे क्या
+  बचा है; केवल swipe पर निर्भर रहना पर्याप्त नहीं है।
+- `Charan` model में केवल एक verified instruction field है। इसलिए UI अलग
+  "कैसे करें" अथवा "क्यों" copy गढ़कर उसी बात को दोहराएगा नहीं।
+- वर्तमान चरण के पहले वाले चरण सूची में complete दिखते हैं, लेकिन वह केवल
+  खुले हुए player session का navigation state है — धार्मिक completion या
+  device persistence का दावा नहीं।
+
+### फैसला
+- step list से arbitrary movement वही अनुमति है जो पुराने `PageView` swipe
+  और internal `_jao` navigation में पहले से थी; कोई ritual reorder/data
+  change नहीं हुआ।
+- अंतिम "पूजा पूर्ण करें" action existing route-pop handoff रखता है। अलग
+  completion screen, persisted progress, streak अथवा completion record
+  अगली स्पष्ट phase के बिना नहीं बनेगा।
+- `Mantra.audio` field मौजूद होने पर भी audio control नहीं दिखेगा, जब तक
+  वास्तविक verified recordings और अलग audio phase उपलब्ध न हों।
+
+### Phase 4 review — 25 अगस्त 2026
+- Overview के पुराने check-style marker को हटाकर साफ़ textual session states
+  किया गया: "इस सत्र में देखा गया", "अभी यह चरण खुला है" और "आगे का चरण"।
+  यह किसी धार्मिक completion, सफलता या पंडित-जाँच का दावा नहीं करते।
+- Long step list के लिए bounded, independently scrollable sheet रखी गई;
+  आख़िरी existing step भी narrow/large-text layout में पहुँच में रहता है।
+- अंतिम route-pop पर re-entry guard है, इसलिए एक ही rendered final action
+  दो बार invoke होने पर नीचे की पिछली route दो बार pop नहीं होती।
+
+---
+
+## D-030 · Puja player की saved जगह technical है, धार्मिक completion नहीं
+**तारीख़:** 25 अगस्त 2026 · **स्थिति:** लागू
+
+Player `SharedPreferences` में versioned `playerProgress.v1` map रखता है। हर
+stable `Vidhi.id` की entry में केवल `lastReachedStepIndex`, `totalStepsAtSave`
+और `updatedAt` हैं। Puja JSON, मंत्र, निर्देश, ritual order या धार्मिक validity
+कभी local progress में नहीं रखे जाते।
+
+### फैसला
+- आगे पहुँचने पर furthest reached app position लिखी जाती है; पीछे पढ़ने जाने
+  पर उपयोगी resume location कम नहीं होती। पहला चरण resume record नहीं बनाता।
+- Detail पर ही एक decision point है: “आप यहाँ तक पहुँचे थे”, “यहीं से जारी
+  रखें”, या explicit “शुरू से करें”; Materials flow में दूसरा prompt नहीं है।
+- stale index current step count में clamp, malformed JSON/map discard, और
+  unknown/empty id no-op है। अलग Puja ids कभी एक-दूसरे की जगह नहीं पाते।
+- अंतिम player action duplicate-safe replacement से शांत completion screen तक
+  जाता है, active Puja की resume entry हटती है, और “विधि पर लौटें” Player और
+  Completion को फिर खोलने के बजाय मौजूदा app root तक लौटाता है। कोई history,
+  streak, completion date/count या धार्मिक सफलता का record नहीं बनता।
+
+### भाषा
+Completion copy केवल इतना कहती है कि app guide के सभी चरण दिखाए गए। “पूजा
+विधिवत सम्पन्न”, “सफल” अथवा धार्मिक रूप से पूर्ण होने का दावा नहीं किया जाता।
+
+### Phase 5 review — 25 अगस्त 2026
+- अंतिम PageView navigation की in-flight local save को Player अपने पास रखता
+  है और final clear से पहले await करता है। इस क्रम से stale final-step write
+  completion के clear को disk पर वापस नहीं लिख सकती।
+- Detail का “शुरू से करें” transient guard रखता है; rapid double action केवल
+  एक Player route खोलता है। यह केवल navigation guard है, settings, Sankalp या
+  धार्मिक data को नहीं बदलता।
+
+---
+
+## D-031 · utility screens में वही data, नई readable hierarchy
+**तारीख़:** 25 अगस्त 2026 · **स्थिति:** लागू
+
+Aaj, Calendar, Sankalp, Choghadiya और Settings existing calculations, choices,
+dates और user settings ही दिखाते हैं। Phase 6 ने shared surfaces, section headers,
+status text और typography से reading order बदला; कोई धार्मिक interpretation,
+calculation, date अथवा Sankalp output नहीं बदला।
+
+### Phase 6 review — 25 अगस्त 2026
+- Calendar की vertical day-list Phase 6 के approved grid/selected-day अनुभव को
+  पूरा नहीं करती थी। उसे सात-column grid, current/selected states, वास्तविक
+  festival markers और selected-day Panchang panel में बदला गया। Markers केवल
+  `festivalsInYear` और ambiguous `otherCandidate` से आते हैं; calendar/festival
+  गणना नहीं बदली।
+- Aaj पर उपलब्ध होने पर उसी engine festival result का नाम दिखता है। Sankalp
+  output renderer exact `buildSankalp` string रखता है और narrow/large-text पर
+  format selector vertical हो सकता है; generation logic/पाठ नहीं बदलता।
+- Choghadiya rows का order वही engine list है। हर row और current highlight अब
+  name, time range और textual शुभ/अशुभ semantics देते हैं।
+
+---
+
+## D-032 · release polish में factual states, bounded cache और lifecycle-safe freshness
+**तारीख़:** 25 अगस्त 2026 · **स्थिति:** लागू
+
+Phase 7 का polish presentation और runtime freshness तक सीमित है। Loading,
+empty और failure states shared calm surface में user-actionable भाषा दिखाते हैं;
+asset/file/parser की raw exception UI में नहीं आती। Religious content या
+calculation failure को invented fallback से नहीं छिपाया जाता।
+
+### फैसला
+- Calendar और Aaj के context-aware memory caches bounded हैं। Keys में relevant
+  year/date, city और masa context रहता है; eviction केवल पुराने in-memory result
+  को हटाता है, calculation या persisted data को नहीं।
+- Choghadiya current state existing engine boundary के बाद एक बार refresh होती
+  है। Timer app pause पर cancel और resume पर reschedule होता है; per-second
+  polling नहीं है और calculation function नहीं बदला।
+- Calendar selection का subtle motion `disableAnimations` preference मानता है।
+  Guided player का page motion भी reduced-motion में तुरन्त बदलता है।
+- Completion semantics child content और actions को readable रखते हैं; copy अब भी
+  केवल app guide पूरी देखने का दावा करती है, धार्मिक सफलता का नहीं।
+- Settings privacy भाषा केवल local yajman/city fields और app-server/login scope
+  बताती है; future ads/network के बारे में झूठा blanket claim नहीं करती।
+
+---
+
+## D-033 · premium devotional art direction, without claiming imagery or authority
+**तारीख़:** 25 अगस्त 2026 · **स्थिति:** लागू
+
+Visual transformation pass ने existing flow और verified religious content को
+बिना बदले premium hierarchy दी है। कोई network image, generated deity image या
+नई devotional claim नहीं जोड़ी गई: उपलब्ध local assets में usable devotional
+artwork नहीं था, इसलिए shared native Flutter abstraction अपनाई गई है।
+
+### फैसला
+- `VidhivatSacredBackdrop` midnight, maroon और muted-gold depth देता है;
+  `VidhivatSacredHero` ornamental halo/icon motif के साथ asset-ready hero surface
+  देता है। यह किसी देवता का चित्र या ritual authority का प्रमाण नहीं है।
+- Home, Detail, Player और Completion इन shared primitives को उपयोग करते हैं;
+  Aaj, Calendar, Sankalp, Choghadiya, Samagri और Settings केवल presentation
+  backdrop/surface treatment लेते हैं। Existing navigation, progress, checks,
+  source labels, warning states और calculations untouched रहते हैं।
+- Primary actions antique-gold gradient, generous semantic radius और visible
+  pressed/focus treatment लेते हैं। Compact width अथवा large text scale पर hero
+  spacing/title scale घटता है; religious text और instruction copy truncate नहीं
+  होती।
+
+---
+
+## D-034 · local devotional imagery is curated, bounded and presentation-only
+**तारीख़:** 25 अगस्त 2026 · **स्थिति:** लागू
+
+Downloads से केवल visually reviewed devotional images की optimized copies
+`app/assets/images/devotional/` में bundle की गई हैं। Originals Downloads में
+ज्यों-के-त्यों हैं। Resolver केवल `_suchi.json` के stable Vidhi ids उपयोग करता
+है; display-name matching और guessed deity association निषिद्ध हैं।
+
+### फैसला
+- `DevotionalAssets` unknown/future ids के लिए neutral `diya.jpg` देता है।
+  `karwa_chauth` और `shraadh` के downloaded posters में embedded text था, इसलिए
+  वे generic diya fallback लेते हैं; `vahan_pooja` neutral puja-thali artwork
+  लेती है। यह unverified text को app copy की तरह present होने से रोकता है।
+- Home featured Puja, festival rail, Detail hero और Completion shared local
+  image presentation लेते हैं। Guided Player text-first रहता है। Artwork
+  image-only decoration है: mantra, source, verification, ritual, calculation,
+  progress अथवा religious success claim का substitute नहीं।
+- Project copies 760–1200 px JPEG quality 86 पर रखी गई हैं। मूल 16 selected
+  PNG images लगभग 35 MB थीं; bundled optimized copies लगभग 3.3 MB हैं।
+
+
+---
+
+## D-035 · हर पूजा का `scope` — सब अपने आप करने लायक नहीं होतीं
+**तारीख़:** 26 अगस्त 2026 · **स्थिति:** लागू
+
+`Vidhi` में नया खाना **`scope`** जुड़ा। चार हालतें:
+
+| scope | ऐप क्या करता है | कितनी पूजाएँ |
+|---|---|---|
+| `self_guided` | पूरी कदम-दर-कदम विधि खुलती है | 10 |
+| `regional_profile` | विधि खुलती है, पर साथ में "यह एक क्षेत्र की परंपरा है" | 4 |
+| `preparation_only` | **विधि नहीं खुलती** — सिर्फ़ तैयारी, अर्थ, सावधानी | 3 |
+| `expert_assisted` | **विधि नहीं खुलती** — मुख्य विधि आचार्य के बिना नहीं | 1 |
+
+### क्यों
+`docs/13_CONTENT_VERIFICATION_AUDIT.md` की धारा 9 और 16 दोनों यही कहती
+हैं: **उपनयन, पूरा श्राद्ध/पिंडदान, बच्चे का मुंडन और हवन वाला गृह
+प्रवेश बिना रोक-टोक DIY नहीं बनाए जा सकते।**
+
+और यह ऐप की अपनी सामग्री भी कहती है — उपनयन की फ़ाइल में ख़ुद लिखा है कि
+"इसमें आचार्य की भूमिका ही मुख्य है"। पर बटन फिर भी पूरी विधि खोल देता
+था। अब नहीं खोलता।
+
+### कहाँ असर पड़ता है
+- `Scope.poorViDhiKholSakteHain` — यही तय करता है कि "अभी विधि शुरू करें"
+  वाला बटन दिखे या नहीं
+- विवरण पन्ने पर सबसे ऊपर scope की सूचना (`self_guided` को छोड़कर)
+- ग़लत `scope` वाली JSON पढ़ी ही नहीं जाएगी
+
+### जो जान-बूझकर नहीं किया
+`preparation_only` वाली पूजाओं की **सामग्री, कब करें, कदमों की झलक और
+सवाल-जवाब सब दिखते हैं** — सिर्फ़ प्लेयर नहीं खुलता। जानकारी रोकना मकसद
+नहीं है; "अपने आप कर लीजिए" कहना रोकना मकसद है।
+
+---
+
+## D-036 · घोषित समय = कदमों का जोड़
+**तारीख़:** 26 अगस्त 2026 · **स्थिति:** लागू
+
+audit ने नापकर बताया कि **बारहों पूजाओं में** घोषित समय कदमों के जोड़ से
+कम था:
+
+```
+सत्यनारायण  90 बनाम 132     उपनयन  180 बनाम 219
+श्राद्ध      60 बनाम  89     मुंडन   60 बनाम  87
+```
+
+यानी यूज़र आधा घंटा सोचकर बैठता और डेढ़ घंटा लग जाता। पूजा बीच में
+छोड़नी पड़े — यह छोटी बात नहीं है।
+
+### नियम
+**घोषित समय हमेशा कदमों के मिनटों का जोड़ होता है।** जो काम पूजा वाले दिन
+से पहले या साथ-साथ होता है (सामान जुटाना, प्रसाद बनाना, सरगी) उसके चरण पर
+`samayMinute: 0` रहता है और वो जोड़ में नहीं आता।
+
+`Vidhi.fromJson` अब मेल न खाने पर फ़ाइल पढ़ने से ही मना कर देता है, और
+जाँच हर पूजा पर यह मिलान करती है। **दोबारा बिगड़ नहीं सकता।**
+
+---
+
+## D-037 · गणपति मंत्र का स्रोत ठीक किया — और भरोसा घटाया
+**तारीख़:** 26 अगस्त 2026 · **स्थिति:** लागू
+
+ऐप ग्यारह फ़ाइलों में इस पाठ को **ऋग्वेद २.२३.१** बताता था:
+
+```
+ॐ गणानां त्वा गणपतिं हवामहे
+प्रियाणां त्वा प्रियपतिं हवामहे
+निधीनां त्वा निधिपतिं हवामहे
+वसो मम।
+```
+
+### जाँच में क्या निकला
+`docs/13` ने इसे ग़लत बताया था। **मैंने ख़ुद मिलाकर देखा** — ऋग्वेद
+२.२३.१ आगे इस तरह चलती है:
+
+```
+गणानां त्वा गणपतिं हवामहे कविं कवीनामुपमश्रवस्तमम्।
+ज्येष्ठराजं ब्रह्मणां ब्रह्मणस्पत आ नः शृण्वन्नूतिभिः सीद सादनम्॥
+```
+
+यानी **सिर्फ़ पहली पंक्ति** ऋग्वेद की है। "प्रियाणां… निधीनां… वसो मम"
+वाला जुड़ा हुआ रूप यजुर्वेद की परंपरा में मिलता है।
+
+### क्या किया
+- स्रोत में यह पूरी बात साफ़-साफ़ लिखी — कौन सी पंक्ति कहाँ की है
+- **भरोसा `uncha` से `madhyam` किया**, क्योंकि ठीक शाखा और अध्याय छपे वेद
+  के बिना नहीं कहना चाहिए
+- अर्थ दोबारा लिखा — पहले "वसो मम" का अनुवाद "हमारे यहाँ पधारिए और बस
+  जाइए" था, जो शब्दों से नहीं निकलता
+
+### सबक़
+> **किसी और की जाँच पर भी वही नियम लगता है जो अपनी पर।** audit ने कहा
+> "यह ग़लत है" — पर मैंने पहले ख़ुद ऋग्वेद की ऋचा मिलाई, तब बदला। D-014
+> यही कहता है।

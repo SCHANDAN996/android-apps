@@ -274,26 +274,42 @@ app/
 │
 ├── test/
 │   ├── vidhi_test.dart          कंटेंट का ढाँचा — बारहों पूजाएँ
-│   └── vidhi_screens_test.dart  स्क्रीनों पर उँगली चलाकर
+│   ├── vidhi_screens_test.dart  स्क्रीनों पर उँगली चलाकर
+│   ├── phase6_screens_test.dart utility screens का responsive, semantic,
+│   │                            persistence और navigation regression suite
+│   └── phase7_polish_test.dart  loading/error, reduced motion, lifecycle
+│                                refresh और 2.0× narrow-layout regression
 │
 └── lib/
     ├── main.dart          छह पन्नों की पट्टी (NavigationBar)
-    ├── theme.dart         हल्दी · सिंदूर · तुलसी — और हर जगह बड़े अक्षर
-    ├── state/settings.dart    जगह, पद्धति, यजमान, सामग्री की टिक + 35 शहर
-    ├── widgets/common.dart    Khand · Pankti · Chetavni · Panna + समय के औज़ार
+    ├── theme.dart         semantic colour/type/spacing/radius/motion tokens
+    ├── state/settings.dart    जगह, पद्धति, यजमान, सामग्री की टिक + 35 शहर;
+    │                          `playerProgress.v1` में per-Puja technical resume
+    ├── widgets/common.dart    Pankti · Chetavni · Panna + समय के औज़ार
+    ├── widgets/design_system.dart
+    │                         Phase 1 के reusable CTA · icon action · surface
+    │                         card · status chip · state view · divider primitives
     ├── vidhi/
     │   ├── vidhi.dart     पूजा का ढाँचा + JSON पढ़ना + जाँच
     │   └── bhandar.dart   assets से पढ़ने वाला (याद भी रखता है)
     └── screens/
-        ├── vidhi_list_screen.dart    पूजाओं की सूची — पहला पन्ना
-        ├── vidhi_screen.dart         एक पूजा का विवरण
-        ├── samagri_screen.dart       सामग्री — टिक + WhatsApp
-        ├── vidhi_player_screen.dart  ⭐ विधि प्लेयर
-        ├── aaj_screen.dart       आज का पूरा पंचांग (दिन आगे-पीछे कर सकते हैं)
-        ├── calendar_screen.dart  महीना + साल के त्योहार (दो tab)
-        ├── sankalp_screen.dart   ⭐ संकल्प — नाम/गोत्र पूछकर पूरा वाक्य
-        ├── muhurta_screen.dart   चौघड़िया + होरा + "अभी क्या चल रहा है"
-        └── settings_screen.dart  शहर, अमांत/पूर्णिमांत, यजमान
+        ├── vidhi_list_screen.dart    विधि home — featured/daily/festival/special discovery;
+        │                             festival rail text-scale के साथ बढ़ती है
+        ├── vidhi_screen.dart         पूजा की तैयारी — metadata, preview,
+        │                             trust/source + preparation/direct/resume CTA
+        ├── samagri_screen.dart       सामग्री तैयारी — local ticks, progress,
+        │                             groups, WhatsApp + player CTA
+        ├── vidhi_player_screen.dart  guided steps, furthest app-position save,
+        │                             final-write/clear ordering + handoff
+        │                             (wakelock only while active)
+        ├── puja_completion_screen.dart calm technical guide-finished handoff
+        ├── aaj_screen.dart           daily Panchang + available festival dashboard
+        ├── calendar_screen.dart      reduced-motion-aware 7-column month grid,
+        │                             bounded selected-day/festival cache
+        ├── sankalp_screen.dart       guided purpose + exact Sankalp output
+        ├── muhurta_screen.dart       ordered Choghadiya/Hora + boundary-scheduled,
+        │                             lifecycle-safe current refresh
+        └── settings_screen.dart      शहर, मास-पद्धति और local यजमान settings
 ```
 
 ### कंटेंट की परत — `lib/vidhi/`
@@ -323,6 +339,11 @@ app/
 ⛔ **इस स्क्रीन पर विज्ञापन कभी नहीं** (→ D-008)। कोई ad widget मत जोड़ना।
 
 - एक कदम, एक पन्ना (`PageView`)
+- semantic चरण क्रम और progress header; चरणों की सूची से existing steps पर
+  in-session navigation, जिसमें केवल देखा गया / खुला / आगे का UI state है
+- पहले चरण पर single आगे action, बाद के चरणों पर पीछे/आगे और अंतिम चरण पर
+  technical progress clear करके calm Completion handoff
+- per-Puja saved जगह केवल furthest app position है; यह धार्मिक completion नहीं
 - विवरण 20px, मंत्र 26px — दो फ़ुट दूर से पढ़ने लायक
 - `WakelockPlus` — पूजा के बीच स्क्रीन बंद नहीं होती
 - चौथा कदम संकल्प का है — वहीं पंचांग से पूरा वाक्य बनता है (→ D-006)
@@ -331,12 +352,51 @@ app/
 ### साझा widgets — `widgets/common.dart`
 | नाम | क्या |
 |---|---|
-| `Khand` | एक खंड — शीर्षक + Card |
 | `Pankti` | बाएँ नाम, दाएँ मान, नीचे नोट |
-| `Chetavni` | चेतावनी का डिब्बा (`serious: true` से लाल) |
+| `Chetavni` | semantic warning surface (`serious: true` से error tone) |
 | `Panna` | पूरे ऐप में एक जैसा ListView |
 | `hm` `hms` `tarikh` `tarikhChhoti` | समय-तारीख़ के रूप |
 | `dinKaNishan` | **"(कल)" / "(बीती रात)"** — बहुत ज़रूरी, नीचे देखो |
+
+### Phase 1 design system
+`theme.dart` अब semantic design tokens का source है। नये screen work में
+hex colour, local text-size या local radius लिखने के बजाय ये इस्तेमाल करें:
+
+| चीज़ | API |
+|---|---|
+| रंग | `VidhivatTheme.colorsOf(context)` → `background`, `surface`, `primary`, `textPrimary`, `success` आदि |
+| typography | `VidhivatTheme.typographyOf(context)` → `pageTitle`, `sectionTitle`, `mantra`, `numericHighlight` आदि |
+| spacing | `VidhivatSpacing` |
+| radius | `VidhivatRadius` |
+| elevation / icon size | `VidhivatElevation`, `VidhivatIconSize` |
+| action / focus sizing | `VidhivatActionSize`, `VidhivatStroke` |
+| primitives | `widgets/design_system.dart` |
+
+Phase 7 में `VidhivatStateView` calm loading/error/empty presentation देता है;
+callers raw exception UI में नहीं डालते। `VidhivatMotion` standard durations का
+source है और animation callers system reduced-motion preference मानते हैं।
+
+Visual transformation pass में इसी file के `VidhivatSacredBackdrop` और
+`VidhivatSacredHero` shared visual primitives हैं। पहला screen-level depth देता
+है; दूसरा Home/Detail/Player/Completion की native, asset-ready hero hierarchy
+देता है। इन्हें केवल presentation के लिए use करें—देity artwork, source status,
+mantra/ritual text अथवा flow semantics इनमें hard-code न करें।
+
+`lib/vidhi/devotional_assets.dart` stable `Vidhi.id` से local devotional asset
+path और concise semantic label resolve करता है। Screens raw asset paths scatter
+नहीं करते। Unknown ids को neutral diya मिलता है; text-heavy posters को compact
+cards या religious-copy substitute की तरह map नहीं करना है.
+
+Catalogue artwork केवल `app/assets/images/devotional/*.png` में रखना है। ये
+transparent (alpha-preserving), no-text, decorative files हैं; opaque JPEG,
+poster/screenshot अथवा image में लिखे धार्मिक दावे UI में नहीं लगाने हैं।
+`VidhiListScreen` का `_PujaGridCard` सभी Home categories का shared 2-column
+card है—art bounded top area और Hindi copy bottom area में रहती है, और system
+text scale पर card height बढ़ती है।
+
+⚠️ Phase 1 ने existing screens की widget trees नहीं बदलीं। अगली screen phase
+में components को धीरे-धीरे अपनाना है; धार्मिक चेतावनियाँ और data states
+कभी न हटें।
 
 ### ⚠️ दो बातें जो ऐप में ध्यान रखनी हैं
 

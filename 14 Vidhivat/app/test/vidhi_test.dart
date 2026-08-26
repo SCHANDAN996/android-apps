@@ -1,6 +1,7 @@
 @TestOn('vm')
 library;
 
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
@@ -135,7 +136,8 @@ void main() {
           final sankalpWale =
               v.charan.where((c) => c.vishesh == CharanVishesh.sankalp);
           expect(sankalpWale.length, 1,
-              reason: 'संकल्प वाले चरण ${sankalpWale.length} हैं, एक होना चाहिए');
+              reason:
+                  'संकल्प वाले चरण ${sankalpWale.length} हैं, एक होना चाहिए');
         });
 
         test('संकल्प का purpose इंजन की सूची में मौजूद है', () {
@@ -148,6 +150,37 @@ void main() {
 
         test('कम से कम तीन सवाल-जवाब हैं', () {
           expect(v.sawaal.length, greaterThanOrEqualTo(3));
+        });
+
+        test('समय कदमों के जोड़ के बराबर है (→ D-027)', () {
+          // पहले बारहों में घोषित समय जोड़ से कम था — यूज़र आधा घंटा
+          // सोचकर बैठता और डेढ़ घंटा लग जाता।
+          final jod = v.charan.fold<int>(0, (a, c) => a + c.samayMinute);
+          expect(v.samayMinute, jod,
+              reason: 'घोषित ${v.samayMinute} बनाम जोड़ $jod');
+        });
+
+        test('scope लिखा है, और उसी के हिसाब से विधि खुलती है', () {
+          // preparation_only / expert_assisted वाली पूजा की पूरी विधि
+          // नहीं खुलनी चाहिए (→ D-026)।
+          expect(Scope.values, contains(v.scope));
+          if (v.scope == Scope.expertAssisted ||
+              v.scope == Scope.preparationOnly) {
+            expect(v.scope.poorViDhiKholSakteHain, isFalse);
+          }
+        });
+
+        test('जो सामग्री किसी कदम में माँगी है वो सूची में भी है', () {
+          // audit 5.2 — गणेश में पंचामृत, कलश/करवा/शिव में दूर्वा गायब थे।
+          final sooch = v.samagri.map((s) => s.vastu).join(' ');
+          final sabKadam = v.charan.map((c) => c.vivaran).join(' ');
+          for (final cheez in ['पंचामृत', 'दूर्वा']) {
+            if (sabKadam.contains(cheez)) {
+              expect(sooch.contains(cheez) || v.samagriSamuhWar.keys.join(' ').contains(cheez),
+                  isTrue,
+                  reason: '"$cheez" किसी कदम में माँगी है पर सामग्री में नहीं');
+            }
+          }
         });
 
         test('स्रोत लिखा है — ऐप में यही दिखता है', () {
@@ -270,6 +303,24 @@ void main() {
           throwsA(isA<VidhiFormatException>()));
     });
 
+    test('ग़लत scope वाली फ़ाइल नहीं चलेगी', () {
+      final json = _vidhiWithMantra('''
+        "devanagari": "", "roman": "", "arth": "",
+        "audio": "", "strot": "", "sthiti": "khaali"
+      ''').replaceFirst('"scope": "self_guided"', '"scope": "jo-mann-aaye"');
+      expect(() => Vidhi.parse('जाँच', json),
+          throwsA(isA<VidhiFormatException>()));
+    });
+
+    test('समय जोड़ से न मिले तो फ़ाइल नहीं चलेगी', () {
+      final json = _vidhiWithMantra('''
+        "devanagari": "", "roman": "", "arth": "",
+        "audio": "", "strot": "", "sthiti": "khaali"
+      ''').replaceFirst('"samayMinute": 2', '"samayMinute": 99');
+      expect(() => Vidhi.parse('जाँच', json),
+          throwsA(isA<VidhiFormatException>()));
+    });
+
     test('ग़लत schemaVersion वाली फ़ाइल नहीं चलेगी', () {
       final json = _vidhiWithMantra('''
         "devanagari": "", "roman": "", "arth": "",
@@ -277,6 +328,18 @@ void main() {
       ''').replaceFirst('"schemaVersion": 1', '"schemaVersion": 99');
       expect(() => Vidhi.parse('जाँच', json),
           throwsA(isA<VidhiFormatException>()));
+    });
+
+    test('बिना चरण वाली पूजा player तक नहीं पहुँच सकती', () {
+      final data = jsonDecode(_vidhiWithMantra('''
+        "devanagari": "", "roman": "", "arth": "",
+        "audio": "", "strot": "", "sthiti": "khaali"
+      ''')) as Map<String, dynamic>;
+      data['charan'] = <Object?>[];
+      expect(
+        () => Vidhi.parse('जाँच', jsonEncode(data)),
+        throwsA(isA<VidhiFormatException>()),
+      );
     });
 
     test('ग़लती के संदेश में फ़ाइल का नाम आता है', () {
@@ -349,9 +412,10 @@ String _vidhiWithMantra(String mantraFields) => '''
   "naam": "जाँच वाली पूजा",
   "upnaam": [],
   "shreni": "nitya",
+  "scope": "self_guided",
   "parichay": "सिर्फ़ जाँच के लिए",
   "kabKarein": { "saral": "कभी भी", "tithiSuchi": [], "vaarSuchi": [], "note": "" },
-  "samayMinute": 10,
+  "samayMinute": 2,
   "kathinai": "aasan",
   "sankalpPurpose": "",
   "samagri": [

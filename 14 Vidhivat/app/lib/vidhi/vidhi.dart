@@ -86,6 +86,58 @@ enum Kathinai {
       );
 }
 
+/// यह पूजा ऐप में **किस हद तक** दिखाई जा सकती है।
+///
+/// यही वो खाना है जो तय करता है कि "विधि शुरू करें" वाला बटन पूरी DIY
+/// विधि खोले या सिर्फ़ तैयारी की जानकारी। (→ D-035,
+/// `docs/14_PUJA_LIBRARY_EXPANSION_PLAN.md`)
+///
+/// ⚠️ **हर संस्कार अपने आप करने लायक नहीं होता।** उपनयन में आचार्य ही
+/// गायत्री का उपदेश देते हैं, मुंडन में बच्चे पर उस्तरा चलता है, श्राद्ध
+/// में कौन कर सकता है यह कुल-परंपरा तय करती है। ऐसी विधियों को बिना
+/// रोक-टोक "अपने आप कर लीजिए" वाले रूप में दिखाना ग़लत सलाह है।
+enum Scope {
+  /// घर पर अपने आप की जा सकती है — पूरी विधि दिखेगी।
+  selfGuided('self_guided', 'घर पर अपने आप', 'यह विधि घर पर अपने आप की जा सकती है।'),
+
+  /// किसी एक क्षेत्र/परिवार की परंपरा है — विधि दिखेगी, पर साथ में यह
+  /// चेतावनी कि दूसरी जगह अलग चलन है।
+  regionalProfile('regional_profile', 'क्षेत्रीय परंपरा',
+      'यह एक क्षेत्र की परंपरा है। दूसरे क्षेत्रों और परिवारों में विधि अलग होती है।'),
+
+  /// सिर्फ़ तैयारी, अर्थ और सावधानी — **पूरी विधि नहीं दिखेगी।**
+  preparationOnly('preparation_only', 'सिर्फ़ तैयारी',
+      'यहाँ सिर्फ़ तैयारी, अर्थ और सावधानियाँ हैं। पूरी विधि जानकार से ही कराइए।'),
+
+  /// मुख्य विधि पंडित/आचार्य के बिना नहीं — **पूरी विधि नहीं दिखेगी।**
+  expertAssisted('expert_assisted', 'पंडित जी के साथ',
+      'इसकी मुख्य विधि पंडित या आचार्य के बिना पूरी नहीं होती। यह पन्ना सिर्फ़ तैयारी के लिए है।');
+
+  /// JSON में लिखा जाने वाला नाम।
+  final String kunji;
+
+  /// सूची और विवरण में दिखने वाला छोटा नाम।
+  final String naam;
+
+  /// पन्ने पर दिखने वाली पूरी बात।
+  final String batao;
+
+  const Scope(this.kunji, this.naam, this.batao);
+
+  /// पूरी कदम-दर-कदम विधि खोली जा सकती है या नहीं।
+  bool get poorViDhiKholSakteHain =>
+      this == Scope.selfGuided || this == Scope.regionalProfile;
+
+  static Scope parse(String file, String raw) => Scope.values.firstWhere(
+        (s) => s.kunji == raw,
+        orElse: () => throw VidhiFormatException(
+          file,
+          'scope "$raw" ग़लत है। चलेंगी: '
+          '${Scope.values.map((s) => s.kunji).join(", ")}',
+        ),
+      );
+}
+
 /// इस पाठ पर कितना भरोसा है — **पंडित जी की जाँच से पहले।**
 ///
 /// सारे मंत्र एक जैसे पक्के नहीं होते। कुछ हर पद्धति में हूबहू एक जैसे
@@ -515,11 +567,22 @@ class Vidhi {
 
   final Shreni shreni;
 
+  /// ऐप इसे कहाँ तक दिखा सकता है (→ D-035)।
+  final Scope scope;
+
   /// दो-तीन लाइन — यह पूजा क्यों की जाती है।
   final String parichay;
 
   final KabKarein kabKarein;
+
+  /// पूरी पूजा में लगभग कितने मिनट।
+  ///
+  /// **नियम (→ D-036): यह हमेशा कदमों के मिनटों का जोड़ होता है।** जो
+  /// काम पूजा वाले दिन से पहले या साथ-साथ होता है (सामान जुटाना, प्रसाद
+  /// बनाना) उसके चरण पर `samayMinute: 0` रहता है और वो जोड़ में नहीं आता।
+  /// जाँच हर बार यह मिलान करती है, इसलिए दोनों कभी अलग नहीं हो सकते।
   final int samayMinute;
+
   final Kathinai kathinai;
 
   /// संकल्प के लिए — `commonPurposes` की कुंजी, जैसे "सत्यनारायण"।
@@ -537,6 +600,7 @@ class Vidhi {
     required this.naam,
     required this.upnaam,
     required this.shreni,
+    required this.scope,
     required this.parichay,
     required this.kabKarein,
     required this.samayMinute,
@@ -631,6 +695,22 @@ class Vidhi {
         .map((s) => Samagri.fromJson(file, _map(file, s, 'samagri')))
         .toList(growable: false);
 
+    // ── समय का एक ही नियम (→ D-036) ──
+    //
+    // पहले हर पूजा में घोषित समय कदमों के जोड़ से कम था — बारहों में।
+    // यानी यूज़र आधा घंटा सोचकर बैठता और डेढ़ घंटा लग जाता। अब जोड़ ही
+    // घोषित समय है, और यह जाँच उसे दोबारा बिगड़ने नहीं देती।
+    final samayJod = charan.fold<int>(0, (a, c) => a + c.samayMinute);
+    final samayLikha = _int(file, j, 'samayMinute');
+    if (samayLikha != samayJod) {
+      throw VidhiFormatException(
+        file,
+        'samayMinute $samayLikha लिखा है पर कदमों का जोड़ $samayJod है। '
+        'दोनों बराबर होने चाहिए — जो काम पूजा से पहले होता है उस चरण पर '
+        'samayMinute 0 रखो।',
+      );
+    }
+
     // पूजा तभी पास हो सकती है जब उसका हर मंत्र पास हो।
     final jaanch = Jaanch.fromJson(file, _map(file, j['jaanch'], 'jaanch'));
     if (jaanch.paas) {
@@ -651,6 +731,7 @@ class Vidhi {
       naam: _str(file, j, 'naam'),
       upnaam: _strList(file, j, 'upnaam'),
       shreni: Shreni.parse(file, _str(file, j, 'shreni')),
+      scope: Scope.parse(file, _str(file, j, 'scope')),
       parichay: _str(file, j, 'parichay'),
       kabKarein:
           KabKarein.fromJson(file, _map(file, j['kabKarein'], 'kabKarein')),

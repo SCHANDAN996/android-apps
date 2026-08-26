@@ -5,15 +5,11 @@ import '../state/settings.dart';
 import '../theme.dart';
 import '../vidhi/vidhi.dart';
 import '../widgets/common.dart';
+import '../widgets/design_system.dart';
+import 'vidhi_player_screen.dart';
 
-/// सामग्री की सूची — टिक लगाओ, और WhatsApp पर भेजो।
-///
-/// यह पन्ना बाज़ार में खुलता है, इसलिए:
-/// - अक्षर बड़े, टिक का डिब्बा बड़ा (चलते-चलते उँगली से लगेगा)
-/// - टिक फ़ोन में याद रहती है, ऐप बंद करने पर मिटती नहीं
-/// - "सिर्फ़ ज़रूरी" वाला बटन — पूरी सूची देखकर लोग घबरा जाते हैं
-///
-/// टिक **सिर्फ़ इसी फ़ोन में** रहती है, कहीं नहीं जाती (→ D-004)।
+/// सामग्री की तैयारी सूची। इसकी ticks पहले से device-local settings में रहती
+/// हैं; Phase 3 उस व्यवहार को बदलता या कोई नई persistence नहीं जोड़ता।
 class SamagriScreen extends StatefulWidget {
   final Vidhi vidhi;
 
@@ -28,181 +24,265 @@ class _SamagriScreenState extends State<SamagriScreen> {
 
   Vidhi get vidhi => widget.vidhi;
 
+  Future<void> _setTick(int index, bool value) async {
+    await settings.setSamagriTick(vidhi.id, index, value);
+    if (mounted) setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final ticks = settings.samagriTicks(vidhi.id);
-
-    // टिक सामग्री के पूरे क्रम पर लगती है, छाँटी हुई सूची पर नहीं —
-    // वरना "सिर्फ़ ज़रूरी" चालू करते ही टिक दूसरी चीज़ों पर खिसक जाएँगी।
-    final kul = _sirfZaruri ? vidhi.zaruriSamagri.length : vidhi.samagri.length;
-    final lagiHui = _sirfZaruri
-        ? ticks.where((i) => vidhi.samagri[i].zaruri).length
+    final visible =
+        _sirfZaruri ? vidhi.zaruriSamagri.length : vidhi.samagri.length;
+    final prepared = _sirfZaruri
+        ? ticks.where((index) => vidhi.samagri[index].zaruri).length
         : ticks.length;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('सामग्री'),
         actions: [
-          IconButton(
-            tooltip: 'भेजो',
+          VidhivatIconAction(
+            tooltip: 'सूची भेजें',
             onPressed: () => SharePlus.instance.share(
               ShareParams(text: vidhi.samagriText(sirfZaruri: _sirfZaruri)),
             ),
-            icon: const Icon(Icons.share_outlined),
+            icon: Icons.share_outlined,
           ),
           if (ticks.isNotEmpty)
-            IconButton(
+            VidhivatIconAction(
               tooltip: 'सारी टिक हटाओ',
               onPressed: () async {
                 await settings.clearSamagriTicks(vidhi.id);
                 if (context.mounted) setState(() {});
               },
-              icon: const Icon(Icons.restart_alt),
+              icon: Icons.restart_alt,
             ),
         ],
       ),
-      body: Panna(
-        children: [
-          Text(vidhi.naam, style: theme.textTheme.titleLarge),
-          const SizedBox(height: 12),
-
-          Row(
+      body: SafeArea(
+        bottom: false,
+        child: VidhivatSacredBackdrop(
+          child: Panna(
+            padding: const EdgeInsets.fromLTRB(
+              VidhivatSpacing.lg,
+              VidhivatSpacing.lg,
+              VidhivatSpacing.lg,
+              VidhivatSpacing.xxl,
+            ),
             children: [
-              Expanded(
-                child: Text(
-                  '$lagiHui / $kul जुट गईं',
-                  style: theme.textTheme.bodyLarge?.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: lagiHui == kul && kul > 0
-                        ? VidhivatTheme.tulsi
-                        : null,
-                  ),
-                ),
+              Text(
+                '${vidhi.naam} की सामग्री',
+                style: VidhivatTheme.typographyOf(context).pageTitle,
               ),
-              FilterChip(
-                label: const Text('सिर्फ़ ज़रूरी'),
-                selected: _sirfZaruri,
-                onSelected: (v) => setState(() => _sirfZaruri = v),
+              const SizedBox(height: VidhivatSpacing.xs),
+              Text(
+                'पूजा शुरू करने से पहले अपनी तैयारी देख लें।',
+                style: VidhivatTheme.typographyOf(context).bodyMedium,
+              ),
+              const SizedBox(height: VidhivatSpacing.lg),
+              _PreparationProgress(
+                prepared: prepared,
+                total: visible,
+                onlyRequired: _sirfZaruri,
+                onOnlyRequiredChanged: (value) =>
+                    setState(() => _sirfZaruri = value),
+              ),
+              const SizedBox(height: VidhivatSpacing.xxl),
+              for (final group in vidhi.samagriSamuhWar.entries) ...[
+                _MaterialGroup(
+                  title: group.key,
+                  entries: group.value
+                      .where((entry) => !_sirfZaruri || entry.samagri.zaruri)
+                      .toList(growable: false),
+                  ticks: ticks,
+                  onChanged: _setTick,
+                ),
+                const SizedBox(height: VidhivatSpacing.xl),
+              ],
+              Text(
+                'टिक सिर्फ़ आपके फ़ोन में रहती है। "सारी टिक हटाओ" से अगली '
+                'बार के लिए सूची साफ़ हो जाती है।',
+                style: VidhivatTheme.typographyOf(context).caption,
               ),
             ],
           ),
-          const SizedBox(height: 8),
-          LinearProgressIndicator(
-            value: kul == 0 ? 0 : lagiHui / kul,
-            minHeight: 6,
-            borderRadius: BorderRadius.circular(3),
+        ),
+      ),
+      bottomNavigationBar: SafeArea(
+        top: false,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(
+            VidhivatSpacing.lg,
+            VidhivatSpacing.sm,
+            VidhivatSpacing.lg,
+            VidhivatSpacing.md,
           ),
-          const SizedBox(height: 22),
+          child: VidhivatButton(
+            label: 'पूजा शुरू करें',
+            semanticLabel: '${vidhi.naam} शुरू करें',
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                  builder: (_) => VidhiPlayerScreen(vidhi: vidhi)),
+            ),
+            icon: Icons.play_arrow,
+            fullWidth: true,
+          ),
+        ),
+      ),
+    );
+  }
+}
 
-          for (final entry in vidhi.samagriSamuhWar.entries)
-            ..._samuhKhand(context, entry.key, entry.value, ticks),
+class _PreparationProgress extends StatelessWidget {
+  final int prepared;
+  final int total;
+  final bool onlyRequired;
+  final ValueChanged<bool> onOnlyRequiredChanged;
 
-          const SizedBox(height: 8),
-          Text(
-            'टिक सिर्फ़ आपके फ़ोन में रहती है। "सारी टिक हटाओ" से अगली '
-            'बार के लिए सूची साफ़ हो जाती है।',
-            style: theme.textTheme.bodySmall,
+  const _PreparationProgress({
+    required this.prepared,
+    required this.total,
+    required this.onlyRequired,
+    required this.onOnlyRequiredChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = VidhivatTheme.colorsOf(context);
+    return VidhivatSurfaceCard(
+      variant: VidhivatCardVariant.information,
+      child: Column(
+        children: [
+          Wrap(
+            spacing: VidhivatSpacing.sm,
+            runSpacing: VidhivatSpacing.xs,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: [
+              Text(
+                '$prepared / $total जुट गईं',
+                style: VidhivatTheme.typographyOf(context).cardTitle,
+              ),
+              FilterChip(
+                label: const Text('सिर्फ़ ज़रूरी'),
+                selected: onlyRequired,
+                onSelected: onOnlyRequiredChanged,
+              ),
+            ],
+          ),
+          const SizedBox(height: VidhivatSpacing.sm),
+          LinearProgressIndicator(
+            value: total == 0 ? 0 : prepared / total,
+            minHeight: VidhivatSpacing.xs,
+            borderRadius: VidhivatRadius.pill,
+            color: prepared == total && total > 0
+                ? colors.success
+                : colors.primary,
           ),
         ],
       ),
     );
   }
-
-  List<Widget> _samuhKhand(
-    BuildContext context,
-    String samuh,
-    List<({int index, Samagri samagri})> cheezein,
-    Set<int> ticks,
-  ) {
-    final dikhane = cheezein
-        .where((e) => !_sirfZaruri || e.samagri.zaruri)
-        .toList(growable: false);
-    if (dikhane.isEmpty) return const [];
-
-    return [
-      Khand(
-        title: samuh,
-        child: Column(
-          children: [
-            for (var i = 0; i < dikhane.length; i++) ...[
-              if (i > 0) const Divider(),
-              _SamagriPankti(
-                samagri: dikhane[i].samagri,
-                index: dikhane[i].index,
-                ticked: ticks.contains(dikhane[i].index),
-                onChanged: (index, value) async {
-                  await settings.setSamagriTick(vidhi.id, index, value);
-                  if (mounted) setState(() {});
-                },
-              ),
-            ],
-          ],
-        ),
-      ),
-    ];
-  }
 }
 
-class _SamagriPankti extends StatelessWidget {
-  final Samagri samagri;
-  final int index;
-  final bool ticked;
+class _MaterialGroup extends StatelessWidget {
+  final String title;
+  final List<({int index, Samagri samagri})> entries;
+  final Set<int> ticks;
   final void Function(int index, bool value) onChanged;
 
-  const _SamagriPankti({
-    required this.samagri,
-    required this.index,
-    required this.ticked,
+  const _MaterialGroup({
+    required this.title,
+    required this.entries,
+    required this.ticks,
     required this.onChanged,
   });
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final maap = [samagri.matra, samagri.ikai]
-        .where((s) => s.trim().isNotEmpty)
-        .join(' ');
-
-    return CheckboxListTile(
-      value: ticked,
-      onChanged: (v) => onChanged(index, v ?? false),
-      controlAffinity: ListTileControlAffinity.leading,
-      contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-      title: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Text(
-              samagri.vastu,
-              style: theme.textTheme.bodyLarge?.copyWith(
-                decoration: ticked ? TextDecoration.lineThrough : null,
-                color: ticked
-                    ? theme.textTheme.bodyLarge?.color?.withValues(alpha: 0.45)
-                    : null,
-              ),
-            ),
-          ),
-          if (maap.isNotEmpty)
-            Padding(
-              padding: const EdgeInsets.only(left: 10),
-              child: Text(
-                maap,
-                style: theme.textTheme.bodyMedium?.copyWith(
-                  fontWeight: FontWeight.w600,
-                  color: VidhivatTheme.haldi,
+    if (entries.isEmpty) return const SizedBox.shrink();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        VidhivatSectionHeader(title: title),
+        const SizedBox(height: VidhivatSpacing.sm),
+        VidhivatSurfaceCard(
+          padding: const EdgeInsets.symmetric(horizontal: VidhivatSpacing.sm),
+          child: Column(
+            children: [
+              for (var item = 0; item < entries.length; item++) ...[
+                if (item > 0) const VidhivatDivider(),
+                _MaterialChecklistTile(
+                  item: entries[item].samagri,
+                  index: entries[item].index,
+                  selected: ticks.contains(entries[item].index),
+                  onChanged: onChanged,
                 ),
-              ),
-            ),
-        ],
+              ],
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _MaterialChecklistTile extends StatelessWidget {
+  final Samagri item;
+  final int index;
+  final bool selected;
+  final void Function(int index, bool value) onChanged;
+
+  const _MaterialChecklistTile({
+    required this.item,
+    required this.index,
+    required this.selected,
+    required this.onChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final quantity = [item.matra, item.ikai]
+        .where((part) => part.trim().isNotEmpty)
+        .join(' ');
+    final type = VidhivatTheme.typographyOf(context);
+    final colors = VidhivatTheme.colorsOf(context);
+    return CheckboxListTile(
+      value: selected,
+      onChanged: (value) => onChanged(index, value ?? false),
+      controlAffinity: ListTileControlAffinity.leading,
+      contentPadding: const EdgeInsets.symmetric(
+        horizontal: VidhivatSpacing.xxs,
+        vertical: VidhivatSpacing.xxs,
       ),
-      subtitle: (samagri.note.isNotEmpty || !samagri.zaruri)
-          ? Text(
-              [
-                if (!samagri.zaruri) 'वैकल्पिक',
-                if (samagri.note.isNotEmpty) samagri.note,
-              ].join(' · '),
-              style: theme.textTheme.bodySmall,
+      title: Text(
+        item.vastu,
+        style: type.bodyLarge.copyWith(
+          decoration: selected ? TextDecoration.lineThrough : null,
+          color: selected ? colors.textSecondary : colors.textPrimary,
+        ),
+      ),
+      subtitle: (quantity.isNotEmpty || item.note.isNotEmpty || !item.zaruri)
+          ? Padding(
+              padding: const EdgeInsets.only(top: VidhivatSpacing.xxs),
+              child: Wrap(
+                spacing: VidhivatSpacing.xs,
+                runSpacing: VidhivatSpacing.xxs,
+                children: [
+                  if (quantity.isNotEmpty)
+                    VidhivatStatusChip(
+                      label: quantity,
+                      tone: VidhivatStatusTone.primary,
+                    ),
+                  if (!item.zaruri)
+                    const VidhivatStatusChip(
+                      label: 'वैकल्पिक',
+                      tone: VidhivatStatusTone.neutral,
+                    ),
+                  if (item.note.isNotEmpty)
+                    Text(item.note, style: type.bodySmall),
+                ],
+              ),
             )
           : null,
     );

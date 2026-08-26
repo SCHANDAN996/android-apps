@@ -13,6 +13,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   shared_preferences: ^2.2.2
   share_plus: ^11.1.0
+  # सिर्फ़ app खुला होने पर एक बार स्थान लेकर सूर्योदय/पंचांग सही करने के लिए।
+  geolocator: ^14.0.2
 
   # विधि प्लेयर के लिए — पूजा के बीच स्क्रीन बंद नहीं होनी चाहिए
   wakelock_plus: ^1.2.8
@@ -36,3 +38,4 @@ flutter:
   # फ़ोल्डर की नहीं। (अभी नहीं जोड़ा क्योंकि ख़ाली फ़ोल्डर पर build टूटता है।)
   assets:
     - assets/vidhi/
+    - assets/images/devotional/

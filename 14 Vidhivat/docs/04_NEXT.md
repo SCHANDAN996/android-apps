@@ -3,14 +3,21 @@
 > ⚡ **यही इकलौता सच है कि अभी इस वक़्त क्या करना है।**
 > हर session की शुरुआत यहीं से हो। काम बदले तो ये फ़ाइल तुरंत अपडेट करो।
 
-**आख़िरी अपडेट:** 21 अगस्त 2026 — *विधि प्लेयर बना और फ़ोन पर जाँचा गया*
+**आख़िरी अपडेट:** 26 अगस्त 2026 — *centred specific-art Puja experience release built*
 
 ---
 
 ## 🎯 एक लाइन में
 
-**कंटेंट का ढाँचा और विधि प्लेयर बन चुके हैं और फ़ोन पर चल रहे हैं।
-अब इकलौती अड़चन — पंडित जी। मंत्र और मुहर उन्हीं से आएगी।**
+**Puja Detail में title → बड़ा centered deity/ritual artwork → metadata/procedure
+का साफ़ क्रम है। Home के 2-column cards में centered glowing, Puja-specific
+transparent artwork और सिर्फ़ Puja नाम है—generic diya repeat नहीं। `flutter
+analyze` clean और 210 tests pass हैं। नई arm64 release APK 32.7 MB बनी है। अभी
+connected ADB device नहीं मिला, इसलिए केवल इसी build का final on-phone visual
+smoke test बाकी है।**
+
+> इस smoke test/review के अलावा audio, AI, gamification, नया feature अथवा धार्मिक
+> content में कोई बदलाव नहीं करना है।
 
 ---
 
