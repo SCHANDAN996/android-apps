@@ -434,3 +434,44 @@ cd app && flutter analyze && flutter test && flutter run -d <device-id>
 ```
 
 ⚠️ `adb` PATH में नहीं है: `H:\Android\Sdk\platform-tools\adb.exe`
+
+
+---
+
+## चालीसा और आरती — `lib/vidhi/paath.dart` + `assets/paath/`
+
+पूजा से अलग ढाँचा (→ D-039)। पूजा एक *काम* है, पाठ *पढ़ने* की चीज़।
+
+```
+app/assets/paath/
+├── _suchi.json            सात पाठों की हल्की सूची
+├── hanuman_chalisa.json   43 पद (2 दोहे + 40 चौपाई + समापन दोहा)
+├── ganesh_aarti.json      … और पाँच आरतियाँ
+└── audio/                 रिकॉर्डिंग (अभी ख़ाली)
+
+app/lib/vidhi/paath.dart   ढाँचा + जाँच
+app/lib/vidhi/bhandar.dart PaathBhandar भी यहीं
+app/lib/screens/
+├── paath_list_screen.dart सूची + छन्नी (सब · चालीसा · आरती)
+└── paath_screen.dart      पढ़ने वाला पन्ना
+```
+
+| नाम | क्या |
+|---|---|
+| `Paath` | एक पूरा पाठ — `khand`, `rachnakar`, `bhasha`, `strot`, `jaanch` |
+| `PaathKhand` | एक पद — शीर्षक, देवनागरी, रोमन, अर्थ, ऑडियो, `sthiti` |
+| `PaathPrakar` | `chalisa` · `aarti` · `stotra` |
+| `PaathSuchiEntry` | सूची की एक पंक्ति + `taiyar` झंडी |
+| `paathBhandar` | पूरे ऐप के लिए एक ही भंडार |
+
+`MantraSthiti`, `Bharosa`, `Strot` और `Jaanch` `vidhi.dart` से ही आते
+हैं — एक ही भाषा, दो ढाँचे।
+
+⚠️ **"चालीसा" में चालीस चौपाइयाँ होनी ही चाहिए** — ढाँचा जाँचता है।
+
+### नया पाठ जोड़ना हो तो
+1. `assets/paath/<id>.json` बनाओ — `rachnakar` और `bhasha` ज़रूर भरो
+2. `_suchi.json` में entry डालो, `taiyar` सच करो
+3. `flutter test test/paath_test.dart` — ढाँचा बता देगा क्या छूटा
+4. `python tools/banao_pandit_sheet.py` — शीट के भाग ५ में अपने आप आएगा
+5. ⚠️ **पाठ याददाश्त से मत लिखना** — अपनी पुस्तिका से, `sthiti: "khaali"` छोड़ दो

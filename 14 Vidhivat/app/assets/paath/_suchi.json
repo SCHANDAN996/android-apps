@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "_note": "चालीसा, आरती और स्तोत्र — पूजा से अलग (→ D-039)। जो जुड़ चुका उस पर taiyar सच है और उसी नाम की .json फ़ाइल इसी फ़ोल्डर में है।",
+  "paath": [
+    {
+      "id": "hanuman_chalisa",
+      "naam": "श्री हनुमान चालीसा",
+      "prakar": "chalisa",
+      "devta": "हनुमान जी",
+      "ekLine": "तुलसीदास कृत, 43 पद",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "ganesh_aarti",
+      "naam": "श्री गणेश जी की आरती",
+      "prakar": "aarti",
+      "devta": "गणेश जी",
+      "ekLine": "हर पूजा के अंत में और गणेश चतुर्थी पर",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "hanuman_aarti",
+      "naam": "श्री हनुमान जी की आरती",
+      "prakar": "aarti",
+      "devta": "हनुमान जी",
+      "ekLine": "मंगलवार और शनिवार को, हनुमान पूजा के अंत में",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "lakshmi_aarti",
+      "naam": "श्री लक्ष्मी जी की आरती",
+      "prakar": "aarti",
+      "devta": "लक्ष्मी जी",
+      "ekLine": "दीपावली पर और शुक्रवार को",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "durga_aarti",
+      "naam": "श्री दुर्गा जी की आरती",
+      "prakar": "aarti",
+      "devta": "दुर्गा माँ",
+      "ekLine": "नवरात्रि के नौ दिन, और अष्टमी-नवमी पर",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "shiv_aarti",
+      "naam": "श्री शिव जी की आरती",
+      "prakar": "aarti",
+      "devta": "शिव जी",
+      "ekLine": "सोमवार, प्रदोष और महाशिवरात्रि पर",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "satyanarayan_aarti",
+      "naam": "श्री सत्यनारायण जी की आरती",
+      "prakar": "aarti",
+      "devta": "सत्यनारायण भगवान",
+      "ekLine": "सत्यनारायण पूजा में कथा के बाद",
+      "taiyar": true,
+      "paas": false
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import '../widgets/common.dart';
 import '../widgets/design_system.dart';
 import 'aaj_screen.dart';
 import 'muhurta_screen.dart';
+import 'paath_list_screen.dart';
 import 'sankalp_screen.dart';
 import 'settings_screen.dart';
 
@@ -45,6 +46,13 @@ class MoreScreen extends StatelessWidget {
                   title: 'संकल्प',
                   subtitle: 'अपने या परिवार के सदस्य के लिए संकल्प बनाएँ',
                   onTap: () => _open(context, const SankalpScreen()),
+                ),
+                const SizedBox(height: VidhivatSpacing.sm),
+                _MoreItem(
+                  icon: Icons.menu_book_outlined,
+                  title: 'चालीसा और आरती',
+                  subtitle: 'बैठकर पढ़ने वाली स्तुतियाँ — पूजा से अलग',
+                  onTap: () => _open(context, const PaathListScreen()),
                 ),
                 const SizedBox(height: VidhivatSpacing.sm),
                 _MoreItem(

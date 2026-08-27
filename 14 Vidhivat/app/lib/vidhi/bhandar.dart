@@ -1,5 +1,6 @@
 import 'package:flutter/services.dart' show rootBundle;
 
+import 'paath.dart';
 import 'vidhi.dart';
 
 /// पूजाओं का भंडार — JSON फ़ाइलें ऐप के अंदर से पढ़ता है।
@@ -57,3 +58,54 @@ class VidhiBhandar {
 
 /// पूरे ऐप के लिए एक ही भंडार।
 final vidhiBhandar = VidhiBhandar();
+
+/// चालीसा और स्तोत्र का भंडार — पूजाओं से अलग (→ D-039)।
+///
+/// वही ढंग जो [VidhiBhandar] का है: सूची हल्की और एक बार पढ़ी जाती है,
+/// पूरा पाठ तभी जब यूज़र खोले।
+class PaathBhandar {
+  static const _dir = 'assets/paath';
+  static const suchiPath = '$_dir/_suchi.json';
+
+  List<PaathSuchiEntry>? _suchi;
+  final Map<String, Paath> _khuleHue = {};
+
+  /// पाठों की सूची।
+  Future<List<PaathSuchiEntry>> suchi() async {
+    final pehleSe = _suchi;
+    if (pehleSe != null) return pehleSe;
+
+    final source = await rootBundle.loadString(suchiPath);
+    final list = PaathSuchiEntry.parseAll(suchiPath, source);
+    _suchi = list;
+    return list;
+  }
+
+  /// एक पूरा पाठ। दूसरी बार माँगने पर याद रखा हुआ मिलेगा।
+  Future<Paath> paath(String id) async {
+    final yaad = _khuleHue[id];
+    if (yaad != null) return yaad;
+
+    final path = pathFor(id);
+    final source = await rootBundle.loadString(path);
+    final p = Paath.parse(path, source);
+
+    if (p.id != id) {
+      throw VidhiFormatException(
+        path,
+        'फ़ाइल का नाम "$id" है पर अंदर id "${p.id}" लिखी है',
+      );
+    }
+
+    _khuleHue[id] = p;
+    return p;
+  }
+
+  static String pathFor(String id) => '$_dir/$id.json';
+
+  /// किसी पद की रिकॉर्डिंग कहाँ रखी है।
+  static String audioPathFor(String file) => '$_dir/audio/$file';
+}
+
+/// पूरे ऐप के लिए एक ही भंडार।
+final paathBhandar = PaathBhandar();

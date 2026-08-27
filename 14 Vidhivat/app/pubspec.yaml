@@ -38,4 +38,5 @@ flutter:
   # फ़ोल्डर की नहीं। (अभी नहीं जोड़ा क्योंकि ख़ाली फ़ोल्डर पर build टूटता है।)
   assets:
     - assets/vidhi/
+    - assets/paath/
     - assets/images/devotional/

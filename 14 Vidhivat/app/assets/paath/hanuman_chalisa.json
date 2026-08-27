@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "id": "hanuman_chalisa",
+  "naam": "श्री हनुमान चालीसा",
+  "upnaam": [
+    "हनुमान चालीसा",
+    "चालीसा"
+  ],
+  "prakar": "chalisa",
+  "devta": "हनुमान जी",
+  "rachnakar": "गोस्वामी तुलसीदास",
+  "bhasha": "अवधी",
+  "parichay": "गोस्वामी तुलसीदास की रची हुई चालीस चौपाइयों की स्तुति, जो हनुमान जी के गुण और पराक्रम कहती है। दो दोहों से शुरू होकर चालीस चौपाई और एक समापन दोहे पर पूरी होती है — कुल 43 पद।\n\nघर में सबसे ज़्यादा पढ़ी जाने वाली स्तुति यही है। इसे पूजा की तरह सामग्री या विधि नहीं चाहिए — बस बैठकर शुरू से आख़िर तक पढ़ना होता है।",
+  "kabPadhein": "मंगलवार और शनिवार को ख़ास तौर पर; बाक़ी दिनों में भी कभी भी। सुबह स्नान के बाद या शाम को दीपक जलाकर पढ़ने का चलन है।",
+  "kaisePadhein": "हाथ-मुँह धोकर साफ़ जगह पर आसन बिछाकर बैठें। हो सके तो हनुमान जी की तस्वीर के सामने दीपक जलाएँ। पूर्व या उत्तर की ओर मुँह रखें।\n\nपहले दोनों दोहे, फिर चालीस चौपाइयाँ क्रम से, अंत में समापन दोहा। जल्दबाज़ी न करें — शब्द साफ़ बोलें। कुछ लोग एक बार पढ़ते हैं, कुछ सात या ग्यारह बार; कोई पक्का नियम नहीं है।\n\n⚠️ यह पाठ है, पूजा नहीं — इसके लिए कोई सामग्री या संकल्प ज़रूरी नहीं।",
+  "khand": [
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "दोहा १"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "दोहा २"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 1"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 2"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 3"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 4"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 5"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 6"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 7"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 8"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 9"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 10"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 11"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 12"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 13"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 14"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 15"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 16"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 17"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 18"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 19"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 20"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 21"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 22"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 23"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 24"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 25"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 26"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 27"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 28"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 29"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 30"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 31"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 32"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 33"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 34"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 35"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 36"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 37"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 38"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 39"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "चौपाई 40"
+    },
+    {
+      "dev": "",
+      "roman": "",
+      "arth": "",
+      "audio": "",
+      "sthiti": "khaali",
+      "shirshak": "समापन दोहा"
+    }
+  ],
+  "bharosa": "kam",
+  "strot": {
+    "paddhati": "गोस्वामी तुलसीदास कृत, अवधी",
+    "kshetra": "पूरे उत्तर भारत में प्रचलित",
+    "note": "⚠️ **पाठ अभी नहीं जोड़ा गया है — 43 में से 0 पद भरे हैं।**\n\nचालीसा गाई जाने वाली रचना है, बिल्कुल आरती की तरह। इसलिए ऐप में वही पाठ जाएगा जो आपके घर में पढ़ा जाता है — अपनी चालीसा-पुस्तिका से लिखवाकर, या पंडित जी से। रचना तुलसीदास की है इसलिए पाठ पर किसी का हक़ नहीं, पर किसी प्रकाशक की छपी टीका, अर्थ या रिकॉर्डिंग नहीं उठानी — **अपना अर्थ, अपनी रिकॉर्डिंग।**\n\nछपे हुए पाठों में जगह-जगह छोटे फ़र्क़ मिलते हैं (जैसे कुछ में \"बिकट रूप धरि\" और कुछ में \"बिकट रूप धरी\")। इसलिए एक ही पुस्तिका चुनकर पूरा पाठ उसी से लीजिए, मिलाकर नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

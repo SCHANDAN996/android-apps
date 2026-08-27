@@ -40,6 +40,14 @@ def e(x):
 files = [p for p in sorted(glob.glob(os.path.join(APP, "assets", "vidhi", "*.json")))
          if not p.endswith("_suchi.json")]
 pujas = [json.load(io.open(p, encoding="utf-8")) for p in files]
+
+# चालीसा और आरती — पूजा से अलग फ़ोल्डर (→ D-039)
+paath_files = [p for p in sorted(glob.glob(
+    os.path.join(APP, "assets", "paath", "*.json")))
+    if not p.endswith("_suchi.json")]
+paaths = [json.load(io.open(p, encoding="utf-8")) for p in paath_files]
+paaths.sort(key=lambda d: (d.get("prakar", ""), d["naam"]))
+PAATH_PRAKAR = {"chalisa": "चालीसा", "aarti": "आरती", "stotra": "स्तोत्र"}
 pujas.sort(key=lambda d: (list(SCOPE_NAAM).index(d.get("scope", "self_guided")), d["naam"]))
 
 bhare = OrderedDict()     # देवनागरी → {mantra, uses:[(पूजा, चरण)]}
@@ -122,6 +130,8 @@ w('''  <header class="shirsh">
       लिखी है।</p>
     <p><b>३.</b> अगर कोई चरण इस घर की परंपरा में होता ही नहीं, तो उसे काट
       दीजिए — वो भी उतनी ही ज़रूरी जानकारी है।</p>
+    <p><b>४.</b> भाग ५ में चालीसा और आरती हैं — उनका पाठ अभी बिल्कुल
+      ख़ाली है; वहाँ सिर्फ़ यह बताना है कि किस पुस्तिका से लें।</p>
   </div>
 ''' % (kul_bhare, len(bhare), len(bhare), kul_bhare, kul_khaali))
 
@@ -281,6 +291,44 @@ w('''    <div class="likho" style="margin-top:20px">
     </div>''')
 w('  </section>')
 
+# ── भाग ५ — चालीसा और आरती ──
+paath_pad_kul = sum(len(d["khand"]) for d in paaths)
+paath_pad_bhare = sum(1 for d in paaths for k in d["khand"]
+                      if k.get("dev", "").strip())
+
+w('  <section class="bhaag">')
+w('    <h2>भाग ५ — चालीसा और आरती</h2>')
+w('''    <p class="bhoomika">
+      ये पूजा नहीं हैं — बैठकर या खड़े होकर पढ़ी जाने वाली रचनाएँ हैं,
+      इसलिए ऐप में अलग जगह पर रखी गई हैं। <b>इनका पाठ जान-बूझकर नहीं लिखा
+      गया</b> — चालीसा और आरती गाई जाती हैं और घर-घर में शब्द थोड़े बदलते
+      हैं, इसलिए वही रूप जाएगा जो इस घर में पढ़ा जाता है।
+    </p>''')
+w('''    <div class="dhyan">
+      <h4>यहाँ आपसे क्या चाहिए</h4>
+      <p><b>१.</b> हर पाठ के आगे बताइए कि इस घर में कौन सा रूप पढ़ा जाता है
+        — किस पुस्तिका से, या आप बोलकर लिखवा दीजिए।</p>
+      <p><b>२.</b> जो पाठ इस सूची में होना ही नहीं चाहिए, उसे काट दीजिए।</p>
+      <p><b>३.</b> कोई ज़रूरी चालीसा या आरती छूट गई हो तो नीचे लिख दीजिए।</p>
+    </div>''')
+w('    <div class="tal-wrap"><table>')
+w('      <thead><tr><th>पाठ</th><th>प्रकार</th><th>देवता</th><th>रचयिता</th>'
+  '<th>पद</th><th>किस पुस्तिका से लें / सुधार</th></tr></thead><tbody>')
+for d in paaths:
+    _bhare = sum(1 for k in d["khand"] if k.get("dev", "").strip())
+    w('        <tr><td>%s</td><td class="byakaran">%s</td>'
+      '<td class="byakaran">%s</td><td class="byakaran">%s</td>'
+      '<td class="byakaran">%d/%d</td><td class="likhne"></td></tr>'
+      % (e(d["naam"]), PAATH_PRAKAR.get(d.get("prakar"), "—"),
+         e(d.get("devta", "")), e(d.get("rachnakar", "")),
+         _bhare, len(d["khand"])))
+w('      </tbody></table></div>')
+w('''    <div class="likho" style="margin-top:20px">
+      <span class="chhota-lebal">कोई चालीसा या आरती छूट गई हो तो यहाँ लिखिए</span>
+      <div class="lakeer"></div><div class="lakeer"></div><div class="lakeer"></div>
+    </div>''')
+w('  </section>')
+
 # ── अंत ──
 w('''  <footer class="antim">
     <h2>जाँच के बाद</h2>
@@ -308,6 +356,8 @@ w('''  <footer class="antim">
 w('</div>')
 
 io.open(OUT, "w", encoding="utf-8", newline="\n").write("\n".join(P) + "\n")
-print("बनी: %d पूजाएँ · %d अलग पाठ (%d जगह) · %d ख़ाली · %d अक्षर"
+print("बनी: %d पूजाएँ · %d अलग मंत्र-पाठ (%d जगह) · %d ख़ाली मंत्र · "
+      "%d चालीसा-आरती (%d/%d पद) · %d अक्षर"
       % (len(pujas), len(bhare), kul_bhare, kul_khaali,
+         len(paaths), paath_pad_bhare, paath_pad_kul,
          sum(len(x) for x in P)))
