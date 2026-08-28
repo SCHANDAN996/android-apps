@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../data/app_flags.dart';
+
 class AdService {
   static final AdService instance = AdService._internal();
   factory AdService() => instance;
@@ -101,6 +103,10 @@ class AdService {
 
   /// Show interstitial ad periodically when exiting a screen.
   Future<void> showInterstitialWithCounter(VoidCallback onComplete) async {
+    if (screenshotMode) {
+      onComplete();
+      return;
+    }
     try {
       final prefs = await SharedPreferences.getInstance();
       int count = prefs.getInt(_exitCountKey) ?? 0;

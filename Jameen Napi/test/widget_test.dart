@@ -9,6 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:jameen_napi/data/app_language.dart';
 import 'package:jameen_napi/data/land_units.dart';
 import 'package:jameen_napi/data/length_units.dart';
+import 'package:jameen_napi/data/pro_kisan_strings.dart';
 import 'package:jameen_napi/data/tool_strings.dart';
 import 'package:jameen_napi/main.dart';
 import 'package:jameen_napi/screens/batwara_screen.dart';
@@ -284,7 +285,8 @@ void main() {
     test('every pick() map covers all nine languages', () {
       // दोनों फाइलें: स्क्रीनों की strings और AppStrings के अपने getters.
       final toolSource = File('lib/data/tool_strings.dart').readAsStringSync();
-      final langSource = File('lib/data/app_language.dart').readAsStringSync();
+      final langSource = File('lib/data/app_language.dart').readAsStringSync() +
+          File('lib/data/pro_kisan_strings.dart').readAsStringSync();
       expect(toolSource, contains('extension ToolStrings'),
           reason: 'tool_strings.dart नहीं मिली या बदल गई है');
       final source = toolSource + String.fromCharCode(10) + langSource;
@@ -401,6 +403,25 @@ void main() {
           strings.stateDisplayName(standardStateKey),
           ...strings.lengthInfoLines,
           ...lengthUnits.map((u) => strings.lengthUnitName(u.en)),
+          // Pro Kisan promo
+          strings.pkOurOtherApp,
+          strings.pkName,
+          strings.pkTagline,
+          strings.pkWhatItDoes,
+          strings.pkMilkTitle,
+          strings.pkMilkBody,
+          strings.pkFertTitle,
+          strings.pkFertBody,
+          strings.pkCattleTitle,
+          strings.pkCattleBody,
+          strings.pkWeatherBody,
+          strings.pkMandiBody,
+          strings.pkSchemeBody,
+          strings.pkGpsBody,
+          strings.pkDataNote,
+          strings.pkInternetNote,
+          strings.pkInstallNow,
+          strings.pkOpenApp,
         ];
 
         for (final text in samples) {

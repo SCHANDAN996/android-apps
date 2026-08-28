@@ -3,6 +3,8 @@ import 'package:share_plus/share_plus.dart';
 
 import '../data/app_language.dart';
 import '../data/app_links.dart';
+import '../data/pro_kisan_strings.dart';
+import 'pro_kisan_screen.dart';
 import '../widgets/privacy_dialog.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -113,6 +115,22 @@ class SettingsScreen extends StatelessWidget {
                               '${strings.downloadCta}: $shareAppLink',
                             );
                           },
+                        ),
+                        ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          leading: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Image.asset('assets/icon/pro_kisan.png',
+                                width: 26, height: 26, fit: BoxFit.cover),
+                          ),
+                          title: Text(strings.pkName),
+                          subtitle: Text(strings.pkOurOtherApp),
+                          trailing: const Icon(Icons.arrow_forward_ios, size: 14),
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const ProKisanScreen()),
+                          ),
                         ),
                         ListTile(
                           contentPadding: EdgeInsets.zero,

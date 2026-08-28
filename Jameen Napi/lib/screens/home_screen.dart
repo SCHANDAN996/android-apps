@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../data/app_language.dart';
+import '../data/pro_kisan_strings.dart';
 import '../widgets/privacy_dialog.dart';
 import 'batwara_screen.dart';
 import 'converter_screen.dart';
 import 'irregular_plot_screen.dart';
 import 'laggi_screen.dart';
 import 'length_screen.dart';
+import 'pro_kisan_screen.dart';
 import 'settings_screen.dart';
 import 'triangle_plot_screen.dart';
 
@@ -203,6 +205,8 @@ class HomeScreen extends StatelessWidget {
                         screen: const TrianglePlotScreen(),
                         gradientColors: const [Color(0xFF00695C), Color(0xFF26A69A)],
                       ),
+                      const SizedBox(height: 4),
+                      _ProKisanCard(strings: strings),
                     ],
                   ),
                 ),
@@ -334,6 +338,101 @@ class _ToolCard extends StatelessWidget {
                 ),
                 const SizedBox(width: 6),
                 Icon(Icons.arrow_forward_ios, size: 14, color: Colors.grey.shade400),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// हमारे दूसरे ऐप का promo. जान-बूझकर tools से अलग दिखता है — ऊपर साफ़ लिखा है
+/// "हमारा दूसरा ऐप", ताकि कोई इसे इसी ऐप का सातवाँ tool न समझे।
+class _ProKisanCard extends StatelessWidget {
+  const _ProKisanCard({required this.strings});
+
+  final AppStrings strings;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 14),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [Color(0xFFFFF8E1), Color(0xFFFFFDF5)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: const Color(0xFFFFCC80), width: 1.5),
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(20),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const ProKisanScreen()),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(14),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  strings.pkOurOtherApp.toUpperCase(),
+                  style: TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.8,
+                    color: Colors.orange.shade900,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Row(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: Image.asset(
+                        'assets/icon/pro_kisan.png',
+                        width: 48,
+                        height: 48,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            strings.pkName,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.black87,
+                            ),
+                          ),
+                          const SizedBox(height: 3),
+                          Text(
+                            strings.pkTagline,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              color: Colors.grey.shade700,
+                              fontSize: 12,
+                              height: 1.3,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: 6),
+                    Icon(Icons.arrow_forward_ios,
+                        size: 14, color: Colors.orange.shade800),
+                  ],
+                ),
               ],
             ),
           ),

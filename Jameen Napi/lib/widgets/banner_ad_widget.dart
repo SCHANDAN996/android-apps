@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import '../data/app_flags.dart';
 import '../services/ad_service.dart';
 
 /// A self-contained bottom banner ad. Loads on mount, shows nothing until the
@@ -19,6 +20,8 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
   @override
   void initState() {
     super.initState();
+    // Play ke screenshots me vigyapan nahi aane chahiye.
+    if (screenshotMode) return;
     final ad = AdService.instance.createBannerAd(
       onLoaded: () {
         if (mounted) setState(() => _loaded = true);
