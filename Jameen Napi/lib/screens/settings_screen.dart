@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../data/app_language.dart';
+import '../data/app_links.dart';
 import '../widgets/privacy_dialog.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -108,7 +109,8 @@ class SettingsScreen extends StatelessWidget {
                           trailing: const Icon(Icons.arrow_forward_ios, size: 14),
                           onTap: () {
                             Share.share(
-                              '🌾 जमीन नापी ऐप — बीघा, कट्ठा, धूर, एकड़, 4-भुजा विषमबाहु खेत नापी और लग्गी पैमाना कैलकुलेटर। 100% फ्री व बिना इंटरनेट के। अभी डाउनलोड करें: https://play.google.com/store/apps/details?id=com.chandansingh.kisan_calculator',
+                              '${strings.shareAppMessage}\n\n'
+                              '${strings.downloadCta}: $shareAppLink',
                             );
                           },
                         ),

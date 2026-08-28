@@ -4,6 +4,7 @@ import 'package:share_plus/share_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../data/app_language.dart';
+import '../data/app_links.dart';
 import '../data/land_units.dart';
 import '../data/plot_units.dart';
 import '../data/tool_strings.dart';
@@ -113,6 +114,7 @@ class _IrregularPlotScreenState extends State<IrregularPlotScreen> {
     }
     buffer.writeln('---------------------------');
     buffer.writeln(strings.sharedFromApp);
+    buffer.writeln('${strings.downloadCta}: $shareReportLink');
     return buffer.toString();
   }
 

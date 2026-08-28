@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../data/app_language.dart';
+import '../data/app_links.dart';
 import '../data/land_units.dart';
 import '../data/plot_units.dart';
 import '../data/tool_strings.dart';
@@ -50,6 +51,7 @@ class _LaggiScreenState extends State<LaggiScreen> {
     buffer.writeln('• ${strings.lagInAcre} = ${formatIndian(info.kathaPerAcre)} कट्ठा (${formatIndian(info.bighaPerAcre)} बीघा)');
     buffer.writeln('----------------------------------');
     buffer.writeln(strings.sharedFromApp);
+    buffer.writeln('${strings.downloadCta}: $shareReportLink');
     return buffer.toString();
   }
 

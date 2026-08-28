@@ -4,6 +4,7 @@ import 'package:share_plus/share_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../data/app_language.dart';
+import '../data/app_links.dart';
 import '../data/land_units.dart';
 import '../data/tool_strings.dart';
 import '../services/ad_service.dart';
@@ -141,6 +142,7 @@ class _BatwaraScreenState extends State<BatwaraScreen> {
     }
     buffer.writeln('=================================');
     buffer.writeln(strings.sharedFromApp);
+    buffer.writeln('${strings.downloadCta}: $shareReportLink');
     return buffer.toString();
   }
 
