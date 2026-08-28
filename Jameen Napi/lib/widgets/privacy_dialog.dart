@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../data/app_language.dart';
 
-/// The app's privacy summary, shown from both Home and Settings.
+/// ऐप की privacy summary, Home और Settings दोनों से खुलती है।
 ///
-/// Keep this the single source of truth: the wording has to stay in step with
-/// `privacy_policy.html` and the Play Data safety form, and it previously drifted
-/// out of date because the same dialog was duplicated in two screens.
+/// यही एक जगह है जहाँ यह लिखा है — इसे `privacy_policy.html` और Play के Data
+/// safety form से मेल खाते रहना चाहिए। पहले यह दो स्क्रीनों में copy थी और
+/// इसी वजह से पुरानी (गलत) बात रह गई थी कि ऐप में कोई विज्ञापन नहीं है।
 void showAppPrivacyPolicy(BuildContext context, AppStrings strings) {
-  final isEn = strings.isEn;
-
   showDialog(
     context: context,
     builder: (ctx) => AlertDialog(
@@ -26,24 +24,17 @@ void showAppPrivacyPolicy(BuildContext context, AppStrings strings) {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              isEn
-                  ? 'Jameen Napi respects your privacy.'
-                  : 'जमीन नापी आपकी गोपनीयता का पूरा सम्मान करता है।',
+              strings.privacyIntro,
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
-            Text(isEn
-                ? '• All calculations run offline on your phone. Nothing you measure is uploaded anywhere.'
-                : '• आपकी सारी नाप-गणना आपके फोन में ही होती है। नाप का कोई डेटा कहीं नहीं भेजा जाता।'),
-            Text(isEn
-                ? '• We collect no name, phone number, location or contacts.'
-                : '• हम आपका नाम, मोबाइल नंबर, लोकेशन या कॉन्टैक्ट कुछ भी एकत्र नहीं करते।'),
-            Text(isEn
-                ? '• The app shows Google AdMob ads. For ads only, AdMob uses the internet and your device\'s Advertising ID.'
-                : '• ऐप में Google AdMob के विज्ञापन दिखते हैं। सिर्फ़ विज्ञापनों के लिए AdMob इंटरनेट और आपके फोन की Advertising ID का उपयोग करता है।'),
-            Text(isEn
-                ? '• No other permission (location, contacts, storage, camera) is requested.'
-                : '• इसके अलावा कोई परमिशन (लोकेशन, कॉन्टैक्ट, स्टोरेज, कैमरा) नहीं मांगी जाती।'),
+            Text('• ${strings.privacyOffline}'),
+            const SizedBox(height: 4),
+            Text('• ${strings.privacyNoPersonalData}'),
+            const SizedBox(height: 4),
+            Text('• ${strings.privacyAds}'),
+            const SizedBox(height: 4),
+            Text('• ${strings.privacyNoOtherPermission}'),
           ],
         ),
       ),

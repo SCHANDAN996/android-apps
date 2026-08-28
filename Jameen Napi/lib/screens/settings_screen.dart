@@ -103,8 +103,8 @@ class SettingsScreen extends StatelessWidget {
                         ListTile(
                           contentPadding: EdgeInsets.zero,
                           leading: const Icon(Icons.share, color: Color(0xFF2E7D32)),
-                          title: const Text('ऐप दोस्तों के साथ शेयर करें'),
-                          subtitle: const Text('जमीन नापी ऐप को व्हाट्सएप पर भेजें'),
+                          title: Text(strings.shareAppTitle),
+                          subtitle: Text(strings.shareAppSubtitle),
                           trailing: const Icon(Icons.arrow_forward_ios, size: 14),
                           onTap: () {
                             Share.share(

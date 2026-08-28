@@ -9,6 +9,14 @@ class QuadrilateralPlotPainter extends CustomPainter {
   final double? diagonal; // Diagonal
   final String unitName;
 
+  /// Dishaon ke naam screen se aate hain, taki nakshe ke label bhi user ki
+  /// bhasha me dikhein (pehle yahan Hindi hardcode thi).
+  final String northLabel;
+  final String eastLabel;
+  final String southLabel;
+  final String westLabel;
+  final String diagonalLabel;
+
   QuadrilateralPlotPainter({
     required this.a,
     required this.b,
@@ -16,6 +24,11 @@ class QuadrilateralPlotPainter extends CustomPainter {
     required this.d,
     this.diagonal,
     this.unitName = 'ft',
+    required this.northLabel,
+    required this.eastLabel,
+    required this.southLabel,
+    required this.westLabel,
+    required this.diagonalLabel,
   });
 
   @override
@@ -76,7 +89,7 @@ class QuadrilateralPlotPainter extends CustomPainter {
       _drawText(
         canvas,
         textPainter,
-        'विकर्ण: ${diagonal!.toStringAsFixed(1)} $unitName',
+        '$diagonalLabel: ${diagonal!.toStringAsFixed(1)} $unitName',
         Offset((p1.dx + p3.dx) / 2, (p1.dy + p3.dy) / 2 - 8),
         color: Colors.deepOrange.shade800,
         isBold: true,
@@ -93,38 +106,42 @@ class QuadrilateralPlotPainter extends CustomPainter {
     _drawText(
       canvas,
       textPainter,
-      'A (उत्तर): ${a.toStringAsFixed(1)} $unitName',
+      'A ($northLabel): ${a.toStringAsFixed(1)} $unitName',
       Offset((p1.dx + p2.dx) / 2, p1.dy - 18),
       color: const Color(0xFF1B5E20),
+      canvasWidth: size.width,
     );
 
     // Label Side B (Right / East)
     _drawText(
       canvas,
       textPainter,
-      'B (पूर्व): ${b.toStringAsFixed(1)} $unitName',
+      'B ($eastLabel): ${b.toStringAsFixed(1)} $unitName',
       Offset(p2.dx + 8, (p2.dy + p3.dy) / 2),
       color: const Color(0xFF1B5E20),
       alignLeft: true,
+      canvasWidth: size.width,
     );
 
     // Label Side C (Bottom / South)
     _drawText(
       canvas,
       textPainter,
-      'C (दक्षिण): ${c.toStringAsFixed(1)} $unitName',
+      'C ($southLabel): ${c.toStringAsFixed(1)} $unitName',
       Offset((p4.dx + p3.dx) / 2, p3.dy + 8),
       color: const Color(0xFF1B5E20),
+      canvasWidth: size.width,
     );
 
     // Label Side D (Left / West)
     _drawText(
       canvas,
       textPainter,
-      'D (पश्चिम): ${d.toStringAsFixed(1)} $unitName',
+      'D ($westLabel): ${d.toStringAsFixed(1)} $unitName',
       Offset(p1.dx - 10, (p1.dy + p4.dy) / 2),
       color: const Color(0xFF1B5E20),
       alignRight: true,
+      canvasWidth: size.width,
     );
   }
 
@@ -137,6 +154,7 @@ class QuadrilateralPlotPainter extends CustomPainter {
     bool isBold = false,
     bool alignLeft = false,
     bool alignRight = false,
+    double? canvasWidth,
   }) {
     tp.text = TextSpan(
       text: text,
@@ -153,6 +171,12 @@ class QuadrilateralPlotPainter extends CustomPainter {
     if (alignLeft) dx = offset.dx;
     if (alignRight) dx = offset.dx - tp.width;
 
+    // Purvi/pashchimi label canvas se bahar nikal kar kat jaate the — 720px
+    // wale phone par "90.0 adi" sirf "0 adi" dikhta tha. Andar kheench lo.
+    if (canvasWidth != null) {
+      dx = dx.clamp(2.0, (canvasWidth - tp.width - 2.0).clamp(2.0, canvasWidth));
+    }
+
     tp.paint(canvas, Offset(dx, offset.dy));
   }
 
@@ -163,7 +187,12 @@ class QuadrilateralPlotPainter extends CustomPainter {
         oldDelegate.c != c ||
         oldDelegate.d != d ||
         oldDelegate.diagonal != diagonal ||
-        oldDelegate.unitName != unitName;
+        oldDelegate.unitName != unitName ||
+        oldDelegate.northLabel != northLabel ||
+        oldDelegate.eastLabel != eastLabel ||
+        oldDelegate.southLabel != southLabel ||
+        oldDelegate.westLabel != westLabel ||
+        oldDelegate.diagonalLabel != diagonalLabel;
   }
 }
 
@@ -174,11 +203,15 @@ class TrianglePlotPainter extends CustomPainter {
   final double c;
   final String unitName;
 
+  /// "आधार" ka anuvaad screen se aata hai.
+  final String baseLabel;
+
   TrianglePlotPainter({
     required this.a,
     required this.b,
     required this.c,
     this.unitName = 'ft',
+    required this.baseLabel,
   });
 
   @override
@@ -229,7 +262,7 @@ class TrianglePlotPainter extends CustomPainter {
     _drawText(
       canvas,
       textPainter,
-      'B (आधार): ${b.toStringAsFixed(1)} $unitName',
+      'B ($baseLabel): ${b.toStringAsFixed(1)} $unitName',
       Offset((p2.dx + p3.dx) / 2, p2.dy + 8),
       color: const Color(0xFF1B5E20),
     );
@@ -262,6 +295,7 @@ class TrianglePlotPainter extends CustomPainter {
     return oldDelegate.a != a ||
         oldDelegate.b != b ||
         oldDelegate.c != c ||
-        oldDelegate.unitName != unitName;
+        oldDelegate.unitName != unitName ||
+        oldDelegate.baseLabel != baseLabel;
   }
 }

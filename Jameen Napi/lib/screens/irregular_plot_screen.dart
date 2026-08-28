@@ -185,14 +185,15 @@ class _IrregularPlotScreenState extends State<IrregularPlotScreen> {
                               contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                             ),
                             items: [
-                              const DropdownMenuItem(
+                              DropdownMenuItem(
                                 value: standardStateKey,
-                                child: Text(standardStateKey, overflow: TextOverflow.ellipsis),
+                                child: Text(strings.stateDisplayName(standardStateKey),
+                                    overflow: TextOverflow.ellipsis),
                               ),
                               ...stateUnits.keys.map(
                                 (s) => DropdownMenuItem(
                                   value: s,
-                                  child: Text(s, overflow: TextOverflow.ellipsis),
+                                  child: Text(strings.stateDisplayName(s), overflow: TextOverflow.ellipsis),
                                 ),
                               ),
                             ],
@@ -237,6 +238,11 @@ class _IrregularPlotScreenState extends State<IrregularPlotScreen> {
                               d: dVal,
                               diagonal: diagVal,
                               unitName: strings.plotUnitName(_inputUnit),
+                              northLabel: strings.dirNorth,
+                              eastLabel: strings.dirEast,
+                              southLabel: strings.dirSouth,
+                              westLabel: strings.dirWest,
+                              diagonalLabel: strings.diagonalShort,
                             ),
                           ),
                         ),

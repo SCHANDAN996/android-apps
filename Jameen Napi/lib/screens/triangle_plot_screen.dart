@@ -192,14 +192,15 @@ class _TrianglePlotScreenState extends State<TrianglePlotScreen> {
                               contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                             ),
                             items: [
-                              const DropdownMenuItem(
+                              DropdownMenuItem(
                                 value: standardStateKey,
-                                child: Text(standardStateKey, overflow: TextOverflow.ellipsis),
+                                child: Text(strings.stateDisplayName(standardStateKey),
+                                    overflow: TextOverflow.ellipsis),
                               ),
                               ...stateUnits.keys.map(
                                 (s) => DropdownMenuItem(
                                   value: s,
-                                  child: Text(s, overflow: TextOverflow.ellipsis),
+                                  child: Text(strings.stateDisplayName(s), overflow: TextOverflow.ellipsis),
                                 ),
                               ),
                             ],
@@ -235,6 +236,7 @@ class _TrianglePlotScreenState extends State<TrianglePlotScreen> {
                               b: bVal,
                               c: cVal,
                               unitName: strings.plotUnitName(_inputUnit),
+                              baseLabel: strings.baseShort,
                             ),
                           ),
                         ),

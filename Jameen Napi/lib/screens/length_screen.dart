@@ -143,7 +143,7 @@ class _LengthScreenState extends State<LengthScreen> {
                                     return DropdownMenuItem(
                                       value: u,
                                       child: Text(
-                                        u.label,
+                                        s.lengthUnitName(u.en),
                                         overflow: TextOverflow.ellipsis,
                                       ),
                                     );
@@ -175,7 +175,7 @@ class _LengthScreenState extends State<LengthScreen> {
                 final convertedValue =
                     targetUnit.feet == 0 ? 0.0 : totalFeet / targetUnit.feet;
                 final formatted = formatIndian(convertedValue);
-                final unitName = s.isEn ? targetUnit.en : targetUnit.hi;
+                final unitName = s.lengthUnitName(targetUnit.en);
 
                 return AccentCard(
                   margin: const EdgeInsets.only(bottom: 8),
@@ -189,15 +189,17 @@ class _LengthScreenState extends State<LengthScreen> {
                       : Colors.grey.shade100,
                   child: ListTile(
                     contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 2),
+                    // Naam pehle user ki bhasha me, neeche angrezi naam — pehle
+                    // ulta tha, isliye Tamil me bhi upar "सेंटीमीटर" dikhta tha.
                     title: Text(
-                      targetUnit.label,
+                      s.lengthUnitName(targetUnit.en),
                       style: TextStyle(
                         fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
                         color: isSelected ? const Color(0xFF0D47A1) : Colors.black87,
                       ),
                     ),
                     subtitle: Text(
-                      s.isEn ? targetUnit.en : targetUnit.hi,
+                      targetUnit.en,
                       style: const TextStyle(color: Colors.black45, fontSize: 12),
                     ),
                     trailing: Row(

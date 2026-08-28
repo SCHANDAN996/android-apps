@@ -282,13 +282,16 @@ void main() {
     // जाती है और user को अपनी भाषा के बीच हिंदी दिखती है। यह test source पढ़कर
     // हर `pick({...})` map की चाबियाँ गिनता है।
     test('every pick() map covers all nine languages', () {
-      final source = File('lib/data/tool_strings.dart').readAsStringSync();
-      expect(source, contains('extension ToolStrings'),
+      // दोनों फाइलें: स्क्रीनों की strings और AppStrings के अपने getters.
+      final toolSource = File('lib/data/tool_strings.dart').readAsStringSync();
+      final langSource = File('lib/data/app_language.dart').readAsStringSync();
+      expect(toolSource, contains('extension ToolStrings'),
           reason: 'tool_strings.dart नहीं मिली या बदल गई है');
+      final source = toolSource + String.fromCharCode(10) + langSource;
 
       final maps = RegExp(r'pick\((?:const\s+)?\{(.*?)\}\)', dotAll: true)
           .allMatches(source);
-      expect(maps.length, greaterThan(40),
+      expect(maps.length, greaterThan(70),
           reason: 'pick() maps मिले ही नहीं — regex टूट गया?');
 
       final missing = <String>[];
@@ -358,6 +361,46 @@ void main() {
           strings.unitLabel,
           strings.stateLabel,
           strings.sharedFromApp,
+          // Converter / Length screen aur baaki nayi strings
+          strings.directAreaMode,
+          strings.lengthWidthMode,
+          strings.totalCalculatedArea,
+          strings.selectState,
+          strings.enterArea,
+          strings.selectUnit,
+          strings.lengthEnterHeading,
+          strings.lengthOtherUnits,
+          strings.lengthInfoTitle,
+          strings.copied,
+          strings.calculate,
+          strings.shareResultTitle,
+          // Home ke badge
+          strings.badgeStates,
+          strings.badgeExact,
+          strings.badgeChain,
+          strings.badgeDesiScale,
+          strings.badgePartition,
+          strings.badgeThreeSides,
+          // Nakshe ke label
+          strings.dirNorth,
+          strings.dirEast,
+          strings.dirSouth,
+          strings.dirWest,
+          strings.diagonalShort,
+          strings.baseShort,
+          // Privacy dialog
+          strings.privacyIntro,
+          strings.privacyOffline,
+          strings.privacyNoPersonalData,
+          strings.privacyAds,
+          strings.privacyNoOtherPermission,
+          strings.shareAppTitle,
+          strings.shareAppSubtitle,
+          // Rajya ke naam
+          ...stateUnits.keys.map(strings.stateDisplayName),
+          strings.stateDisplayName(standardStateKey),
+          ...strings.lengthInfoLines,
+          ...lengthUnits.map((u) => strings.lengthUnitName(u.en)),
         ];
 
         for (final text in samples) {

@@ -30,7 +30,7 @@ class _BatwaraScreenState extends State<BatwaraScreen> {
 
   String _state = standardStateKey;
   late List<LandUnit> _units = unitsForState(_state);
-  late LandUnit _selectedUnit = _units.firstWhere((u) => u.en == 'Bigha', orElse: () => _units.first);
+  late LandUnit _selectedUnit = _defaultUnit(_units);
 
   BatwaraMode _mode = BatwaraMode.equal;
 
@@ -41,6 +41,19 @@ class _BatwaraScreenState extends State<BatwaraScreen> {
   /// "हिस्सेदार 4" jaise naam ginne ke liye — list se index lene par hatane ke
   /// baad naam dohra sakta hai.
   int _partnerCounter = 0;
+
+
+  /// Bantware ke liye theek-thaak default ikai. `_units.first` sabse chhoti
+  /// ikai (varg feet) hoti hai — usse default "1 varg feet" ban jaata tha aur
+  /// screen khulte hi "0.333333 sq ft" dikhta tha.
+  static LandUnit _defaultUnit(List<LandUnit> units) {
+    for (final want in ['Bigha', 'Acre', 'Katha', 'Guntha']) {
+      for (final u in units) {
+        if (u.en == want) return u;
+      }
+    }
+    return units.last;
+  }
 
   @override
   void initState() {
@@ -69,7 +82,7 @@ class _BatwaraScreenState extends State<BatwaraScreen> {
         _state = saved;
         _units = unitsForState(saved);
         if (!_units.contains(_selectedUnit)) {
-          _selectedUnit = _units.firstWhere((u) => u.en == 'Bigha', orElse: () => _units.first);
+          _selectedUnit = _defaultUnit(_units);
         }
       });
     } catch (_) {}
@@ -201,12 +214,12 @@ class _BatwaraScreenState extends State<BatwaraScreen> {
                               contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                             ),
                             items: [
-                              const DropdownMenuItem(
+                              DropdownMenuItem(
                                 value: standardStateKey,
-                                child: Text(standardStateKey),
+                                child: Text(strings.stateDisplayName(standardStateKey)),
                               ),
                               ...stateUnits.keys.map(
-                                (s) => DropdownMenuItem(value: s, child: Text(s)),
+                                (s) => DropdownMenuItem(value: s, child: Text(strings.stateDisplayName(s))),
                               ),
                             ],
                             onChanged: (s) {
@@ -215,7 +228,7 @@ class _BatwaraScreenState extends State<BatwaraScreen> {
                                   _state = s;
                                   _units = unitsForState(s);
                                   if (!_units.contains(_selectedUnit)) {
-                                    _selectedUnit = _units.firstWhere((u) => u.en == 'Bigha', orElse: () => _units.first);
+                                    _selectedUnit = _defaultUnit(_units);
                                   }
                                 });
                               }

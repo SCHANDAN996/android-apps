@@ -218,12 +218,12 @@ class _ConverterScreenState extends State<ConverterScreen> {
                   contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 ),
                 items: [
-                  const DropdownMenuItem(
+                  DropdownMenuItem(
                     value: standardStateKey,
-                    child: Text(standardStateKey),
+                    child: Text(strings.stateDisplayName(standardStateKey)),
                   ),
                   ...stateUnits.keys.map(
-                    (s) => DropdownMenuItem(value: s, child: Text(s)),
+                    (s) => DropdownMenuItem(value: s, child: Text(strings.stateDisplayName(s))),
                   ),
                 ],
                 onChanged: _onStateChanged,

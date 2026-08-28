@@ -220,12 +220,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                               ),
                               items: [
-                                const DropdownMenuItem(
+                                DropdownMenuItem(
                                   value: standardStateKey,
-                                  child: Text(standardStateKey),
+                                  child: Text(strings.stateDisplayName(standardStateKey)),
                                 ),
                                 ...stateUnits.keys.map(
-                                  (s) => DropdownMenuItem(value: s, child: Text(s)),
+                                  (s) => DropdownMenuItem(value: s, child: Text(strings.stateDisplayName(s))),
                                 ),
                               ],
                               onChanged: (newState) {
