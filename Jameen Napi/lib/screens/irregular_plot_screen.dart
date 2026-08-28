@@ -258,9 +258,11 @@ class _IrregularPlotScreenState extends State<IrregularPlotScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                strings.irrEnterFourSides,
-                                style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                              Expanded(
+                                child: Text(
+                                  strings.irrEnterFourSides,
+                                  style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                                ),
                               ),
                               IconButton(
                                 icon: const Icon(Icons.refresh, size: 20, color: Colors.grey),

@@ -318,7 +318,10 @@ class _BatwaraScreenState extends State<BatwaraScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(strings.batRatioHeading, style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
+                                Expanded(
+                                  child: Text(strings.batRatioHeading,
+                                      style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
+                                ),
                                 TextButton.icon(
                                   icon: const Icon(Icons.add, size: 18),
                                   label: Text(strings.batAdd),
@@ -553,7 +556,12 @@ class _BatwaraScreenState extends State<BatwaraScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(p.name, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Color(0xFF1B5E20))),
+                      Expanded(
+                        child: Text(p.name,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Color(0xFF1B5E20))),
+                      ),
+                      const SizedBox(width: 8),
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(

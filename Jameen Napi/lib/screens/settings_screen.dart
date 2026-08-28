@@ -91,7 +91,7 @@ class SettingsScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          '${strings.appTitle} v1.0.4',
+                          '${strings.appTitle} v1.1.0',
                           style: const TextStyle(fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(height: 4),
