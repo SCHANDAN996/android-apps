@@ -86,10 +86,25 @@ class _PaathScreenState extends State<PaathScreen> {
       );
 }
 
-class _PaathReader extends StatelessWidget {
+class _PaathReader extends StatefulWidget {
   final Paath paath;
 
   const _PaathReader({required this.paath});
+
+  @override
+  State<_PaathReader> createState() => _PaathReaderState();
+}
+
+class _PaathReaderState extends State<_PaathReader> {
+  /// पाठ करते वक़्त सिर्फ़ देवनागरी चाहिए। रोमन और अर्थ सन्दर्भ की चीज़ें
+  /// हैं — इसलिए डिफ़ॉल्ट रूप से छिपी रहती हैं।
+  ///
+  /// ⚠️ यह सिर्फ़ सजावट नहीं है। तीनों एक साथ दिखाने पर हनुमान चालीसा का
+  /// पन्ना **33,000px से ज़्यादा** लंबा हो जाता है — फ़ोन पर लगभग 45
+  /// स्क्रीन। पाठ करने वाला इतना स्क्रॉल नहीं कर सकता।
+  bool _arthDikhao = false;
+
+  Paath get paath => widget.paath;
 
   @override
   Widget build(BuildContext context) {
@@ -162,10 +177,22 @@ class _PaathReader extends StatelessWidget {
               VidhivatSectionHeader(
                 title: 'पाठ',
                 supportingText: '${paath.khandKul} पद',
+                action: paath.kuchBharaHai
+                    ? VidhivatButton(
+                        label: _arthDikhao ? 'सिर्फ़ पाठ' : 'अर्थ दिखाएँ',
+                        semanticLabel: _arthDikhao
+                            ? 'सिर्फ़ पाठ दिखाएँ, अर्थ छिपाएँ'
+                            : 'हर पद का रोमन और अर्थ दिखाएँ',
+                        onPressed: () =>
+                            setState(() => _arthDikhao = !_arthDikhao),
+                        variant: VidhivatButtonVariant.text,
+                        compact: true,
+                      )
+                    : null,
               ),
               const SizedBox(height: VidhivatSpacing.sm),
               for (final k in paath.khand) ...[
-                _KhandCard(khand: k),
+                _KhandCard(khand: k, arthDikhao: _arthDikhao),
                 const SizedBox(height: VidhivatSpacing.sm),
               ],
 
@@ -201,8 +228,9 @@ class _PaathReader extends StatelessWidget {
 /// एक पद — दोहा या चौपाई।
 class _KhandCard extends StatelessWidget {
   final PaathKhand khand;
+  final bool arthDikhao;
 
-  const _KhandCard({required this.khand});
+  const _KhandCard({required this.khand, this.arthDikhao = false});
 
   @override
   Widget build(BuildContext context) {
@@ -217,16 +245,22 @@ class _KhandCard extends StatelessWidget {
           const SizedBox(height: VidhivatSpacing.xs),
           if (khand.hasPath) ...[
             // सबसे बड़ा अक्षर — यही बोलकर पढ़ा जाता है।
-            SelectableText(khand.dev, style: type.mantra),
-            if (khand.roman.isNotEmpty) ...[
+            //
+            // ⚠️ यहाँ `SelectableText` जान-बूझकर नहीं है। वो हर पद के
+            // अंदर अपना scrollable बनाता है; 43 पदों पर वो 43 nested
+            // scrollable हो जाते हैं, और लंबे पन्ने पर स्क्रॉल उलझता है।
+            // (विधि प्लेयर में एक पन्ने पर एक ही मंत्र होता है, इसलिए
+            // वहाँ `SelectableText` ठीक है।)
+            Text(khand.dev, style: type.mantra),
+            if (arthDikhao && khand.roman.isNotEmpty) ...[
               const SizedBox(height: VidhivatSpacing.xs),
               Text(khand.roman, style: type.mantraTransliteration),
             ],
-            if (khand.arth.isNotEmpty) ...[
+            if (arthDikhao && khand.arth.isNotEmpty) ...[
               const SizedBox(height: VidhivatSpacing.sm),
               Text(khand.arth, style: type.mantraMeaning),
             ],
-            if (khand.sthiti != MantraSthiti.paas) ...[
+            if (arthDikhao && khand.sthiti != MantraSthiti.paas) ...[
               const SizedBox(height: VidhivatSpacing.xs),
               Text('जाँच बाकी', style: type.caption),
             ],

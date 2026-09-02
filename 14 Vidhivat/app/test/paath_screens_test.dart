@@ -26,10 +26,17 @@ void main() {
     addTearDown(tester.view.resetDevicePixelRatio);
   }
 
+  /// किसी चीज़ तक स्क्रॉल करो।
+  ///
+  /// ⚠️ क़दम 500 का है, 160 का नहीं। हनुमान चालीसा का पन्ना **10,000px से
+  /// ज़्यादा लंबा** है (43 पद × पाठ + रोमन + अर्थ)। 160 के क़दम से
+  /// `scrollUntilVisible` का डिफ़ॉल्ट बजट (50 × 160 = 8000px) आख़िरी पदों
+  /// तक पहुँचता ही नहीं और "Bad state: No element" देता है — जो देखने में
+  /// widget गायब होने जैसा लगता है, पर असल में बजट ख़त्म होना है।
   Future<void> scrollTak(WidgetTester tester, Finder tak) async {
     await tester.scrollUntilVisible(
       tak,
-      160,
+      500,
       scrollable: find
           .descendant(of: find.byType(ListView), matching: find.byType(Scrollable))
           .first,
@@ -73,21 +80,73 @@ void main() {
   });
 
   group('पाठ पढ़ने वाला पन्ना', () {
-    testWidgets('चालीसा के 43 पद और ख़ाली होने की चेतावनी दिखती है',
+    testWidgets('चालीसा के पद पाठ के साथ दिखते हैं', (tester) async {
+      phoneNaap(tester);
+      await tester.pumpWidget(app(const PaathScreen(id: 'hanuman_chalisa')));
+      await tester.pumpAndSettle();
+
+      await scrollTak(tester, find.text('दोहा १'));
+      expect(find.textContaining('श्रीगुरु चरन सरोज रज'), findsOneWidget);
+
+      await scrollTak(tester, find.text('चौपाई 1'));
+      expect(find.textContaining('जय हनुमान ज्ञान गुन सागर'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('डिफ़ॉल्ट रूप से सिर्फ़ पाठ दिखता है, अर्थ नहीं',
+        (tester) async {
+      // तीनों (देवनागरी + रोमन + अर्थ) एक साथ दिखाने पर पन्ना 33,000px
+      // से ज़्यादा लंबा हो जाता है — फ़ोन पर ~45 स्क्रीन। पाठ करते वक़्त
+      // सिर्फ़ देवनागरी चाहिए।
+      phoneNaap(tester);
+      await tester.pumpWidget(app(const PaathScreen(id: 'hanuman_chalisa')));
+      await tester.pumpAndSettle();
+
+      await scrollTak(tester, find.text('चौपाई 1'));
+      expect(find.textContaining('जय हनुमान ज्ञान गुन सागर'), findsOneWidget);
+      // रोमन और अर्थ छिपे रहने चाहिए
+      expect(find.textContaining('jai hanumaan gyaan'), findsNothing);
+      expect(find.textContaining('ज्ञान और गुणों के सागर'), findsNothing);
+    });
+
+    testWidgets('"अर्थ दिखाएँ" दबाने पर रोमन और अर्थ आ जाते हैं',
         (tester) async {
       phoneNaap(tester);
       await tester.pumpWidget(app(const PaathScreen(id: 'hanuman_chalisa')));
       await tester.pumpAndSettle();
 
-      // पाठ अभी नहीं आया — यह सबसे ऊपर साफ़ लिखा होना चाहिए।
-      expect(find.text('पाठ अभी जोड़ा नहीं गया'), findsOneWidget);
-      expect(find.textContaining('43 पदों की जगह बनी हुई है'), findsOneWidget);
+      await scrollTak(tester, find.text('अर्थ दिखाएँ'));
+      await tester.tap(find.text('अर्थ दिखाएँ'));
+      await tester.pumpAndSettle();
 
-      await scrollTak(tester, find.text('दोहा १'));
-      expect(find.text('दोहा १'), findsOneWidget);
-      await scrollTak(tester, find.text('चौपाई 40'));
-      expect(find.text('चौपाई 40'), findsOneWidget);
+      // बटन का लेबल तुरंत बदल जाना चाहिए — बाद में स्क्रॉल करने पर वो
+      // तह से बाहर चला जाता है, इसलिए यहीं देख लो।
+      expect(find.text('सिर्फ़ पाठ'), findsOneWidget);
+
+      await scrollTak(tester, find.text('चौपाई 1'));
+      expect(find.textContaining('jai hanumaan gyaan'), findsOneWidget);
+      expect(find.textContaining('ज्ञान और गुणों के सागर'), findsOneWidget);
       expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('पाठ भरा है फिर भी "जाँच बाकी" दिखता है', (tester) async {
+      // स्मृति से लिखा गया है — छपी पुस्तिका से मिलाए बिना यह चेतावनी
+      // हटनी नहीं चाहिए (→ D-022 वाला ही नियम)।
+      phoneNaap(tester);
+      await tester.pumpWidget(app(const PaathScreen(id: 'hanuman_chalisa')));
+      await tester.pumpAndSettle();
+
+      expect(find.text('जाँच बाकी है'), findsOneWidget);
+      expect(find.textContaining('43 / 43 पद भरे हैं'), findsOneWidget);
+      expect(find.text('पाठ अभी जोड़ा नहीं गया'), findsNothing);
+    });
+
+    testWidgets('आरती अभी ख़ाली है तो वही साफ़ लिखा दिखता है', (tester) async {
+      phoneNaap(tester);
+      await tester.pumpWidget(app(const PaathScreen(id: 'ganesh_aarti')));
+      await tester.pumpAndSettle();
+
+      expect(find.text('पाठ अभी जोड़ा नहीं गया'), findsOneWidget);
     });
 
     testWidgets('रचयिता और भाषा दिखती है — कॉपीराइट के लिए ज़रूरी',
