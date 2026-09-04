@@ -6,6 +6,7 @@ import 'package:vidhivat/screens/paath_list_screen.dart';
 import 'package:vidhivat/screens/paath_screen.dart';
 import 'package:vidhivat/state/settings.dart';
 import 'package:vidhivat/theme.dart';
+import 'package:vidhivat/vidhi/paath.dart';
 
 /// चालीसा और आरती वाले section की जाँच — उँगली चलाकर (→ D-039)।
 void main() {
@@ -141,12 +142,31 @@ void main() {
       expect(find.text('पाठ अभी जोड़ा नहीं गया'), findsNothing);
     });
 
-    testWidgets('आरती अभी ख़ाली है तो वही साफ़ लिखा दिखता है', (tester) async {
+    testWidgets('पाठ अभी नहीं जोड़ा गया तो वही साफ़ लिखा दिखता है',
+        (tester) async {
+      // ⚠️ यह जाँच पहले असली `ganesh_aarti` पर चलती थी, इस भरोसे पर कि वो
+      // ख़ाली पड़ी रहेगी। आरतियों का पाठ भरते ही टूट गई — जाँच कंटेंट की
+      // हालत से बँधी नहीं होनी चाहिए। इसलिए अब सीधे `PaathReader` को एक
+      // ख़ाली पाठ देकर देखते हैं; शाखा वही रहती है, असली फ़ाइलें आज़ाद।
+      phoneNaap(tester);
+      await tester.pumpWidget(app(PaathReader(paath: _khaaliPaath())));
+      await tester.pumpAndSettle();
+
+      expect(find.text('पाठ अभी जोड़ा नहीं गया'), findsOneWidget);
+      expect(find.text('जाँच बाकी है'), findsNothing);
+    });
+
+    testWidgets('गणेश आरती का पाठ आ गया है और जाँच बाकी दिखती है',
+        (tester) async {
       phoneNaap(tester);
       await tester.pumpWidget(app(const PaathScreen(id: 'ganesh_aarti')));
       await tester.pumpAndSettle();
 
-      expect(find.text('पाठ अभी जोड़ा नहीं गया'), findsOneWidget);
+      expect(find.text('पाठ अभी जोड़ा नहीं गया'), findsNothing);
+      expect(find.text('जाँच बाकी है'), findsOneWidget);
+      // पद lazy list में नीचे हैं — बिना स्क्रॉल किए बने ही नहीं होते।
+      await scrollTak(tester, find.textContaining('जय गणेश'));
+      expect(find.textContaining('जय गणेश'), findsWidgets);
     });
 
     testWidgets('रचयिता और भाषा दिखती है — कॉपीराइट के लिए ज़रूरी',
@@ -189,3 +209,27 @@ void main() {
     });
   });
 }
+
+/// एक ऐसा पाठ जिसमें जगह बनी है पर शब्द नहीं आए — सिर्फ़ जाँच के लिए।
+Paath _khaaliPaath() => Paath.parse('jaanch.json', '''
+{
+  "schemaVersion": 1,
+  "id": "jaanch_aarti",
+  "naam": "जाँच वाली आरती",
+  "upnaam": [],
+  "prakar": "aarti",
+  "devta": "कोई देवता",
+  "rachnakar": "पारंपरिक",
+  "bhasha": "हिंदी",
+  "parichay": "सिर्फ़ जाँच के लिए।",
+  "kabPadhein": "कभी भी",
+  "kaisePadhein": "खड़े होकर",
+  "khand": [
+    {"shirshak": "पूरी आरती", "dev": "", "roman": "", "arth": "",
+     "audio": "", "sthiti": "khaali"}
+  ],
+  "bharosa": "kam",
+  "strot": {"paddhati": "जाँच", "kshetra": "जाँच", "note": ""},
+  "jaanch": {"panditNaam": "", "tarikh": "", "paas": false}
+}
+''');

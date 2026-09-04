@@ -387,8 +387,8 @@ path और concise semantic label resolve करता है। Screens raw as
 नहीं करते। Unknown ids को neutral diya मिलता है; text-heavy posters को compact
 cards या religious-copy substitute की तरह map नहीं करना है.
 
-Catalogue artwork केवल `app/assets/images/devotional/*.png` में रखना है। ये
-transparent (alpha-preserving), no-text, decorative files हैं; opaque JPEG,
+Catalogue artwork केवल `app/assets/images/devotional/*.webp` में रखना है (→
+D-040)। ये transparent (alpha-preserving), no-text, decorative files हैं; opaque JPEG,
 poster/screenshot अथवा image में लिखे धार्मिक दावे UI में नहीं लगाने हैं।
 `VidhiListScreen` का `_PujaGridCard` सभी Home categories का shared 2-column
 card है—art bounded top area और Hindi copy bottom area में रहती है, और system

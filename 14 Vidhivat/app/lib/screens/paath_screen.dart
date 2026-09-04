@@ -81,21 +81,25 @@ class _PaathScreenState extends State<PaathScreen> {
               ),
             );
           }
-          return _PaathReader(paath: snapshot.data!);
+          return PaathReader(paath: snapshot.data!);
         },
       );
 }
 
-class _PaathReader extends StatefulWidget {
+/// पाठ का असली पन्ना। **public है ताकि जाँचा जा सके** — इसकी दो
+/// हालतें (पाठ भरा है / अभी नहीं जोड़ा गया) पहले सिर्फ़ तभी जँचती थीं
+/// जब कोई असली आरती ख़ाली पड़ी हो। कंटेंट भरते ही वो जाँच टूट जाती थी,
+/// इसलिए अब टेस्ट सीधे यहाँ `Paath` देकर दोनों हालतें देखता है।
+class PaathReader extends StatefulWidget {
   final Paath paath;
 
-  const _PaathReader({required this.paath});
+  const PaathReader({super.key, required this.paath});
 
   @override
-  State<_PaathReader> createState() => _PaathReaderState();
+  State<PaathReader> createState() => _PaathReaderState();
 }
 
-class _PaathReaderState extends State<_PaathReader> {
+class _PaathReaderState extends State<PaathReader> {
   /// पाठ करते वक़्त सिर्फ़ देवनागरी चाहिए। रोमन और अर्थ सन्दर्भ की चीज़ें
   /// हैं — इसलिए डिफ़ॉल्ट रूप से छिपी रहती हैं।
   ///

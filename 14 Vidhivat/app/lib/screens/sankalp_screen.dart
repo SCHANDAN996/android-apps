@@ -58,6 +58,8 @@ class _SankalpScreenState extends State<SankalpScreen> {
         gotra: person.gotra,
         place: settings.city.name,
         purpose: commonPurposes[_purposeLabel] ?? 'देवपूजनं',
+        yajaman: person.yajaman,
+        sthanPrakar: settings.sthanPrakar,
       ),
     );
 
@@ -146,11 +148,17 @@ class _SankalpScreenState extends State<SankalpScreen> {
             ),
             const SizedBox(height: VidhivatSpacing.lg),
 
+            // पहले यहाँ "संस्कृत का रूप पंडित जी से जाँचा नहीं गया"
+            // लिखा था। अब संस्कृत के रूप सचमुच सुधर चुके हैं — तिथि की
+            // सप्तमी, यजमान का लिंग, सन्धि-समास, जगह का रूप — और जहाँ
+            // कई प्रयोग चलते हैं वे दर्ज हैं (→ docs/18)। इसलिए वाक्य
+            // वही कहता है जो सच है (→ D-042)।
             if (sankalp.needsPanditReview)
               const Chetavni(
-                'यह संकल्प पंचांग से अपने आप बना है। संस्कृत का रूप अभी '
-                'पंडित जी से जाँचा नहीं गया — पहली बार किसी जानकार से मिला लें।',
-                serious: true,
+                'यह संकल्प आज के पंचांग से अपने आप बना है — संवत्, ऋतु, '
+                'मास, तिथि, वार, नक्षत्र सब भरकर। संस्कृत के रूप व्याकरण '
+                'और छपी पद्धतियों से मिलाए गए हैं। कुछ जगह पद्धतियाँ आपस '
+                'में अलग हैं — आपके घर का चलन अलग हो तो वही सही है।',
               ),
 
             // ── हिस्सों में — साथ-साथ बोलने के लिए ──
@@ -239,7 +247,7 @@ class _SankalpVisualIntro extends StatelessWidget {
                   width: artworkWidth,
                   height: compact ? 118 : 136,
                   child: Image.asset(
-                    'assets/images/devotional/sankalp_ritual.png',
+                    'assets/images/devotional/sankalp_ritual.webp',
                     fit: BoxFit.contain,
                     alignment: Alignment.bottomCenter,
                     cacheWidth: (artworkWidth * pixelRatio).round(),
@@ -274,7 +282,11 @@ class _SankalpPeopleManagerState extends State<_SankalpPeopleManager> {
     );
     if (draft == null) return;
 
-    await settings.addSankalpPerson(name: draft.name, gotra: draft.gotra);
+    await settings.addSankalpPerson(
+      name: draft.name,
+      gotra: draft.gotra,
+      yajaman: draft.yajaman,
+    );
     if (!mounted) return;
     setState(() {});
     widget.onChanged();
@@ -415,7 +427,15 @@ class _SankalpPersonDraft {
   final String name;
   final String gotra;
 
-  const _SankalpPersonDraft({required this.name, required this.gotra});
+  /// हर व्यक्ति का अपना लिंग — एक ही घर में पुरुष और स्त्री दोनों के
+  /// नाम से संकल्प हो सकता है (→ A3)।
+  final Yajaman yajaman;
+
+  const _SankalpPersonDraft({
+    required this.name,
+    required this.gotra,
+    required this.yajaman,
+  });
 }
 
 /// यह नामों के लिए एक local phonetic *suggestion* है, अनुवाद नहीं। इसलिए
@@ -575,7 +595,9 @@ class _SankalpPersonEditor extends StatefulWidget {
 class _SankalpPersonEditorState extends State<_SankalpPersonEditor> {
   final _enteredName = TextEditingController();
   final _hindiName = TextEditingController();
-  String _gotra = 'कश्यप';
+  String _gotra = gotraJabPataNaHo;
+  bool _gotraPataHai = false;
+  Yajaman _yajaman = Yajaman.purush;
   bool _hindiEdited = false;
   bool _useHindiSuggestion = true;
 
@@ -665,17 +687,50 @@ class _SankalpPersonEditorState extends State<_SankalpPersonEditor> {
             const SizedBox(height: VidhivatSpacing.lg),
             Text('गोत्र', style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: VidhivatSpacing.xs),
-            Wrap(
-              spacing: VidhivatSpacing.xs,
-              runSpacing: VidhivatSpacing.xs,
-              children: [
-                for (final gotra in commonGotras)
-                  ChoiceChip(
-                    label: Text(gotra),
-                    selected: _gotra == gotra,
-                    onSelected: (_) => setState(() => _gotra = gotra),
-                  ),
+            SegmentedButton<bool>(
+              segments: const [
+                ButtonSegment(value: true, label: Text('गोत्र पता है')),
+                ButtonSegment(value: false, label: Text('पता नहीं')),
               ],
+              selected: {_gotraPataHai},
+              onSelectionChanged: (selection) {
+                setState(() {
+                  _gotraPataHai = selection.first;
+                  if (!_gotraPataHai) _gotra = gotraJabPataNaHo;
+                });
+              },
+            ),
+            const SizedBox(height: VidhivatSpacing.sm),
+            if (_gotraPataHai)
+              Wrap(
+                spacing: VidhivatSpacing.xs,
+                runSpacing: VidhivatSpacing.xs,
+                children: [
+                  for (final gotra in commonGotras)
+                    ChoiceChip(
+                      label: Text(gotra),
+                      selected: _gotra == gotra,
+                      onSelected: (_) => setState(() => _gotra = gotra),
+                    ),
+                ],
+              )
+            else
+              const _GotraPataNahiSamjhao(),
+            const SizedBox(height: VidhivatSpacing.lg),
+            Text(
+              'संकल्प किसके नाम से',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: VidhivatSpacing.xs),
+            SegmentedButton<Yajaman>(
+              segments: const [
+                ButtonSegment(value: Yajaman.purush, label: Text('पुरुष')),
+                ButtonSegment(value: Yajaman.stri, label: Text('स्त्री')),
+              ],
+              selected: {_yajaman},
+              onSelectionChanged: (selection) {
+                setState(() => _yajaman = selection.first);
+              },
             ),
           ],
         ),
@@ -689,7 +744,11 @@ class _SankalpPersonEditorState extends State<_SankalpPersonEditor> {
           onPressed: finalName.isEmpty
               ? null
               : () => Navigator.of(context).pop(
-                    _SankalpPersonDraft(name: finalName, gotra: _gotra),
+                    _SankalpPersonDraft(
+                      name: finalName,
+                      gotra: _gotra,
+                      yajaman: _yajaman,
+                    ),
                   ),
           child: const Text('जोड़ें और चुनें'),
         ),
@@ -766,6 +825,9 @@ class NaamPoochhoState extends State<NaamPoochho> {
   late final _naam = TextEditingController(text: settings.name);
   final _hindiNaam = TextEditingController();
   late String _gotra = settings.gotra;
+  late bool _gotraPataHai = settings.gotraPataHai;
+  late Yajaman _yajaman = settings.yajaman;
+  late SthanPrakar _sthanPrakar = settings.sthanPrakar;
   bool _hindiNaamEdited = false;
   bool _useHindiSuggestion = true;
 
@@ -863,24 +925,92 @@ class NaamPoochhoState extends State<NaamPoochho> {
             ),
           ],
           const SizedBox(height: VidhivatSpacing.xl),
+          // ── गोत्र (→ A12) ────────────────────────────────────────
+          // पहले ऐप चुपचाप "कश्यप" भर देता था और यूज़र को पता ही नहीं
+          // चलता था। अब यह एक चुनाव है, और "पता नहीं" चुनने पर ऐप
+          // वजह भी बताता है।
           Text('गोत्र', style: theme.textTheme.titleMedium),
           const SizedBox(height: VidhivatSpacing.xxs),
           Text(
-            'न पता हो तो "कश्यप" चुन लीजिए — यही आम चलन है।',
+            'घर में किसी बड़े से पूछ लीजिए — संकल्प में यही बोला जाता है।',
             style: theme.textTheme.bodySmall,
           ),
           const SizedBox(height: VidhivatSpacing.sm),
-          Wrap(
-            spacing: VidhivatSpacing.xs,
-            runSpacing: VidhivatSpacing.xs,
-            children: [
-              for (final g in commonGotras)
-                ChoiceChip(
-                  label: Text(g),
-                  selected: _gotra == g,
-                  onSelected: (_) => setState(() => _gotra = g),
-                ),
+          SegmentedButton<bool>(
+            segments: const [
+              ButtonSegment(value: true, label: Text('गोत्र पता है')),
+              ButtonSegment(value: false, label: Text('पता नहीं')),
             ],
+            selected: {_gotraPataHai},
+            onSelectionChanged: (selection) {
+              setState(() {
+                _gotraPataHai = selection.first;
+                if (!_gotraPataHai) _gotra = gotraJabPataNaHo;
+              });
+            },
+          ),
+          const SizedBox(height: VidhivatSpacing.sm),
+          if (_gotraPataHai)
+            Wrap(
+              spacing: VidhivatSpacing.xs,
+              runSpacing: VidhivatSpacing.xs,
+              children: [
+                for (final g in commonGotras)
+                  ChoiceChip(
+                    label: Text(g),
+                    selected: _gotra == g,
+                    onSelected: (_) => setState(() => _gotra = g),
+                  ),
+              ],
+            )
+          else
+            const _GotraPataNahiSamjhao(),
+          const SizedBox(height: VidhivatSpacing.xl),
+          // ── लिंग (→ A3) ──────────────────────────────────────────
+          // पहले ऐप हर यजमान को पुरुष मान लेता था, इसलिए हर स्त्री के
+          // लिए भी "…गोत्रोत्पन्नः" बनता था। संकल्प बोलने वाले के बारे
+          // में वाक्य है — उसे बोलने वाले से मिलना ही चाहिए।
+          Text('संकल्प किसके नाम से', style: theme.textTheme.titleMedium),
+          const SizedBox(height: VidhivatSpacing.xxs),
+          Text(
+            _yajaman == Yajaman.stri
+                ? 'संकल्प में "गोत्रोत्पन्ना … नाम्नी अहम्" आएगा।'
+                : 'संकल्प में "गोत्रोत्पन्नः … नामाहम्" आएगा।',
+            style: theme.textTheme.bodySmall,
+          ),
+          const SizedBox(height: VidhivatSpacing.sm),
+          SegmentedButton<Yajaman>(
+            segments: const [
+              ButtonSegment(value: Yajaman.purush, label: Text('पुरुष')),
+              ButtonSegment(value: Yajaman.stri, label: Text('स्त्री')),
+            ],
+            selected: {_yajaman},
+            onSelectionChanged: (selection) {
+              setState(() => _yajaman = selection.first);
+            },
+          ),
+          const SizedBox(height: VidhivatSpacing.xl),
+          // ── जगह किस तरह की (→ A5) ────────────────────────────────
+          // "क्षेत्र" तीर्थों के लिए है; साधारण शहर के लिए "नगर"।
+          // ऐप शहर के नाम से अंदाज़ा लगा लेता है — यहाँ सिर्फ़ सुधार।
+          Text('${settings.city.name} —', style: theme.textTheme.titleMedium),
+          const SizedBox(height: VidhivatSpacing.xxs),
+          Text(
+            'संकल्प में "${settings.city.name}नाम्नि '
+            '${_sthanPrakarShabd(_sthanPrakar)}" आएगा।',
+            style: theme.textTheme.bodySmall,
+          ),
+          const SizedBox(height: VidhivatSpacing.sm),
+          SegmentedButton<SthanPrakar>(
+            segments: const [
+              ButtonSegment(value: SthanPrakar.nagar, label: Text('शहर')),
+              ButtonSegment(value: SthanPrakar.gram, label: Text('गाँव')),
+              ButtonSegment(value: SthanPrakar.kshetra, label: Text('तीर्थ')),
+            ],
+            selected: {_sthanPrakar},
+            onSelectionChanged: (selection) {
+              setState(() => _sthanPrakar = selection.first);
+            },
           ),
           const SizedBox(height: VidhivatSpacing.lg),
           VidhivatButton(
@@ -891,10 +1021,82 @@ class NaamPoochhoState extends State<NaamPoochho> {
                     await settings.setYajman(
                       name: _confirmedNaam,
                       gotra: _gotra,
+                      yajaman: _yajaman,
+                      gotraPataHai: _gotraPataHai,
                     );
+                    if (_sthanPrakar != settings.sthanPrakar) {
+                      await settings.setSthanPrakar(_sthanPrakar);
+                    }
                     widget.onDone();
                   },
             fullWidth: true,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// जगह के प्रकार का संकल्प वाला शब्द — यूज़र को दिखाने के लिए।
+///
+/// इंजन में यही चुनाव `buildSankalp` करता है (→ A5); यहाँ सिर्फ़ यह
+/// दिखाना है कि चुनने पर वाक्य कैसा बनेगा।
+String _sthanPrakarShabd(SthanPrakar prakar) => switch (prakar) {
+      SthanPrakar.nagar => 'नगरे',
+      SthanPrakar.gram => 'ग्रामे',
+      SthanPrakar.kshetra => 'पुण्यक्षेत्रे',
+    };
+
+/// "गोत्र पता नहीं" चुनने पर दिखने वाली समझाइश (→ A12)।
+///
+/// ऐप पहले चुपचाप "कश्यप" भर देता था। भरना ग़लत नहीं था — **बिना बताए
+/// भरना** ग़लत था। इसलिए अब वजह भी साथ दिखती है, शास्त्र-वचन और उसके
+/// स्रोत के साथ।
+class _GotraPataNahiSamjhao extends StatelessWidget {
+  const _GotraPataNahiSamjhao();
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final typography = VidhivatTheme.typographyOf(context);
+
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(VidhivatSpacing.sm),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
+        borderRadius: BorderRadius.circular(VidhivatSpacing.xs),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'संकल्प में "$gotraJabPataNaHo गोत्र" बोला जाएगा।',
+            style: theme.textTheme.titleSmall,
+          ),
+          const SizedBox(height: VidhivatSpacing.xs),
+          Text(
+            'गोत्र न पता हो तो यही चलन है — और इसका शास्त्र-वचन भी है:',
+            style: theme.textTheme.bodySmall,
+          ),
+          const SizedBox(height: VidhivatSpacing.xs),
+          Text(gotraAgyaatShloka, style: typography.bodyLarge),
+          const SizedBox(height: VidhivatSpacing.xxs),
+          Text(
+            '— $gotraAgyaatShlokaStrot',
+            style: theme.textTheme.labelSmall,
+          ),
+          const SizedBox(height: VidhivatSpacing.xs),
+          Text(
+            'भाव — गोत्र का पता न हो तो काश्यप गोत्र कहा जाता है, '
+            'क्योंकि श्रुति कहती है कि सारी प्रजा कश्यप से उपजी है।',
+            style: theme.textTheme.bodySmall,
+          ),
+          const SizedBox(height: VidhivatSpacing.xs),
+          Text(
+            'घर में किसी बड़े से पूछकर बाद में बदल सकते हैं।',
+            style: theme.textTheme.bodySmall
+                ?.copyWith(fontStyle: FontStyle.italic),
           ),
         ],
       ),

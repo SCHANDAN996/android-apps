@@ -15,109 +15,109 @@ class DevotionalArtwork {
 
 abstract final class DevotionalAssets {
   static const diya = DevotionalArtwork(
-    assetPath: 'assets/images/devotional/diya.png',
+    assetPath: 'assets/images/devotional/diya.webp',
     semanticLabel: 'सजावटी दीपक का चित्र',
   );
 
   static const completion = DevotionalArtwork(
-    assetPath: 'assets/images/devotional/diya.png',
+    assetPath: 'assets/images/devotional/diya.webp',
     semanticLabel: 'मार्गदर्शिका पूर्ण होने का सजावटी दीपक चित्र',
   );
 
   static const nityaPooja = DevotionalArtwork(
-    assetPath: 'assets/images/devotional/nitya_pooja.png',
+    assetPath: 'assets/images/devotional/nitya_pooja.webp',
     semanticLabel: 'नित्य पूजा की थाली का सजावटी चित्र',
   );
 
   static const lakshmi = DevotionalArtwork(
-    assetPath: 'assets/images/devotional/lakshmi.png',
+    assetPath: 'assets/images/devotional/lakshmi.webp',
     semanticLabel: 'लक्ष्मी जी का सजावटी चित्र',
   );
 
   static const kalash = DevotionalArtwork(
-    assetPath: 'assets/images/devotional/kalash_sthapana_v2.png',
+    assetPath: 'assets/images/devotional/kalash_sthapana_v2.webp',
     semanticLabel: 'पूजा कलश का सजावटी चित्र',
   );
 
   static const karwaChauth = DevotionalArtwork(
-    assetPath: 'assets/images/devotional/karwa_chauth.png',
+    assetPath: 'assets/images/devotional/karwa_chauth.webp',
     semanticLabel: 'करवा चौथ पूजा का सजावटी चित्र',
   );
 
   static const shiva = DevotionalArtwork(
-    assetPath: 'assets/images/devotional/shiva.png',
+    assetPath: 'assets/images/devotional/shiva.webp',
     semanticLabel: 'शिव जी का सजावटी चित्र',
   );
 
   static const rudrabhishek = DevotionalArtwork(
-    assetPath: 'assets/images/devotional/rudrabhishek_v3.png',
+    assetPath: 'assets/images/devotional/rudrabhishek_v3.webp',
     semanticLabel: 'रुद्राभिषेक के लिए शिवलिंग का सजावटी चित्र',
   );
 
   static const grihPravesh = DevotionalArtwork(
-    assetPath: 'assets/images/devotional/grih_pravesh.png',
+    assetPath: 'assets/images/devotional/grih_pravesh.webp',
     semanticLabel: 'गृह प्रवेश के लिए कलश का सजावटी चित्र',
   );
 
   static const hanuman = DevotionalArtwork(
-    assetPath: 'assets/images/devotional/hanuman_realistic_v1.png',
+    assetPath: 'assets/images/devotional/hanuman_realistic_v1.webp',
     semanticLabel: 'हनुमान जी का यथार्थपरक सजावटी चित्र',
   );
 
   static const suryaArghya = DevotionalArtwork(
-    assetPath: 'assets/images/devotional/surya_arghya_realistic_v1.png',
+    assetPath: 'assets/images/devotional/surya_arghya_realistic_v1.webp',
     semanticLabel: 'सूर्य अर्घ्य का यथार्थपरक सजावटी चित्र',
   );
 
   static const tulsi = DevotionalArtwork(
-    assetPath: 'assets/images/devotional/tulsi_realistic_v1.png',
+    assetPath: 'assets/images/devotional/tulsi_realistic_v1.webp',
     semanticLabel: 'तुलसी पूजा का यथार्थपरक सजावटी चित्र',
   );
 
   static const saraswati = DevotionalArtwork(
-    assetPath: 'assets/images/devotional/saraswati_realistic_v1.png',
+    assetPath: 'assets/images/devotional/saraswati_realistic_v1.webp',
     semanticLabel: 'सरस्वती जी का यथार्थपरक सजावटी चित्र',
   );
 
   static const ram = DevotionalArtwork(
-    assetPath: 'assets/images/devotional/ram_realistic_v1.png',
+    assetPath: 'assets/images/devotional/ram_realistic_v1.webp',
     semanticLabel: 'श्री राम का यथार्थपरक सजावटी चित्र',
   );
 
   static const krishna = DevotionalArtwork(
-    assetPath: 'assets/images/devotional/krishna_realistic_v1.png',
+    assetPath: 'assets/images/devotional/krishna_realistic_v1.webp',
     semanticLabel: 'श्री कृष्ण का यथार्थपरक सजावटी चित्र',
   );
 
   static const Map<String, DevotionalArtwork> _byVidhiId = {
     'nitya_pooja': nityaPooja,
     'satyanarayan': DevotionalArtwork(
-      assetPath: 'assets/images/devotional/vishnu.png',
+      assetPath: 'assets/images/devotional/vishnu.webp',
       semanticLabel: 'सत्यनारायण पूजा के लिए विष्णु का सजावटी चित्र',
     ),
     'ganesh_poojan': DevotionalArtwork(
-      assetPath: 'assets/images/devotional/ganesha.png',
+      assetPath: 'assets/images/devotional/ganesha.webp',
       semanticLabel: 'गणेश पूजन का सजावटी चित्र',
     ),
     'grih_pravesh': grihPravesh,
     'lakshmi_poojan': lakshmi,
     'kalash_sthapana': kalash,
     'mundan': DevotionalArtwork(
-      assetPath: 'assets/images/devotional/mundan.png',
+      assetPath: 'assets/images/devotional/mundan.webp',
       semanticLabel: 'मुंडन संस्कार का सजावटी चित्र',
     ),
     'karwa_chauth': karwaChauth,
     'shraadh': DevotionalArtwork(
-      assetPath: 'assets/images/devotional/shraadh.png',
+      assetPath: 'assets/images/devotional/shraadh.webp',
       semanticLabel: 'श्राद्ध और तर्पण का सजावटी चित्र',
     ),
     'rudrabhishek': rudrabhishek,
     'vahan_pooja': DevotionalArtwork(
-      assetPath: 'assets/images/devotional/vahan_pooja_v3.png',
+      assetPath: 'assets/images/devotional/vahan_pooja_v3.webp',
       semanticLabel: 'वाहन पूजा का सजावटी चित्र',
     ),
     'upanayan': DevotionalArtwork(
-      assetPath: 'assets/images/devotional/upanayan.png',
+      assetPath: 'assets/images/devotional/upanayan.webp',
       semanticLabel: 'उपनयन संस्कार का सजावटी चित्र',
     ),
     // Phase A की छह पूजाएँ (→ docs/14_PUJA_LIBRARY_EXPANSION_PLAN.md)।
@@ -128,6 +128,24 @@ abstract final class DevotionalAssets {
     'saraswati_pooja': saraswati,
     'ram_pooja': ram,
     'krishna_pooja': krishna,
+    // दीपावली की तिकड़ी। ⚠️ फ़ोन पर पकड़ा गया कि इनके बिना तीनों card
+    // पर एक ही generic दीया दिखता था — वही चीज़ जो D-039 वाले काम में
+    // ठीक की गई थी। नई पूजा बनाते वक़्त यहाँ जोड़ना भूलना नहीं है;
+    // `devotional_assets_test.dart` की जाँच अब इसका पहरा देती है।
+    'dhanteras': lakshmi,
+    'govardhan_annakut': krishna,
+    'bhai_dooj_pooja': nityaPooja,
+    // बची हुई सात घरेलू पूजाएँ (4 सित 2026)।
+    'raksha_bandhan_pooja': nityaPooja,
+    'makar_sankranti_pooja': suryaArghya,
+    'hartalika_teej': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/shiva.webp',
+      semanticLabel: 'हरितालिका तीज के लिए शिव जी का सजावटी चित्र',
+    ),
+    'vat_savitri': tulsi,
+    'chhath_pooja': suryaArghya,
+    'varalakshmi_vrat': lakshmi,
+    'durga_ashtami_kanya_poojan': kalash,
   };
 
   static DevotionalArtwork forVidhiId(String id) => _byVidhiId[id] ?? diya;

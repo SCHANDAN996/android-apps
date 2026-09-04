@@ -291,7 +291,7 @@ class _FeaturedPuja extends StatelessWidget {
     final cta = progress == null ? 'पूजा शुरू करें' : 'पूजा जारी रखें';
     final isDefault = data.featuredEntry.id == 'nitya_pooja';
     final artwork = isDefault
-        ? 'assets/images/devotional/home_ganesha_hero_v1.png'
+        ? 'assets/images/devotional/home_ganesha_hero_v1.webp'
         : DevotionalAssets.forVidhiId(data.featuredEntry.id).assetPath;
     return Semantics(
       container: true,

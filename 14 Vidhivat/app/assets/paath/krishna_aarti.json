@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "id": "krishna_aarti",
+  "naam": "श्री कृष्ण जी की आरती",
+  "upnaam": [
+    "आरती कुंजबिहारी की"
+  ],
+  "prakar": "aarti",
+  "devta": "कृष्ण जी",
+  "rachnakar": "पारंपरिक — रचयिता का नाम पक्का नहीं",
+  "bhasha": "हिंदी / ब्रज",
+  "parichay": "कृष्ण जी की आरती। पूजा के अंत में दीपक या कपूर जलाकर, घंटी बजाते हुए सब मिलकर गाते हैं।\n\nऐप में यह कृष्ण पूजा के आरती वाले कदम से भी खुलती है।",
+  "kabPadhein": "कृष्ण पूजा के अंत में और जन्माष्टमी पर",
+  "kaisePadhein": "आरती की थाली में दीपक या कपूर जलाएँ। सब खड़े होकर, हाथ जोड़कर साथ गाएँ; एक व्यक्ति थाली घुमाता है और एक घंटी बजाता है।\n\nआरती के बाद थाली सबके पास ले जाई जाती है — हर कोई हाथ लगाकर आँखों से लगाता है।\n\n⚠️ आग के पास ध्यान रखें — ढीले कपड़े, दुपट्टा और बाल दूर रखें, और बच्चों को थाली अकेले न पकड़ाएँ।",
+  "khand": [
+    {
+      "shirshak": "टेक",
+      "dev": "आरती कुंजबिहारी की।\nश्री गिरिधर कृष्ण मुरारी की॥",
+      "roman": "aaratee kunjabihaaree kee |\nshree giridhar krishna muraaree kee ||",
+      "arth": "कुंजबिहारी की आरती — गोवर्धन उठाने वाले श्री कृष्ण मुरारी की।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद १",
+      "dev": "गले में बैजंती माला, बजावै मुरली मधुर बाला।\nश्रवण में कुंडल झलकाला, नंद के आनंद नंदलाला॥",
+      "roman": "gale men baijantee maalaa, bajaavai muralee madhur baalaa |\nshravan men kundal jhalakaalaa, nand ke aanand nandalaalaa ||",
+      "arth": "गले में बैजंती की माला है और वह बालक मधुर मुरली बजाता है। कानों में कुंडल झलकते हैं — नंद का आनंद, नंदलाल।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद २",
+      "dev": "गगन सम अंग कांति काली, राधिका चमक रही आली।\nलतन में ठाढ़े बनमाली, भ्रमर सी अलक, कस्तूरी तिलक, चंद्र सी झलक।\nललित छवि श्यामा प्यारी की, श्री गिरिधर कृष्ण मुरारी की॥",
+      "roman": "gagan sam ang kaanti kaalee, raadhikaa chamak rahee aalee |\nlatan men thaadhe banamaalee, bhramar see alak, kastooree tilak, chandra see jhalak |\nlalit chhavi shyaamaa pyaaree kee, shree giridhar krishna muraaree kee ||",
+      "arth": "आकाश जैसा साँवला शरीर और उसकी कांति; साथ में राधिका चमक रही हैं। लताओं के बीच बनमाली खड़े हैं — भौंरे जैसी लटें, कस्तूरी का तिलक, चंद्रमा जैसी झलक। यह श्यामा प्यारी की सुंदर छवि है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद ३",
+      "dev": "कनकमय मोर मुकुट बिलसै, देवता दरसन को तरसै।\nगगन सों सुमन रासि बरसै, बजे मुरचंग, मधुर मिरदंग, ग्वालिन संग।\nअतुल रति गोप कुमारी की, श्री गिरिधर कृष्ण मुरारी की॥",
+      "roman": "kanakamay mor mukut bilasai, devataa darasan ko tarasai |\ngagan son suman raasi barasai, baje murachang, madhur miradang, gvaalin sang |\natul rati gop kumaaree kee, shree giridhar krishna muraaree kee ||",
+      "arth": "सोने का मोर-मुकुट शोभा देता है और देवता तक दर्शन को तरसते हैं। आकाश से फूलों की वर्षा होती है, मुरचंग और मधुर मृदंग बजते हैं, ग्वालिनों के साथ। गोप-कुमारियों का प्रेम अतुलनीय है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद ४",
+      "dev": "जहां ते प्रकट भई गंगा, कलुष कलि हारिणी श्री गंगा।\nस्मरन ते होत मोह भंगा, बसी शिव सीस, जटा के बीच, हरै अघ कीच।\nचरन छवि श्री बनवारी की, श्री गिरिधर कृष्ण मुरारी की॥",
+      "roman": "jahaan te prakat bhaee gangaa, kalush kali haarinee shree gangaa |\nsmaran te hot moh bhangaa, basee shiv sees, jataa ke beech, harai agh keech |\ncharan chhavi shree banavaaree kee, shree giridhar krishna muraaree kee ||",
+      "arth": "जहाँ से गंगा प्रकट हुईं — वही गंगा जो कलियुग का मैल हरती हैं। स्मरण मात्र से मोह टूट जाता है; वे शिव के सिर पर, जटा के बीच बसती हैं और पाप की कीचड़ हर लेती हैं। यह बनवारी के चरणों की छवि है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद ५",
+      "dev": "चमकती उज्ज्वल तट रेणु, बज रही वृंदावन बेणु।\nचहुं दिसि गोपि ग्वाल धेनु, हंसत मृदु मंद, चांदनी चंद, कटत भव फंद।\nटेर सुन दीन दुखारी की, श्री गिरिधर कृष्ण मुरारी की॥",
+      "roman": "chamakatee ujjval tat renu, baj rahee vrindaavan benu |\nchahun disi gopi gvaal dhenu, hansat mridu mand, chaandanee chand, katat bhav phand |\nter sun deen dukhaaree kee, shree giridhar krishna muraaree kee ||",
+      "arth": "तट की रेत उज्ज्वल चमक रही है और वृंदावन में बाँसुरी बज रही है। चारों ओर गोपियाँ, ग्वाल और गायें हैं; मंद हँसी, चाँदनी और चंद्रमा — संसार का बंधन कट जाता है। दीन-दुखियों की पुकार वे सुन लेते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "madhyam",
+  "strot": {
+    "paddhati": "घर में गाई जाने वाली पारंपरिक आरती",
+    "kshetra": "उत्तर भारत",
+    "note": "✅ **ढाँचा drikpanchang.com से मिलाया गया** (4 सितंबर 2026) — पदों की गिनती और क्रम वहाँ छपे पाठ से मेल खाते हैं।\n\n⚠️ फिर भी **पंडित जी की मुहर बाक़ी है।** ढाँचा मिल जाना और एक-एक शब्द सही होना दो अलग बातें हैं। हर पद पर \"जाँच बाकी\" तब तक दिखेगा जब तक जानकार से मिलाकर पास न हो जाए।\n\nआरती गाई जाने वाली रचना है — घर-घर में शब्द थोड़े बदलते हैं। जो रूप आपके घर में गाया जाता है, वही आपके लिए सही है।\n\nपाठ पर किसी का हक़ नहीं (रचना बहुत पुरानी है), पर किसी प्रकाशक की छपी टीका, अर्थ या रिकॉर्डिंग नहीं उठाई गई। अर्थ अपने शब्दों में लिखा है।\n\n📝 पहले यह आरती नौ छोटे टुकड़ों में लिखी गई थी, जो ग़लत था — और दो पद छूट भी गए थे। अब drikpanchang के छपे ढाँचे के अनुसार **छह पद** हैं। हर पद लंबा है और \"श्री गिरिधर कृष्ण मुरारी की\" पर ख़त्म होता है — गाते समय यही टेक बार-बार लौटती है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

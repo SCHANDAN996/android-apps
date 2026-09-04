@@ -154,6 +154,14 @@ void main() {
       app(const SankalpScreen(), scaler: const TextScaler.linear(1.5)),
     );
 
+    // ⚠️ पहले `ensureVisible`, फिर `tap`. बिना इसके tap चुपचाप ख़ाली
+    // जाता है — चिप तह के नीचे होती है और Flutter उसके केंद्र पर tap
+    // भेजता है, जो viewport से बाहर पड़ता है। कोई exception नहीं आता,
+    // बस purpose नहीं बदलता और टेस्ट भ्रामक तरीक़े से फ़ेल होता है।
+    // यह तब टूटा जब `commonPurposes` 12 से 18 का हो गया (छह नई पूजाएँ)।
+    // ऐप में बग नहीं है — यूज़र स्क्रॉल करके चिप तक पहुँच जाता है।
+    await tester.ensureVisible(find.text('गृह प्रवेश'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('गृह प्रवेश'));
     await tester.pump();
     await scrollTo(tester, find.byType(SelectableText));
@@ -200,9 +208,13 @@ void main() {
     await tester.enterText(find.byType(TextField), 'सीमा');
     await tester.showKeyboard(find.byType(TextField));
     await tester.pump();
+    // A3/A5/A12 के खाने जुड़ने के बाद पन्ना लंबा है — बटन को पूरी तरह
+    // दिखने तक लाओ, वरना 320dp/1.5x पर tap किनारे से छूट जाता है।
     await scrollTo(tester, find.text('संकल्प बनाइए'));
+    await tester.ensureVisible(find.text('संकल्प बनाइए'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('संकल्प बनाइए'));
-    await tester.pump();
+    await tester.pumpAndSettle();
 
     expect(completed, isTrue);
     expect(settings.name, 'सीमा');

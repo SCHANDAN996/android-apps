@@ -14,19 +14,115 @@
   "kaisePadhein": "आरती की थाली में दीपक या कपूर जलाएँ। सब खड़े होकर, हाथ जोड़कर साथ गाएँ; एक व्यक्ति थाली घुमाता है और एक घंटी बजाता है।\n\nआरती के बाद थाली सबके पास ले जाई जाती है — हर कोई हाथ लगाकर आँखों से लगाता है।\n\n⚠️ आग के पास ध्यान रखें — ढीले कपड़े, दुपट्टा और बाल दूर रखें, और बच्चों को थाली अकेले न पकड़ाएँ।",
   "khand": [
     {
-      "shirshak": "पूरी आरती",
-      "dev": "",
-      "roman": "",
-      "arth": "",
+      "shirshak": "टेक",
+      "dev": "जय अम्बे गौरी, मैया जय श्यामा गौरी।\nतुमको निशदिन ध्यावत, हरि ब्रह्मा शिवरी॥",
+      "roman": "jai ambe gauree, maiyaa jai shyaamaa gauree |\ntumako nishadin dhyaavat, hari brahmaa shivaree ||",
+      "arth": "अम्बे गौरी की जय हो। रात-दिन आपका ध्यान विष्णु, ब्रह्मा और शिव करते हैं।",
       "audio": "",
-      "sthiti": "khaali"
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद १",
+      "dev": "माँग सिंदूर विराजत, टीको मृगमद को।\nउज्ज्वल से दोउ नैना, चंद्रवदन नीको॥",
+      "roman": "maang sindoor viraajat, teeko mrigamad ko |\nujjval se dou nainaa, chandravadan neeko ||",
+      "arth": "माँग में सिंदूर सजता है और माथे पर कस्तूरी का टीका। दोनों नेत्र उज्ज्वल हैं और चंद्रमा जैसा सुंदर मुख है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद २",
+      "dev": "कनक समान कलेवर, रक्ताम्बर राजै।\nरक्तपुष्प गल माला, कंठन पर साजै॥",
+      "roman": "kanak samaan kalevar, raktaambar raajai |\nraktapushp gal maalaa, kanthan par saajai ||",
+      "arth": "सोने जैसा शरीर है और लाल वस्त्र शोभा देते हैं। गले में लाल फूलों की माला सजती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद ३",
+      "dev": "केहरि वाहन राजत, खड्ग खप्पर धारी।\nसुर नर मुनिजन सेवत, तिनके दुखहारी॥",
+      "roman": "kehari vaahan raajat, khadga khappar dhaaree |\nsur nar munijan sevat, tinake dukhahaaree ||",
+      "arth": "सिंह की सवारी शोभा देती है, हाथ में तलवार और खप्पर है। देवता, मनुष्य और मुनि सेवा करते हैं और आप उनके दुख हरती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद ४",
+      "dev": "कानन कुंडल शोभित, नासाग्रे मोती।\nकोटिक चंद्र दिवाकर, सम राजत ज्योति॥",
+      "roman": "kaanan kundal shobhit, naasaagre motee |\nkotik chandra divaakar, sam raajat jyoti ||",
+      "arth": "कानों में कुंडल शोभा देते हैं और नाक पर मोती। करोड़ों चंद्रमा और सूर्य जैसी ज्योति चमकती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद ५",
+      "dev": "शुंभ निशुंभ बिडारे, महिषासुर घाती।\nधूम्र विलोचन नैना, निशदिन मदमाती॥",
+      "roman": "shumbh nishumbh bidaare, mahishaasur ghaatee |\ndhoomra vilochan nainaa, nishadin madamaatee ||",
+      "arth": "शुंभ और निशुंभ का नाश किया और महिषासुर को मारा। धूम्रलोचन का वध किया — आप सदा उल्लास में रहती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद ६",
+      "dev": "चंड मुंड संहारे, शोणित बीज हरे।\nमधु कैटभ दोउ मारे, सुर भयहीन करे॥",
+      "roman": "chand mund sanhaare, shonit beej hare |\nmadhu kaitabh dou maare, sur bhayaheen kare ||",
+      "arth": "चंड और मुंड का संहार किया और रक्तबीज को हरा। मधु तथा कैटभ दोनों को मारकर देवताओं का भय दूर किया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद ७",
+      "dev": "ब्रह्माणी रुद्राणी तुम कमला रानी।\nआगम निगम बखानी, तुम शिव पटरानी॥",
+      "roman": "brahmaanee rudraanee tum kamalaa raanee |\naagam nigam bakhaanee, tum shiv pataraanee ||",
+      "arth": "आप ही ब्रह्माणी, रुद्राणी और कमला रानी हैं। वेद-शास्त्र आपका बखान करते हैं — आप शिव की पटरानी हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद ८",
+      "dev": "चौंसठ योगिनि गावत, नृत्य करत भैरों।\nबाजत ताल मृदंगा, अरु बाजत डमरू॥",
+      "roman": "chaunsath yogini gaavat, nritya karat bhairon |\nbaajat taal mridangaa, aru baajat damaroo ||",
+      "arth": "चौंसठ योगिनियाँ गाती हैं और भैरव नृत्य करते हैं। ताल, मृदंग और डमरू बजते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद ९",
+      "dev": "तुम ही जग की माता, तुम ही हो भरता।\nभक्तन की दुख हरता, सुख सम्पत्ति करता॥",
+      "roman": "tum hee jag kee maataa, tum hee ho bharataa |\nbhaktan kee dukh harataa, sukh sampatti karataa ||",
+      "arth": "आप ही जगत की माता हैं और आप ही पालन करने वाली। भक्तों का दुख हरती हैं और सुख तथा सम्पत्ति देती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद १०",
+      "dev": "भुजा चार अति शोभित, वर मुद्रा धारी।\nमनवांछित फल पावत, सेवत नर नारी॥",
+      "roman": "bhujaa chaar ati shobhit, var mudraa dhaaree |\nmanavaanchhit phal paavat, sevat nar naaree ||",
+      "arth": "चार भुजाएँ बहुत शोभा देती हैं और वरद मुद्रा धारण किए हैं। जो स्त्री-पुरुष सेवा करते हैं उन्हें मनचाहा फल मिलता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद ११",
+      "dev": "कंचन थाल विराजत, अगर कपूर बाती।\nमालकेतु में राजत, कोटि रतन ज्योति॥",
+      "roman": "kanchan thaal viraajat, agar kapoor baatee |\nmaalaketu men raajat, koti ratan jyoti ||",
+      "arth": "सोने की थाली सजी है जिसमें अगर और कपूर की बाती जलती है। करोड़ों रत्नों जैसी ज्योति चमकती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पद १२",
+      "dev": "श्री अम्बे जी की आरती, जो कोई नर गावे।\nकहत शिवानंद स्वामी, सुख सम्पत्ति पावे॥",
+      "roman": "shree ambe jee kee aaratee, jo koee nar gaave |\nkahat shivaanand svaamee, sukh sampatti paave ||",
+      "arth": "श्री अम्बे जी की यह आरती जो कोई गाता है, शिवानंद स्वामी कहते हैं कि उसे सुख और सम्पत्ति मिलती है।",
+      "audio": "",
+      "sthiti": "draft"
     }
   ],
-  "bharosa": "kam",
+  "bharosa": "uncha",
   "strot": {
     "paddhati": "घर में गाई जाने वाली पारंपरिक आरती",
     "kshetra": "उत्तर भारत",
-    "note": "⚠️ **पाठ अभी नहीं जोड़ा गया है।**\n\nआरती गाई जाने वाली रचना है और घर-घर में शब्द थोड़े बदलते हैं। ऐप में वही आरती जाएगी जो आपके घर में गाई जाती है — अपनी आरती-पुस्तिका से लिखवाकर, और **रिकॉर्डिंग भी अपनी**। किसी कंपनी की रिकॉर्डिंग या छपी टीका नहीं उठानी।\n\nभरते वक़्त चाहें तो \"पूरी आरती\" वाले एक खाने को पदों में तोड़ लीजिए — ढाँचा दोनों तरह चलता है।"
+    "note": "✅ **ढाँचा drikpanchang.com से मिलाया गया** (4 सितंबर 2026) — पदों की गिनती और क्रम वहाँ छपे पाठ से मेल खाते हैं।\n\n⚠️ फिर भी **पंडित जी की मुहर बाक़ी है।** ढाँचा मिल जाना और एक-एक शब्द सही होना दो अलग बातें हैं। हर पद पर \"जाँच बाकी\" तब तक दिखेगा जब तक जानकार से मिलाकर पास न हो जाए।\n\nआरती गाई जाने वाली रचना है — घर-घर में शब्द थोड़े बदलते हैं। जो रूप आपके घर में गाया जाता है, वही आपके लिए सही है।\n\nपाठ पर किसी का हक़ नहीं (रचना बहुत पुरानी है), पर किसी प्रकाशक की छपी टीका, अर्थ या रिकॉर्डिंग नहीं उठाई गई। अर्थ अपने शब्दों में लिखा है।"
   },
   "jaanch": {
     "panditNaam": "",
