@@ -90,10 +90,11 @@ class DakshinaScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // ⚠ यहाँ "मुफ़्त" और "कोई विज्ञापन नहीं" दोबारा मत कहना —
+                    // ऊपर hero की पहली लाइन वही कह चुकी है। फ़ोन पर देखने पर
+                    // दोनों चार लाइन के फ़ासले पर एक साथ पढ़े जा रहे थे (→ D-057)।
                     Text(
-                      'यह ऐप पूरी तरह मुफ़्त है। कोई विज्ञापन नहीं, कोई '
-                      'खाता नहीं, कोई सदस्यता नहीं। जो आज इसमें है, वह '
-                      'सबके लिए है।',
+                      'कोई खाता नहीं, कोई सदस्यता नहीं। जो आज इसमें है, वह सबके लिए है।',
                       style: type.bodyMedium,
                     ),
                     const SizedBox(height: VidhivatSpacing.lg),
