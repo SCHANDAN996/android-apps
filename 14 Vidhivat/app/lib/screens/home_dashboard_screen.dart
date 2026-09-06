@@ -5,10 +5,13 @@ import '../theme.dart';
 import '../vidhi/aane_wale_din.dart';
 import '../vidhi/bhandar.dart';
 import '../vidhi/devotional_assets.dart';
+import '../vidhi/paath.dart';
 import '../vidhi/vidhi.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
 import 'muhurta_screen.dart';
+import 'paath_list_screen.dart';
+import 'paath_screen.dart';
 import 'samagri_screen.dart';
 import 'sankalp_screen.dart';
 import 'settings_screen.dart';
@@ -115,12 +118,112 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
       dinAage: 45,
     );
 
+    // ── चालीसा और आरती — होम पर अपना हिस्सा ────────────────────
+    //
+    // ये पूजा नहीं हैं (→ D-039), इसलिए पूजा की सूची में नहीं घुसाए
+    // जाते। पर घर में सबसे ज़्यादा यही पढ़े जाते हैं, इसलिए होम पर
+    // अपनी जगह के हक़दार हैं (→ D-051)।
+    final sabPaath = await paathBhandar.suchi();
+    final paathReady =
+        sabPaath.where((e) => e.taiyar).toList(growable: false);
+
     return _DashboardData(
       featuredEntry: featuredEntry,
       featuredVidhi: featuredVidhi,
       popular: popular,
-      aageAaneWale: aage,
+      paath: paathReady.take(4).toList(growable: false),
+      patte: _banaoPatte(
+        resumeEntry: resumeEntry,
+        resumeVidhi: resumeVidhi,
+        aage: aage,
+        vidhiById: {for (final vidhi in sabhiVidhi) vidhi.id: vidhi},
+        nityaEntry: featuredEntry,
+        nityaVidhi: featuredVidhi,
+      ),
     );
+  }
+
+  /// carousel के पत्ते, बाएँ से दाएँ (→ D-046)।
+  ///
+  /// क्रम में एक ही बात है — **आज पहले, फिर आगे का।**
+  ///
+  /// 1. अधूरी छूटी पूजा, अगर आज की ही है (`settings` वो ख़ुद जाँचता है)
+  /// 2. आज पड़ने वाली पूजा या त्योहार
+  /// 3. आज कुछ न हो तो **नित्य पूजा** — ताकि पहला पत्ता कभी ख़ाली न रहे
+  /// 4. आगे के दिन — कल, परसों, बारह दिन बाद…
+  ///
+  /// जिस त्योहार की विधि अभी नहीं बनी, उसका पत्ता **बनता तो है पर खुलता
+  /// नहीं** — तारीख़ बता देना अपने आप में काम की चीज़ है (→ D-038)।
+  List<_Patta> _banaoPatte({
+    required VidhiSuchiEntry? resumeEntry,
+    required Vidhi? resumeVidhi,
+    required List<PujaAvsar> aage,
+    required Map<String, Vidhi> vidhiById,
+    required VidhiSuchiEntry nityaEntry,
+    required Vidhi nityaVidhi,
+  }) {
+    final patte = <_Patta>[];
+    final liyeGaye = <String>{};
+
+    if (resumeEntry != null && resumeVidhi != null) {
+      final progress =
+          settings.playerProgressFor(resumeEntry.id, resumeVidhi.charan.length);
+      if (progress != null) {
+        patte.add(_Patta(
+          upar: 'जहाँ छोड़ा था',
+          naam: resumeEntry.naam,
+          neeche: resumeEntry.ekLine,
+          artwork: DevotionalAssets.forVidhiId(resumeEntry.id).assetPath,
+          pujaId: resumeEntry.id,
+          // यहाँ समय नहीं, **कहाँ तक पहुँचे** — वही काम की बात है।
+          samayAurCharan: 'चरण ${progress.lastReachedStepIndex + 1}'
+              ' / ${resumeVidhi.charan.length}',
+          samayChihn: Icons.play_circle_outline,
+          bulawa: 'पूजा जारी रखें',
+        ));
+        liyeGaye.add(resumeEntry.id);
+      }
+    }
+
+    for (final avsar in aage) {
+      if (avsar.pujaId.isNotEmpty && !liyeGaye.add(avsar.pujaId)) continue;
+      final vidhi = vidhiById[avsar.pujaId];
+      patte.add(_Patta(
+        upar: avsar.kabLikha,
+        naam: avsar.naam,
+        neeche: avsar.kyon,
+        artwork: DevotionalAssets.forVidhiId(avsar.pujaId).assetPath,
+        pujaId: avsar.khulSaktiHai ? avsar.pujaId : null,
+        samayAurCharan: vidhi == null
+            ? null
+            : '${vidhi.samayLikha}  •  ${vidhi.charan.length} चरण',
+        bulawa: avsar.khulSaktiHai ? 'विधि देखें' : 'विधि अभी नहीं',
+      ));
+    }
+
+    // आज के लिए कुछ नहीं बना — तब नित्य पूजा सबसे आगे। ऐसा दिन आम है,
+    // और उस दिन भी पहला पत्ता कुछ *करने लायक* होना चाहिए।
+    final aajKaKuchHai = patte.isNotEmpty &&
+        (patte.first.upar == 'जहाँ छोड़ा था' || patte.first.upar == 'आज');
+    if (!aajKaKuchHai && !liyeGaye.contains(nityaEntry.id)) {
+      patte.insert(
+        0,
+        _Patta(
+          upar: 'आज की सरल शुरुआत',
+          naam: nityaEntry.naam,
+          neeche: nityaEntry.ekLine,
+          artwork: nityaEntry.id == 'nitya_pooja'
+              ? 'assets/images/devotional/home_ganesha_hero_v1.webp'
+              : DevotionalAssets.forVidhiId(nityaEntry.id).assetPath,
+          pujaId: nityaEntry.id,
+          samayAurCharan: '${nityaVidhi.samayLikha}  •  '
+              '${nityaVidhi.charan.length} चरण',
+          bulawa: 'पूजा शुरू करें',
+        ),
+      );
+    }
+
+    return patte;
   }
 
   void _push(Widget screen) {
@@ -169,27 +272,19 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                       onLocationTap: () => _push(const SettingsScreen()),
                     ),
                     const SizedBox(height: VidhivatSpacing.xl),
-                    _FeaturedPuja(
-                      data: data,
-                      onOpen: () => _openPuja(data.featuredEntry.id),
-                    ),
+                    // ── सबसे ऊपर, स्वाइप होने वाला (→ D-046) ────────
+                    //
+                    // पहले यहाँ एक जमा हुआ कार्ड था और नीचे अलग से
+                    // "आगे क्या आ रहा है" की सूची — वही पाँच पूजाएँ,
+                    // दो बार। अब एक ही पट्टी: आज पहला, फिर आगे के दिन।
+                    _PujaCarousel(patte: data.patte, onOpen: _openPuja),
                     const SizedBox(height: VidhivatSpacing.lg),
                     const _PanchangPanel(),
-                    if (data.aageAaneWale.isNotEmpty) ...[
-                      const SizedBox(height: VidhivatSpacing.xxl),
-                      const VidhivatSectionHeader(
-                        title: 'आगे क्या आ रहा है',
-                        supportingText: 'तारीख़ें पंचांग से, आपके शहर के हिसाब से',
-                      ),
-                      const SizedBox(height: VidhivatSpacing.md),
-                      _AageAaneWali(
-                        avsar: data.aageAaneWale,
-                        onOpen: _openPuja,
-                      ),
-                    ],
                     const SizedBox(height: VidhivatSpacing.xl),
+                    // "जल्दी करें" लिखा था — हिंदी में उसका मतलब "hurry
+                    // up" निकलता है, जो पूजा वाले ऐप में उल्टा ही है।
                     const VidhivatSectionHeader(
-                      title: 'जल्दी करें',
+                      title: 'तुरंत खोलें',
                     ),
                     const SizedBox(height: VidhivatSpacing.md),
                     _QuickActionGrid(
@@ -201,21 +296,57 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                       onMuhurta: () => _push(const MuhurtaScreen()),
                     ),
                     const SizedBox(height: VidhivatSpacing.xxl),
-                    VidhivatSectionHeader(
+                    const VidhivatSectionHeader(
                       title: 'लोकप्रिय पूजा',
-                      supportingText: 'सभी विधियाँ मौजूदा पूजा भंडार से',
-                      action: VidhivatButton(
-                        label: 'सभी देखें',
-                        onPressed: widget.onOpenPujaLibrary,
-                        variant: VidhivatButtonVariant.text,
-                        compact: true,
-                      ),
+                      // "सभी विधियाँ मौजूदा पूजा भंडार से" लिखा था —
+                      // "भंडार" हमारा अंदरूनी शब्द है, यूज़र का नहीं।
+                      supportingText: 'घरों में सबसे ज़्यादा की जाने वाली',
                     ),
                     const SizedBox(height: VidhivatSpacing.md),
                     _PopularPujaGrid(
                       entries: data.popular,
                       onOpen: _openPuja,
                     ),
+                    // ── "सभी देखें" अब सूची के **नीचे** ─────────────
+                    //
+                    // पहले यह शीर्षक के बग़ल में एक फीका text-बटन था, और
+                    // दो-पंक्ति वाले शीर्षक के सामने टेढ़ा भी बैठता था।
+                    // वहाँ पढ़ने का क्रम टूटता है — आदमी शीर्षक पढ़कर
+                    // नीचे चित्रों में उतर जाता है, दाईं तरफ़ देखता ही नहीं।
+                    //
+                    // चारों पूजाएँ देख चुकने के **बाद** ही यह सवाल उठता
+                    // है कि "और क्या है?" — इसलिए बटन ठीक वहीं है, और
+                    // अब पूरी चौड़ाई का है ताकि नज़र में आए।
+                    const SizedBox(height: VidhivatSpacing.md),
+                    VidhivatButton(
+                      label: 'सभी पूजाएँ देखें',
+                      semanticLabel: 'सभी पूजा-विधियों की सूची खोलें',
+                      onPressed: widget.onOpenPujaLibrary,
+                      icon: Icons.arrow_forward,
+                      variant: VidhivatButtonVariant.secondary,
+                      fullWidth: true,
+                    ),
+                    if (data.paath.isNotEmpty) ...[
+                      const SizedBox(height: VidhivatSpacing.xxl),
+                      const VidhivatSectionHeader(
+                        title: 'चालीसा और आरती',
+                        supportingText: 'बैठकर पढ़ने वाली स्तुतियाँ',
+                      ),
+                      const SizedBox(height: VidhivatSpacing.md),
+                      _PaathSuchi(
+                        entries: data.paath,
+                        onOpen: (id) => _push(PaathScreen(id: id)),
+                      ),
+                      const SizedBox(height: VidhivatSpacing.md),
+                      VidhivatButton(
+                        label: 'सभी चालीसा और आरती',
+                        semanticLabel: 'चालीसा और आरती की पूरी सूची खोलें',
+                        onPressed: () => _push(const PaathListScreen()),
+                        icon: Icons.arrow_forward,
+                        variant: VidhivatButtonVariant.secondary,
+                        fullWidth: true,
+                      ),
+                    ],
                   ],
                 ),
               ),
@@ -273,31 +404,160 @@ class _HomeHeader extends StatelessWidget {
   }
 }
 
-class _FeaturedPuja extends StatelessWidget {
-  final _DashboardData data;
-  final VoidCallback onOpen;
+/// होम की सबसे ऊपर वाली **स्वाइप होने वाली पट्टी** (→ D-046)।
+///
+/// ## auto-swipe जान-बूझकर नहीं है
+///
+/// shopping ऐप में ऊपर वाला banner *विज्ञापन* होता है — अपने आप खिसक
+/// जाए तो कुछ नहीं बिगड़ता। यहाँ यह पत्ता **ऐप का मुख्य बटन** है।
+///
+/// 1. **उँगली और पत्ते की टक्कर** — आदमी "पूजा जारी रखें" दबाने जा रहा
+///    है, तभी पत्ता खिसक गया → वो ग़लत पूजा खोल बैठेगा
+/// 2. **पढ़ने की रफ़्तार** — इस ऐप के बहुत से यूज़र उम्रदराज़ हैं;
+///    "12 दिन बाद · शरद पूर्णिमा" पढ़ते-पढ़ते पत्ता चला जाना खीज देता है
+/// 3. अपने आप चलती चीज़ Play के accessibility नियमों में भी खटकती है
+///
+/// **बदले में "यह स्वाइप होता है" दो तरह से दिखता है:** अगला पत्ता किनारे
+/// से झाँकता रहता है (`viewportFraction`), और नीचे बिंदु हैं।
+class _PujaCarousel extends StatefulWidget {
+  final List<_Patta> patte;
+  final void Function(String id) onOpen;
 
-  const _FeaturedPuja({required this.data, required this.onOpen});
+  const _PujaCarousel({required this.patte, required this.onOpen});
+
+  @override
+  State<_PujaCarousel> createState() => _PujaCarouselState();
+}
+
+class _PujaCarouselState extends State<_PujaCarousel> {
+  /// 0.88 — यानी दाईं तरफ़ अगला पत्ता थोड़ा दिखता रहे। यही बताता है कि
+  /// आगे और भी है; auto-swipe की ज़रूरत इसी से ख़त्म हो जाती है।
+  static const _jhalak = 0.88;
+
+  late final PageController _pages =
+      PageController(viewportFraction: widget.patte.length > 1 ? _jhalak : 1);
+  int _index = 0;
+
+  @override
+  void dispose() {
+    _pages.dispose();
+    super.dispose();
+  }
+
+  void _jao(int naya) {
+    if (naya < 0 || naya >= widget.patte.length) return;
+    _pages.animateToPage(
+      naya,
+      duration: MediaQuery.disableAnimationsOf(context)
+          ? Duration.zero
+          : VidhivatMotion.standard,
+      curve: Curves.easeOut,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final patte = widget.patte;
+    if (patte.isEmpty) return const SizedBox.shrink();
+
+    return Column(
+      children: [
+        SizedBox(
+          height: 210,
+          child: PageView.builder(
+            key: const Key('puja_carousel'),
+            controller: _pages,
+            itemCount: patte.length,
+            padEnds: false,
+            onPageChanged: (i) => setState(() => _index = i),
+            itemBuilder: (context, i) => Padding(
+              padding: EdgeInsets.only(
+                right: patte.length > 1 ? VidhivatSpacing.sm : 0,
+              ),
+              child: _PujaPatta(patta: patte[i], onOpen: widget.onOpen),
+            ),
+          ),
+        ),
+        if (patte.length > 1) ...[
+          const SizedBox(height: VidhivatSpacing.sm),
+          _Bindu(kul: patte.length, chuna: _index, onChuno: _jao),
+        ],
+      ],
+    );
+  }
+}
+
+/// नीचे के बिंदु। सजावट नहीं — इनसे पता चलता है कि कितने पत्ते हैं और
+/// अभी कौन सा खुला है। दबाने पर उस पत्ते तक पहुँचा भी देते हैं।
+class _Bindu extends StatelessWidget {
+  final int kul;
+  final int chuna;
+  final ValueChanged<int> onChuno;
+
+  const _Bindu({
+    required this.kul,
+    required this.chuna,
+    required this.onChuno,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = VidhivatTheme.colorsOf(context);
+    return Semantics(
+      label: '${chuna + 1} में से $kul',
+      excludeSemantics: true,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          for (var i = 0; i < kul; i++)
+            InkWell(
+              onTap: () => onChuno(i),
+              customBorder: const CircleBorder(),
+              child: Padding(
+                padding: const EdgeInsets.all(VidhivatSpacing.xs),
+                child: AnimatedContainer(
+                  duration: MediaQuery.disableAnimationsOf(context)
+                      ? Duration.zero
+                      : VidhivatMotion.fast,
+                  width: i == chuna ? 18 : 7,
+                  height: 7,
+                  decoration: BoxDecoration(
+                    color: i == chuna ? colors.primary : colors.borderSubtle,
+                    borderRadius: VidhivatRadius.pill,
+                  ),
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+/// एक पत्ता — चित्र पीछे, बाईं तरफ़ पढ़ने की चीज़ें।
+class _PujaPatta extends StatelessWidget {
+  final _Patta patta;
+  final void Function(String id) onOpen;
+
+  const _PujaPatta({required this.patta, required this.onOpen});
 
   @override
   Widget build(BuildContext context) {
     final colors = VidhivatTheme.colorsOf(context);
     final type = VidhivatTheme.typographyOf(context);
-    final progress = settings.playerProgressFor(
-      data.featuredEntry.id,
-      data.featuredVidhi.charan.length,
-    );
-    final eyebrow = progress == null ? 'आज की सरल शुरुआत' : 'जहाँ छोड़ा था';
-    final cta = progress == null ? 'पूजा शुरू करें' : 'पूजा जारी रखें';
-    final isDefault = data.featuredEntry.id == 'nitya_pooja';
-    final artwork = isDefault
-        ? 'assets/images/devotional/home_ganesha_hero_v1.webp'
-        : DevotionalAssets.forVidhiId(data.featuredEntry.id).assetPath;
+    final khulSaktaHai = patta.pujaId != null;
+
     return Semantics(
       container: true,
-      label: '${data.featuredEntry.naam}। $eyebrow। $cta',
+      button: khulSaktaHai,
+      label: [
+        patta.naam,
+        patta.upar,
+        patta.neeche,
+        if (!khulSaktaHai) 'इसकी विधि अभी ऐप में नहीं है',
+      ].join('। '),
+      excludeSemantics: true,
       child: Container(
-        height: 210,
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
           borderRadius: VidhivatRadius.extraLarge,
@@ -314,17 +574,27 @@ class _FeaturedPuja extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: [
+            // ── भगवान का चित्र ऊपर से कभी मत काटो ──────────────────
+            //
+            // पहले यहाँ `BoxFit.cover` था। पत्ता चौड़ा है और चित्र
+            // चौकोर, इसलिए cover उसे **चौड़ाई** से नापता था और ऊपर-नीचे
+            // से काट देता था — यानी सीधे भगवान के सिर और मुकुट पर कैंची।
+            // किसी देवता की तस्वीर आधी दिखाना इस ऐप में नहीं चलेगा।
+            //
+            // `fitHeight` ऊँचाई से नापता है, इसलिए **कुछ नहीं कटता**।
+            // चौकोर चित्र पत्ते से सँकरा रह जाता है और दाईं तरफ़ चिपक
+            // जाता है; `translate` उसे थोड़ा और बाहर खिसकाता है ताकि
+            // किनारे की ख़ाली जगह डिब्बे से बाहर चली जाए और डिब्बा उसे
+            // साफ़ काट दे (`clipBehavior` ऊपर लगा है)।
             Positioned.fill(
-              child: ExcludeSemantics(
-                child: Transform.scale(
-                  scale: 0.78,
+              child: Transform.translate(
+                offset: const Offset(16, 0),
+                child: Image.asset(
+                  patta.artwork,
+                  fit: BoxFit.fitHeight,
                   alignment: Alignment.centerRight,
-                  child: Image.asset(
-                    artwork,
-                    fit: BoxFit.cover,
-                    alignment: Alignment.centerRight,
-                    filterQuality: FilterQuality.high,
-                  ),
+                  filterQuality: FilterQuality.high,
+                  errorBuilder: (_, __, ___) => const SizedBox.shrink(),
                 ),
               ),
             ),
@@ -343,6 +613,8 @@ class _FeaturedPuja extends StatelessWidget {
                 ),
               ),
             ),
+            // ⚠️ चित्र के ऊपर लिखा है, इसलिए अक्षर बढ़ने पर यह डिब्बा
+            // फैल नहीं सकता — बड़े font पर पाठ बाहर निकलने से रोकना पड़ता है।
             MediaQuery.withClampedTextScaling(
               maxScaleFactor: 1.0,
               child: Padding(
@@ -355,7 +627,7 @@ class _FeaturedPuja extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          eyebrow,
+                          patta.upar,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: type.caption.copyWith(
@@ -365,40 +637,64 @@ class _FeaturedPuja extends StatelessWidget {
                         ),
                         const SizedBox(height: VidhivatSpacing.xxs),
                         Text(
-                          data.featuredEntry.naam,
+                          patta.naam,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: type.sectionTitle,
                         ),
                         const SizedBox(height: VidhivatSpacing.xxs),
                         Text(
-                          data.featuredEntry.ekLine,
+                          patta.neeche,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          style: type.bodySmall.copyWith(
-                            color: colors.textSecondary,
-                          ),
+                          style: type.bodySmall
+                              .copyWith(color: colors.textSecondary),
                         ),
                         const Spacer(),
-                        _HeroFacts(
-                          duration: data.featuredVidhi.samayLikha,
-                          steps: data.featuredVidhi.charan.length,
-                          needsReview: !data.featuredEntry.paas,
-                          resumeStep: progress == null
-                              ? null
-                              : progress.lastReachedStepIndex + 1,
-                        ),
-                        const SizedBox(height: VidhivatSpacing.xs),
-                        SizedBox(
-                          width: 154,
-                          child: VidhivatButton(
-                            label: cta,
-                            semanticLabel: '${data.featuredEntry.naam} $cta',
-                            onPressed: onOpen,
-                            compact: true,
-                            fullWidth: true,
+                        if (patta.samayAurCharan != null)
+                          Row(
+                            children: [
+                              Icon(patta.samayChihn,
+                                  size: 14, color: colors.primary),
+                              const SizedBox(width: VidhivatSpacing.xxs),
+                              Flexible(
+                                child: Text(
+                                  patta.samayAurCharan!,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: type.caption
+                                      .copyWith(color: colors.textSecondary),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
+                        const SizedBox(height: VidhivatSpacing.xs),
+                        if (khulSaktaHai)
+                          SizedBox(
+                            width: 154,
+                            child: VidhivatButton(
+                              label: patta.bulawa,
+                              semanticLabel: '${patta.naam} — ${patta.bulawa}',
+                              onPressed: () => onOpen(patta.pujaId!),
+                              compact: true,
+                              fullWidth: true,
+                            ),
+                          )
+                        else
+                          // विधि बनी ही नहीं — तो बटन मत दिखाओ। तारीख़
+                          // बता देना अपने आप में काम की चीज़ है (→ D-038)।
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: VidhivatSpacing.xs,
+                            ),
+                            child: Text(
+                              patta.bulawa,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: type.caption
+                                  .copyWith(color: colors.textTertiary),
+                            ),
+                          ),
                       ],
                     ),
                   ),
@@ -412,64 +708,112 @@ class _FeaturedPuja extends StatelessWidget {
   }
 }
 
-class _HeroFacts extends StatelessWidget {
-  final String duration;
-  final int steps;
-  final bool needsReview;
-  final int? resumeStep;
+/// carousel का एक पत्ता — सिर्फ़ दिखाने की चीज़ें, कोई गणना नहीं।
+///
+/// सब कुछ पहले से मौजूद डेटा से बनता है: तारीख़ें `aaneWaliPujaayein()`
+/// से (जो पंचांग से निकलती हैं → D-038), समय और चरण पूजा की अपनी
+/// JSON से, और अधूरी जगह `settings` से।
+class _Patta {
+  /// सबसे ऊपर की छोटी लाइन — "आज", "कल", "12 दिन बाद", "जहाँ छोड़ा था"।
+  final String upar;
 
-  const _HeroFacts({
-    required this.duration,
-    required this.steps,
-    required this.needsReview,
-    required this.resumeStep,
+  final String naam;
+
+  /// नाम के नीचे — एक लाइन का परिचय, या "पूर्णिमा", या "चरण 8 / 9"।
+  final String neeche;
+
+  final String artwork;
+
+  /// `null` = यह पत्ता खुलता नहीं (विधि अभी बनी ही नहीं)।
+  final String? pujaId;
+
+  /// "22 मिनट • 9 चरण", या अधूरी पूजा पर "चरण 8 / 9"।
+  /// विधि न हो तो `null`।
+  final String? samayAurCharan;
+
+  /// [samayAurCharan] के आगे का चिह्न। घड़ी तब जब वो सचमुच समय हो —
+  /// चरणों की गिनती पर घड़ी लगाना ग़लत बात कहता है।
+  final IconData samayChihn;
+
+  /// बटन पर क्या लिखा हो; न खुलने वाले पत्ते पर यही सादा पाठ बन जाता है।
+  final String bulawa;
+
+  const _Patta({
+    required this.upar,
+    required this.naam,
+    required this.neeche,
+    required this.artwork,
+    required this.pujaId,
+    required this.samayAurCharan,
+    required this.bulawa,
+    this.samayChihn = Icons.schedule_outlined,
   });
+}
+
+/// होम पर चालीसा और आरती — पंक्तियों में, चित्रों में नहीं।
+///
+/// पूजा के कार्ड चित्र-वाले हैं क्योंकि वहाँ देवता की पहचान काम आती है।
+/// पाठ **पढ़ने की चीज़** है — यहाँ नाम और "कब पढ़ें" ज़्यादा काम के हैं,
+/// इसलिए यह हिस्सा पंक्तियों में है (→ D-051)।
+class _PaathSuchi extends StatelessWidget {
+  final List<PaathSuchiEntry> entries;
+  final void Function(String id) onOpen;
+
+  const _PaathSuchi({required this.entries, required this.onOpen});
 
   @override
   Widget build(BuildContext context) {
     final colors = VidhivatTheme.colorsOf(context);
     final type = VidhivatTheme.typographyOf(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Icon(Icons.schedule_outlined, size: 14, color: colors.primary),
-            const SizedBox(width: VidhivatSpacing.xxs),
-            Flexible(
-              child: Text(
-                '$duration  •  $steps चरण',
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: type.caption.copyWith(color: colors.textSecondary),
+
+    return VidhivatSurfaceCard(
+      padding: EdgeInsets.zero,
+      child: Column(
+        children: [
+          for (var i = 0; i < entries.length; i++) ...[
+            if (i > 0)
+              Divider(height: 1, thickness: 1, color: colors.borderSubtle),
+            Semantics(
+              button: true,
+              label: '${entries[i].naam}। ${entries[i].ekLine}',
+              excludeSemantics: true,
+              child: InkWell(
+                onTap: () => onOpen(entries[i].id),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: VidhivatSpacing.lg,
+                    vertical: VidhivatSpacing.md,
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.menu_book_outlined,
+                          size: VidhivatIconSize.medium, color: colors.primary),
+                      const SizedBox(width: VidhivatSpacing.md),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(entries[i].naam, style: type.cardTitle),
+                            const SizedBox(height: 2),
+                            Text(
+                              entries[i].ekLine,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: type.bodySmall
+                                  .copyWith(color: colors.textSecondary),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Icon(Icons.chevron_right, color: colors.textTertiary),
+                    ],
+                  ),
+                ),
               ),
             ),
           ],
-        ),
-        if (resumeStep != null || needsReview) ...[
-          const SizedBox(height: VidhivatSpacing.xxs),
-          Row(
-            children: [
-              Icon(
-                resumeStep != null
-                    ? Icons.play_circle_outline
-                    : Icons.info_outline,
-                size: 14,
-                color: resumeStep != null ? colors.info : colors.warning,
-              ),
-              const SizedBox(width: VidhivatSpacing.xxs),
-              Flexible(
-                child: Text(
-                  resumeStep != null ? 'चरण $resumeStep' : 'जाँच बाकी',
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: type.caption.copyWith(color: colors.textSecondary),
-                ),
-              ),
-            ],
-          ),
         ],
-      ],
+      ),
     );
   }
 }
@@ -762,124 +1106,17 @@ class _DashboardData {
   final Vidhi featuredVidhi;
   final List<VidhiSuchiEntry> popular;
 
-  /// आगे आने वाली पूजाएँ, नज़दीक से दूर के क्रम में (→ D-038)।
-  final List<PujaAvsar> aageAaneWale;
+  /// होम पर दिखने वाली पहली चार चालीसा/आरती (→ D-051)।
+  final List<PaathSuchiEntry> paath;
+
+  /// सबसे ऊपर वाली पट्टी के पत्ते — आज पहला, फिर आगे के दिन (→ D-046)।
+  final List<_Patta> patte;
 
   const _DashboardData({
     required this.featuredEntry,
     required this.featuredVidhi,
     required this.popular,
-    required this.aageAaneWale,
+    required this.paath,
+    required this.patte,
   });
-}
-
-/// **आगे क्या आ रहा है** — आज, कल, परसों और उसके बाद की पूजाएँ, क्रम से।
-///
-/// हर पंक्ति में तीन चीज़ें हैं: कब (आज/कल/12 दिन बाद), क्या (पूजा या
-/// त्योहार का नाम), और क्यों (पूर्णिमा, मंगलवार, त्योहार)।
-///
-/// ⚠️ जिस त्योहार की विधि ऐप में नहीं बनी, वो **दिखता तो है पर खुलता
-/// नहीं** — और उस पर साफ़ लिखा है "विधि अभी नहीं"। तारीख़ बता देना अपने
-/// आप में काम की चीज़ है; उसके लिए विधि होना ज़रूरी नहीं।
-class _AageAaneWali extends StatelessWidget {
-  final List<PujaAvsar> avsar;
-  final void Function(String id) onOpen;
-
-  const _AageAaneWali({required this.avsar, required this.onOpen});
-
-  @override
-  Widget build(BuildContext context) {
-    final colors = VidhivatTheme.colorsOf(context);
-
-    return VidhivatSurfaceCard(
-      padding: EdgeInsets.zero,
-      child: Column(
-        children: [
-          for (var i = 0; i < avsar.length; i++) ...[
-            if (i > 0)
-              Divider(height: 1, thickness: 1, color: colors.borderSubtle),
-            _AvsarPankti(
-              avsar: avsar[i],
-              onOpen: onOpen,
-            ),
-          ],
-        ],
-      ),
-    );
-  }
-}
-
-class _AvsarPankti extends StatelessWidget {
-  final PujaAvsar avsar;
-  final void Function(String id) onOpen;
-
-  const _AvsarPankti({required this.avsar, required this.onOpen});
-
-  @override
-  Widget build(BuildContext context) {
-    final colors = VidhivatTheme.colorsOf(context);
-    final text = Theme.of(context).textTheme;
-    final aajHai = avsar.kitneDinBaad == 0;
-
-    final semantics = avsar.khulSaktiHai
-        ? '${avsar.naam}, ${avsar.kabLikha}, ${avsar.kyon}. खोलने के लिए दबाएँ'
-        : '${avsar.naam}, ${avsar.kabLikha}, ${avsar.kyon}. इसकी विधि अभी ऐप में नहीं है';
-
-    return Semantics(
-      button: avsar.khulSaktiHai,
-      label: semantics,
-      excludeSemantics: true,
-      child: InkWell(
-        onTap: avsar.khulSaktiHai ? () => onOpen(avsar.pujaId) : null,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: VidhivatSpacing.lg,
-            vertical: VidhivatSpacing.md,
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              // ── कब ──
-              SizedBox(
-                width: 76,
-                child: Text(
-                  avsar.kabLikha,
-                  style: text.labelLarge?.copyWith(
-                    fontWeight: aajHai ? FontWeight.w700 : FontWeight.w600,
-                    color: aajHai ? colors.primary : colors.textSecondary,
-                  ),
-                ),
-              ),
-              // ── क्या और क्यों ──
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      avsar.naam,
-                      style: text.bodyLarge?.copyWith(
-                        fontWeight: FontWeight.w600,
-                        color: colors.textPrimary,
-                      ),
-                    ),
-                    const SizedBox(height: 2),
-                    Text(
-                      avsar.khulSaktiHai
-                          ? avsar.kyon
-                          : '${avsar.kyon} · विधि अभी नहीं',
-                      style: text.bodySmall?.copyWith(
-                        color: colors.textSecondary,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              if (avsar.khulSaktiHai)
-                Icon(Icons.chevron_right, color: colors.textSecondary),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
 }

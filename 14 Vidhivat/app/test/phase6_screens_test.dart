@@ -154,16 +154,16 @@ void main() {
       app(const SankalpScreen(), scaler: const TextScaler.linear(1.5)),
     );
 
-    // ⚠️ पहले `ensureVisible`, फिर `tap`. बिना इसके tap चुपचाप ख़ाली
-    // जाता है — चिप तह के नीचे होती है और Flutter उसके केंद्र पर tap
-    // भेजता है, जो viewport से बाहर पड़ता है। कोई exception नहीं आता,
-    // बस purpose नहीं बदलता और टेस्ट भ्रामक तरीक़े से फ़ेल होता है।
-    // यह तब टूटा जब `commonPurposes` 12 से 18 का हो गया (छह नई पूजाएँ)।
-    // ऐप में बग नहीं है — यूज़र स्क्रॉल करके चिप तक पहुँच जाता है।
-    await tester.ensureVisible(find.text('गृह प्रवेश'));
+    // काम अब dropdown से चुना जाता है, चिप्स से नहीं (→ D-047)।
+    //
+    // ⚠️ इससे इस जाँच की पुरानी झंझट भी ख़त्म हो गई: पहले हर चिप को
+    // `ensureVisible` करना पड़ता था, क्योंकि उन्नीस चिप्स तह के नीचे
+    // चले जाते थे और tap चुपचाप ख़ाली चला जाता था। dropdown में सूची
+    // ऊपर खुलती है, इसलिए वो दिक़्क़त रही ही नहीं।
+    await tester.tap(find.byType(DropdownButton<String>));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('गृह प्रवेश'));
-    await tester.pump();
+    await tester.tap(find.text('गृह प्रवेश').last);
+    await tester.pumpAndSettle();
     await scrollTo(tester, find.byType(SelectableText));
     final p = settings.panchangFor(DateTime.now());
     final expected = buildSankalp(

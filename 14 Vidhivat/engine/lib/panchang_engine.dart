@@ -28,14 +28,37 @@ export 'src/moon.dart'
         moonGeometricLongitude;
 export 'src/nutation.dart' show nutationInLongitude;
 export 'src/festival.dart';
+export 'src/grahan.dart';
 export 'src/muhurta.dart';
+export 'src/prahar.dart';
+export 'src/surya_grahan.dart';
 export 'src/names.dart';
 export 'src/sankalp.dart';
+export 'src/vrat.dart';
 export 'src/shubh_muhurat.dart';
 export 'src/panchang.dart';
 export 'src/place.dart' show Place;
 export 'src/sun.dart'
-    show sunApparentLongitude, sunEquatorial, meanObliquity, trueObliquity;
+    show
+        sunApparentLongitude,
+        sunDistance,
+        sunEquatorial,
+        meanObliquity,
+        trueObliquity;
 export 'src/moonrise.dart'
-    show moonriseMoonset, moonAltitude, moonEquatorial, moonHorizonAdjustment;
-export 'src/sunrise.dart' show sunriseSunset, sunriseJd, sunAltitude, greenwichMeanSiderealTime;
+    show
+        moonriseMoonset,
+        moonAltitude,
+        moonEquatorial,
+        moonHorizonAdjustment,
+        moonHorizonAltitude;
+export 'src/sunrise.dart'
+    show
+        sunriseSunset,
+        sunriseJd,
+        suryodayKiDehleez,
+        sunAltitude,
+        greenwichMeanSiderealTime,
+        HinduDin,
+        hinduDin,
+        brahmaMuhurtaSePehle;

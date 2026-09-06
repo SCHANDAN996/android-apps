@@ -145,6 +145,86 @@
       "ekLine": "जन्माष्टमी और लड्डू गोपाल",
       "taiyar": true,
       "paas": false
+    },
+    {
+      "id": "dhanteras",
+      "naam": "धनतेरस पूजा",
+      "shreni": "tyohar",
+      "ekLine": "धन्वंतरि, लक्ष्मी-कुबेर और यम-दीपदान",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "govardhan_annakut",
+      "naam": "गोवर्धन पूजा / अन्नकूट",
+      "shreni": "tyohar",
+      "ekLine": "गोवर्धन, गौ-पूजन और अन्नकूट भोग",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "bhai_dooj_pooja",
+      "naam": "भाई दूज पूजा",
+      "shreni": "tyohar",
+      "ekLine": "बहन का तिलक, यम-यमुना की कथा",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "raksha_bandhan_pooja",
+      "naam": "रक्षाबंधन पूजा",
+      "shreni": "tyohar",
+      "ekLine": "बहन का रक्षासूत्र, भद्रा का ध्यान",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "makar_sankranti_pooja",
+      "naam": "मकर संक्रांति पूजा",
+      "shreni": "tyohar",
+      "ekLine": "सूर्य को अर्घ्य, तिल-गुड़ का दान",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "hartalika_teej",
+      "naam": "हरितालिका तीज",
+      "shreni": "vrat",
+      "ekLine": "शिव-पार्वती का व्रत, प्रदोष पूजा",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "vat_savitri",
+      "naam": "वट सावित्री व्रत",
+      "shreni": "vrat",
+      "ekLine": "वट वृक्ष की परिक्रमा, सावित्री कथा",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "chhath_pooja",
+      "naam": "छठ पूजा",
+      "shreni": "vrat",
+      "ekLine": "चार दिन, डूबते और उगते सूर्य को अर्घ्य",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "varalakshmi_vrat",
+      "naam": "वरलक्ष्मी व्रत",
+      "shreni": "vrat",
+      "ekLine": "श्रावण के आख़िरी शुक्रवार, कलश पूजन",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "durga_ashtami_kanya_poojan",
+      "naam": "दुर्गा अष्टमी / कन्या पूजन",
+      "shreni": "tyohar",
+      "ekLine": "नौ कन्याओं का पूजन और भोजन",
+      "taiyar": true,
+      "paas": false
     }
   ]
 }

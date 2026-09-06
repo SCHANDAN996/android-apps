@@ -45,9 +45,15 @@ class _PaathListScreenState extends State<PaathListScreen> {
     final type = VidhivatTheme.typographyOf(context);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('चालीसा और पाठ')),
+      // "अधिक" वाले कार्ड पर इसका नाम "चालीसा और आरती" है — खुलने पर
+      // वही नाम दिखना चाहिए।
+      appBar: AppBar(title: const Text('चालीसा और आरती')),
+      // ⚠️ `bottom: false` यहाँ नहीं चलेगा — इस पन्ने के नीचे ऐप की
+      // अपनी कोई पट्टी नहीं है, इसलिए सबसे नीचे का हिस्सा सीधे Android
+      // के नेविगेशन बार के पीछे चला जाता है (फ़ोन पर पकड़ा गया, 4 सित)।
+      // `top: false` इसलिए कि ऊपर AppBar पहले से सँभाल लेता है।
       body: SafeArea(
-        bottom: false,
+        top: false,
         child: VidhivatSacredBackdrop(
           child: FutureBuilder<List<PaathSuchiEntry>>(
             future: _suchi,
@@ -89,6 +95,7 @@ class _PaathListScreenState extends State<PaathListScreen> {
                   Text(
                     'बैठकर पढ़ने वाली स्तुतियाँ। इनके लिए कोई सामग्री या '
                     'संकल्प नहीं चाहिए — बस शुरू से आख़िर तक पढ़ना होता है।',
+                    textAlign: TextAlign.justify,
                     style: type.bodyMedium,
                   ),
                   if (prakarMaujud.length > 1) ...[
@@ -115,13 +122,15 @@ class _PaathListScreenState extends State<PaathListScreen> {
                     _PaathTile(entry: entry, onTap: () => _open(entry)),
                     const SizedBox(height: VidhivatSpacing.sm),
                   ],
-                  const SizedBox(height: VidhivatSpacing.lg),
-                  Text(
-                    'और चालीसा तथा स्तोत्र आगे जोड़े जाएँगे। हर पाठ वही '
-                    'रूप में जाएगा जो घर में पढ़ा जाता है — अपनी '
-                    'पुस्तिका से, अपनी रिकॉर्डिंग के साथ।',
-                    style: type.bodySmall,
-                  ),
+                  // ── "और चालीसा आगे जोड़े जाएँगे … अपनी रिकॉर्डिंग के
+                  //     साथ" वाली पंक्ति यहाँ थी — अब नहीं ──────────────
+                  //
+                  // वो हमारा प्लान था, यूज़र की बात नहीं — और उसमें एक ऐसा
+                  // वायदा था जो अभी पूरा नहीं हो सकता: ऐप में **एक भी
+                  // रिकॉर्डिंग नहीं है** — `assets/` में `audio/` फ़ोल्डर तक नहीं।
+                  //
+                  // जो चीज़ ऐप में नहीं है, उसका वायदा सूची के नीचे नहीं छपेगा।
+                  // रिकॉर्डिंग आएंगी तो ख़ुद दिख जाएंगी (→ D-056)।
                 ],
               );
             },

@@ -64,6 +64,42 @@
       "ekLine": "सत्यनारायण पूजा में कथा के बाद",
       "taiyar": true,
       "paas": false
+    },
+    {
+      "id": "krishna_aarti",
+      "naam": "श्री कृष्ण जी की आरती",
+      "prakar": "aarti",
+      "devta": "कृष्ण जी",
+      "ekLine": "कृष्ण पूजा और जन्माष्टमी पर",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "ram_aarti",
+      "naam": "श्री राम जी की आरती",
+      "prakar": "aarti",
+      "devta": "राम जी",
+      "ekLine": "राम पूजा और रामनवमी पर",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "saraswati_aarti",
+      "naam": "श्री सरस्वती जी की आरती",
+      "prakar": "aarti",
+      "devta": "सरस्वती जी",
+      "ekLine": "सरस्वती पूजा और वसंत पंचमी पर",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "jagdish_aarti",
+      "naam": "ॐ जय जगदीश हरे",
+      "prakar": "aarti",
+      "devta": "विष्णु / सब देवता",
+      "ekLine": "हर पूजा में चल जाने वाली आरती",
+      "taiyar": true,
+      "paas": false
     }
   ]
 }

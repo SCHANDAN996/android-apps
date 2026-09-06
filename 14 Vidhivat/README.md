@@ -49,6 +49,8 @@ MASS APP suite का ऐप #14 · Flutter · 100% ऑफलाइन
 | [`docs/10_AGLA_PROMPT.md`](docs/10_AGLA_PROMPT.md) | ✂️ **अगले AI को देने वाला prompt** — कॉपी करके चिपकाओ |
 | [`docs/11_SANKALP_VYAKARAN.md`](docs/11_SANKALP_VYAKARAN.md) | संकल्प की संस्कृत, हर रूप अलग तोड़कर |
 | [`docs/12_PANDIT_SHEET.html`](docs/12_PANDIT_SHEET.html) | 🖨️ **पंडित जी को देने वाली जाँच-शीट** — ब्राउज़र में खोलकर Ctrl+P |
+| [`docs/19_PLAY_LISTING.md`](docs/19_PLAY_LISTING.md) | Play Console में चिपकाने वाली पूरी listing |
+| [`docs/20_KAMAI_YOJANA.md`](docs/20_KAMAI_YOJANA.md) | 💰 **कमाई की योजना** — स्वेच्छा से दक्षिणा (D-053) |
 
 ---
 

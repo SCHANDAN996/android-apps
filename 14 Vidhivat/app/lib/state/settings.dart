@@ -9,23 +9,73 @@ class SankalpPerson {
   final String id;
   final String name;
   final String gotra;
+
+  /// पुरुष या स्त्री — संकल्प का वाक्य इसी से बदलता है (→ A3)।
+  ///
+  /// पहले हर व्यक्ति पुल्लिंग मान लिया जाता था, इसलिए हर स्त्री के लिए
+  /// भी *"…गोत्रोत्पन्नः"* बनता था। पुरानी सहेजी हुई profile में यह
+  /// खाना नहीं होगा — वहाँ पुरुष ही मानते हैं, ताकि बर्ताव न बदले।
+  final Yajaman yajaman;
+
   final bool isDefaultProfile;
 
   const SankalpPerson({
     required this.id,
     required this.name,
     required this.gotra,
+    this.yajaman = Yajaman.purush,
     this.isDefaultProfile = false,
   });
 
-  Map<String, String> toJson() => {'id': id, 'name': name, 'gotra': gotra};
+  Map<String, String> toJson() => {
+        'id': id,
+        'name': name,
+        'gotra': gotra,
+        'yajaman': yajaman.name,
+      };
 
   factory SankalpPerson.fromJson(Map<String, dynamic> json) => SankalpPerson(
         id: json['id'] as String,
         name: json['name'] as String,
         gotra: json['gotra'] as String,
+        yajaman: yajamanFromName(json['yajaman'] as String?),
       );
 }
+
+/// सहेजे हुए नाम से [Yajaman] — न मिले तो पुरुष (पुराना बर्ताव)।
+Yajaman yajamanFromName(String? name) => Yajaman.values.firstWhere(
+      (y) => y.name == name,
+      orElse: () => Yajaman.purush,
+    );
+
+/// सहेजे हुए नाम से [SthanPrakar] — न मिले तो नगर।
+SthanPrakar sthanPrakarFromName(String? name) => SthanPrakar.values.firstWhere(
+      (s) => s.name == name,
+      orElse: () => SthanPrakar.nagar,
+    );
+
+/// ऐप की शहर-सूची में जो **पुण्यक्षेत्र** हैं।
+///
+/// संकल्प में "क्षेत्र" तीर्थों के लिए बोला जाता है, साधारण शहर के लिए
+/// "नगर" (→ A5)। ये नाम सूची में पहले से हैं, इसलिए इनके लिए यूज़र से
+/// **कुछ पूछना ही नहीं पड़ता** — ऐप ख़ुद सही रूप चुन लेता है।
+///
+/// ⚠️ यह सूची जान-बूझकर छोटी है। जो नाम इसमें नहीं, वह "नगर" मानकर
+/// चलेगा — और यूज़र एक दबाव में बदल सकता है।
+const Set<String> tirthaKshetras = {
+  'वाराणसी',
+  'प्रयागराज',
+  'गया',
+  'उज्जैन',
+  'हरिद्वार',
+  'तिरुपति',
+};
+
+/// शहर के नाम से अंदाज़ा — तीर्थ है या साधारण नगर।
+SthanPrakar sthanPrakarForCity(String cityName) =>
+    tirthaKshetras.contains(cityName.trim())
+        ? SthanPrakar.kshetra
+        : SthanPrakar.nagar;
 
 /// ऐप की सेटिंग — जगह, मास-पद्धति, और यजमान की जानकारी।
 ///
@@ -41,6 +91,10 @@ class AppSettings extends ChangeNotifier {
   static const _kActiveSankalpPerson = 'activeSankalpPerson.v1';
   static const _kLocationPermissionPromptSeen = 'locationPromptSeen.v1';
   static const _kPlayerProgress = 'playerProgress.v1';
+  static const _kYajaman = 'yajaman.v1';
+  static const _kSthanPrakar = 'sthanPrakar.v1';
+  static const _kSthanPrakarChosen = 'sthanPrakarChosen.v1';
+  static const _kGotraPataHai = 'gotraPataHai.v1';
   static const _defaultSankalpPersonId = 'default-profile';
 
   SharedPreferences? _prefs;
@@ -50,6 +104,20 @@ class AppSettings extends ChangeNotifier {
   MasaSystem _masaSystem = MasaSystem.purnimanta;
   String _name = '';
   String _gotra = 'कश्यप';
+  Yajaman _yajaman = Yajaman.purush;
+
+  /// यूज़र ने कहा है कि उसे अपना गोत्र पता है।
+  ///
+  /// पहले ऐप चुपचाप "कश्यप" भर देता था और यूज़र को पता ही नहीं चलता
+  /// था (→ A12)। अब वह एक चुनाव है, और "पता नहीं" चुनने पर ऐप वजह
+  /// भी बताता है ([gotraAgyaatShloka])।
+  bool _gotraPataHai = false;
+  SthanPrakar _sthanPrakar = SthanPrakar.nagar;
+
+  /// यूज़र ने ख़ुद चुना है या ऐप ने शहर से अंदाज़ा लगाया है।
+  /// ख़ुद चुना हो तो शहर बदलने पर उसे मत मिटाओ — गाँव वाला शहर बदलने
+  /// पर भी गाँव में ही रहता है।
+  bool _sthanPrakarChosen = false;
   String _activeSankalpPersonId = _defaultSankalpPersonId;
   List<SankalpPerson> _additionalSankalpPeople = const [];
   final Map<String, PujaPlayerProgress> _playerProgress = {};
@@ -58,6 +126,18 @@ class AppSettings extends ChangeNotifier {
   MasaSystem get masaSystem => _masaSystem;
   String get name => _name;
   String get gotra => _gotra;
+
+  /// यूज़र ने अपना गोत्र ख़ुद बताया है, या ऐप ने "पता नहीं" वाला
+  /// कश्यप भरा है?
+  bool get gotraPataHai => _gotraPataHai;
+
+  Yajaman get yajaman => _yajaman;
+
+  /// जगह नगर है, गाँव है या तीर्थ (→ A5)।
+  SthanPrakar get sthanPrakar => _sthanPrakar;
+
+  /// यूज़र ने ख़ुद चुना, या ऐप ने शहर के नाम से अंदाज़ा लगाया?
+  bool get sthanPrakarChosen => _sthanPrakarChosen;
 
   Place get place => _city.place;
   bool get locationPermissionPromptSeen => _locationPermissionPromptSeen;
@@ -72,6 +152,7 @@ class AppSettings extends ChangeNotifier {
             id: _defaultSankalpPersonId,
             name: _name,
             gotra: _gotra,
+            yajaman: _yajaman,
             isDefaultProfile: true,
           ),
         ..._additionalSankalpPeople,
@@ -108,7 +189,20 @@ class AppSettings extends ChangeNotifier {
         ? MasaSystem.amanta
         : MasaSystem.purnimanta;
     _name = _prefs!.getString(_kName) ?? '';
-    _gotra = _prefs!.getString(_kGotra) ?? 'कश्यप';
+    _gotra = _prefs!.getString(_kGotra) ?? gotraJabPataNaHo;
+    // पुराने यूज़र, जिन्होंने A12 से पहले गोत्र भरा था — उन्हें दोबारा
+    // मत पूछो। गोत्र सहेजा हुआ है, यानी उन्होंने ख़ुद चुना था।
+    _gotraPataHai = _prefs!.getBool(_kGotraPataHai) ??
+        (_prefs!.getString(_kGotra) != null);
+    _yajaman = yajamanFromName(_prefs!.getString(_kYajaman));
+
+    // जगह का प्रकार — यूज़र ने चुना हो तो वही, वरना शहर के नाम से
+    // अंदाज़ा (काशी, प्रयाग, गया… तीर्थ हैं; बाक़ी नगर)।
+    _sthanPrakarChosen = _prefs!.getBool(_kSthanPrakarChosen) ?? false;
+    _sthanPrakar = _sthanPrakarChosen
+        ? sthanPrakarFromName(_prefs!.getString(_kSthanPrakar))
+        : sthanPrakarForCity(_city.name);
+
     _activeSankalpPersonId =
         _prefs!.getString(_kActiveSankalpPerson) ?? _defaultSankalpPersonId;
     _loadSankalpPeople(_prefs!.getString(_kSankalpPeople));
@@ -121,8 +215,24 @@ class AppSettings extends ChangeNotifier {
 
   Future<void> setCity(City value) async {
     _city = value;
+    // सूर्योदय जगह से बदलता है, इसलिए हिंदू दिन की सीमा भी (→ D-044)।
+    _hinduDin = null;
     await _prefs?.setString(_kCity, value.name);
     await _prefs?.setString(_kCityDetails, jsonEncode(value.toJson()));
+    // शहर बदला तो प्रकार का अंदाज़ा दोबारा लगाओ — पर सिर्फ़ तब, जब
+    // यूज़र ने ख़ुद कुछ नहीं चुना था। चुना हुआ कभी चुपचाप मत बदलो।
+    if (!_sthanPrakarChosen) {
+      _sthanPrakar = sthanPrakarForCity(value.name);
+    }
+    notifyListeners();
+  }
+
+  /// जगह का प्रकार यूज़र ने ख़ुद चुना — नगर, गाँव या तीर्थ।
+  Future<void> setSthanPrakar(SthanPrakar value) async {
+    _sthanPrakar = value;
+    _sthanPrakarChosen = true;
+    await _prefs?.setString(_kSthanPrakar, value.name);
+    await _prefs?.setBool(_kSthanPrakarChosen, true);
     notifyListeners();
   }
 
@@ -158,7 +268,12 @@ class AppSettings extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> setYajman({String? name, String? gotra}) async {
+  Future<void> setYajman({
+    String? name,
+    String? gotra,
+    Yajaman? yajaman,
+    bool? gotraPataHai,
+  }) async {
     if (name != null) {
       _name = name;
       await _prefs?.setString(_kName, name);
@@ -166,6 +281,14 @@ class AppSettings extends ChangeNotifier {
     if (gotra != null) {
       _gotra = gotra;
       await _prefs?.setString(_kGotra, gotra);
+    }
+    if (yajaman != null) {
+      _yajaman = yajaman;
+      await _prefs?.setString(_kYajaman, yajaman.name);
+    }
+    if (gotraPataHai != null) {
+      _gotraPataHai = gotraPataHai;
+      await _prefs?.setBool(_kGotraPataHai, gotraPataHai);
     }
     notifyListeners();
   }
@@ -180,11 +303,13 @@ class AppSettings extends ChangeNotifier {
   Future<void> addSankalpPerson({
     required String name,
     required String gotra,
+    Yajaman yajaman = Yajaman.purush,
   }) async {
     final person = SankalpPerson(
       id: 'person-${DateTime.now().microsecondsSinceEpoch}',
       name: name.trim(),
       gotra: gotra,
+      yajaman: yajaman,
     );
     _additionalSankalpPeople = [..._additionalSankalpPeople, person];
     _activeSankalpPersonId = person.id;
@@ -197,6 +322,10 @@ class AppSettings extends ChangeNotifier {
   Future<void> removeSankalpPerson(String id) async {
     if (id == _defaultSankalpPersonId) {
       _name = '';
+      // गोत्र वाला चुनाव भी साफ़ हो — वरना नया यूज़र फिर चुपचाप
+      // कश्यप पर अटक जाएगा (→ A12)।
+      _gotraPataHai = false;
+      await _prefs?.remove(_kGotraPataHai);
       await _prefs?.remove(_kName);
     } else {
       _additionalSankalpPeople = _additionalSankalpPeople
@@ -291,12 +420,47 @@ class AppSettings extends ChangeNotifier {
   // यूज़र इस फ़ोन पर app में आख़िरी बार किस चरण तक पहुँचा था। Puja JSON या
   // मंत्र कभी store नहीं होते — केवल stable Puja id और technical position।
 
+  /// अधूरी छूटी पूजा **कितनी देर याद रहे** — अगले सूर्योदय तक (→ D-044)।
+  ///
+  /// ## तीन में से यही क्यों
+  ///
+  /// | तरीक़ा | दिक़्क़त |
+  /// |---|---|
+  /// | कई दिन चलती रहे | संकल्प **आज के** पंचांग से बनता है। परसों लौटने पर वो संकल्प बासी है, पर ऐप कहेगा "जहाँ छोड़ा था" |
+  /// | रात 12 बजे मिट जाए | **जन्माष्टमी की पूजा आधी रात को ही होती है।** दीपावली प्रदोष में, महाशिवरात्रि निशीथ में — तीनों बीच पूजा में कट जातीं |
+  /// | **अगले सूर्योदय पर** | ऐप का अपना दिन यही है, और रात वाली पूजाएँ पूरी बचती हैं |
+  ///
+  /// गणना महँगी नहीं पड़ती — [HinduDin] अपनी दोनों सीमाएँ साथ लाता है,
+  /// इसलिए दिन भर एक ही बार निकलती है।
+  HinduDin? _hinduDin;
+
+  HinduDin? _abKaHinduDin() {
+    final ab = DateTime.now();
+    final pichhla = _hinduDin;
+    if (pichhla != null && pichhla.samaayeHai(ab)) return pichhla;
+    return _hinduDin = hinduDin(ab, place);
+  }
+
+  /// यह सहेजा हुआ पल अभी वाले हिंदू दिन का ही है या नहीं।
+  ///
+  /// ध्रुवीय इलाक़े में सूरज न उगे तो [hinduDin] `null` देता है — तब कुछ
+  /// मत मिटाओ। पूजा चालू रहना, ग़लती से मिट जाने से बेहतर है।
+  bool _abhiWaleDinKa(int updatedAt) {
+    final din = _abKaHinduDin();
+    if (din == null) return true;
+    return din.samaayeHai(DateTime.fromMillisecondsSinceEpoch(updatedAt));
+  }
+
   /// सबसे हाल में खुली ऐसी पूजा की id जिसके लिए technical position saved है।
   /// Dashboard इससे केवल एक relevant Vidhi file पढ़ता है; यह completion या
   /// धार्मिक progress का दावा नहीं करता।
+  ///
+  /// पिछले हिंदू दिन की अधूरी पूजा यहाँ नहीं आती (→ D-044)।
   String? get latestPlayerProgressPujaId {
-    if (_playerProgress.isEmpty) return null;
-    return _playerProgress.entries
+    final aajKe = _playerProgress.entries
+        .where((entry) => _abhiWaleDinKa(entry.value.updatedAt));
+    if (aajKe.isEmpty) return null;
+    return aajKe
         .reduce((a, b) => a.value.updatedAt >= b.value.updatedAt ? a : b)
         .key;
   }
@@ -309,6 +473,8 @@ class AppSettings extends ChangeNotifier {
     if (pujaId.trim().isEmpty || totalSteps <= 1) return null;
     final saved = _playerProgress[pujaId];
     if (saved == null || saved.lastReachedStepIndex <= 0) return null;
+    // कल की अधूरी पूजा आज नहीं उठती (→ D-044)।
+    if (!_abhiWaleDinKa(saved.updatedAt)) return null;
     final safeIndex = saved.lastReachedStepIndex.clamp(1, totalSteps - 1);
     return saved.copyWith(
       lastReachedStepIndex: safeIndex,
@@ -362,7 +528,11 @@ class AppSettings extends ChangeNotifier {
       for (final entry in decoded.entries) {
         if (entry.key is! String || entry.key.trim().isEmpty) continue;
         final progress = PujaPlayerProgress.fromJson(entry.value);
-        if (progress != null) _playerProgress[entry.key as String] = progress;
+        if (progress == null) continue;
+        // बीते हिंदू दिन की अधूरी पूजा पढ़ी ही नहीं जाती — इसलिए वो
+        // फ़ोन में पड़ी-पड़ी जमा भी नहीं होती (→ D-044)।
+        if (!_abhiWaleDinKa(progress.updatedAt)) continue;
+        _playerProgress[entry.key as String] = progress;
       }
     } catch (_) {
       // Corrupt local progress must never stop a Puja from opening.

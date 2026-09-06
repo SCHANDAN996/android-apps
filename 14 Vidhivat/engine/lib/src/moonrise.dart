@@ -80,7 +80,7 @@ double moonHorizonAdjustment = 0.0;
 ///
 /// जहाँ π क्षैतिज लंबन है (~0.95°) और 34ʹ वायुमंडलीय अपवर्तन।
 /// नतीजा लगभग +0.1° आता है। यह Meeus अध्याय 15 का मानक है।
-double _moonHorizon(double jdUt) =>
+double moonHorizonAltitude(double jdUt) =>
     0.7275 * moonParallax(toEphemerisTime(jdUt)) -
     0.5667 +
     moonHorizonAdjustment;
@@ -99,7 +99,7 @@ double _moonHorizon(double jdUt) =>
   final localMidnightJd = julianDay(year, month, day.toDouble()) -
       place.timeZoneOffset.inSeconds / 86400.0;
 
-  double gap(double jd) => moonAltitude(jd, place) - _moonHorizon(jd);
+  double gap(double jd) => moonAltitude(jd, place) - moonHorizonAltitude(jd);
 
   DateTime? rise;
   DateTime? set;

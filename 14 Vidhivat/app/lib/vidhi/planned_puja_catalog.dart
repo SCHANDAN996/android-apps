@@ -32,41 +32,16 @@ class PlannedPujaSection {
 
 /// The display order follows `docs/14_PUJA_LIBRARY_EXPANSION_PLAN.md`.
 /// No ritual content, authority claim or completion route is attached.
+///
+/// ⚠️ **"वसंत पंचमी" यहाँ से हटाई गई है, बनाई नहीं गई** (4 सित 2026)।
+/// वो पहले से **सरस्वती पूजा** है — उसकी `kabKarein` में ही लिखा है
+/// *"वसंत पंचमी पर सबसे ज़्यादा की जाती है"*। दोनों रखने से एक ही
+/// त्योहार दो जगह दिखता, और यूज़र को लगता कि दो अलग पूजाएँ हैं।
 const plannedPujaSections = <PlannedPujaSection>[
   PlannedPujaSection(
     title: 'त्योहार संग्रह',
     supportingText: 'पर्व के अनुसार व्यवस्थित आने वाली पूजा और मार्गदर्शिकाएँ',
     entries: [
-      PlannedPujaEntry(
-        id: 'dhanteras_pooja',
-        name: 'धनतेरस पूजा',
-        artwork: DevotionalAssets.lakshmi,
-      ),
-      PlannedPujaEntry(
-        id: 'govardhan_annakut',
-        name: 'गोवर्धन पूजा / अन्नकूट',
-        artwork: DevotionalAssets.krishna,
-      ),
-      PlannedPujaEntry(
-        id: 'bhai_dooj_pooja',
-        name: 'भाई दूज पूजा',
-        artwork: DevotionalAssets.nityaPooja,
-      ),
-      PlannedPujaEntry(
-        id: 'raksha_bandhan_pooja',
-        name: 'रक्षाबंधन पूजा',
-        artwork: DevotionalAssets.nityaPooja,
-      ),
-      PlannedPujaEntry(
-        id: 'makar_sankranti_pooja',
-        name: 'मकर संक्रांति पूजा',
-        artwork: DevotionalAssets.suryaArghya,
-      ),
-      PlannedPujaEntry(
-        id: 'vasant_panchami_collection',
-        name: 'वसंत पंचमी',
-        artwork: DevotionalAssets.saraswati,
-      ),
       PlannedPujaEntry(
         id: 'ram_navami_collection',
         name: 'राम नवमी',
@@ -84,34 +59,9 @@ const plannedPujaSections = <PlannedPujaSection>[
     supportingText: 'क्षेत्र और परिवार के अनुसार बदलने वाली मार्गदर्शिकाएँ',
     entries: [
       PlannedPujaEntry(
-        id: 'hartalika_teej',
-        name: 'हरितालिका तीज',
-        artwork: DevotionalAssets.shiva,
-      ),
-      PlannedPujaEntry(
-        id: 'vat_savitri',
-        name: 'वट सावित्री',
-        artwork: DevotionalAssets.tulsi,
-      ),
-      PlannedPujaEntry(
-        id: 'chhath_pooja',
-        name: 'छठ पूजा',
-        artwork: DevotionalAssets.suryaArghya,
-      ),
-      PlannedPujaEntry(
-        id: 'varalakshmi_vrat',
-        name: 'वरलक्ष्मी व्रत',
-        artwork: DevotionalAssets.lakshmi,
-      ),
-      PlannedPujaEntry(
         id: 'karwa_chauth_expanded',
         name: 'करवा चौथ विस्तृत मार्गदर्शिका',
         artwork: DevotionalAssets.karwaChauth,
-      ),
-      PlannedPujaEntry(
-        id: 'durga_ashtami_kanya_poojan',
-        name: 'दुर्गा अष्टमी / कन्या पूजन',
-        artwork: DevotionalAssets.kalash,
       ),
     ],
   ),

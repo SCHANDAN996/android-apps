@@ -63,6 +63,14 @@ class _VidhiScreenState extends State<VidhiScreen> {
       );
 }
 
+/// "1 मंत्र का पाठ" बनाम "3 मंत्रों का पाठ"।
+///
+/// फ़ोन पर स्क्रीन कह रही थी *"इस पूजा के 1 मंत्रों का पाठ…"* — हिंदी
+/// में एक के साथ बहुवचन नहीं चलता, और यह ठीक उस डिब्बे में था जिसे
+/// यूज़र सबसे पहले पढ़ता है।
+String _mantraGinti(int kitne) =>
+    kitne == 1 ? '1 मंत्र का पाठ' : '$kitne मंत्रों का पाठ';
+
 class _PreparationDetail extends StatefulWidget {
   final Vidhi vidhi;
 
@@ -108,7 +116,6 @@ class _PreparationDetailState extends State<_PreparationDetail> {
         animation: settings,
         builder: (context, child) {
           final colors = VidhivatTheme.colorsOf(context);
-          final mantraAdhure = vidhi.mantraKul - vidhi.mantraBhareHue;
           final resume =
               settings.playerProgressFor(vidhi.id, vidhi.charan.length);
 
@@ -126,7 +133,13 @@ class _PreparationDetailState extends State<_PreparationDetail> {
                   ),
                   children: [
                     VidhivatSacredHero(
-                      eyebrow: 'पूजा की तैयारी',
+                      // ── एक ही बात तीन बार मत कहो ────────────────
+                      //
+                      // पहले "पूजा की तैयारी" तीन जगह एक साथ दिखता था —
+                      // ऊपर AppBar में, यहाँ eyebrow में, और नीचे बटन
+                      // पर। अब AppBar वो काम करता है, और यह जगह कुछ
+                      // नया बताती है — पूजा किस तरह की है।
+                      eyebrow: vidhi.shreni.naam,
                       title: vidhi.naam,
                       subtitle: vidhi.parichay,
                       icon: Icons.account_balance_outlined,
@@ -142,6 +155,10 @@ class _PreparationDetailState extends State<_PreparationDetail> {
                       _ResumePanel(
                         vidhi: vidhi,
                         resume: resume,
+                        onShuruSeKaro: vidhi.scope.poorViDhiKholSakteHain
+                            ? () => _startOver(context)
+                            : null,
+                        shuruHoRahaHai: _isStartingOver,
                       ),
                     ],
                     // ── यह पूजा कहाँ तक अपने आप की जा सकती है (→ D-035) ──
@@ -158,27 +175,20 @@ class _PreparationDetailState extends State<_PreparationDetail> {
                         serious: !vidhi.scope.poorViDhiKholSakteHain,
                       ),
                     ],
-                    if (vidhi.needsPanditReview) ...[
-                      const SizedBox(height: VidhivatSpacing.lg),
-                      const _TrustNotice(
-                        title: 'जाँच बाकी है',
-                        text:
-                            'यह विधि अभी किसी पंडित जी से जाँच करवाकर पास नहीं हुई है। '
-                            'ढाँचा आम घरेलू चलन के अनुसार है — अपने घर की परंपरा से '
-                            'मिला लीजिए।',
-                        serious: true,
-                      ),
-                    ],
-                    if (mantraAdhure > 0) ...[
-                      const SizedBox(height: VidhivatSpacing.sm),
-                      _TrustNotice(
-                        title: 'मंत्रों के बारे में',
-                        text:
-                            'इस पूजा के $mantraAdhure मंत्रों का पाठ अभी ऐप में जोड़ा नहीं '
-                            'गया है। जब तक प्रामाणिक स्रोत से न आ जाए, हम अंदाज़े से कुछ '
-                            'नहीं लिखेंगे।',
-                      ),
-                    ],
+                    // ── "यह विधि कैसी है" वाला डिब्बा यहाँ था — अब ℹ के पीछे ──
+                    //
+                    // वो सच था, पर वो **28 में से 28 पूजाओं पर** दिखता था —
+                    // `jaanch.paas` किसी JSON में `true` नहीं है, इसलिए
+                    // `needsPanditReview` हमेशा सच रहता है। यानी यह शर्त नहीं,
+                    // दीवार थी — और जो चेतावनी हर बार दिखे, वो चेतावनी रह
+                    // ही नहीं जाती (→ D-042 का वही सबक़, छोटे पैमाने पर)।
+                    //
+                    // मिटाया कुछ नहीं — पूरी बात अब नीचे वाले ℹ "यह विधि कहाँ
+                    // से आई" के अंदर है, जो ठीक यही सवाल पूछता है (→ D-056)।
+                    //
+                    // ⚠ स्कोप वाली चेतावनी (ऊपर) **ओथे ही रहती है** — वो
+                    // सिर्फ़ तीन पूजाओं पर आती है और कहती है "यह अकेले करने
+                    // की चीज़ नहीं" — वो छिपाने वाली बात नहीं है।
                     const SizedBox(height: VidhivatSpacing.xxl),
                     const VidhivatSectionHeader(title: 'कब करें'),
                     const SizedBox(height: VidhivatSpacing.sm),
@@ -211,9 +221,9 @@ class _PreparationDetailState extends State<_PreparationDetail> {
                       const SizedBox(height: VidhivatSpacing.sm),
                       _Questions(questions: vidhi.sawaal),
                     ],
-                    const SizedBox(height: VidhivatSpacing.xxl),
-                    const VidhivatSectionHeader(title: 'यह विधि कहाँ से आई'),
-                    const SizedBox(height: VidhivatSpacing.sm),
+                    // स्रोत अब ⓘ के पीछे — मिटाया नहीं, एक दबाव पीछे
+                    // (→ D-045)। वही रूप जो चालीसा और मंत्र पर है।
+                    const SizedBox(height: VidhivatSpacing.xl),
                     _SourceInformation(vidhi: vidhi),
                   ],
                 ),
@@ -240,53 +250,51 @@ class _PreparationDetailState extends State<_PreparationDetail> {
                     VidhivatSpacing.lg,
                     VidhivatSpacing.md,
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      VidhivatButton(
-                        label: 'पूजा की तैयारी करें',
-                        semanticLabel: '${vidhi.naam} की तैयारी करें',
-                        onPressed: () => _openMaterials(context),
-                        icon: Icons.checklist_outlined,
-                        fullWidth: true,
-                      ),
-                      if (vidhi.scope.poorViDhiKholSakteHain)
-                      VidhivatButton(
-                        label: resume == null
-                            ? 'अभी विधि शुरू करें'
-                            : 'यहीं से जारी रखें',
-                        semanticLabel: resume == null
-                            ? '${vidhi.naam} अभी शुरू करें'
-                            : '${vidhi.naam} में चरण ${resume.lastReachedStepIndex + 1} से जारी रखें',
-                        onPressed: _isStartingOver
-                            ? null
-                            : () => _startPuja(
-                                  context,
-                                  initialStepIndex:
-                                      resume?.lastReachedStepIndex ?? 0,
-                                ),
-                        // 320dp / 1.5x पर यह वाक्य icon के साथ बहुत संकरा हो
-                        // जाता है; यहाँ पूरा शब्द पढ़ पाना decorative icon से
-                        // ज़्यादा उपयोगी है।
-                        icon: resume == null ? Icons.play_arrow : null,
-                        variant: VidhivatButtonVariant.text,
-                        compact: resume != null,
-                        fullWidth: true,
-                      ),
-                      if (resume != null && vidhi.scope.poorViDhiKholSakteHain)
-                        VidhivatButton(
-                          label: 'शुरू से करें',
-                          semanticLabel: '${vidhi.naam} शुरू से करें',
+                  // ── नीचे **एक ही** बटन (→ D-048) ───────────────
+                  //
+                  // पहले यहाँ तीन बटन एक के नीचे एक थे — 320px, यानी
+                  // काम की स्क्रीन का 22%, और वो ऊपर के chips को ढक भी
+                  // रहे थे। तीनों बराबरी पर बैठे थे जबकि बराबर थे नहीं:
+                  //
+                  // • भरा हुआ बटन **सामग्री** खोलता था — और वही काम
+                  //   ऊपर "सामग्री" शीर्षक के "सभी देखें" से भी होता है।
+                  //   यानी एक ही पन्ने पर वही बटन दो बार।
+                  // • असली काम — पूजा शुरू करना — फीके text-लिंक में था।
+                  // • "शुरू से करें" उस कार्ड से 500px दूर था जिसके बारे
+                  //   में वो है; अब वो `_ResumePanel` के अंदर चला गया।
+                  //
+                  // ⚠️ जिन पूजाओं की पूरी विधि खुलती ही नहीं (उपनयन,
+                  // मुंडन — → D-035), वहाँ शुरू करने को कुछ है नहीं।
+                  // उनके लिए सामग्री ही इकलौता काम है, इसलिए बटन वही बनता
+                  // है — पट्टी कभी ख़ाली नहीं रहती।
+                  child: vidhi.scope.poorViDhiKholSakteHain
+                      ? VidhivatButton(
+                          label: resume == null
+                              ? 'पूजा शुरू करें'
+                              : 'चरण ${resume.lastReachedStepIndex + 1} से जारी रखें',
+                          semanticLabel: resume == null
+                              ? '${vidhi.naam} शुरू करें'
+                              : '${vidhi.naam} में चरण ${resume.lastReachedStepIndex + 1} से जारी रखें',
                           onPressed: _isStartingOver
                               ? null
-                              : () => _startOver(context),
-                          variant: VidhivatButtonVariant.text,
-                          compact: true,
+                              : () => _startPuja(
+                                    context,
+                                    initialStepIndex:
+                                        resume?.lastReachedStepIndex ?? 0,
+                                  ),
+                          icon: resume == null
+                              ? Icons.play_arrow
+                              : Icons.play_circle_outline,
                           fullWidth: true,
-                          isLoading: _isStartingOver,
+                        )
+                      : VidhivatButton(
+                          label: 'सामग्री की सूची देखें',
+                          semanticLabel:
+                              '${vidhi.naam} की सामग्री की सूची देखें',
+                          onPressed: () => _openMaterials(context),
+                          icon: Icons.checklist_outlined,
+                          fullWidth: true,
                         ),
-                    ],
-                  ),
                 ),
               ),
             ),
@@ -295,11 +303,23 @@ class _PreparationDetailState extends State<_PreparationDetail> {
       );
 }
 
+/// "आप यहाँ तक पहुँचे थे" — और यहीं से **शुरू से करने** का रास्ता भी।
+///
+/// "शुरू से करें" पहले नीचे की पट्टी में था, इस कार्ड से पाँच सौ पिक्सल
+/// दूर — जबकि वो इसी कार्ड की बात है (→ D-048)। जो चीज़ जिसके बारे में
+/// हो, उसी के साथ रहनी चाहिए; तभी वो सन्दर्भ के साथ पढ़ी जाती है।
 class _ResumePanel extends StatelessWidget {
   final Vidhi vidhi;
   final PujaPlayerProgress resume;
+  final VoidCallback? onShuruSeKaro;
+  final bool shuruHoRahaHai;
 
-  const _ResumePanel({required this.vidhi, required this.resume});
+  const _ResumePanel({
+    required this.vidhi,
+    required this.resume,
+    this.onShuruSeKaro,
+    this.shuruHoRahaHai = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -327,6 +347,23 @@ class _ResumePanel extends StatelessWidget {
           ),
           const SizedBox(height: VidhivatSpacing.xxs),
           Text(step.shirshak, style: type.bodyMedium),
+          if (onShuruSeKaro != null) ...[
+            const SizedBox(height: VidhivatSpacing.sm),
+            VidhivatButton(
+              label: 'शुरू से करें',
+              semanticLabel:
+                  '${vidhi.naam} पहले चरण से शुरू करें, सहेजी हुई जगह हटाकर',
+              onPressed: shuruHoRahaHai ? null : onShuruSeKaro,
+              variant: VidhivatButtonVariant.secondary,
+              icon: Icons.restart_alt,
+              compact: true,
+              // ⚠️ `fullWidth` ज़रूरी है। बिना इसके बटन अपनी चौड़ाई से
+              // बनता है, और 320dp / 1.5x अक्षर पर "शुरू से करें" +
+              // चिह्न कार्ड से **80px बाहर** निकल जाते थे।
+              fullWidth: true,
+              isLoading: shuruHoRahaHai,
+            ),
+          ],
         ],
       ),
     );
@@ -351,7 +388,7 @@ class _PujaMetadata extends StatelessWidget {
             label: '${vidhi.charan.length} चरण',
             icon: Icons.format_list_numbered,
           ),
-          VidhivatStatusChip(label: vidhi.shreni.naam),
+          // श्रेणी अब ऊपर eyebrow में है — यहाँ दोहराने की ज़रूरत नहीं।
           VidhivatStatusChip(
             label: '${vidhi.zaruriSamagri.length} ज़रूरी सामग्री',
             icon: Icons.checklist_outlined,
@@ -395,7 +432,7 @@ class _TrustNotice extends StatelessWidget {
               children: [
                 Text(title, style: type.cardTitle),
                 const SizedBox(height: VidhivatSpacing.xxs),
-                Text(text, style: type.bodySmall),
+                Text(text, style: type.bodySmall, textAlign: TextAlign.justify),
               ],
             ),
           ),
@@ -424,12 +461,14 @@ class _ContextCard extends StatelessWidget {
                 children: [
                   Text(
                     vidhi.kabKarein.saral,
+                    textAlign: TextAlign.justify,
                     style: VidhivatTheme.typographyOf(context).bodyMedium,
                   ),
                   if (vidhi.kabKarein.note.isNotEmpty) ...[
                     const SizedBox(height: VidhivatSpacing.xs),
                     Text(
                       vidhi.kabKarein.note,
+                      textAlign: TextAlign.justify,
                       style: VidhivatTheme.typographyOf(context).bodySmall,
                     ),
                   ],
@@ -570,6 +609,7 @@ class _Questions extends StatelessWidget {
                 children: [
                   Text(
                     questions[index].jawaab,
+                    textAlign: TextAlign.justify,
                     style: VidhivatTheme.typographyOf(context).bodySmall,
                   ),
                 ],
@@ -586,71 +626,46 @@ class _SourceInformation extends StatelessWidget {
   const _SourceInformation({required this.vidhi});
 
   @override
-  Widget build(BuildContext context) {
-    final type = VidhivatTheme.typographyOf(context);
-    final colors = VidhivatTheme.colorsOf(context);
-    return VidhivatSurfaceCard(
-      variant: VidhivatCardVariant.information,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _SourceLine(label: 'पद्धति', value: vidhi.strot.paddhati),
-          const VidhivatDivider(),
-          _SourceLine(label: 'क्षेत्र', value: vidhi.strot.kshetra),
-          const VidhivatDivider(),
-          _SourceLine(
-            label: 'जाँच',
-            value: vidhi.jaanch.paas
-                ? '${vidhi.jaanch.panditNaam} · ${vidhi.jaanch.tarikh}'
-                : 'अभी बाकी है',
-            valueColor: vidhi.jaanch.paas ? colors.success : colors.warning,
+  Widget build(BuildContext context) => VidhivatSrotButton(
+        label: 'यह विधि कहाँ से आई',
+        panktiyan: [
+          // ── यह पहली पंक्ति पहले ऊपर खुला डिब्बा थी (→ D-056) ──
+          //
+          // यह सबसे पहले आती है, पद्धति से भी पहले — जो आदमी
+          // यह ℹ दबाता है वो यही पूछने आया है।
+          const VidhivatSrotPankti(
+            'यह विधि कैसी है',
+            'यह घर की सरल पद्धति है। हर पाठ के नीचे उसका स्रोत लिखा है, '
+            'और जहाँ एक से ज़्यादा चलन हैं वहाँ दोनों दिए गए हैं।',
           ),
-          if (vidhi.strot.note.isNotEmpty) ...[
-            const VidhivatDivider(),
-            Padding(
-              padding: const EdgeInsets.only(top: VidhivatSpacing.sm),
-              child: Text(vidhi.strot.note, style: type.bodySmall),
+          VidhivatSrotPankti('पद्धति', vidhi.strot.paddhati),
+          VidhivatSrotPankti('क्षेत्र', vidhi.strot.kshetra),
+          // ── "जाँच — अभी बाकी है" वाली पंक्ति सिर्फ़ पास होने पर ──
+          //
+          // पहले यह हमेशा दिखती थी, और न होने पर नारंगी रंग में
+          // "अभी बाकी है" लिखती थी (→ D-043)। पद्धति और क्षेत्र लिखा
+          // होना अपने आप में जवाब है; अधूरी मुहर का ऐलान करना नहीं।
+          // मुहर लग जाए तो वो अच्छी ख़बर है — तब पूरी दिखती है।
+          if (vidhi.jaanch.paas)
+            VidhivatSrotPankti(
+              'जाँच',
+              '${vidhi.jaanch.panditNaam} · ${vidhi.jaanch.tarikh}',
             ),
-          ],
+          // कितने मंत्र अभी ख़ाली हैं — यह भी यहीं, गिनकर।
+          //
+          // ⚠ इससे वो चेतावनी नहीं हटती जो हर ख़ाली कदम पर खुली
+          // मिलती है — वहाँ ऐप अपनी कमी मान रहा होता है, और वो
+          // छिपती नहीं (→ D-049)। यहाँ सिर्फ़ कुल गिनती है।
+          if (vidhi.mantraKul > vidhi.mantraBhareHue)
+            VidhivatSrotPankti(
+              'अभी क्या कम है',
+              'इसमें ${_mantraGinti(vidhi.mantraKul - vidhi.mantraBhareHue)} '
+              'अभी जोड़ा नहीं गया — जब तक प्रामाणिक स्रोत से न आए, हम '
+              'अंदाज़े से कुछ नहीं लिखेंगे। जिस कदम पर पाठ नहीं है, वहाँ वो '
+              'साफ़ लिखा मिलेगा।',
+            ),
+          VidhivatSrotPankti('और', vidhi.strot.note),
         ],
-      ),
-    );
-  }
-}
-
-class _SourceLine extends StatelessWidget {
-  final String label;
-  final String value;
-  final Color? valueColor;
-
-  const _SourceLine({
-    required this.label,
-    required this.value,
-    this.valueColor,
-  });
-
-  @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(vertical: VidhivatSpacing.sm),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: VidhivatSpacing.massive,
-              child: Text(
-                label,
-                style: VidhivatTheme.typographyOf(context).bodySmall,
-              ),
-            ),
-            Expanded(
-              child: Text(
-                value,
-                style: VidhivatTheme.typographyOf(context)
-                    .bodyMedium
-                    .copyWith(color: valueColor),
-              ),
-            ),
-          ],
-        ),
+        antimBaat: 'आपके घर या क्षेत्र की परंपरा अलग हो तो वही सही है।',
       );
 }

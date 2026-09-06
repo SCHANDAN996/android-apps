@@ -654,6 +654,9 @@ class VidhivatSacredHero extends StatelessWidget {
                   const SizedBox(height: VidhivatSpacing.xs),
                   Text(
                     subtitle,
+                    // गद्य दोनों किनारों से सीधा। एक लाइन वाले subtitle
+                    // पर असर नहीं — justify आख़िरी लाइन नहीं खींचता।
+                    textAlign: TextAlign.justify,
                     style: type.bodyMedium.copyWith(
                       color: colors.textSecondary,
                     ),
@@ -840,4 +843,258 @@ class VidhivatStateView extends StatelessWidget {
       ),
     );
   }
+}
+
+/// **ⓘ वाला बटन — पढ़ने की चीज़ें एक दबाव पीछे।**
+///
+/// ## यह क्यों बना
+///
+/// ऐप के तीन पन्नों पर वही समस्या थी: नीचे एक कार्ड जो बताता है कि यह
+/// पाठ/विधि *कहाँ से आई* — पद्धति, क्षेत्र, रचयिता, स्रोत। ईमानदारी के
+/// लिए वो ज़रूरी है, पर **पूजा या पाठ करते आदमी के लिए नहीं** — वो हवाला
+/// पढ़ने नहीं आया।
+///
+/// यही फ़ैसला मंत्र के स्रोत पर पहले लिया जा चुका था (→ D-042 के बाद),
+/// जहाँ नापकर निकला था कि सहायक-पाठ मंत्र से **सवा तीन गुना** ज़्यादा है।
+/// अब वही रूप तीनों जगह एक जैसा है (→ D-045)।
+///
+/// **छिपाया कुछ नहीं जाता** — बटन पर साफ़ लिखा रहता है कि अंदर क्या है,
+/// और वो हमेशा दिखता है। सिर्फ़ खुला नहीं पड़ा रहता।
+class VidhivatSrotButton extends StatelessWidget {
+  final String label;
+
+  /// शीट के ऊपर का शीर्षक। न दो तो [label] ही — दोनों एक रहने से दबाने
+  /// वाला भटकता नहीं। अलग तब चाहिए जब बटन पर कुछ जोड़ा गया हो, जैसे
+  /// "· इस पर दो चलन हैं"।
+  final String? shirshak;
+
+  /// शीट के अंदर की पंक्तियाँ, क्रम से।
+  final List<VidhivatSrotPankti> panktiyan;
+
+  /// सबसे नीचे की छोटी बात — जैसे "आपके घर का चलन अलग हो तो वही सही है"।
+  final String? antimBaat;
+
+  const VidhivatSrotButton({
+    super.key,
+    required this.label,
+    required this.panktiyan,
+    this.shirshak,
+    this.antimBaat,
+  });
+
+  void _kholo(BuildContext context) {
+    final type = VidhivatTheme.typographyOf(context);
+    showModalBottomSheet<void>(
+      context: context,
+      useSafeArea: true,
+      isScrollControlled: true,
+      showDragHandle: true,
+      builder: (context) => DraggableScrollableSheet(
+        expand: false,
+        initialChildSize: 0.5,
+        maxChildSize: 0.9,
+        builder: (context, scrollController) => ListView(
+          controller: scrollController,
+          // ⚠️ नीचे की जगह `xxl` से नहीं, फ़ोन के अपने inset से बनती है।
+          // `useSafeArea` सिर्फ़ शीट को ऊपर वाले notch से बचाता है; नीचे
+          // Android का नेविगेशन बार शीट के **ऊपर** बैठा रहता है और
+          // आख़िरी पंक्ति उसके पीछे चली जाती है (फ़ोन पर पकड़ा गया)।
+          padding: EdgeInsets.fromLTRB(
+            VidhivatSpacing.lg,
+            0,
+            VidhivatSpacing.lg,
+            VidhivatSpacing.xxl + MediaQuery.viewPaddingOf(context).bottom,
+          ),
+          children: [
+            Text(shirshak ?? label, style: type.sectionTitle),
+            for (final pankti in panktiyan)
+              if (pankti.value.trim().isNotEmpty) ...[
+                const SizedBox(height: VidhivatSpacing.lg),
+                Text(pankti.label, style: type.label),
+                const SizedBox(height: VidhivatSpacing.xxs),
+                Text(pankti.value, style: type.bodyMedium),
+              ],
+            if (antimBaat != null) ...[
+              const SizedBox(height: VidhivatSpacing.lg),
+              Text(antimBaat!, style: type.caption),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = VidhivatTheme.colorsOf(context);
+    final type = VidhivatTheme.typographyOf(context);
+
+    // ── चौड़ाई ख़ुद बाँधनी पड़ती है ───────────────────────
+    //
+    // Material का बटन अपने बच्चे को `Align(widthFactor: 1)` में रखता है —
+    // यानी बच्चे को **बिना सीमा वाली चौड़ाई** मिलती है। वहाँ न `Flexible`
+    // काम करता है, न `Expanded` — लेबल लपेटने की बजाय सीधा स्क्रीन
+    // से बाहर चला जाता है।
+    //
+    // 320dp चौड़ी स्क्रीन पर 1.5× अक्षरों के साथ यह **252px का overflow**
+    // बनाता था — जाँच ने पकड़ा (`phase6_screens_test`)। इसलिए जगह
+    // बाहर से नापकर लेबल पर खुद बाँधी जाती है।
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        // बटन का अपना padding, ℹ का चिह्न, और दोनों के बीच की जगह।
+        final bachiJagah = constraints.maxWidth -
+            VidhivatSpacing.sm * 2 -
+            VidhivatIconSize.small -
+            VidhivatSpacing.xs;
+        final labelKiJagah = constraints.hasBoundedWidth && bachiJagah > 0
+            ? bachiJagah
+            : double.infinity;
+        return Align(
+          alignment: Alignment.centerLeft,
+          child: TextButton(
+            onPressed: () => _kholo(context),
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.symmetric(
+                horizontal: VidhivatSpacing.sm,
+                vertical: VidhivatSpacing.xs,
+              ),
+              // उँगली के लिए पूरी ऊँचाई, भले अक्षर छोटे हों।
+              minimumSize: const Size(0, VidhivatActionSize.minimumTouchTarget),
+              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Icon(
+                  Icons.info_outline,
+                  size: VidhivatIconSize.small,
+                  color: colors.textSecondary,
+                ),
+                const SizedBox(width: VidhivatSpacing.xs),
+                ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: labelKiJagah),
+                  child: Text(
+                    label,
+                    style: type.bodySmall.copyWith(color: colors.textSecondary),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+/// [VidhivatSrotButton] की शीट में एक पंक्ति। ख़ाली `value` छँट जाती है।
+class VidhivatSrotPankti {
+  final String label;
+  final String value;
+
+  const VidhivatSrotPankti(this.label, this.value);
+}
+
+/// **दीये का चिह्न** — नीचे वाली पट्टी के "पूजा" टैब के लिए।
+///
+/// ## यह क्यों बना
+///
+/// पहले वहाँ `Text('🪔')` था — यानी emoji। बाक़ी तीनों टैब (होम,
+/// कैलेंडर, अधिक) Material के **रेखा-वाले** चिह्न हैं, इसलिए बीच में
+/// एक भरा-पूरा रंगीन चित्र अटपटा लगता था — जैसे किसी और ऐप से चिपका हो।
+/// ऊपर से emoji हर फ़ोन पर अपनी शक़्ल का होता है (Samsung, vivo और Pixel
+/// में तीन अलग दीये), इसलिए ऐप का रूप फ़ोन-दर-फ़ोन बदल जाता था।
+///
+/// Material में दीया है ही नहीं, और आग वाला चिह्न (`local_fire_department`)
+/// दीया नहीं कहता। इसलिए यह ख़ुद बनाया गया — 24×24 की उसी नाप पर, उसी
+/// 1.8 मोटाई की रेखा से, ताकि बाक़ी तीनों के बीच बैठ जाए।
+///
+/// रंग `IconTheme` से आता है, इसलिए चुने और बिना-चुने दोनों हालतों में
+/// पट्टी अपने आप सही रंग देती है।
+class VidhivatDiyaIcon extends StatelessWidget {
+  final double size;
+
+  /// चुना हुआ टैब भरा हुआ दिखता है, बाक़ी खोखले — वही नियम जो Material
+  /// के `outlined`/भरे चिह्नों में है।
+  final bool bhara;
+
+  final Color? color;
+
+  const VidhivatDiyaIcon({
+    super.key,
+    this.size = 24,
+    this.bhara = false,
+    this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final rang = color ??
+        IconTheme.of(context).color ??
+        VidhivatTheme.colorsOf(context).textSecondary;
+    return SizedBox(
+      width: size,
+      height: size,
+      child: CustomPaint(
+        painter: _DiyaPainter(color: rang, bhara: bhara),
+      ),
+    );
+  }
+}
+
+/// दीया — ऊपर लौ, नीचे उथला दीपपात्र। सारे नाप 24×24 की जाली पर हैं,
+/// फिर असली नाप के हिसाब से बढ़ा दिए जाते हैं।
+class _DiyaPainter extends CustomPainter {
+  final Color color;
+  final bool bhara;
+
+  const _DiyaPainter({required this.color, required this.bhara});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final k = size.width / 24.0;
+    Offset p(double x, double y) => Offset(x * k, y * k);
+
+    // ── लौ — आँसू की शक़्ल ──
+    final lau = Path()
+      ..moveTo(12 * k, 2.8 * k)
+      ..quadraticBezierTo(16.4 * k, 7.4 * k, 16.4 * k, 10.2 * k)
+      ..quadraticBezierTo(16.4 * k, 13.4 * k, 12 * k, 13.4 * k)
+      ..quadraticBezierTo(7.6 * k, 13.4 * k, 7.6 * k, 10.2 * k)
+      ..quadraticBezierTo(7.6 * k, 7.4 * k, 12 * k, 2.8 * k)
+      ..close();
+
+    // ── दीपपात्र — उथला कटोरा ──
+    final patra = Path()
+      ..moveTo(3.2 * k, 15.2 * k)
+      ..quadraticBezierTo(12 * k, 22.4 * k, 20.8 * k, 15.2 * k)
+      ..close();
+
+    final brush = Paint()
+      ..color = color
+      ..isAntiAlias = true;
+
+    if (bhara) {
+      brush.style = PaintingStyle.fill;
+    } else {
+      brush
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.8 * k
+        ..strokeJoin = StrokeJoin.round
+        ..strokeCap = StrokeCap.round;
+    }
+
+    canvas.drawPath(lau, brush);
+    canvas.drawPath(patra, brush);
+    // खोखली हालत में लौ और पात्र के बीच की बत्ती — वरना दोनों अलग-अलग
+    // तैरते दिखते हैं।
+    if (!bhara) {
+      canvas.drawLine(p(12, 13.4), p(12, 15.2), brush);
+    }
+  }
+
+  @override
+  bool shouldRepaint(_DiyaPainter old) =>
+      old.color != color || old.bhara != bhara;
 }

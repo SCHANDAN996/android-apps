@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
 
+import '../services/dakshina_service.dart';
 import '../theme.dart';
 import '../vidhi/devotional_assets.dart';
 import '../vidhi/vidhi.dart';
+import '../widgets/dakshina_card.dart';
 import '../widgets/design_system.dart';
+import 'dakshina_screen.dart';
 
 /// Player की मार्गदर्शिका समाप्त होने के बाद का शांत technical handoff।
 ///
 /// यह screen पूजा की धार्मिक वैधता अथवा सफलता का दावा नहीं करती। यह सिर्फ़
 /// बताती है कि app ने इस मार्गदर्शिका के सभी चरण दिखा दिए हैं।
+///
+/// ## दक्षिणा सिर्फ़ यहाँ माँगी जाती है, और कहीं नहीं (→ D-053)
+/// पूजा **पूरी हो चुकी** है — मूल्य दिया जा चुका, तभी माँगा जा रहा है।
+/// एक कदम पहले (विधि प्लेयर में) यही माँग विज्ञापन से भी बुरी होती।
+///
+/// और छोड़ने का रास्ता नीचे पहले से है — *"होम पर लौटें"*, पूरी चौड़ाई
+/// का। इसीलिए "अभी नहीं" वाला अलग बटन जान-बूझकर नहीं रखा: छोड़ना यहाँ
+/// **मना करना नहीं, बस आगे बढ़ना** है।
 class PujaCompletionScreen extends StatelessWidget {
   final Vidhi vidhi;
 
@@ -16,6 +27,12 @@ class PujaCompletionScreen extends StatelessWidget {
 
   void _returnToVidhiHome(BuildContext context) {
     Navigator.of(context).popUntil((route) => route.isFirst);
+  }
+
+  void _kholoDakshinaPanna(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (_) => const DakshinaScreen()),
+    );
   }
 
   @override
@@ -54,27 +71,22 @@ class PujaCompletionScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(height: VidhivatSpacing.xl),
-                      VidhivatSurfaceCard(
-                        variant: VidhivatCardVariant.information,
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Icon(
-                              Icons.format_list_numbered,
-                              color: colors.info,
-                              size: VidhivatIconSize.medium,
-                            ),
-                            const SizedBox(width: VidhivatSpacing.sm),
-                            Expanded(
-                              child: Text(
-                                'इस मार्गदर्शिका में ${vidhi.charan.length} चरण हैं।',
-                                style: type.bodyMedium,
-                              ),
-                            ),
-                          ],
+                      // ── "इस मार्गदर्शिका में 9 चरण हैं" वाला कार्ड यहाँ था ──
+                      //
+                      // आदमी अभी-अभी नौ के नौ चरण चलकर यहाँ पहुँचा है। उसे गिनती
+                      // बताना कुछ नहीं देता — न कोई काम, न कोई भरोसा। और लेता
+                      // पूरा एक कार्ड था — ठीक उस जगह जो इस पन्ने की सबसे शांत
+                      // होनी चाहिए (→ D-056)।
+
+                      // घड़ी का नियम बही में है (→ `dakshina_service.dart`):
+                      // दे चुके हैं तो छह महीने चुप, तीन बार दिख चुका तो
+                      // तीस दिन। यहाँ सिर्फ़ पूछा जाता है, तय नहीं होता।
+                      if (dakshina.dikhega(DateTime.now())) ...[
+                        const SizedBox(height: VidhivatSpacing.xxl),
+                        DakshinaCard(
+                          onVistaar: () => _kholoDakshinaPanna(context),
                         ),
-                      ),
+                      ],
                     ],
                   ),
                 ),
@@ -97,9 +109,11 @@ class PujaCompletionScreen extends StatelessWidget {
               VidhivatSpacing.lg,
               VidhivatSpacing.md,
             ),
+            // यह बटन `popUntil(isFirst)` करता है — यानी होम पर ले जाता
+            // है, विधि पर नहीं। नाम वही कहे जो होता है।
             child: VidhivatButton(
-              label: 'विधि पर लौटें',
-              semanticLabel: '${vidhi.naam} के बाद विधि पर लौटें',
+              label: 'होम पर लौटें',
+              semanticLabel: '${vidhi.naam} के बाद होम पर लौटें',
               onPressed: () => _returnToVidhiHome(context),
               icon: Icons.home_outlined,
               fullWidth: true,

@@ -15,8 +15,15 @@ Ctrl+P से A4 पर छाप लीजिए।
 में सिर्फ़ 15 अलग पाठ हैं — पंडित जी 15 डिब्बों पर निशान लगाएँ, और सब
 जगह लागू हो जाए।
 """
-import io, json, glob, os, html
+import io, json, glob, os, html, sys
 from collections import defaultdict, OrderedDict
+
+# Windows का console डिफ़ॉल्ट रूप से cp1252 है, जिसमें देवनागरी नहीं छपती।
+# शीट तो बन जाती है, पर आख़िरी print पर UnicodeEncodeError आकर स्क्रिप्ट
+# exit code 1 दे जाती है — यानी सफल चलना भी असफल दिखता है।
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _ROOT = os.path.dirname(_HERE)                      # 14 Vidhivat/

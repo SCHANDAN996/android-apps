@@ -52,6 +52,36 @@ const List<bool> choghadiyaAuspicious = [
 /// यही तालिका चौघड़िया और होरा दोनों की शुरुआत तय करती है।
 const List<int> weekdayLord = [0, 3, 6, 2, 5, 1, 4];
 
+/// बाहर से आए पल को **घड़ी वाला समय** बना दो।
+///
+/// ## यह क्यों चाहिए — फ़ोन पर पकड़ा गया बग (4 सित 2026)
+///
+/// इस फ़ाइल के सारे समय *घड़ी वाले* हैं, पर उन पर UTC का ठप्पा लगा है
+/// (देखो [_dayBounds] — वहाँ सूर्योदय में `place.timeZoneOffset` जोड़ा
+/// जाता है)। यानी 07:24 बजे वाली चौघड़िया अंदर से `07:24Z` दिखती है,
+/// जबकि उसका असली पल `01:54Z` है।
+///
+/// ऐप `DateTime.now()` भेजता है — **असली** पल। Dart दोनों को भिड़ाते
+/// समय पल गिनता है, घंटा नहीं, इसलिए जवाब पूरे 5:30 घंटे खिसक जाता था:
+/// दोपहर 13:19 बजे स्क्रीन "अभी चल रही है — लाभ 07:24–08:57" दिखा रही
+/// थी, जबकि सही जवाब "शुभ 12:03–13:37" था।
+///
+/// ⚠️ यह बग `dart test` से नहीं पकड़ा गया, क्योंकि सारी जाँचें
+/// `DateTime.utc(...)` या `p.sunrise` भेजती थीं — वो पहले से घड़ी वाले
+/// समय हैं। इसीलिए नीचे local `DateTime` से चलने वाली जाँचें जोड़ी गई हैं।
+DateTime _ghadiKaSamay(DateTime moment) => moment.isUtc
+    ? moment
+    : DateTime.utc(
+        moment.year,
+        moment.month,
+        moment.day,
+        moment.hour,
+        moment.minute,
+        moment.second,
+        moment.millisecond,
+        moment.microsecond,
+      );
+
 /// दिन या रात का एक टुकड़ा।
 class MuhurtaSlot {
   final String name;
@@ -74,8 +104,19 @@ class MuhurtaSlot {
 
   Duration get duration => end.difference(start);
 
-  bool contains(DateTime moment) =>
-      !moment.isBefore(start) && moment.isBefore(end);
+  /// यह टुकड़ा उस पल चल रहा था या नहीं। local और UTC, दोनों तरह का
+  /// `DateTime` चलता है (→ [_ghadiKaSamay])।
+  bool contains(DateTime moment) {
+    final ab = _ghadiKaSamay(moment);
+    return !ab.isBefore(start) && ab.isBefore(end);
+  }
+
+  /// इस टुकड़े के ख़त्म होने में कितना बचा है। बीत चुका हो तो ऋणात्मक।
+  ///
+  /// ऐप इससे तय करता है कि स्क्रीन दोबारा कब बनानी है, इसलिए यह भी
+  /// [contains] की तरह घड़ी वाले समय से नापता है।
+  Duration khatmHoneMein(DateTime moment) =>
+      end.difference(_ghadiKaSamay(moment));
 
   @override
   String toString() => name;
@@ -198,6 +239,8 @@ List<MuhurtaSlot> hora(int year, int month, int day, Place place) {
 ///
 /// ⚠️ हिंदू दिन सूर्योदय से शुरू होता है — इसलिए आधी रात से सूर्योदय तक
 /// का समय **पिछले दिन** की सूची में पड़ता है। यही देखा जाता है।
+///
+/// `DateTime.now()` सीधे भेज सकते हैं — [_ghadiKaSamay] उसे सँभाल लेता है।
 MuhurtaSlot? currentChoghadiya(DateTime localMoment, Place place) =>
     _findCurrent(localMoment, place, choghadiya);
 
@@ -210,13 +253,15 @@ MuhurtaSlot? _findCurrent(
   Place place,
   List<MuhurtaSlot> Function(int, int, int, Place) build,
 ) {
+  final ab = _ghadiKaSamay(moment);
+
   // आज और कल दोनों देखो — सूर्योदय से पहले का समय पिछले दिन में पड़ता है
   for (final offset in [0, -1]) {
-    final day = DateTime.utc(moment.year, moment.month, moment.day)
-        .add(Duration(days: offset));
+    final day =
+        DateTime.utc(ab.year, ab.month, ab.day).add(Duration(days: offset));
 
     for (final slot in build(day.year, day.month, day.day, place)) {
-      if (slot.contains(moment)) return slot;
+      if (slot.contains(ab)) return slot;
     }
   }
   return null;
@@ -226,14 +271,15 @@ MuhurtaSlot? _findCurrent(
 List<MuhurtaSlot> upcomingAuspicious(DateTime localMoment, Place place,
     {int howMany = 3}) {
   final found = <MuhurtaSlot>[];
+  final ab = _ghadiKaSamay(localMoment);
 
   for (var offset = 0; offset <= 1 && found.length < howMany; offset++) {
-    final day = DateTime.utc(localMoment.year, localMoment.month, localMoment.day)
-        .add(Duration(days: offset));
+    final day =
+        DateTime.utc(ab.year, ab.month, ab.day).add(Duration(days: offset));
 
     for (final slot in choghadiya(day.year, day.month, day.day, place)) {
       if (slot.auspicious != true) continue;
-      if (!slot.end.isAfter(localMoment)) continue;
+      if (!slot.end.isAfter(ab)) continue;
 
       found.add(slot);
       if (found.length == howMany) break;

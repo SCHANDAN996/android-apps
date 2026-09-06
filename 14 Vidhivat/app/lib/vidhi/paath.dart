@@ -171,6 +171,29 @@ class Paath {
   });
 
   bool get needsPanditReview => !jaanch.paas;
+  /// ── "कैसे पढ़ें" का ⚠ वाला आख़िरी हिस्सा ───────────
+  ///
+  /// ग्यारहों JSON में एक ही चलन है: `kaisePadhein` का आख़िरी
+  /// पैरा ⚠ से शुरू होता है। आरती में वो सचमुच की सावधानी है —
+  /// *"ढीले कपड़े, दुपट्टा और बाल दूर रखें"* — क्योंकि हाथ में
+  /// जलता दीपक होता है।
+  ///
+  /// ⚠ **यह कभी ℹ के पीछे नहीं जाएगी।** बाक़ी "कैसे पढ़ें"
+  /// एक दबाव पीछे जा सकता है, पर जिसे न पढ़ने से चोट लग सकती
+  /// हो वो नहीं — वही नियम सूर्यग्रहण वाली आँख की चेतावनी पर
+  /// भी लगता है (→ D-056)।
+  String get saavdhani {
+    final i = kaisePadhein.indexOf('⚠');
+    if (i < 0) return '';
+    return kaisePadhein.substring(i).replaceFirst('⚠', '').trim();
+  }
+
+  /// `kaisePadhein` में से [saavdhani] निकालकर बाक़ी — यही ℹ में जाता है।
+  String get kaisePadheinVidhi {
+    final i = kaisePadhein.indexOf('⚠');
+    return (i < 0 ? kaisePadhein : kaisePadhein.substring(0, i)).trim();
+  }
+
 
   int get khandKul => khand.length;
   int get khandBhareHue => khand.where((k) => k.hasPath).length;
@@ -383,7 +406,10 @@ String _str(
   if (required && v.trim().isEmpty) {
     throw VidhiFormatException(file, '"$key" ख़ाली है');
   }
-  return v;
+  // markdown के जोड़ (**bold**) पढ़ते ही हटा दो — वजह `vidhi.dart` के
+  // इसी helper पर लिखी है। पंडित शीट को JSON में उनकी ज़रूरत है, ऐप को
+  // नहीं।
+  return v.replaceAll('**', '');
 }
 
 int _int(String file, Map<String, dynamic> j, String key) {

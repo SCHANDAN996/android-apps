@@ -23,114 +23,130 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     return Scaffold(
       appBar: AppBar(title: const Text('सेटिंग')),
-      body: VidhivatSacredBackdrop(
-        child: Panna(
-          children: [
-            const VidhivatSectionHeader(
-                title: 'स्थान', supportingText: 'तिथि सूर्योदय पर तय होती है'),
-            const SizedBox(height: VidhivatSpacing.sm),
-            VidhivatSurfaceCard(
-              padding: EdgeInsets.zero,
-              child: ListTile(
-                leading: Icon(
-                  settings.city.isDeviceDetected
-                      ? Icons.my_location_outlined
-                      : Icons.location_on_outlined,
+      // ⚠️ नीचे ऐप की अपनी कोई पट्टी नहीं है, इसलिए `SafeArea` के बिना
+      // सबसे नीचे का हिस्सा Android के नेविगेशन बार के पीछे चला जाता है।
+      // `top: false` इसलिए कि ऊपर AppBar पहले से सँभाल लेता है।
+      body: SafeArea(
+        top: false,
+        child: VidhivatSacredBackdrop(
+          child: Panna(
+            children: [
+              const VidhivatSectionHeader(
+                  title: 'स्थान',
+                  supportingText: 'तिथि सूर्योदय पर तय होती है'),
+              const SizedBox(height: VidhivatSpacing.sm),
+              VidhivatSurfaceCard(
+                padding: EdgeInsets.zero,
+                child: ListTile(
+                  leading: Icon(
+                    settings.city.isDeviceDetected
+                        ? Icons.my_location_outlined
+                        : Icons.location_on_outlined,
+                  ),
+                  title: Text(settings.city.name),
+                  subtitle: Text(settings.city.locationSourceLabel),
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: _chooseCity,
                 ),
-                title: Text(settings.city.name),
-                subtitle: Text(settings.city.locationSourceLabel),
-                trailing: const Icon(Icons.chevron_right),
-                onTap: _chooseCity,
               ),
-            ),
-            const SizedBox(height: VidhivatSpacing.sm),
-            VidhivatButton(
-              label: _isFindingLocation
-                  ? 'स्थान पहचाना जा रहा है…'
-                  : 'मेरी जगह अपने आप पहचानें',
-              icon: Icons.my_location_outlined,
-              variant: VidhivatButtonVariant.secondary,
-              onPressed: _isFindingLocation ? null : _detectDeviceLocation,
-              fullWidth: true,
-            ),
-            const SizedBox(height: VidhivatSpacing.xs),
-            TextButton.icon(
-              onPressed: _chooseCity,
-              icon: const Icon(Icons.edit_location_alt_outlined),
-              label: const Text('शहर हाथ से चुनें'),
-            ),
-            const SizedBox(height: VidhivatSpacing.xxl),
-            const VidhivatSectionHeader(
-                title: 'मास पद्धति',
-                supportingText: 'उत्तर भारत पूर्णिमांत, दक्षिण-पश्चिम अमांत'),
-            const SizedBox(height: VidhivatSpacing.sm),
-            VidhivatSurfaceCard(
-              padding: EdgeInsets.zero,
-              child: RadioGroup<MasaSystem>(
-                groupValue: settings.masaSystem,
-                onChanged: (v) {
-                  if (v != null) settings.setMasaSystem(v);
-                },
-                child: const Column(
+              const SizedBox(height: VidhivatSpacing.sm),
+              VidhivatButton(
+                label: _isFindingLocation
+                    ? 'स्थान पहचाना जा रहा है…'
+                    : 'मेरी जगह अपने आप पहचानें',
+                icon: Icons.my_location_outlined,
+                variant: VidhivatButtonVariant.secondary,
+                onPressed: _isFindingLocation ? null : _detectDeviceLocation,
+                fullWidth: true,
+              ),
+              const SizedBox(height: VidhivatSpacing.xs),
+              TextButton.icon(
+                onPressed: _chooseCity,
+                icon: const Icon(Icons.edit_location_alt_outlined),
+                label: const Text('शहर हाथ से चुनें'),
+              ),
+              const SizedBox(height: VidhivatSpacing.xxl),
+              const VidhivatSectionHeader(
+                  title: 'मास पद्धति',
+                  supportingText: 'उत्तर भारत पूर्णिमांत, दक्षिण-पश्चिम अमांत'),
+              const SizedBox(height: VidhivatSpacing.sm),
+              VidhivatSurfaceCard(
+                padding: EdgeInsets.zero,
+                child: RadioGroup<MasaSystem>(
+                  groupValue: settings.masaSystem,
+                  onChanged: (v) {
+                    if (v != null) settings.setMasaSystem(v);
+                  },
+                  child: const Column(
+                    children: [
+                      RadioListTile<MasaSystem>(
+                        value: MasaSystem.purnimanta,
+                        title: Text('पूर्णिमांत'),
+                        subtitle: Text('मास पूर्णिमा पर बदलता है'),
+                      ),
+                      RadioListTile<MasaSystem>(
+                        value: MasaSystem.amanta,
+                        title: Text('अमांत'),
+                        subtitle: Text('मास अमावस्या पर बदलता है'),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: VidhivatSpacing.xxl),
+              const VidhivatSectionHeader(
+                  title: 'यजमान',
+                  supportingText: 'संकल्प में यही बोला जाता है'),
+              const SizedBox(height: VidhivatSpacing.sm),
+              VidhivatSurfaceCard(
+                padding: EdgeInsets.zero,
+                child: ListTile(
+                  leading: const Icon(Icons.person_outline),
+                  title:
+                      Text(settings.hasYajman ? settings.name : 'नाम भरा नहीं'),
+                  subtitle: Text('${settings.gotra} गोत्र'),
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: _editYajman,
+                ),
+              ),
+              const SizedBox(height: VidhivatSpacing.xxl),
+              const VidhivatSectionHeader(title: 'गणना के बारे में'),
+              const SizedBox(height: VidhivatSpacing.sm),
+              const VidhivatSurfaceCard(
+                padding: EdgeInsets.zero,
+                child: Column(
                   children: [
-                    RadioListTile<MasaSystem>(
-                      value: MasaSystem.purnimanta,
-                      title: Text('पूर्णिमांत'),
-                      subtitle: Text('मास पूर्णिमा पर बदलता है'),
-                    ),
-                    RadioListTile<MasaSystem>(
-                      value: MasaSystem.amanta,
-                      title: Text('अमांत'),
-                      subtitle: Text('मास अमावस्या पर बदलता है'),
-                    ),
+                    Pankti('गणना', 'दृक् गणित'),
+                    Pankti('अयनांश', 'लाहिड़ी (चित्रपक्ष)'),
+                    Pankti('दिन', 'सूर्योदय से अगले सूर्योदय तक'),
+                    Pankti('मुख्य गणना', 'ऑफ़लाइन — इसी फ़ोन पर'),
                   ],
                 ),
               ),
-            ),
-            const SizedBox(height: VidhivatSpacing.xxl),
-            const VidhivatSectionHeader(
-                title: 'यजमान', supportingText: 'संकल्प में यही बोला जाता है'),
-            const SizedBox(height: VidhivatSpacing.sm),
-            VidhivatSurfaceCard(
-              padding: EdgeInsets.zero,
-              child: ListTile(
-                leading: const Icon(Icons.person_outline),
-                title:
-                    Text(settings.hasYajman ? settings.name : 'नाम भरा नहीं'),
-                subtitle: Text('${settings.gotra} गोत्र'),
-                trailing: const Icon(Icons.chevron_right),
-                onTap: _editYajman,
+              // ── ये दोनों पहले रंगीन डिब्बे थे — अब सादी पंक्तियाँ ──
+              //
+              // बात दोनों की यूज़र के काम की है, इसलिए मिटाई नहीं — पर यह
+              // पन्ने का पैर है, चेतावनी की जगह नहीं। दो नीले डिब्बे यहाँ
+              // ऐसे लगते थे जैसे कुछ गड़बड़ हो (→ D-056)।
+              const SizedBox(height: VidhivatSpacing.xl),
+              Text(
+                'आपका नाम, गोत्र और चुनी हुई जगह ऐप की स्थानीय सेटिंग में '
+                'रहते हैं। इनके लिए कोई लॉगिन या ऐप सर्वर नहीं है।',
+                style: theme.textTheme.bodySmall,
               ),
-            ),
-            const SizedBox(height: VidhivatSpacing.xxl),
-            const VidhivatSectionHeader(title: 'गणना के बारे में'),
-            const SizedBox(height: VidhivatSpacing.sm),
-            const VidhivatSurfaceCard(
-              padding: EdgeInsets.zero,
-              child: Column(
-                children: [
-                  Pankti('गणना', 'दृक् गणित'),
-                  Pankti('अयनांश', 'लाहिड़ी (चित्रपक्ष)'),
-                  Pankti('दिन', 'सूर्योदय से अगले सूर्योदय तक'),
-                  Pankti('मुख्य गणना', 'ऑफ़लाइन — इसी फ़ोन पर'),
-                ],
+              const SizedBox(height: VidhivatSpacing.sm),
+              Text(
+                'यह ऐप परंपरागत जानकारी देता है। किसी भी ज़रूरी काम का '
+                'अंतिम निर्णय अपने पंडित जी से ही करें।',
+                style: theme.textTheme.bodySmall,
               ),
-            ),
-            const Chetavni(
-              'आपका नाम, गोत्र और चुनी हुई जगह ऐप की स्थानीय सेटिंग में रहते हैं। '
-              'इनके लिए कोई लॉगिन या ऐप सर्वर नहीं है।',
-              icon: Icons.lock_outline,
-            ),
-            const Chetavni(
-              'यह ऐप परंपरागत जानकारी देता है। किसी भी ज़रूरी काम का अंतिम '
-              'निर्णय अपने पंडित जी से ही करें।',
-            ),
-            const SizedBox(height: VidhivatSpacing.sm),
-            Text(
-              'विधिवत · संस्करण 0.1.0\nMASS APP',
-              style: theme.textTheme.bodySmall,
-            ),
-          ],
+              const SizedBox(height: VidhivatSpacing.sm),
+              Text(
+                'विधिवत · संस्करण 0.1.0\nMASS APP',
+                style: theme.textTheme.bodySmall,
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -179,7 +195,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     final message = switch (result.failure) {
       DeviceLocationFailure.serviceDisabled =>
-        'फ़ोन की Location service बंद है। नीचे से शहर हाथ से चुन सकते हैं।',
+        'फ़ोन में स्थान की सुविधा बंद है। नीचे से शहर हाथ से चुन सकते हैं।',
       DeviceLocationFailure.permissionDenied =>
         'स्थान की अनुमति नहीं मिली। नीचे से शहर हाथ से चुन सकते हैं।',
       _ => 'स्थान नहीं मिल पाया। नीचे से शहर हाथ से चुन सकते हैं।',
@@ -292,7 +308,7 @@ class _ManualCityPickerState extends State<_ManualCityPicker> {
       children: [
         const VidhivatSectionHeader(
           title: 'शहर हाथ से चुनें',
-          supportingText: 'Location अनुमति न देने पर भी पंचांग सही रखें',
+          supportingText: 'अनुमति न दें, तब भी पंचांग सही रहेगा',
         ),
         const SizedBox(height: VidhivatSpacing.sm),
         TextField(

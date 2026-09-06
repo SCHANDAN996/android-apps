@@ -8,7 +8,10 @@
 ## ढाँचा — नीचे से ऊपर
 
 ```
-  festival.dart   shubh_muhurat.dart 🚧   sankalp.dart   ← panchang के ऊपर
+  festival.dart  shubh_muhurat.dart 🚧  sankalp.dart  vrat.dart
+              │                                          │
+              │        grahan.dart   surya_grahan.dart   │ ← ग्रहण
+              │              └──── prahar.dart ──────────┘   (→ D-054/055)
               │
         panchang.dart          muhurta.dart    ← दोनों नीचे वालों पर टिके
      ┌────┬────┴───┬────────┐        │
@@ -215,6 +218,10 @@ final p = computePanchang(2026, 8, 20, Place.delhi);
 | `test/moonrise_test.dart` | चंद्र का अक्षांश/दूरी/लंबन + चंद्रोदय |
 | `test/festival_test.dart` | त्योहार की तारीख़ें — आठों Drik से |
 | `test/muhurta_test.dart` | चौघड़िया और होरा — दो वार Drik से |
+| `test/prahar_test.dart` | प्रहर — सूतक की जड़ (→ D-054) |
+| `test/grahan_test.dart` | चंद्रग्रहण — NASA से समय, Drik से सूतक |
+| `test/surya_grahan_test.dart` | सूर्यग्रहण — NASA से 14 ग्रहण, Drik से 4 शहर |
+| `test/vrat_test.dart` | व्रत की तारीख़ें |
 | `test/shubh_muhurat_test.dart` | शुभ मुहूर्त — 🚧 आज की हालत नाप कर दर्ज |
 | `test/sankalp_test.dart` | संकल्प — सारे मान सही जगह भरते हैं |
 | `test/reference_test.dart` | `reference_dates.json` से मिलान (2 मिनट की छूट) |
@@ -222,7 +229,7 @@ final p = computePanchang(2026, 8, 20, Place.delhi);
 | `test/festival_notes.md` | **व्यापिनी नियम** — चरण B का आधार |
 
 ```bash
-cd engine && dart test        # 157 जाँचें
+cd engine && dart test        # 254 जाँचें
 cd engine && dart analyze     # साफ़ रहना चाहिए
 ```
 
@@ -289,6 +296,15 @@ app/
     ├── widgets/design_system.dart
     │                         Phase 1 के reusable CTA · icon action · surface
     │                         card · status chip · state view · divider primitives
+    ├── widgets/dakshina_card.dart
+    │                         स्क्रीन पर छपने वाले शब्द (`DakshinaShabd`),
+    │                         राशि चुनने वाला हिस्सा, और पूजा पूरी होने
+    │                         वाले पन्ने का शांत डिब्बा (→ D-053)
+    ├── services/dakshina_service.dart
+    │                         दक्षिणा की बही — घड़ी का नियम + Play Billing
+    │                         का द्वार। ⛔ यहाँ कोई `unlock`/`isPro` झंडा
+    │                         कभी नहीं आएगा — देने वाले को कुछ अतिरिक्त
+    │                         नहीं मिलता, यही Play की शर्त है
     ├── vidhi/
     │   ├── vidhi.dart     पूजा का ढाँचा + JSON पढ़ना + जाँच
     │   └── bhandar.dart   assets से पढ़ने वाला (याद भी रखता है)
@@ -303,12 +319,21 @@ app/
         │                             final-write/clear ordering + handoff
         │                             (wakelock only while active)
         ├── puja_completion_screen.dart calm technical guide-finished handoff
+        │                             + दक्षिणा का डिब्बा — **ऐप में
+        │                             इकलौती जगह जहाँ पैसा माँगा जाता है**
+        ├── dakshina_screen.dart      दक्षिणा का पूरा पन्ना — राशियाँ,
+        │                             "यह राशि कहाँ लगती है", और तीन
+        │                             साफ़-साफ़ बातें (→ D-053)
         ├── aaj_screen.dart           daily Panchang + available festival dashboard
         ├── calendar_screen.dart      reduced-motion-aware 7-column month grid,
         │                             bounded selected-day/festival cache
         ├── sankalp_screen.dart       guided purpose + exact Sankalp output
         ├── muhurta_screen.dart       ordered Choghadiya/Hora + boundary-scheduled,
         │                             lifecycle-safe current refresh
+        ├── vrat_screen.dart          आगे पड़ने वाले व्रत, नियम ⓘ के पीछे
+        ├── grahan_screen.dart        चंद्रग्रहण + सूतक (तीन प्रहर)
+        ├── surya_grahan_screen.dart  सूर्यग्रहण + सूतक (चार प्रहर)
+        │                             ⚠️ आँख की चेतावनी सबसे ऊपर, ⓘ में नहीं
         └── settings_screen.dart      शहर, मास-पद्धति और local यजमान settings
 ```
 

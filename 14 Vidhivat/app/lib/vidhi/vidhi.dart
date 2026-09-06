@@ -355,6 +355,84 @@ class Samagri {
 }
 
 // ─────────────────────────────────────────────────────────────
+// वर्ज्य द्रव्य — क्या नहीं चढ़ाना
+// ─────────────────────────────────────────────────────────────
+
+/// एक चीज़ जो इस देवता को **नहीं** चढ़ाई जाती (→ A10)।
+///
+/// ## यह अलग खाना क्यों बना
+///
+/// ऐप की सामग्री-सूची में ये चीज़ें पहले से **नहीं थीं** — यानी नतीजा
+/// सही था। पर **जो सूची में नहीं है, यूज़र उसे ख़ुद जोड़ लेता है**
+/// ("तुलसी तो हर पूजा में चढ़ती है" सोचकर)। इसलिए *"नहीं है"* काफ़ी
+/// नहीं; *"मत चढ़ाइए, और यह रही वजह"* लिखना पड़ता है।
+///
+/// ## यहाँ सिर्फ़ वही आता है जिसका स्रोत मिला
+///
+/// जिन निषेधों पर मतभेद है, वे **यहाँ नहीं आते** — जैसे "विष्णु को
+/// अक्षत नहीं" वाला प्रचलित श्लोक, जिसका ग्रंथ-प्रमाण नहीं मिला और
+/// जिस पर पंडितों में भी दो राय हैं (→ `docs/18_SROT_PANJI.md` §3)।
+class Varjya {
+  /// क्या नहीं चढ़ाना — "तुलसी", "केतकी का फूल"
+  final String vastu;
+
+  /// क्यों नहीं — एक-दो वाक्य में, यूज़र की भाषा में
+  final String kyon;
+
+  /// यह बात कहाँ से आई
+  final String strot;
+
+  /// इस निषेध पर कितना भरोसा — मंत्रों वाला ही पैमाना
+  final Bharosa bharosa;
+
+  const Varjya({
+    required this.vastu,
+    required this.kyon,
+    required this.strot,
+    required this.bharosa,
+  });
+
+  factory Varjya.fromJson(String file, Map<String, dynamic> j) => Varjya(
+        vastu: _str(file, j, 'vastu'),
+        kyon: _str(file, j, 'kyon'),
+        strot: _str(file, j, 'strot'),
+        bharosa: Bharosa.parse(
+          file,
+          _str(file, j, 'bharosa', required: false, fallback: 'kam'),
+        ),
+      );
+}
+
+/// वे बातें जो **हर पूजा** पर लागू हैं, इसलिए हर फ़ाइल में नहीं दोहराईं।
+///
+/// देवता-विशेष निषेध JSON में हैं ([Vidhi.varjya]); ये तीनों सबके लिए
+/// एक जैसे हैं, इसलिए यहाँ एक ही जगह।
+const List<Varjya> saamaanyaVarjya = [
+  Varjya(
+    vastu: 'मुरझाए, सूखे या ज़मीन पर गिरे फूल',
+    kyon: 'फूल ताज़ा होना चाहिए। जिनकी पंखुड़ियाँ टूटी हों, कीड़े लगे '
+        'हों, या जो ज़मीन पर गिर चुके हों — वे दोबारा नहीं चढ़ते।',
+    strot: 'पूजा-नियमों पर छपे लेखों में यह बात एक जैसी मिलती है।',
+    bharosa: Bharosa.madhyam,
+  ),
+  Varjya(
+    vastu: 'टूटे हुए चावल',
+    kyon: '"अक्षत" का अर्थ ही है — जो टूटा न हो। इसलिए अक्षत के लिए '
+        'साबुत चावल ही लिए जाते हैं, खंडित चावल नहीं।',
+    strot: 'शब्द का अपना अर्थ (अ + क्षत = बिना टूटा), और पूजा-नियमों '
+        'पर छपे लेख।',
+    bharosa: Bharosa.uncha,
+  ),
+  Varjya(
+    vastu: 'एक बार चढ़ चुकी सामग्री',
+    kyon: 'जो चीज़ एक बार चढ़ गई, वह प्रसाद हो गई — उसे दोबारा चढ़ाया '
+        'नहीं जाता।',
+    strot: 'सामान्य पूजा-नियम।',
+    bharosa: Bharosa.madhyam,
+  ),
+];
+
+// ─────────────────────────────────────────────────────────────
 // चरण
 // ─────────────────────────────────────────────────────────────
 
@@ -400,12 +478,29 @@ class Charan {
 
   final CharanVishesh vishesh;
 
+  /// इस कदम पर कौन-सा पाठ खुलता है — `app/assets/paath/` की id.
+  ///
+  /// ## यह क्यों है (→ D-039, और उसका बचा हुआ आधा हिस्सा)
+  ///
+  /// आरती **हर पूजा के अंत में** आती है — ऐप में पंद्रह कदमों पर।
+  /// उसका पाठ पंद्रह JSON फ़ाइलों में दोहराना सबसे बुरा तरीक़ा होता:
+  /// एक जगह सुधार करो तो चौदह जगह पुरानी रह जाएँ।
+  ///
+  /// इसलिए आरती का पाठ **एक ही जगह** रहता है (`paath/`), और विधि का
+  /// कदम सिर्फ़ उसका नाम रखता है। एक बार वहाँ पाठ भर जाए, तो पंद्रहों
+  /// जगह अपने आप जुड़ जाती है।
+  ///
+  /// एक कदम पर एक से ज़्यादा भी हो सकते हैं — दीपावली में गणेश और
+  /// लक्ष्मी दोनों की आरती होती है।
+  final List<String> paath;
+
   const Charan({
     required this.shirshak,
     required this.vivaran,
     required this.mantra,
     required this.samayMinute,
     required this.vishesh,
+    this.paath = const [],
   });
 
   factory Charan.fromJson(String file, Map<String, dynamic> j) {
@@ -421,6 +516,7 @@ class Charan {
         file,
         _str(file, j, 'vishesh', required: false, fallback: 'saada'),
       ),
+      paath: _strList(file, j, 'paath'),
     );
   }
 }
@@ -611,6 +707,12 @@ class Vidhi {
   final String sankalpPurpose;
 
   final List<Samagri> samagri;
+
+  /// इस देवता को क्या **नहीं** चढ़ाना (→ A10)। ख़ाली भी हो सकती है —
+  /// हर पूजा में देवता-विशेष निषेध नहीं होता। हर पूजा पर लागू होने
+  /// वाली बातें [saamaanyaVarjya] में अलग रखी हैं।
+  final List<Varjya> varjya;
+
   final List<Charan> charan;
   final List<SawaalJawaab> sawaal;
   final Strot strot;
@@ -628,6 +730,7 @@ class Vidhi {
     required this.kathinai,
     required this.sankalpPurpose,
     required this.samagri,
+    this.varjya = const [],
     required this.charan,
     required this.sawaal,
     required this.strot,
@@ -760,6 +863,9 @@ class Vidhi {
       kathinai: Kathinai.parse(file, _str(file, j, 'kathinai')),
       sankalpPurpose: _str(file, j, 'sankalpPurpose', required: false),
       samagri: samagri,
+      varjya: _list(file, j, 'varjya')
+          .map((v) => Varjya.fromJson(file, _map(file, v, 'varjya')))
+          .toList(growable: false),
       charan: charan,
       sawaal: _list(file, j, 'sawaal')
           .map((s) => SawaalJawaab.fromJson(file, _map(file, s, 'sawaal')))
@@ -909,7 +1015,22 @@ String _str(
   if (required && v.trim().isEmpty) {
     throw VidhiFormatException(file, '"$key" ख़ाली है');
   }
-  return v;
+  // markdown के जोड़ (**bold**) यहीं, पढ़ते ही हटा दो।
+  //
+  // ## यह यहाँ क्यों, हर स्क्रीन पर क्यों नहीं
+  //
+  // कंटेंट की JSON में कुछ जगह `**...**` लिखा है ताकि पंडित जी वाली
+  // `.md` शीट में वो शब्द **मोटे** दिखें। वो शीट Python से सीधे JSON
+  // पढ़कर बनती है, इसलिए उसे इनकी ज़रूरत है — पर ऐप में कोई markdown
+  // renderer नहीं, तो वहाँ ये कच्चे तारे बनकर दिखते हैं।
+  //
+  // पहले यह हर स्क्रीन पर अलग-अलग हटाया गया था (3 सित) — और `parichay`
+  // छूट गया, जो अगले ही दिन फ़ोन पर पकड़ा गया ("जिसमें **डूबते सूर्य**
+  // को भी अर्घ्य")। display की जगहें पीछा करना ग़लत तरीक़ा था।
+  //
+  // अब यह **पढ़ते ही** हट जाता है, इसलिए हर field — आज का भी, कल
+  // जुड़ने वाला भी — अपने आप साफ़ रहता है। JSON वैसी की वैसी रहती है।
+  return v.replaceAll('**', '');
 }
 
 int _int(String file, Map<String, dynamic> j, String key,

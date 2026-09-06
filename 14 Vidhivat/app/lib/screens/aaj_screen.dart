@@ -32,9 +32,7 @@ class _AajScreenState extends State<AajScreen> {
   @override
   Widget build(BuildContext context) {
     final p = settings.panchangFor(_day);
-    final theme = Theme.of(context);
     final colors = VidhivatTheme.colorsOf(context);
-    final type = VidhivatTheme.typographyOf(context);
     final festivalKey = '${_day.year}|${settings.city.cacheKey}';
     var yearFestivals = _festivalCache[festivalKey];
     if (yearFestivals == null) {
@@ -75,167 +73,195 @@ class _AajScreenState extends State<AajScreen> {
           ),
         ],
       ),
-      body: VidhivatSacredBackdrop(
-        child: Panna(
-          children: [
-            _Sirlekh(p: p, day: _day),
-            const SizedBox(height: VidhivatSpacing.xl),
+      // ⚠️ `SafeArea(top: false)` के बिना नीचे का आख़िरी हिस्सा Android
+      // के नेविगेशन बार (होम/बैक) के **पीछे** चला जाता था — "आज" वाले
+      // पन्ने पर सबसे नीचे की "दृक् गणित · … · हैदराबाद" वाली लाइन
+      // आधी कटी दिखती थी।
+      //
+      // वजह: Android 15 से ऐप ज़बरदस्ती edge-to-edge चलता है — उसे पूरी
+      // स्क्रीन मिलती है (यहाँ 720×1600), सिस्टम बार के नीचे की जगह
+      // समेत। `top: false` इसलिए कि ऊपर AppBar पहले से सँभाल लेता है।
+      //
+      // फ़ोन पर पकड़ा गया (4 सित 2026), vivo V2553 · तीन-बटन वाला बार।
+      body: SafeArea(
+        top: false,
+        child: VidhivatSacredBackdrop(
+          child: Panna(
+            children: [
+              _Sirlekh(p: p, day: _day),
+              const SizedBox(height: VidhivatSpacing.xl),
 
-            if (p.kshayaTithiName != null)
-              Chetavni(
-                  'क्षय तिथि — ${p.kshayaTithiName} किसी सूर्योदय को नहीं छूती'),
-            if (p.isVriddhiTithi)
-              Chetavni('वृद्धि तिथि — ${p.tithi.name} कल भी रहेगी'),
+              if (p.kshayaTithiName != null)
+                Chetavni(
+                    'क्षय तिथि — ${p.kshayaTithiName} किसी सूर्योदय को नहीं छूती'),
+              if (p.isVriddhiTithi)
+                Chetavni('वृद्धि तिथि — ${p.tithi.name} कल भी रहेगी'),
 
-            // ── पंचांग के पाँच अंग ──
-            const VidhivatSectionHeader(
-              title: 'आज का पंचांग',
-              supportingText: 'सूर्योदय के समय और दिन भर के बदलाव',
-            ),
-            const SizedBox(height: VidhivatSpacing.sm),
-            VidhivatSurfaceCard(
-              padding: EdgeInsets.zero,
-              child: Column(
-                children: [
-                  ..._angaPanktiyan('तिथि', p.tithis, _day),
-                  const VidhivatDivider(),
-                  ..._angaPanktiyan('नक्षत्र', p.nakshatras, _day),
-                  const VidhivatDivider(),
-                  ..._angaPanktiyan('योग', p.yogas, _day),
-                  const VidhivatDivider(),
-                  ..._angaPanktiyan('करण', p.karanas, _day),
-                  const VidhivatDivider(),
-                  Pankti('वार', p.varaName),
-                ],
+              // ── पंचांग के पाँच अंग ──
+              const VidhivatSectionHeader(
+                title: 'आज का पंचांग',
+                supportingText: 'सूर्योदय के समय और दिन भर के बदलाव',
               ),
-            ),
-
-            // ── सूर्य और चंद्र ──
-            const SizedBox(height: VidhivatSpacing.xxl),
-            const VidhivatSectionHeader(title: 'सूर्य और चंद्र'),
-            const SizedBox(height: VidhivatSpacing.sm),
-            VidhivatSurfaceCard(
-              padding: EdgeInsets.zero,
-              child: Column(
-                children: [
-                  Pankti('सूर्योदय', hms(p.sunrise), bold: true),
-                  Pankti('सूर्यास्त', hms(p.sunset)),
-                  Pankti('दिनमान', _avadhi(p.dinamana)),
-                  Pankti('रात्रिमान', _avadhi(p.ratrimana)),
-                  const VidhivatDivider(),
-                  Pankti(
-                    'चंद्रोदय',
-                    hms(p.moonrise) + dinKaNishan(p.moonrise, _day),
-                    note: p.moonrise == null ? 'आज चंद्रोदय नहीं पड़ता' : null,
-                  ),
-                  Pankti(
-                    'चंद्रास्त',
-                    hms(p.moonset) + dinKaNishan(p.moonset, _day),
-                    note: p.moonset == null ? 'आज चंद्रास्त नहीं पड़ता' : null,
-                  ),
-                ],
-              ),
-            ),
-
-            // ── शुभ और अशुभ काल ──
-            const SizedBox(height: VidhivatSpacing.xxl),
-            const VidhivatSectionHeader(title: 'आज के काल'),
-            const SizedBox(height: VidhivatSpacing.sm),
-            VidhivatSurfaceCard(
-              variant: VidhivatCardVariant.highlight,
-              padding: EdgeInsets.zero,
-              child: Column(
-                children: [
-                  if (p.abhijit != null)
-                    Pankti(
-                      'अभिजित',
-                      '${hm(p.abhijit!.start)} – ${hm(p.abhijit!.end)}',
-                      note: 'दिन का सबसे शुभ मुहूर्त',
-                      valueColour: colors.success,
-                      bold: true,
-                    ),
-                  const VidhivatDivider(),
-                  if (p.rahuKaal != null)
-                    Pankti('राहुकाल',
-                        '${hm(p.rahuKaal!.start)} – ${hm(p.rahuKaal!.end)}',
-                        valueColour: colors.secondary),
-                  if (p.yamaganda != null)
-                    Pankti('यमगंड',
-                        '${hm(p.yamaganda!.start)} – ${hm(p.yamaganda!.end)}',
-                        valueColour: colors.secondary),
-                  if (p.gulika != null)
-                    Pankti('गुलिक',
-                        '${hm(p.gulika!.start)} – ${hm(p.gulika!.end)}',
-                        valueColour: colors.secondary),
-                  if (p.bhadra != null)
-                    Pankti(
-                      'भद्रा',
-                      '${hm(p.bhadra!.start)}${dinKaNishan(p.bhadra!.start, _day)}'
-                          ' – ${hm(p.bhadra!.end)}${dinKaNishan(p.bhadra!.end, _day)}',
-                      note: 'इसमें शुभ काम नहीं होते',
-                      valueColour: colors.secondary,
-                    ),
-                ],
-              ),
-            ),
-
-            if (festivals.isNotEmpty) ...[
-              const SizedBox(height: VidhivatSpacing.xxl),
-              const VidhivatSectionHeader(title: 'आज के त्योहार / व्रत'),
               const SizedBox(height: VidhivatSpacing.sm),
               VidhivatSurfaceCard(
                 padding: EdgeInsets.zero,
                 child: Column(
                   children: [
-                    for (final festival in festivals)
-                      ListTile(
-                        title: Text(festival.rule.name),
-                        subtitle: festival.ambiguous
-                            ? const Text('दो संभावित तारीख़ों में यह दिन भी है')
-                            : null,
+                    ..._angaPanktiyan('तिथि', p.tithis, _day),
+                    const VidhivatDivider(),
+                    ..._angaPanktiyan('नक्षत्र', p.nakshatras, _day),
+                    const VidhivatDivider(),
+                    ..._angaPanktiyan('योग', p.yogas, _day),
+                    const VidhivatDivider(),
+                    ..._angaPanktiyan('करण', p.karanas, _day),
+                    const VidhivatDivider(),
+                    Pankti('वार', p.varaName),
+                  ],
+                ),
+              ),
+
+              // ── सूर्य और चंद्र ──
+              const SizedBox(height: VidhivatSpacing.xxl),
+              const VidhivatSectionHeader(title: 'सूर्य और चंद्र'),
+              const SizedBox(height: VidhivatSpacing.sm),
+              VidhivatSurfaceCard(
+                padding: EdgeInsets.zero,
+                child: Column(
+                  children: [
+                    Pankti('सूर्योदय', hms(p.sunrise), bold: true),
+                    Pankti('सूर्यास्त', hms(p.sunset)),
+                    Pankti('दिनमान', _avadhi(p.dinamana)),
+                    Pankti('रात्रिमान', _avadhi(p.ratrimana)),
+                    const VidhivatDivider(),
+                    Pankti(
+                      'चंद्रोदय',
+                      hms(p.moonrise) + dinKaNishan(p.moonrise, _day),
+                      note:
+                          p.moonrise == null ? 'आज चंद्रोदय नहीं पड़ता' : null,
+                    ),
+                    Pankti(
+                      'चंद्रास्त',
+                      hms(p.moonset) + dinKaNishan(p.moonset, _day),
+                      note:
+                          p.moonset == null ? 'आज चंद्रास्त नहीं पड़ता' : null,
+                    ),
+                  ],
+                ),
+              ),
+
+              // ── शुभ और अशुभ काल ──
+              const SizedBox(height: VidhivatSpacing.xxl),
+              const VidhivatSectionHeader(title: 'आज के काल'),
+              const SizedBox(height: VidhivatSpacing.sm),
+              VidhivatSurfaceCard(
+                variant: VidhivatCardVariant.highlight,
+                padding: EdgeInsets.zero,
+                child: Column(
+                  children: [
+                    if (p.abhijit != null)
+                      Pankti(
+                        'अभिजित',
+                        '${hm(p.abhijit!.start)} – ${hm(p.abhijit!.end)}',
+                        note: 'दिन का सबसे शुभ मुहूर्त',
+                        valueColour: colors.success,
+                        bold: true,
+                      ),
+                    const VidhivatDivider(),
+                    if (p.rahuKaal != null)
+                      Pankti('राहुकाल',
+                          '${hm(p.rahuKaal!.start)} – ${hm(p.rahuKaal!.end)}',
+                          valueColour: colors.secondary),
+                    if (p.yamaganda != null)
+                      Pankti('यमगंड',
+                          '${hm(p.yamaganda!.start)} – ${hm(p.yamaganda!.end)}',
+                          valueColour: colors.secondary),
+                    if (p.gulika != null)
+                      Pankti('गुलिक',
+                          '${hm(p.gulika!.start)} – ${hm(p.gulika!.end)}',
+                          valueColour: colors.secondary),
+                    if (p.bhadra != null)
+                      Pankti(
+                        'भद्रा',
+                        '${hm(p.bhadra!.start)}${dinKaNishan(p.bhadra!.start, _day)}'
+                            ' – ${hm(p.bhadra!.end)}${dinKaNishan(p.bhadra!.end, _day)}',
+                        note: 'इसमें शुभ काम नहीं होते',
+                        valueColour: colors.secondary,
                       ),
                   ],
                 ),
               ),
-            ],
 
-            // ── राशि और विशेष ──
-            const SizedBox(height: VidhivatSpacing.xxl),
-            const VidhivatSectionHeader(title: 'अन्य जानकारी'),
-            const SizedBox(height: VidhivatSpacing.sm),
-            VidhivatSurfaceCard(
-              padding: EdgeInsets.zero,
-              child: Column(
-                children: [
-                  Pankti('सूर्य राशि', p.sunRashiName),
-                  Pankti('चंद्र राशि', p.moonRashiName),
-                  if (p.isPanchak || p.isGandmool)
-                    Pankti(
-                      'विशेष',
-                      [
-                        if (p.isPanchak) 'पंचक',
-                        if (p.isGandmool) 'गंडमूल',
-                      ].join(' · '),
-                      valueColour: colors.secondary,
-                    ),
-                  Pankti('अयनांश', toDms(p.ayanamsa)),
-                ],
-              ),
-            ),
+              if (festivals.isNotEmpty) ...[
+                const SizedBox(height: VidhivatSpacing.xxl),
+                const VidhivatSectionHeader(title: 'आज के त्योहार / व्रत'),
+                const SizedBox(height: VidhivatSpacing.sm),
+                VidhivatSurfaceCard(
+                  padding: EdgeInsets.zero,
+                  child: Column(
+                    children: [
+                      for (final festival in festivals)
+                        ListTile(
+                          title: Text(festival.rule.name),
+                          subtitle: festival.ambiguous
+                              ? const Text(
+                                  'दो संभावित तारीख़ों में यह दिन भी है')
+                              : null,
+                        ),
+                    ],
+                  ),
+                ),
+              ],
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 4),
-              child: Text(
-                'दृक् गणित · लाहिड़ी अयनांश · '
-                '${p.masaSystem == MasaSystem.purnimanta ? "पूर्णिमांत" : "अमांत"} पद्धति'
-                '\n${settings.city.name}',
-                style: type.bodySmall.copyWith(
-                  color:
-                      theme.textTheme.bodySmall?.color?.withValues(alpha: 0.55),
+              // ── राशि और विशेष ──
+              const SizedBox(height: VidhivatSpacing.xxl),
+              const VidhivatSectionHeader(title: 'अन्य जानकारी'),
+              const SizedBox(height: VidhivatSpacing.sm),
+              VidhivatSurfaceCard(
+                padding: EdgeInsets.zero,
+                child: Column(
+                  children: [
+                    Pankti('सूर्य राशि', p.sunRashiName),
+                    Pankti('चंद्र राशि', p.moonRashiName),
+                    if (p.isPanchak || p.isGandmool)
+                      Pankti(
+                        'विशेष',
+                        [
+                          if (p.isPanchak) 'पंचक',
+                          if (p.isGandmool) 'गंडमूल',
+                        ].join(' · '),
+                        valueColour: colors.secondary,
+                      ),
+                  ],
                 ),
               ),
-            ),
-          ],
+
+              // ── "दृक् गणित · लाहिड़ी अयनांश · …" यहाँ खुला छपता था ──
+              //
+              // और ठीक ऊपर "अन्य जानकारी" में अयनांश का मान भी —
+              // यानी **एक ही स्क्रीन पर दो बार**, और तीसरी बार सेटिंग में।
+              // अयनांश पर यूज़र कोई काम नहीं करता — वो गणित का पुर्ज़ा है,
+              // जो तभी चाहिए जब कोई दूसरे पंचांग से मिलाने बैठे (→ D-056)।
+              const SizedBox(height: VidhivatSpacing.md),
+              VidhivatSrotButton(
+                label: 'यह पंचांग कैसे बना',
+                panktiyan: [
+                  VidhivatSrotPankti('स्थान', settings.city.name),
+                  const VidhivatSrotPankti('गणना', 'दृक् गणित'),
+                  const VidhivatSrotPankti('अयनांश की पद्धति', 'लाहिड़ी (चित्रपक्ष)'),
+                  VidhivatSrotPankti('आज का अयनांश', toDms(p.ayanamsa)),
+                  VidhivatSrotPankti(
+                    'मास की पद्धति',
+                    p.masaSystem == MasaSystem.purnimanta
+                        ? 'पूर्णिमांत — मास पूर्णिमा पर बदलता है'
+                        : 'अमांत — मास अमावस्या पर बदलता है',
+                  ),
+                  const VidhivatSrotPankti('दिन', 'सूर्योदय से अगले सूर्योदय तक'),
+                ],
+                antimBaat: 'सब गणना इसी फ़ोन पर होती है — कोई सर्वर नहीं, कोई '
+                    'इंटरनेट नहीं।',
+              ),
+            ],
+          ),
         ),
       ),
     );

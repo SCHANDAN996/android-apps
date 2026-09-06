@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart' show TargetPlatform, defaultTargetPlatform;
 import 'package:flutter/material.dart';
 
+import 'services/dakshina_service.dart';
 import 'services/device_location_service.dart';
 import 'screens/calendar_screen.dart';
 import 'screens/home_dashboard_screen.dart';
@@ -7,10 +9,24 @@ import 'screens/more_screen.dart';
 import 'screens/vidhi_list_screen.dart';
 import 'state/settings.dart';
 import 'theme.dart';
+import 'widgets/design_system.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await settings.load();
+  await dakshina.load();
+
+  // दक्षिणा का द्वार सिर्फ़ उन्हीं platform पर, जहाँ दुकान होती है।
+  // ⚠️ `PlayBillingDwar()` बनते ही `InAppPurchase.instance` छू जाता है,
+  // जो desktop पर फिंकता है — इसीलिए यह जाँच पहले।
+  //
+  // पहरा ऐप खुलते ही बैठता है, बटन दबने पर नहीं: UPI वाली ख़रीद कुछ
+  // मिनट बाद पूरी होती है, और तब तक यूज़र पन्ना छोड़ चुका होता है।
+  if (defaultTargetPlatform == TargetPlatform.android ||
+      defaultTargetPlatform == TargetPlatform.iOS) {
+    dakshina.shuru(PlayBillingDwar());
+  }
+
   runApp(const VidhivatApp());
 }
 
@@ -54,7 +70,7 @@ class _VidhivatAppState extends State<VidhivatApp> {
         title: const Text('अपना स्थान पहचानने दें?'),
         content: const Text(
           'सूर्योदय, तिथि और चौघड़िया आपके स्थान के अनुसार बदलते हैं। '
-          'विधिवत सिर्फ़ app खुले रहने पर एक बार स्थान लेगा; location कहीं भेजी नहीं जाएगी।',
+          'विधिवत सिर्फ़ ऐप खुले रहने पर एक बार स्थान लेता है, और वह कहीं भेजा नहीं जाता।',
         ),
         actions: [
           TextButton(
@@ -135,32 +151,50 @@ class _HomeShellState extends State<HomeShell> {
           ),
         ),
       ),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: _index,
-        labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-        onDestinationSelected: (i) => setState(() => _index = i),
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.home_outlined),
-            selectedIcon: Icon(Icons.home),
-            label: 'होम',
-          ),
-          NavigationDestination(
-            icon: Text('🪔', style: TextStyle(fontSize: 22)),
-            selectedIcon: Text('🪔', style: TextStyle(fontSize: 25)),
-            label: 'पूजा',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.calendar_month_outlined),
-            selectedIcon: Icon(Icons.calendar_month),
-            label: 'कैलेंडर',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.apps_outlined),
-            selectedIcon: Icon(Icons.apps),
-            label: 'अधिक',
-          ),
-        ],
+      // ⚠️ `SafeArea(top: false)` के बिना यह पट्टी Android के नीचे वाले
+      // नेविगेशन बार (होम/बैक) के **पीछे** चली जाती थी, और टैब के नाम
+      // उससे टकराते थे।
+      //
+      // वजह: Android 15 से ऐप ज़बरदस्ती edge-to-edge चलता है — यानी
+      // उसे पूरी स्क्रीन मिलती है (यहाँ 720×1600), सिस्टम बार के नीचे
+      // की जगह समेत। बाक़ी हर नीचे वाली पट्टी में यह पहले से लगा था
+      // (विधि पन्ना, प्लेयर, सामग्री, completion) — बस यही छूट गई थी,
+      // और यही चारों टैब पर हमेशा दिखती है, इसलिए टकराव हर जगह दिखा।
+      //
+      // फ़ोन पर पकड़ा गया (4 सित 2026), vivo V2553 · तीन-बटन वाला बार।
+      bottomNavigationBar: SafeArea(
+        top: false,
+        child: NavigationBar(
+          selectedIndex: _index,
+          labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+          onDestinationSelected: (i) => setState(() => _index = i),
+          destinations: const [
+            NavigationDestination(
+              icon: Icon(Icons.home_outlined),
+              selectedIcon: Icon(Icons.home),
+              label: 'होम',
+            ),
+            // यहाँ पहले `Text('🪔')` था। बाक़ी तीनों टैब रेखा-वाले
+            // Material चिह्न हैं, इसलिए बीच में एक भरा-पूरा रंगीन emoji
+            // अटपटा लगता था — और हर फ़ोन पर अपनी शक़्ल का दिखता था।
+            // अब वही दीया, उसी नाप और उसी मोटाई की रेखा से बना हुआ।
+            NavigationDestination(
+              icon: VidhivatDiyaIcon(),
+              selectedIcon: VidhivatDiyaIcon(bhara: true),
+              label: 'पूजा',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.calendar_month_outlined),
+              selectedIcon: Icon(Icons.calendar_month),
+              label: 'कैलेंडर',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.apps_outlined),
+              selectedIcon: Icon(Icons.apps),
+              label: 'अधिक',
+            ),
+          ],
+        ),
       ),
     );
   }

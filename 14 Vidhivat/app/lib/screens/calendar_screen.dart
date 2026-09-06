@@ -86,20 +86,33 @@ class _CalendarScreenState extends State<CalendarScreen>
           tabs: const [Tab(text: 'महीना'), Tab(text: 'त्योहार')],
         ),
       ),
-      body: VidhivatSacredBackdrop(
-        child: TabBarView(
-          controller: _tabs,
-          children: [
-            _MahinaTab(
-              month: _month,
-              selectedDay: _selectedDay,
-              festivals: festivals,
-              panchangFor: _panchangFor,
-              onShift: _shiftMonth,
-              onSelect: (day) => setState(() => _selectedDay = day),
-            ),
-            _TyoharTab(year: _month.year, festivals: festivals),
-          ],
+      // ⚠️ `SafeArea(top: false)` के बिना नीचे का आख़िरी हिस्सा Android
+      // के नेविगेशन बार (होम/बैक) के **पीछे** चला जाता था — "आज" वाले
+      // पन्ने पर सबसे नीचे की "दृक् गणित · … · हैदराबाद" वाली लाइन
+      // आधी कटी दिखती थी।
+      //
+      // वजह: Android 15 से ऐप ज़बरदस्ती edge-to-edge चलता है — उसे पूरी
+      // स्क्रीन मिलती है (यहाँ 720×1600), सिस्टम बार के नीचे की जगह
+      // समेत। `top: false` इसलिए कि ऊपर AppBar पहले से सँभाल लेता है।
+      //
+      // फ़ोन पर पकड़ा गया (4 सित 2026), vivo V2553 · तीन-बटन वाला बार।
+      body: SafeArea(
+        top: false,
+        child: VidhivatSacredBackdrop(
+          child: TabBarView(
+            controller: _tabs,
+            children: [
+              _MahinaTab(
+                month: _month,
+                selectedDay: _selectedDay,
+                festivals: festivals,
+                panchangFor: _panchangFor,
+                onShift: _shiftMonth,
+                onSelect: (day) => setState(() => _selectedDay = day),
+              ),
+              _TyoharTab(year: _month.year, festivals: festivals),
+            ],
+          ),
         ),
       ),
     );
@@ -232,7 +245,7 @@ class _MahinaTab extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: VidhivatSpacing.sm),
           child: selectedFestivals.isEmpty
               ? Text(
-                  'इस दिन के लिए कोई अतिरिक्त त्योहार जानकारी उपलब्ध नहीं है।',
+                  'इस दिन कोई त्योहार या व्रत नहीं पड़ता।',
                   style: VidhivatTheme.typographyOf(context).bodySmall,
                 )
               : Column(
@@ -255,7 +268,7 @@ class _MahinaTab extends StatelessWidget {
                               ),
                               if (festival.ambiguous)
                                 const VidhivatStatusChip(
-                                  label: 'दो दावेदार',
+                                  label: 'दो तारीख़ें',
                                   tone: VidhivatStatusTone.info,
                                 ),
                             ],
@@ -427,7 +440,7 @@ class _TyoharTab extends StatelessWidget {
       children: [
         VidhivatSectionHeader(
             title: '$year के त्योहार',
-            supportingText: 'तारीख़ के नीचे गणना का आधार है'),
+            supportingText: 'तारीख़ें आपके शहर के सूर्योदय से'),
         const SizedBox(height: VidhivatSpacing.lg),
         for (final f in festivals) _TyoharCard(f: f),
       ],
@@ -501,24 +514,55 @@ class _TyoharCard extends StatelessWidget {
                     ),
                   if (f.ambiguous)
                     const VidhivatStatusChip(
-                      label: 'दो दावेदार',
+                      label: 'दो तारीख़ें',
                       tone: VidhivatStatusTone.info,
                     ),
                 ],
               ),
             ],
-            const SizedBox(height: VidhivatSpacing.sm),
-            Text(
-              f.explanation,
-              style: theme.textTheme.bodySmall?.copyWith(
-                height: 1.6,
-                color:
-                    theme.textTheme.bodySmall?.color?.withValues(alpha: 0.75),
-              ),
-            ),
+            // ── चार से छह लाइन का हिसाब यहाँ खुला पड़ा रहता था ──
+            //
+            // हर कार्ड पर, यानी **साल में लगभग चालीस बार** — मास,
+            // पक्ष, तिथि, व्यापिनी नियम, तिथि के दोनों सिरे, भद्रा,
+            // और नीचे "दृक् गणित · लाहिड़ी अयनांश · पूर्णिमांत पद्धति"।
+            //
+            // यूज़र को यहाँ **तारीज़़** चाहिए। हिसाब तभी चाहिए जब किसी
+            // दूसरे पंचांग से फ़र्क़ दिखे — और तब वो पूरा मिलना चाहिए,
+            // इसलिए मिटाया नहीं, एक दबाव पीछे किया (→ D-045, D-056)।
+            _TyoharKaHisaab(f: f),
           ],
         ),
       ),
+    );
+  }
+}
+
+/// एक त्योहार की तारीख़ का पूरा हिसाब — ℹ के पीछे (→ D-056)।
+///
+/// इंजन का `explanation` एक ही डोरी है, लाइनों में बंटी हुई।
+/// **आख़िरी लाइन हमेशा गणित की पद्धति होती है** ("दृक् गणित ·
+/// लाहिड़ी अयनांश · … पद्धति") — वो अलग पंक्ति बनती है, बाक़ी
+/// सब एक साथ। इंजन को छूए बिना यही सबसे सीधा रास्ता था।
+class _TyoharKaHisaab extends StatelessWidget {
+  final FestivalDate f;
+
+  const _TyoharKaHisaab({required this.f});
+
+  @override
+  Widget build(BuildContext context) {
+    final lines = f.explanation.split('\n');
+    final ganit = lines.length > 1 ? lines.last : '';
+    final hisaab =
+        (lines.length > 1 ? lines.sublist(0, lines.length - 1) : lines)
+            .join('\n');
+    return VidhivatSrotButton(
+      label: 'यह तारीख़ कैसे बनी',
+      shirshak: f.rule.name,
+      panktiyan: [
+        VidhivatSrotPankti('हिसाब', hisaab),
+        VidhivatSrotPankti('गणना', ganit),
+      ],
+      antimBaat: 'आपके घर या क्षेत्र का चलन अलग हो तो वही सही है।',
     );
   }
 }

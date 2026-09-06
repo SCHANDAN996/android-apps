@@ -65,3 +65,29 @@ double trueObliquity(double jde) =>
 
   return (rightAscension: ra, declination: dec);
 }
+
+/// पृथ्वी से सूर्य की दूरी, **किलोमीटर** में। Meeus 25.5।
+///
+/// सूर्यग्रहण के लिए ज़रूरी है: सूर्य का कोणीय अर्धव्यास इसी से निकलता है,
+/// और वही तय करता है कि ग्रहण खग्रास होगा या कंकणाकृति (→ D-055)।
+///
+/// साल भर में यह दूरी लगभग 3.4% घटती-बढ़ती है — जनवरी में पृथ्वी सूरज के
+/// सबसे पास होती है, जुलाई में सबसे दूर।
+double sunDistance(double jde) {
+  final t = julianCenturies(jde);
+
+  final m = 357.52911 + 35999.05029 * t - 0.0001537 * t * t;
+  final e = 0.016708634 - 0.000042037 * t - 0.0000001267 * t * t;
+  final c = (1.914602 - 0.004817 * t - 0.000014 * t * t) * sinD(m) +
+      (0.019993 - 0.000101 * t) * sinD(2 * m) +
+      0.000289 * sinD(3 * m);
+
+  // सच्ची विसंगति (true anomaly) से त्रिज्या-सदिश, खगोलीय इकाई में
+  final nu = m + c;
+  final rAu = 1.000001018 * (1 - e * e) / (1 + e * cosD(nu));
+
+  return rAu * _khagoliyaIkai;
+}
+
+/// एक खगोलीय इकाई (astronomical unit), किलोमीटर।
+const double _khagoliyaIkai = 149597870.7;

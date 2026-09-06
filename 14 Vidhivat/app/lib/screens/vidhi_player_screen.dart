@@ -7,6 +7,9 @@ import '../theme.dart';
 import '../vidhi/vidhi.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
+import '../vidhi/bhandar.dart';
+import '../vidhi/paath.dart';
+import 'paath_screen.dart';
 import 'puja_completion_screen.dart';
 import 'samagri_screen.dart';
 import 'sankalp_screen.dart';
@@ -259,6 +262,7 @@ class _CharanPanna extends StatelessWidget {
           child: Text(
             charan.vivaran,
             style: VidhivatTheme.typographyOf(context).bodyLarge,
+            textAlign: TextAlign.justify,
           ),
         ),
         if (charan.samayMinute > 0) ...[
@@ -281,7 +285,25 @@ class _CharanPanna extends StatelessWidget {
             'कथा-पुस्तिका से पढ़ें।',
           ),
         ],
-        if (charan.mantra != null) ...[
+        // आरती वाले कदम पर सीधे आरती खोलने का रास्ता (→ D-039)।
+        // पाठ यहाँ दोहराया नहीं जाता — वो एक ही जगह रहता है।
+        if (charan.paath.isNotEmpty) ...[
+          const SizedBox(height: VidhivatSpacing.xxl),
+          _PaathKholo(ids: charan.paath),
+        ],
+        // ── जिस कदम का पाठ ऊपर बटन में है, वहाँ "मंत्र नहीं है"
+        //     वाली चेतावनी झूठ है (→ D-049) ──────────────────────────
+        //
+        // आरती वाले कदम पर मंत्र जान-बूझकर ख़ाली है — आरती का पूरा पाठ
+        // `assets/paath/` में एक ही जगह रहता है और ऊपर वाला बटन उसे
+        // वहीं से खोल देता है (→ D-039)। फिर भी ऐप नीचे लिखता था
+        // *"इस कदम का मंत्र अभी ऐप में नहीं जोड़ा गया है"* — यानी
+        // पाठ की ओर उँगली उठाकर साथ ही कहना कि पाठ है ही नहीं।
+        //
+        // वही उल्टी बात जो चालीसा पर थी ("43/43 पद भरे हैं, पर जाँच
+        // बाकी") — और वही इलाज: जहाँ चीज़ मौजूद है वहाँ चेतावनी मत दो।
+        if (charan.mantra != null &&
+            !(charan.paath.isNotEmpty && !charan.mantra!.hasPath)) ...[
           const SizedBox(height: VidhivatSpacing.xxl),
           _MantraKhand(mantra: charan.mantra!),
         ],
@@ -506,6 +528,8 @@ class _SankalpKhandState extends State<_SankalpKhand> {
         gotra: settings.gotra,
         place: settings.city.name,
         purpose: commonPurposes[widget.vidhi.sankalpPurpose] ?? 'देवपूजनं',
+        yajaman: settings.yajaman,
+        sthanPrakar: settings.sthanPrakar,
       ),
     );
     final path = _pooraRoop ? sankalp.full : sankalp.simple;
@@ -536,13 +560,17 @@ class _SankalpKhandState extends State<_SankalpKhand> {
           '${p.varaName} · ${p.masaFullName} ${p.pakshaName} ${p.tithi.name}',
           style: VidhivatTheme.typographyOf(context).bodySmall,
         ),
-        const SizedBox(height: VidhivatSpacing.md),
-        if (sankalp.needsPanditReview)
-          const Chetavni(
-            'संकल्प के मान पंचांग से बने हैं और जाँचे हुए हैं, पर संस्कृत '
-            'का रूप अभी पंडित जी से पास नहीं हुआ है।',
-            serious: true,
-          ),
+        // ── यहाँ पहले पद्धति वाली चेतावनी भी छपती थी — अब नहीं ───────
+        //
+        // वही बात तीन जगह एक साथ लिखी जा रही थी — पूजा की तैयारी
+        // वाले पन्ने पर, संकल्प वाले पन्ने पर, और यहाँ। और `needsPanditReview`
+        // अभी **हमेशा** सच है (28/28 पूजाओं पर, और संकल्प में तो
+        // default ही `true` है) — यानी यह शर्त नहीं, दीवार थी।
+        //
+        // जो चेतावनी हर बार दिखे, वो चेतावनी रह ही नहीं जाती (→ D-042)।
+        // और यहाँ आदमी जमीन पर बैठा संकल्प बोल रहा है — यह वो पल
+        // नहीं जब उसे पद्धतियों का भेद पढ़ना है। पूरी बात संकल्प वाले
+        // अपने पन्ने के ℹ में है (→ D-056)।
       ],
     );
   }
@@ -624,6 +652,15 @@ class _MantraKhand extends StatelessWidget {
             'स्रोत से न आ जाए, हम अंदाज़े से कुछ नहीं लिखेंगे — तब तक अपनी '
             'पूजा-पुस्तिका से पढ़ें, या मन ही मन भगवान का नाम लें।',
           ),
+          // ⚠️ यह **खुला ही रहेगा।** एक बार इसे भी ⓘ के पीछे भेजा गया
+          // था (भरे मंत्र वाले नियम के साथ मिलाने के चक्कर में), पर
+          // जाँच ने पकड़ लिया — और वो सही थी।
+          //
+          // भरे मंत्र पर ⓘ के अंदर *हवाला* होता है, जो पूजा के बीच
+          // नहीं चाहिए। यहाँ उसमें **वजह** होती है — कि मंत्र ख़ाली
+          // क्यों है ("नवग्रह के नौ अलग मंत्र होते हैं", "सुप्रभातम्
+          // वाला श्लोक यहाँ का नहीं है")। वो ठीक उसी जगह चाहिए जहाँ
+          // ऐप अपनी कमी मान रहा है — वरना चेतावनी अधूरी रह जाती है।
           if (mantra.vikalp.isNotEmpty)
             Text(mantra.vikalp, style: type.bodySmall),
         ],
@@ -664,36 +701,140 @@ class _MantraKhand extends StatelessWidget {
         ),
         const SizedBox(height: VidhivatSpacing.md),
 
-        if (mantra.needsPanditReview)
-          Chetavni(
-            'यह मंत्र अभी पंडित जी से पास नहीं हुआ है '
-            '(भरोसा — ${mantra.bharosa.naam})।',
-            serious: true,
-          ),
-
-        // ── जहाँ एक से ज़्यादा चलन हैं, वो छिपाना नहीं है ──
+        // ── यहाँ पहले हर मंत्र पर लाल चेतावनी थी — अब नहीं (→ D-042) ──
         //
-        // पंडित जी के लिए यही सबसे काम की लाइन है — वे यहीं बता देंगे कि
-        // आपके घर में कौन सा रूप चलता है।
-        if (mantra.vikalp.isNotEmpty)
-          Padding(
-            padding: const EdgeInsets.only(bottom: VidhivatSpacing.sm),
-            child: Text(
-              'दूसरा चलन — ${mantra.vikalp}',
-              style: type.bodySmall,
-            ),
-          ),
+        // वो वाक्य था "यह मंत्र अभी पंडित जी से पास नहीं हुआ है", और वो
+        // **हर** भरे हुए मंत्र पर दिखता था — 203 में से 150 कदमों पर।
+        // दो दिक़्क़तें थीं:
+        //
+        // 1. वो ठीक उसी कदम पर नीचे छपे स्रोत से टकराता था — यूज़र
+        //    "स्रोत: ऋग्वेद ७.५९.१२ · भरोसा ऊँचा" और "पास नहीं हुआ"
+        //    एक साथ पढ़ता था।
+        // 2. जब हर कदम पर चेतावनी हो, तो वो पढ़ी ही नहीं जाती।
+        //
+        // अब पूजा के पन्ने पर **एक बार** साफ़ लिखा है कि यह घर की सरल
+        // पद्धति है और हर पाठ के नीचे स्रोत मिलेगा। यहाँ वही दो चीज़ें
+        // दिखती हैं जो सचमुच काम की हैं — **दूसरा चलन** और **स्रोत**।
+        //
+        // ⚠️ जिस कदम का पाठ **है ही नहीं**, वहाँ चेतावनी अब भी पूरी
+        // ताक़त से लगती है (ऊपर `!mantra.hasPath` वाला हिस्सा) — वही
+        // असली चेतावनी है, और वो अब भीड़ में नहीं खोती।
 
-        if (mantra.strot.isNotEmpty)
-          VidhivatSurfaceCard(
-            variant: VidhivatCardVariant.information,
-            padding: const EdgeInsets.all(VidhivatSpacing.md),
-            child: Text(
-              'स्रोत — ${mantra.strot}',
-              style: type.bodySmall,
-            ),
-          ),
+        // ── स्रोत, भरोसा और दूसरा चलन — ⓘ के अंदर ──────────────
+        //
+        // ये तीनों पहले मंत्र के नीचे खुले पड़े थे। नापने पर पता चला
+        // कि **मंत्र से सवा तीन गुना ज़्यादा** सहायक-पाठ था (मंत्र
+        // औसतन 107 अक्षर, स्रोत 175, दूसरा चलन 165)।
+        //
+        // पूजा करते आदमी को मंत्र चाहिए, हवाला नहीं। इसलिए तीनों अब
+        // एक बटन के पीछे हैं — जिसे जानना हो वो दबाए।
+        //
+        // ⚠️ जिस कदम का पाठ **है ही नहीं**, वहाँ की चेतावनी छिपाई
+        // नहीं गई (ऊपर `!mantra.hasPath` वाला हिस्सा) — वही असली
+        // चेतावनी है और वो दिखती ही रहनी चाहिए (→ D-042)।
+        if (mantra.strot.isNotEmpty || mantra.vikalp.isNotEmpty)
+          _IsPaathKeBaareMein(mantra: mantra),
       ],
     );
   }
+}
+
+/// आरती वाले कदम पर — "आरती खोलें" (→ D-039)।
+///
+/// ## यहाँ पाठ क्यों नहीं छपता
+///
+/// आरती हर पूजा के अंत में आती है — ऐप में **पंद्रह कदमों पर।** उसका
+/// पाठ पंद्रह जगह दोहराना सबसे बुरा तरीक़ा होता: एक जगह सुधार करो तो
+/// चौदह जगह पुरानी रह जाएँ।
+///
+/// इसलिए पाठ एक ही जगह रहता है — `assets/paath/` में — और यह बटन उसे
+/// वहीं से खोल देता है। एक बार वहाँ आरती भर जाए, तो **पंद्रहों जगह एक
+/// साथ जुड़ जाती है।**
+///
+/// एक कदम पर एक से ज़्यादा भी हो सकती हैं (दीपावली में गणेश और लक्ष्मी
+/// दोनों की), इसलिए यह सूची लेता है।
+class _PaathKholo extends StatelessWidget {
+  final List<String> ids;
+
+  const _PaathKholo({required this.ids});
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<List<PaathSuchiEntry>>(
+      future: paathBhandar.suchi(),
+      builder: (context, snap) {
+        final suchi = snap.data;
+        if (suchi == null) return const SizedBox.shrink();
+
+        final mile = [
+          for (final id in ids)
+            ...suchi.where((e) => e.id == id),
+        ];
+        if (mile.isEmpty) return const SizedBox.shrink();
+
+        // ⚠️ शीर्षक तय नहीं, पीछे जो है उससे बनता है। पहले यहाँ हमेशा
+        // "आरती" लिखा था — और हनुमान पूजा में उसके नीचे **चालीसा** का
+        // बटन आ गया। जो लिखा है और जो खुलता है, दोनों एक होने चाहिए।
+        final prakar = {for (final e in mile) e.prakar};
+        final shirshak = prakar.length == 1 ? prakar.first.naam : 'पाठ';
+
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            VidhivatSectionHeader(title: shirshak),
+            const SizedBox(height: VidhivatSpacing.sm),
+            for (final e in mile) ...[
+              VidhivatButton(
+                label: e.naam,
+                semanticLabel: '${e.naam} खोलें',
+                icon: Icons.menu_book_outlined,
+                variant: VidhivatButtonVariant.secondary,
+                fullWidth: true,
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => PaathScreen(id: e.id)),
+                ),
+              ),
+              const SizedBox(height: VidhivatSpacing.sm),
+            ],
+          ],
+        );
+      },
+    );
+  }
+}
+
+/// "इस पाठ के बारे में" — स्रोत, भरोसा और दूसरा चलन, एक बटन के पीछे।
+///
+/// ## यह क्यों बना
+///
+/// पहले ये तीनों मंत्र के नीचे खुले पड़े थे। नापने पर निकला कि हर भरे
+/// मंत्र के साथ **मंत्र से सवा तीन गुना ज़्यादा** सहायक-पाठ है —
+/// मंत्र औसतन 107 अक्षर, स्रोत 175, दूसरा चलन 165।
+///
+/// पूजा के बीच में आदमी को **मंत्र** चाहिए; स्रोत और पाठ-भेद तब काम
+/// आते हैं जब कोई जाँचने बैठे। इसलिए वो सब यहाँ, एक दबाव पीछे।
+///
+/// छिपाया कुछ नहीं गया — बटन पर साफ़ लिखा है कि अंदर क्या है, और जहाँ
+/// दो चलन हों वो बटन पर ही दिख जाता है।
+///
+/// ⚠️ अब यही रूप चालीसा और पूजा-विवरण पर भी है, इसलिए शीट बनाने का
+/// काम [VidhivatSrotButton] करता है — तीनों जगह एक जैसा (→ D-045)।
+class _IsPaathKeBaareMein extends StatelessWidget {
+  final Mantra mantra;
+
+  const _IsPaathKeBaareMein({required this.mantra});
+
+  @override
+  Widget build(BuildContext context) => VidhivatSrotButton(
+        label: mantra.vikalp.isNotEmpty
+            ? 'इस पाठ के बारे में · इस पर दो चलन हैं'
+            : 'इस पाठ के बारे में',
+        shirshak: 'इस पाठ के बारे में',
+        panktiyan: [
+          VidhivatSrotPankti('भरोसा', mantra.bharosa.naam),
+          VidhivatSrotPankti('यह पाठ कहाँ से है', mantra.strot),
+          VidhivatSrotPankti('दूसरा चलन', mantra.vikalp),
+        ],
+        antimBaat: 'आपके घर या क्षेत्र का चलन अलग हो तो वही सही है।',
+      );
 }

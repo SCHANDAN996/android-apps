@@ -202,6 +202,85 @@ void main() {
     });
   });
 
+  // ── ऐप वाला `DateTime.now()` — यहीं वो बग छिपा था ─────────────────
+  //
+  // ऊपर की सारी जाँचें `DateTime.utc(...)` या `p.sunrise` भेजती हैं, जो
+  // पहले से घड़ी वाले समय हैं। ऐप असली local पल भेजता है, और उसमें +5:30
+  // जुड़ा होता है — इसीलिए फ़ोन पर दोपहर 13:19 बजे स्क्रीन "अभी चल रही
+  // है — लाभ 07:24–08:57" दिखा रही थी। जाँचें साफ़ थीं, ऐप ग़लत था।
+  //
+  // ⚠️ ये जाँचें local `DateTime` से ही चलनी चाहिए। इन्हें कभी
+  // `DateTime.utc` में मत बदलना — तब वो बग वापस छिप जाएगा।
+  group('local DateTime से भी सही जवाब', () {
+    /// वही पल, दो रूपों में — जैसा ऐप भेजता है और जैसा जाँचें भेजती हैं।
+    (DateTime local, DateTime ghadi) donoRoop(
+      int y,
+      int m,
+      int d,
+      int hh,
+      int mm,
+    ) =>
+        (DateTime(y, m, d, hh, mm), DateTime.utc(y, m, d, hh, mm));
+
+    test('दोपहर की चौघड़िया — local और UTC दोनों से एक ही', () {
+      final (local, ghadi) = donoRoop(2026, 8, 20, 13, 19);
+
+      final localSe = currentChoghadiya(local, Place.delhi);
+      final ghadiSe = currentChoghadiya(ghadi, Place.delhi);
+
+      expect(localSe, isNotNull);
+      expect(localSe!.name, ghadiSe!.name);
+      expect(localSe.start, ghadiSe.start);
+      // और वो सचमुच उसी वक़्त चल रही हो, 5:30 पहले वाली नहीं
+      expect(localSe.start.hour, lessThanOrEqualTo(13));
+      expect(localSe.end.hour, greaterThanOrEqualTo(13));
+    });
+
+    test('होरा भी local से वही', () {
+      final (local, ghadi) = donoRoop(2026, 8, 20, 13, 19);
+
+      expect(currentHora(local, Place.delhi)!.name,
+          currentHora(ghadi, Place.delhi)!.name);
+    });
+
+    test('आगे की शुभ चौघड़िया — एक भी बीती हुई नहीं', () {
+      final (local, ghadi) = donoRoop(2026, 8, 20, 13, 19);
+
+      final aage = upcomingAuspicious(local, Place.delhi, howMany: 3);
+
+      expect(aage.length, 3);
+      for (final slot in aage) {
+        expect(slot.khatmHoneMein(local), greaterThan(Duration.zero),
+            reason: '${slot.name} बीत चुकी है');
+      }
+      expect(
+        aage.map((s) => s.start).toList(),
+        upcomingAuspicious(ghadi, Place.delhi, howMany: 3)
+            .map((s) => s.start)
+            .toList(),
+      );
+    });
+
+    test('आधी रात का local समय भी पिछले दिन में मिलता है', () {
+      final current = currentChoghadiya(DateTime(2026, 8, 21, 1, 0),
+          Place.delhi);
+
+      expect(current, isNotNull);
+      expect(current!.isDay, isFalse);
+      expect(current.name, 'लाभ');
+    });
+
+    test('khatmHoneMein — बीत चुकी चौघड़िया ऋणात्मक देती है', () {
+      final slots = choghadiya(2026, 8, 20, Place.delhi);
+      final pehli = slots.first;
+
+      expect(pehli.khatmHoneMein(DateTime(2026, 8, 20, 13, 19)),
+          lessThan(Duration.zero));
+      expect(pehli.khatmHoneMein(DateTime(2026, 8, 20, 6, 0)),
+          greaterThan(Duration.zero));
+    });
+  });
+
   group('जगह बदलने पर', () {
     test('चेन्नई में भी सोलह टुकड़े, सही जुड़े हुए', () {
       final all = choghadiya(2026, 8, 20, Place.chennai);

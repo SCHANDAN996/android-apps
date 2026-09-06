@@ -18,6 +18,30 @@ import 'package:vidhivat/vidhi/vidhi.dart';
 /// यहाँ फ़ाइलें `dart:io` से पढ़ी जाती हैं, `rootBundle` से नहीं — इसलिए
 /// जाँच को Flutter का ऐप चलाने की ज़रूरत नहीं पड़ती।
 void main() {
+  group('वर्ज्य द्रव्य — A10', () {
+    test('हर पूजा पर लागू होने वाली बातें एक ही जगह हैं', () {
+      expect(saamaanyaVarjya, isNotEmpty);
+      for (final v in saamaanyaVarjya) {
+        expect(v.vastu.trim(), isNotEmpty);
+        expect(v.kyon.trim(), isNotEmpty);
+        expect(v.strot.trim(), isNotEmpty);
+      }
+    });
+
+    test('विवादित निषेध कहीं नहीं लिखे गए', () {
+      // "विष्णु को अक्षत नहीं" वाले श्लोक का ग्रंथ-प्रमाण नहीं मिला और
+      // उस पर मतभेद है — इसलिए वह ऐप में नहीं आना चाहिए (→ docs/18 §3)।
+      // दुर्गा-दूर्वा और सूर्य-बेलपत्र उसी श्लोक के हैं।
+      for (final id in ['ram_pooja', 'krishna_pooja', 'satyanarayan',
+                        'nitya_pooja', 'kalash_sthapana', 'surya_arghya']) {
+        final path = 'assets/vidhi/$id.json';
+        final v = Vidhi.parse(path, File(path).readAsStringSync());
+        expect(v.varjya, isEmpty,
+            reason: '${v.naam} में विवादित निषेध लिखा है');
+      }
+    });
+  });
+
   const dir = 'assets/vidhi';
   const suchiPath = '$dir/_suchi.json';
 
@@ -160,6 +184,91 @@ void main() {
               reason: 'घोषित ${v.samayMinute} बनाम जोड़ $jod');
         });
 
+        // ── A9: आवाहन है तो विसर्जन भी हो ────────────────────────
+        // पूजा का ढाँचा आवाहन → उपचार → विसर्जन है। ऐप में आवाहन तो
+        // था, विसर्जन कहीं नहीं — जबकि जो क्षमा-श्लोक अंत में बोला
+        // जाता है उसकी पहली पंक्ति ही है "न जानामि विसर्जनम्"।
+        test('देवता का आवाहन है तो विसर्जन का कदम भी है (→ A9)', () {
+          final naam = v.charan.map((c) => c.shirshak).toList();
+          final devAavahan = naam.any((n) => n.contains('आवाहन'));
+          final visarjan = naam.any((n) => n == 'विसर्जन');
+
+          if (!devAavahan) {
+            expect(visarjan, isFalse,
+                reason: '${v.naam}: आवाहन नहीं, फिर विसर्जन क्यों?');
+            return;
+          }
+          // नवरात्रि इकलौता अपवाद है — देवी नौ दिन के लिए बैठती हैं,
+          // पहले दिन विसर्जन होता ही नहीं (वजह कदम में लिखी है)।
+          if (v.id == 'kalash_sthapana') {
+            expect(visarjan, isFalse);
+            return;
+          }
+          expect(visarjan, isTrue,
+              reason: '${v.naam}: आवाहन है पर विसर्जन का कदम नहीं');
+        });
+
+        test('विसर्जन आवाहन के बाद आता है, और अंत के पास', () {
+          final naam = v.charan.map((c) => c.shirshak).toList();
+          final v0 = naam.indexOf('विसर्जन');
+          if (v0 < 0) return;
+          final a0 = naam.indexWhere((n) => n.contains('आवाहन'));
+          expect(a0, greaterThanOrEqualTo(0), reason: v.naam);
+          expect(v0, greaterThan(a0),
+              reason: '${v.naam}: विसर्जन आवाहन से पहले आ गया');
+          // आख़िरी तीन कदमों में होना चाहिए
+          expect(v0, greaterThanOrEqualTo(naam.length - 3),
+              reason: '${v.naam}: विसर्जन बीच में पड़ा है');
+        });
+
+        // ── A10: क्या नहीं चढ़ाना ─────────────────────────────────
+        test('जो वर्ज्य लिखा है वो सामग्री की सूची में नहीं होना चाहिए', () {
+          // यही पूरी बात है — अगर कोई चीज़ "मत चढ़ाइए" में है और सूची
+          // में भी है, तो ऐप ख़ुद अपने से उलटा कह रहा है।
+          final sooch = v.samagri.map((s) => s.vastu).join(' ');
+          for (final varjya in v.varjya) {
+            expect(sooch.contains(varjya.vastu), isFalse,
+                reason: '${v.naam}: "${varjya.vastu}" वर्ज्य है, '
+                    'फिर सामग्री में क्यों?');
+          }
+        });
+
+        test('हर वर्ज्य के साथ वजह और स्रोत दोनों लिखे हैं', () {
+          for (final varjya in v.varjya) {
+            expect(varjya.vastu.trim(), isNotEmpty, reason: v.naam);
+            expect(varjya.kyon.trim(), isNotEmpty,
+                reason: '${v.naam}: "${varjya.vastu}" की वजह नहीं लिखी');
+            expect(varjya.strot.trim(), isNotEmpty,
+                reason: '${v.naam}: "${varjya.vastu}" का स्रोत नहीं लिखा');
+          }
+        });
+
+        // ── आरती का लिंक (→ D-039) ──────────────────────────────
+        test('हर आरती वाले कदम से कोई पाठ जुड़ा है', () {
+          // पाठ पंद्रह जगह दोहराया नहीं जाता — कदम सिर्फ़ नाम रखता है।
+          // नाम न हो तो यूज़र के लिए वो कदम ख़ाली डिब्बा बन जाता है।
+          for (final c in v.charan) {
+            if (c.vishesh != CharanVishesh.aarti) continue;
+            expect(c.paath, isNotEmpty,
+                reason: '${v.naam} / ${c.shirshak}: आरती का कदम है '
+                    'पर कोई पाठ नहीं जुड़ा');
+          }
+        });
+
+        test('जुड़ा हुआ हर पाठ सचमुच मौजूद है', () {
+          // ग़लत id लिखी तो ऐप में बटन दिखेगा ही नहीं — चुपचाप ग़ायब।
+          for (final c in v.charan) {
+            for (final id in c.paath) {
+              expect(
+                File('assets/paath/$id.json').existsSync(),
+                isTrue,
+                reason: '${v.naam} / ${c.shirshak}: "$id" नाम का '
+                    'कोई पाठ नहीं है',
+              );
+            }
+          }
+        });
+
         test('scope लिखा है, और उसी के हिसाब से विधि खुलती है', () {
           // preparation_only / expert_assisted वाली पूजा की पूरी विधि
           // नहीं खुलनी चाहिए (→ D-026)।
@@ -181,6 +290,36 @@ void main() {
                   reason: '"$cheez" किसी कदम में माँगी है पर सामग्री में नहीं');
             }
           }
+        });
+
+        // ⚠️ यह जाँच दो बार फ़ोन पर पकड़ी गई ग़लती के बाद लिखी गई।
+        //
+        // JSON में `**bold**` इसलिए है कि पंडित जी वाली .md शीट में वो
+        // शब्द मोटे दिखें। पर ऐप में markdown renderer नहीं — वहाँ वो
+        // कच्चे तारे बनकर दिखते थे ("**डूबते सूर्य**")।
+        //
+        // पहले हर स्क्रीन पर अलग-अलग हटाया गया, और `parichay` छूट गया।
+        // अब `_str()` पढ़ते ही हटा देता है — यह जाँच उसी का पहरा है।
+        test('ऐप में कहीं markdown के कच्चे तारे नहीं दिखते', () {
+          final sabText = [
+            v.naam, v.parichay, v.kabKarein.saral, v.kabKarein.note,
+            v.strot.paddhati, v.strot.kshetra, v.strot.note,
+            ...v.upnaam,
+            ...v.samagri.map((s) => '${s.vastu} ${s.note}'),
+            ...v.varjya.map((x) => '${x.vastu} ${x.kyon} ${x.strot}'),
+            ...v.sawaal.map((q) => '${q.sawaal} ${q.jawaab}'),
+            ...v.charan.expand((c) => [
+                  c.shirshak,
+                  c.vivaran,
+                  if (c.mantra != null) ...[
+                    c.mantra!.devanagari, c.mantra!.roman, c.mantra!.arth,
+                    c.mantra!.strot, c.mantra!.vikalp,
+                  ],
+                ]),
+          ].join(' ');
+          expect(sabText.contains('**'), isFalse,
+              reason: '${v.naam} में कहीं ** बचा है — यूज़र को कच्चे '
+                  'तारे दिखेंगे');
         });
 
         test('स्रोत लिखा है — ऐप में यही दिखता है', () {

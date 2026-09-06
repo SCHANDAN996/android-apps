@@ -4,7 +4,6 @@ import 'package:wakelock_plus/wakelock_plus.dart';
 import '../theme.dart';
 import '../vidhi/bhandar.dart';
 import '../vidhi/paath.dart';
-import '../vidhi/vidhi.dart' show MantraSthiti;
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
 
@@ -117,8 +116,12 @@ class _PaathReaderState extends State<PaathReader> {
 
     return Scaffold(
       appBar: AppBar(title: Text(paath.naam)),
+      // ⚠️ `bottom: false` यहाँ नहीं चलेगा — इस पन्ने के नीचे ऐप की
+      // अपनी कोई पट्टी नहीं है, इसलिए सबसे नीचे का हिस्सा सीधे Android
+      // के नेविगेशन बार के पीछे चला जाता है (फ़ोन पर पकड़ा गया, 4 सित)।
+      // `top: false` इसलिए कि ऊपर AppBar पहले से सँभाल लेता है।
       body: SafeArea(
-        bottom: false,
+        top: false,
         child: VidhivatSacredBackdrop(
           child: Panna(
             padding: const EdgeInsets.fromLTRB(
@@ -137,44 +140,71 @@ class _PaathReaderState extends State<PaathReader> {
                 style: type.bodySmall,
               ),
               const SizedBox(height: VidhivatSpacing.lg),
-              Text(paath.parichay, style: type.bodyMedium),
+              Text(paath.parichay,
+                  style: type.bodyMedium, textAlign: TextAlign.justify),
 
               // ── पाठ अभी नहीं आया, तो सबसे ऊपर साफ़ कहो ──
               if (!paath.kuchBharaHai) ...[
                 const SizedBox(height: VidhivatSpacing.lg),
                 _Notice(
                   title: 'पाठ अभी जोड़ा नहीं गया',
-                  text:
-                      '${paath.khandKul} पदों की जगह बनी हुई है, पर पाठ अभी '
+                  text: '${paath.khandKul} पदों की जगह बनी हुई है, पर पाठ अभी '
                       'नहीं लिखा गया। ${paath.prakar.naam} गाई जाने वाली रचना '
                       'है — ऐप में वही रूप जाएगा जो आपके घर में पढ़ा जाता है। '
                       'तब तक अपनी पुस्तिका से पढ़िए।',
                   serious: true,
                 ),
-              ] else if (paath.needsPanditReview) ...[
+              ] else if (bhare < paath.khandKul) ...[
+                // ── अधूरा पाठ — यही असली चेतावनी है ──────────────────
+                //
+                // पहले यहाँ "जाँच बाकी है" लिखा था और वो **पूरे भरे**
+                // पाठ पर भी दिखता था: हनुमान चालीसा पर "(43 / 43 पद भरे
+                // हैं)" के साथ चेतावनी — यानी ऐप कह रहा था "सब कुछ है,
+                // पर भरोसा मत करो"। उससे यूज़र को कुछ मिलता नहीं था।
+                //
+                // अब चेतावनी सिर्फ़ तब, जब सचमुच कुछ **कम** हो, और वो
+                // कमी गिनकर बताई जाती है (→ D-042)।
                 const SizedBox(height: VidhivatSpacing.lg),
                 _Notice(
-                  title: 'जाँच बाकी है',
-                  text: 'यह पाठ अभी किसी जानकार से जाँच करवाकर पास नहीं हुआ '
-                      'है ($bhare / ${paath.khandKul} पद भरे हैं)। अपने घर की '
-                      'पुस्तिका से मिला लीजिए।',
+                  title: 'यह पाठ अभी अधूरा है',
+                  text: '${paath.khandKul} में से $bhare पद ही जोड़े गए हैं। '
+                      'बाक़ी अपनी पुस्तिका से पढ़िए — जब तक पूरा पाठ '
+                      'प्रामाणिक स्रोत से न आ जाए, हम अंदाज़े से कुछ नहीं '
+                      'लिखेंगे।',
                   serious: true,
                 ),
               ],
 
-              const SizedBox(height: VidhivatSpacing.xxl),
-              const VidhivatSectionHeader(title: 'कब पढ़ें'),
-              const SizedBox(height: VidhivatSpacing.sm),
-              VidhivatSurfaceCard(
-                child: Text(paath.kabPadhein, style: type.bodyMedium),
-              ),
-
-              const SizedBox(height: VidhivatSpacing.xxl),
-              const VidhivatSectionHeader(title: 'कैसे पढ़ें'),
-              const SizedBox(height: VidhivatSpacing.sm),
-              VidhivatSurfaceCard(
-                child: Text(paath.kaisePadhein, style: type.bodyMedium),
-              ),
+              const SizedBox(height: VidhivatSpacing.lg),
+              
+              // ── "कब पढ़ें" और "कैसे पढ़ें" यहाँ दो पूरे खंड थे ────
+              //
+              // नतीजा यह था कि हनुमान चालीसा खोलने पर **पहला दोहा
+              // तीसरी स्क्रीन पर** मिलता था — नाम, पहचान, परिचय,
+              // "कब पढ़ें", "कैसे पढ़ें", *फिर* पाठ।
+              //
+              // ये दोनों एक बार पढ़ने की चीज़ें हैं; पाठ रोज़ की। इसलिए वे
+              // एक दबाव पीछे गए — मिटे नहीं (→ D-045, D-056)।
+              _KabAurKaisePadhein(paath: paath),
+              
+              // ── सावधानी ⚠ — यह खुली ही रहती है ────────────────
+              //
+              // आरती में हाथ में जलता दीपक होता है। "ढीले कपड़े, दुपट्टा
+              // और बाल दूर रखें" एक दबाव पीछे रखना वैसी ही भूल होती जैसी
+              // सूर्यग्रहण वाली आँख की चेतावनी छिपाना (→ D-056)।
+              //
+              // आरती पर यह नारंगी है (आग है), चालीसा पर सादी — वहाँ ⚠
+              // सिर्फ़ इतना कहता है कि "यह पाठ है, पूजा नहीं"।
+              if (paath.saavdhani.isNotEmpty) ...[
+                const SizedBox(height: VidhivatSpacing.sm),
+                Chetavni(
+                  paath.saavdhani,
+                  serious: paath.prakar == PaathPrakar.aarti,
+                  icon: paath.prakar == PaathPrakar.aarti
+                      ? Icons.local_fire_department_outlined
+                      : Icons.info_outline,
+                ),
+              ],
 
               // ── पाठ ──
               const SizedBox(height: VidhivatSpacing.xxl),
@@ -200,26 +230,26 @@ class _PaathReaderState extends State<PaathReader> {
                 const SizedBox(height: VidhivatSpacing.sm),
               ],
 
-              // ── स्रोत ──
-              const SizedBox(height: VidhivatSpacing.xxl),
-              const VidhivatSectionHeader(title: 'यह पाठ कहाँ से आया'),
-              const SizedBox(height: VidhivatSpacing.sm),
-              VidhivatSurfaceCard(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('रचयिता — ${paath.rachnakar}', style: type.bodyMedium),
-                    const SizedBox(height: VidhivatSpacing.xxs),
-                    Text('भाषा — ${paath.bhasha}', style: type.bodyMedium),
-                    const SizedBox(height: VidhivatSpacing.xxs),
-                    Text('पद्धति — ${paath.strot.paddhati}',
-                        style: type.bodyMedium),
-                    if (paath.strot.note.isNotEmpty) ...[
-                      const SizedBox(height: VidhivatSpacing.sm),
-                      Text(paath.strot.note, style: type.bodySmall),
-                    ],
-                  ],
-                ),
+              // ── स्रोत — अब ⓘ के पीछे (→ D-045) ──────────────────
+              //
+              // यह पूरा कार्ड पहले खुला पड़ा रहता था, पाठ के ठीक बाद।
+              // पाठ करने वाले को हवाला नहीं चाहिए — पर जिसे चाहिए उसे
+              // मिलना चाहिए, इसलिए मिटाया नहीं, एक दबाव पीछे किया।
+              //
+              // ⚠️ **रचयिता और भाषा ऊपर वाली लाइन में अब भी खुली हैं**
+              // ("चालीसा · हनुमान जी · गोस्वामी तुलसीदास · अवधी")। वही
+              // असली attribution है और वो छिपनी नहीं चाहिए।
+              const SizedBox(height: VidhivatSpacing.xl),
+              VidhivatSrotButton(
+                label: 'यह पाठ कहाँ से आया',
+                panktiyan: [
+                  VidhivatSrotPankti('रचयिता', paath.rachnakar),
+                  VidhivatSrotPankti('भाषा', paath.bhasha),
+                  VidhivatSrotPankti('पद्धति', paath.strot.paddhati),
+                  VidhivatSrotPankti('क्षेत्र', paath.strot.kshetra),
+                  VidhivatSrotPankti('और', paath.strot.note),
+                ],
+                antimBaat: 'आपके घर या क्षेत्र का चलन अलग हो तो वही सही है।',
               ),
             ],
           ),
@@ -227,6 +257,25 @@ class _PaathReaderState extends State<PaathReader> {
       ),
     );
   }
+}
+
+/// "कब पढ़ें" और "कैसे पढ़ें" — एक ही ℹ के पीछे।
+///
+/// यह पाठ के **ऊपर** रहता है, नीचे नहीं — क्योंकि ये बातें
+/// पाठ से *पहले* की हैं। पर एक पंक्ति में, दो खंडों में नहीं।
+class _KabAurKaisePadhein extends StatelessWidget {
+  final Paath paath;
+
+  const _KabAurKaisePadhein({required this.paath});
+
+  @override
+  Widget build(BuildContext context) => VidhivatSrotButton(
+        label: 'कब और कैसे पढ़ें',
+        panktiyan: [
+          VidhivatSrotPankti('कब पढ़ें', paath.kabPadhein),
+          VidhivatSrotPankti('कैसे पढ़ें', paath.kaisePadheinVidhi),
+        ],
+      );
 }
 
 /// एक पद — दोहा या चौपाई।
@@ -264,10 +313,8 @@ class _KhandCard extends StatelessWidget {
               const SizedBox(height: VidhivatSpacing.sm),
               Text(khand.arth, style: type.mantraMeaning),
             ],
-            if (arthDikhao && khand.sthiti != MantraSthiti.paas) ...[
-              const SizedBox(height: VidhivatSpacing.xs),
-              Text('जाँच बाकी', style: type.caption),
-            ],
+            // हर पद के नीचे "जाँच बाकी" लिखना बंद — तैंतालीस पदों पर
+            // तैंतालीस बार वही बात, और यूज़र के लिए उसमें कोई काम नहीं।
           ] else
             Text(
               '— अभी नहीं जोड़ा गया —',

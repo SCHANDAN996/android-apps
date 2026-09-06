@@ -117,7 +117,6 @@ class _VidhiHome extends StatelessWidget {
         .where((entry) =>
             entry.shreni != Shreni.nitya && entry.shreni != Shreni.tyohar)
         .toList(growable: false);
-    final checked = data.entries.where((entry) => entry.paas).length;
 
     return VidhivatSacredBackdrop(
       child: Panna(
@@ -128,7 +127,11 @@ class _VidhiHome extends StatelessWidget {
           VidhivatSpacing.xxl,
         ),
         children: [
-          Text('विधि', style: VidhivatTheme.typographyOf(context).pageTitle),
+          // नीचे वाली पट्टी पर इस पन्ने का नाम "पूजा" है — शीर्षक भी
+          // वही होना चाहिए, वरना यूज़र को लगता है वो कहीं और आ गया।
+          // (चुनते पूजा हैं, पढ़ते उसकी विधि हैं — इसीलिए कार्ड पर
+          // "विधि देखें" ही लिखा रहता है।)
+          Text('पूजा', style: VidhivatTheme.typographyOf(context).pageTitle),
           const SizedBox(height: VidhivatSpacing.xs),
           Text(
             'आज क्या करना चाहते हैं?',
@@ -177,13 +180,20 @@ class _VidhiHome extends StatelessWidget {
             _PlannedPujaGrid(entries: section.entries),
           ],
           const SizedBox(height: VidhivatSpacing.xxl),
+          // ── यहाँ पहले हमारी अपनी प्रगति छपती थी — अब नहीं ─────────
+          //
+          // वाक्य था: "अभी 0 / 28 पंडित जी से जाँची गई हैं।" वो हमारे
+          // अंदर के काम का हिसाब है, यूज़र के काम की बात नहीं — और वो
+          // पढ़कर आदमी बाक़ी सब पर भी शक करने लगता है। ऐप जो जानता है
+          // वो हर पूजा के अपने पन्ने पर लिखा है (स्रोत, पद्धति, क्षेत्र)।
+          //
+          // यहाँ अब सिर्फ़ वही बचा है जो यूज़र को सचमुच जानना है —
+          // कितनी खुली हैं और कितनी आ रही हैं (→ D-041, D-042)।
+          // गिनती "28 खुली हैं" भी जा चुकी — वो सूची सामने है,
+          // गिनने की ज़रूरत नहीं। बचा सिर्फ़ वो, जो धुँधले कार्डों का
+          // मतलब बताता है (→ D-056)।
           Text(
-            checked == data.entries.length
-                ? 'सारी ${data.entries.length} पूजाएँ पंडित जी से जाँची हुई हैं।'
-                : '${data.entries.length} पूजा-विधियाँ उपलब्ध हैं; अभी '
-                    '$checked / ${data.entries.length} पंडित जी से जाँची गई हैं। '
-                    '$plannedPujaCount आने वाली पूजा और मार्गदर्शिकाएँ '
-                    'सामग्री तैयार होने तक “जल्द आएगी” रहेंगी।',
+            '$plannedPujaCount पूजाएँ अभी तैयार हो रही हैं — उन पर “जल्द आएगी” लिखा है।',
             style: VidhivatTheme.typographyOf(context).caption,
           ),
         ],
@@ -229,12 +239,9 @@ class _FeaturedPuja extends StatelessWidget {
                 icon: Icons.format_list_numbered,
               ),
               VidhivatStatusChip(label: entry.shreni.naam),
-              if (!entry.paas)
-                const VidhivatStatusChip(
-                  label: 'जाँच बाकी',
-                  tone: VidhivatStatusTone.warning,
-                  icon: Icons.info_outline,
-                ),
+              // "जाँच बाकी" वाला नारंगी chip यहाँ से हटा दिया गया —
+              // वो ठीक "विधि देखें" बटन के ऊपर बैठकर हर पूजा को
+              // संदिग्ध बना रहा था, और उससे यूज़र कुछ कर भी नहीं सकता था।
             ],
           ),
           const SizedBox(height: VidhivatSpacing.lg),

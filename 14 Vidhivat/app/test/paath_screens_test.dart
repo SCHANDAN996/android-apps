@@ -130,15 +130,32 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('पाठ भरा है फिर भी "जाँच बाकी" दिखता है', (tester) async {
-      // स्मृति से लिखा गया है — छपी पुस्तिका से मिलाए बिना यह चेतावनी
-      // हटनी नहीं चाहिए (→ D-022 वाला ही नियम)।
+    testWidgets('पूरा भरा पाठ बिना किसी चेतावनी के खुलता है', (tester) async {
+      // ⚠️ यह जाँच पहले उल्टी थी — 43 / 43 पद भरे होने पर भी "जाँच बाकी
+      // है (43 / 43 पद भरे हैं)" दिखना ज़रूरी माना गया था।
+      //
+      // फ़ोन पर देखने से पकड़ा गया (4 सित 2026): वो डिब्बा यूज़र से कह
+      // रहा था *"सब कुछ मौजूद है, पर भरोसा मत करो"* — और उससे वो कुछ कर
+      // भी नहीं सकता था। चेतावनी अब सिर्फ़ वहाँ जहाँ पाठ सचमुच **कम** है
+      // (→ D-042)।
       phoneNaap(tester);
       await tester.pumpWidget(app(const PaathScreen(id: 'hanuman_chalisa')));
       await tester.pumpAndSettle();
 
-      expect(find.text('जाँच बाकी है'), findsOneWidget);
-      expect(find.textContaining('43 / 43 पद भरे हैं'), findsOneWidget);
+      expect(find.text('जाँच बाकी है'), findsNothing);
+      expect(find.text('यह पाठ अभी अधूरा है'), findsNothing);
+      expect(find.text('पाठ अभी जोड़ा नहीं गया'), findsNothing);
+    });
+
+    testWidgets('आधा भरा पाठ — चेतावनी दिखती है, गिनती के साथ',
+        (tester) async {
+      // यही असली चेतावनी है, और यह ग़ायब नहीं होनी चाहिए (→ D-022)।
+      phoneNaap(tester);
+      await tester.pumpWidget(app(PaathReader(paath: _adhuraPaath())));
+      await tester.pumpAndSettle();
+
+      expect(find.text('यह पाठ अभी अधूरा है'), findsOneWidget);
+      expect(find.textContaining('2 में से 1 पद'), findsOneWidget);
       expect(find.text('पाठ अभी जोड़ा नहीं गया'), findsNothing);
     });
 
@@ -156,14 +173,14 @@ void main() {
       expect(find.text('जाँच बाकी है'), findsNothing);
     });
 
-    testWidgets('गणेश आरती का पाठ आ गया है और जाँच बाकी दिखती है',
+    testWidgets('गणेश आरती का पाठ आ गया है, और चुपचाप खुलता है',
         (tester) async {
       phoneNaap(tester);
       await tester.pumpWidget(app(const PaathScreen(id: 'ganesh_aarti')));
       await tester.pumpAndSettle();
 
       expect(find.text('पाठ अभी जोड़ा नहीं गया'), findsNothing);
-      expect(find.text('जाँच बाकी है'), findsOneWidget);
+      expect(find.text('जाँच बाकी है'), findsNothing);
       // पद lazy list में नीचे हैं — बिना स्क्रॉल किए बने ही नहीं होते।
       await scrollTak(tester, find.textContaining('जय गणेश'));
       expect(find.textContaining('जय गणेश'), findsWidgets);
@@ -202,6 +219,9 @@ void main() {
       await tester.pumpWidget(app(const MoreScreen()));
       await tester.pumpAndSettle();
 
+      // कार्ड अब "पूजा के साधन" में नहीं, अपने "पढ़ने के लिए" वाले
+      // हिस्से में है — यानी तह से नीचे (→ D-051)।
+      await scrollTak(tester, find.text('चालीसा और आरती'));
       expect(find.text('चालीसा और आरती'), findsOneWidget);
       await tester.tap(find.text('चालीसा और आरती'));
       await tester.pumpAndSettle();
@@ -211,6 +231,33 @@ void main() {
 }
 
 /// एक ऐसा पाठ जिसमें जगह बनी है पर शब्द नहीं आए — सिर्फ़ जाँच के लिए।
+/// आधा भरा पाठ — एक पद आया, एक बाक़ी। असली फ़ाइलों से बाँधने पर यह जाँच
+/// कंटेंट भरते ही टूट जाती, इसलिए यहीं अपना बनाया।
+Paath _adhuraPaath() => Paath.parse('adhura.json', '''
+{
+  "schemaVersion": 1,
+  "id": "adhuri_aarti",
+  "naam": "अधूरी आरती",
+  "upnaam": [],
+  "prakar": "aarti",
+  "devta": "कोई देवता",
+  "rachnakar": "पारंपरिक",
+  "bhasha": "हिंदी",
+  "parichay": "सिर्फ़ जाँच के लिए।",
+  "kabPadhein": "कभी भी",
+  "kaisePadhein": "खड़े होकर",
+  "khand": [
+    {"shirshak": "पहला पद", "dev": "जय देव जय देव", "roman": "", "arth": "",
+     "audio": "", "sthiti": "draft"},
+    {"shirshak": "दूसरा पद", "dev": "", "roman": "", "arth": "",
+     "audio": "", "sthiti": "khaali"}
+  ],
+  "bharosa": "kam",
+  "strot": {"paddhati": "जाँच", "kshetra": "जाँच", "note": ""},
+  "jaanch": {"panditNaam": "", "tarikh": "", "paas": false}
+}
+''');
+
 Paath _khaaliPaath() => Paath.parse('jaanch.json', '''
 {
   "schemaVersion": 1,

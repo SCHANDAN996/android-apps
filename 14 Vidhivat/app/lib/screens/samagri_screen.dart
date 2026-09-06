@@ -100,6 +100,10 @@ class _SamagriScreenState extends State<SamagriScreen> {
                 ),
                 const SizedBox(height: VidhivatSpacing.xl),
               ],
+              // क्या नहीं चढ़ाना — यहीं दिखता है, क्योंकि सामग्री
+              // जुटाते वक़्त ही आदमी सोचता है "यह भी रख लूँ" (→ A10)।
+              _KyaNahiChadhana(vidhi: vidhi),
+              const SizedBox(height: VidhivatSpacing.xl),
               Text(
                 'टिक सिर्फ़ आपके फ़ोन में रहती है। "सारी टिक हटाओ" से अगली '
                 'बार के लिए सूची साफ़ हो जाती है।',
@@ -285,6 +289,94 @@ class _MaterialChecklistTile extends StatelessWidget {
               ),
             )
           : null,
+    );
+  }
+}
+
+/// "क्या नहीं चढ़ाना" — सामग्री की सूची के नीचे (→ A10)।
+///
+/// ## यह यहाँ क्यों है
+///
+/// ये चीज़ें सामग्री-सूची में पहले से नहीं थीं — नतीजा सही था। पर **जो
+/// सूची में नहीं है, यूज़र उसे ख़ुद जोड़ लेता है** ("तुलसी तो हर पूजा
+/// में चढ़ती है" सोचकर)। इसलिए *"नहीं है"* काफ़ी नहीं; *"मत चढ़ाइए, और
+/// यह रही वजह"* लिखना पड़ता है — और ठीक उसी पन्ने पर, जहाँ आदमी सामान
+/// जुटा रहा होता है।
+///
+/// देवता-विशेष निषेध पूजा की JSON से आते हैं ([Vidhi.varjya]); जो हर
+/// पूजा पर लागू हैं वे [saamaanyaVarjya] से।
+class _KyaNahiChadhana extends StatelessWidget {
+  final Vidhi vidhi;
+
+  const _KyaNahiChadhana({required this.vidhi});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final typography = VidhivatTheme.typographyOf(context);
+    final sab = [...vidhi.varjya, ...saamaanyaVarjya];
+
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(VidhivatSpacing.md),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.4),
+        borderRadius: BorderRadius.circular(VidhivatSpacing.sm),
+        border: Border.all(
+          color: theme.colorScheme.outlineVariant.withValues(alpha: 0.5),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.do_not_disturb_on_outlined,
+                  size: 20, color: theme.colorScheme.onSurfaceVariant),
+              const SizedBox(width: VidhivatSpacing.xs),
+              Expanded(
+                child: Text('क्या नहीं चढ़ाना', style: typography.sectionTitle),
+              ),
+            ],
+          ),
+          const SizedBox(height: VidhivatSpacing.xs),
+          Text(
+            'ये चीज़ें सूची में जान-बूझकर नहीं हैं — इन्हें अपनी तरफ़ से '
+            'मत जोड़िए।',
+            textAlign: TextAlign.justify,
+            style: typography.bodyMedium,
+          ),
+          const SizedBox(height: VidhivatSpacing.md),
+          for (final v in sab) ...[
+            Text('• ${v.vastu}', style: typography.bodyLarge),
+            const SizedBox(height: VidhivatSpacing.xxs),
+            Padding(
+              padding: const EdgeInsets.only(left: VidhivatSpacing.sm),
+              // ── "स्रोत: … · भरोसा: …" वाली लाइन यहाँ थी ─────
+              //
+              // हर चीज़ के नीचे एक, यानी शिव अभिषेक में आठ बार। वो
+              // हमारा हवाला है, यूज़र का काम नहीं — सामान जुटाता आदमी
+              // "मत चढ़ाइए" और "यह रही वजह" पढ़ता है, हवाला नहीं।
+              // बारहों हवाले अब नीचे एक ही ℹ में हैं (→ D-056)।
+              child: Text(v.kyon,
+                  textAlign: TextAlign.justify, style: typography.bodyMedium),
+            ),
+            const SizedBox(height: VidhivatSpacing.md),
+          ],
+          VidhivatSrotButton(
+            label: 'ये निषेध कहाँ से आए',
+            panktiyan: [
+              for (final v in sab)
+                VidhivatSrotPankti(
+                  v.vastu,
+                  'स्रोत: ${v.strot}  ·  भरोसा: ${v.bharosa.naam}',
+                ),
+            ],
+            antimBaat: 'जिन निषेधों पर पद्धतियों में मतभेद है, वे सूची में '
+                'लिखे ही नहीं गए — अपने घर का चलन ही मानिए।',
+          ),
+        ],
+      ),
     );
   }
 }

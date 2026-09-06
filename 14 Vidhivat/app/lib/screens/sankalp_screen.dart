@@ -91,107 +91,151 @@ class _SankalpScreenState extends State<SankalpScreen> {
           ),
         ],
       ),
-      body: VidhivatSacredBackdrop(
-        child: Panna(
-          children: [
-            VidhivatSacredHero(
-              eyebrow: '${tarikh(day)} · ${settings.city.name}',
-              title: 'संकल्प',
-              subtitle:
-                  '${p.varaName} · ${p.masaFullName} ${p.pakshaName} ${p.tithi.name}',
-              icon: Icons.auto_awesome_outlined,
-              compact: true,
-              semanticLabel: 'आज का संकल्प, ${tarikh(day)}',
-            ),
-            const SizedBox(height: VidhivatSpacing.xl),
+      // ⚠️ नीचे ऐप की अपनी कोई पट्टी नहीं है, इसलिए `SafeArea` के बिना
+      // सबसे नीचे का हिस्सा Android के नेविगेशन बार के पीछे चला जाता है।
+      // `top: false` इसलिए कि ऊपर AppBar पहले से सँभाल लेता है।
+      body: SafeArea(
+        top: false,
+        child: VidhivatSacredBackdrop(
+          child: Panna(
+            children: [
+              VidhivatSacredHero(
+                eyebrow: '${tarikh(day)} · ${settings.city.name}',
+                title: 'संकल्प',
+                subtitle:
+                    '${p.varaName} · ${p.masaFullName} ${p.pakshaName} ${p.tithi.name}',
+                icon: Icons.auto_awesome_outlined,
+                compact: true,
+                semanticLabel: 'आज का संकल्प, ${tarikh(day)}',
+              ),
+              const SizedBox(height: VidhivatSpacing.xl),
 
-            // ── किस काम का संकल्प ──
-            const VidhivatSectionHeader(title: 'किस काम का संकल्प?'),
-            const SizedBox(height: VidhivatSpacing.sm),
-            Wrap(
-              spacing: VidhivatSpacing.xs,
-              runSpacing: VidhivatSpacing.xs,
-              children: [
-                for (final label in commonPurposes.keys)
-                  ChoiceChip(
-                    label: Text(label),
-                    selected: _purposeLabel == label,
-                    onSelected: (_) => setState(() => _purposeLabel = label),
+              // ── किस काम का संकल्प ──
+              //
+              // पहले यहाँ उन्नीसों काम चिप्स की शक़्ल में खुले पड़े थे —
+              // फ़ोन पर पाँच-छह पंक्तियाँ, यानी लगभग आधी स्क्रीन। और वो
+              // भी **संकल्प के ऊपर**, जो असल में देखने की चीज़ है।
+              //
+              // चुनना एक बार का काम है, पढ़ना बार-बार का। इसलिए चुनाव
+              // एक पंक्ति में सिमट गया; दबाने पर पूरी सूची खुलती है।
+              const VidhivatSectionHeader(title: 'किस काम का संकल्प?'),
+              const SizedBox(height: VidhivatSpacing.sm),
+              VidhivatSurfaceCard(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: VidhivatSpacing.md,
+                ),
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton<String>(
+                    value: _purposeLabel,
+                    isExpanded: true,
+                    borderRadius: VidhivatRadius.large,
+                    // उँगली के लिए पूरी ऊँचाई, सूची में भी।
+                    itemHeight: kMinInteractiveDimension,
+                    icon: const Icon(Icons.arrow_drop_down),
+                    items: [
+                      for (final label in commonPurposes.keys)
+                        DropdownMenuItem(
+                          value: label,
+                          child: Text(label, style: type.bodyLarge),
+                        ),
+                    ],
+                    onChanged: (chuna) {
+                      if (chuna != null) setState(() => _purposeLabel = chuna);
+                    },
                   ),
-              ],
-            ),
-            const SizedBox(height: VidhivatSpacing.xl),
-
-            // ── पूरा या सरल ──
-            _SankalpFormatSelector(
-              showFull: _showFull,
-              onChanged: (value) => setState(() => _showFull = value),
-            ),
-            const SizedBox(height: VidhivatSpacing.lg),
-            const _SankalpVisualIntro(),
-            const SizedBox(height: VidhivatSpacing.lg),
-
-            // ── संकल्प का पाठ — बहुत बड़े अक्षरों में ──
-            //
-            // आदमी ज़मीन पर बैठा है, हाथ में जल है, फ़ोन दो फ़ुट दूर।
-            // यहाँ छोटा फ़ॉन्ट किसी काम का नहीं।
-            VidhivatSurfaceCard(
-              variant: VidhivatCardVariant.elevated,
-              semanticLabel: 'बना हुआ ${_showFull ? 'पूरा' : 'सरल'} संकल्प',
-              child: SelectableText(
-                text,
-                style: type.mantra.copyWith(
-                  fontSize: type.bodyLarge.fontSize,
-                  fontWeight: FontWeight.w500,
                 ),
               ),
-            ),
-            const SizedBox(height: VidhivatSpacing.lg),
+              const SizedBox(height: VidhivatSpacing.xl),
 
-            // पहले यहाँ "संस्कृत का रूप पंडित जी से जाँचा नहीं गया"
-            // लिखा था। अब संस्कृत के रूप सचमुच सुधर चुके हैं — तिथि की
-            // सप्तमी, यजमान का लिंग, सन्धि-समास, जगह का रूप — और जहाँ
-            // कई प्रयोग चलते हैं वे दर्ज हैं (→ docs/18)। इसलिए वाक्य
-            // वही कहता है जो सच है (→ D-042)।
-            if (sankalp.needsPanditReview)
-              const Chetavni(
-                'यह संकल्प आज के पंचांग से अपने आप बना है — संवत्, ऋतु, '
-                'मास, तिथि, वार, नक्षत्र सब भरकर। संस्कृत के रूप व्याकरण '
-                'और छपी पद्धतियों से मिलाए गए हैं। कुछ जगह पद्धतियाँ आपस '
-                'में अलग हैं — आपके घर का चलन अलग हो तो वही सही है।',
+              // ── पूरा या सरल ──
+              _SankalpFormatSelector(
+                showFull: _showFull,
+                onChanged: (value) => setState(() => _showFull = value),
               ),
+              const SizedBox(height: VidhivatSpacing.lg),
+              const _SankalpVisualIntro(),
+              const SizedBox(height: VidhivatSpacing.lg),
 
-            // ── हिस्सों में — साथ-साथ बोलने के लिए ──
-            const VidhivatSectionHeader(
-              title: 'हिस्सों में',
-              supportingText: 'एक-एक करके बोलना हो तो',
-            ),
-            const SizedBox(height: VidhivatSpacing.sm),
-            VidhivatSurfaceCard(
-              padding: EdgeInsets.zero,
-              child: Column(
-                children: [
-                  for (final part in sankalp.parts)
-                    Pankti(part.label, part.value),
+              // ── संकल्प का पाठ — बहुत बड़े अक्षरों में ──
+              //
+              // आदमी ज़मीन पर बैठा है, हाथ में जल है, फ़ोन दो फ़ुट दूर।
+              // यहाँ छोटा फ़ॉन्ट किसी काम का नहीं।
+              VidhivatSurfaceCard(
+                variant: VidhivatCardVariant.elevated,
+                semanticLabel: 'बना हुआ ${_showFull ? 'पूरा' : 'सरल'} संकल्प',
+                child: SelectableText(
+                  text,
+                  style: type.mantra.copyWith(
+                    fontSize: type.bodyLarge.fontSize,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              const SizedBox(height: VidhivatSpacing.lg),
+
+              // ── पद्धति वाला डिब्बा यहाँ था — अब सबसे नीचे ℹ में ──
+              //
+              // वो चार लाइन का था और संकल्प के ठीक नीचे बैठता था — यानी जिस
+              // वाक्य को बोलने आदमी आया है, उसी के नीचे चार लाइन सफ़ाई।
+              // और `needsPanditReview` का default ही `true` है, इसलिए वो शर्त
+              // नहीं थी — हमेशा दिखता था (→ D-056)।
+
+              // ── हिस्सों में — साथ-साथ बोलने के लिए ──
+              const VidhivatSectionHeader(
+                title: 'हिस्सों में',
+                supportingText: 'एक-एक करके बोलना हो तो',
+              ),
+              const SizedBox(height: VidhivatSpacing.sm),
+              VidhivatSurfaceCard(
+                padding: EdgeInsets.zero,
+                child: Column(
+                  children: [
+                    for (final part in sankalp.parts)
+                      Pankti(part.label, part.value),
+                  ],
+                ),
+              ),
+              const SizedBox(height: VidhivatSpacing.xl),
+
+              VidhivatSurfaceCard(
+                padding: EdgeInsets.zero,
+                child: ListTile(
+                  leading: const Icon(Icons.person_outline),
+                  title: Text('${person.name} · ${person.gotra} गोत्र'),
+                  subtitle: Text(
+                    person.isDefaultProfile
+                        ? 'यही आपका अपना नाम है · बदलने के लिए दबाएँ'
+                        : 'अभी इसी व्यक्ति के नाम से संकल्प बन रहा है · बदलने के लिए दबाएँ',
+                  ),
+                  onTap: _openPeopleManager,
+                ),
+              ),
+              
+              // ── "यह संकल्प कैसे बना" — पन्ने के सबसे नीचे ────
+              //
+              // छिपाया कुछ नहीं — बटन पर साफ़ लिखा है कि अंदर क्या है। जो
+              // आदमी संकल्प बोलने आया है उसे यह नहीं चाहिए; जो जाँचने आया
+              // है उसे पूरा मिलता है (→ D-045, D-056)।
+              const SizedBox(height: VidhivatSpacing.xl),
+              const VidhivatSrotButton(
+                label: 'यह संकल्प कैसे बना',
+                panktiyan: [
+                  VidhivatSrotPankti(
+                    'कहाँ से मान आए',
+                    'आज के पंचांग से अपने आप — संवत्, अयन, ऋतु, मास, पक्ष, '
+                    'तिथि, वार और नक्षत्र सब भरकर। स्थान आपके चुने हुए शहर से।',
+                  ),
+                  VidhivatSrotPankti(
+                    'संस्कृत के रूप',
+                    'व्याकरण और छपी पद्धतियों से मिलाए गए हैं — तिथि की सप्तमी, '
+                    'यजमान का लिंग, सन्धि-समास और जगह का रूप।',
+                  ),
                 ],
+                antimBaat: 'कुछ जगह पद्धतियाँ आपस में अलग हैं — आपके घर का '
+                    'चलन अलग हो तो वही सही है।',
               ),
-            ),
-            const SizedBox(height: VidhivatSpacing.xl),
-
-            VidhivatSurfaceCard(
-              padding: EdgeInsets.zero,
-              child: ListTile(
-                leading: const Icon(Icons.person_outline),
-                title: Text('${person.name} · ${person.gotra} गोत्र'),
-                subtitle: Text(
-                  person.isDefaultProfile
-                      ? 'आपका default profile · बदलने के लिए दबाएँ'
-                      : 'अभी इसी व्यक्ति के नाम से संकल्प बन रहा है · बदलने के लिए दबाएँ',
-                ),
-                onTap: _openPeopleManager,
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -326,7 +370,7 @@ class _SankalpPeopleManagerState extends State<_SankalpPeopleManager> {
       builder: (dialogContext) => AlertDialog(
         title: const Text('सभी लोग हटाएँ?'),
         content: const Text(
-          'इस फ़ोन के सभी संकल्प profiles हट जाएँगे। यह वापस नहीं होगा।',
+          'इस फ़ोन में सहेजे गए सारे नाम हट जाएँगे। यह वापस नहीं होगा।',
         ),
         actions: [
           TextButton(
@@ -380,7 +424,7 @@ class _SankalpPeopleManagerState extends State<_SankalpPeopleManager> {
                   ),
                   title: Text(person.name),
                   subtitle: Text(
-                    '${person.gotra} गोत्र${person.isDefaultProfile ? ' · default profile' : ''}',
+                    '${person.gotra} गोत्र${person.isDefaultProfile ? ' · आपका अपना नाम' : ''}',
                   ),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -414,7 +458,7 @@ class _SankalpPeopleManagerState extends State<_SankalpPeopleManager> {
             TextButton.icon(
               onPressed: people.isEmpty ? null : _clearPeople,
               icon: const Icon(Icons.delete_sweep_outlined),
-              label: const Text('सभी profiles हटाएँ'),
+              label: const Text('सभी नाम हटाएँ'),
             ),
           ],
         ),
@@ -871,167 +915,172 @@ class NaamPoochhoState extends State<NaamPoochho> {
 
     return Scaffold(
       appBar: AppBar(title: const Text('संकल्प')),
-      body: Panna(
-        children: [
-          Text('आपका नाम और गोत्र', style: theme.textTheme.headlineSmall),
-          const SizedBox(height: VidhivatSpacing.xs),
-          Text(
-            'संकल्प में यही बोला जाता है। एक बार भरिए — फिर हर बार अपने आप '
-            'आ जाएगा।\n\nयह सिर्फ़ आपके फ़ोन में रहेगा, कहीं नहीं जाएगा।',
-            style: theme.textTheme.bodyMedium,
-          ),
-          const SizedBox(height: VidhivatSpacing.xl),
-          TextField(
-            controller: _naam,
-            style: VidhivatTheme.typographyOf(context).bodyLarge,
-            decoration: const InputDecoration(
-              labelText: 'नाम',
-              hintText: 'जैसे — चन्दन सिंह',
-              border: OutlineInputBorder(),
+      // ⚠️ नीचे कोई पट्टी नहीं है — `SafeArea` के बिना आख़िरी बटन
+      // Android के नेविगेशन बार के पीछे चला जाता है।
+      body: SafeArea(
+        top: false,
+        child: Panna(
+          children: [
+            Text('आपका नाम और गोत्र', style: theme.textTheme.headlineSmall),
+            const SizedBox(height: VidhivatSpacing.xs),
+            Text(
+              'संकल्प में यही बोला जाता है। एक बार भरिए — फिर हर बार अपने आप '
+              'आ जाएगा।\n\nयह सिर्फ़ आपके फ़ोन में रहेगा, कहीं नहीं जाएगा।',
+              style: theme.textTheme.bodyMedium,
             ),
-          ),
-          if (_needsHindiConfirmation) ...[
-            const SizedBox(height: VidhivatSpacing.sm),
+            const SizedBox(height: VidhivatSpacing.xl),
             TextField(
-              controller: _hindiNaam,
-              onChanged: (_) {
-                _hindiNaamEdited = true;
-                _useHindiSuggestion = true;
-                setState(() {});
-              },
+              controller: _naam,
               style: VidhivatTheme.typographyOf(context).bodyLarge,
               decoration: const InputDecoration(
-                labelText: 'संकल्प में जाने वाला हिन्दी नाम',
-                helperText:
-                    'यह सुझाव है — spelling देखकर confirm या सुधार लें।',
+                labelText: 'नाम',
+                hintText: 'जैसे — चन्दन सिंह',
                 border: OutlineInputBorder(),
               ),
             ),
-            const SizedBox(height: VidhivatSpacing.xs),
+            if (_needsHindiConfirmation) ...[
+              const SizedBox(height: VidhivatSpacing.sm),
+              TextField(
+                controller: _hindiNaam,
+                onChanged: (_) {
+                  _hindiNaamEdited = true;
+                  _useHindiSuggestion = true;
+                  setState(() {});
+                },
+                style: VidhivatTheme.typographyOf(context).bodyLarge,
+                decoration: const InputDecoration(
+                  labelText: 'संकल्प में जाने वाला हिन्दी नाम',
+                  helperText:
+                      'यह सुझाव है — spelling देखकर confirm या सुधार लें।',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              const SizedBox(height: VidhivatSpacing.xs),
+              Text(
+                'संकल्प में कौन-सा नाम आए?',
+                style: theme.textTheme.labelLarge,
+              ),
+              const SizedBox(height: VidhivatSpacing.xs),
+              SegmentedButton<bool>(
+                segments: const [
+                  ButtonSegment(value: true, label: Text('हिन्दी सुझाव')),
+                  ButtonSegment(value: false, label: Text('English नाम')),
+                ],
+                selected: {_useHindiSuggestion},
+                onSelectionChanged: (selection) {
+                  setState(() => _useHindiSuggestion = selection.first);
+                },
+              ),
+            ],
+            const SizedBox(height: VidhivatSpacing.xl),
+            // ── गोत्र (→ A12) ────────────────────────────────────────
+            // पहले ऐप चुपचाप "कश्यप" भर देता था और यूज़र को पता ही नहीं
+            // चलता था। अब यह एक चुनाव है, और "पता नहीं" चुनने पर ऐप
+            // वजह भी बताता है।
+            Text('गोत्र', style: theme.textTheme.titleMedium),
+            const SizedBox(height: VidhivatSpacing.xxs),
             Text(
-              'संकल्प में कौन-सा नाम आए?',
-              style: theme.textTheme.labelLarge,
+              'घर में किसी बड़े से पूछ लीजिए — संकल्प में यही बोला जाता है।',
+              style: theme.textTheme.bodySmall,
             ),
-            const SizedBox(height: VidhivatSpacing.xs),
+            const SizedBox(height: VidhivatSpacing.sm),
             SegmentedButton<bool>(
               segments: const [
-                ButtonSegment(value: true, label: Text('हिन्दी सुझाव')),
-                ButtonSegment(value: false, label: Text('English नाम')),
+                ButtonSegment(value: true, label: Text('गोत्र पता है')),
+                ButtonSegment(value: false, label: Text('पता नहीं')),
               ],
-              selected: {_useHindiSuggestion},
+              selected: {_gotraPataHai},
               onSelectionChanged: (selection) {
-                setState(() => _useHindiSuggestion = selection.first);
+                setState(() {
+                  _gotraPataHai = selection.first;
+                  if (!_gotraPataHai) _gotra = gotraJabPataNaHo;
+                });
               },
             ),
-          ],
-          const SizedBox(height: VidhivatSpacing.xl),
-          // ── गोत्र (→ A12) ────────────────────────────────────────
-          // पहले ऐप चुपचाप "कश्यप" भर देता था और यूज़र को पता ही नहीं
-          // चलता था। अब यह एक चुनाव है, और "पता नहीं" चुनने पर ऐप
-          // वजह भी बताता है।
-          Text('गोत्र', style: theme.textTheme.titleMedium),
-          const SizedBox(height: VidhivatSpacing.xxs),
-          Text(
-            'घर में किसी बड़े से पूछ लीजिए — संकल्प में यही बोला जाता है।',
-            style: theme.textTheme.bodySmall,
-          ),
-          const SizedBox(height: VidhivatSpacing.sm),
-          SegmentedButton<bool>(
-            segments: const [
-              ButtonSegment(value: true, label: Text('गोत्र पता है')),
-              ButtonSegment(value: false, label: Text('पता नहीं')),
-            ],
-            selected: {_gotraPataHai},
-            onSelectionChanged: (selection) {
-              setState(() {
-                _gotraPataHai = selection.first;
-                if (!_gotraPataHai) _gotra = gotraJabPataNaHo;
-              });
-            },
-          ),
-          const SizedBox(height: VidhivatSpacing.sm),
-          if (_gotraPataHai)
-            Wrap(
-              spacing: VidhivatSpacing.xs,
-              runSpacing: VidhivatSpacing.xs,
-              children: [
-                for (final g in commonGotras)
-                  ChoiceChip(
-                    label: Text(g),
-                    selected: _gotra == g,
-                    onSelected: (_) => setState(() => _gotra = g),
-                  ),
+            const SizedBox(height: VidhivatSpacing.sm),
+            if (_gotraPataHai)
+              Wrap(
+                spacing: VidhivatSpacing.xs,
+                runSpacing: VidhivatSpacing.xs,
+                children: [
+                  for (final g in commonGotras)
+                    ChoiceChip(
+                      label: Text(g),
+                      selected: _gotra == g,
+                      onSelected: (_) => setState(() => _gotra = g),
+                    ),
+                ],
+              )
+            else
+              const _GotraPataNahiSamjhao(),
+            const SizedBox(height: VidhivatSpacing.xl),
+            // ── लिंग (→ A3) ──────────────────────────────────────────
+            // पहले ऐप हर यजमान को पुरुष मान लेता था, इसलिए हर स्त्री के
+            // लिए भी "…गोत्रोत्पन्नः" बनता था। संकल्प बोलने वाले के बारे
+            // में वाक्य है — उसे बोलने वाले से मिलना ही चाहिए।
+            Text('संकल्प किसके नाम से', style: theme.textTheme.titleMedium),
+            const SizedBox(height: VidhivatSpacing.xxs),
+            Text(
+              _yajaman == Yajaman.stri
+                  ? 'संकल्प में "गोत्रोत्पन्ना … नाम्नी अहम्" आएगा।'
+                  : 'संकल्प में "गोत्रोत्पन्नः … नामाहम्" आएगा।',
+              style: theme.textTheme.bodySmall,
+            ),
+            const SizedBox(height: VidhivatSpacing.sm),
+            SegmentedButton<Yajaman>(
+              segments: const [
+                ButtonSegment(value: Yajaman.purush, label: Text('पुरुष')),
+                ButtonSegment(value: Yajaman.stri, label: Text('स्त्री')),
               ],
-            )
-          else
-            const _GotraPataNahiSamjhao(),
-          const SizedBox(height: VidhivatSpacing.xl),
-          // ── लिंग (→ A3) ──────────────────────────────────────────
-          // पहले ऐप हर यजमान को पुरुष मान लेता था, इसलिए हर स्त्री के
-          // लिए भी "…गोत्रोत्पन्नः" बनता था। संकल्प बोलने वाले के बारे
-          // में वाक्य है — उसे बोलने वाले से मिलना ही चाहिए।
-          Text('संकल्प किसके नाम से', style: theme.textTheme.titleMedium),
-          const SizedBox(height: VidhivatSpacing.xxs),
-          Text(
-            _yajaman == Yajaman.stri
-                ? 'संकल्प में "गोत्रोत्पन्ना … नाम्नी अहम्" आएगा।'
-                : 'संकल्प में "गोत्रोत्पन्नः … नामाहम्" आएगा।',
-            style: theme.textTheme.bodySmall,
-          ),
-          const SizedBox(height: VidhivatSpacing.sm),
-          SegmentedButton<Yajaman>(
-            segments: const [
-              ButtonSegment(value: Yajaman.purush, label: Text('पुरुष')),
-              ButtonSegment(value: Yajaman.stri, label: Text('स्त्री')),
-            ],
-            selected: {_yajaman},
-            onSelectionChanged: (selection) {
-              setState(() => _yajaman = selection.first);
-            },
-          ),
-          const SizedBox(height: VidhivatSpacing.xl),
-          // ── जगह किस तरह की (→ A5) ────────────────────────────────
-          // "क्षेत्र" तीर्थों के लिए है; साधारण शहर के लिए "नगर"।
-          // ऐप शहर के नाम से अंदाज़ा लगा लेता है — यहाँ सिर्फ़ सुधार।
-          Text('${settings.city.name} —', style: theme.textTheme.titleMedium),
-          const SizedBox(height: VidhivatSpacing.xxs),
-          Text(
-            'संकल्प में "${settings.city.name}नाम्नि '
-            '${_sthanPrakarShabd(_sthanPrakar)}" आएगा।',
-            style: theme.textTheme.bodySmall,
-          ),
-          const SizedBox(height: VidhivatSpacing.sm),
-          SegmentedButton<SthanPrakar>(
-            segments: const [
-              ButtonSegment(value: SthanPrakar.nagar, label: Text('शहर')),
-              ButtonSegment(value: SthanPrakar.gram, label: Text('गाँव')),
-              ButtonSegment(value: SthanPrakar.kshetra, label: Text('तीर्थ')),
-            ],
-            selected: {_sthanPrakar},
-            onSelectionChanged: (selection) {
-              setState(() => _sthanPrakar = selection.first);
-            },
-          ),
-          const SizedBox(height: VidhivatSpacing.lg),
-          VidhivatButton(
-            label: 'संकल्प बनाइए',
-            onPressed: _confirmedNaam.isEmpty
-                ? null
-                : () async {
-                    await settings.setYajman(
-                      name: _confirmedNaam,
-                      gotra: _gotra,
-                      yajaman: _yajaman,
-                      gotraPataHai: _gotraPataHai,
-                    );
-                    if (_sthanPrakar != settings.sthanPrakar) {
-                      await settings.setSthanPrakar(_sthanPrakar);
-                    }
-                    widget.onDone();
-                  },
-            fullWidth: true,
-          ),
-        ],
+              selected: {_yajaman},
+              onSelectionChanged: (selection) {
+                setState(() => _yajaman = selection.first);
+              },
+            ),
+            const SizedBox(height: VidhivatSpacing.xl),
+            // ── जगह किस तरह की (→ A5) ────────────────────────────────
+            // "क्षेत्र" तीर्थों के लिए है; साधारण शहर के लिए "नगर"।
+            // ऐप शहर के नाम से अंदाज़ा लगा लेता है — यहाँ सिर्फ़ सुधार।
+            Text('${settings.city.name} —', style: theme.textTheme.titleMedium),
+            const SizedBox(height: VidhivatSpacing.xxs),
+            Text(
+              'संकल्प में "${settings.city.name}नाम्नि '
+              '${_sthanPrakarShabd(_sthanPrakar)}" आएगा।',
+              style: theme.textTheme.bodySmall,
+            ),
+            const SizedBox(height: VidhivatSpacing.sm),
+            SegmentedButton<SthanPrakar>(
+              segments: const [
+                ButtonSegment(value: SthanPrakar.nagar, label: Text('शहर')),
+                ButtonSegment(value: SthanPrakar.gram, label: Text('गाँव')),
+                ButtonSegment(value: SthanPrakar.kshetra, label: Text('तीर्थ')),
+              ],
+              selected: {_sthanPrakar},
+              onSelectionChanged: (selection) {
+                setState(() => _sthanPrakar = selection.first);
+              },
+            ),
+            const SizedBox(height: VidhivatSpacing.lg),
+            VidhivatButton(
+              label: 'संकल्प बनाइए',
+              onPressed: _confirmedNaam.isEmpty
+                  ? null
+                  : () async {
+                      await settings.setYajman(
+                        name: _confirmedNaam,
+                        gotra: _gotra,
+                        yajaman: _yajaman,
+                        gotraPataHai: _gotraPataHai,
+                      );
+                      if (_sthanPrakar != settings.sthanPrakar) {
+                        await settings.setSthanPrakar(_sthanPrakar);
+                      }
+                      widget.onDone();
+                    },
+              fullWidth: true,
+            ),
+          ],
+        ),
       ),
     );
   }

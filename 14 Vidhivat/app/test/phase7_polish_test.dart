@@ -137,7 +137,7 @@ void main() {
       app(PujaCompletionScreen(vidhi: vidhi), textScale: 2),
     );
     expect(find.text('मार्गदर्शिका पूरी हुई'), findsOneWidget);
-    expect(find.text('विधि पर लौटें'), findsOneWidget);
+    expect(find.text('होम पर लौटें'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 }
