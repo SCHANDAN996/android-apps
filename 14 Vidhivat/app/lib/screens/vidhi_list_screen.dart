@@ -342,7 +342,15 @@ class _PujaGridCard extends StatelessWidget {
                         child: Image.asset(
                           artwork.assetPath,
                           fit: BoxFit.contain,
-                          cacheWidth: cacheSize,
+                          // ⚠ **`cacheWidth` और `cacheHeight` दोनों मत देना।**
+                          //
+                          // दोनों देने पर Flutter बिंब को ठीक उसी नाप पर **खींच** देता
+                          // है — अनुपात नहीं बचाता (`ImageDescriptor.instantiateCodec`)। और
+                          // `BoxFit.contain` उसे सुधार नहीं सकता, क्योंकि जो bitmap उसे मिलता
+                          // है वो पहले से खिंचा हुआ होता है।
+                          //
+                          // यहाँ डिब्बा वर्गाकार है, इसलिए खिंचाव कम था (720×900 वाले
+                          // चित्रों पर 1.25×) — पर था ज़रूर। → D-057
                           cacheHeight: cacheSize,
                           filterQuality: FilterQuality.high,
                           errorBuilder: (context, error, stackTrace) => Icon(
@@ -450,7 +458,15 @@ class _PlannedPujaCard extends StatelessWidget {
                               child: Image.asset(
                                 entry.artwork.assetPath,
                                 fit: BoxFit.contain,
-                                cacheWidth: cacheSize,
+                                // ⚠ **`cacheWidth` और `cacheHeight` दोनों मत देना।**
+                                //
+                                // दोनों देने पर Flutter बिंब को ठीक उसी नाप पर **खींच** देता
+                                // है — अनुपात नहीं बचाता (`ImageDescriptor.instantiateCodec`)। और
+                                // `BoxFit.contain` उसे सुधार नहीं सकता, क्योंकि जो bitmap उसे मिलता
+                                // है वो पहले से खिंचा हुआ होता है।
+                                //
+                                // यहाँ डिब्बा वर्गाकार है, इसलिए खिंचाव कम था (720×900 वाले
+                                // चित्रों पर 1.25×) — पर था ज़रूर। → D-057
                                 cacheHeight: cacheSize,
                                 filterQuality: FilterQuality.high,
                                 errorBuilder: (context, error, stackTrace) =>

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../vidhi/devotional_assets.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 import '../widgets/dakshina_card.dart';
@@ -65,14 +66,30 @@ class DakshinaScreen extends StatelessWidget {
               VidhivatSpacing.xxl,
             ),
             children: [
+              // ── ऊपर hero — बाक़ी पन्नों जैसा ─────────────────
+              //
+              // यह इकलौता पन्ना था जो सीधे एक कार्ड से शुरू होता था — बाक़ी
+              // सब पर hero है। माँगने वाला पन्ना ही अजनबी लगे, यह ठीक नहीं।
+              //
+              // चित्र दीया है, किसी देवता का नहीं — माँग के साथ किसी देवता का
+              // चेहरा रखना ठीक नहीं लगता (→ D-053 का भाव)।
+              VidhivatSacredHero(
+                eyebrow: 'ऐप के लिए',
+                title: DakshinaShabd.shirshak,
+                subtitle: DakshinaShabd.hisaab,
+                icon: Icons.volunteer_activism_outlined,
+                artworkAsset: DevotionalAssets.diya.assetPath,
+                artworkSemanticLabel: DevotionalAssets.diya.semanticLabel,
+                compact: true,
+                semanticLabel: DakshinaShabd.shirshak,
+              ),
+              const SizedBox(height: VidhivatSpacing.xl),
               VidhivatSurfaceCard(
                 variant: VidhivatCardVariant.elevated,
                 padding: const EdgeInsets.all(VidhivatSpacing.lg),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(DakshinaShabd.shirshak, style: type.sectionTitle),
-                    const SizedBox(height: VidhivatSpacing.sm),
                     Text(
                       'यह ऐप पूरी तरह मुफ़्त है। कोई विज्ञापन नहीं, कोई '
                       'खाता नहीं, कोई सदस्यता नहीं। जो आज इसमें है, वह '
@@ -86,6 +103,12 @@ class DakshinaScreen extends StatelessWidget {
                       DakshinaShabd.vaikalpik,
                       style:
                           type.caption.copyWith(color: colors.textSecondary),
+                    ),
+                    const SizedBox(height: VidhivatSpacing.xs),
+                    // पैसा किस रास्ते जाएगा — यह बिना पूछे हर आदमी सोचता है।
+                    Text(
+                      DakshinaShabd.bhugtaan,
+                      style: type.caption.copyWith(color: colors.textSecondary),
                     ),
                   ],
                 ),

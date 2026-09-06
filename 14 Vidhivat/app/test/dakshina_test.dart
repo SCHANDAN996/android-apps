@@ -113,16 +113,19 @@ void main() {
     });
 
     test('छह राशियाँ, और उनके id वही जो Play Console में बनेंगे', () {
-      expect(dakshinaRaashiyan.length, 6);
+      expect(dakshinaRaashiyan.length, 7);
       expect(
         dakshinaRaashiyan.map((r) => r.id).toList(),
-        ['dakshina_21', 'dakshina_51', 'dakshina_101', 'dakshina_251',
-         'dakshina_501', 'dakshina_1100'],
+        ['dakshina_11', 'dakshina_21', 'dakshina_51', 'dakshina_101',
+         'dakshina_251', 'dakshina_501', 'dakshina_1100'],
       );
       expect(dakshinaRaashiyan.map((r) => r.rupaye).toList(),
-          [21, 51, 101, 251, 501, 1100]);
+          [11, 21, 51, 101, 251, 501, 1100]);
       // सबसे छोटी राशि सबसे पहले — मना करने लायक छोटा पहला क़दम।
-      expect(dakshinaRaashiyan.first.rupaye, 21);
+      // ₹11 सबसे पहले — मना करने लायक़ छोटा पहला क़दम।
+      expect(dakshinaRaashiyan.first.rupaye, 11);
+      // और Play की भारत वाली सबसे कम क़ीमत (₹10) से नीचे कोई न हो।
+      expect(dakshinaRaashiyan.every((r) => r.rupaye >= 10), isTrue);
     });
   });
 
@@ -141,9 +144,42 @@ void main() {
       expect(button.onPressed, isNull,
           reason: 'राशि चुने बिना दक्षिणा का बटन कभी नहीं चलना चाहिए');
 
-      // छहों राशियाँ दिखती हैं।
+      // सातों राशियाँ दिखती हैं — ₹11 समेत।
       for (final raashi in dakshinaRaashiyan) {
         expect(find.text(raashi.label), findsOneWidget);
+      }
+      expect(find.text('₹11'), findsOneWidget);
+
+      // बटन फीका क्यों है, यह देखने वाले को भी दिखना चाहिए — पहले यह
+      // सिर्फ़ semantics में था।
+      expect(find.byKey(const Key('dakshina_pehle_chuniye')), findsOneWidget);
+    });
+
+    testWidgets('₹11 चुनकर दी जा सकती है', (tester) async {
+      final dwar = _NakliDwar(DakshinaNatija.mili);
+      dakshina.dwar = dwar;
+      await tester.pumpWidget(app(const DakshinaChunav()));
+
+      await tester.tap(find.text('₹11'));
+      await tester.pump();
+      await tester.tap(find.text('दक्षिणा दें'));
+      await tester.pumpAndSettle();
+
+      expect(dwar.maangiGayi?.rupaye, 11);
+      expect(dwar.maangiGayi?.id, 'dakshina_11');
+    });
+
+    testWidgets('हर चिप उँगली भर बड़ी है', (tester) async {
+      // ⚠ यहाँ ज़रा सी चूक से पैसे वाला काम रुक जाता है।
+      await tester.pumpWidget(app(const DakshinaChunav()));
+      for (final raashi in dakshinaRaashiyan) {
+        final naap = tester.getSize(find.ancestor(
+          of: find.text(raashi.label),
+          matching: find.byType(ConstrainedBox),
+        ).first);
+        expect(naap.height,
+            greaterThanOrEqualTo(VidhivatActionSize.minimumTouchTarget),
+            reason: '${raashi.label} की चिप बहुत छोटी है');
       }
     });
 
@@ -156,6 +192,8 @@ void main() {
         find.widgetWithText(VidhivatButton, 'दक्षिणा दें'),
       );
       expect(button.onPressed, isNotNull);
+      // चुनते ही वो सहायक पंक्ति हट जाती है — उसका काम पूरा हुआ।
+      expect(find.byKey(const Key('dakshina_pehle_chuniye')), findsNothing);
     });
 
     testWidgets('मिलने पर धन्यवाद — कोई रसीद, कोई बैज, कोई सुविधा नहीं',

@@ -34,6 +34,18 @@ abstract final class DakshinaShabd {
   static const vaikalpik = 'दक्षिणा वैकल्पिक है। देने या न देने से ऐप में '
       'कुछ नहीं बदलता — कोई पूजा या सुविधा बंद नहीं होती।';
 
+  /// पैसा किस रास्ते जाता है — यह पूछे बिना हर आदमी सोचता है।
+  ///
+  /// Play Billing में ऐप को कार्ड या UPI का कोई विवरण मिलता ही
+  /// नहीं — पूरी ख़रीद Play की अपनी शीट में होती है। यह डर मिटाना
+  /// ज़रूरी है, और यह सच भी है।
+  static const bhugtaan = 'भुगतान Google Play से होता है। ऐप आपके '
+      'कार्ड या UPI का कोई विवरण नहीं देखता।';
+
+  /// बटन बंद क्यों है — सुनने वाले को semantics से पता चल जाता
+  /// था, पर देखने वाले को सिर्फ़ एक फीका बटन दिखता था।
+  static const pehleChuniye = 'पहले ऊपर से राशि चुनिए।';
+
   static const vistaar = 'यह राशि कहाँ लगती है';
 
   static const dhanyavaad = 'आपकी दक्षिणा मिल गई। इसी से अगली पूजा जुड़ेगी।';
@@ -146,6 +158,16 @@ class _DakshinaChunavState extends State<DakshinaChunav> {
           isLoading: _chalRahiHai,
           fullWidth: true,
         ),
+        // बटन फीका क्यों है, यह दिखना भी चाहिए — semantics में पहले
+        // से था, पर आँख से देखने वाले को सिर्फ़ बंद बटन दिखता था।
+        if (_chuni == null && _gadbad == null) ...[
+          const SizedBox(height: VidhivatSpacing.xs),
+          Text(
+            DakshinaShabd.pehleChuniye,
+            key: const Key('dakshina_pehle_chuniye'),
+            style: type.caption.copyWith(color: colors.textSecondary),
+          ),
+        ],
         if (_gadbad != null) ...[
           const SizedBox(height: VidhivatSpacing.sm),
           Text(
@@ -183,10 +205,22 @@ class _RaashiChip extends StatelessWidget {
         horizontal: VidhivatSpacing.lg,
         vertical: VidhivatSpacing.sm,
       ),
-      child: Text(
-        raashi.label,
-        style: type.cardTitle.copyWith(
-          color: chuni ? colors.primary : colors.textPrimary,
+      // ⚠ ऊँचाई ख़ुद बाँधनी पड़ती है। सिर्फ़ padding से चिप 44 dp के
+      // आस-पास रह जाती थी — यहाँ ज़रा सी चूक से पैसे वाला काम रुक
+      // जाता है, इसलिए पूरी उँगली भर जगह दी जाती है।
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(
+          minHeight: VidhivatActionSize.minimumTouchTarget,
+          minWidth: VidhivatActionSize.minimumTouchTarget,
+        ),
+        child: Center(
+          widthFactor: 1,
+          child: Text(
+            raashi.label,
+            style: type.cardTitle.copyWith(
+              color: chuni ? colors.primary : colors.textPrimary,
+            ),
+          ),
         ),
       ),
     );

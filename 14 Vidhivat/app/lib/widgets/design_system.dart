@@ -750,7 +750,19 @@ class _HeroArtwork extends StatelessWidget {
           assetPath,
           fit: BoxFit.contain,
           alignment: Alignment.bottomCenter,
-          cacheWidth: (width * pixelRatio).round(),
+          // ⚠ **`cacheWidth` और `cacheHeight` दोनों मत देना।**
+          //
+          // दोनों देने पर Flutter बिंब को ठीक उसी नाप पर **खींच** देता
+          // है — अनुपात नहीं बचाता (`ImageDescriptor.instantiateCodec`)। और
+          // `BoxFit.contain` उसे सुधार नहीं सकता, क्योंकि जो bitmap उसे मिलता
+          // है वो पहले से खिंचा हुआ होता है।
+          //
+          // फ़ोन पर पकड़ा गया (6 सितम्बर): भगवान का चित्र 720×900 का है
+          // (खड़ा, 0.80) — और यहाँ डिब्बा चौड़ा है, इसलिए चेहरा चौड़ाई में
+          // फैला हुआ दिखता था।
+          //
+          // सारे चित्र या खड़े हैं या वर्गाकार, और डिब्बा वर्गाकार या लेटा —
+          // यानी सीमा हमेशा **ऊँचाई** तय करती है। इसलिए सिर्फ़ `cacheHeight`।
           cacheHeight: (height * pixelRatio).round(),
           filterQuality: FilterQuality.high,
           errorBuilder: (context, error, stackTrace) => DecoratedBox(
