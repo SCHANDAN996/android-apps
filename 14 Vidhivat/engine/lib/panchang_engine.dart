@@ -35,6 +35,7 @@ export 'src/surya_grahan.dart';
 export 'src/names.dart';
 export 'src/sankalp.dart';
 export 'src/vrat.dart';
+export 'src/taalne_wale_din.dart';
 export 'src/shubh_muhurat.dart';
 export 'src/panchang.dart';
 export 'src/place.dart' show Place;

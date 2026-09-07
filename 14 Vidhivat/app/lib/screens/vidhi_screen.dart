@@ -7,6 +7,7 @@ import '../vidhi/devotional_assets.dart';
 import '../vidhi/vidhi.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
+import '../widgets/taalne_wale_din_card.dart';
 import 'samagri_screen.dart';
 import 'vidhi_player_screen.dart';
 
@@ -193,6 +194,18 @@ class _PreparationDetailState extends State<_PreparationDetail> {
                     const VidhivatSectionHeader(title: 'कब करें'),
                     const SizedBox(height: VidhivatSpacing.sm),
                     _ContextCard(vidhi: vidhi),
+                    // ── "कौन से दिन टालने हैं" (→ D-059) ────────────────
+                    //
+                    // सिर्फ़ उन पूजाओं पर जिनमें तारीख़ **चुननी पड़ती है** — गृह प्रवेश,
+                    // मुंडन, उपनयन, वाहन पूजा। दीपावली पर यह बेमतलब होता — तारीख़
+                    // तो पंचांग तय करता है, चुनने को कुछ है ही नहीं।
+                    //
+                    // ⚠ यह मुहूर्त नहीं है। D-019 की रोक अब भी क़ायम है — यह सिर्फ़
+                    // वो कहता है जो पंचांग से सीधे निकलता है, सुझाता कुछ नहीं।
+                    if (vidhi.kabKarein.tarikhKhudChunni) ...[
+                      const SizedBox(height: VidhivatSpacing.md),
+                      const TaalneWaleDinCard(),
+                    ],
                     const SizedBox(height: VidhivatSpacing.xxl),
                     VidhivatSectionHeader(
                       title: 'सामग्री',

@@ -561,12 +561,27 @@ class KabKarein {
   /// के नियम से आती हैं, या नहीं आतीं।
   final bool dohrata;
 
+  /// **तारीख़ यूज़र ख़ुद चुनता है** (→ D-059)।
+  ///
+  /// [dohrata] से यह अलग बात है, और फ़र्क़ ज़रूरी है। दोनों ही
+  /// `false` होती हैं — पर वजह अलग:
+  ///
+  /// - **दीपावली** साल में एक बार आती है, पर उसकी तारीख़ पंचांग
+  ///   तय करता है — चुनने को कुछ है ही नहीं → `false`
+  /// - **गृह प्रवेश** में तारीख़ **चुननी पड़ती है**, और वही सबसे
+  ///   बड़ी चिंता है → `true`
+  ///
+  /// सिर्फ़ `true` वाली पूजाओं पर *"कौन से दिन टालने हैं"* दिखता है।
+  /// दीपावली पर वो दिखाना बेमतलब होता — तारीख़ तो तय है।
+  final bool tarikhKhudChunni;
+
   const KabKarein({
     required this.saral,
     required this.tithiSuchi,
     required this.vaarSuchi,
     required this.note,
     required this.dohrata,
+    required this.tarikhKhudChunni,
   });
 
   factory KabKarein.fromJson(String file, Map<String, dynamic> j) {
@@ -588,6 +603,7 @@ class KabKarein {
       vaarSuchi: vaars,
       note: _str(file, j, 'note', required: false),
       dohrata: _bool(file, j, 'dohrata'),
+      tarikhKhudChunni: _bool(file, j, 'tarikhKhudChunni'),
     );
   }
 }
