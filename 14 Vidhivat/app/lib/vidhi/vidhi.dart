@@ -494,6 +494,15 @@ class Charan {
   /// लक्ष्मी दोनों की आरती होती है।
   final List<String> paath;
 
+  /// इस कदम पर सुनाई जाने वाली कथा — `assets/katha/` में (→ D-060)।
+  ///
+  /// वही वजह जो [paath] की थी: एक ही कथा कई पूजाओं में चलती है,
+  /// और वो तीन हज़ार शब्द की होती है। पूजा की JSON में रखने पर वो
+  /// कई फ़ाइलों में दोहराती।
+  ///
+  /// ख़ाली हो तो ऐप साफ़ कहता है कि कथा अभी जोड़ी नहीं गई।
+  final String katha;
+
   const Charan({
     required this.shirshak,
     required this.vivaran,
@@ -501,6 +510,7 @@ class Charan {
     required this.samayMinute,
     required this.vishesh,
     this.paath = const [],
+    this.katha = '',
   });
 
   factory Charan.fromJson(String file, Map<String, dynamic> j) {
@@ -517,6 +527,7 @@ class Charan {
         _str(file, j, 'vishesh', required: false, fallback: 'saada'),
       ),
       paath: _strList(file, j, 'paath'),
+      katha: _str(file, j, 'katha', required: false),
     );
   }
 }

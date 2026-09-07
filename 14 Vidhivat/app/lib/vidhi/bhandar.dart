@@ -1,5 +1,6 @@
 import 'package:flutter/services.dart' show rootBundle;
 
+import 'katha.dart';
 import 'paath.dart';
 import 'vidhi.dart';
 
@@ -57,6 +58,39 @@ class VidhiBhandar {
 }
 
 /// पूरे ऐप के लिए एक ही भंडार।
+/// कथाओं का भंडार (→ D-060)।
+///
+/// कथा पूजा की JSON में नहीं रखी जाती — वो तीन हज़ार शब्द की होती
+/// है, और **एक ही कथा कई पूजाओं में चलती है**। इसलिए वो अपनी
+/// फ़ाइल में रहती है — ठीक वैसे जैसे आरती `assets/paath/` में रहती है
+/// (→ D-039)।
+class KathaBhandar {
+  static const _dir = 'assets/katha';
+
+  final Map<String, Katha> _khuliHuin = {};
+
+  Future<Katha> katha(String id) async {
+    final yaad = _khuliHuin[id];
+    if (yaad != null) return yaad;
+
+    final path = pathFor(id);
+    final k = Katha.parse(path, await rootBundle.loadString(path));
+    if (k.id != id) {
+      throw VidhiFormatException(
+        path,
+        'फ़ाइल का नाम "$id" है पर अंदर id "${k.id}" लिखी है',
+      );
+    }
+    _khuliHuin[id] = k;
+    return k;
+  }
+
+  static String pathFor(String id) => '$_dir/$id.json';
+}
+
+/// पूरे ऐप के लिए एक ही कथा-भंडार।
+final kathaBhandar = KathaBhandar();
+
 final vidhiBhandar = VidhiBhandar();
 
 /// चालीसा और स्तोत्र का भंडार — पूजाओं से अलग (→ D-039)।
