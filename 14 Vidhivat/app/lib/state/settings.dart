@@ -4,6 +4,10 @@ import 'package:flutter/foundation.dart';
 import 'package:panchang_engine/panchang_engine.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'shahar.dart';
+
+export 'shahar.dart';
+
 /// संकल्प में चुना जाने वाला व्यक्ति। यह केवल इसी फ़ोन में रहता है।
 class SankalpPerson {
   final String id;
@@ -172,17 +176,22 @@ class AppSettings extends ChangeNotifier {
   Future<void> load() async {
     _prefs = await SharedPreferences.getInstance();
 
+    // ── सहेजा हुआ शहर ───────────────────────────────
+    //
+    // ⚠ कुछ सहेजा न हो तो **डिफ़ॉल्ट पर लौटना ज़रूरी है।** पहले
+    // यहाँ कुछ नहीं होता था, यानी `_city` पिछली बार वाला ही बना
+    // रह जाता था। जाँच ने पकड़ा (→ D-058)।
     final savedCity = _cityFromJson(_prefs!.getString(_kCityDetails));
     if (savedCity != null) {
       _city = savedCity;
     } else {
       final cityName = _prefs!.getString(_kCity);
-      if (cityName != null) {
-        _city = indianCities.firstWhere(
-          (c) => c.name == cityName,
-          orElse: () => indianCities.first,
-        );
-      }
+      _city = cityName == null
+          ? indianCities.first
+          : indianCities.firstWhere(
+              (c) => c.name == cityName,
+              orElse: () => indianCities.first,
+            );
     }
 
     _masaSystem = _prefs!.getString(_kMasaSystem) == 'amanta'
@@ -225,6 +234,20 @@ class AppSettings extends ChangeNotifier {
       _sthanPrakar = sthanPrakarForCity(value.name);
     }
     notifyListeners();
+  }
+
+  /// ── जगह का नाम यूज़र ने ख़ुद लिखा (→ D-058) ───────────
+  ///
+  /// सूची चाहे जितनी बड़ी हो, गाँव उसमें नहीं आएगा — और संकल्प में
+  /// वही नाम बोला जाता है।
+  ///
+  /// ⚠ नाम बदलने से **पंचांग नहीं बदलता** — अक्षांश-देशांतर वही
+  /// रहते हैं। पर जगह का **प्रकार** दोबारा आँका जाता है — कोई
+  /// "काशी" लिखे तो वह तीर्थ है, बशर्ते यूज़र ने ख़ुद कुछ न चुना हो।
+  Future<void> setSthanNaam(String naam) async {
+    final saaf = naam.trim();
+    if (saaf.isEmpty) return;
+    await setCity(_city.withNaam(saaf));
   }
 
   /// जगह का प्रकार यूज़र ने ख़ुद चुना — नगर, गाँव या तीर्थ।
@@ -606,151 +629,3 @@ class PujaPlayerProgress {
     );
   }
 }
-
-/// एक शहर — नाम, राज्य, और उसका अक्षांश-देशांतर।
-class City {
-  final String name;
-  final String state;
-  final double latitude;
-  final double longitude;
-  final bool isDeviceDetected;
-
-  const City(
-    this.name,
-    this.state,
-    this.latitude,
-    this.longitude, {
-    this.isDeviceDetected = false,
-  });
-
-  factory City.fromDeviceLocation(double latitude, double longitude) {
-    final nearby = nearestIndianCity(latitude, longitude);
-    return City(
-      nearby.name,
-      nearby.state,
-      latitude,
-      longitude,
-      isDeviceDetected: true,
-    );
-  }
-
-  factory City.fromJson(Map<String, dynamic> json) {
-    final name = json['name'];
-    final state = json['state'];
-    final latitude = json['latitude'];
-    final longitude = json['longitude'];
-    if (name is! String ||
-        state is! String ||
-        latitude is! num ||
-        longitude is! num ||
-        latitude < -90 ||
-        latitude > 90 ||
-        longitude < -180 ||
-        longitude > 180) {
-      throw const FormatException('Invalid local city');
-    }
-    return City(
-      name,
-      state,
-      latitude.toDouble(),
-      longitude.toDouble(),
-      isDeviceDetected: json['isDeviceDetected'] == true,
-    );
-  }
-
-  Map<String, Object> toJson() => {
-        'name': name,
-        'state': state,
-        'latitude': latitude,
-        'longitude': longitude,
-        'isDeviceDetected': isDeviceDetected,
-      };
-
-  String get cacheKey => '$name|$state|$latitude|$longitude';
-  String get locationSourceLabel => isDeviceDetected
-      ? '$state · फ़ोन से पहचाना गया स्थान'
-      : '$state · हाथ से चुना गया';
-
-  /// इंजन के लिए जगह। समय-क्षेत्र भारत का ही (IST)।
-  Place get place => Place(
-        name: name,
-        latitude: latitude,
-        longitude: longitude,
-      );
-
-  @override
-  String toString() => '$name, $state';
-}
-
-/// Offline nearest-city label. Panchang calculations still use the exact
-/// device coordinates retained in [City], not the centre of this known city.
-City nearestIndianCity(double latitude, double longitude) {
-  return indianCities.reduce((closest, candidate) {
-    final closestDistance = _coordinateDistanceSquared(
-      latitude,
-      longitude,
-      closest.latitude,
-      closest.longitude,
-    );
-    final candidateDistance = _coordinateDistanceSquared(
-      latitude,
-      longitude,
-      candidate.latitude,
-      candidate.longitude,
-    );
-    return candidateDistance < closestDistance ? candidate : closest;
-  });
-}
-
-double _coordinateDistanceSquared(
-  double latitudeA,
-  double longitudeA,
-  double latitudeB,
-  double longitudeB,
-) {
-  final latitudeDelta = latitudeA - latitudeB;
-  final longitudeDelta = longitudeA - longitudeB;
-  return latitudeDelta * latitudeDelta + longitudeDelta * longitudeDelta;
-}
-
-/// शहरों की सूची — देशांतर के साथ, ताकि सूर्योदय सही निकले।
-///
-/// ⚠️ सूर्योदय जगह पर निर्भर करता है, और **तिथि सूर्योदय पर तय होती है** —
-/// इसलिए ग़लत शहर चुनने से पंचांग एक दिन खिसक सकता है।
-const List<City> indianCities = [
-  City('दिल्ली', 'दिल्ली', 28.6139, 77.2090),
-  City('मुंबई', 'महाराष्ट्र', 19.0760, 72.8777),
-  City('कोलकाता', 'पश्चिम बंगाल', 22.5726, 88.3639),
-  City('चेन्नई', 'तमिलनाडु', 13.0827, 80.2707),
-  City('बेंगलुरु', 'कर्नाटक', 12.9716, 77.5946),
-  City('हैदराबाद', 'तेलंगाना', 17.3850, 78.4867),
-  City('पुणे', 'महाराष्ट्र', 18.5204, 73.8567),
-  City('अहमदाबाद', 'गुजरात', 23.0225, 72.5714),
-  City('जयपुर', 'राजस्थान', 26.9124, 75.7873),
-  City('लखनऊ', 'उत्तर प्रदेश', 26.8467, 80.9462),
-  City('कानपुर', 'उत्तर प्रदेश', 26.4499, 80.3319),
-  City('वाराणसी', 'उत्तर प्रदेश', 25.3176, 82.9739),
-  City('प्रयागराज', 'उत्तर प्रदेश', 25.4358, 81.8463),
-  City('पटना', 'बिहार', 25.5941, 85.1376),
-  City('गया', 'बिहार', 24.7955, 85.0002),
-  City('मुज़फ़्फ़रपुर', 'बिहार', 26.1197, 85.3910),
-  City('राँची', 'झारखंड', 23.3441, 85.3096),
-  City('भोपाल', 'मध्य प्रदेश', 23.2599, 77.4126),
-  City('इंदौर', 'मध्य प्रदेश', 22.7196, 75.8577),
-  City('उज्जैन', 'मध्य प्रदेश', 23.1765, 75.7885),
-  City('नागपुर', 'महाराष्ट्र', 21.1458, 79.0882),
-  City('सूरत', 'गुजरात', 21.1702, 72.8311),
-  City('चंडीगढ़', 'चंडीगढ़', 30.7333, 76.7794),
-  City('अमृतसर', 'पंजाब', 31.6340, 74.8723),
-  City('देहरादून', 'उत्तराखंड', 30.3165, 78.0322),
-  City('हरिद्वार', 'उत्तराखंड', 29.9457, 78.1642),
-  City('आगरा', 'उत्तर प्रदेश', 27.1767, 78.0081),
-  City('गोरखपुर', 'उत्तर प्रदेश', 26.7606, 83.3732),
-  City('जोधपुर', 'राजस्थान', 26.2389, 73.0243),
-  City('रायपुर', 'छत्तीसगढ़', 21.2514, 81.6296),
-  City('भुवनेश्वर', 'ओडिशा', 20.2961, 85.8245),
-  City('गुवाहाटी', 'असम', 26.1445, 91.7362),
-  City('तिरुपति', 'आंध्र प्रदेश', 13.6288, 79.4192),
-  City('मदुरै', 'तमिलनाडु', 9.9252, 78.1198),
-  City('कोच्चि', 'केरल', 9.9312, 76.2673),
-];

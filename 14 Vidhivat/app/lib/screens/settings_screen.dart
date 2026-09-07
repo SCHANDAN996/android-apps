@@ -65,6 +65,26 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 icon: const Icon(Icons.edit_location_alt_outlined),
                 label: const Text('शहर हाथ से चुनें'),
               ),
+              const SizedBox(height: VidhivatSpacing.md),
+              
+              // ── अपनी जगह का नाम (→ D-058) ───────────────────
+              //
+              // सूची में 480 शहर हैं, फिर भी गाँव उसमें कभी नहीं आएगा —
+              // भारत में छह लाख से ज़्यादा गाँव हैं। और संकल्प में जगह का
+              // नाम बोला जाता है, इसलिए वहाँ नज़दीकी शहर का नाम बोलना
+              // सच नहीं होता।
+              VidhivatSurfaceCard(
+                padding: EdgeInsets.zero,
+                child: ListTile(
+                  leading: const Icon(Icons.drive_file_rename_outline),
+                  title: const Text('अपनी जगह का नाम'),
+                  subtitle: Text(settings.city.naamKhudLikha
+                      ? 'संकल्प में यही बोला जाएगा · बदलने के लिए दबाएँ'
+                      : 'गाँव या क़स्बे का नाम ख़ुद लिखिए · पंचांग वैसा ही रहेगा'),
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: _editSthanNaam,
+                ),
+              ),
               const SizedBox(height: VidhivatSpacing.xxl),
               const VidhivatSectionHeader(
                   title: 'मास पद्धति',
@@ -150,6 +170,61 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
       ),
     );
+  }
+
+  /// जगह का नाम ख़ुद लिखने का पर्चा।
+  ///
+  /// ⚠ यहाँ सिर्फ़ **नाम** बदलता है। अक्षांश-देशांतर वही रहते हैं,
+  /// इसलिए सूर्योदय और तिथि पर कोई फ़र्क़ नहीं पड़ता (→ D-058)।
+  Future<void> _editSthanNaam() async {
+    final controller = TextEditingController(text: settings.city.name);
+    final naya = await showDialog<String>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('अपनी जगह का नाम'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'जो नाम संकल्प में बोला जाए — अपना गाँव, क़स्बा या मुहल्ला। '
+              'सूर्योदय और तिथि पहले जैसे ही रहेंगे।',
+            ),
+            const SizedBox(height: VidhivatSpacing.md),
+            TextField(
+              controller: controller,
+              autofocus: true,
+              textCapitalization: TextCapitalization.words,
+              decoration: const InputDecoration(
+                labelText: 'जगह का नाम',
+                hintText: 'जैसे — अंबिकापुर',
+                border: OutlineInputBorder(),
+              ),
+              onSubmitted: (v) => Navigator.of(context).pop(v),
+            ),
+            const SizedBox(height: VidhivatSpacing.sm),
+            Text(
+              'संकल्प संस्कृत में बोला जाता है, इसलिए नाम देवनागरी में लिखें।',
+              style: VidhivatTheme.typographyOf(context).caption,
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: const Text('रहने दें'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(controller.text),
+            child: const Text('रख लीजिए'),
+          ),
+        ],
+      ),
+    );
+    controller.dispose();
+    if (naya != null && naya.trim().isNotEmpty) {
+      await settings.setSthanNaam(naya);
+    }
   }
 
   Future<void> _chooseCity() async {
