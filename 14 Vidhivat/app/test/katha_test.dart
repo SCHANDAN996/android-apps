@@ -90,6 +90,71 @@ void main() {
     });
   });
 
+  // ── चारों कथाएँ — एक ही पैमाना ───────────────────────
+  //
+  // ⚠ ये जाँचें हर नई कथा पर अपने आप लग जाती हैं — सूची पूजाओं से
+  // बनती है, हाथ से लिखी नहीं।
+  group('हर कथा एक ही पैमाने पर खरी उतरती है', () {
+    late List<Katha> sab;
+
+    setUp(() async {
+      final ids = <String>{};
+      for (final e in await vidhiBhandar.suchi()) {
+        final v = await vidhiBhandar.vidhi(e.id);
+        for (final c in v.charan) {
+          if (c.katha.isNotEmpty) ids.add(c.katha);
+        }
+      }
+      sab = [for (final id in ids) await kathaBhandar.katha(id)];
+    });
+
+    test('चारों कथाएँ जुड़ चुकी हैं', () {
+      expect(sab.map((k) => k.id).toSet(), {
+        'satyanarayan',
+        'hartalika',
+        'vat_savitri',
+        'karwa_chauth',
+      });
+    });
+
+    test('हर कथा भावार्थ कहलाती है, और वो बात छिपी नहीं', () {
+      for (final k in sab) {
+        expect(k.roop, KathaRoop.bhavarth, reason: k.naam);
+        expect(k.roop.batao, contains('शब्दशः संस्कृत पाठ नहीं'));
+      }
+    });
+
+    test('हर अध्याय पूरा है, सार नहीं', () {
+      for (final k in sab) {
+        for (final a in k.adhyay) {
+          expect(a.gadya.trim().split(RegExp(r'\s+')).length, greaterThan(200),
+              reason: '${k.naam} — ${a.shirshak}');
+          expect(a.saar.trim(), isNotEmpty, reason: k.naam);
+        }
+      }
+    });
+
+    test('हर कथा का स्रोत और "कब सुनाएँ" भरा है', () {
+      for (final k in sab) {
+        expect(k.strot.trim().length, greaterThan(60), reason: k.naam);
+        expect(k.kabSunayen.trim().length, greaterThan(30), reason: k.naam);
+      }
+    });
+
+    // ⚠ जिस कथा का मूल स्रोत पक्का नहीं, वहाँ ऐप को वही कहना चाहिए।
+    // करवा चौथ की कथा किसी एक पुराण में नहीं मिलती — वो लोक-कथा है।
+    test('लोक-कथा को लोक-कथा कहा गया है', () async {
+      final karwa = await kathaBhandar.katha('karwa_chauth');
+      expect(karwa.strot, contains('लोक-कथा'));
+
+      // और जिनका स्रोत पक्का है, वहाँ ग्रंथ का नाम लिखा है।
+      expect((await kathaBhandar.katha('vat_savitri')).strot,
+          contains('महाभारत'));
+      expect((await kathaBhandar.katha('satyanarayan')).strot,
+          contains('स्कंद पुराण'));
+    });
+  });
+
   group('पूजा से जुड़ाव', () {
     test('सत्यनारायण के कथा-कदम पर कथा जुड़ी है', () async {
       final v = await vidhiBhandar.vidhi('satyanarayan');
