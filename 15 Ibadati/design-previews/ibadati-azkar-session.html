@@ -1,0 +1,102 @@
+<div id="ibadati-azkar-session" aria-label="Ibadati evening azkar session">
+  <style>
+    #ibadati-azkar-session {
+      --az-accent:#0f766e; --az-gold:#b8893d;
+      --az-bg:light-dark(#f4f0e7,#101917); --az-surface:light-dark(#fffdf8,#182421);
+      --az-soft:light-dark(#e4f0ec,#203630); --az-text:light-dark(#18312d,#edf7f4);
+      --az-muted:light-dark(#6b7874,#adbfba); --az-line:light-dark(#dce4df,#31423d);
+      color-scheme:light dark; color:var(--az-text); font-family:Inter,ui-sans-serif,system-ui,sans-serif;
+      max-width:430px; margin:0 auto;
+    }
+    #ibadati-azkar-session *{box-sizing:border-box}
+    #ibadati-azkar-session .az-phone{background:var(--az-bg);border-radius:28px;overflow:hidden;box-shadow:0 16px 44px light-dark(#143d3524,#00000055)}
+    #ibadati-azkar-session .az-header{padding:18px;background:var(--az-surface)}
+    #ibadati-azkar-session .az-head{display:flex;align-items:center;gap:10px}
+    #ibadati-azkar-session .az-icon{width:44px;height:44px;border:0;border-radius:50%;background:var(--az-soft);color:var(--az-text);display:grid;place-items:center}
+    #ibadati-azkar-session .az-title{flex:1}
+    #ibadati-azkar-session h2,#ibadati-azkar-session p{margin:0}
+    #ibadati-azkar-session h2{font-size:20px;font-weight:500}
+    #ibadati-azkar-session .az-sub{color:var(--az-muted);font-size:13px;margin-top:3px}
+    #ibadati-azkar-session .az-progress-copy{display:flex;justify-content:space-between;margin-top:18px;font-size:13px;color:var(--az-muted)}
+    #ibadati-azkar-session .az-track{height:7px;background:var(--az-soft);border-radius:99px;margin-top:8px;overflow:hidden}
+    #ibadati-azkar-session .az-fill{height:100%;width:28%;background:var(--az-accent);border-radius:99px;transition:width .25s ease}
+    #ibadati-azkar-session .az-main{padding:18px}
+    #ibadati-azkar-session .az-meta{display:flex;justify-content:space-between;align-items:center;color:var(--az-muted);font-size:13px;margin-bottom:10px}
+    #ibadati-azkar-session .az-pill{display:flex;align-items:center;gap:6px;color:var(--az-gold)}
+    #ibadati-azkar-session .az-reading{background:var(--az-surface);border-radius:22px;padding:22px 18px}
+    #ibadati-azkar-session .az-arabic{font-family:"Noto Naskh Arabic",serif;font-size:29px;line-height:1.9;text-align:right;direction:rtl;font-weight:400}
+    #ibadati-azkar-session .az-divider{height:1px;background:var(--az-line);margin:18px 0}
+    #ibadati-azkar-session .az-trans{font-size:14px;line-height:1.6;color:var(--az-muted)}
+    #ibadati-azkar-session .az-meaning{font-size:14px;line-height:1.6;margin-top:12px}
+    #ibadati-azkar-session .az-source{color:var(--az-muted);font-size:12px;margin-top:12px}
+    #ibadati-azkar-session .az-tools{display:flex;justify-content:center;gap:12px;margin:16px 0}
+    #ibadati-azkar-session .az-tool{min-width:48px;height:46px;border:0;border-radius:14px;background:var(--az-surface);color:var(--az-text);display:flex;align-items:center;justify-content:center;gap:7px;padding:0 13px}
+    #ibadati-azkar-session .az-counter{width:156px;height:156px;border:0;border-radius:50%;margin:4px auto 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--az-accent);color:#fff;box-shadow:0 10px 28px color-mix(in srgb,var(--az-accent) 30%,transparent)}
+    #ibadati-azkar-session .az-count{font-size:42px;font-weight:500;line-height:1}
+    #ibadati-azkar-session .az-goal{font-size:13px;margin-top:8px;opacity:.85}
+    #ibadati-azkar-session .az-hint{text-align:center;color:var(--az-muted);font-size:12px;margin-bottom:16px}
+    #ibadati-azkar-session .az-nav{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    #ibadati-azkar-session .az-nav button{min-height:48px;border:0;border-radius:15px;font-size:15px;font-weight:500}
+    #ibadati-azkar-session .az-prev{background:var(--az-surface);color:var(--az-text)}
+    #ibadati-azkar-session .az-next{background:var(--az-soft);color:var(--az-accent)}
+    #ibadati-azkar-session .az-done{background:var(--az-accent)!important;color:#fff!important}
+    @media(max-width:360px){#ibadati-azkar-session .az-header,#ibadati-azkar-session .az-main{padding-left:14px;padding-right:14px}#ibadati-azkar-session .az-arabic{font-size:26px}}
+    @media(prefers-reduced-motion:reduce){#ibadati-azkar-session .az-fill{transition:none}}
+  </style>
+  <section class="az-phone">
+    <header class="az-header">
+      <div class="az-head">
+        <button class="az-icon" type="button" aria-label="Close session"><i data-lucide="x" aria-hidden="true"></i></button>
+        <div class="az-title"><h2>Evening Azkar</h2><p class="az-sub">Protection, gratitude and remembrance</p></div>
+        <button class="az-icon" type="button" aria-label="Session options"><i data-lucide="ellipsis-vertical" aria-hidden="true"></i></button>
+      </div>
+      <div class="az-progress-copy"><span id="az-step">4 of 14</span><span id="az-progress-label">28% complete</span></div>
+      <div class="az-track" role="progressbar" aria-label="Azkar session progress" aria-valuemin="0" aria-valuemax="14" aria-valuenow="4"><div class="az-fill"></div></div>
+    </header>
+    <main class="az-main">
+      <div class="az-meta"><span>Remembrance 4</span><span class="az-pill"><i data-lucide="repeat-2" aria-hidden="true"></i>Repeat 3 times</span></div>
+      <article class="az-reading">
+        <p class="az-arabic" lang="ar">رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ ﷺ نَبِيًّا</p>
+        <div class="az-divider"></div>
+        <p class="az-trans">Raḍītu billāhi Rabban, wa bil-Islāmi dīnan, wa bi-Muḥammadin ﷺ Nabiyyan.</p>
+        <p class="az-meaning">I am pleased with Allah as my Lord, Islam as my religion, and Muhammad ﷺ as my Prophet.</p>
+        <p class="az-source">Abu Dawud 5072 · Authenticated</p>
+      </article>
+      <div class="az-tools">
+        <button class="az-tool" type="button" id="az-audio" aria-pressed="false"><i data-lucide="volume-2" aria-hidden="true"></i><span>Listen</span></button>
+        <button class="az-tool" type="button" aria-label="Bookmark"><i data-lucide="bookmark" aria-hidden="true"></i></button>
+        <button class="az-tool" type="button" aria-label="Share"><i data-lucide="share-2" aria-hidden="true"></i></button>
+      </div>
+      <button class="az-counter" id="az-counter" type="button" aria-label="Count repetition"><span class="az-count" id="az-count">0</span><span class="az-goal">of 3 completed</span></button>
+      <p class="az-hint" id="az-hint" aria-live="polite">Tap the circle after each recitation</p>
+      <div class="az-nav"><button class="az-prev" type="button"><i data-lucide="chevron-left" aria-hidden="true"></i> Previous</button><button class="az-next" id="az-next" type="button">Next <i data-lucide="chevron-right" aria-hidden="true"></i></button></div>
+    </main>
+  </section>
+  <script>
+    (()=>{
+      const root=document.getElementById('ibadati-azkar-session');
+      const countEl=root.querySelector('#az-count');
+      const counter=root.querySelector('#az-counter');
+      const hint=root.querySelector('#az-hint');
+      const next=root.querySelector('#az-next');
+      const audio=root.querySelector('#az-audio');
+      let count=0;
+      counter.addEventListener('click',()=>{
+        if(count<3) count+=1;
+        countEl.textContent=String(count);
+        counter.setAttribute('aria-label',`${count} of 3 repetitions completed`);
+        if(count===3){hint.textContent='Completed — you can continue';next.classList.add('az-done');next.textContent='Continue';}
+      });
+      audio.addEventListener('click',()=>{
+        const playing=audio.getAttribute('aria-pressed')!=='true';
+        audio.setAttribute('aria-pressed',String(playing));
+        audio.querySelector('span').textContent=playing?'Pause':'Listen';
+      });
+      const state={accent:'#0f766e',arabicSize:29,showTransliteration:true};
+      const trans=root.querySelector('.az-trans');
+      function render(){root.style.setProperty('--az-accent',state.accent);root.querySelector('.az-arabic').style.fontSize=`${state.arabicSize}px`;trans.hidden=!state.showTransliteration;}
+      render();
+      if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:render});tweak.addColorPicker(state,'accent',{label:'Accent color',reference:'--az-accent'});tweak.addSlider(state,'arabicSize',{label:'Arabic text size',min:24,max:38,unit:'px',reference:'azkar.arabic'});tweak.addToggle(state,'showTransliteration',{label:'Show transliteration',reference:'azkar.transliteration'});}
+    })();
+  </script>
+</div>

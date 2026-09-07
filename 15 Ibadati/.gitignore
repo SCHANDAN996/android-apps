@@ -1,0 +1,26 @@
+# Flutter and Dart generated files
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+build/
+coverage/
+
+# Android/IDE local files
+android/.gradle/
+android/local.properties
+android/key.properties
+*.iml
+.idea/
+.vscode/
+
+# Secrets and signing material
+*.jks
+*.keystore
+*.properties
+!android/gradle/wrapper/gradle-wrapper.properties
+
+# Platform-generated local configuration
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh

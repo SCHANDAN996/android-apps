@@ -1,0 +1,40 @@
+<div id="ibadati-location-unavailable" aria-label="Ibadati location unavailable state">
+  <style>
+    #ibadati-location-unavailable { --lu-teal:#11766f; --lu-ink:light-dark(#183731,#e5f4ed); --lu-muted:light-dark(#657a73,#a9c0b8); --lu-page:light-dark(#f4f1e9,#102722); --lu-card:light-dark(#fffdf9,#17342e); --lu-soft:light-dark(#e9f3ee,#20453d); --lu-line:light-dark(#d7e1d9,#2a5148); max-width:390px; margin:0 auto; color:var(--lu-ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; }
+    #ibadati-location-unavailable * { box-sizing:border-box; }
+    #ibadati-location-unavailable .lu-phone { min-height:605px; overflow:hidden; border-radius:30px; background:var(--lu-page); box-shadow:0 16px 40px light-dark(#50645b33,#0008); }
+    #ibadati-location-unavailable .lu-top { height:150px; padding:20px; color:#f8fffb; background:linear-gradient(145deg,var(--lu-teal),#0a4e4a); }
+    #ibadati-location-unavailable .lu-topline { display:flex; align-items:center; justify-content:space-between; }
+    #ibadati-location-unavailable .lu-mark { width:38px; height:38px; display:grid; place-items:center; border-radius:12px; background:#ffffff24; }
+    #ibadati-location-unavailable .lu-top span { color:#d5ede5; font-size:12px; }
+    #ibadati-location-unavailable .lu-content { padding:0 16px 25px; text-align:center; }
+    #ibadati-location-unavailable .lu-map { width:92px; height:92px; display:grid; place-items:center; margin:-46px auto 18px; border:7px solid var(--lu-page); border-radius:30px; color:var(--lu-teal); background:var(--lu-soft); }
+    #ibadati-location-unavailable h1 { margin:0; font-size:21px; font-weight:500; letter-spacing:-.02em; }
+    #ibadati-location-unavailable .lu-copy { max-width:285px; margin:8px auto 20px; color:var(--lu-muted); font-size:12px; }
+    #ibadati-location-unavailable .lu-action { width:100%; padding:12px; border:0; border-radius:13px; background:var(--lu-teal); color:#fff; font:500 13px inherit; cursor:pointer; }
+    #ibadati-location-unavailable .lu-secondary { width:100%; margin-top:9px; padding:11px; border:1px solid var(--lu-line); border-radius:13px; color:var(--lu-teal); background:var(--lu-card); font:500 13px inherit; cursor:pointer; }
+    #ibadati-location-unavailable .lu-manual { display:none; margin-top:17px; padding:14px; border-radius:17px; background:var(--lu-card); border:1px solid var(--lu-line); text-align:left; }
+    #ibadati-location-unavailable .lu-manual.show { display:block; }
+    #ibadati-location-unavailable .lu-manual label { display:block; margin-bottom:7px; color:var(--lu-muted); font-size:11px; }
+    #ibadati-location-unavailable .lu-input { display:flex; align-items:center; gap:8px; padding:0 10px; border:1px solid var(--lu-line); border-radius:12px; background:var(--lu-soft); color:var(--lu-teal); }
+    #ibadati-location-unavailable .lu-input input { width:100%; padding:11px 0; border:0; outline:0; background:transparent; color:var(--lu-ink); font:13px inherit; }
+    #ibadati-location-unavailable .lu-result { display:none; align-items:center; gap:10px; padding:11px 0 0; }
+    #ibadati-location-unavailable .lu-result.show { display:flex; }
+    #ibadati-location-unavailable .lu-result-icon { width:33px; height:33px; display:grid; place-items:center; border-radius:11px; color:var(--lu-teal); background:var(--lu-soft); }
+    #ibadati-location-unavailable .lu-result b { display:block; font-size:12px; font-weight:500; }
+    #ibadati-location-unavailable .lu-result span { display:block; margin-top:2px; color:var(--lu-muted); font-size:11px; }
+    #ibadati-location-unavailable .lu-use { width:100%; margin-top:11px; padding:10px; border:0; border-radius:12px; background:var(--lu-teal); color:#fff; font:500 12px inherit; cursor:pointer; }
+    #ibadati-location-unavailable .lu-privacy { display:flex; align-items:flex-start; gap:9px; margin:18px 4px 0; color:var(--lu-muted); text-align:left; font-size:11px; }
+    #ibadati-location-unavailable .lu-privacy i { flex:0 0 auto; color:var(--lu-teal); }
+    #ibadati-location-unavailable .lu-confirm { display:none; margin-top:13px; color:var(--lu-teal); font-size:12px; }
+    #ibadati-location-unavailable .lu-confirm.show { display:block; }
+    #ibadati-location-unavailable [data-lucide] { width:20px; height:20px; stroke-width:1.8; }
+  </style>
+  <main class="lu-phone">
+    <header class="lu-top"><div class="lu-topline"><div class="lu-mark"><i data-lucide="moon-star" aria-hidden="true"></i></div><span>Ibadati setup</span></div></header>
+    <section class="lu-content" aria-live="polite"><div class="lu-map"><i data-lucide="map-pin-off" aria-hidden="true"></i></div><h1>We can’t find your location</h1><p class="lu-copy">सही prayer times और Qibla direction के लिए हमें आपकी city जानना ज़रूरी है।</p><button class="lu-action" id="lu-try" type="button">Try location again</button><button class="lu-secondary" id="lu-manual-button" type="button">Choose city manually</button><section class="lu-manual" id="lu-manual" aria-label="Choose a city manually"><label for="lu-city">Search city or country</label><div class="lu-input"><i data-lucide="search" aria-hidden="true"></i><input id="lu-city" type="text" placeholder="e.g. New Delhi, India"></div><div class="lu-result" id="lu-result"><div class="lu-result-icon"><i data-lucide="map-pin" aria-hidden="true"></i></div><div><b>New Delhi, India</b><span>Asia/Kolkata · India</span></div></div><button class="lu-use" id="lu-use" type="button">Use this location</button></section><div class="lu-confirm" id="lu-confirm">Location saved. Prayer times will now update for New Delhi.</div><p class="lu-privacy"><i data-lucide="lock-keyhole" aria-hidden="true"></i><span>आपकी location केवल personal prayer times और Qibla direction के लिए उपयोग होगी।</span></p></section>
+  </main>
+  <script>
+    (()=>{const root=document.getElementById('ibadati-location-unavailable');const state={accent:'#11766f',radius:17,manual:false};const manual=root.querySelector('#lu-manual');function render(){root.style.setProperty('--lu-teal',state.accent);root.querySelector('.lu-map').style.borderRadius=`${state.radius+13}px`;manual.classList.toggle('show',state.manual);}root.querySelector('#lu-manual-button').addEventListener('click',()=>{state.manual=!state.manual;render();});root.querySelector('#lu-city').addEventListener('input',(event)=>root.querySelector('#lu-result').classList.toggle('show',event.currentTarget.value.trim().length>1));root.querySelector('#lu-use').addEventListener('click',()=>root.querySelector('#lu-confirm').classList.add('show'));root.querySelector('#lu-try').addEventListener('click',()=>{root.querySelector('#lu-try').textContent='Checking location…';setTimeout(()=>root.querySelector('#lu-try').textContent='Try location again',500);});render();if(globalThis.lucide)globalThis.lucide.createIcons({attrs:{width:20,height:20}});if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:render});tweak.addColorPicker(state,'accent',{label:'Accent colour',reference:'--lu-teal'});tweak.addSlider(state,'radius',{label:'Icon radius',min:14,max:26,unit:'px'});tweak.addToggle(state,'manual',{label:'Show city choice'});}})();
+  </script>
+</div>

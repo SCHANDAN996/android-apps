@@ -1,0 +1,34 @@
+<div id="ibadati-search-empty" aria-label="Ibadati search no results state">
+  <style>
+    #ibadati-search-empty { --sn-teal:#11766f; --sn-gold:#ba8747; --sn-ink:light-dark(#183731,#e5f4ed); --sn-muted:light-dark(#657a73,#a9c0b8); --sn-page:light-dark(#f4f1e9,#102722); --sn-card:light-dark(#fffdf9,#17342e); --sn-soft:light-dark(#e9f3ee,#20453d); --sn-line:light-dark(#d7e1d9,#2a5148); max-width:390px; margin:0 auto; color:var(--sn-ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; }
+    #ibadati-search-empty * { box-sizing:border-box; }
+    #ibadati-search-empty .sn-phone { min-height:605px; overflow:hidden; border-radius:30px; background:var(--sn-page); box-shadow:0 16px 40px light-dark(#50645b33,#0008); }
+    #ibadati-search-empty .sn-top { padding:20px 16px 17px; color:#f8fffb; background:linear-gradient(145deg,var(--sn-teal),#0a4e4a); }
+    #ibadati-search-empty .sn-topline { display:flex; align-items:center; gap:10px; padding:0 4px; }
+    #ibadati-search-empty .sn-back { width:38px; height:38px; display:grid; place-items:center; border:0; border-radius:12px; color:inherit; background:#ffffff24; cursor:pointer; }
+    #ibadati-search-empty .sn-title { font-size:18px; font-weight:500; }
+    #ibadati-search-empty .sn-field { display:flex; align-items:center; gap:9px; margin-top:14px; padding:0 12px; border-radius:14px; color:var(--sn-teal); background:#fffdf8; }
+    #ibadati-search-empty .sn-field input { width:100%; padding:12px 0; border:0; outline:0; color:#183731; background:transparent; font:13px inherit; }
+    #ibadati-search-empty .sn-clear { border:0; background:transparent; color:#678078; cursor:pointer; }
+    #ibadati-search-empty .sn-body { padding:48px 20px 24px; text-align:center; }
+    #ibadati-search-empty .sn-icon { width:82px; height:82px; display:grid; place-items:center; margin:0 auto 18px; border-radius:28px; color:var(--sn-teal); background:var(--sn-soft); }
+    #ibadati-search-empty h1 { margin:0; font-size:20px; font-weight:500; letter-spacing:-.02em; }
+    #ibadati-search-empty .sn-copy { max-width:270px; margin:8px auto 20px; color:var(--sn-muted); font-size:12px; }
+    #ibadati-search-empty .sn-suggestions { text-align:left; }
+    #ibadati-search-empty .sn-suggestions h2 { margin:0 2px 10px; font-size:13px; font-weight:500; }
+    #ibadati-search-empty .sn-chips { display:flex; flex-wrap:wrap; gap:8px; }
+    #ibadati-search-empty .sn-chip { padding:8px 10px; border:1px solid var(--sn-line); border-radius:11px; color:var(--sn-teal); background:var(--sn-card); font:12px inherit; cursor:pointer; }
+    #ibadati-search-empty .sn-tip { display:flex; align-items:flex-start; gap:9px; margin-top:20px; padding:12px; border-radius:15px; color:#68491f; background:#f6ebd8; text-align:left; }
+    #ibadati-search-empty .sn-tip b { display:block; font-size:12px; font-weight:500; }
+    #ibadati-search-empty .sn-tip span { display:block; margin-top:3px; color:#76552a; font-size:11px; }
+    #ibadati-search-empty .sn-result { display:none; margin-top:15px; padding:12px; border:1px solid var(--sn-line); border-radius:15px; background:var(--sn-card); text-align:left; }
+    #ibadati-search-empty .sn-result.show { display:block; }
+    #ibadati-search-empty .sn-result b { display:block; color:var(--sn-teal); font-size:12px; font-weight:500; }
+    #ibadati-search-empty .sn-result span { display:block; margin-top:3px; color:var(--sn-muted); font-size:11px; }
+    #ibadati-search-empty [data-lucide] { width:20px; height:20px; stroke-width:1.8; }
+  </style>
+  <main class="sn-phone"><header class="sn-top"><div class="sn-topline"><button class="sn-back" type="button" aria-label="Back"><i data-lucide="arrow-left" aria-hidden="true"></i></button><span class="sn-title">Search</span></div><label class="sn-field"><i data-lucide="search" aria-hidden="true"></i><input id="sn-query" type="search" value="morning dua" aria-label="Search Ibadati"><button class="sn-clear" id="sn-clear" type="button" aria-label="Clear search"><i data-lucide="x" aria-hidden="true"></i></button></label></header><section class="sn-body" aria-live="polite"><div class="sn-icon"><i data-lucide="search-x" aria-hidden="true"></i></div><h1>No results found</h1><p class="sn-copy" id="sn-copy">“morning dua” से कोई exact match नहीं मिला। अलग शब्द या language से खोजकर देखें।</p><section class="sn-suggestions"><h2>Try searching</h2><div class="sn-chips"><button class="sn-chip" type="button">Morning azkar</button><button class="sn-chip" type="button">Fajr dua</button><button class="sn-chip" type="button">सुबह की दुआ</button><button class="sn-chip" type="button">أذكار الصباح</button></div></section><div class="sn-tip"><i data-lucide="lightbulb" aria-hidden="true"></i><div><b>Tip</b><span>Hindi, Urdu या English—तीनों में search करें।</span></div></div><div class="sn-result" id="sn-result"><b id="sn-result-title">Morning azkar</b><span>Suggested result · Duas &amp; Azkar</span></div></section></main>
+  <script>
+    (()=>{const root=document.getElementById('ibadati-search-empty');const state={accent:'#11766f',radius:16,showResult:false};const query=root.querySelector('#sn-query');const result=root.querySelector('#sn-result');function render(){root.style.setProperty('--sn-teal',state.accent);root.querySelector('.sn-icon').style.borderRadius=`${state.radius+12}px`;result.classList.toggle('show',state.showResult);}root.querySelectorAll('.sn-chip').forEach((chip)=>chip.addEventListener('click',()=>{query.value=chip.textContent;root.querySelector('#sn-result-title').textContent=chip.textContent;root.querySelector('#sn-copy').textContent='Suggested result मिल गया—इसे खोलकर पढ़ें।';state.showResult=true;render();}));root.querySelector('#sn-clear').addEventListener('click',()=>{query.value='';state.showResult=false;root.querySelector('#sn-copy').textContent='किसी दुआ, अज़कार या Islamic topic को खोजें।';render();});render();if(globalThis.lucide)globalThis.lucide.createIcons({attrs:{width:20,height:20}});if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:render});tweak.addColorPicker(state,'accent',{label:'Accent colour',reference:'--sn-teal'});tweak.addSlider(state,'radius',{label:'Icon radius',min:12,max:26,unit:'px'});tweak.addToggle(state,'showResult',{label:'Show suggested result'});}})();
+  </script>
+</div>

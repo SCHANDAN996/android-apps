@@ -1,0 +1,200 @@
+<style>
+#ibadati-onboarding {
+  --ib-bg: light-dark(#f4f1e8, #0d2724);
+  --ib-surface: light-dark(#fffdf7, #14332f);
+  --ib-text: light-dark(#18332f, #f7f1df);
+  --ib-muted: light-dark(#687873, #b6c6bf);
+  --ib-accent: light-dark(#176b5b, #77c7ad);
+  --ib-accent-text: light-dark(#ffffff, #09231f);
+  --ib-gold: light-dark(#b58b3b, #d8b768);
+  --ib-line: light-dark(rgba(23,107,91,.15), rgba(119,199,173,.18));
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--ib-text);
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  background: transparent;
+}
+#ibadati-onboarding * { box-sizing: border-box; }
+#ibadati-onboarding .phone {
+  width: min(100%, 390px);
+  min-height: 690px;
+  background: var(--ib-bg);
+  border: 1px solid var(--ib-line);
+  border-radius: 34px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 22px 70px rgba(0,0,0,.16);
+}
+#ibadati-onboarding .status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+#ibadati-onboarding .status-icons { display:flex; gap:8px; align-items:center; }
+#ibadati-onboarding .status-icons i { width:14px; height:14px; }
+#ibadati-onboarding .screen {
+  min-height: 638px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+#ibadati-onboarding .brand {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:500;
+  letter-spacing:.02em;
+}
+#ibadati-onboarding .mark {
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border-radius:12px 12px 12px 4px;
+  background:var(--ib-accent);
+  color:var(--ib-accent-text);
+}
+#ibadati-onboarding .mark i { width:18px; height:18px; }
+#ibadati-onboarding .hero {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:34px 0 26px;
+}
+#ibadati-onboarding .orb {
+  width:180px;
+  height:180px;
+  margin:0 auto 34px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:var(--ib-accent);
+  background:
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--ib-gold) 20%, transparent) 0 17%, transparent 18%),
+    radial-gradient(circle at 50% 62%, color-mix(in srgb, var(--ib-accent) 20%, transparent) 0 37%, transparent 38%),
+    linear-gradient(145deg, color-mix(in srgb, var(--ib-surface) 92%, transparent), color-mix(in srgb, var(--ib-gold) 12%, var(--ib-surface)));
+  box-shadow: inset 0 0 0 1px var(--ib-line), 0 22px 48px color-mix(in srgb, var(--ib-accent) 12%, transparent);
+}
+#ibadati-onboarding .orb i { width:72px; height:72px; stroke-width:1.2; }
+#ibadati-onboarding .eyebrow { color:var(--ib-gold); font-weight:500; margin-bottom:10px; }
+#ibadati-onboarding h1 { margin:0 0 12px; font-size:34px; line-height:1.12; font-weight:500; letter-spacing:-.03em; }
+#ibadati-onboarding .subtitle { margin:0; color:var(--ib-muted); font-size:15px; line-height:1.6; max-width:310px; }
+#ibadati-onboarding .language-list { display:grid; gap:10px; margin-top:26px; }
+#ibadati-onboarding .language {
+  min-height:52px;
+  width:100%;
+  border:1px solid var(--ib-line);
+  background:var(--ib-surface);
+  color:var(--ib-text);
+  border-radius:16px;
+  padding:0 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font:inherit;
+  cursor:pointer;
+}
+#ibadati-onboarding .language[aria-pressed="true"] { border-color:var(--ib-accent); box-shadow:inset 0 0 0 1px var(--ib-accent); }
+#ibadati-onboarding .language span { display:flex; align-items:center; gap:10px; }
+#ibadati-onboarding .language i { width:18px; height:18px; color:var(--ib-accent); }
+#ibadati-onboarding .primary {
+  min-height:54px;
+  border:0;
+  border-radius:18px;
+  background:var(--ib-accent);
+  color:var(--ib-accent-text);
+  font:inherit;
+  font-weight:500;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  cursor:pointer;
+}
+#ibadati-onboarding .primary i { width:18px; height:18px; }
+#ibadati-onboarding .footnote { text-align:center; color:var(--ib-muted); font-size:12px; margin:13px 0 0; }
+#ibadati-onboarding .steps { display:flex; gap:6px; justify-content:center; margin-bottom:16px; }
+#ibadati-onboarding .steps span { width:6px; height:6px; border-radius:99px; background:var(--ib-line); }
+#ibadati-onboarding .steps span.active { width:22px; background:var(--ib-accent); }
+@media (max-width:420px) {
+  #ibadati-onboarding { padding:0; }
+  #ibadati-onboarding .phone { border-radius:26px; min-height:660px; }
+  #ibadati-onboarding .screen { min-height:610px; }
+}
+</style>
+
+<div id="ibadati-onboarding" aria-label="Ibadati onboarding screen preview">
+  <section class="phone" aria-live="polite">
+    <div class="status"><span>9:41</span><span class="status-icons"><i data-lucide="signal" aria-hidden="true"></i><i data-lucide="wifi" aria-hidden="true"></i><i data-lucide="battery-full" aria-hidden="true"></i></span></div>
+    <div class="screen">
+      <div class="brand"><span class="mark"><i data-lucide="moon-star" aria-hidden="true"></i></span><span>Ibadati</span></div>
+      <main class="hero">
+        <div class="orb"><i data-lucide="landmark" aria-hidden="true"></i></div>
+        <div class="eyebrow">السلام عليكم</div>
+        <h1>Your day,<br>centred in faith.</h1>
+        <p class="subtitle">Prayer times, qibla, duas and daily worship—calmly brought together, wherever you are.</p>
+        <div class="language-list" aria-label="Choose language">
+          <button class="language" type="button" aria-pressed="true" data-lang="English"><span><i data-lucide="languages" aria-hidden="true"></i>English</span><i data-lucide="check" aria-hidden="true"></i></button>
+          <button class="language" type="button" aria-pressed="false" data-lang="हिंदी"><span><i data-lucide="languages" aria-hidden="true"></i>हिंदी</span></button>
+          <button class="language" type="button" aria-pressed="false" data-lang="اردو"><span><i data-lucide="languages" aria-hidden="true"></i>اردو</span></button>
+        </div>
+      </main>
+      <div class="steps" aria-label="Step 1 of 3"><span class="active"></span><span></span><span></span></div>
+      <button class="primary" type="button">Continue <i data-lucide="arrow-right" aria-hidden="true"></i></button>
+      <p class="footnote">You can change this anytime</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const root = document.getElementById('ibadati-onboarding');
+  const state = { accent: '#176b5b', radius: 18, greeting: true };
+  const labels = {
+    English: ['Your day,', 'centred in faith.', 'Prayer times, qibla, duas and daily worship—calmly brought together, wherever you are.', 'Continue', 'You can change this anytime'],
+    'हिंदी': ['आपका हर दिन,', 'ईमान के साथ।', 'नमाज़ का समय, क़िबला, दुआ और रोज़ाना इबादत—दुनिया में कहीं भी, एक शांत अनुभव में।', 'आगे बढ़ें', 'इसे बाद में कभी भी बदल सकते हैं'],
+    'اردو': ['آپ کا ہر دن،', 'ایمان کے ساتھ۔', 'نماز کے اوقات، قبلہ، دعائیں اور روزمرہ عبادت—دنیا میں کہیں بھی، ایک پُرسکون تجربے میں۔', 'آگے بڑھیں', 'آپ اسے بعد میں کبھی بھی بدل سکتے ہیں']
+  };
+  function choose(button) {
+    root.querySelectorAll('.language').forEach((item) => {
+      const selected = item === button;
+      item.setAttribute('aria-pressed', String(selected));
+      const existing = item.querySelector(':scope > i');
+      if (existing) existing.remove();
+      if (selected) {
+        const icon = document.createElement('i');
+        icon.setAttribute('data-lucide', 'check');
+        icon.setAttribute('aria-hidden', 'true');
+        item.appendChild(icon);
+      }
+    });
+    const language = button.dataset.lang;
+    const copy = labels[language];
+    const heading = root.querySelector('h1');
+    heading.innerHTML = `${copy[0]}<br>${copy[1]}`;
+    root.querySelector('.subtitle').textContent = copy[2];
+    root.querySelector('.primary').childNodes[0].nodeValue = `${copy[3]} `;
+    root.querySelector('.footnote').textContent = copy[4];
+    root.querySelector('.screen').dir = language === 'اردو' ? 'rtl' : 'ltr';
+    if (globalThis.lucide) lucide.createIcons({ attrs: { width: 16, height: 16 } });
+  }
+  root.querySelectorAll('.language').forEach((button) => button.addEventListener('click', () => choose(button)));
+  function renderTweaks() {
+    root.style.setProperty('--ib-accent', state.accent);
+    root.querySelector('.primary').style.borderRadius = `${state.radius}px`;
+    root.querySelector('.eyebrow').style.display = state.greeting ? '' : 'none';
+  }
+  renderTweaks();
+  if (globalThis.Tweak) {
+    const tweak = new Tweak({ container: root, onChange: renderTweaks });
+    tweak.addColorPicker(state, 'accent', { label: 'Brand accent', reference: '--ib-accent' });
+    tweak.addSlider(state, 'radius', { label: 'Button radius', min: 8, max: 28, unit: 'px', reference: 'button.radius' });
+    tweak.addToggle(state, 'greeting', { label: 'Arabic greeting', reference: 'greeting.visible' });
+  }
+})();
+</script>

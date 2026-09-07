@@ -1,0 +1,85 @@
+<div id="ibadati-help-feedback" aria-label="Ibadati help and feedback screen">
+  <style>
+    #ibadati-help-feedback { --hf-teal:#11766f; --hf-gold:#ba8747; --hf-ink:light-dark(#183731,#e5f4ed); --hf-muted:light-dark(#657a73,#a9c0b8); --hf-page:light-dark(#f4f1e9,#102722); --hf-card:light-dark(#fffdf9,#17342e); --hf-soft:light-dark(#e9f3ee,#20453d); --hf-line:light-dark(#d7e1d9,#2a5148); max-width:390px; margin:0 auto; color:var(--hf-ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; }
+    #ibadati-help-feedback * { box-sizing:border-box; }
+    #ibadati-help-feedback .hf-phone { background:var(--hf-page); overflow:hidden; border-radius:30px; box-shadow:0 16px 40px light-dark(#50645b33,#0008); }
+    #ibadati-help-feedback .hf-hero { padding:20px; background:linear-gradient(145deg,var(--hf-teal),#0a4e4a); color:#f8fffb; }
+    #ibadati-help-feedback .hf-back { width:38px; height:38px; border:0; border-radius:12px; background:#ffffff24; color:inherit; display:grid; place-items:center; cursor:pointer; }
+    #ibadati-help-feedback h1 { margin:17px 0 4px; font-size:23px; font-weight:500; letter-spacing:-.02em; }
+    #ibadati-help-feedback .hf-hero p { margin:0; color:#d5ede5; font-size:13px; }
+    #ibadati-help-feedback .hf-content { padding:17px 16px 25px; }
+    #ibadati-help-feedback .hf-search { display:flex; gap:10px; align-items:center; padding:0 13px; border:1px solid var(--hf-line); border-radius:15px; background:var(--hf-card); color:var(--hf-muted); }
+    #ibadati-help-feedback .hf-search input { width:100%; padding:13px 0; border:0; outline:0; color:var(--hf-ink); background:transparent; font:inherit; font-size:13px; }
+    #ibadati-help-feedback .hf-section { margin:20px 2px 10px; font-size:15px; font-weight:500; }
+    #ibadati-help-feedback .hf-links { display:grid; gap:9px; }
+    #ibadati-help-feedback .hf-link { width:100%; display:flex; align-items:center; gap:12px; padding:12px; border:1px solid var(--hf-line); border-radius:16px; background:var(--hf-card); color:var(--hf-ink); text-align:left; font:inherit; cursor:pointer; }
+    #ibadati-help-feedback .hf-icon { width:39px; height:39px; flex:0 0 auto; display:grid; place-items:center; border-radius:13px; background:var(--hf-soft); color:var(--hf-teal); }
+    #ibadati-help-feedback .hf-link-copy { flex:1; min-width:0; }
+    #ibadati-help-feedback .hf-link-copy b { display:block; font-size:13px; font-weight:500; }
+    #ibadati-help-feedback .hf-link-copy span { display:block; margin-top:3px; color:var(--hf-muted); font-size:11px; }
+    #ibadati-help-feedback .hf-chev { color:var(--hf-muted); }
+    #ibadati-help-feedback .hf-sheet { margin-top:18px; padding:15px; border-radius:18px; background:#f6ebd8; color:#5d411e; }
+    #ibadati-help-feedback .hf-sheet[hidden] { display:none; }
+    #ibadati-help-feedback .hf-sheet-head { display:flex; align-items:center; gap:9px; }
+    #ibadati-help-feedback .hf-sheet-head h2 { margin:0; font-size:14px; font-weight:500; }
+    #ibadati-help-feedback .hf-sheet-head i { color:var(--hf-gold); }
+    #ibadati-help-feedback .hf-options { display:flex; gap:7px; flex-wrap:wrap; margin:13px 0 10px; }
+    #ibadati-help-feedback .hf-option { padding:7px 9px; border:1px solid #c9a16a; border-radius:10px; color:#76552a; background:#fff8ec; font:12px inherit; cursor:pointer; }
+    #ibadati-help-feedback .hf-option.selected { background:var(--hf-teal); border-color:var(--hf-teal); color:#fff; }
+    #ibadati-help-feedback .hf-message { width:100%; min-height:72px; padding:10px; border:1px solid #c9a16a; border-radius:12px; resize:vertical; background:#fffaf0; color:#5d411e; font:12px inherit; }
+    #ibadati-help-feedback .hf-send { width:100%; margin-top:10px; padding:11px; border:0; border-radius:12px; background:var(--hf-teal); color:#fff; font:500 13px inherit; cursor:pointer; }
+    #ibadati-help-feedback .hf-result { display:none; margin:10px 0 0; color:#3f693b; font-size:12px; }
+    #ibadati-help-feedback .hf-result.visible { display:block; }
+    #ibadati-help-feedback .hf-note { margin:17px 3px 0; color:var(--hf-muted); font-size:11px; text-align:center; }
+    #ibadati-help-feedback [data-lucide] { width:18px; height:18px; stroke-width:1.8; }
+  </style>
+  <main class="hf-phone">
+    <header class="hf-hero">
+      <button class="hf-back" type="button" aria-label="Back"><i data-lucide="arrow-left" aria-hidden="true"></i></button>
+      <h1>Help &amp; feedback</h1>
+      <p>जवाब खोजें या हमें सुरक्षित तरीके से बताएं</p>
+    </header>
+    <section class="hf-content" aria-live="polite">
+      <label class="hf-search"><i data-lucide="search" aria-hidden="true"></i><input id="hf-search" type="search" placeholder="Search help articles" aria-label="Search help articles"></label>
+      <h2 class="hf-section">Quick help</h2>
+      <div class="hf-links" id="hf-links">
+        <button class="hf-link" type="button" data-help="Prayer times"><span class="hf-icon"><i data-lucide="clock-3" aria-hidden="true"></i></span><span class="hf-link-copy"><b>Prayer time accuracy</b><span>Location और calculation method</span></span><i class="hf-chev" data-lucide="chevron-right" aria-hidden="true"></i></button>
+        <button class="hf-link" type="button" data-help="Qibla"><span class="hf-icon"><i data-lucide="compass" aria-hidden="true"></i></span><span class="hf-link-copy"><b>Qibla compass help</b><span>Compass calibration guide</span></span><i class="hf-chev" data-lucide="chevron-right" aria-hidden="true"></i></button>
+        <button class="hf-link" type="button" data-help="Downloads"><span class="hf-icon"><i data-lucide="download" aria-hidden="true"></i></span><span class="hf-link-copy"><b>Offline downloads</b><span>Saved content और storage</span></span><i class="hf-chev" data-lucide="chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <h2 class="hf-section">Tell us</h2>
+      <div class="hf-links">
+        <button class="hf-link" type="button" id="hf-report"><span class="hf-icon"><i data-lucide="languages" aria-hidden="true"></i></span><span class="hf-link-copy"><b>Report a translation</b><span>Hindi, Urdu या English text सुधारें</span></span><i class="hf-chev" data-lucide="chevron-right" aria-hidden="true"></i></button>
+        <button class="hf-link" type="button" id="hf-feedback"><span class="hf-icon"><i data-lucide="message-circle-heart" aria-hidden="true"></i></span><span class="hf-link-copy"><b>Send feedback</b><span>Idea, question या technical issue</span></span><i class="hf-chev" data-lucide="chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <section class="hf-sheet" id="hf-sheet" hidden aria-label="Feedback form">
+        <div class="hf-sheet-head"><i data-lucide="send" aria-hidden="true"></i><h2 id="hf-form-title">Send feedback</h2></div>
+        <div class="hf-options"><button class="hf-option selected" type="button">Suggestion</button><button class="hf-option" type="button">Problem</button><button class="hf-option" type="button">Translation</button></div>
+        <label><span class="sr-only">Your message</span><textarea class="hf-message" id="hf-message" placeholder="अपना संदेश लिखें…"></textarea></label>
+        <button class="hf-send" id="hf-send" type="button">Send securely</button>
+        <p class="hf-result" id="hf-result">धन्यवाद—आपका संदेश भेजने के लिए तैयार है।</p>
+      </section>
+      <p class="hf-note" id="hf-note">आपका feedback केवल app बेहतर बनाने के लिए उपयोग होगा।</p>
+    </section>
+  </main>
+  <script>
+    (() => {
+      const root = document.getElementById('ibadati-help-feedback');
+      const state = { accent:'#11766f', radius:18, showNote:true };
+      const sheet = root.querySelector('#hf-sheet');
+      const formTitle = root.querySelector('#hf-form-title');
+      const message = root.querySelector('#hf-message');
+      const result = root.querySelector('#hf-result');
+      const note = root.querySelector('#hf-note');
+      function render() { root.style.setProperty('--hf-teal',state.accent); root.querySelectorAll('.hf-sheet,.hf-link').forEach((el)=>{ el.style.borderRadius=`${state.radius}px`; }); note.style.display=state.showNote?'block':'none'; }
+      root.querySelector('#hf-report').addEventListener('click',()=>{ sheet.hidden=false; formTitle.textContent='Report a translation'; message.placeholder='कौन-सा text सुधारना है, लिखें…'; result.classList.remove('visible'); });
+      root.querySelector('#hf-feedback').addEventListener('click',()=>{ sheet.hidden=false; formTitle.textContent='Send feedback'; message.placeholder='अपना संदेश लिखें…'; result.classList.remove('visible'); });
+      root.querySelectorAll('.hf-option').forEach((button)=>button.addEventListener('click',()=>{ root.querySelectorAll('.hf-option').forEach((item)=>item.classList.toggle('selected',item===button)); }));
+      root.querySelector('#hf-send').addEventListener('click',()=>{ result.classList.add('visible'); });
+      root.querySelector('#hf-search').addEventListener('input',(event)=>{ const term=event.currentTarget.value.trim().toLowerCase(); root.querySelectorAll('[data-help]').forEach((item)=>{ item.hidden=term && !item.dataset.help.toLowerCase().includes(term); }); });
+      render();
+      if (globalThis.lucide) globalThis.lucide.createIcons({attrs:{width:18,height:18}});
+      if (globalThis.Tweak) { const tweak=new Tweak({container:root,onChange:render}); tweak.addColorPicker(state,'accent',{label:'Accent colour',reference:'--hf-teal'}); tweak.addSlider(state,'radius',{label:'Card radius',min:12,max:28,unit:'px'}); tweak.addToggle(state,'showNote',{label:'Show privacy note'}); }
+    })();
+  </script>
+</div>

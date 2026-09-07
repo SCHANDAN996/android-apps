@@ -1,0 +1,119 @@
+<div id="ibadati-fast-history" aria-label="Ibadati fast and qaza history screen">
+  <style>
+    #ibadati-fast-history { --ib-accent:#11766f; --ib-gold:#b68445; --ib-ink:light-dark(#173832,#e6f5ee); --ib-muted:light-dark(#657a73,#a9c0b8); --ib-page:light-dark(#f4f1e8,#102722); --ib-sheet:light-dark(#fffdf8,#17342e); --ib-soft:light-dark(#e9f3ee,#20453d); --ib-line:light-dark(#d7e1d9,#2a5148); color:var(--ib-ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; max-width:390px; margin:0 auto; }
+    #ibadati-fast-history * { box-sizing:border-box; }
+    #ibadati-fast-history .ib-phone { background:var(--ib-page); border-radius:30px; overflow:hidden; box-shadow:0 16px 40px light-dark(#50645b33,#0008); }
+    #ibadati-fast-history .ib-top { padding:20px 20px 17px; background:linear-gradient(145deg,var(--ib-accent),#0a4e4a); color:#f8fffb; }
+    #ibadati-fast-history .ib-back { width:38px; height:38px; border:0; border-radius:12px; background:#ffffff24; color:inherit; display:grid; place-items:center; cursor:pointer; }
+    #ibadati-fast-history .ib-title { margin:18px 0 4px; font-size:23px; font-weight:500; letter-spacing:-.02em; }
+    #ibadati-fast-history .ib-sub { margin:0; color:#d5ede5; font-size:13px; }
+    #ibadati-fast-history .ib-content { padding:18px 16px 24px; }
+    #ibadati-fast-history .ib-period { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+    #ibadati-fast-history .ib-period strong { font-size:16px; font-weight:500; }
+    #ibadati-fast-history .ib-period span { color:var(--ib-muted); font-size:12px; }
+    #ibadati-fast-history .ib-tabs { display:grid; grid-template-columns:1fr 1fr; gap:7px; padding:5px; background:var(--ib-soft); border-radius:15px; margin-bottom:16px; }
+    #ibadati-fast-history .ib-tab { border:0; border-radius:11px; padding:10px; background:transparent; color:var(--ib-muted); font:inherit; font-size:13px; cursor:pointer; }
+    #ibadati-fast-history .ib-tab[aria-selected="true"] { background:var(--ib-sheet); color:var(--ib-accent); box-shadow:0 2px 8px light-dark(#153a2b16,#0003); font-weight:500; }
+    #ibadati-fast-history .ib-summary { background:var(--ib-sheet); border:1px solid var(--ib-line); border-radius:18px; padding:16px; margin-bottom:18px; }
+    #ibadati-fast-history .ib-summary-row { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+    #ibadati-fast-history .ib-summary-label { color:var(--ib-muted); font-size:12px; }
+    #ibadati-fast-history .ib-complete { color:var(--ib-accent); font-size:13px; font-weight:500; }
+    #ibadati-fast-history .ib-numbers { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:16px; }
+    #ibadati-fast-history .ib-number { padding:11px 12px; background:var(--ib-soft); border-radius:13px; }
+    #ibadati-fast-history .ib-number b { display:block; font-size:21px; font-weight:500; color:var(--ib-ink); }
+    #ibadati-fast-history .ib-number span { font-size:11px; color:var(--ib-muted); }
+    #ibadati-fast-history .ib-progress { height:7px; border-radius:20px; overflow:hidden; background:var(--ib-soft); margin-top:14px; }
+    #ibadati-fast-history .ib-progress div { height:100%; width:93%; border-radius:inherit; background:var(--ib-accent); transition:width .25s ease; }
+    #ibadati-fast-history .ib-heading { margin:20px 2px 10px; display:flex; justify-content:space-between; align-items:center; }
+    #ibadati-fast-history .ib-heading h2 { margin:0; font-size:15px; font-weight:500; }
+    #ibadati-fast-history .ib-heading button { border:0; color:var(--ib-accent); background:transparent; font:inherit; font-size:12px; cursor:pointer; }
+    #ibadati-fast-history .ib-list { display:grid; gap:9px; }
+    #ibadati-fast-history .ib-entry { display:flex; align-items:center; gap:12px; padding:12px; border:1px solid var(--ib-line); border-radius:15px; background:var(--ib-sheet); }
+    #ibadati-fast-history .ib-day { width:38px; height:38px; border-radius:12px; display:grid; place-items:center; flex:0 0 auto; background:var(--ib-soft); color:var(--ib-accent); font-size:13px; font-weight:500; }
+    #ibadati-fast-history .ib-entry-copy { min-width:0; flex:1; }
+    #ibadati-fast-history .ib-entry-copy b { display:block; font-size:13px; font-weight:500; }
+    #ibadati-fast-history .ib-entry-copy span { display:block; margin-top:3px; color:var(--ib-muted); font-size:11px; }
+    #ibadati-fast-history .ib-status { flex:0 0 auto; font-size:11px; padding:5px 8px; border-radius:10px; background:var(--ib-soft); color:var(--ib-accent); }
+    #ibadati-fast-history .ib-status.missed { color:#9d6325; background:#f5e8d3; }
+    #ibadati-fast-history .ib-qaza-box { padding:15px; background:linear-gradient(135deg,#f9efdc,#f5e3c5); color:#593c19; border-radius:18px; margin-top:18px; }
+    #ibadati-fast-history .ib-qaza-box .ib-qaza-top { display:flex; align-items:flex-start; gap:10px; }
+    #ibadati-fast-history .ib-qaza-icon { width:36px; height:36px; display:grid; place-items:center; border-radius:12px; background:#fff7e7; color:var(--ib-gold); }
+    #ibadati-fast-history .ib-qaza-box h2 { margin:1px 0 3px; font-size:14px; font-weight:500; }
+    #ibadati-fast-history .ib-qaza-box p { margin:0; font-size:12px; color:#755329; }
+    #ibadati-fast-history .ib-qaza-items { display:grid; gap:8px; margin-top:13px; }
+    #ibadati-fast-history .ib-qaza-item { display:flex; align-items:center; gap:10px; padding:10px; background:#fff9edaa; border-radius:12px; }
+    #ibadati-fast-history .ib-check { width:21px; height:21px; padding:0; border:1px solid #b98b4c; border-radius:7px; background:transparent; color:#fff; display:grid; place-items:center; cursor:pointer; }
+    #ibadati-fast-history .ib-qaza-item.is-done { opacity:.68; }
+    #ibadati-fast-history .ib-qaza-item.is-done .ib-check { background:var(--ib-accent); border-color:var(--ib-accent); }
+    #ibadati-fast-history .ib-qaza-item span { flex:1; font-size:12px; }
+    #ibadati-fast-history .ib-qaza-item small { color:#755329; }
+    #ibadati-fast-history .ib-note { display:none; margin-top:12px; padding-top:12px; border-top:1px solid #cba67588; font-size:11px; color:#755329; }
+    #ibadati-fast-history .ib-note.is-visible { display:block; }
+    #ibadati-fast-history [data-lucide] { width:18px; height:18px; stroke-width:1.8; }
+  </style>
+  <main class="ib-phone">
+    <header class="ib-top">
+      <button class="ib-back" type="button" aria-label="Back"><i data-lucide="arrow-left" aria-hidden="true"></i></button>
+      <h1 class="ib-title">Fast &amp; Qaza history</h1>
+      <p class="ib-sub">अपने रोज़ों का सादा और निजी रिकॉर्ड</p>
+    </header>
+    <section class="ib-content" aria-live="polite">
+      <div class="ib-period"><strong>Ramadan 1448</strong><span>18 Feb – 19 Mar 2027</span></div>
+      <div class="ib-tabs" role="tablist" aria-label="Fasting history view">
+        <button class="ib-tab" id="ib-ramadan-tab" role="tab" aria-selected="true" aria-controls="ib-ramadan-panel" type="button">Ramadan</button>
+        <button class="ib-tab" id="ib-qaza-tab" role="tab" aria-selected="false" aria-controls="ib-qaza-panel" type="button">Qaza fasts</button>
+      </div>
+      <div id="ib-ramadan-panel" role="tabpanel" aria-labelledby="ib-ramadan-tab">
+        <section class="ib-summary" aria-label="Ramadan fasting summary">
+          <div class="ib-summary-row"><span class="ib-summary-label">आपका रोज़ा रिकॉर्ड</span><span class="ib-complete" id="ib-complete-label">28 of 30 complete</span></div>
+          <div class="ib-numbers"><div class="ib-number"><b>28</b><span>पूरे हुए</span></div><div class="ib-number"><b>2</b><span>क़ज़ा बाकी</span></div></div>
+          <div class="ib-progress" role="progressbar" aria-label="Ramadan fast completion" aria-valuemin="0" aria-valuemax="30" aria-valuenow="28"><div id="ib-progress-fill"></div></div>
+        </section>
+        <div class="ib-heading"><h2>Recent days</h2><button type="button" id="ib-view-month">पूरा महीना</button></div>
+        <div class="ib-list" id="ib-ramadan-list">
+          <article class="ib-entry"><div class="ib-day">30</div><div class="ib-entry-copy"><b>30 Ramadan</b><span>19 March · Friday</span></div><span class="ib-status">Complete</span></article>
+          <article class="ib-entry"><div class="ib-day">29</div><div class="ib-entry-copy"><b>29 Ramadan</b><span>18 March · Thursday</span></div><span class="ib-status">Complete</span></article>
+          <article class="ib-entry"><div class="ib-day">18</div><div class="ib-entry-copy"><b>18 Ramadan</b><span>Travel · Add to Qaza</span></div><span class="ib-status missed">Missed</span></article>
+          <article class="ib-entry"><div class="ib-day">7</div><div class="ib-entry-copy"><b>7 Ramadan</b><span>Health · Add to Qaza</span></div><span class="ib-status missed">Missed</span></article>
+        </div>
+      </div>
+      <div id="ib-qaza-panel" role="tabpanel" aria-labelledby="ib-qaza-tab" hidden>
+        <section class="ib-qaza-box">
+          <div class="ib-qaza-top"><div class="ib-qaza-icon"><i data-lucide="moon-star" aria-hidden="true"></i></div><div><h2><span id="ib-due-count">2</span> Qaza fasts due</h2><p>जब पूरा हो जाए, नीचे mark करें</p></div></div>
+          <div class="ib-qaza-items">
+            <div class="ib-qaza-item" data-qaza><button class="ib-check" type="button" aria-label="Mark 18 Ramadan qaza complete"><i data-lucide="check" aria-hidden="true"></i></button><span>18 Ramadan 1448</span><small>Travel</small></div>
+            <div class="ib-qaza-item" data-qaza><button class="ib-check" type="button" aria-label="Mark 7 Ramadan qaza complete"><i data-lucide="check" aria-hidden="true"></i></button><span>7 Ramadan 1448</span><small>Health</small></div>
+          </div>
+          <div class="ib-note" id="ib-private-note">नोट: यह रिकॉर्ड केवल आपके डिवाइस पर रखा जाता है।</div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script>
+    (() => {
+      const root = document.getElementById('ibadati-fast-history');
+      const state = { accent:'#11766f', radius:18, privateNote:false, due:2 };
+      const tabs = [...root.querySelectorAll('.ib-tab')];
+      const panels = { 'ib-ramadan-tab':root.querySelector('#ib-ramadan-panel'), 'ib-qaza-tab':root.querySelector('#ib-qaza-panel') };
+      const dueCount = root.querySelector('#ib-due-count');
+      const note = root.querySelector('#ib-private-note');
+      function render() {
+        root.style.setProperty('--ib-accent', state.accent);
+        root.querySelectorAll('.ib-summary,.ib-qaza-box').forEach((el) => { el.style.borderRadius = `${state.radius}px`; });
+        dueCount.textContent = state.due;
+        note.classList.toggle('is-visible', state.privateNote);
+      }
+      tabs.forEach((tab) => tab.addEventListener('click', () => {
+        tabs.forEach((item) => { const active = item === tab; item.setAttribute('aria-selected', String(active)); panels[item.id].hidden = !active; });
+      }));
+      root.querySelectorAll('[data-qaza]').forEach((item) => item.querySelector('button').addEventListener('click', () => {
+        if (item.classList.contains('is-done')) return;
+        item.classList.add('is-done'); state.due = Math.max(0, state.due - 1); render();
+      }));
+      root.querySelector('#ib-view-month').addEventListener('click', (event) => { event.currentTarget.textContent = event.currentTarget.textContent === 'पूरा महीना' ? 'कम दिखाएँ' : 'पूरा महीना'; });
+      render();
+      if (globalThis.lucide) globalThis.lucide.createIcons({ attrs:{ width:18, height:18 } });
+      if (globalThis.Tweak) { const tweak = new Tweak({ container:root, onChange:render }); tweak.addColorPicker(state,'accent',{label:'Accent colour',reference:'--ib-accent'}); tweak.addSlider(state,'radius',{label:'Card radius',min:12,max:28,unit:'px'}); tweak.addToggle(state,'privateNote',{label:'Show privacy note'}); }
+    })();
+  </script>
+</div>
