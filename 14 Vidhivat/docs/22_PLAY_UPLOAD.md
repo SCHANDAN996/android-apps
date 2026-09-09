@@ -11,16 +11,16 @@
 
 | क्या | हालत | कौन करेगा |
 |---|---|---|
-| ऐप का कोड | ✅ तैयार, 900 जाँचें पास | — |
+| ऐप का कोड | ✅ तैयार, 901 जाँचें पास | — |
 | Icon 512×512 | ✅ बना हुआ | — |
 | Feature graphic 1024×500 | ✅ बना हुआ | — |
-| **Privacy policy** | ✅ लिखी — `app/play_store_assets/privacy_policy.html` | 🔴 **host करनी है** |
+| **Privacy policy** | ✅ लिखी, और repo की जड़ में नक़ल भी रखी | 🔴 **Pages चालू करनी है** |
 | Listing का पूरा पाठ | ✅ `docs/19_PLAY_LISTING.md` | — |
 | Data safety के जवाब | ✅ `docs/19` §6 | — |
 | Screenshot (8) | ✅ `app/play_store_assets/screenshots/play/` — 1080 × 1920 | — |
 | Release signing config | ✅ `android/app/build.gradle.kts` में लगा | — |
 | **चाबी (keystore)** | 🔴 **नहीं बनी** | 🔴 **आप** |
-| **version** | 🟠 अब भी `0.1.0+1` | 🔴 **आप तय करें** |
+| version | ✅ `1.0.0+1` कर दिया | — |
 | **`.aab` बनाना** | ⬜ चाबी के बाद | — |
 | **Play Console का सारा काम** | 🔴 बाक़ी | 🔴 **आप** |
 
@@ -78,22 +78,16 @@ storeFile=vidhivat-upload.jks
 
 ---
 
-# चरण 2 — version तय कीजिए
+# चरण 2 — version ✅ हो चुका
 
-`app/pubspec.yaml` में अभी:
-
-```yaml
-version: 0.1.0+1
-```
-
-पहली रिलीज़ के लिए बदलकर:
+`app/pubspec.yaml` में अब:
 
 ```yaml
 version: 1.0.0+1
 ```
 
 - `1.0.0` = यूज़र को दिखने वाला **versionName**
-- `+1` = Play का **versionCode** — हर upload पर **बढ़ाना ज़रूरी है**
+- `+1` = Play का **versionCode** — हर अगली upload पर **बढ़ाना ज़रूरी है**
   (1 → 2 → 3…)। वही नंबर दोबारा भेजने पर Play मना कर देता है।
 
 > ⚠️ जमीन नापी में यही चूक हो चुकी है (→ अलग repo)। हर upload से पहले
@@ -155,7 +149,12 @@ https://schandan996.github.io/android-apps/14%20Vidhivat/app/play_store_assets/p
 > URL साफ़ होगा:
 > `https://schandan996.github.io/android-apps/vidhivat-privacy.html`
 >
-> कहिए तो मैं वो नक़ल बना दूँ।
+> ✅ **वो नक़ल बन चुकी है** — `MASS APP/vidhivat-privacy.html`।
+> Pages चालू करते ही यही पता काम करेगा:
+> `https://schandan996.github.io/android-apps/vidhivat-privacy.html`
+>
+> ⚠️ **अब नीति दो जगह है।** कभी बदलनी पड़े तो **दोनों** बदलनी होंगी —
+> `app/play_store_assets/privacy_policy.html` और जड़ वाली नक़ल।
 
 ⚠️ **URL खुलकर दिखना चाहिए** — Play का reviewer उसे खोलकर देखता है। न
 खुले तो listing लटक जाती है।
@@ -246,8 +245,8 @@ https://schandan996.github.io/android-apps/14%20Vidhivat/app/play_store_assets/p
 
 - [ ] चाबी बनी, और उसका **बैकअप** भी हुआ
 - [ ] `key.properties` बनी, और `git status` में नहीं दिखती
-- [ ] version `1.0.0+1` किया
-- [ ] `flutter test` — 900 जाँचें पास
+- [x] version `1.0.0+1` किया ✅
+- [ ] `flutter test` — 901 जाँचें पास
 - [ ] `.aab` बनी (`.apk` नहीं)
 - [ ] Privacy policy का URL ब्राउज़र में खुलकर दिखता है
 - [ ] Data safety में तीनों "नहीं"
