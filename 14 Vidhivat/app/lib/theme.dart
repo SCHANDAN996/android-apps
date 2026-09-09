@@ -371,6 +371,20 @@ abstract final class VidhivatIconSize {
 }
 
 /// Minimum action dimensions keep tap targets consistent and accessible.
+/// पन्ने की चौड़ाई — चौड़ी स्क्रीन पर भी पढ़ने लायक़ (→ D-062)।
+abstract final class VidhivatLayout {
+  /// पन्ने की सबसे ज़्यादा चौड़ाई।
+  ///
+  /// फ़ोन खड़ा हो तो इसका कोई असर नहीं — वहाँ चौड़ाई 384dp के
+  /// आस-पास रहती है। लेटाने पर वो 853dp हो जाती है, और तब अक्षर
+  /// पूरी चौड़ाई में फैल जाते हैं — एक पंक्ति इतनी लंबी हो जाती है कि
+  /// आँख अगली पंक्ति का सिरा ढूँढ़ नहीं पाती।
+  ///
+  /// 600 यहीं से आया — एक पंक्ति में लगभग उतने अक्षर जितने छपी
+  /// पुस्तक में होते हैं।
+  static const double maxContentWidth = 600;
+}
+
 abstract final class VidhivatActionSize {
   static const double compact = VidhivatSpacing.xxxl;
   static const double minimumTouchTarget = 44;

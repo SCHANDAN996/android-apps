@@ -222,6 +222,7 @@ class _FeaturedPuja extends StatelessWidget {
       icon: Icons.local_fire_department_outlined,
       artworkAsset: DevotionalAssets.forVidhiId(entry.id).assetPath,
       artworkSemanticLabel: DevotionalAssets.forVidhiId(entry.id).semanticLabel,
+      artworkScale: entry.id == 'nitya_pooja' ? 1.25 : 1,
       semanticLabel: '${entry.naam} की featured विधि',
       footer: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

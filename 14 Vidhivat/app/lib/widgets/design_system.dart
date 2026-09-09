@@ -574,6 +574,10 @@ class VidhivatSacredHero extends StatelessWidget {
   final String? artworkAsset;
   final String? artworkSemanticLabel;
 
+  /// A featured card can enlarge the painted artwork without changing the
+  /// transparent source file or its packaged size.
+  final double artworkScale;
+
   const VidhivatSacredHero({
     super.key,
     required this.eyebrow,
@@ -585,6 +589,7 @@ class VidhivatSacredHero extends StatelessWidget {
     this.semanticLabel,
     this.artworkAsset,
     this.artworkSemanticLabel,
+    this.artworkScale = 1,
   });
 
   @override
@@ -673,10 +678,16 @@ class VidhivatSacredHero extends StatelessWidget {
                     textContent,
                     const SizedBox(height: VidhivatSpacing.md),
                     Center(
-                      child: _HeroArtwork(
-                        assetPath: artworkAsset!,
-                        width: constraints.maxWidth - (padding * 2),
-                        height: artworkHeight,
+                      child: ClipRect(
+                        child: Transform.scale(
+                          scale: artworkScale,
+                          alignment: Alignment.bottomCenter,
+                          child: _HeroArtwork(
+                            assetPath: artworkAsset!,
+                            width: constraints.maxWidth - (padding * 2),
+                            height: artworkHeight,
+                          ),
+                        ),
                       ),
                     ),
                   ] else

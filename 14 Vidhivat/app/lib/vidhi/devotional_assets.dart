@@ -92,15 +92,18 @@ abstract final class DevotionalAssets {
   static const Map<String, DevotionalArtwork> _byVidhiId = {
     'nitya_pooja': nityaPooja,
     'satyanarayan': DevotionalArtwork(
-      assetPath: 'assets/images/devotional/vishnu.webp',
-      semanticLabel: 'सत्यनारायण पूजा के लिए विष्णु का सजावटी चित्र',
+      assetPath: 'assets/images/devotional/satyanarayan_v1.webp',
+      semanticLabel: 'सत्यनारायण पूजा की वेदी का सजावटी चित्र',
     ),
     'ganesh_poojan': DevotionalArtwork(
       assetPath: 'assets/images/devotional/ganesha.webp',
       semanticLabel: 'गणेश पूजन का सजावटी चित्र',
     ),
     'grih_pravesh': grihPravesh,
-    'lakshmi_poojan': lakshmi,
+    'lakshmi_poojan': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/lakshmi_ganesh_poojan_v1.webp',
+      semanticLabel: 'लक्ष्मी गणेश पूजन का सजावटी चित्र',
+    ),
     'kalash_sthapana': kalash,
     'mundan': DevotionalArtwork(
       assetPath: 'assets/images/devotional/mundan.webp',
@@ -113,8 +116,8 @@ abstract final class DevotionalAssets {
     ),
     'rudrabhishek': rudrabhishek,
     'vahan_pooja': DevotionalArtwork(
-      assetPath: 'assets/images/devotional/vahan_pooja_v3.webp',
-      semanticLabel: 'वाहन पूजा का सजावटी चित्र',
+      assetPath: 'assets/images/devotional/vahan_pooja_v4.webp',
+      semanticLabel: 'कार और स्कूटर की वाहन पूजा का सजावटी चित्र',
     ),
     'upanayan': DevotionalArtwork(
       assetPath: 'assets/images/devotional/upanayan.webp',
@@ -132,20 +135,47 @@ abstract final class DevotionalAssets {
     // पर एक ही generic दीया दिखता था — वही चीज़ जो D-039 वाले काम में
     // ठीक की गई थी। नई पूजा बनाते वक़्त यहाँ जोड़ना भूलना नहीं है;
     // `devotional_assets_test.dart` की जाँच अब इसका पहरा देती है।
-    'dhanteras': lakshmi,
-    'govardhan_annakut': krishna,
-    'bhai_dooj_pooja': nityaPooja,
-    // बची हुई सात घरेलू पूजाएँ (4 सित 2026)।
-    'raksha_bandhan_pooja': nityaPooja,
-    'makar_sankranti_pooja': suryaArghya,
-    'hartalika_teej': DevotionalArtwork(
-      assetPath: 'assets/images/devotional/shiva.webp',
-      semanticLabel: 'हरितालिका तीज के लिए शिव जी का सजावटी चित्र',
+    'dhanteras': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/dhanteras_v1.webp',
+      semanticLabel: 'धनतेरस के धन्वंतरि कलश का सजावटी चित्र',
     ),
-    'vat_savitri': tulsi,
-    'chhath_pooja': suryaArghya,
-    'varalakshmi_vrat': lakshmi,
-    'durga_ashtami_kanya_poojan': kalash,
+    'govardhan_annakut': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/govardhan_annakut_v1.webp',
+      semanticLabel: 'गोवर्धन अन्नकूट का सजावटी चित्र',
+    ),
+    'bhai_dooj_pooja': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/bhai_dooj_v1.webp',
+      semanticLabel: 'भाई दूज तिलक का सजावटी चित्र',
+    ),
+    // बची हुई सात घरेलू पूजाएँ (4 सित 2026)।
+    'raksha_bandhan_pooja': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/raksha_bandhan_v1.webp',
+      semanticLabel: 'रक्षाबंधन की राखी का सजावटी चित्र',
+    ),
+    'makar_sankranti_pooja': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/makar_sankranti_v1.webp',
+      semanticLabel: 'मकर संक्रांति के सूर्य अर्घ्य का सजावटी चित्र',
+    ),
+    'hartalika_teej': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/hartalika_teej_v1.webp',
+      semanticLabel: 'हरितालिका तीज में पार्वती पूजा का सजावटी चित्र',
+    ),
+    'vat_savitri': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/vat_savitri_v1.webp',
+      semanticLabel: 'बरगद के वट वृक्ष की वट सावित्री पूजा का सजावटी चित्र',
+    ),
+    'chhath_pooja': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/chhath_pooja_v1.webp',
+      semanticLabel: 'छठ पूजा में सूर्य को अर्घ्य का सजावटी चित्र',
+    ),
+    'varalakshmi_vrat': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/varalakshmi_vrat_v1.webp',
+      semanticLabel: 'वरलक्ष्मी व्रत के कलश का सजावटी चित्र',
+    ),
+    'durga_ashtami_kanya_poojan': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/kanya_poojan_v1.webp',
+      semanticLabel: 'कन्या पूजन का सजावटी चित्र',
+    ),
   };
 
   static DevotionalArtwork forVidhiId(String id) => _byVidhiId[id] ?? diya;

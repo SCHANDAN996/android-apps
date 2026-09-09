@@ -274,8 +274,8 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('आगे क्या आ रहा है'), findsNothing);
-      expect(find.text('तारीख़ें पंचांग से, आपके शहर के हिसाब से'),
-          findsNothing);
+      expect(
+          find.text('तारीख़ें पंचांग से, आपके शहर के हिसाब से'), findsNothing);
     });
 
     testWidgets('320 dp और 1.5x अक्षर पर भी सुरक्षित है', (tester) async {
@@ -445,6 +445,32 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
+    testWidgets('Home se अधूरी पूजा manually हटाई जा सकती है', (tester) async {
+      final nitya = await vidhiBhandar.vidhi('nitya_pooja');
+      await settings.recordLastReachedStep(
+        pujaId: nitya.id,
+        stepIndex: 2,
+        totalSteps: nitya.charan.length,
+      );
+      phoneNaap(tester);
+      await tester.pumpWidget(app(const HomeShell()));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byTooltip('अधूरी पूजा हटाएँ'));
+      await tester.pumpAndSettle();
+      expect(find.text('अधूरी पूजा हटाएँ?'), findsOneWidget);
+      expect(find.textContaining('पूजा की विधि नहीं मिटेगी'), findsOneWidget);
+
+      await tester.tap(find.text('हटाएँ'));
+      await tester.pumpAndSettle();
+
+      expect(
+        settings.playerProgressFor(nitya.id, nitya.charan.length),
+        isNull,
+      );
+      expect(find.text('जहाँ छोड़ा था'), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
     testWidgets('320 dp और 1.5x अक्षर में dashboard सुरक्षित है',
         (tester) async {
       phoneNaap(tester, width: 320);
@@ -537,8 +563,7 @@ void main() {
       expect(plannedIds, contains('purna_havan'));
 
       // यही असली रखवाली है — एक भी id दोनों जगह न हो।
-      final banChukiIds =
-          (await vidhiBhandar.suchi()).map((e) => e.id).toSet();
+      final banChukiIds = (await vidhiBhandar.suchi()).map((e) => e.id).toSet();
       expect(banChukiIds.intersection(plannedIds.toSet()), isEmpty,
           reason: 'यह पूजा सूची में भी है और "जल्द आएगी" में भी');
     });
@@ -782,8 +807,13 @@ void main() {
       await kholoSamagri(tester);
 
       await scrollTak(tester, find.text('क्या नहीं चढ़ाना'));
-      for (final cheez in ['• तुलसी', '• केतकी का फूल', '• शंख से जल',
-                           '• हल्दी', '• सिंदूर']) {
+      for (final cheez in [
+        '• तुलसी',
+        '• केतकी का फूल',
+        '• शंख से जल',
+        '• हल्दी',
+        '• सिंदूर'
+      ]) {
         expect(find.text(cheez), findsOneWidget, reason: cheez);
       }
       expect(tester.takeException(), isNull);
@@ -1063,10 +1093,18 @@ void main() {
           '(आचमन, पवित्रीकरण)। पवित्रीकरण वाला श्लोक webdunia की महालक्ष्मी '
           'पूजन विधि में भी हूबहू यही मिला।';
 
+      // ⚠ पन्ना आलसी `ListView` है — जो तह से नीचे है वो बनता ही
+      // नहीं। चौड़ी स्क्रीन पर अक्षर अब 600dp में सिमटते हैं (→ D-062),
+      // इसलिए पन्ना पहले से लंबा हो गया — स्क्रॉल करना पड़ता है।
+      await scrollTak(tester, find.text('मंत्र'));
       expect(find.text('मंत्र'), findsOneWidget);
       expect(find.text(devanagari), findsOneWidget);
+
+      await scrollTak(tester, find.text('उच्चारण'));
       expect(find.text('उच्चारण'), findsOneWidget);
       expect(find.text(roman), findsOneWidget);
+
+      await scrollTak(tester, find.text('अर्थ'));
       expect(find.text('अर्थ'), findsOneWidget);
       expect(find.text(arth), findsOneWidget);
 
@@ -1132,7 +1170,8 @@ void main() {
         findsOneWidget,
       );
       // ख़ाली छोड़ने की वजह भी दिखनी चाहिए।
-      await scrollTak(tester, find.textContaining('नवग्रह के लिए नौ अलग मंत्र'));
+      await scrollTak(
+          tester, find.textContaining('नवग्रह के लिए नौ अलग मंत्र'));
       expect(find.textContaining('नवग्रह के लिए नौ अलग मंत्र'), findsOneWidget);
 
       // और वो चेतावनी भी, कि "सुप्रभातम्" वाला श्लोक यहाँ का नहीं है

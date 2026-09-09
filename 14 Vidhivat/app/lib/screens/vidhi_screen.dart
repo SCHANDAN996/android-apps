@@ -256,58 +256,61 @@ class _PreparationDetailState extends State<_PreparationDetail> {
               ),
               child: SafeArea(
                 top: false,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(
-                    VidhivatSpacing.lg,
-                    VidhivatSpacing.sm,
-                    VidhivatSpacing.lg,
-                    VidhivatSpacing.md,
+                child: VidhivatReadableWidth(
+                  // लेटे रूप में यह बटन 853dp चौड़ा हो जाता था (→ D-062)।
+                    child: Padding(
+                    padding: const EdgeInsets.fromLTRB(
+                      VidhivatSpacing.lg,
+                      VidhivatSpacing.sm,
+                      VidhivatSpacing.lg,
+                      VidhivatSpacing.md,
+                    ),
+                    // ── नीचे **एक ही** बटन (→ D-048) ───────────────
+                    //
+                    // पहले यहाँ तीन बटन एक के नीचे एक थे — 320px, यानी
+                    // काम की स्क्रीन का 22%, और वो ऊपर के chips को ढक भी
+                    // रहे थे। तीनों बराबरी पर बैठे थे जबकि बराबर थे नहीं:
+                    //
+                    // • भरा हुआ बटन **सामग्री** खोलता था — और वही काम
+                    //   ऊपर "सामग्री" शीर्षक के "सभी देखें" से भी होता है।
+                    //   यानी एक ही पन्ने पर वही बटन दो बार।
+                    // • असली काम — पूजा शुरू करना — फीके text-लिंक में था।
+                    // • "शुरू से करें" उस कार्ड से 500px दूर था जिसके बारे
+                    //   में वो है; अब वो `_ResumePanel` के अंदर चला गया।
+                    //
+                    // ⚠️ जिन पूजाओं की पूरी विधि खुलती ही नहीं (उपनयन,
+                    // मुंडन — → D-035), वहाँ शुरू करने को कुछ है नहीं।
+                    // उनके लिए सामग्री ही इकलौता काम है, इसलिए बटन वही बनता
+                    // है — पट्टी कभी ख़ाली नहीं रहती।
+                    child: vidhi.scope.poorViDhiKholSakteHain
+                        ? VidhivatButton(
+                            label: resume == null
+                                ? 'पूजा शुरू करें'
+                                : 'चरण ${resume.lastReachedStepIndex + 1} से जारी रखें',
+                            semanticLabel: resume == null
+                                ? '${vidhi.naam} शुरू करें'
+                                : '${vidhi.naam} में चरण ${resume.lastReachedStepIndex + 1} से जारी रखें',
+                            onPressed: _isStartingOver
+                                ? null
+                                : () => _startPuja(
+                                      context,
+                                      initialStepIndex:
+                                          resume?.lastReachedStepIndex ?? 0,
+                                    ),
+                            icon: resume == null
+                                ? Icons.play_arrow
+                                : Icons.play_circle_outline,
+                            fullWidth: true,
+                          )
+                        : VidhivatButton(
+                            label: 'सामग्री की सूची देखें',
+                            semanticLabel:
+                                '${vidhi.naam} की सामग्री की सूची देखें',
+                            onPressed: () => _openMaterials(context),
+                            icon: Icons.checklist_outlined,
+                            fullWidth: true,
+                          ),
                   ),
-                  // ── नीचे **एक ही** बटन (→ D-048) ───────────────
-                  //
-                  // पहले यहाँ तीन बटन एक के नीचे एक थे — 320px, यानी
-                  // काम की स्क्रीन का 22%, और वो ऊपर के chips को ढक भी
-                  // रहे थे। तीनों बराबरी पर बैठे थे जबकि बराबर थे नहीं:
-                  //
-                  // • भरा हुआ बटन **सामग्री** खोलता था — और वही काम
-                  //   ऊपर "सामग्री" शीर्षक के "सभी देखें" से भी होता है।
-                  //   यानी एक ही पन्ने पर वही बटन दो बार।
-                  // • असली काम — पूजा शुरू करना — फीके text-लिंक में था।
-                  // • "शुरू से करें" उस कार्ड से 500px दूर था जिसके बारे
-                  //   में वो है; अब वो `_ResumePanel` के अंदर चला गया।
-                  //
-                  // ⚠️ जिन पूजाओं की पूरी विधि खुलती ही नहीं (उपनयन,
-                  // मुंडन — → D-035), वहाँ शुरू करने को कुछ है नहीं।
-                  // उनके लिए सामग्री ही इकलौता काम है, इसलिए बटन वही बनता
-                  // है — पट्टी कभी ख़ाली नहीं रहती।
-                  child: vidhi.scope.poorViDhiKholSakteHain
-                      ? VidhivatButton(
-                          label: resume == null
-                              ? 'पूजा शुरू करें'
-                              : 'चरण ${resume.lastReachedStepIndex + 1} से जारी रखें',
-                          semanticLabel: resume == null
-                              ? '${vidhi.naam} शुरू करें'
-                              : '${vidhi.naam} में चरण ${resume.lastReachedStepIndex + 1} से जारी रखें',
-                          onPressed: _isStartingOver
-                              ? null
-                              : () => _startPuja(
-                                    context,
-                                    initialStepIndex:
-                                        resume?.lastReachedStepIndex ?? 0,
-                                  ),
-                          icon: resume == null
-                              ? Icons.play_arrow
-                              : Icons.play_circle_outline,
-                          fullWidth: true,
-                        )
-                      : VidhivatButton(
-                          label: 'सामग्री की सूची देखें',
-                          semanticLabel:
-                              '${vidhi.naam} की सामग्री की सूची देखें',
-                          onPressed: () => _openMaterials(context),
-                          icon: Icons.checklist_outlined,
-                          fullWidth: true,
-                        ),
                 ),
               ),
             ),

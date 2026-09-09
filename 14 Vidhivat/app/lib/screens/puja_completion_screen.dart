@@ -4,6 +4,7 @@ import '../services/dakshina_service.dart';
 import '../theme.dart';
 import '../vidhi/devotional_assets.dart';
 import '../vidhi/vidhi.dart';
+import '../widgets/common.dart';
 import '../widgets/dakshina_card.dart';
 import '../widgets/design_system.dart';
 import 'dakshina_screen.dart';
@@ -55,6 +56,15 @@ class PujaCompletionScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       VidhivatSacredHero(
+                        // ── छोटा hero, ताकि दक्षिणा पहली तह में आए ────────
+                        //
+                        // फ़ोन पर पकड़ा गया: पूरा hero इतनी जगह ले लेता था कि दक्षिणा
+                        // का डिब्बा स्क्रीन से नीचे चला जाता था — और जो दिखता ही नहीं,
+                        // वो माँगा ही नहीं जाता।
+                        //
+                        // `compact` से चित्र 272 से 148 हो जाता है और शीर्षक भी
+                        // एक दर्जा छोटा — लगभग डेढ़ सौ पिक्सल बचते हैं (→ D-063)।
+                        compact: true,
                         eyebrow: 'मार्गदर्शिका',
                         title: 'मार्गदर्शिका पूरी हुई',
                         subtitle:
@@ -102,21 +112,24 @@ class PujaCompletionScreen extends StatelessWidget {
         ),
         child: SafeArea(
           top: false,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(
-              VidhivatSpacing.lg,
-              VidhivatSpacing.sm,
-              VidhivatSpacing.lg,
-              VidhivatSpacing.md,
-            ),
-            // यह बटन `popUntil(isFirst)` करता है — यानी होम पर ले जाता
-            // है, विधि पर नहीं। नाम वही कहे जो होता है।
-            child: VidhivatButton(
-              label: 'होम पर लौटें',
-              semanticLabel: '${vidhi.naam} के बाद होम पर लौटें',
-              onPressed: () => _returnToVidhiHome(context),
-              icon: Icons.home_outlined,
-              fullWidth: true,
+          child: VidhivatReadableWidth(
+            // लेटे रूप में यह बटन 853dp चौड़ा हो जाता था (→ D-062)।
+              child: Padding(
+              padding: const EdgeInsets.fromLTRB(
+                VidhivatSpacing.lg,
+                VidhivatSpacing.sm,
+                VidhivatSpacing.lg,
+                VidhivatSpacing.md,
+              ),
+              // यह बटन `popUntil(isFirst)` करता है — यानी होम पर ले जाता
+              // है, विधि पर नहीं। नाम वही कहे जो होता है।
+              child: VidhivatButton(
+                label: 'होम पर लौटें',
+                semanticLabel: '${vidhi.naam} के बाद होम पर लौटें',
+                onPressed: () => _returnToVidhiHome(context),
+                icon: Icons.home_outlined,
+                fullWidth: true,
+              ),
             ),
           ),
         ),

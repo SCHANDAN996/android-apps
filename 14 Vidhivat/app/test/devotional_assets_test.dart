@@ -17,7 +17,7 @@ void main() {
       );
       expect(
         DevotionalAssets.forVidhiId('lakshmi_poojan').assetPath,
-        'assets/images/devotional/lakshmi.webp',
+        'assets/images/devotional/lakshmi_ganesh_poojan_v1.webp',
       );
       expect(
         DevotionalAssets.forVidhiId('kalash_sthapana').assetPath,
@@ -45,7 +45,7 @@ void main() {
       );
       expect(
         DevotionalAssets.forVidhiId('vahan_pooja').assetPath,
-        'assets/images/devotional/vahan_pooja_v3.webp',
+        'assets/images/devotional/vahan_pooja_v4.webp',
       );
     });
 
@@ -67,6 +67,11 @@ void main() {
           isNot(DevotionalAssets.diya.assetPath),
           reason: '"${e.naam}" (${e.id}) के लिए अपनी तस्वीर नहीं है — '
               'devotional_assets.dart के _byVidhiId में जोड़ो',
+        );
+        expect(
+          File(DevotionalAssets.forVidhiId(e.id).assetPath).existsSync(),
+          isTrue,
+          reason: 'mapped artwork file must be bundled locally',
         );
       }
     });

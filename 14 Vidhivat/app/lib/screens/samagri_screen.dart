@@ -115,22 +115,25 @@ class _SamagriScreenState extends State<SamagriScreen> {
       ),
       bottomNavigationBar: SafeArea(
         top: false,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(
-            VidhivatSpacing.lg,
-            VidhivatSpacing.sm,
-            VidhivatSpacing.lg,
-            VidhivatSpacing.md,
-          ),
-          child: VidhivatButton(
-            label: 'पूजा शुरू करें',
-            semanticLabel: '${vidhi.naam} शुरू करें',
-            onPressed: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                  builder: (_) => VidhiPlayerScreen(vidhi: vidhi)),
+        child: VidhivatReadableWidth(
+          // लेटे रूप में यह बटन 853dp चौड़ा हो जाता था (→ D-062)।
+            child: Padding(
+            padding: const EdgeInsets.fromLTRB(
+              VidhivatSpacing.lg,
+              VidhivatSpacing.sm,
+              VidhivatSpacing.lg,
+              VidhivatSpacing.md,
             ),
-            icon: Icons.play_arrow,
-            fullWidth: true,
+            child: VidhivatButton(
+              label: 'पूजा शुरू करें',
+              semanticLabel: '${vidhi.naam} शुरू करें',
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (_) => VidhiPlayerScreen(vidhi: vidhi)),
+              ),
+              icon: Icons.play_arrow,
+              fullWidth: true,
+            ),
           ),
         ),
       ),

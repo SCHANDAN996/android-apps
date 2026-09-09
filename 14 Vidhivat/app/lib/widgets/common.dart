@@ -198,6 +198,42 @@ class Chetavni extends StatelessWidget {
   }
 }
 
+/// चौड़ी स्क्रीन पर पन्ने की चौड़ाई बाँधता है (→ D-062)।
+///
+/// ## यह क्यों चाहिए
+///
+/// फ़ोन लेटाने पर चौड़ाई 384dp से **853dp** हो जाती है। लेआउट टूटता
+/// नहीं — पर सब कुछ पूरी चौड़ाई में फैल जाता है, और वोी "खिंचा हुआ"
+/// लगता है। सबसे बुरा अक्षरों पर होता है — एक पंक्ति इतनी लंबी हो
+/// जाती है कि आँख अगली पंक्ति का सिरा ढूँढ़ नहीं पाती।
+///
+/// ⚠ यह फ़ोन खड़ड़े रूप में **कुछ नहीं बदलता** — वहाँ चौड़ाई पहले से
+/// सीमा से कम है। यह सिर्फ़ तब जागता है जब जगह ज़्यादा हो।
+class VidhivatReadableWidth extends StatelessWidget {
+  final Widget child;
+
+  const VidhivatReadableWidth({super.key, required this.child});
+
+  /// चौड़ी स्क्रीन पर दोनों किनारों से कितनी जगह छोड़नी है।
+  ///
+  /// ⚠ यही तरीक़ा जान-बूझकर चुना गया — `Align` या `Center` से
+  /// नहीं। वे बच्चे को नया ठिकाना दे देते हैं, जिससे कुछ जगह hit-test
+  /// टूट जाता है — 48 जाँचों ने यही पकड़ा था। सिर्फ़ padding बढ़ाने
+  /// से खड़ड़े फ़ोन पर **बिल्कुल कुछ नहीं बदलता**।
+  static double kinareKiJagah(BoxConstraints c) => c.hasBoundedWidth
+      ? ((c.maxWidth - VidhivatLayout.maxContentWidth) / 2)
+          .clamp(0.0, double.infinity)
+      : 0.0;
+
+  @override
+  Widget build(BuildContext context) => LayoutBuilder(
+        builder: (context, c) => Padding(
+          padding: EdgeInsets.symmetric(horizontal: kinareKiJagah(c)),
+          child: child,
+        ),
+      );
+}
+
 /// पूरे ऐप में एक जैसा पन्ना — ऊपर-नीचे बराबर जगह।
 class Panna extends StatelessWidget {
   final List<Widget> children;
@@ -215,8 +251,16 @@ class Panna extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => ListView(
-        padding: padding,
-        children: children,
+  // ⚠ चौड़ाई ListView की अपनी padding में जुड़ती है, बाहर से नहीं —
+  // इससे उँगली पूरी स्क्रीन पर स्क्रॉल कर सकती है, सिर्फ़ अक्षर
+  // बीच में सिमटते हैं (→ D-062)।
+  Widget build(BuildContext context) => LayoutBuilder(
+        builder: (context, c) => ListView(
+          padding: padding +
+              EdgeInsets.symmetric(
+                horizontal: VidhivatReadableWidth.kinareKiJagah(c),
+              ),
+          children: children,
+        ),
       );
 }

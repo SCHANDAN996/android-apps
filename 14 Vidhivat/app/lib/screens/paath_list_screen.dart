@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../theme.dart';
 import '../vidhi/bhandar.dart';
 import '../vidhi/paath.dart';
+import '../vidhi/paath_assets.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
 import 'paath_screen.dart';
@@ -151,6 +152,7 @@ class _PaathTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final type = VidhivatTheme.typographyOf(context);
     final colors = VidhivatTheme.colorsOf(context);
+    final artwork = PaathAssets.forPaathId(entry.id);
 
     return VidhivatSurfaceCard(
       onTap: entry.taiyar ? onTap : null,
@@ -164,7 +166,16 @@ class _PaathTile extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             alignment: Alignment.center,
-            child: Text('🙏', style: type.cardTitle),
+            child: Padding(
+              padding: const EdgeInsets.all(3),
+              child: Image.asset(
+                artwork.assetPath,
+                fit: BoxFit.contain,
+                cacheHeight: 92,
+                filterQuality: FilterQuality.medium,
+                excludeFromSemantics: true,
+              ),
+            ),
           ),
           const SizedBox(width: VidhivatSpacing.md),
           Expanded(

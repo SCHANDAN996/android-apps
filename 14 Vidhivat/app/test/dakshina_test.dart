@@ -16,11 +16,14 @@ import 'package:vidhivat/widgets/design_system.dart';
 /// उसे यह वजहें याद नहीं होंगी।
 ///
 /// 1. दे चुके यूज़र से छह महीने तक दोबारा नहीं पूछा जाता
-/// 2. तीन बार दिखने के बाद तीस दिन की चुप्पी
-/// 3. **जहाँ आदमी पूजा कर रहा है वहाँ दक्षिणा कभी नहीं** — विधि प्लेयर,
+/// 2. **जहाँ आदमी पूजा कर रहा है वहाँ दक्षिणा कभी नहीं** — विधि प्लेयर,
 ///    पाठ, संकल्प, होम
-/// 4. कोई राशि पहले से चुनी हुई नहीं
-/// 5. §6.4 की मनाही — जो वाक्य कभी नहीं लिखने
+/// 3. **पैसा बटन दबाए बिना कभी नहीं कटता**
+/// 4. §6.4 की मनाही — जो वाक्य कभी नहीं लिखने
+///
+/// ⚠️ दो पुराने नियम 9 सितम्बर 2026 को हटे (→ D-063): "तीन बार दिखने के
+/// बाद तीस दिन चुप", और "कोई राशि पहले से चुनी हुई नहीं"। डेवलपर ने
+/// जोख़िम जानते हुए बदलवाए। जो बचा है उसका पहरा अब और कड़ा है।
 void main() {
   final abhi = DateTime(2026, 9, 5, 20);
 
@@ -53,33 +56,26 @@ void main() {
       expect(dakshina.dikhega(abhi.add(const Duration(days: 183))), isTrue);
     });
 
-    test('तीन बार दिखने के बाद तीस दिन की चुप्पी, फिर गिनती नए सिरे से',
-        () async {
-      await dakshina.dikhaayiGayi(abhi);
-      expect(dakshina.dikhega(abhi), isTrue);
-      await dakshina.dikhaayiGayi(abhi.add(const Duration(days: 1)));
-      expect(dakshina.dikhega(abhi.add(const Duration(days: 1))), isTrue);
-      await dakshina.dikhaayiGayi(abhi.add(const Duration(days: 2)));
-
-      // तीसरी बार के बाद चुप।
-      expect(dakshina.dikhega(abhi.add(const Duration(days: 3))), isFalse);
-      expect(dakshina.dikhega(abhi.add(const Duration(days: 31))), isFalse);
-
-      // तीस दिन बाद फिर — और गिनती शून्य से, यानी फिर तीन मौक़े।
-      final baad = abhi.add(const Duration(days: 33));
-      expect(dakshina.dikhega(baad), isTrue);
-      await dakshina.dikhaayiGayi(baad);
-      expect(dakshina.dikhega(baad.add(const Duration(days: 1))), isTrue);
+    // ⚠️ यह नियम 9 सितम्बर 2026 को हटा (→ D-063)। पहले बिना दिए तीन
+    // बार दिखने पर तीस दिन चुप्पी थी; फ़ोन पर दिखा कि बहुत पूजाओं के
+    // बाद डिब्बा ग़ायब हो जाता है।
+    test('बिना दिए कितनी भी बार दिखे — अब चुप्पी नहीं', () async {
+      for (var i = 0; i < 10; i++) {
+        await dakshina.dikhaayiGayi(abhi.add(Duration(days: i)));
+        expect(dakshina.dikhega(abhi.add(Duration(days: i + 1))), isTrue,
+            reason: '${i + 1} बार दिखने के बाद भी दिखना चाहिए');
+      }
     });
 
-    test('दक्षिणा मिलते ही छोड़ने की गिनती भी मिट जाती है', () async {
+    // ⛔ पर यह नियम **नहीं** हटा, और नहीं हटना चाहिए। जो दे चुका है
+    // उससे अगले दिन दोबारा माँगना पीछा करना हो जाता है।
+    test('दे चुके यूज़र से छह महीने तक नहीं पूछा जाता — यह अब भी क़ायम है',
+        () async {
       await dakshina.dikhaayiGayi(abhi);
-      await dakshina.dikhaayiGayi(abhi);
-      await dakshina.dikhaayiGayi(abhi);
-      expect(dakshina.dikhega(abhi), isFalse);
-
       await dakshina.mili(abhi);
-      // छह महीने बाद वापसी — तीस दिन वाली सज़ा साथ नहीं आती।
+
+      expect(dakshina.dikhega(abhi.add(const Duration(days: 1))), isFalse);
+      expect(dakshina.dikhega(abhi.add(const Duration(days: 181))), isFalse);
       expect(dakshina.dikhega(abhi.add(const Duration(days: 183))), isTrue);
     });
 
@@ -134,25 +130,38 @@ void main() {
   // ─────────────────────────────────────────────────────────────
 
   group('चुनाव', () {
-    testWidgets('कोई राशि पहले से चुनी हुई नहीं, और बिना चुने बटन नहीं चलता',
-        (tester) async {
+    // ⚠️ 9 सितम्बर 2026 को बदला (→ D-063) — पहले कोई राशि चुनी हुई
+    // नहीं होती थी। अब ₹51 चुनी हुई मिलती है।
+    testWidgets('₹51 पहले से चुनी हुई मिलती है', (tester) async {
       await tester.pumpWidget(app(const DakshinaChunav()));
 
-      final button = tester.widget<VidhivatButton>(
-        find.widgetWithText(VidhivatButton, 'दक्षिणा दें'),
-      );
-      expect(button.onPressed, isNull,
-          reason: 'राशि चुने बिना दक्षिणा का बटन कभी नहीं चलना चाहिए');
-
+      expect(pehleSeChuniRaashi.rupaye, 51);
       // सातों राशियाँ दिखती हैं — ₹11 समेत।
       for (final raashi in dakshinaRaashiyan) {
         expect(find.text(raashi.label), findsOneWidget);
       }
-      expect(find.text('₹11'), findsOneWidget);
 
-      // बटन फीका क्यों है, यह देखने वाले को भी दिखना चाहिए — पहले यह
-      // सिर्फ़ semantics में था।
-      expect(find.byKey(const Key('dakshina_pehle_chuniye')), findsOneWidget);
+      // चुनी हुई है, इसलिए बटन शुरू से ही चलता है और वो सहायक पंक्ति
+      // नहीं दिखती।
+      final button = tester.widget<VidhivatButton>(
+        find.widgetWithText(VidhivatButton, 'दक्षिणा दें'),
+      );
+      expect(button.onPressed, isNotNull);
+      expect(find.byKey(const Key('dakshina_pehle_chuniye')), findsNothing);
+    });
+
+    // ⛔ यही वो रक्षा है जो ₹51 चुना होने के बाद भी बची है, और यह कभी
+    // नहीं टूटनी चाहिए: **बटन दबाए बिना पैसा नहीं कटता।**
+    testWidgets('चुनी हुई राशि अपने आप नहीं कटती — बटन दबाना पड़ता है',
+        (tester) async {
+      final dwar = _NakliDwar(DakshinaNatija.mili);
+      dakshina.dwar = dwar;
+      await tester.pumpWidget(app(const DakshinaChunav()));
+      await tester.pumpAndSettle();
+
+      // पन्ना खुला, ₹51 चुनी हुई — पर द्वार तक कोई माँग नहीं गई।
+      expect(dwar.maangiGayi, isNull,
+          reason: 'बटन दबाए बिना Play की शीट कभी नहीं खुलनी चाहिए');
     });
 
     testWidgets('₹11 चुनकर दी जा सकती है', (tester) async {

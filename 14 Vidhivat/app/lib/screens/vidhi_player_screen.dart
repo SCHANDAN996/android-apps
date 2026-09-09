@@ -5,6 +5,7 @@ import 'package:wakelock_plus/wakelock_plus.dart';
 import '../state/settings.dart';
 import '../theme.dart';
 import '../vidhi/vidhi.dart';
+import '../vidhi/instructional_assets.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
 import '../vidhi/bhandar.dart';
@@ -209,19 +210,22 @@ class _VidhiPlayerScreenState extends State<VidhiPlayerScreen> {
         ),
         child: SafeArea(
           top: false,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(
-              VidhivatSpacing.lg,
-              VidhivatSpacing.sm,
-              VidhivatSpacing.lg,
-              VidhivatSpacing.md,
-            ),
-            child: _CharanNavigation(
-              first: _index == 0,
-              last: aakhri,
-              title: vidhi.naam,
-              onPrevious: () => _jao(_index - 1),
-              onContinue: aakhri ? _poojaPuriKaro : () => _jao(_index + 1),
+          child: VidhivatReadableWidth(
+            // लेटे रूप में यह बटन 853dp चौड़ा हो जाता था (→ D-062)।
+              child: Padding(
+              padding: const EdgeInsets.fromLTRB(
+                VidhivatSpacing.lg,
+                VidhivatSpacing.sm,
+                VidhivatSpacing.lg,
+                VidhivatSpacing.md,
+              ),
+              child: _CharanNavigation(
+                first: _index == 0,
+                last: aakhri,
+                title: vidhi.naam,
+                onPrevious: () => _jao(_index - 1),
+                onContinue: aakhri ? _poojaPuriKaro : () => _jao(_index + 1),
+              ),
             ),
           ),
         ),
@@ -246,6 +250,11 @@ class _CharanPanna extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final instructionalArtwork = InstructionalAssets.forStep(
+      vidhiId: vidhi.id,
+      title: charan.shirshak,
+    );
+
     return Panna(
       padding: const EdgeInsets.fromLTRB(
         VidhivatSpacing.lg,
@@ -266,6 +275,25 @@ class _CharanPanna extends StatelessWidget {
             textAlign: TextAlign.justify,
           ),
         ),
+        if (instructionalArtwork != null) ...[
+          const SizedBox(height: VidhivatSpacing.xl),
+          Semantics(
+            image: true,
+            label: instructionalArtwork.semanticLabel,
+            child: Center(
+              child: SizedBox(
+                height: 192,
+                child: Image.asset(
+                  instructionalArtwork.assetPath,
+                  fit: BoxFit.contain,
+                  cacheHeight: 384,
+                  filterQuality: FilterQuality.medium,
+                  excludeFromSemantics: true,
+                ),
+              ),
+            ),
+          ),
+        ],
         if (charan.samayMinute > 0) ...[
           const SizedBox(height: VidhivatSpacing.sm),
           VidhivatStatusChip(
@@ -776,8 +804,7 @@ class _PaathKholo extends StatelessWidget {
         if (suchi == null) return const SizedBox.shrink();
 
         final mile = [
-          for (final id in ids)
-            ...suchi.where((e) => e.id == id),
+          for (final id in ids) ...suchi.where((e) => e.id == id),
         ];
         if (mile.isEmpty) return const SizedBox.shrink();
 

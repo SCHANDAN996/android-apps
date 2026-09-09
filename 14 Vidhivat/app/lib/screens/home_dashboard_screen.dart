@@ -124,8 +124,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
     // जाते। पर घर में सबसे ज़्यादा यही पढ़े जाते हैं, इसलिए होम पर
     // अपनी जगह के हक़दार हैं (→ D-051)।
     final sabPaath = await paathBhandar.suchi();
-    final paathReady =
-        sabPaath.where((e) => e.taiyar).toList(growable: false);
+    final paathReady = sabPaath.where((e) => e.taiyar).toList(growable: false);
 
     return _DashboardData(
       featuredEntry: featuredEntry,
@@ -180,6 +179,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
               ' / ${resumeVidhi.charan.length}',
           samayChihn: Icons.play_circle_outline,
           bulawa: 'पूजा जारी रखें',
+          canRemoveProgress: true,
         ));
         liyeGaye.add(resumeEntry.id);
       }
@@ -212,9 +212,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
           upar: 'आज की सरल शुरुआत',
           naam: nityaEntry.naam,
           neeche: nityaEntry.ekLine,
-          artwork: nityaEntry.id == 'nitya_pooja'
-              ? 'assets/images/devotional/home_ganesha_hero_v1.webp'
-              : DevotionalAssets.forVidhiId(nityaEntry.id).assetPath,
+          artwork: DevotionalAssets.forVidhiId(nityaEntry.id).assetPath,
           pujaId: nityaEntry.id,
           samayAurCharan: '${nityaVidhi.samayLikha}  •  '
               '${nityaVidhi.charan.length} चरण',
@@ -231,6 +229,12 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
   }
 
   void _openPuja(String id) => _push(VidhiScreen(id: id));
+
+  Future<void> _removeProgress(String pujaId) async {
+    await settings.clearPlayerProgress(pujaId);
+    if (!mounted) return;
+    setState(_refreshData);
+  }
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -277,7 +281,11 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                     // पहले यहाँ एक जमा हुआ कार्ड था और नीचे अलग से
                     // "आगे क्या आ रहा है" की सूची — वही पाँच पूजाएँ,
                     // दो बार। अब एक ही पट्टी: आज पहला, फिर आगे के दिन।
-                    _PujaCarousel(patte: data.patte, onOpen: _openPuja),
+                    _PujaCarousel(
+                      patte: data.patte,
+                      onOpen: _openPuja,
+                      onRemoveProgress: _removeProgress,
+                    ),
                     const SizedBox(height: VidhivatSpacing.lg),
                     const _PanchangPanel(),
                     const SizedBox(height: VidhivatSpacing.xl),
@@ -422,8 +430,13 @@ class _HomeHeader extends StatelessWidget {
 class _PujaCarousel extends StatefulWidget {
   final List<_Patta> patte;
   final void Function(String id) onOpen;
+  final Future<void> Function(String id) onRemoveProgress;
 
-  const _PujaCarousel({required this.patte, required this.onOpen});
+  const _PujaCarousel({
+    required this.patte,
+    required this.onOpen,
+    required this.onRemoveProgress,
+  });
 
   @override
   State<_PujaCarousel> createState() => _PujaCarouselState();
@@ -474,7 +487,11 @@ class _PujaCarouselState extends State<_PujaCarousel> {
               padding: EdgeInsets.only(
                 right: patte.length > 1 ? VidhivatSpacing.sm : 0,
               ),
-              child: _PujaPatta(patta: patte[i], onOpen: widget.onOpen),
+              child: _PujaPatta(
+                patta: patte[i],
+                onOpen: widget.onOpen,
+                onRemoveProgress: widget.onRemoveProgress,
+              ),
             ),
           ),
         ),
@@ -539,7 +556,39 @@ class _PujaPatta extends StatelessWidget {
   final _Patta patta;
   final void Function(String id) onOpen;
 
-  const _PujaPatta({required this.patta, required this.onOpen});
+  final Future<void> Function(String id) onRemoveProgress;
+  const _PujaPatta({
+    required this.patta,
+    required this.onOpen,
+    required this.onRemoveProgress,
+  });
+
+  Future<void> _confirmRemoveProgress(BuildContext context) async {
+    final pujaId = patta.pujaId;
+    if (pujaId == null) return;
+    final shouldRemove = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: const Text('अधूरी पूजा हटाएँ?'),
+        content: const Text(
+          'यह सिर्फ़ “जहाँ छोड़ा था” वाली जगह हटाएगा। पूजा की विधि नहीं मिटेगी।',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(false),
+            child: const Text('नहीं'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(dialogContext).pop(true),
+            child: const Text('हटाएँ'),
+          ),
+        ],
+      ),
+    );
+    if (shouldRemove == true && context.mounted) {
+      await onRemoveProgress(pujaId);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -555,6 +604,7 @@ class _PujaPatta extends StatelessWidget {
         patta.upar,
         patta.neeche,
         if (!khulSaktaHai) 'इसकी विधि अभी ऐप में नहीं है',
+        if (patta.canRemoveProgress) 'अधूरी पूजा हटाने का विकल्प उपलब्ध है',
       ].join('। '),
       excludeSemantics: true,
       child: Container(
@@ -701,6 +751,20 @@ class _PujaPatta extends StatelessWidget {
                 ),
               ),
             ),
+            if (patta.canRemoveProgress)
+              Positioned(
+                top: 0,
+                right: 0,
+                child: IconButton(
+                  tooltip: 'अधूरी पूजा हटाएँ',
+                  onPressed: () => _confirmRemoveProgress(context),
+                  icon: Icon(
+                    Icons.close,
+                    color: colors.textPrimary,
+                    size: VidhivatIconSize.small,
+                  ),
+                ),
+              ),
           ],
         ),
       ),
@@ -737,6 +801,7 @@ class _Patta {
 
   /// बटन पर क्या लिखा हो; न खुलने वाले पत्ते पर यही सादा पाठ बन जाता है।
   final String bulawa;
+  final bool canRemoveProgress;
 
   const _Patta({
     required this.upar,
@@ -746,6 +811,7 @@ class _Patta {
     required this.pujaId,
     required this.samayAurCharan,
     required this.bulawa,
+    this.canRemoveProgress = false,
     this.samayChihn = Icons.schedule_outlined,
   });
 }

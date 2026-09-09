@@ -69,9 +69,15 @@ class DakshinaChunav extends StatefulWidget {
 }
 
 class _DakshinaChunavState extends State<DakshinaChunav> {
-  /// ⚠️ शुरू में **कुछ भी चुना हुआ नहीं**, और कभी नहीं होगा — यूज़र ने
-  /// चुना ही नहीं होता (→ D-053)।
-  DakshinaRaashi? _chuni;
+  /// ── ₹51 पहले से चुनी रहती है (→ D-063) ────────────────
+  ///
+  /// ⚠ यह D-053 से पलटा हुआ है। वहाँ लिखा था कि कोई राशि पहले
+  /// से चुनी हुई न हो, क्योंकि "यूज़र ने चुना ही नहीं होता"।
+  /// डेवलपर ने जोख़िम जानते हुए यह बदलवाया (9 सित 2026)।
+  ///
+  /// ⛔ पर एक बात नहीं बदली, और नहीं बदलनी चाहिए — **पैसा बटन
+  /// दबाए बिना कभी नहीं कटता।** चुनी हुई राशि सिर्फ़ एक सुझाव है।
+  DakshinaRaashi? _chuni = pehleSeChuniRaashi;
 
   bool _chalRahiHai = false;
   bool _mili = false;
