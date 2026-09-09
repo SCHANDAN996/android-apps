@@ -40,7 +40,7 @@
 
 | परत | क्या |
 |---|---|
-| ऐप | **Flutter / Dart** — `app/` में, package `com.massapp.vidhivat` |
+| ऐप | **Flutter / Dart** — `app/` में, package `com.vidhivat` |
 | इंजन | `engine/` — अलग Dart पैकेज, `path` dependency की तरह जुड़ा |
 | गणित | शुद्ध Dart — कोई खगोल लाइब्रेरी नहीं (लाइसेंस से बचने के लिए) |
 | कंटेंट | JSON assets, ऐप में बंडल |

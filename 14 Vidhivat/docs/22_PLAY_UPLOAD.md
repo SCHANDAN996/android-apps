@@ -11,10 +11,10 @@
 
 | क्या | हालत | कौन करेगा |
 |---|---|---|
-| ऐप का कोड | ✅ तैयार, 903 जाँचें पास | — |
+| ऐप का कोड | ✅ तैयार, 905 जाँचें पास | — |
 | Icon 512×512 | ✅ बना हुआ | — |
 | Feature graphic 1024×500 | ✅ बना हुआ | — |
-| **Privacy policy** | ✅ लिखी, और repo की जड़ में नक़ल भी रखी | 🔴 **Pages चालू करनी है** |
+| **Privacy policy** | ✅ लिखी, Blogger वाला रूप भी तैयार | 🔴 **Blogger पर publish करनी है** |
 | Listing का पूरा पाठ | ✅ `docs/19_PLAY_LISTING.md` | — |
 | Data safety के जवाब | ✅ `docs/19` §6 | — |
 | Screenshot (8) | ✅ `app/play_store_assets/screenshots/play/` — 1080 × 1920 | — |
@@ -142,38 +142,45 @@ NDK का `llvm-strip` रास्ते में लाना पड़े�
 
 ---
 
-# चरण 4 — Privacy policy host कीजिए 🔴 URL चाहिए
+# चरण 4 — Privacy policy Blogger पर डालिए 🔴 URL चाहिए
 
-Play बिना privacy policy URL के listing नहीं लेता। फ़ाइल तैयार है:
-`app/play_store_assets/privacy_policy.html`
+Play बिना privacy policy URL के listing नहीं लेता।
 
-**सबसे आसान और मुफ़्त तरीक़ा — GitHub Pages** (repo पहले से GitHub पर है):
-
-1. GitHub पर `SCHANDAN996/android-apps` खोलिए
-2. **Settings → Pages**
-3. Source: `Deploy from a branch` · Branch: `main` · Folder: `/ (root)`
-4. Save करके 2–3 मिनट रुकिए
-
-फिर URL यह बनेगा:
+**डेवलपर का फ़ैसला (9 सित): नीति Blogger पर जाएगी**, GitHub Pages पर
+नहीं। इसलिए चिपकाने लायक़ रूप बनाकर रखा है:
 
 ```
-https://schandan996.github.io/android-apps/14%20Vidhivat/app/play_store_assets/privacy_policy.html
+app/play_store_assets/privacy_policy_blogger.html
 ```
 
-> 🟠 **नाम में जगह (`14 Vidhivat`) होने से URL भद्दा है।** बेहतर यह है कि
-> फ़ाइल को repo की जड़ में `vidhivat-privacy.html` नाम से भी रख दें — तब
-> URL साफ़ होगा:
-> `https://schandan996.github.io/android-apps/vidhivat-privacy.html`
->
-> ✅ **वो नक़ल बन चुकी है** — `MASS APP/vidhivat-privacy.html`।
-> Pages चालू करते ही यही पता काम करेगा:
-> `https://schandan996.github.io/android-apps/vidhivat-privacy.html`
->
-> ⚠️ **अब नीति दो जगह है।** कभी बदलनी पड़े तो **दोनों** बदलनी होंगी —
-> `app/play_store_assets/privacy_policy.html` और जड़ वाली नक़ल।
+### कैसे चढ़ाएँ
 
-⚠️ **URL खुलकर दिखना चाहिए** — Play का reviewer उसे खोलकर देखता है। न
-खुले तो listing लटक जाती है।
+1. Blogger → **नई पोस्ट**
+2. शीर्षक: *विधिवत — गोपनीयता नीति / Vidhivat Privacy Policy*
+3. ऊपर बाएँ **"Compose" की जगह "HTML view"** चुनिए
+   *(यह क़दम छूटा तो सारे टैग अक्षरों की तरह छप जाएँगे)*
+4. ऊपर वाली फ़ाइल का सब कुछ वहाँ चिपकाइए → **Publish**
+5. जो पता मिले वही Play Console के **Privacy policy URL** में डालिए
+
+### ⚠️ नीति अब दो जगह है, और दोनों को साथ चलना है
+
+| फ़ाइल | किसके लिए |
+|---|---|
+| `privacy_policy.html` | **असली** — पूरी फ़ाइल, ब्राउज़र में सीधे खुलती है |
+| `privacy_policy_blogger.html` | Blogger में चिपकाने वाला रूप — **अपने आप बनता है** |
+
+नीति बदलनी हो तो **पहले असली बदलिए**, फिर:
+
+```bash
+python tools/banao_blogger_niti.py
+```
+
+फिर Blogger की पोस्ट भी दोबारा चिपकाइए। यह भूले तो reviewer वही पढ़ेगा
+जो Blogger पर पड़ा है — यानी पुरानी बात।
+
+⚠️ **URL खुलकर दिखना चाहिए** — Play का reviewer उसे खोलकर देखता है।
+पोस्ट **Publish** हुई है या सिर्फ़ Draft में पड़ी है, यह ज़रूर जाँच
+लीजिए; draft का पता बाहर वालों के लिए नहीं खुलता।
 
 ---
 
@@ -262,7 +269,7 @@ https://schandan996.github.io/android-apps/14%20Vidhivat/app/play_store_assets/p
 - [ ] चाबी बनी, और उसका **बैकअप** भी हुआ
 - [ ] `key.properties` बनी, और `git status` में नहीं दिखती
 - [x] version `1.0.0+1` किया ✅
-- [ ] `flutter test` — 903 जाँचें पास
+- [ ] `flutter test` — 905 जाँचें पास
 - [ ] `.aab` बनी (`.apk` नहीं)
 - [ ] Privacy policy का URL ब्राउज़र में खुलकर दिखता है
 - [ ] Data safety में तीनों "नहीं"

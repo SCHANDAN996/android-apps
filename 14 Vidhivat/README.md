@@ -81,7 +81,7 @@ MASS APP suite का ऐप #14 · Flutter · 100% ऑफलाइन
 │   ├── test/                  157 जाँचें
 │   └── tool/panchang_cli.dart टर्मिनल से पंचांग देखो
 │
-└── app/                       Flutter ऐप · com.massapp.vidhivat
+└── app/                       Flutter ऐप · com.vidhivat
     └── lib/
         ├── main.dart          पाँच पन्नों की पट्टी
         ├── theme.dart         हल्दी · सिंदूर · तुलसी, बड़े अक्षर

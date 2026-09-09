@@ -15,7 +15,7 @@ The right next move is an incremental premium redesign of that journey, retainin
 
 | Area | Finding |
 |---|---|
-| Flutter app | `app/`, package/application id `com.massapp.vidhivat` |
+| Flutter app | `app/`, package/application id `com.vidhivat` |
 | Dart version constraint | `app/pubspec.yaml`: `^3.5.0`; resolved lockfile: Dart `>=3.12.0 <4.0.0` |
 | Flutter version constraint | `app/pubspec.lock`: Flutter `>=3.44.0` |
 | Installed SDK | Flutter/Dart are available at `C:\src\flutter\bin`; their version output could not be captured in this audit session, so it is not asserted here. |

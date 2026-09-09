@@ -269,7 +269,7 @@ dependencies:
 
 ## ऐप — `app/`
 
-Flutter, package `com.massapp.vidhivat`। इंजन `path` dependency की तरह जुड़ा
+Flutter, package `com.vidhivat`। इंजन `path` dependency की तरह जुड़ा
 है — **ऐप में एक भी गणना नहीं, सब इंजन से आता है।**
 
 ```

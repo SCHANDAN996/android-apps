@@ -11,7 +11,7 @@
 
 **भाग A पूरा हो चुका है, और उसके आगे भी बहुत कुछ।** पूजाएँ 18 → **28**,
 भरे मंत्र 79 → **143 जगह**, चेतावनियाँ 74% → **33%**।
-**engine 254 + app 903 जाँचें पास**, दोनों `analyze` साफ़।
+**engine 254 + app 905 जाँचें पास**, दोनों `analyze` साफ़।
 Play की पूरी listing → `docs/19_PLAY_LISTING.md`
 APK **23.5 MB** (सिर्फ़ arm64), फ़ोन (vivo V2553) पर लगाकर जाँची हुई।
 
@@ -55,15 +55,19 @@ APK **23.5 MB** (सिर्फ़ arm64), फ़ोन (vivo V2553) पर ल
 > ⚠️ **चाबी खोई तो ऐप कभी अपडेट नहीं होगा।** बैकअप पहले, build बाद में।
 > (→ याददाश्त: "Play signing SHA-1 ka jaal")
 
-### 2. GitHub Pages चालू कीजिए — ⬜ आपका काम
-privacy policy दो जगह रखी है — ऐप के साथ, और repo की जड़ में
-`vidhivat-privacy.html`। Pages चालू होते ही यह पता खुलने लगेगा:
+### 2. नीति Blogger पर publish कीजिए — ⬜ आपका काम
+चिपकाने लायक़ रूप तैयार है:
 
 ```
-https://schandan996.github.io/android-apps/vidhivat-privacy.html
+app/play_store_assets/privacy_policy_blogger.html
 ```
 
-Play बिना खुलने वाले URL के listing नहीं लेता। → `docs/22` चरण 4।
+Blogger में नई पोस्ट → **HTML view** → सब चिपकाइए → Publish। जो पता मिले
+वही Play Console में डालना है। Play बिना खुलने वाले URL के listing नहीं
+लेता। → `docs/22` चरण 4।
+
+⚠️ नीति बदले तो असली फ़ाइल बदलकर `python tools/banao_blogger_niti.py`
+चलाइए, और Blogger की पोस्ट भी दोबारा चिपकाइए।
 
 ### 3. फिर Play Console — payments profile सबसे पहले
 दक्षिणा के सातों product बनने तक बटन मरा रहेगा, और payments profile की

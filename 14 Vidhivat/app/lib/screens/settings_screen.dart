@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:panchang_engine/panchang_engine.dart';
 
+import '../app_version.dart';
 import '../services/device_location_service.dart';
 import '../state/settings.dart';
 import '../theme.dart';
@@ -161,8 +162,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 style: theme.textTheme.bodySmall,
               ),
               const SizedBox(height: VidhivatSpacing.sm),
+              // ⚠ यह अंक `pubspec.yaml` के version से मिलता रहे —
+              // `settings_version_test.dart` उसी पर पहरा देता है।
               Text(
-                'विधिवत · संस्करण 0.1.0\nMASS APP',
+                'विधिवत · संस्करण $appVersion',
                 style: theme.textTheme.bodySmall,
               ),
             ],
