@@ -164,6 +164,32 @@ void main() {
       expect(kadam.first.katha, 'satyanarayan');
     });
 
+    // ⚠️ फ़ोन पर पकड़ी गई ग़लती (9 सित) — कथा जुड़ जाने के बाद भी
+    // सत्यनारायण के परिचय में लिखा रह गया था *"कथा के पाँच अध्याय इस
+    // ऐप में नहीं हैं — अपनी कथा-पुस्तिका चाहिए"*। यूज़र वही पढ़कर
+    // लौट जाता, और नीचे रखी कथा कभी खुलती ही नहीं। यही D-049 वाली
+    // उल्टी बात है: जो चीज़ ऐप में है, उसकी ओर इशारा करके कहना कि
+    // वो नहीं है।
+    test('जिस पूजा में कथा है, वहाँ ऐप कहीं यह नहीं कहता कि कथा नहीं है',
+        () async {
+      for (final e in await vidhiBhandar.suchi()) {
+        final v = await vidhiBhandar.vidhi(e.id);
+        final kathaWale = v.charan.where((c) => c.katha.isNotEmpty);
+        if (kathaWale.isEmpty) continue;
+
+        expect(v.parichay, isNot(contains('कथा-पुस्तिका')), reason: v.naam);
+        expect(v.parichay, isNot(contains('अध्याय इस ऐप में नहीं')),
+            reason: v.naam);
+
+        for (final c in kathaWale) {
+          // कथा वाले कदम पर "मंत्र ख़ाली है, पोथी से पढ़ लो" जैसा
+          // विकल्प अब झूठ है — कथा ठीक उसी कदम पर खुलती है।
+          expect(c.mantra?.vikalp ?? '', isNot(contains('पुस्तिका')),
+              reason: '${v.naam} — ${c.shirshak}');
+        }
+      }
+    });
+
     test('हर जुड़ी हुई कथा की फ़ाइल सचमुच मौजूद है', () async {
       for (final e in await vidhiBhandar.suchi()) {
         final v = await vidhiBhandar.vidhi(e.id);
