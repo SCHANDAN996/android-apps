@@ -2905,3 +2905,17 @@ Blogger की पोस्ट में पूरी HTML फ़ाइल न�
 बदलकर script चलाना, और Blogger की पोस्ट दोबारा चिपकाना — तीनों काम
 एक साथ। न किया तो Play का reviewer वही पढ़ेगा जो Blogger पर पड़ा है।
 
+---
+
+## D-067 · launcher icon और listing का icon एक ही तस्वीर से
+
+**तारीख़:** 11 सितम्बर 2026
+
+Play ने पहली ही समीक्षा में ऐप लौटा दिया — *Misleading Claims: App store
+listing mismatch।* listing में दीपक, फ़ोन पर Flutter का "F"।
+
+**फ़ैसला:** launcher icon हाथ से नहीं, `tools/banao_launcher_icon.py` से
+बनेगा, और वो उसी `vidhivat_diya_logo_512.png` से पढ़ती है जो Play पर
+चढ़ता है। दोनों एक ही स्रोत से — इसलिए अलग हो ही नहीं सकते, बशर्ते logo
+बदलने पर script चलाई जाए।
+

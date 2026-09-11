@@ -14,7 +14,7 @@
 | ऐप का कोड | ✅ तैयार, 905 जाँचें पास | — |
 | Icon 512×512 | ✅ बना हुआ | — |
 | Feature graphic 1024×500 | ✅ बना हुआ | — |
-| **Privacy policy** | ✅ लिखी, Blogger वाला रूप भी तैयार | 🔴 **Blogger पर publish करनी है** |
+| **Privacy policy** | ✅ Blogger पर publish हो चुकी, खुलकर दिखती है | — |
 | Listing का पूरा पाठ | ✅ `docs/19_PLAY_LISTING.md` | — |
 | Data safety के जवाब | ✅ `docs/19` §6 | — |
 | Screenshot (8) | ✅ `app/play_store_assets/screenshots/play/` — 1080 × 1920 | — |
@@ -62,6 +62,21 @@ keyPassword=<वही पासवर्ड>
 keyAlias=vidhivat
 storeFile=vidhivat-upload.jks
 ```
+
+> 🟠 **`storeFile` का रास्ता किस जगह से नापा जाता है?**
+>
+> gradle का अपना `file()` रास्ता `android/app/` से नापता है, जबकि चाबी
+> और `key.properties` दोनों `android/` में रहती हैं। **9 सितम्बर को
+> पहला build इसी पर गिरा** — और ग़लती दस मिनट के build के आख़िर में पता
+> चली:
+>
+> ```
+> Keystore file '...ndroidppidhivat-upload.jks' not found
+> ```
+>
+> ✅ **अब `build.gradle.kts` तीनों जगह ढूँढ़ता है** — पूरा रास्ता,
+> `android/`, और `android/app/`। इसलिए ऊपर वाला सादा नाम अब चलता है।
+> न मिले तो गड़बड़ी साफ़ लिखकर आती है कि कहाँ-कहाँ देखा गया।
 
 ### 🔒 तीन बातें, और तीनों ज़रूरी
 
@@ -142,7 +157,23 @@ NDK का `llvm-strip` रास्ते में लाना पड़े�
 
 ---
 
-# चरण 4 — Privacy policy Blogger पर डालिए 🔴 URL चाहिए
+# चरण 4 — Privacy policy ✅ Blogger पर चढ़ चुकी
+
+**यही पता Play Console में डालना है** (9 सित को जाँचा — खुलकर दिखता है,
+दोनों भाषाएँ, तालिका समेत):
+
+```
+https://vidhivatpuja.blogspot.com/2026/09/vidhivat-privacy-policy-root-bg-12151c.html
+```
+
+> 🟠 पते में `root-bg-12151c` इसलिए है कि पहली बार शीर्षक वाले ख़ाने में
+> CSS चली गई थी। **पन्ना ठीक है, सिर्फ़ पता भद्दा है।** बदलना हो तो
+> **Play Console में डालने से पहले** बदलिए — बाद में बदला तो Play के
+> पास मरा हुआ लिंक रह जाएगा।
+
+<details>
+<summary>पहली बार कैसे चढ़ाई थी (आगे कभी दोबारा करनी पड़े तो)</summary>
+
 
 Play बिना privacy policy URL के listing नहीं लेता।
 
@@ -181,6 +212,10 @@ python tools/banao_blogger_niti.py
 ⚠️ **URL खुलकर दिखना चाहिए** — Play का reviewer उसे खोलकर देखता है।
 पोस्ट **Publish** हुई है या सिर्फ़ Draft में पड़ी है, यह ज़रूर जाँच
 लीजिए; draft का पता बाहर वालों के लिए नहीं खुलता।
+
+---
+
+</details>
 
 ---
 
@@ -248,19 +283,69 @@ python tools/banao_blogger_niti.py
 
 ---
 
-# चरण 7 — पहले internal testing, सीधे production नहीं
+# चरण 7 — internal testing, अलग account के बिना
+
+> **"internal testing वाला account नहीं है"** — इसकी ज़रूरत ही नहीं।
+> **आपका अपना Gmail ही tester बन सकता है**, वही जिससे Play Console
+> चलता है। Google इसे मना नहीं करता।
+
+### 7.1 शर्त — फ़ोन पर वही Gmail चालू हो
+
+🔑 **यह इकलौती असली अड़चन है।** internal testing का लिंक उसी Google
+account से खुलता है जो **tester की सूची में है और फ़ोन के Play Store
+में चालू है।**
+
+आपके यहाँ दो पते हैं — Play Console वाला, और
+`all.chandansingh@gmail.com`। फ़ोन में Play Store → ऊपर दाएँ अपनी
+तस्वीर दबाकर देख लीजिए कि **कौन सा चालू है**, और *वही* tester में
+डालिए। ग़लत डाला तो लिंक खुलेगा ही नहीं और लगेगा कि Play ने कुछ
+बिगाड़ दिया।
+
+*(दोनों पते tester की सूची में डाल देना सबसे सुरक्षित है — कोई नुक़सान
+नहीं।)*
+
+### 7.2 ख़रीद मुफ़्त में जाँचने का तरीक़ा — License testing
+
+**Setup → License testing** में अपना Gmail डाल दीजिए।
+
+इसके बाद ₹11 वाली दक्षिणा **सचमुच पैसे नहीं काटेगी** — Play अपना
+"test card" दिखाएगा, ख़रीद पूरी होगी, ऐप को वही जवाब मिलेगा जो असली
+ख़रीद में मिलता, और बैंक से कुछ नहीं जाएगा।
+
+⚠️ **यह करना ही चाहिए।** वरना जाँचने के लिए हर बार अपने ही पैसे कटवाने
+पड़ेंगे, और refund माँगना पड़ेगा।
+
+### 7.3 क्रम
 
 1. **Testing → Internal testing → Create new release**
-2. `.aab` upload कीजिए
-3. अपना ही ईमेल tester में डालिए
-4. लिंक से फ़ोन पर install कीजिए
-5. **असली ख़रीद करके देखिए** — ₹11 वाली
+2. `.aab` upload कीजिए *(`.apk` नहीं)*
+3. **Testers** में अपनी सूची बनाइए, उसमें अपना Gmail डालिए
+4. ऊपर **Copy link** से लिंक लेकर फ़ोन में खोलिए → *"Become a tester"*
+5. वहीं से Play Store पर ऐप मिलेगा → install
+6. एक पूजा पूरी कीजिए → दक्षिणा का पन्ना → **₹11 पर ख़रीद करके देखिए**
 
 > ⚠️ **In-app purchase debug build में कभी नहीं चलती।** असली track,
-> असली Play account, असली फ़ोन — तभी पता चलेगा कि products सही बने हैं।
-> दक्षिणा जाँचने का यही इकलौता तरीक़ा है।
+> असली Play account, असली फ़ोन — तभी पता चलेगा कि सातों product सही
+> ID से बने हैं। दक्षिणा जाँचने का यही इकलौता तरीक़ा है।
 
-6. सब ठीक लगे तभी **Production → Create new release**
+7. सब ठीक लगे तभी **Production → Create new release**
+
+### 🔴 7.4 एक नियम जो पूरा हफ़्ता खा सकता है — पहले देख लीजिए
+
+नवंबर 2023 के बाद बने **निजी (personal) डेवलपर account** पर Google एक
+शर्त लगाता है: production से पहले **12 tester, लगातार 14 दिन** closed
+testing।
+
+**आपके account पर शायद यह लागू नहीं** — जमीन नापी उसी account से Play
+पर चढ़ चुकी है, यानी वो पुराना और आज़माया हुआ है। पर मान मत लीजिए:
+
+> ऐप बनाने के बाद Play Console के **Dashboard** पर देखिए। अगर
+> *"Run a closed test with 12 testers for 14 days"* जैसी कोई शर्त
+> दिखे — तो production का रास्ता उसी से होकर जाएगा, और **14 दिन पहले
+> से गिनने शुरू कर देने चाहिए।**
+
+अगर शर्त दिखे तो internal testing के साथ-साथ closed testing भी उसी दिन
+शुरू कर दीजिए — दोनों साथ चल सकते हैं।
 
 ---
 

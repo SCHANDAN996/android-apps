@@ -3629,3 +3629,30 @@ policy के footer से भी `MASS APP` हटा — बाक़ी ह�
 
 app 905 जाँचें पास, analyze साफ़।
 
+---
+
+## 11 सितम्बर 2026 — Play ने लौटाया: icon Flutter वाला था
+
+**Rejected — Misleading Claims, "App store listing mismatch".** फ़ोन पर
+ऐप का icon अब भी Flutter का डिफ़ॉल्ट "F" था, और नाम `vidhivat` (छोटे
+अक्षर में), जबकि listing में दीपक वाला logo था। launcher icon कभी बदला
+ही नहीं गया था — यह पूरी तैयारी में छूटा हुआ काम था।
+
+ठीक किया:
+
+- `tools/banao_launcher_icon.py` — Play वाले उसी 512px logo से पाँचों
+  घनत्व के icon और **adaptive icon** बनाती है। दीपक 66dp वाले सुरक्षित
+  घेरे के अंदर छोटा करके रखा गया, ताकि गोल मास्क में हत्थे न कटें;
+  पीछे logo के कोनों का ही रंग `#040916`। गोल, squircle और चौकोर —
+  तीनों मास्क में जाँचकर देखा।
+- launcher का नाम `vidhivat` → `Vidhivat`
+- versionCode 1 → **2** — पहली upload ने 1 खा लिया था, Play उसे दोबारा
+  नहीं लेता
+
+⚠️ **logo कभी बदले तो यह script दोबारा चलानी है**, वरना यही rejection
+फिर आएगा।
+
+एक और बात: फ़ोन पर जो `com.vidhivat` लगा है वो debug चाबी से sign था।
+असली चाबी वाली build उस पर नहीं चढ़ती (`INSTALL_FAILED_UPDATE_INCOMPATIBLE`)
+— पुराना हटाना पड़ेगा, और Play से आने वाली build पर भी यही होगा।
+

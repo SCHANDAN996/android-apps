@@ -46,7 +46,39 @@ android {
             if (keystorePropertiesFile.exists()) {
                 keyAlias = keystoreProperties["keyAlias"] as String
                 keyPassword = keystoreProperties["keyPassword"] as String
-                storeFile = keystoreProperties["storeFile"]?.let { file(it) }
+                // ⚠️ `file(...)` रास्ता `android/app/` से नापता है, पर
+                // चाबी आमतौर पर `android/` में रखी जाती है — वहीं
+                // `key.properties` भी होती है। पहली बार यहीं अटका था:
+                // *"Keystore file ... not found for signing config
+                // 'release'"*, और वो ग़लती दस मिनट के build के आख़िर में
+                // पता चली।
+                //
+                // इसलिए अब तीनों जगह देखी जाती हैं — जो पहले मिले वही।
+                // इससे `storeFile` में पूरा रास्ता, `android/` वाला नाम,
+                // या `android/app/` वाला नाम — तीनों चलते हैं।
+                // ⚠️ **रास्ता हमेशा पूरा (absolute) होना चाहिए।**
+                //
+                // पहली कोशिश में यहाँ सापेक्ष `File(naam)` भी देखा गया
+                // था। वो gradle daemon की अपनी जगह से "मिल" गया, जाँच
+                // पास हो गई — और फिर gradle ने उसी सापेक्ष रास्ते को
+                // `android/app/` से नापकर वहीं ढूँढ़ा जहाँ चाबी है ही
+                // नहीं। इसीलिए `validateSigningRelease` पास हुआ पर
+                // `signReleaseBundle` गिरा।
+                //
+                // `rootProject.file()` और `file()` — दोनों पूरा रास्ता
+                // लौटाते हैं, और पहले से पूरा रास्ता दिया हो तो उसे
+                // वैसे ही रहने देते हैं।
+                storeFile = (keystoreProperties["storeFile"] as String?)?.let { naam ->
+                    listOf(
+                        rootProject.file(naam),   // android/
+                        file(naam),               // android/app/
+                    ).firstOrNull { it.exists() }?.absoluteFile
+                        ?: throw GradleException(
+                            "key.properties me likhi chaabi nahi mili: $naam. " +
+                            "Dekha gaya: ${rootProject.file(naam).absolutePath} " +
+                            "aur ${file(naam).absolutePath}"
+                        )
+                }
                 storePassword = keystoreProperties["storePassword"] as String
             }
         }

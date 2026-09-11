@@ -141,7 +141,7 @@ Sankalp banta hai apne aap. 28 puja vidhi, panchang, chaughadiya, offline.
 
 गणना दृक् गणित और लाहिड़ी अयनांश से, यानी वही जो छपे पंचांग में होती है।
 
-475 शहर और ज़िला-मुख्यालय पहले से सूची में। आपका गाँव या क़स्बा उसमें न
+493 शहर और ज़िला-मुख्यालय पहले से सूची में। आपका गाँव या क़स्बा उसमें न
 मिले तो उसका नाम ख़ुद लिख लीजिए — संकल्प में वही बोला जाएगा।
 
 
@@ -211,7 +211,6 @@ Puja vidhi, panchang, chaughadiya, shubh muhurat, sankalp, vrat tyohar,
 Hanuman Chalisa aur aarti — sab ek jagah, offline. Hindu calendar with
 tithi, nakshatra, yoga, karana, rahu kaal and choghadiya for your city.
 
-MASS APP
 ```
 
 `लगभग 3,050 / 4,000 अक्षर` — जगह बची है, बाद में और पूजा जुड़ें तो
@@ -264,7 +263,8 @@ policy में फँसेगी और uninstall दर rank गिरा �
 | खाना | क्या भरना |
 |---|---|
 | **App category** | Lifestyle |
-| **Tags** (5 तक) | Religion, Calendar, Reference, Books, Lifestyle |
+| **Tags** (4) | Religious text · Lifestyle · Calendar · Books & reference |
+| | ⚠️ Play की सूची में "Religion" है ही नहीं। **Horoscope मत डालना** — ऐप भविष्यवाणी करता ही नहीं, और tag से Play तय करता है कि किनसे तुलना होगी। |
 | **Contact email** | ⬜ डेवलपर भरे |
 | **Website** | ⬜ अगर हो |
 | **Privacy policy URL** | 🔴 **ज़रूरी** — हर ऐप के लिए, चाहे कुछ भी इकट्ठा न करता हो |
@@ -383,9 +383,10 @@ app/play_store_assets/screenshots/play/   Play पर चढ़ाने वा�
 पहला संस्करण।
 
 • संकल्प अपने आप बनता है — संवत् से नक्षत्र तक सब भरकर
-• 28 पूजा विधि, सामग्री की सूची और मंत्र के साथ
+• 28 पूजा विधि — सामग्री की सूची, कदम और मंत्र
 • पूरा पंचांग, चौघड़िया और होरा — आपके शहर के हिसाब से
-• व्रत, त्योहार और चंद्रग्रहण की तारीख़ें
+• व्रत, त्योहार, चंद्रग्रहण और सूर्यग्रहण — सूतक के समय के साथ
+• सत्यनारायण की पाँच अध्याय वाली कथा, और तीन व्रत कथाएँ
 • हनुमान चालीसा और दस आरतियाँ
-• बिना इंटरनेट चलता है
+• बिना इंटरनेट चलता है — कोई लॉगिन नहीं, कोई विज्ञापन नहीं
 ```

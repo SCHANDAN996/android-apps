@@ -1,4 +1,4 @@
-package com.massapp.vidhivat
+package com.vidhivat
 
 import io.flutter.embedding.android.FlutterActivity
 
