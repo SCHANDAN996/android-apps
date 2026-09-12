@@ -49,7 +49,12 @@ def w(path, text):
     io.open(path, "w", encoding="utf-8", newline="\n").write(text.rstrip() + "\n")
 
 # ── पढ़ो ──
-files = [p for p in sorted(glob.glob(os.path.join(APP, "assets", "vidhi", "*.json")))
+# ⚠️ नवरात्रि की दिन-वार विधियाँ `assets/vidhi/navratri/` में हैं, बाहर
+# नहीं — इसलिए वह फ़ोल्डर भी पढ़ना पड़ता है। 12 सित 2026 को यह छूट गया
+# था और नवरात्रि का एक भी मंत्र शीट में नहीं जा रहा था।
+files = [p for p in sorted(
+    glob.glob(os.path.join(APP, "assets", "vidhi", "*.json"))
+    + glob.glob(os.path.join(APP, "assets", "vidhi", "navratri", "*.json")))
          if not p.endswith("_suchi.json")]
 pujas = [json.load(io.open(p, encoding="utf-8")) for p in files]
 pujas.sort(key=lambda d: (list(SCOPE_NAAM).index(d.get("scope", "self_guided")), d["naam"]))
