@@ -4,6 +4,7 @@ import 'package:panchang_engine/panchang_engine.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vidhivat/main.dart';
 import 'package:vidhivat/screens/paath_screen.dart';
+import 'package:vidhivat/screens/parv_screen.dart';
 import 'package:vidhivat/screens/puja_completion_screen.dart';
 import 'package:vidhivat/screens/sankalp_screen.dart';
 import 'package:vidhivat/screens/vidhi_list_screen.dart';
@@ -487,6 +488,24 @@ void main() {
   });
 
   group('पूजाओं की सूची', () {
+    testWidgets('नवरात्रि पर्व-card से पूरा पंचांग-आधारित पन्ना खुलता है',
+        (tester) async {
+      phoneNaap(tester);
+      await tester.pumpWidget(app(const VidhiListScreen()));
+      await tester.pumpAndSettle();
+
+      await scrollTak(tester, find.byKey(const Key('navratri_parv_card')));
+      await tester.tap(find.byKey(const Key('navratri_parv_card')));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(ParvScreen), findsOneWidget);
+      expect(find.text('शारदीय नवरात्रि'), findsWidgets);
+      await scrollTak(tester, find.text('संक्षिप्त पूजा'));
+      expect(find.text('संक्षिप्त पूजा'), findsOneWidget);
+      expect(find.text('पूर्ण नवरात्रि'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
     testWidgets('सूची खुलती है और तैयार पूजा दिखती है', (tester) async {
       phoneNaap(tester);
       await tester.pumpWidget(app(const VidhiListScreen()));
@@ -660,8 +679,8 @@ void main() {
       // सामग्री का रास्ता "सामग्री" शीर्षक के "सभी देखें" से है।
       expect(find.text('पूजा शुरू करें'), findsOneWidget);
       expect(find.text('सामग्री की सूची देखें'), findsNothing);
-      await scrollTak(tester, find.text('15 चरण'));
-      expect(find.text('15 चरण'), findsOneWidget);
+      await scrollTak(tester, find.text('16 चरण'));
+      expect(find.text('16 चरण'), findsOneWidget);
       expect(find.text('34 ज़रूरी सामग्री'), findsOneWidget);
 
       // 360×800 dp पर पहली तह में सिर्फ़ परिचय और पहली चेतावनी आती है —
@@ -826,7 +845,7 @@ void main() {
       expect(settings.samagriTicks('satyanarayan'), isEmpty);
       await tester.tap(find.text('पूजा शुरू करें'));
       await tester.pumpAndSettle();
-      expect(find.text('चरण 1 / 15'), findsOneWidget);
+      expect(find.text('चरण 1 / 16'), findsOneWidget);
     });
 
     testWidgets('सामग्री से back करने पर वही पूजा detail खुलता है',
@@ -920,8 +939,8 @@ void main() {
       await tester.tap(find.text('पूजा शुरू करें'));
       await tester.pumpAndSettle();
 
-      expect(find.text('चरण 1 / 15'), findsOneWidget);
-      expectStepProgress(tester, 1, 15);
+      expect(find.text('चरण 1 / 16'), findsOneWidget);
+      expectStepProgress(tester, 1, 16);
       expect(tester.takeException(), isNull, reason: '${width}dp पर overflow');
     }
 
@@ -956,14 +975,14 @@ void main() {
     testWidgets('पहला कदम खुलता है और गिनती सही दिखती है', (tester) async {
       await kholoPlayer(tester);
 
-      expect(find.text('चरण 1 / 15'), findsOneWidget);
+      expect(find.text('चरण 1 / 16'), findsOneWidget);
       expect(find.text('तैयारी'), findsOneWidget);
       expect(find.text('आगे बढ़ें'), findsOneWidget);
       expect(
         find.byWidgetPredicate(
           (widget) =>
               widget is Semantics &&
-              widget.properties.label == 'चरण 1 में से 15',
+              widget.properties.label == 'चरण 1 में से 16',
         ),
         findsOneWidget,
       );
@@ -980,12 +999,12 @@ void main() {
 
       await tester.tap(find.text('आगे बढ़ें'));
       await tester.pumpAndSettle();
-      expect(find.text('चरण 2 / 15'), findsOneWidget);
-      expectStepProgress(tester, 2, 15);
+      expect(find.text('चरण 2 / 16'), findsOneWidget);
+      expectStepProgress(tester, 2, 16);
 
       await tester.tap(find.text('पीछे'));
       await tester.pumpAndSettle();
-      expect(find.text('चरण 1 / 15'), findsOneWidget);
+      expect(find.text('चरण 1 / 16'), findsOneWidget);
     });
 
     testWidgets('चरणों की सूची से किसी भी मौजूदा चरण पर जाया जा सकता है',
@@ -1008,7 +1027,7 @@ void main() {
       await tester.tap(find.text('संकल्प'));
       await tester.pumpAndSettle();
 
-      expect(find.text('चरण 4 / 15'), findsOneWidget);
+      expect(find.text('चरण 4 / 16'), findsOneWidget);
       expect(find.text('संकल्प'), findsWidgets);
     });
 
@@ -1025,13 +1044,13 @@ void main() {
       await tester.tap(find.text('पूजा शुरू करें'));
       await tester.pumpAndSettle();
 
-      for (var i = 0; i < 14; i++) {
+      for (var i = 0; i < 15; i++) {
         await tester.tap(find.text('आगे बढ़ें'));
         await tester.pumpAndSettle();
       }
 
-      expect(find.text('चरण 15 / 15'), findsOneWidget);
-      expectStepProgress(tester, 15, 15);
+      expect(find.text('चरण 16 / 16'), findsOneWidget);
+      expectStepProgress(tester, 16, 16);
       expect(find.text('पूजा पूर्ण करें'), findsOneWidget);
       expect(find.text('आगे बढ़ें'), findsNothing);
 
@@ -1135,11 +1154,11 @@ void main() {
       // खोलता है। एक बार वहाँ आरती भर जाए, तो सब जगह जुड़ जाती है।
       await kholoPlayer(tester);
 
-      for (var i = 0; i < 11; i++) {
+      for (var i = 0; i < 12; i++) {
         await tester.tap(find.text('आगे बढ़ें'));
         await tester.pumpAndSettle();
       }
-      expect(find.text('चरण 12 / 15'), findsOneWidget);
+      expect(find.text('चरण 13 / 16'), findsOneWidget);
 
       await scrollTak(tester, find.text('श्री सत्यनारायण जी की आरती'));
       await tester.tap(find.text('श्री सत्यनारायण जी की आरती'));
@@ -1152,15 +1171,15 @@ void main() {
     testWidgets('जिस कदम का मंत्र ख़ाली है वहाँ बना हुआ मंत्र नहीं दिखता',
         (tester) async {
       // अंदाज़े से मंत्र लिखना इस प्रोजेक्ट की सबसे बड़ी मनाही है।
-      // सातवाँ कदम नवग्रह का है — उसके नौ मंत्र जान-बूझकर नहीं लिखे गए।
+      // आठवाँ कदम नवग्रह का है — उसके नौ मंत्र जान-बूझकर नहीं लिखे गए।
       await kholoPlayer(tester);
 
-      for (var i = 0; i < 6; i++) {
+      for (var i = 0; i < 7; i++) {
         await tester.tap(find.text('आगे बढ़ें'));
         await tester.pumpAndSettle();
       }
 
-      expect(find.text('चरण 7 / 15'), findsOneWidget);
+      expect(find.text('चरण 8 / 16'), findsOneWidget);
       expect(find.text('मंत्र'), findsNothing);
 
       await scrollTak(
@@ -1226,7 +1245,7 @@ void main() {
       await tester.tap(find.text('पूजा शुरू करें'));
       await tester.pumpAndSettle();
 
-      for (var i = 0; i < 14; i++) {
+      for (var i = 0; i < 15; i++) {
         await tester.tap(find.text('आगे बढ़ें'));
         await tester.pumpAndSettle();
       }
@@ -1291,11 +1310,11 @@ void main() {
 
       await scrollTak(tester, find.text('आप यहाँ तक पहुँचे थे'));
       expect(find.text('आप यहाँ तक पहुँचे थे'), findsOneWidget);
-      expect(find.text('चरण 4 / 15'), findsOneWidget);
+      expect(find.text('चरण 4 / 16'), findsOneWidget);
       expect(find.text('संकल्प'), findsOneWidget);
       await tester.tap(find.text('चरण 4 से जारी रखें'));
       await tester.pump(const Duration(milliseconds: 300));
-      expect(find.text('चरण 4 / 15'), findsOneWidget);
+      expect(find.text('चरण 4 / 16'), findsOneWidget);
     });
 
     testWidgets('शुरू से करें Step 1 खोलता और saved app position हटाता है',
@@ -1314,7 +1333,7 @@ void main() {
       await scrollTak(tester, find.text('शुरू से करें'));
       await tester.tap(find.text('शुरू से करें'));
       await tester.pumpAndSettle();
-      expect(find.text('चरण 1 / 15'), findsOneWidget);
+      expect(find.text('चरण 1 / 16'), findsOneWidget);
       expect(settings.playerProgressFor('satyanarayan', 14), isNull);
     });
 
@@ -1340,7 +1359,7 @@ void main() {
       startOver.onPressed!();
       await tester.pumpAndSettle();
 
-      expect(find.text('चरण 1 / 15'), findsOneWidget);
+      expect(find.text('चरण 1 / 16'), findsOneWidget);
       expect(
         find.byType(VidhiPlayerScreen, skipOffstage: false),
         findsOneWidget,
@@ -1418,7 +1437,7 @@ void main() {
     testWidgets('नाम न भरा हो तो भरने का बटन दिखता है', (tester) async {
       await jaoSankalpPar(tester);
 
-      expect(find.text('चरण 4 / 15'), findsOneWidget);
+      expect(find.text('चरण 4 / 16'), findsOneWidget);
       expect(find.text('संकल्प'), findsOneWidget);
       await scrollTak(tester, find.text('नाम और गोत्र भरिए'));
       expect(find.text('नाम और गोत्र भरिए'), findsOneWidget);
