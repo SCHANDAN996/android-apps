@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
+import '../state/settings.dart';
 import '../vidhi/bhandar.dart';
 import '../vidhi/devotional_assets.dart';
+import '../vidhi/parv.dart';
+import '../vidhi/parv_aaj.dart';
 import '../vidhi/planned_puja_catalog.dart';
 import '../vidhi/vidhi.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
 import 'vidhi_screen.dart';
+import 'parv_screen.dart';
 
 /// विधि का home — catalogue नहीं, पूजा चुनने की शुरुआती जगह।
 ///
@@ -49,6 +53,7 @@ class _VidhiListScreenState extends State<VidhiListScreen> {
       entries: entries,
       featuredEntry: featuredEntry,
       featuredVidhi: await vidhiBhandar.vidhi(featuredEntry.id),
+      navratri: await parvBhandar.parv('navratri'),
     );
   }
 
@@ -56,6 +61,24 @@ class _VidhiListScreenState extends State<VidhiListScreen> {
     if (!entry.taiyar) return;
     Navigator.of(context).push(
       MaterialPageRoute(builder: (_) => VidhiScreen(id: entry.id)),
+    );
+  }
+
+  void _openVidhiId(String id) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (_) => VidhiScreen(id: id)),
+    );
+  }
+
+  void _openNavratri(Parv parv) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => ParvScreen(
+          parv: parv,
+          aaj: navratriAaj(aaj: DateTime.now(), place: settings.place),
+          onVidhiKholo: _openVidhiId,
+        ),
+      ),
     );
   }
 
@@ -90,6 +113,7 @@ class _VidhiListScreenState extends State<VidhiListScreen> {
             child: _VidhiHome(
               data: home,
               onOpen: _open,
+              onParvOpen: _openNavratri,
             ),
           );
         },
@@ -101,8 +125,13 @@ class _VidhiListScreenState extends State<VidhiListScreen> {
 class _VidhiHome extends StatelessWidget {
   final _VidhiHomeData data;
   final ValueChanged<VidhiSuchiEntry> onOpen;
+  final ValueChanged<Parv> onParvOpen;
 
-  const _VidhiHome({required this.data, required this.onOpen});
+  const _VidhiHome({
+    required this.data,
+    required this.onOpen,
+    required this.onParvOpen,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -159,6 +188,11 @@ class _VidhiHome extends StatelessWidget {
               supportingText: 'विशेष दिन की पूजा-विधियाँ',
             ),
             const SizedBox(height: VidhivatSpacing.md),
+            _ParvCard(
+              parv: data.navratri,
+              onOpen: () => onParvOpen(data.navratri),
+            ),
+            const SizedBox(height: VidhivatSpacing.sm),
             _PujaGrid(entries: festivals, onOpen: onOpen),
           ],
           if (special.isNotEmpty) ...[
@@ -196,6 +230,46 @@ class _VidhiHome extends StatelessWidget {
             '$plannedPujaCount पूजाएँ अभी तैयार हो रही हैं — उन पर “जल्द आएगी” लिखा है।',
             style: VidhivatTheme.typographyOf(context).caption,
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ParvCard extends StatelessWidget {
+  final Parv parv;
+  final VoidCallback onOpen;
+
+  const _ParvCard({required this.parv, required this.onOpen});
+
+  @override
+  Widget build(BuildContext context) {
+    final type = VidhivatTheme.typographyOf(context);
+    return VidhivatSurfaceCard(
+      key: const Key('navratri_parv_card'),
+      variant: VidhivatCardVariant.highlight,
+      onTap: onOpen,
+      semanticLabel: '${parv.naam} पर्व खोलें। ${parv.ekLine}',
+      child: Row(
+        children: [
+          const VidhivatStatusChip(
+            label: 'पर्व',
+            tone: VidhivatStatusTone.primary,
+            icon: Icons.auto_awesome_outlined,
+          ),
+          const SizedBox(width: VidhivatSpacing.sm),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(parv.naam, style: type.cardTitle),
+                const SizedBox(height: VidhivatSpacing.xxs),
+                Text(parv.ekLine, style: type.bodySmall),
+              ],
+            ),
+          ),
+          const SizedBox(width: VidhivatSpacing.xs),
+          const Icon(Icons.arrow_forward_ios),
         ],
       ),
     );
@@ -532,10 +606,12 @@ class _VidhiHomeData {
   final List<VidhiSuchiEntry> entries;
   final VidhiSuchiEntry featuredEntry;
   final Vidhi featuredVidhi;
+  final Parv navratri;
 
   const _VidhiHomeData({
     required this.entries,
     required this.featuredEntry,
     required this.featuredVidhi,
+    required this.navratri,
   });
 }

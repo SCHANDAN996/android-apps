@@ -89,6 +89,56 @@ abstract final class DevotionalAssets {
     semanticLabel: 'श्री कृष्ण का यथार्थपरक सजावटी चित्र',
   );
 
+  static const navratriParv = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/navratri_parv_v1.webp',
+    semanticLabel: 'नवरात्रि कलश, जौ और अखंड ज्योति का सजावटी चित्र',
+  );
+
+  static const navratriShailaputri = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/navratri_din_1_shailaputri_v1.webp',
+    semanticLabel: 'माँ शैलपुत्री का सजावटी चित्र',
+  );
+  static const navratriBrahmacharini = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/navratri_din_2_brahmacharini_v1.webp',
+    semanticLabel: 'माँ ब्रह्मचारिणी का सजावटी चित्र',
+  );
+  static const navratriChandraghanta = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/navratri_din_3_chandraghanta_v1.webp',
+    semanticLabel: 'माँ चंद्रघंटा का सजावटी चित्र',
+  );
+  static const navratriKushmanda = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/navratri_din_4_kushmanda_v1.webp',
+    semanticLabel: 'माँ कूष्मांडा का सजावटी चित्र',
+  );
+  static const navratriSkandamata = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/navratri_din_5_skandamata_v1.webp',
+    semanticLabel: 'माँ स्कंदमाता का सजावटी चित्र',
+  );
+  static const navratriKatyayani = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/navratri_din_6_katyayani_v1.webp',
+    semanticLabel: 'माँ कात्यायनी का सजावटी चित्र',
+  );
+  static const navratriKalaratri = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/navratri_din_7_kalaratri_v1.webp',
+    semanticLabel: 'माँ कालरात्रि का सजावटी चित्र',
+  );
+  static const navratriMahagauri = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/navratri_din_8_mahagauri_v1.webp',
+    semanticLabel: 'माँ महागौरी का सजावटी चित्र',
+  );
+  static const navratriSiddhidatri = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/navratri_din_9_siddhidatri_v1.webp',
+    semanticLabel: 'माँ सिद्धिदात्री का सजावटी चित्र',
+  );
+  static const navratriHavan = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/navratri_havan_v1.webp',
+    semanticLabel: 'नवमी हवन का सजावटी चित्र',
+  );
+  static const vijayadashami = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/vijayadashami_v1.webp',
+    semanticLabel: 'विजयादशमी के जवारों का सजावटी चित्र',
+  );
+
   static const Map<String, DevotionalArtwork> _byVidhiId = {
     'nitya_pooja': nityaPooja,
     'satyanarayan': DevotionalArtwork(
@@ -176,6 +226,15 @@ abstract final class DevotionalAssets {
       assetPath: 'assets/images/devotional/kanya_poojan_v1.webp',
       semanticLabel: 'कन्या पूजन का सजावटी चित्र',
     ),
+    'navratri_sankshipt': navratriParv,
+    'navratri_din_2': navratriBrahmacharini,
+    'navratri_din_3': navratriChandraghanta,
+    'navratri_din_4': navratriKushmanda,
+    'navratri_din_5': navratriSkandamata,
+    'navratri_din_6': navratriKatyayani,
+    'navratri_din_7': navratriKalaratri,
+    'navratri_navami_havan': navratriHavan,
+    'vijayadashami': vijayadashami,
   };
 
   static DevotionalArtwork forVidhiId(String id) => _byVidhiId[id] ?? diya;

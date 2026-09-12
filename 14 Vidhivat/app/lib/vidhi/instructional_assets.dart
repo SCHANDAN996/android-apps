@@ -45,6 +45,16 @@ abstract final class InstructionalAssets {
     semanticLabel: 'छठ के सूप सजाने का चित्र',
   );
 
+  static const jauBona = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/jau_bona_guide_v1.webp',
+    semanticLabel: 'नवरात्रि के जौ बोने का निर्देश चित्र',
+  );
+
+  static const akhandJyoti = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/akhand_jyoti_guide_v1.webp',
+    semanticLabel: 'अखंड ज्योति की सुरक्षित व्यवस्था का निर्देश चित्र',
+  );
+
   static DevotionalArtwork? forStep({
     required String vidhiId,
     required String title,
@@ -52,6 +62,8 @@ abstract final class InstructionalAssets {
     if (title == 'आचमन और पवित्रीकरण') return achman;
     if (title == 'संकल्प') return sankalp;
     if (title.startsWith('कलश स्थापना')) return kalash;
+    if (title.contains('जौ बोना')) return jauBona;
+    if (title.contains('अखंड ज्योति')) return akhandJyoti;
     if (vidhiId == 'surya_arghya' && title == 'अर्घ्य') return suryaArghya;
     if (vidhiId == 'vat_savitri' && title == 'परिक्रमा और सूत लपेटना') {
       return vatSut;

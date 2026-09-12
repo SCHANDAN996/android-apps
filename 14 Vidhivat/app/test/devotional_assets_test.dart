@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:ui' as ui;
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vidhivat/vidhi/devotional_assets.dart';
@@ -81,6 +82,54 @@ void main() {
         DevotionalAssets.forVidhiId('future_puja').assetPath,
         DevotionalAssets.diya.assetPath,
       );
+    });
+
+    test('नवरात्रि की हर नई विधि सही स्थानीय artwork खोलती है', () {
+      final expected = <String, DevotionalArtwork>{
+        'navratri_sankshipt': DevotionalAssets.navratriParv,
+        'navratri_din_2': DevotionalAssets.navratriBrahmacharini,
+        'navratri_din_3': DevotionalAssets.navratriChandraghanta,
+        'navratri_din_4': DevotionalAssets.navratriKushmanda,
+        'navratri_din_5': DevotionalAssets.navratriSkandamata,
+        'navratri_din_6': DevotionalAssets.navratriKatyayani,
+        'navratri_din_7': DevotionalAssets.navratriKalaratri,
+        'navratri_navami_havan': DevotionalAssets.navratriHavan,
+        'vijayadashami': DevotionalAssets.vijayadashami,
+      };
+      for (final entry in expected.entries) {
+        expect(DevotionalAssets.forVidhiId(entry.key), same(entry.value));
+        expect(File(entry.value.assetPath).existsSync(), isTrue);
+      }
+    });
+
+    test('सभी नवरात्रि WebP सही नाप और हल्के bundle में हैं', () async {
+      final paths = <String>{
+        DevotionalAssets.navratriParv.assetPath,
+        DevotionalAssets.navratriShailaputri.assetPath,
+        DevotionalAssets.navratriBrahmacharini.assetPath,
+        DevotionalAssets.navratriChandraghanta.assetPath,
+        DevotionalAssets.navratriKushmanda.assetPath,
+        DevotionalAssets.navratriSkandamata.assetPath,
+        DevotionalAssets.navratriKatyayani.assetPath,
+        DevotionalAssets.navratriKalaratri.assetPath,
+        DevotionalAssets.navratriMahagauri.assetPath,
+        DevotionalAssets.navratriSiddhidatri.assetPath,
+        DevotionalAssets.navratriHavan.assetPath,
+        DevotionalAssets.vijayadashami.assetPath,
+        'assets/images/devotional/jau_bona_guide_v1.webp',
+        'assets/images/devotional/akhand_jyoti_guide_v1.webp',
+      };
+      expect(paths, hasLength(14));
+      for (final path in paths) {
+        final file = File(path);
+        expect(file.lengthSync(), lessThanOrEqualTo(180 * 1024), reason: path);
+        final codec = await ui.instantiateImageCodec(file.readAsBytesSync());
+        final frame = await codec.getNextFrame();
+        expect(frame.image.width, anyOf(900, 512), reason: path);
+        expect(frame.image.height, anyOf(900, 512), reason: path);
+        frame.image.dispose();
+        codec.dispose();
+      }
     });
   });
 }
