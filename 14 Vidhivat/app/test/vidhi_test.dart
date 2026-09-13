@@ -103,6 +103,29 @@ void main() {
       );
     });
 
+    test('हर पूजा की संकल्प-कुंजी संकल्प की सूची में है (→ D-072)', () {
+      // कुंजी न मिले तो ऐप चुपचाप "देवपूजनं" भर देता है। 13 सित 2026 तक
+      // नवरात्रि के नौ दिन इसी तरह बिना माँ दुर्गा के नाम के संकल्प बोल
+      // रहे थे — और कोई जाँच टूटी नहीं थी।
+      final files = [
+        for (final d in [dir, '$dir/navratri'])
+          ...Directory(d).listSync().whereType<File>().where((f) =>
+              f.path.endsWith('.json') && !f.path.endsWith('_suchi.json')),
+      ];
+      expect(files, isNotEmpty);
+
+      final chhoote = <String>[];
+      for (final f in files) {
+        final v = Vidhi.parse(f.path, f.readAsStringSync());
+        if (v.sankalpPurpose.trim().isEmpty) continue;
+        if (!commonPurposes.containsKey(v.sankalpPurpose)) {
+          chhoote.add('${f.uri.pathSegments.last} → "${v.sankalpPurpose}"');
+        }
+      }
+      expect(chhoote, isEmpty,
+          reason: 'संकल्प की सूची में नहीं:\n${chhoote.join('\n')}');
+    });
+
     test('सूची का नाम, श्रेणी और पास-हालत फ़ाइल से मिलती है', () {
       // सूची अलग फ़ाइल में है ताकि ऐप शुरू होते ही बारह फ़ाइलें न पढ़नी
       // पड़ें। उसकी क़ीमत यह है कि दोनों जगह एक ही बात लिखी होती है —

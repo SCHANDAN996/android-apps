@@ -37,8 +37,8 @@ DHYAN = {
         "devi prasidatu mayi brahmacharinyanuttama ||",
         "जिनके कमल जैसे दोनों हाथों में जप की माला और कमंडलु है, वे सर्वश्रेष्ठ "
         "ब्रह्मचारिणी देवी मुझ पर प्रसन्न हों।",
-        "पहले यहाँ सिर्फ़ \"ॐ देवी ब्रह्मचारिणी नमः\" लिखा था — वह व्याकरण से "
-        "अधूरा था; नमः के साथ चतुर्थी विभक्ति आती है, इसलिए \"ब्रह्मचारिण्यै\"।",
+        "नाम-मंत्र में \"ब्रह्मचारिण्यै\" आता है, \"ब्रह्मचारिणी\" नहीं — नमः के "
+        "साथ चतुर्थी विभक्ति लगती है।",
     ),
     "chandraghanta": (
         "पिण्डजप्रवरारूढा चण्डकोपास्त्रकैर्युता।\n"
@@ -188,6 +188,25 @@ NAAMAVALI_MANTRA = {
 }
 
 
+UGRA = {"kushmanda", "kalaratri"}
+
+
+def devi_kshama() -> dict:
+    """देवी की क्षमा प्रार्थना — **कलश स्थापना से उठाई**, यहाँ लिखी नहीं।
+
+    ⚠️ पहले नवरात्रि की नौ फ़ाइलें नित्य पूजा का क्षमा-कदम उठाती थीं —
+    उसमें *"क्षम्यतां परमेश्वर… जनार्दन"* है, जो विष्णु का नाम है। यानी
+    माँ दुर्गा से "हे जनार्दन" कहकर क्षमा माँगी जा रही थी। ठीक यही
+    ग़लती 3 सित 2026 को कलश स्थापना से हटाई गई थी। अब पाठ वहीं से आता
+    है, ताकि दोनों जगह एक ही स्रोत रहे।
+    """
+    base = json.loads((VIDHI / "kalash_sthapana.json").read_text(encoding="utf-8"))
+    for c in base["charan"]:
+        if c["shirshak"].startswith("क्षमा प्रार्थना"):
+            return copy.deepcopy(c["mantra"])
+    raise SystemExit("kalash_sthapana में क्षमा प्रार्थना का कदम नहीं मिला")
+
+
 def mantra(naam: str, roman_naam: str) -> dict:
     """उस दिन की देवी का ध्यान श्लोक + नाम-मंत्र।
 
@@ -215,6 +234,26 @@ def mantra(naam: str, roman_naam: str) -> dict:
         }
 
     shlok, shlok_roman, arth, vikalp = dhyan
+
+    # उग्र रूप वाले दो श्लोक (→ D-072, समीक्षा का प्रश्न 13)।
+    #
+    # कूष्मांडा (रुधिराप्लुतम्) और कालरात्रि (नग्ना) के ध्यान श्लोक की
+    # भाषा तांत्रिक परंपरा की है। घर में, बिना जानकार के, परिवार के साथ
+    # ऊँचे स्वर में पढ़ने के लिए यहाँ **नाम-मंत्र मुख्य** है और पूरा
+    # श्लोक विकल्प में — छिपाया नहीं, एक टैप दूर रखा।
+    if roman_naam in UGRA:
+        return {
+            "devanagari": naam_mantra,
+            "roman": naam_roman,
+            "arth": f"माँ {naam} को नमस्कार।",
+            "audio": "",
+            "strot": SROT_NAAM + SROT_STOTRA,
+            "bharosa": "madhyam",
+            "vikalp": (f"पारंपरिक ध्यान श्लोक — \"{shlok.replace(chr(10), ' ')}\" "
+                       f"({arth}) {vikalp}"),
+            "sthiti": "draft",
+        }
+
     return {
         "devanagari": f"{shlok}\n\n{naam_mantra}",
         "roman": f"{shlok_roman}\n\n{naam_roman}",
@@ -246,11 +285,16 @@ def samagri(bhog: str) -> list[dict]:
 
 def charan(base: dict, ank: int, devi: str, roman_devi: str, bhog: str) -> list[dict]:
     by_name = {c["shirshak"]: c for c in base["charan"]}
+    ganesh = copy.deepcopy(by_name["गणेश स्मरण"])
+    # नित्य पूजा में तुलसी आगे विष्णु-पूजन में चढ़ती है, इसलिए वहाँ गणेश-कदम
+    # पर "तुलसी न चढ़ाएँ… आगे चढ़ेगी" लिखा है। नवरात्रि की सामग्री में तुलसी
+    # है ही नहीं — वह वाक्य यहाँ झूठा हो जाता, इसलिए हटाया जाता है।
+    ganesh["vivaran"] = ganesh["vivaran"].split(" गणेश जी को तुलसी न चढ़ाएँ")[0]
     copy_steps = [
         copy.deepcopy(by_name["आचमन और पवित्रीकरण"]),
         copy.deepcopy(by_name["संकल्प"]),
         copy.deepcopy(by_name["स्वस्तिवाचन"]),
-        copy.deepcopy(by_name["गणेश स्मरण"]),
+        ganesh,
     ]
     steps = [
         {
@@ -270,7 +314,7 @@ def charan(base: dict, ank: int, devi: str, roman_devi: str, bhog: str) -> list[
         },
         {
             "shirshak": f"माँ {devi} का ध्यान और पूजन",
-            "vivaran": f"माँ {devi} के चित्र के सामने फूल रखें। चंदन या रोली, अक्षत, फूल, धूप और दीप अर्पित करके सरल नाम-मंत्र बोलें।",
+            "vivaran": f"माँ {devi} के चित्र के सामने फूल रखें। चंदन या रोली, अक्षत, फूल, धूप और दीप अर्पित करके नीचे दिया मंत्र बोलें।",
             "samayMinute": 5,
             "vishesh": "saada",
             "mantra": mantra(devi, roman_devi),
@@ -293,6 +337,7 @@ def charan(base: dict, ank: int, devi: str, roman_devi: str, bhog: str) -> list[
         copy.deepcopy(by_name["क्षमा प्रार्थना और प्रसाद"]),
     ]
     steps[-2]["paath"] = ["durga_aarti"]
+    steps[-1]["mantra"] = devi_kshama()
     return steps
 
 
@@ -387,6 +432,7 @@ def dashami(base: dict) -> dict:
         copy.deepcopy(by_name["क्षमा प्रार्थना और प्रसाद"]),
     ]
     steps[-2]["paath"] = ["durga_aarti"]
+    steps[-1]["mantra"] = devi_kshama()
     return {
         "schemaVersion": 1, "id": "vijayadashami", "naam": "विजयादशमी और जवारे विसर्जन",
         "upnaam": ["दशमी", "दुर्गा विसर्जन", "नवरात्रि दिन 10"], "shreni": "tyohar", "scope": "regional_profile",
