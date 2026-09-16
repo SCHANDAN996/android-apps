@@ -19,7 +19,10 @@ class PartnerShare {
 }
 
 class BatwaraScreen extends StatefulWidget {
-  const BatwaraScreen({super.key});
+  const BatwaraScreen({super.key, this.initialSqFt});
+
+  /// नक्शे/GPS से नापा हुआ रकबा (वर्ग फीट) — दिया हो तो कुल रकबा उसी से भरता है।
+  final double? initialSqFt;
 
   @override
   State<BatwaraScreen> createState() => _BatwaraScreenState();
@@ -56,9 +59,26 @@ class _BatwaraScreenState extends State<BatwaraScreen> {
     return units.last;
   }
 
+  /// नक्शे से आया रकबा, जब तक user ख़ुद संख्या न बदले। इकाई या राज्य बदलने
+  /// पर संख्या इसी से दोबारा बनती है — वरना "2.3 बीघा" इकाई बदलते ही
+  /// "2.3 एकड़" हो जाता।
+  double? _lockedSqFt;
+
+  void _syncLockedArea() {
+    final sqft = _lockedSqFt;
+    if (sqft == null) return;
+    final v = sqft / _selectedUnit.sqft;
+    _totalAreaController.text = v
+        .toStringAsFixed(4)
+        .replaceFirst(RegExp(r'0+$'), '')
+        .replaceFirst(RegExp(r'\.$'), '');
+  }
+
   @override
   void initState() {
     super.initState();
+    _lockedSqFt = widget.initialSqFt;
+    _syncLockedArea();
     _loadState();
   }
 
@@ -85,6 +105,7 @@ class _BatwaraScreenState extends State<BatwaraScreen> {
         if (!_units.contains(_selectedUnit)) {
           _selectedUnit = _defaultUnit(_units);
         }
+        _syncLockedArea();
       });
     } catch (_) {}
   }
@@ -232,6 +253,7 @@ class _BatwaraScreenState extends State<BatwaraScreen> {
                                   if (!_units.contains(_selectedUnit)) {
                                     _selectedUnit = _defaultUnit(_units);
                                   }
+                                  _syncLockedArea();
                                 });
                               }
                             },
@@ -250,7 +272,7 @@ class _BatwaraScreenState extends State<BatwaraScreen> {
                                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                                     contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                                   ),
-                                  onChanged: (_) => setState(() {}),
+                                  onChanged: (_) => setState(() => _lockedSqFt = null),
                                 ),
                               ),
                               const SizedBox(width: 10),
@@ -271,7 +293,12 @@ class _BatwaraScreenState extends State<BatwaraScreen> {
                                     );
                                   }).toList(),
                                   onChanged: (u) {
-                                    if (u != null) setState(() => _selectedUnit = u);
+                                    if (u != null) {
+                                      setState(() {
+                                        _selectedUnit = u;
+                                        _syncLockedArea();
+                                      });
+                                    }
                                   },
                                 ),
                               ),

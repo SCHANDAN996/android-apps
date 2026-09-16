@@ -1,5 +1,5 @@
 name: jameen_napi
-description: "Jameen Napi - Land Area and Plot Length Converter (Bigha, Katha, Dhur, Cent, Guntha, Acre, Hectare). 100% offline."
+description: "Jameen Napi - Land calculator with offline conversions, GPS field measurement and map measurement."
 publish_to: 'none'
 
 version: 1.1.0+6
@@ -15,6 +15,10 @@ dependencies:
   share_plus: ^10.1.4
   google_mobile_ads: ^9.0.0
   url_launcher: ^6.3.2
+  flutter_map: ^8.3.2
+  latlong2: ^0.10.1
+  geolocator: ^14.0.2
+  wakelock_plus: ^1.5.2
 
 
 dev_dependencies:
@@ -35,4 +39,3 @@ flutter:
   uses-material-design: true
   assets:
     - assets/icon/
-

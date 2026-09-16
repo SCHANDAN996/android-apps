@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../data/app_language.dart';
+import '../data/map_strings.dart';
 import '../data/pro_kisan_strings.dart';
 import '../widgets/privacy_dialog.dart';
 import 'batwara_screen.dart';
@@ -8,6 +9,7 @@ import 'converter_screen.dart';
 import 'irregular_plot_screen.dart';
 import 'laggi_screen.dart';
 import 'length_screen.dart';
+import 'map_measure_hub_screen.dart';
 import 'pro_kisan_screen.dart';
 import 'settings_screen.dart';
 import 'triangle_plot_screen.dart';
@@ -151,6 +153,15 @@ class HomeScreen extends StatelessWidget {
                   child: ListView(
                     padding: const EdgeInsets.fromLTRB(16, 18, 16, 28),
                     children: [
+                      _ToolCard(
+                        icon: Icons.map_rounded,
+                        title: strings.toolMap,
+                        subtitle: strings.toolMapSub,
+                        badge: strings.badgeMap,
+                        badgeColor: Colors.indigo.shade700,
+                        screen: const MapMeasureHubScreen(),
+                        gradientColors: const [Color(0xFF283593), Color(0xFF5C6BC0)],
+                      ),
                       _ToolCard(
                         icon: Icons.landscape_rounded,
                         title: strings.toolLand,

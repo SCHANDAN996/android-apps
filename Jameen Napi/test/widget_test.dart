@@ -9,6 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:jameen_napi/data/app_language.dart';
 import 'package:jameen_napi/data/land_units.dart';
 import 'package:jameen_napi/data/length_units.dart';
+import 'package:jameen_napi/data/map_strings.dart';
 import 'package:jameen_napi/data/pro_kisan_strings.dart';
 import 'package:jameen_napi/data/tool_strings.dart';
 import 'package:jameen_napi/main.dart';
@@ -16,7 +17,7 @@ import 'package:jameen_napi/screens/batwara_screen.dart';
 import 'package:jameen_napi/screens/irregular_plot_screen.dart';
 
 void main() {
-  testWidgets('home screen shows all 6 dedicated land measurement tools', (tester) async {
+  testWidgets('home screen shows all 7 dedicated land measurement tools', (tester) async {
     tester.view.physicalSize = const Size(1080, 2400);
     tester.view.devicePixelRatio = 1.0;
     addTearDown(tester.view.resetPhysicalSize);
@@ -26,6 +27,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('जमीन नापी'), findsOneWidget);
+    expect(find.text('नक्शे / GPS से नापें'), findsOneWidget);
     expect(find.text('भूमि क्षेत्रफल कन्वर्टर'), findsOneWidget);
     expect(find.text('4-भुजा खेत नापी (विषमबाहु)'), findsOneWidget);
     expect(find.text('प्लाट / लंबाई नाप कन्वर्टर'), findsOneWidget);
@@ -286,10 +288,13 @@ void main() {
       // दोनों फाइलें: स्क्रीनों की strings और AppStrings के अपने getters.
       final toolSource = File('lib/data/tool_strings.dart').readAsStringSync();
       final langSource = File('lib/data/app_language.dart').readAsStringSync() +
-          File('lib/data/pro_kisan_strings.dart').readAsStringSync();
+          File('lib/data/pro_kisan_strings.dart').readAsStringSync() +
+          File('lib/data/map_strings.dart').readAsStringSync();
       expect(toolSource, contains('extension ToolStrings'),
           reason: 'tool_strings.dart नहीं मिली या बदल गई है');
-      final source = toolSource + String.fromCharCode(10) + langSource;
+      final mapSource = File('lib/data/map_strings.dart').readAsStringSync();
+      final source = toolSource + String.fromCharCode(10) + mapSource +
+          String.fromCharCode(10) + langSource;
 
       final maps = RegExp(r'pick\((?:const\s+)?\{(.*?)\}\)', dotAll: true)
           .allMatches(source);
@@ -403,6 +408,32 @@ void main() {
           strings.stateDisplayName(standardStateKey),
           ...strings.lengthInfoLines,
           ...lengthUnits.map((u) => strings.lengthUnitName(u.en)),
+          // नक्शे / GPS से नापें
+          strings.toolMap,
+          strings.toolMapSub,
+          strings.badgeMap,
+          strings.mapTapTitle,
+          strings.mapTapBody,
+          strings.mapWalkTitle,
+          strings.mapWalkBody,
+          strings.mapRoadTitle,
+          strings.mapRoadBody,
+          strings.mapAccuracyNote,
+          strings.mapInternetNote,
+          strings.mapTapHintArea,
+          strings.mapTapHintDistance,
+          strings.mapWalkHint,
+          strings.mapTrackHint,
+          strings.mapCrossWarning,
+          strings.mapSmallFieldWarning(25),
+          strings.mapGpsWeak,
+          strings.mapWeakCorner,
+          strings.mapPermissionDenied,
+          strings.mapDisclosureTitle,
+          strings.mapDisclosureBody,
+          strings.mapTilesFailing,
+          strings.mapScreenStaysOn,
+          strings.mapLeaveTitle,
           // Pro Kisan promo
           strings.pkOurOtherApp,
           strings.pkName,

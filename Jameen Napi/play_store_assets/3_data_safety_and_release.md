@@ -45,12 +45,12 @@ Play Console अभी भी **"किसान कैलकुलेटर - �
 - **Data types collected:**
   - *Device or other IDs* → **Advertising ID** → Collected: Yes, Shared: Yes
     → Purpose: **Advertising or marketing**
-  - बाक़ी सब (Name, Email, Location, Photos, Contacts, Files) → **No**
+  - *Location* → app GPS location को सिर्फ़ device पर foreground measurement के लिए process करता है; इसे हमारे server पर collect/share नहीं करता। Play form में इसे **No** रखें केवल अगर Console की current definition के अनुसार on-device-only processing को collection नहीं माना गया है; map-tile provider disclosure को उसकी policy के अनुसार verify करें।
+  - बाकी सब (Name, Email, Photos, Contacts, Files) → **No**
 - **Is data encrypted in transit?** → **Yes**
 - **Can users request data deletion?** → कोई व्यक्तिगत डेटा जमा ही नहीं होता
 
-**Permissions:** कोई खतरनाक permission नहीं। `INTERNET`, `ACCESS_NETWORK_STATE`,
-`AD_ID` और Ad Services वाली permissions Google Mobile Ads SDK अपने आप जोड़ता है।
+**Permissions:** `ACCESS_FINE_LOCATION` और `ACCESS_COARSE_LOCATION` GPS से खेत/रास्ता नापने के लिए, केवल screen खुली होने पर। `ACCESS_BACKGROUND_LOCATION` नहीं है। `INTERNET`, `ACCESS_NETWORK_STATE`, `AD_ID` और Ad Services वाली permissions ads/map के लिए लगती हैं।
 
 ---
 

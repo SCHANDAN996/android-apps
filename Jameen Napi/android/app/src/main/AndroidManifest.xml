@@ -1,4 +1,12 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- "नक्शे / GPS से नापें" के लिए — सिर्फ़ जब नापने वाली screen खुली हो।
+         ACCESS_BACKGROUND_LOCATION जान-बूझकर नहीं है: उसके लिए Play अलग
+         declaration और वीडियो माँगता है, और privacy policy भी यही कहती है।
+         INTERNET पहले से AdMob SDK जोड़ता है; नक्शे की tiles भी उसी से आती हैं। -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="जमीन नापी"
         android:name="${applicationName}"
@@ -30,6 +38,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <!-- geolocator अपनी location वाली foreground service manifest में
+             डाल देता है। हम उसे इस्तेमाल नहीं करते (नाप सिर्फ़ screen खुली
+             रहने तक), और Play ऐसी service देखकर FGS declaration माँग सकता है —
+             इसलिए हटा दी। -->
+        <service
+            android:name="com.baseflow.geolocator.GeolocatorLocationService"
+            tools:node="remove"/>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data

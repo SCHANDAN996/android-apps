@@ -1,16 +1,21 @@
-# kisan_calculator
+# जमीन नापी (Jameen Napi)
 
-A new Flutter project.
+Flutter app for Indian land-area conversion, plot calculations and field measurement.
 
-## Getting Started
+## Map / GPS measurement
 
-This project is a starting point for a Flutter application.
+- Tap satellite/street map corners to measure a field or route distance.
+- Walk to each field corner for an averaged GPS fix, or record a continuous curved boundary.
+- Track distance while walking, riding or driving, with accuracy, jitter and GPS-jump filtering.
+- Measurements can be saved locally, shared, viewed in state-specific land units, or sent to land partition.
 
-A few resources to get you started if this is your first Flutter project:
+GPS is used only while the measurement screen is open. Calculations and saved boundaries remain on the device. Map tiles and ads need internet; GPS walking measurement does not.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Checks
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```sh
+flutter test
+flutter analyze
+flutter build apk --debug
+dart run tool/check_store_listing.dart
+```
