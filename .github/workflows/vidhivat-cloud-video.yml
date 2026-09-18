@@ -59,7 +59,7 @@ jobs:
       - name: Convert and publish the MP4
         run: |
           set -euo pipefail
-          ffmpeg_bin="$(find "${HOME}/.cache/ms-playwright" -type f -name ffmpeg -perm -111 | head -n 1)"
+          ffmpeg_bin="$(find "${HOME}/.cache/ms-playwright" -type f -name ffmpeg -perm -111 -print -quit)"
           test -n "${ffmpeg_bin}"
           "${ffmpeg_bin}" -y -i "${RECORDING_DIR}/vidhivat-web-emulator.webm" \
             -c:v libx264 -pix_fmt yuv420p -movflags +faststart \
