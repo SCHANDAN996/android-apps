@@ -16,8 +16,12 @@ const page = await context.newPage();
 await page.goto('http://127.0.0.1:8080', { waitUntil: 'networkidle' });
 await page.waitForTimeout(2500);
 
-// Flutter web renders this dialog on a canvas, so use the stable button position.
-await page.mouse.click(520, 700);
+// Flutter web paints this dialog on a canvas. The upper-right text is “अभी नहीं”.
+await page.mouse.click(610, 680);
+await page.waitForTimeout(3000);
+
+// Open the featured puja card to give the recording a visible app transition.
+await page.mouse.click(190, 298);
 await page.waitForTimeout(8000);
 
 await page.close();
