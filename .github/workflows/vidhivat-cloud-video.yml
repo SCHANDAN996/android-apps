@@ -6,34 +6,22 @@ on:
     paths:
       - .github/workflows/vidhivat-cloud-video.yml
   workflow_dispatch:
-    inputs:
-      duration_seconds:
-        description: Recording duration (10 to 180 seconds)
-        required: true
-        default: "50"
-        type: string
 
 permissions:
   contents: read
 
 jobs:
   record:
-    name: Build, install and record in a cloud Android emulator
+    name: Build and record Vidhivat in a cloud browser
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     env:
       APP_DIR: 14 Vidhivat/app
-      APP_APK: 14 Vidhivat/app/build/app/outputs/flutter-apk/app-debug.apk
-      RECORDING_SECONDS: ${{ inputs.duration_seconds || '50' }}
+      RECORDING_DIR: recording
 
     steps:
       - name: Check out the source
         uses: actions/checkout@v4
-
-      - name: Set up Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: "17"
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -41,27 +29,39 @@ jobs:
           channel: stable
           cache: true
 
-      - name: Build a debug APK
+      - name: Build a web preview
         working-directory: ${{ env.APP_DIR }}
         run: |
+          flutter config --enable-web
           flutter pub get
-          flutter build apk --debug
+          flutter create --platforms=web .
+          flutter build web --release
 
-      - name: Install and record on a cloud Android emulator
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 29
-          arch: x86_64
-          profile: pixel
-          emulator-options: -no-window -noaudio -no-boot-anim -gpu swiftshader_indirect -no-snapshot
-          disable-animations: true
-          script: bash "14 Vidhivat/tools/cloud_video/record.sh"
+      - name: Record the web preview as vertical video
+        run: |
+          set -euo pipefail
+          mkdir -p "${RECORDING_DIR}"
+          cd "${APP_DIR}/build/web"
+          python3 -m http.server 8080 >/tmp/vidhivat-web-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "${server_pid}" || true' EXIT
+          for attempt in {1..20}; do
+            curl --silent --fail http://127.0.0.1:8080 >/dev/null && break
+            sleep 1
+          done
+          cd "${GITHUB_WORKSPACE}"
+          npm install --no-save playwright@1.57.0
+          npx playwright install --with-deps chromium
+          RECORDING_DIR="${RECORDING_DIR}" node "14 Vidhivat/tools/cloud_video/capture_web.mjs"
+          ffmpeg -y -i "${RECORDING_DIR}/vidhivat-web-emulator.webm" \
+            -c:v libx264 -pix_fmt yuv420p -movflags +faststart \
+            "${RECORDING_DIR}/vidhivat-web-emulator.mp4"
 
       - name: Upload the app recording
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: vidhivat-emulator-recording-${{ github.run_id }}
-          path: recording
+          name: vidhivat-cloud-browser-recording-${{ github.run_id }}
+          path: ${{ env.RECORDING_DIR }}
           if-no-files-found: error
           retention-days: 14
