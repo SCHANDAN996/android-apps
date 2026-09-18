@@ -56,7 +56,7 @@ jobs:
           emulator-options: -no-window -noaudio -no-boot-anim -gpu swiftshader_indirect
           disable-animations: true
           script: |
-            set -euo pipefail
+            set -eu
             case "${RECORDING_SECONDS}" in
               ''|*[!0-9]*) echo "duration_seconds must be a number"; exit 1 ;;
             esac
