@@ -1,0 +1,6 @@
+# बड़ी local Android artifacts — इन्हें कभी commit नहीं करना।
+*.apk
+*.aab
+*.mp4
+*.avd/
+*.img
