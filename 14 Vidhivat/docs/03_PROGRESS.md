@@ -3778,3 +3778,19 @@ app 905 जाँचें पास, analyze साफ़।
 
 **अब — पूजाएँ 37, कदम 408, भरे मंत्र 236 (ऊँचा 169 · मध्यम 67 · कम 0),
 ख़ाली 36।**
+
+---
+
+## 18 सितम्बर 2026 — video QA के लिए दोहराया जा सकने वाला Android emulator kit
+
+**क्या हुआ**
+- `tools/android_emulator/` में Windows PowerShell kit जोड़ी गई: `setup_windows.ps1`, `install_and_record.ps1` और उपयोग की पूरी हिदायत।
+- यह `VidhivatVideo` नाम का Pixel 6 / API 35 emulator बनाती है, release APK install करती है और clean 1080×1920 recording के लिए तैयार करती है।
+- APK, AAB, system image, AVD और MP4 को `.gitignore` में रोक दिया गया — repo में सिर्फ़ फिर से बनाने वाली recipe है, भारी machine-specific binaries नहीं।
+
+**क्या सीखा**
+- Cloud workspace में KVM/hardware virtualization नहीं है; इसलिए यहाँ fast Android emulator चलाना संभव नहीं।
+- Play Store वाली APK recording के लिए सही source है; `.aab` सीधे install नहीं होती।
+
+**अगला**
+- Windows PC पर kit को एक बार चलाकर Play build की clean screen-recording निकालनी है; फिर उसी recording और original voice से अंतिम promo video render करना है।
