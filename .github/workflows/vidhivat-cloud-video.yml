@@ -1,0 +1,97 @@
+name: Vidhivat cloud app video
+
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        description: Firebase Test Lab Android model ID
+        required: true
+        default: Pixel2
+        type: string
+      version:
+        description: Android API level supported by the selected model
+        required: true
+        default: "30"
+        type: string
+      timeout:
+        description: Maximum Robo journey duration
+        required: true
+        default: 120s
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  record:
+    name: Build, install and record on Firebase Test Lab
+    runs-on: ubuntu-latest
+    env:
+      APP_DIR: 14 Vidhivat/app
+      RESULTS_DIR: vidhivat-cloud-video/${{ github.run_id }}
+      RESULTS_BUCKET: ${{ secrets.FIREBASE_RESULTS_BUCKET }}
+
+    steps:
+      - name: Check out the source
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Build a recordable APK
+        working-directory: ${{ env.APP_DIR }}
+        run: |
+          flutter pub get
+          flutter build apk --debug
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GOOGLE_CLOUD_SERVICE_ACCOUNT_KEY }}
+
+      - name: Set up the Google Cloud CLI
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Install on a cloud device and record the Robo journey
+        id: robo
+        continue-on-error: true
+        run: |
+          gcloud firebase test android run \
+            --type robo \
+            --app "${APP_DIR}/build/app/outputs/flutter-apk/app-debug.apk" \
+            --device "model=${{ inputs.model }},version=${{ inputs.version }},locale=hi,orientation=portrait" \
+            --timeout "${{ inputs.timeout }}" \
+            --record-video \
+            --results-bucket "${RESULTS_BUCKET}" \
+            --results-dir "${RESULTS_DIR}"
+
+      - name: Download recording, screenshots and logs
+        if: always()
+        run: |
+          mkdir -p testlab-results
+          gcloud storage cp --recursive \
+            "gs://${RESULTS_BUCKET}/${RESULTS_DIR}" \
+            testlab-results || true
+          find testlab-results -type f -name "*.mp4" -print || true
+
+      - name: Upload cloud-video artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vidhivat-testlab-video-${{ github.run_id }}
+          path: testlab-results
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Preserve the true test status
+        if: steps.robo.outcome == 'failure'
+        run: exit 1
