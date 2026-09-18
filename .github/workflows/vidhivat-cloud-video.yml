@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - .github/workflows/vidhivat-cloud-video.yml
+      - 14 Vidhivat/tools/cloud_video/**
   workflow_dispatch:
 
 permissions:
