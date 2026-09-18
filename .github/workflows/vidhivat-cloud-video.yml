@@ -56,21 +56,15 @@ jobs:
           npx playwright install --with-deps chromium
           RECORDING_DIR="${RECORDING_DIR}" node "14 Vidhivat/tools/cloud_video/capture_web.mjs"
 
-      - name: Convert and publish the MP4
+      - name: Publish the recording as a downloadable video
         run: |
           set -euo pipefail
-          ffmpeg_bin="$(find "${HOME}/.cache/ms-playwright" -type f -name ffmpeg -perm -111 -print -quit)"
-          test -n "${ffmpeg_bin}"
-          "${ffmpeg_bin}" -y -i "${RECORDING_DIR}/vidhivat-web-emulator.webm" \
-            -c:v libx264 -pix_fmt yuv420p -movflags +faststart \
-            "${RECORDING_DIR}/vidhivat-app-recording.mp4"
-
           publish_dir="$(mktemp -d)"
           git -C "${publish_dir}" init -q
           git -C "${publish_dir}" config user.name "Vidhivat video bot"
           git -C "${publish_dir}" config user.email "actions@github.com"
-          cp "${RECORDING_DIR}/vidhivat-app-recording.mp4" "${publish_dir}/vidhivat-app-recording.mp4"
-          git -C "${publish_dir}" add vidhivat-app-recording.mp4
+          cp "${RECORDING_DIR}/vidhivat-web-emulator.webm" "${publish_dir}/vidhivat-app-recording.webm"
+          git -C "${publish_dir}" add vidhivat-app-recording.webm
           git -C "${publish_dir}" commit -m "Publish latest Vidhivat app recording"
           git -C "${publish_dir}" branch -M "${PUBLISH_BRANCH}"
           git -C "${publish_dir}" remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
