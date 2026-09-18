@@ -1,6 +1,10 @@
 name: Vidhivat cloud app video
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/vidhivat-cloud-video.yml
   workflow_dispatch:
     inputs:
       duration_seconds:
@@ -19,7 +23,7 @@ jobs:
     env:
       APP_DIR: 14 Vidhivat/app
       APP_APK: 14 Vidhivat/app/build/app/outputs/flutter-apk/app-debug.apk
-      RECORDING_SECONDS: ${{ inputs.duration_seconds }}
+      RECORDING_SECONDS: ${{ inputs.duration_seconds || '50' }}
 
     steps:
       - name: Check out the source
