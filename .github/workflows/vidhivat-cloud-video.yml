@@ -50,10 +50,10 @@ jobs:
       - name: Install and record on a cloud Android emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 35
+          api-level: 29
           arch: x86_64
-          profile: pixel_6
-          emulator-options: -no-window -noaudio -no-boot-anim -gpu swiftshader_indirect
+          profile: pixel
+          emulator-options: -no-window -noaudio -no-boot-anim -gpu swiftshader_indirect -no-snapshot
           disable-animations: true
           script: bash "14 Vidhivat/tools/cloud_video/record.sh"
 
