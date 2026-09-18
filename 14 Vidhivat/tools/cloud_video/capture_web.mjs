@@ -4,8 +4,8 @@ import { readdir, rename } from 'node:fs/promises';
 const outputDir = process.env.RECORDING_DIR || 'recording';
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({
-  viewport: { width: 360, height: 640 },
-  deviceScaleFactor: 2,
+  viewport: { width: 720, height: 1280 },
+  deviceScaleFactor: 1,
   recordVideo: {
     dir: outputDir,
     size: { width: 720, height: 1280 },
@@ -16,10 +16,8 @@ const page = await context.newPage();
 await page.goto('http://127.0.0.1:8080', { waitUntil: 'networkidle' });
 await page.waitForTimeout(2500);
 
-const skipLocation = page.getByRole('button', { name: 'अभी नहीं' });
-if (await skipLocation.count()) {
-  await skipLocation.click();
-}
+// Flutter web renders this dialog on a canvas, so use the stable button position.
+await page.mouse.click(520, 700);
 await page.waitForTimeout(8000);
 
 await page.close();
