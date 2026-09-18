@@ -53,9 +53,6 @@ jobs:
           npm install --no-save playwright@1.57.0
           npx playwright install --with-deps chromium
           RECORDING_DIR="${RECORDING_DIR}" node "14 Vidhivat/tools/cloud_video/capture_web.mjs"
-          ffmpeg -y -i "${RECORDING_DIR}/vidhivat-web-emulator.webm" \
-            -c:v libx264 -pix_fmt yuv420p -movflags +faststart \
-            "${RECORDING_DIR}/vidhivat-web-emulator.mp4"
 
       - name: Upload the app recording
         if: always()
