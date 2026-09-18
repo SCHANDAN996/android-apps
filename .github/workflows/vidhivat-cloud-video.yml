@@ -3,20 +3,10 @@ name: Vidhivat cloud app video
 on:
   workflow_dispatch:
     inputs:
-      model:
-        description: Firebase Test Lab Android model ID
+      duration_seconds:
+        description: Recording duration (10 to 180 seconds)
         required: true
-        default: Pixel2
-        type: string
-      version:
-        description: Android API level supported by the selected model
-        required: true
-        default: "30"
-        type: string
-      timeout:
-        description: Maximum Robo journey duration
-        required: true
-        default: 120s
+        default: "50"
         type: string
 
 permissions:
@@ -24,12 +14,12 @@ permissions:
 
 jobs:
   record:
-    name: Build, install and record on Firebase Test Lab
+    name: Build, install and record in a cloud Android emulator
     runs-on: ubuntu-latest
     env:
       APP_DIR: 14 Vidhivat/app
-      RESULTS_DIR: vidhivat-cloud-video/${{ github.run_id }}
-      RESULTS_BUCKET: ${{ secrets.FIREBASE_RESULTS_BUCKET }}
+      APP_APK: 14 Vidhivat/app/build/app/outputs/flutter-apk/app-debug.apk
+      RECORDING_SECONDS: ${{ inputs.duration_seconds }}
 
     steps:
       - name: Check out the source
@@ -47,51 +37,55 @@ jobs:
           channel: stable
           cache: true
 
-      - name: Build a recordable APK
+      - name: Build a debug APK
         working-directory: ${{ env.APP_DIR }}
         run: |
           flutter pub get
           flutter build apk --debug
 
-      - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v2
+      - name: Install and record on a cloud Android emulator
+        uses: reactivecircus/android-emulator-runner@v2
         with:
-          credentials_json: ${{ secrets.GOOGLE_CLOUD_SERVICE_ACCOUNT_KEY }}
+          api-level: 35
+          arch: x86_64
+          profile: pixel_6
+          emulator-options: -no-window -noaudio -no-boot-anim -gpu swiftshader_indirect
+          disable-animations: true
+          script: |
+            set -euo pipefail
+            case "${RECORDING_SECONDS}" in
+              ''|*[!0-9]*) echo "duration_seconds must be a number"; exit 1 ;;
+            esac
+            if [ "${RECORDING_SECONDS}" -lt 10 ] || [ "${RECORDING_SECONDS}" -gt 180 ]; then
+              echo "duration_seconds must be between 10 and 180"
+              exit 1
+            fi
 
-      - name: Set up the Google Cloud CLI
-        uses: google-github-actions/setup-gcloud@v2
+            mkdir -p recording
+            adb install -r -g "${APP_APK}"
+            adb shell pm grant com.vidhivat android.permission.ACCESS_FINE_LOCATION || true
+            adb shell pm grant com.vidhivat android.permission.ACCESS_COARSE_LOCATION || true
+            adb shell am force-stop com.vidhivat
+            adb shell monkey -p com.vidhivat 1 >/dev/null
+            sleep 4
+            adb exec-out screencap -p > recording/first-frame.png
 
-      - name: Install on a cloud device and record the Robo journey
-        id: robo
-        continue-on-error: true
-        run: |
-          gcloud firebase test android run \
-            --type robo \
-            --app "${APP_DIR}/build/app/outputs/flutter-apk/app-debug.apk" \
-            --device "model=${{ inputs.model }},version=${{ inputs.version }},locale=hi,orientation=portrait" \
-            --timeout "${{ inputs.timeout }}" \
-            --record-video \
-            --results-bucket "${RESULTS_BUCKET}" \
-            --results-dir "${RESULTS_DIR}"
+            adb shell screenrecord \
+              --bit-rate 8000000 \
+              --time-limit "${RECORDING_SECONDS}" \
+              /sdcard/vidhivat-emulator.mp4 >/tmp/vidhivat-screenrecord.log 2>&1 &
+            recorder_pid=$!
+            sleep "${RECORDING_SECONDS}"
+            wait "${recorder_pid}" || true
 
-      - name: Download recording, screenshots and logs
-        if: always()
-        run: |
-          mkdir -p testlab-results
-          gcloud storage cp --recursive \
-            "gs://${RESULTS_BUCKET}/${RESULTS_DIR}" \
-            testlab-results || true
-          find testlab-results -type f -name "*.mp4" -print || true
+            adb pull /sdcard/vidhivat-emulator.mp4 recording/vidhivat-emulator.mp4
+            adb pull /tmp/vidhivat-screenrecord.log recording/screenrecord.log || true
 
-      - name: Upload cloud-video artifacts
+      - name: Upload the app recording
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: vidhivat-testlab-video-${{ github.run_id }}
-          path: testlab-results
-          if-no-files-found: warn
+          name: vidhivat-emulator-recording-${{ github.run_id }}
+          path: recording
+          if-no-files-found: error
           retention-days: 14
-
-      - name: Preserve the true test status
-        if: steps.robo.outcome == 'failure'
-        run: exit 1
