@@ -6,13 +6,13 @@ A collection of Flutter/Dart app projects focused on everyday use in India. [See
 
 | Project | Scope visible in this repository | Code / Google Play |
 | --- | --- | --- |
-| **Jameen Napi** | Land area, plot and length calculators; local preferences and sharing | [Source](Jameen%20Napi/) · [Project guide](Jameen%20Napi/README.md) · [Play publisher](https://play.google.com/store/apps/developer?id=Tube+algo) |
+| **Jameen Napi** | Land area, plot and length calculators; local preferences and sharing | [Source](Jameen%20Napi/) · [Project guide](Jameen%20Napi/README.md) · [Google Play](https://play.google.com/store/apps/details?id=com.chandansingh.kisan_calculator) |
 | **Vidhivat** | Puja guidance, calendar screens and a separate pure-Dart panchang engine | [Project overview](14%20Vidhivat/README.md) · [App](14%20Vidhivat/app/) · [Engine](14%20Vidhivat/engine/) · [Google Play](https://play.google.com/store/apps/details?id=com.vidhivat) |
 | **Mistri Calculator** | Brick, concrete, steel, plaster, tile and paint estimates | [App and guide](01%20Mistri%20Calculator/mistri_calculator/) · [Google Play](https://play.google.com/store/apps/details?id=com.mistricalculator.mistri_calculator) |
 | **Pro Kisan** | Agriculture and dairy modules; BLoC/Cubit and database-backed workflows | [App source](03%20Pro%20Kisan/pro%20kisan/) · [Google Play](https://play.google.com/store/apps/details?id=com.prokisan.app) |
 | **Ibadati** | Flutter UI prototype for prayer-related flows | [Prototype and limitations](15%20Ibadati/README.md) |
 
-**Another published app:** [Qrova: QR Scanner & Generator](https://play.google.com/store/apps/details?id=com.qrova.app) (its source is not in this repository). Jameen Napi appears in the owner's Play Store screenshot; its exact listing URL still needs verification.
+**Another published app:** [Qrova: QR Scanner & Generator](https://play.google.com/store/apps/details?id=com.qrova.app) (its source is not in this repository). Jameen Napi's direct Google Play URL was supplied in the owner's sharing screenshot.
 
 Some other directories contain plans or work in progress. They are not presented as released apps. The original documentation for each project contains its own release checklist or development status; check that before evaluating store readiness.
 
