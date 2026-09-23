@@ -1,16 +1,29 @@
-# kisan_calculator
+# Jameen Napi · जमीन नापी
 
-A new Flutter project.
+A Flutter app for land-area and plot calculations designed around Indian units and Hindi-friendly usage.
 
-## Getting Started
+## Explore the implementation
 
-This project is a starting point for a Flutter application.
+- [Area and unit definitions](lib/data/land_units.dart), [length units](lib/data/length_units.dart) and [plot units](lib/data/plot_units.dart)
+- [Area converter](lib/screens/converter_screen.dart), [irregular plot](lib/screens/irregular_plot_screen.dart), [triangle plot](lib/screens/triangle_plot_screen.dart), [land division](lib/screens/batwara_screen.dart) and [laggi calculation](lib/screens/laggi_screen.dart)
+- [Language selection](lib/data/app_language.dart) and [settings](lib/screens/settings_screen.dart)
 
-A few resources to get you started if this is your first Flutter project:
+**Stack:** Flutter/Dart, `shared_preferences`, `share_plus`, `google_mobile_ads`, `url_launcher`. See [pubspec.yaml](pubspec.yaml) for the actual dependency and SDK versions. This checkout's dependency list does **not** include a GPS or Google Maps plugin; do not assume live GPS surveying or map polygon capture from this code.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Run locally
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+cd "Jameen Napi"
+flutter pub get
+flutter run
+```
+
+To run the checked-in tests:
+
+```bash
+flutter test
+```
+
+Land units vary by region; users should verify local definitions and measurements before making legal or financial decisions.
+
+**Release details:** Add the exact Play Store URL and a short demo here once verified against the live listing.
