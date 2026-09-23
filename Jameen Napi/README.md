@@ -26,4 +26,4 @@ flutter test
 
 Land units vary by region; users should verify local definitions and measurements before making legal or financial decisions.
 
-**Release details:** Add the exact Play Store URL and a short demo here once verified against the live listing.
+**Google Play:** The owner's screenshot shows Jameen Napi under Tube algo. [Browse the developer's Play Store page](https://play.google.com/store/apps/developer?id=Tube+algo); the exact listing URL still needs verification.
