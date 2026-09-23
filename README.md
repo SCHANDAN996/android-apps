@@ -1,91 +1,42 @@
-# 📱 MASS APP — Production Mobile Apps Suite
+# Android & Flutter apps · Chandan Singh
 
-[![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?style=flat&logo=flutter&logoColor=white)](https://flutter.dev)
-[![Dart](https://img.shields.io/badge/Dart-3.x-0175C2?style=flat&logo=dart&logoColor=white)](https://dart.dev)
-[![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20Play%20Store-green.svg?style=flat)]()
-[![Author](https://img.shields.io/badge/Author-Chandan%20Singh-blueviolet.svg?style=flat)](https://github.com/SCHANDAN996)
+A collection of Flutter/Dart app projects focused on everyday use in India. Browse the source, inspect a feature, and run each Flutter project from its own directory.
 
-A suite of production-ready, lightweight, offline-first **Flutter & Android Mobile Applications** specifically engineered for Bharat users — including Land Measurement Tools (**Jameen Napi**), Agritech Calculators (**Pro Kisan**), Construction Utilities (**Mistri Calculator**), and English Speaking training apps.
+## Start here
 
----
+| Project | Scope visible in this repository | Code / notes |
+| --- | --- | --- |
+| **Jameen Napi** | Land area, plot and length calculators; local preferences and sharing | [Source](Jameen%20Napi/) · [Project guide](Jameen%20Napi/README.md) |
+| **Vidhivat** | Puja guidance, calendar screens and a separate pure-Dart panchang engine | [Project overview](14%20Vidhivat/README.md) · [App](14%20Vidhivat/app/) · [Engine](14%20Vidhivat/engine/) |
+| **Mistri Calculator** | Brick, concrete, steel, plaster, tile and paint estimates | [App and guide](01%20Mistri%20Calculator/mistri_calculator/) |
+| **Pro Kisan** | Agriculture and dairy modules; BLoC/Cubit and database-backed workflows | [App source](03%20Pro%20Kisan/pro%20kisan/) |
+| **Ibadati** | Flutter UI prototype for prayer-related flows | [Prototype and limitations](15%20Ibadati/README.md) |
 
-## 🌟 Flagship Production Applications
+Some other directories contain plans or work in progress. They are not presented as released apps. The original documentation for each project contains its own release checklist or development status; check that before evaluating store readiness.
 
-### 1️⃣ 🗺️ Jameen Napi (जमीन नापी — GPS Land Measurement)
-* **Description:** Real-time GPS and Polygon Land Area Measurement application for farmers, Patwaris, and surveyors.
-* **Core Capabilities:**
-  * GPS Walk-around boundary perimeter & area measurement.
-  * Tap-to-draw cadastral polygon on Google Maps & Satellite imagery.
-  * Instant conversion between **Bigha (Pucca/Kaccha), Biswa, Dhur, Acre, Hectare, Square Meter & Square Feet**.
-  * PDF Land Survey Report generation with coordinate stamps.
-* **Stack:** Flutter, Google Maps SDK, Geolocation, PDF generation, Hive offline storage.
+## What the code demonstrates
 
-### 2️⃣ 🌾 Pro Kisan & Kisan Calculator (किसान कैलकुलेटर)
-* **Description:** Comprehensive agricultural business calculation engine for crop yield, fertilizer estimation, and harvest economics.
-* **Core Capabilities:**
-  * Fertilizer Dosage calculator (Urea, DAP, MOP per Bigha/Acre).
-  * Crop Seed Rate & Harvest profit estimator.
-  * Mandi Rate & Weighbridge deduction calculator.
+- **Flutter & Dart:** navigation, screens, reusable widgets and feature modules.
+- **Local-first features:** app preferences and on-device data in the projects that use them.
+- **Domain logic:** land and construction calculations; a separately testable panchang engine.
+- **Android delivery work:** app configuration and store assets in selected projects.
 
----
+The projects are independent Flutter packages, **not** one Flutter app at the repository root. Dependencies and SDK requirements vary by project.
 
-## 📱 Complete Application Portfolio & Roadmap
+## Run a project
 
-| # | Application | Domain & Engine | Target Audience | Key Monetization |
-| :---: | :--- | :--- | :--- | :--- |
-| **01** | 🧱 **Mistri Calculator** | Construction & Material Engine | Contractors, Masons, Builders | Interstitial Ads & Pro Tools |
-| **02** | 🗣️ **Interview English** | Speech & Voice Practice Engine | Job Seekers, Freshers | Rewarded Unlock |
-| **03** | 🥛 **Dudh ka Hisab** | Daily Dairy Ledger & FAT/SNF | Dairy Farmers, Milk Centers | Daily Active Use Ads |
-| **04** | 👷 **Hajiri Majdoori Hisab** | Daily Wage & Attendance Tracker | Labor Contractors & Workers | Paid Cloud Backup |
-| **05** | 🐄 **Pashu Calculator** | Cattle Feed, Milk Yield & Health | Dairy & Livestock Owners | Niche Agritech Ads |
-| **06** | 🧪 **Khaad-Beej Calculator**| Fertilizer & Seed Optimizer | Farmers & Fertilizer Dealers| Banner & Interstitials |
-| **07** | 🚖 **English for Drivers** | Voice Phrases for Cab/Delivery | Commercial Drivers | Voice Pack Unlock |
-| **08** | 🏪 **English for Shopkeepers**| Retail & Customer English Dialogs| Shop Owners, Retailers | Voice Pack Unlock |
-| **09** | 💰 **Bachat Gat SHG Hisab** | Micro-Finance & Self-Help Group | Rural SHGs & Women Groups | Group Subscription |
-| **10** | 🚛 **Truck Bhada Hisab** | Freight, Toll, Mileage & Diesel | Truck Drivers & Transporters | Utility Subscription |
-| **11** | ✂️ **Silai Master** | Tailoring Measurements & Ledger | Tailors & Boutique Owners | Measurement Cloud Backup |
+Install Flutter and an Android SDK, then open the directory containing that project's `pubspec.yaml`:
 
----
-
-## 🏗️ Architecture & Philosophy
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    MASS APP ARCHITECTURE                    │
-├─────────────────────────────────────────────────────────────┤
-│  1. 100% Offline-First: SQLite / Hive local database        │
-│  2. Hindi-First UI/UX: Intuitive Devanagari & Hinglish      │
-│  3. Lightweight Bundle: < 20MB release APK size             │
-│  4. Zero Barrier: No mandatory login required               │
-│  5. Reusable Component Engines (Kisan Calc, SpeakEasy, DB)  │
-└─────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 🚀 Building & Running Locally
-
-### Prerequisites
-* Flutter SDK (3.22+)
-* Android Studio / Android SDK (API 34)
-
-### Commands
 ```bash
-# 1. Navigate to any app directory (e.g. Jameen Napi)
 cd "Jameen Napi"
-
-# 2. Get packages
 flutter pub get
-
-# 3. Run in Debug Mode
 flutter run
-
-# 4. Build Optimized Release APK
-flutter build apk --release --split-per-abi
 ```
 
----
+For Vidhivat, the Flutter app is in `14 Vidhivat/app` and its local Dart package is in `14 Vidhivat/engine`. Read [its project guide](14%20Vidhivat/README.md) for package-specific commands. Run a project's tests from its own directory with `flutter test` (or `dart test` for the pure-Dart engine).
 
-## 👤 Author & Maintainer
-* **Chandan Singh** — [@SCHANDAN996](https://github.com/SCHANDAN996)
-* 📬 **Contact:** [all.chandansingh@gmail.com](mailto:all.chandansingh@gmail.com)
+## Contact
+
+**Chandan Singh** · [GitHub profile](https://github.com/SCHANDAN996) · [Email](mailto:all.chandansingh@gmail.com)
+
+**Portfolio note:** Public Play Store links and demo videos should be added to the relevant project guide only after the exact listing and release status are verified. Features in plans are not represented here as shipped functionality.
