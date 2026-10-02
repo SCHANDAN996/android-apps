@@ -9,6 +9,8 @@ import '../widgets/common.dart';
 import '../widgets/design_system.dart';
 import '../widgets/taalne_wale_din_card.dart';
 import 'samagri_screen.dart';
+import 'pitru_schedule_screen.dart';
+import 'ancestor_profiles_screen.dart';
 import 'vidhi_player_screen.dart';
 
 /// एक पूजा का तैयारी-पन्ना। यह केवल मौजूदा Vidhi data को पढ़ने में आसान
@@ -86,14 +88,16 @@ class _PreparationDetailState extends State<_PreparationDetail> {
 
   Vidhi get vidhi => widget.vidhi;
 
-  void _openMaterials(BuildContext context) {
-    Navigator.of(context).push(
+  Future<void> _openMaterials(BuildContext context) async {
+    await Navigator.of(context).push(
       MaterialPageRoute(builder: (_) => SamagriScreen(vidhi: vidhi)),
     );
+    if (mounted) setState(() {});
   }
 
-  void _startPuja(BuildContext context, {int initialStepIndex = 0}) {
-    Navigator.of(context).push(
+  Future<void> _startPuja(BuildContext context,
+      {int initialStepIndex = 0}) async {
+    await Navigator.of(context).push(
       MaterialPageRoute(
         builder: (_) => VidhiPlayerScreen(
           vidhi: vidhi,
@@ -101,6 +105,7 @@ class _PreparationDetailState extends State<_PreparationDetail> {
         ),
       ),
     );
+    if (mounted) setState(() {});
   }
 
   Future<void> _startOver(BuildContext context) async {
@@ -194,6 +199,32 @@ class _PreparationDetailState extends State<_PreparationDetail> {
                     const VidhivatSectionHeader(title: 'कब करें'),
                     const SizedBox(height: VidhivatSpacing.sm),
                     _ContextCard(vidhi: vidhi),
+                    if (vidhi.id == 'shraadh') ...[
+                      const SizedBox(height: VidhivatSpacing.sm),
+                      VidhivatButton(
+                        label: 'पितृ पक्ष की 16 तिथियाँ देखें',
+                        icon: Icons.calendar_month_outlined,
+                        variant: VidhivatButtonVariant.secondary,
+                        fullWidth: true,
+                        onPressed: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const PitruScheduleScreen(),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: VidhivatSpacing.sm),
+                      VidhivatButton(
+                        label: 'परिवार की स्मरण-तिथियाँ',
+                        icon: Icons.family_restroom_outlined,
+                        variant: VidhivatButtonVariant.secondary,
+                        fullWidth: true,
+                        onPressed: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const AncestorProfilesScreen(),
+                          ),
+                        ),
+                      ),
+                    ],
                     // ── "कौन से दिन टालने हैं" (→ D-059) ────────────────
                     //
                     // सिर्फ़ उन पूजाओं पर जिनमें तारीख़ **चुननी पड़ती है** — गृह प्रवेश,
@@ -258,7 +289,7 @@ class _PreparationDetailState extends State<_PreparationDetail> {
                 top: false,
                 child: VidhivatReadableWidth(
                   // लेटे रूप में यह बटन 853dp चौड़ा हो जाता था (→ D-062)।
-                    child: Padding(
+                  child: Padding(
                     padding: const EdgeInsets.fromLTRB(
                       VidhivatSpacing.lg,
                       VidhivatSpacing.sm,
@@ -392,25 +423,37 @@ class _PujaMetadata extends StatelessWidget {
   const _PujaMetadata({required this.vidhi});
 
   @override
-  Widget build(BuildContext context) => Wrap(
-        spacing: VidhivatSpacing.xs,
-        runSpacing: VidhivatSpacing.xs,
-        children: [
+  Widget build(BuildContext context) {
+    final optionalMinutes = vidhi.charan
+        .where((step) => step.vaikalpik)
+        .fold<int>(0, (sum, step) => sum + step.samayMinute);
+    return Wrap(
+      spacing: VidhivatSpacing.xs,
+      runSpacing: VidhivatSpacing.xs,
+      children: [
+        VidhivatStatusChip(
+          label: optionalMinutes == 0
+              ? vidhi.samayLikha
+              : 'सरल क्रम: ${vidhi.samayMinute - optionalMinutes} मिनट',
+          icon: Icons.schedule_outlined,
+        ),
+        if (optionalMinutes > 0)
           VidhivatStatusChip(
-            label: vidhi.samayLikha,
-            icon: Icons.schedule_outlined,
+            label: 'वैकल्पिक: +$optionalMinutes मिनट',
+            icon: Icons.more_time_outlined,
           ),
-          VidhivatStatusChip(
-            label: '${vidhi.charan.length} चरण',
-            icon: Icons.format_list_numbered,
-          ),
-          // श्रेणी अब ऊपर eyebrow में है — यहाँ दोहराने की ज़रूरत नहीं।
-          VidhivatStatusChip(
-            label: '${vidhi.zaruriSamagri.length} ज़रूरी सामग्री',
-            icon: Icons.checklist_outlined,
-          ),
-        ],
-      );
+        VidhivatStatusChip(
+          label: '${vidhi.charan.length} चरण',
+          icon: Icons.format_list_numbered,
+        ),
+        // श्रेणी अब ऊपर eyebrow में है — यहाँ दोहराने की ज़रूरत नहीं।
+        VidhivatStatusChip(
+          label: '${vidhi.zaruriSamagri.length} ज़रूरी सामग्री',
+          icon: Icons.checklist_outlined,
+        ),
+      ],
+    );
+  }
 }
 
 class _TrustNotice extends StatelessWidget {
@@ -652,7 +695,7 @@ class _SourceInformation extends StatelessWidget {
           const VidhivatSrotPankti(
             'यह विधि कैसी है',
             'यह घर की सरल पद्धति है। हर पाठ के नीचे उसका स्रोत लिखा है, '
-            'और जहाँ एक से ज़्यादा चलन हैं वहाँ दोनों दिए गए हैं।',
+                'और जहाँ एक से ज़्यादा चलन हैं वहाँ दोनों दिए गए हैं।',
           ),
           VidhivatSrotPankti('पद्धति', vidhi.strot.paddhati),
           VidhivatSrotPankti('क्षेत्र', vidhi.strot.kshetra),
@@ -676,9 +719,9 @@ class _SourceInformation extends StatelessWidget {
             VidhivatSrotPankti(
               'अभी क्या कम है',
               'इसमें ${_mantraGinti(vidhi.mantraKul - vidhi.mantraBhareHue)} '
-              'अभी जोड़ा नहीं गया — जब तक प्रामाणिक स्रोत से न आए, हम '
-              'अंदाज़े से कुछ नहीं लिखेंगे। जिस कदम पर पाठ नहीं है, वहाँ वो '
-              'साफ़ लिखा मिलेगा।',
+                  'अभी जोड़ा नहीं गया — जब तक प्रामाणिक स्रोत से न आए, हम '
+                  'अंदाज़े से कुछ नहीं लिखेंगे। जिस कदम पर पाठ नहीं है, वहाँ वो '
+                  'साफ़ लिखा मिलेगा।',
             ),
           VidhivatSrotPankti('और', vidhi.strot.note),
         ],

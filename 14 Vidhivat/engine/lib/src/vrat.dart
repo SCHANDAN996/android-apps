@@ -124,6 +124,11 @@ class VratDin {
       };
 }
 
+final Map<String, List<VratDin>> _aaneWaleVratCache = {};
+
+/// आवश्यकतानुसार कैश साफ़ करने के लिए।
+void saafAaneWaleVratCache() => _aaneWaleVratCache.clear();
+
 /// आगे आने वाले व्रत, नज़दीक से दूर के क्रम में।
 ///
 /// [dinAage] — कितने दिन आगे तक देखना है।
@@ -140,6 +145,11 @@ List<VratDin> aaneWaleVrat({
 }) {
   final shuru = aaj ?? DateTime.now();
   final pehlaDin = DateTime(shuru.year, shuru.month, shuru.day);
+  final key =
+      '${pehlaDin.year}-${pehlaDin.month}-${pehlaDin.day}|${place.name}|${place.latitude}|${place.longitude}|${masaSystem.name}|$dinAage|$kitne';
+  final cached = _aaneWaleVratCache[key];
+  if (cached != null) return cached;
+
   final mile = <VratDin>[];
 
   for (var i = 0; i <= dinAage && mile.length < kitne; i++) {
@@ -169,5 +179,8 @@ List<VratDin> aaneWaleVrat({
     }
   }
 
-  return mile;
+  if (_aaneWaleVratCache.length >= 10) {
+    _aaneWaleVratCache.remove(_aaneWaleVratCache.keys.first);
+  }
+  return _aaneWaleVratCache[key] = List.unmodifiable(mile);
 }

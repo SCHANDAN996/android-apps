@@ -1,11 +1,12 @@
 @TestOn('vm')
 library;
 
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vidhivat/vidhi/paath.dart';
-import 'package:vidhivat/vidhi/vidhi.dart' show VidhiFormatException;
+import 'package:vidhivat/vidhi/vidhi.dart' show Bharosa, VidhiFormatException;
 
 /// चालीसा और आरती के कंटेंट की जाँच (→ D-039)।
 ///
@@ -153,6 +154,49 @@ void main() {
       );
     });
 
+    // ── दोहराव (→ D-083) ──
+    String aarti(String khandJson) => '''
+{"schemaVersion": 1, "id": "x", "naam": "क", "upnaam": [], "prakar": "aarti",
+ "devta": "क", "rachnakar": "क", "bhasha": "क", "parichay": "क",
+ "kabPadhein": "क", "kaisePadhein": "क", "khand": [$khandJson],
+ "strot": {"paddhati": "क", "kshetra": "क", "note": ""},
+ "jaanch": {"panditNaam": "", "tarikh": "", "paas": false}}''';
+    String khand(String sh, {bool? dohraav}) =>
+        '{"shirshak": "$sh", "dev": "पाठ", "roman": "", "arth": "", '
+        '"audio": "", "sthiti": "draft"'
+        '${dohraav == null ? '' : ', "dohraav": $dohraav'}}';
+
+    test('दोहराव वाला खंड सबसे पहले हो तो चलेगा', () {
+      final p = Paath.parse('जाँच',
+          aarti('${khand('क', dohraav: true)}, ${khand('ख')}, ${khand('ग')}'));
+      expect(p.dohraavKhand?.shirshak, 'क');
+      expect(p.padGinti, 2);
+    });
+
+    test('दोहराव बीच में हो तो नहीं चलेगा', () {
+      expect(
+        () => Paath.parse('जाँच',
+            aarti('${khand('क')}, ${khand('ख', dohraav: true)}')),
+        throwsA(isA<VidhiFormatException>()),
+      );
+    });
+
+    test('दो खंडों पर दोहराव नहीं चलेगा', () {
+      expect(
+        () => Paath.parse('जाँच', aarti(
+            '${khand('क', dohraav: true)}, ${khand('ख', dohraav: true)}')),
+        throwsA(isA<VidhiFormatException>()),
+      );
+    });
+
+    test('ग़ैर-bool दोहराव नहीं चलेगा', () {
+      expect(
+        () => Paath.parse('जाँच', aarti(
+            khand('क').replaceFirst('}', ', "dohraav": "हाँ"}'))),
+        throwsA(isA<VidhiFormatException>()),
+      );
+    });
+
     test('ग़लती के संदेश में फ़ाइल का नाम आता है', () {
       try {
         Paath.parse('hanuman_chalisa.json', '{"schemaVersion": 99}');
@@ -160,6 +204,168 @@ void main() {
       } on VidhiFormatException catch (e) {
         expect(e.toString(), contains('hanuman_chalisa.json'));
       }
+    });
+  });
+
+  /// **हर आरती में शुरुआती पंक्तियाँ ही दोहराव हैं** (→ D-083)।
+  ///
+  /// पहले यह सिर्फ़ शीर्षक के शब्द "टेक" से पहचानी जाती थी, और पन्ना उसे
+  /// सबसे ऊपर एक बार दिखाकर छोड़ देता था। अब निशान से — और स्क्रीन पर
+  /// "टेक" शब्द कहीं नहीं आता।
+  test('हर आरती: ठीक एक दोहराव, सबसे पहले, शीर्षक में "टेक" नहीं', () {
+    final aartiyan = suchi.where((e) => e.taiyar && e.prakar == PaathPrakar.aarti);
+    expect(aartiyan.length, 11);
+    for (final e in aartiyan) {
+      final path = '$dir/${e.id}.json';
+      final p = Paath.parse(path, File(path).readAsStringSync());
+      expect(p.khand.first.dohraav, isTrue, reason: e.id);
+      expect(p.khand.where((k) => k.dohraav).length, 1, reason: e.id);
+      expect(p.khand.any((k) => k.shirshak.contains('टेक')), isFalse,
+          reason: e.id);
+      expect(p.kaisePadhein, contains('हर पद के बाद'), reason: e.id);
+    }
+  });
+
+  test('चालीसा और स्तोत्र में दोहराव नहीं, और शीर्षक देवनागरी अंकों में', () {
+    for (final e in suchi.where((e) => e.taiyar && e.prakar != PaathPrakar.aarti)) {
+      final path = '$dir/${e.id}.json';
+      final p = Paath.parse(path, File(path).readAsStringSync());
+      expect(p.dohraavKhand, isNull, reason: e.id);
+      for (final k in p.khand) {
+        expect(k.shirshak, isNot(matches(RegExp(r'[0-9]'))),
+            reason: '${e.id} — "${k.shirshak}"');
+      }
+    }
+  });
+
+  /// **सप्तश्लोकी दुर्गा कोई अलग रचना नहीं है** — वह दुर्गा सप्तशती से
+  /// चुने हुए सात श्लोक हैं। 21 सित 2026 को उसे जोड़ते समय सातों श्लोक
+  /// मूल सप्तशती के पूरे पाठ से मशीन द्वारा शब्द-दर-शब्द मिलाए गए थे।
+  ///
+  /// यह जाँच उसी का निशान है: तीसरा श्लोक वही होना चाहिए जो ऐप की
+  /// **दुर्गा अष्टमी** और **कलश स्थापना** के देवी-पूजन में पहले से है।
+  /// अगर कभी कोई एक जगह बदले और दूसरी न बदले, यह टूट जाएगी।
+  group('सप्तश्लोकी दुर्गा', () {
+    test('सातों श्लोक मौजूद हैं और भरे हुए हैं', () {
+      const path = '$dir/saptashloki_durga.json';
+      final p = Paath.parse(path, File(path).readAsStringSync());
+      expect(p.khand.length, 7);
+      expect(p.khand.every((k) => k.hasPath), isTrue);
+      expect(p.khand.every((k) => k.roman.trim().isNotEmpty), isTrue);
+      expect(p.khand.every((k) => k.arth.trim().isNotEmpty), isTrue);
+    });
+
+    test('तीसरा श्लोक वही है जो दुर्गा अष्टमी के देवी-पूजन में है', () {
+      const path = '$dir/saptashloki_durga.json';
+      final p = Paath.parse(path, File(path).readAsStringSync());
+      final teesra = p.khand[2].dev.replaceAll(RegExp(r'\s+'), ' ');
+
+      final vidhi = jsonDecode(
+        File('assets/vidhi/durga_ashtami_kanya_poojan.json').readAsStringSync(),
+      ) as Map<String, dynamic>;
+      final poojan = (vidhi['charan'] as List)
+          .cast<Map<String, dynamic>>()
+          .firstWhere((c) => c['shirshak'] == 'देवी पूजन');
+      final mantra = (poojan['mantra'] as Map<String, dynamic>)['devanagari']
+          as String;
+
+      // दोनों जगह "सर्वमङ्गलमाङ्गल्ये … नारायणि नमोऽस्तु ते" है।
+      expect(teesra, contains('सर्वमङ्गलमाङ्गल्ये'));
+      expect(mantra.replaceAll(RegExp(r'\s+'), ' '),
+          contains('सर्वमङ्गलमाङ्गल्ये'));
+      for (final tuk in ['शिवे सर्वार्थसाधिके', 'शरण्ये त्र्यम्बके गौरि']) {
+        expect(teesra, contains(tuk), reason: tuk);
+        expect(mantra, contains(tuk), reason: tuk);
+      }
+    });
+  });
+
+  /// **"जगजननी जय जय" — चार छपे रूपों से मिलाया हुआ पाठ।**
+  ///
+  /// 21 सित 2026 को चार स्वतंत्र स्रोतों से पद-दर-पद बहुमत लेकर भरी गई।
+  /// हर स्रोत में कोई न कोई छपाई-ग़लती थी — एक में Kruti Dev वाली
+  /// ("विघा", "कत्र्ता"), एक में "हारिणि सब **बाघा**" (बाघ = शेर!) —
+  /// और बहुमत ने चारों काट दीं। ये जाँचें उसी सफ़ाई को पकड़े रखती हैं।
+  group('जगजननी जय जय', () {
+    late Paath p;
+    setUpAll(() {
+      const path = '$dir/jagjanani_aarti.json';
+      p = Paath.parse(path, File(path).readAsStringSync());
+    });
+
+    test('शुरुआती पंक्तियाँ और तेरह पद, सब भरे', () {
+      expect(p.khand.length, 14);
+      expect(p.khand.first.dohraav, isTrue);
+      expect(p.khand.every((k) => k.hasPath), isTrue);
+      expect(p.khand.every((k) => k.roman.trim().isNotEmpty), isTrue);
+      expect(p.khand.every((k) => k.arth.trim().isNotEmpty), isTrue);
+    });
+
+    test('छपाई की वे ग़लतियाँ नहीं लौटीं जो बहुमत ने काटी थीं', () {
+      final sab = p.khand.map((k) => k.dev).join('\n');
+      for (final (galat, sahi) in [
+        ('बाघा', 'बाधा'), // एक स्रोत में "बाधा" की जगह "बाघ"
+        ('विघा', 'विद्या'), // Kruti Dev
+        ('कत्र्ता', 'कर्ता'), // Kruti Dev
+        ('जनजननी', 'जगजननी'),
+        ('ब्रह्मरुपा', 'ब्रह्मरूपा'),
+      ]) {
+        expect(sab, isNot(contains(galat)), reason: '"$galat" लौट आया');
+        expect(sab, contains(sahi), reason: '"$sahi" ग़ायब');
+      }
+      // छिपे हुए अक्षर (ZWJ/ZWNJ) — एक स्रोत के "रत्न" में थे
+      expect(sab, isNot(matches(RegExp('[​-‏]'))));
+    });
+
+    test('नवरात्रि के हर आरती-कदम पर दोनों आरतियाँ हैं', () {
+      final files = [
+        ...Directory('assets/vidhi/navratri')
+            .listSync()
+            .whereType<File>()
+            .where((f) => f.path.endsWith('.json')),
+        File('assets/vidhi/kalash_sthapana.json'),
+        File('assets/vidhi/durga_ashtami_kanya_poojan.json'),
+      ];
+      expect(files.length, 11);
+      for (final f in files) {
+        final d = jsonDecode(f.readAsStringSync()) as Map<String, dynamic>;
+        final paath = [
+          for (final c in (d['charan'] as List).cast<Map<String, dynamic>>())
+            ...((c['paath'] as List?) ?? const []).cast<String>(),
+        ];
+        expect(paath, containsAll(['durga_aarti', 'jagjanani_aarti']),
+            reason: f.uri.pathSegments.last);
+      }
+    });
+  });
+
+  /// **राम जी की आरती — छह छपे रूपों से मिलाई।**
+  ///
+  /// 21 सित 2026 तक इस पर भरोसा `kam` था — अकेली आरती जिस पर यह था।
+  /// छहों स्रोतों में टेक और **ठीक पाँच पद** एक जैसे मिले, और ऐप का पाठ
+  /// तीन जगह **छहों से अलग** निकला: "सीतापति सोहे" (स्रोत: "सीता रामजी
+  /// सोहे"), "नामदेव गावै" (स्रोत: "नामदेव जी गावें") और "भावै" ("भावे")।
+  group('राम जी की आरती', () {
+    late Paath p;
+    setUpAll(() {
+      const path = '$dir/ram_aarti.json';
+      p = Paath.parse(path, File(path).readAsStringSync());
+    });
+
+    test('शुरुआती पंक्तियाँ और पाँच पद, सब भरे, भरोसा ऊँचा', () {
+      expect(p.khand.length, 6);
+      expect(p.khand.first.dohraav, isTrue);
+      expect(p.khand.every((k) => k.hasPath), isTrue);
+      expect(p.khand.every((k) => k.roman.trim().isNotEmpty), isTrue);
+      expect(p.khand.every((k) => k.arth.trim().isNotEmpty), isTrue);
+      expect(p.bharosa, Bharosa.uncha);
+    });
+
+    test('वे तीन जगह जहाँ ऐप छहों स्रोतों से अलग था', () {
+      expect(p.khand[3].dev, contains('सीता रामजी सोहे'));
+      expect(p.khand[3].dev, isNot(contains('सीतापति सोहे')));
+      expect(p.khand[5].dev, contains('नामदेव जी गावें'));
+      expect(p.khand[5].dev, contains('राम को भावे'));
     });
   });
 
@@ -188,6 +394,22 @@ void main() {
 
       expect(bhare, lessThanOrEqualTo(kul));
     });
+  });
+
+  test('विश्वकर्मा सूक्त का सातवाँ मंत्र और पूजा का आवाहन मंत्र एक ही हैं', () {
+    // एक ही ऋचा (ऋग्वेद १०.८१.७) दो जगह है — सूक्त में, और विश्वकर्मा
+    // पूजा के आवाहन वाले कदम पर। एक जगह सुधरे तो दूसरी पीछे न छूटे।
+    const path = 'assets/paath/vishwakarma_sukta.json';
+    final sukta = Paath.parse(path, File(path).readAsStringSync());
+    final vidhi = jsonDecode(
+        File('assets/vidhi/vishwakarma_pooja.json').readAsStringSync());
+    final aavahan = (vidhi['charan'] as List).firstWhere(
+        (c) => ((c['paath'] as List?) ?? const []).contains(sukta.id));
+    String saaf(String s) => s.replaceAll(RegExp(r'[\s।॥]'), '');
+
+    expect(sukta.khand, hasLength(7));
+    expect(saaf(sukta.khand[6].dev),
+        saaf(aavahan['mantra']['devanagari'] as String));
   });
 }
 

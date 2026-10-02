@@ -2,7 +2,7 @@ name: vidhivat
 description: "विधिवत — पूजा विधि, पंचांग, मुहूर्त। 100% ऑफलाइन।"
 publish_to: 'none'
 
-version: 1.0.0+2
+version: 1.1.0+5
 
 environment:
   sdk: ^3.5.0
@@ -13,6 +13,8 @@ dependencies:
   # cupertino_icons हटा दिया — ऐप में कहीं इस्तेमाल नहीं था, पर उसका
   # CupertinoIcons.ttf (260 KB) हर build में जाता था (→ D-043)।
   shared_preferences: ^2.2.2
+  flutter_local_notifications: ^22.3.1
+  timezone: ^0.11.1
   share_plus: ^11.1.0
   # सिर्फ़ app खुला होने पर एक बार स्थान लेकर सूर्योदय/पंचांग सही करने के लिए।
   geolocator: ^14.0.2
@@ -20,13 +22,13 @@ dependencies:
   # विधि प्लेयर के लिए — पूजा के बीच स्क्रीन बंद नहीं होनी चाहिए
   wakelock_plus: ^1.2.8
 
-  # स्वैच्छिक दक्षिणा — ऐप की इकलौती कमाई (→ D-053, docs/20_KAMAI_YOJANA.md)
+  # स्वैच्छिक दक्षिणा — PayU का पन्ना बाहर (browser/UPI app में) खोलने के
+  # लिए (→ D-090, docs/20_KAMAI_YOJANA.md)। पहले `in_app_purchase` था; Play
+  # से पैसा पाने वाली BillDesk KYC मंज़ूर नहीं हुई (23 सित 2026)।
   #
-  # ⚠️ यह ऐप का **इकलौता** network छूने वाला package है, और वह भी सिर्फ़
-  # तब जब यूज़र ख़ुद दक्षिणा का बटन दबाए। बाक़ी वक़्त ऐप पूरी तरह ऑफलाइन
-  # है — इसीलिए Data safety में "कोई डेटा इकट्ठा नहीं" सच है (भुगतान
-  # Google Play संभालता है, ऐप नहीं: न कार्ड, न नाम, न ईमेल)।
-  in_app_purchase: ^3.3.0
+  # ⚠️ ऐप ख़ुद network नहीं छूता — बटन दबने पर सिर्फ़ PayU का link बाहर
+  # खुलता है। भुगतान वहीं होता है; ऐप को न कार्ड, न UPI, न नाम मिलता है।
+  url_launcher: ^6.3.1
 
   # पंचांग इंजन — शुद्ध Dart, कोई Flutter निर्भरता नहीं
   panchang_engine:
@@ -49,6 +51,12 @@ flutter:
     - assets/vidhi/
     - assets/vidhi/navratri/
     - assets/paath/
+    - assets/paath/saptashati/
+    # ग्रंथालय (→ D-098) — हर ग्रंथ का अपना फ़ोल्डर, और हर फ़ोल्डर यहाँ
+    # अलग लिखना पड़ता है (Flutter अंदर वाले फ़ोल्डर नहीं लेता)।
+    - assets/granth/
+    - assets/granth/gita/
     - assets/katha/
+    - assets/vrat/
     - assets/parv/
     - assets/images/devotional/

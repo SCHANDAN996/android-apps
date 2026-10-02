@@ -23,7 +23,8 @@ library;
 
 import 'dart:convert';
 
-import 'vidhi.dart' show Bharosa, Jaanch, MantraSthiti, Strot, VidhiFormatException;
+import 'vidhi.dart'
+    show Bharosa, Jaanch, MantraSthiti, Strot, VidhiFormatException;
 
 /// इस ढाँचे का नंबर। JSON में भी यही लिखा होना चाहिए।
 const int paathSchemaVersion = 1;
@@ -37,7 +38,11 @@ enum PaathPrakar {
   stotra('स्तोत्र'),
 
   /// आरती — गाई जाती है।
-  aarti('आरती');
+  aarti('आरती'),
+
+  /// किसी ग्रंथ का एक अध्याय — गीता का अध्याय। ये "चालीसा और आरती" की
+  /// सूची में नहीं आते; ग्रंथ के अपने पन्ने से खुलते हैं (→ D-098)।
+  granth('ग्रंथ');
 
   final String naam;
   const PaathPrakar(this.naam);
@@ -72,6 +77,15 @@ class PaathKhand {
 
   final MantraSthiti sthiti;
 
+  /// यह खंड **हर पद के बाद दोहराया जाता है** — आरती की पहली पंक्तियाँ।
+  ///
+  /// पहले यह सिर्फ़ शीर्षक के शब्द "टेक" से पहचाना जाता था, और पढ़ने
+  /// वाला पन्ना इसे बाक़ी पदों जैसा सबसे ऊपर एक बार दिखाकर छोड़ देता था —
+  /// यानी गाने वाले को हर पद के बाद ऊपर स्क्रॉल करना पड़ता। अब यह खाना
+  /// बताता है, और पन्ना इसे हर पद के बाद अपने आप दिखाता है (→ D-083)।
+  /// पाठ JSON में एक ही जगह रहता है — नब्बे जगह कॉपी नहीं।
+  final bool dohraav;
+
   const PaathKhand({
     required this.shirshak,
     required this.dev,
@@ -79,6 +93,7 @@ class PaathKhand {
     required this.arth,
     required this.audio,
     required this.sthiti,
+    this.dohraav = false,
   });
 
   bool get hasPath => dev.trim().isNotEmpty;
@@ -113,6 +128,7 @@ class PaathKhand {
       arth: _str(file, j, 'arth', required: false),
       audio: _str(file, j, 'audio', required: false),
       sthiti: sthiti,
+      dohraav: _dohraav(file, shirshak, j['dohraav']),
     );
   }
 }
@@ -171,6 +187,7 @@ class Paath {
   });
 
   bool get needsPanditReview => !jaanch.paas;
+
   /// ── "कैसे पढ़ें" का ⚠ वाला आख़िरी हिस्सा ───────────
   ///
   /// ग्यारहों JSON में एक ही चलन है: `kaisePadhein` का आख़िरी
@@ -194,6 +211,16 @@ class Paath {
     return (i < 0 ? kaisePadhein : kaisePadhein.substring(0, i)).trim();
   }
 
+  /// हर पद के बाद दोहराया जाने वाला खंड, अगर हो (→ D-083)।
+  PaathKhand? get dohraavKhand {
+    for (final k in khand) {
+      if (k.dohraav) return k;
+    }
+    return null;
+  }
+
+  /// असली पदों की गिनती — दोहराव वाला खंड पद नहीं है।
+  int get padGinti => khand.where((k) => !k.dohraav).length;
 
   int get khandKul => khand.length;
   int get khandBhareHue => khand.where((k) => k.hasPath).length;
@@ -224,6 +251,24 @@ class Paath {
 
     final prakar = PaathPrakar.parse(file, _str(file, j, 'prakar'));
 
+    // ── दोहराव वाला खंड: ज़्यादा से ज़्यादा एक, और वही सबसे पहले ──
+    //
+    // आरती इसी से शुरू होती है और हर पद के बाद यही लौटती है। दो
+    // दोहराव हों, या बीच में कहीं हो, तो पढ़ने वाला पन्ना तय नहीं कर
+    // पाएगा कि किस पद के बाद क्या दिखाए — इसलिए ढाँचा ही रोक देता है।
+    final dohraav = [
+      for (var i = 0; i < khand.length; i++)
+        if (khand[i].dohraav) i,
+    ];
+    if (dohraav.length > 1) {
+      throw VidhiFormatException(
+          file, '${dohraav.length} खंडों पर dohraav है — एक ही हो सकता है');
+    }
+    if (dohraav.isNotEmpty && dohraav.first != 0) {
+      throw VidhiFormatException(file,
+          'dohraav वाला खंड "${khand[dohraav.first].shirshak}" सबसे पहले होना चाहिए');
+    }
+
     // ── "चालीसा" का मतलब चालीस है ──
     //
     // नाम ही गिनती का वादा करता है, इसलिए ढाँचा उसे जाँचता है। पद अभी
@@ -240,7 +285,8 @@ class Paath {
 
     final jaanch = Jaanch.fromJson(file, _map(file, j['jaanch'], 'jaanch'));
     if (jaanch.paas) {
-      final kachche = khand.where((k) => k.needsPanditReview).map((k) => k.shirshak);
+      final kachche =
+          khand.where((k) => k.needsPanditReview).map((k) => k.shirshak);
       if (kachche.isNotEmpty) {
         throw VidhiFormatException(
           file,
@@ -425,7 +471,8 @@ bool _bool(String file, Map<String, dynamic> j, String key) {
   final v = j[key];
   if (v == null) throw VidhiFormatException(file, '"$key" है ही नहीं');
   if (v is! bool) {
-    throw VidhiFormatException(file, '"$key" में true/false चाहिए था, मिला: $v');
+    throw VidhiFormatException(
+        file, '"$key" में true/false चाहिए था, मिला: $v');
   }
   return v;
 }
@@ -433,7 +480,18 @@ bool _bool(String file, Map<String, dynamic> j, String key) {
 List<String> _strList(String file, Map<String, dynamic> j, String key) =>
     _list(file, j, key).map((e) {
       if (e is! String) {
-        throw VidhiFormatException(file, '"$key" में लिखावट चाहिए थी, मिला: $e');
+        throw VidhiFormatException(
+            file, '"$key" में लिखावट चाहिए थी, मिला: $e');
       }
       return e;
     }).toList(growable: false);
+
+/// `dohraav` खाना — न हो तो `false`; हो तो सच में `true`/`false` ही।
+bool _dohraav(String file, String shirshak, Object? value) {
+  if (value == null) return false;
+  if (value is! bool) {
+    throw VidhiFormatException(
+        file, '"$shirshak" में dohraav true या false होना चाहिए');
+  }
+  return value;
+}

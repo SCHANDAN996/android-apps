@@ -36,6 +36,9 @@ void main() {
       expect(pehle.kitneDinBaad, greaterThan(0));
       expect(pehle.aajKaDin, isNull);
       expect(pehle.kulDin, inInclusiveRange(8, 10));
+      expect(pehle.dinTarikhein.keys,
+          containsAll(List.generate(10, (i) => i + 1)));
+      expect(pehle.dinTarikhein[1], contains(pehle.shuruTarikh));
     });
 
     test('घटस्थापना की तारीख़ पर दिन १ आता है', () {
@@ -76,26 +79,105 @@ void main() {
       );
     });
 
+    // ── Drik Panchang का नवरात्रि कैलेंडर, नई दिल्ली (→ D-073) ─────────
+    //
+    // 13 सित 2026 तक यहाँ सिर्फ़ घटस्थापना मिलाई गई थी। अंत के दिन कभी
+    // नहीं मिलाए गए — और 2026 में ऐप दशहरा 21 अक्टूबर बता रहा था, जबकि
+    // Drik 20 कहता है। तिथियों के समय दोनों में मिनट तक एक थे; ग़लती
+    // दिन चुनने के नियम में थी। ये पाँच साल drikpanchang.com के
+    // ashwin-shardiya-navratri-dates पन्ने से लिए गए।
+    //
+    // (कालरात्रि, दुर्गा अष्टमी, महानवमी, विजयादशमी, संधि-प्रारम्भ)
+    const drikKaCalendar = {
+      2024: ((10, 10), (10, 11), (10, 11), (10, 12), (11, 42)),
+      2025: ((9, 29), (9, 30), (10, 1), (10, 2), (17, 42)),
+      2026: ((10, 17), (10, 19), (10, 19), (10, 20), (10, 27)),
+      2027: ((10, 6), (10, 7), (10, 8), (10, 9), (6, 3)),
+      2028: ((9, 25), (9, 26), (9, 26), (9, 27), (6, 34)),
+    };
+
+    DateTime tarikh(int saal, (int, int) md) => DateTime(saal, md.$1, md.$2);
+
+    test('पाँच साल की विजयादशमी Drik से मिलती है', () {
+      for (final e in drikKaCalendar.entries) {
+        final halat =
+            navratriAaj(aaj: DateTime(e.key, 1, 1), place: Place.delhi);
+        expect(
+          (halat.antTarikh!.month, halat.antTarikh!.day),
+          e.value.$4,
+          reason: '${e.key} की विजयादशमी',
+        );
+      }
+    });
+
+    test('पाँच साल में कालरात्रि, दुर्गा अष्टमी, महानवमी सही दिन पर "आज" हैं',
+        () {
+      for (final e in drikKaCalendar.entries) {
+        final saal = e.key;
+        final (kalaratri, ashtami, navami, dashami, _) = e.value;
+
+        expect(
+          navratriAaj(aaj: tarikh(saal, kalaratri), place: Place.delhi)
+              .aajKaDin,
+          7,
+          reason: '$saal की कालरात्रि',
+        );
+        expect(
+          navratriAaj(aaj: tarikh(saal, dashami), place: Place.delhi).aajKaDin,
+          10,
+          reason: '$saal की विजयादशमी',
+        );
+
+        final navamiKaDin =
+            navratriAaj(aaj: tarikh(saal, navami), place: Place.delhi);
+        expect(navamiKaDin.aajKaDin, 9, reason: '$saal की महानवमी');
+
+        if (ashtami == navami) {
+          // अष्टमी और नवमी एक ही तारीख़ — दिन ९ पर "इस साल एक साथ"
+          expect(navamiKaDin.mileHueDin, contains(9),
+              reason: '$saal — अष्टमी-नवमी साथ');
+        } else {
+          expect(
+            navratriAaj(aaj: tarikh(saal, ashtami), place: Place.delhi)
+                .aajKaDin,
+            8,
+            reason: '$saal की दुर्गा अष्टमी',
+          );
+        }
+      }
+    });
+
+    test('पाँच साल की संधि पूजा Drik के समय से दो मिनट के भीतर है', () {
+      for (final e in drikKaCalendar.entries) {
+        final saal = e.key;
+        final (_, _, _, _, (ghanta, minute)) = e.value;
+        final halat =
+            navratriAaj(aaj: DateTime(saal, 1, 1), place: Place.delhi);
+        final shuru = halat.sandhiShuru!;
+        final antar = (shuru.hour * 60 + shuru.minute) - (ghanta * 60 + minute);
+        expect(antar.abs(), lessThanOrEqualTo(2),
+            reason: '$saal संधि — ऐप ${shuru.hour}:${shuru.minute}');
+      }
+    });
+
+    test('2026 की टिप्पणी सप्तमी की वृद्धि और अष्टमी-नवमी दोनों बताती है', () {
+      final halat = navratriAaj(aaj: DateTime(2026, 9, 13), place: Place.delhi);
+      expect(halat.kulDin, 9);
+      expect(halat.tippani, contains('सप्तमी दो सूर्योदय'));
+      expect(halat.tippani, contains('महानवमी एक ही दिन'));
+    });
+
     test('दशमी पर दिन १० और उसके बाद पर्व बीता हुआ मिलता है', () {
-      final dashami = findFestival(
-        const FestivalRule(
-          id: 'janch',
-          name: 'जाँच',
-          masa: 6,
-          paksha: 0,
-          tithi: 10,
-          vyapini: Vyapini.sunrise,
-        ),
-        2026,
-        Place.delhi,
-      )!;
+      // Drik: विजयादशमी 2026 — 20 अक्टूबर (सूर्योदय वाली दशमी 21 को है,
+      // पर दशहरा अपराह्न-व्यापिनी दशमी से मनता है)।
+      final dashami = DateTime(2026, 10, 20);
 
       expect(
-        navratriAaj(aaj: dashami.date, place: Place.delhi).aajKaDin,
+        navratriAaj(aaj: dashami, place: Place.delhi).aajKaDin,
         10,
       );
       final baad = navratriAaj(
-        aaj: dashami.date.add(const Duration(days: 2)),
+        aaj: dashami.add(const Duration(days: 2)),
         place: Place.delhi,
       );
       expect(baad.aajKaDin, isNull);

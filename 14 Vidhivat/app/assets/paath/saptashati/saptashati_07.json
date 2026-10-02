@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "id": "saptashati_07",
+  "naam": "अध्याय ७ — चण्ड-मुण्ड वध",
+  "upnaam": [
+    "दुर्गा सप्तशती सप्तम अध्याय",
+    "देवी माहात्म्य अध्याय ७",
+    "चण्डमुण्डवधो नाम सप्तमोऽध्यायः"
+  ],
+  "prakar": "stotra",
+  "devta": "दुर्गा माँ",
+  "rachnakar": "महर्षि मार्कण्डेय — मार्कण्डेय पुराण",
+  "bhasha": "संस्कृत",
+  "parichay": "चण्ड और मुण्ड सेना लेकर आते हैं। देवी के क्रोध से उनके ललाट से काली प्रकट होती हैं और दोनों का वध करती हैं। तभी से देवी का एक नाम \"चामुण्डा\" है।",
+  "kabPadhein": "नवरात्रि के नौ दिन — और घर की परंपरा अनुसार किसी भी दिन।",
+  "kaisePadhein": "सप्तशती का क्रम है: कवच, अर्गला और कीलक — फिर तेरह अध्याय। पूरा पाठ एक बैठक में न हो तो नौ दिन में बाँटकर कर सकते हैं; बहुत घरों में एक दिन में एक या कुछ अध्याय पढ़े जाते हैं।\n\nअध्याय के बीच में न रुकें — जहाँ तक पढ़ें, अध्याय पूरा करके रुकें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "ध्यान",
+      "dev": "ॐ ध्यायेयं रत्नपीठे शुककलपठितं शृण्वतीं श्यामलाङ्गीं\nन्यस्तैकांघ्रिं सरोजे शशिशकलधरां वल्लकीं वादयन्तीम् ।\nकल्हाराबद्धमालां नियमितविलसच्चोलिकां रत्नवस्त्रां\nमातङ्गी शङ्कपात्रां मधुरमधुमदां चित्रकोद्भासिभालाम् ॥",
+      "roman": "om dhyaayeyam ratnapeethe shukakalapathitam shrinvateem shyaamalaangeem\nnyastaikaamghrim saroje shashishakaladharaam vallakeem vaadayanteem |\nkalhaaraabaddhamaalaam niyamitavilasachcholikaam ratnavastraam\nmaatangee shankapaatraam madhuramadhumadaam chitrakodbhaasibhaalaam ||",
+      "arth": "मैं उन मातंगी देवी का ध्यान करता हूँ जो रत्नों के आसन पर बैठकर तोते का मधुर बोलना सुन रही हैं, जिनका शरीर साँवला है, जिन्होंने एक पैर कमल पर रखा है, जो मस्तक पर चन्द्रमा का टुकड़ा धारण करती हैं और वीणा बजा रही हैं, जो कल्हार (कमल) के फूलों की माला पहने हैं, जिनकी चोली कसकर बँधी है, जो रत्नों के वस्त्र पहने हैं, जिनके हाथ में शंख का पात्र है, जो मधुर मधु के मद में हैं और जिनके माथे पर तिलक चमक रहा है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १",
+      "dev": "ॐ ऋषिरुवाच॥",
+      "roman": "om rishiruvaacha ||",
+      "arth": "ऋषि बोले —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "आज्ञप्तास्ते ततो दैत्याश्चण्डमुण्डपुरोगमाः ।\nचतुरङ्गबलोपेता ययुरभ्युद्यतायुधाः॥",
+      "roman": "aajnaptaaste tato daityaashchandamundapurogamaah |\nchaturangabalopetaa yayurabhyudyataayudhaah ||",
+      "arth": "शुम्भ की आज्ञा पाकर चण्ड-मुण्ड को आगे करके वे दैत्य चतुरंगिणी सेना के साथ हथियार उठाए चल पड़े।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "ददृशुस्ते ततो देवीमीषद्धासां व्यवस्थिताम् ।\nसिंहस्योपरि शैलेन्द्रशृङ्गे महति काञ्चने॥",
+      "roman": "dadrishuste tato deveemeeshaddhaasaam vyavasthitaam |\nsimhasyopari shailendrashringe mahati kaanchane ||",
+      "arth": "वहाँ उन्होंने देवी को पर्वतराज हिमालय की बड़ी सुनहरी चोटी पर सिंह के ऊपर बैठे, हल्का-सा मुस्कुराते हुए देखा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "ते दृष्ट्वा तां समादातुमुद्यमं चक्रुरुद्यताः ।\nआकृष्टचापासिधरास्तथान्ये तत्समीपगाः॥",
+      "roman": "te drishtvaa taam samaadaatumudyamam chakrurudyataah |\naakrishtachaapaasidharaastathaanye tatsameepagaah ||",
+      "arth": "उन्हें देखकर वे उन्हें पकड़ने का यत्न करने लगे। कुछ धनुष ताने और तलवारें लिए उनके पास पहुँच गए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "ततः कोपं चकारोच्चैरम्बिका तानरीन्प्रति ।\nकोपेन चास्या वदनं मषीवर्णमभूत्तदा॥",
+      "roman": "tatah kopam chakaarochchairambikaa taanareenprati |\nkopena chaasyaa vadanam masheevarnamabhoottadaa ||",
+      "arth": "तब अम्बिका उन शत्रुओं पर बहुत क्रोधित हुईं, और क्रोध से उनका मुख स्याही जैसा काला हो गया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "भ्रुकुटीकुटिलात्तस्या ललाटफलकाद्द्रुतम् ।\nकाली करालवदना विनिष्क्रान्तासिपाशिनी॥",
+      "roman": "bhrukuteekutilaattasyaa lalaataphalakaaddrutam |\nkaalee karaalavadanaa vinishkraantaasipaashinee ||",
+      "arth": "भौंहों से टेढ़े हुए उनके ललाट से तुरंत विकराल मुख वाली काली प्रकट हुईं, जिनके हाथों में तलवार और पाश थे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "विचित्रखट्वाङ्गधरा नरमालाविभूषणा ।\nद्वीपिचर्मपरीधाना शुष्कमांसातिभैरवा॥",
+      "roman": "vichitrakhatvaangadharaa naramaalaavibhooshanaa |\ndveepicharmapareedhaanaa shushkamaamsaatibhairavaa ||",
+      "arth": "वे विचित्र खट्वांग (खोपड़ी वाला दण्ड) धारण किए थीं, मनुष्यों के मुंडों की माला पहने थीं, चीते की खाल ओढ़े थीं, और सूखे मांस वाले शरीर के कारण अत्यंत भयंकर लग रही थीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "अतिविस्तारवदना जिह्वाललनभीषणा ।\nनिमग्नारक्तनयना नादापूरितदिङ्मुखा॥",
+      "roman": "ativistaaravadanaa jihvaalalanabheeshanaa |\nnimagnaaraktanayanaa naadaapooritadinmukhaa ||",
+      "arth": "उनका मुख बहुत फैला हुआ था, लपलपाती जीभ से वे डरावनी लग रही थीं, उनकी आँखें भीतर धँसी और लाल थीं, और उनकी गर्जना से सारी दिशाएँ भर गई थीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "सा वेगेनाभिपतिता घातयन्ती महासुरान् ।\nसैन्ये तत्र सुरारीणामभक्षयत तद्बलम्॥",
+      "roman": "saa vegenaabhipatitaa ghaatayantee mahaasuraan |\nsainye tatra suraareenaamabhakshayata tadbalam ||",
+      "arth": "वे वेग से टूट पड़ीं और बड़े-बड़े असुरों को मारती हुई देवताओं के शत्रुओं की उस सेना को खाने लगीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "पार्ष्णिग्राहाङ्कुशग्राहयोधघण्टासमन्वितान् ।\nसमादायैकहस्तेन मुखे चिक्षेप वारणान्॥",
+      "roman": "paarshnigraahaankushagraahayodhaghantaasamanvitaan |\nsamaadaayaikahastena mukhe chikshepa vaaranaan ||",
+      "arth": "पीछे के रक्षकों, अंकुश वाले महावतों, योद्धाओं और घंटों समेत हाथियों को एक हाथ से उठाकर वे मुँह में डाल लेती थीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "तथैव योधं तुरगै रथं सारथिना सह ।\nनिक्षिप्य वक्त्रे दशनैश्चर्वयन्त्यतिभैरवम्॥",
+      "roman": "tathaiva yodham turagai ratham saarathinaa saha |\nnikshipya vaktre dashanaishcharvayantyatibhairavam ||",
+      "arth": "उसी तरह घोड़ों समेत योद्धा और सारथी समेत रथ को मुँह में डालकर वे दाँतों से भयंकर रूप से चबाने लगीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "एकं जग्राह केशेषु ग्रीवायामथ चापरम् ।\nपादेनाक्रम्य चैवान्यमुरसान्यमपोथयत्॥",
+      "roman": "ekam jagraaha kesheshu greevaayaamatha chaaparam |\npaadenaakramya chaivaanyamurasaanyamapothayat ||",
+      "arth": "किसी को केश पकड़कर, किसी को गर्दन से पकड़कर, किसी को पैर से दबाकर और किसी को छाती की टक्कर से उन्होंने कुचल डाला।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "तैर्मुक्तानि च शस्त्राणि महास्त्राणि तथासुरैः ।\nमुखेन जग्राह रुषा दशनैर्मथितान्यपि॥",
+      "roman": "tairmuktaani cha shastraani mahaastraani tathaasuraih |\nmukhena jagraaha rushaa dashanairmathitaanyapi ||",
+      "arth": "असुरों के छोड़े हुए शस्त्र और बड़े-बड़े अस्त्र उन्होंने क्रोध से मुँह में पकड़ लिए और दाँतों से चबा डाले।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "बलिनां तद्बलं सर्वमसुराणां दुरात्मनाम् ।\nममर्दाभक्षयच्चान्यानन्यांश्चाताडयत्तदा॥",
+      "roman": "balinaam tadbalam sarvamasuraanaam duraatmanaam |\nmamardaabhakshayachchaanyaananyaamshchaataadayattadaa ||",
+      "arth": "उन बलवान दुष्ट असुरों की सारी सेना को उन्होंने रौंद डाला; कुछ को खा गईं और कुछ को मार गिराया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "असिना निहताः केचित्केचित्खट्वाङ्गताडिताः ।\nजग्मुर्विनाशमसुरा दन्ताग्राभिहतास्तथा॥",
+      "roman": "asinaa nihataah kechitkechitkhatvaangataaditaah |\njagmurvinaashamasuraa dantaagraabhihataastathaa ||",
+      "arth": "कुछ असुर तलवार से मारे गए, कुछ खट्वांग की चोट से, और कुछ दाँतों की नोक से घायल होकर नष्ट हो गए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "क्षणेन तद्बलं सर्वमसुराणां निपातितम् ।\nदृष्ट्वा चण्डोऽभिदुद्राव तां कालीमतिभीषणाम्॥",
+      "roman": "kshanena tadbalam sarvamasuraanaam nipaatitam |\ndrishtvaa chando'bhidudraava taam kaaleematibheeshanaam ||",
+      "arth": "क्षण भर में असुरों की सारी सेना को गिरा हुआ देखकर चण्ड उन अत्यंत भयंकर काली की ओर दौड़ा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "शरवर्षैर्महाभीमैर्भीमाक्षीं तां महासुरः ।\nछादयामास चक्रैश्च मुण्डः क्षिप्तैः सहस्रशः॥",
+      "roman": "sharavarshairmahaabheemairbheemaaksheem taam mahaasurah |\nchhaadayaamaasa chakraishcha mundah kshiptaih sahasrashah ||",
+      "arth": "उस महान असुर ने बाणों की अत्यंत भयंकर वर्षा से, और मुण्ड ने हज़ारों चक्र फेंककर, उन भयंकर आँखों वाली देवी को ढक दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "तानि चक्राण्यनेकानि विशमानानि तन्मुखम् ।\nबभुर्यथार्कबिम्बानि सुबहूनि घनोदरम्॥",
+      "roman": "taani chakraanyanekaani vishamaanaani tanmukham |\nbabhuryathaarkabimbaani subahooni ghanodaram ||",
+      "arth": "उनके मुख में घुसते हुए वे अनेक चक्र ऐसे लग रहे थे जैसे बहुत से सूर्य-मंडल बादल के भीतर समा रहे हों।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "ततो जहासातिरुषा भीमं भैरवनादिनी ।\nकाली करालवदना दुर्दर्शदशनोज्ज्वला॥",
+      "roman": "tato jahaasaatirushaa bheemam bhairavanaadinee |\nkaalee karaalavadanaa durdarshadashanojjvalaa ||",
+      "arth": "तब भयंकर गर्जना करने वाली, विकराल मुख वाली, जिनके चमकते दाँत देखे नहीं जाते थे, वे काली अत्यंत क्रोध से भयानक हँसी हँसीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "उत्थाय च महासिंहं देवी चण्डमधावत ।\nगृहीत्वा चास्य केशेषु शिरस्तेनासिनाच्छिनत्॥",
+      "roman": "utthaaya cha mahaasimham devee chandamadhaavata |\ngriheetvaa chaasya kesheshu shirastenaasinaachchhinat ||",
+      "arth": "फिर देवी उठकर महान सिंह पर (सवार होकर) चण्ड की ओर दौड़ीं, और उसके केश पकड़कर तलवार से उसका सिर काट डाला।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "अथ मुण्डोऽभ्यधावत्तां दृष्ट्वा चण्डं निपातितम् ।\nतमप्यपातयद्भूमौ सा खड्गाभिहतं रुषा॥",
+      "roman": "atha mundo'bhyadhaavattaam drishtvaa chandam nipaatitam |\ntamapyapaatayadbhoomau saa khadgaabhihatam rushaa ||",
+      "arth": "चण्ड को गिरा हुआ देखकर मुण्ड उनकी ओर दौड़ा; उसे भी देवी ने क्रोध से तलवार का वार करके धरती पर गिरा दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "हतशेषं ततः सैन्यं दृष्ट्वा चण्डं निपातितम् ।\nमुण्डं च सुमहावीर्यं दिशो भेजे भयातुरम्॥",
+      "roman": "hatashesham tatah sainyam drishtvaa chandam nipaatitam |\nmundam cha sumahaaveeryam disho bheje bhayaaturam ||",
+      "arth": "चण्ड और महापराक्रमी मुण्ड को गिरा हुआ देखकर बची हुई सेना डर से व्याकुल होकर सब दिशाओं में भाग गई।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "शिरश्चण्डस्य काली च गृहीत्वा मुण्डमेव च ।\nप्राह प्रचण्डाट्टहासमिश्रमभ्येत्य चण्डिकाम्॥",
+      "roman": "shirashchandasya kaalee cha griheetvaa mundameva cha |\npraaha prachandaattahaasamishramabhyetya chandikaam ||",
+      "arth": "काली ने चण्ड और मुण्ड के सिर हाथ में लिए, और चण्डिका के पास जाकर प्रचंड अट्टहास के साथ कहा —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "मया तवात्रोपहृतौ चण्डमुण्डौ महापशू ।\nयुद्धयज्ञे स्वयं शुम्भं निशुम्भं च हनिष्यसि॥",
+      "roman": "mayaa tavaatropahritau chandamundau mahaapashoo |\nyuddhayajne svayam shumbham nishumbham cha hanishyasi ||",
+      "arth": "\"मैंने इन चण्ड-मुण्ड नाम के दो महापशुओं को यहाँ आपको भेंट किया है। अब युद्ध-रूपी यज्ञ में शुम्भ और निशुम्भ को आप स्वयं मारेंगी।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २५",
+      "dev": "ऋषिरुवाच॥",
+      "roman": "rishiruvaacha ||",
+      "arth": "ऋषि बोले —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २६",
+      "dev": "तावानीतौ ततो दृष्ट्वा चण्डमुण्डौ महासुरौ ।\nउवाच कालीं कल्याणी ललितं चण्डिका वचः॥",
+      "roman": "taavaaneetau tato drishtvaa chandamundau mahaasurau |\nuvaacha kaaleem kalyaanee lalitam chandikaa vachah ||",
+      "arth": "लाए गए उन महान असुर चण्ड-मुण्ड को देखकर कल्याणी चण्डिका ने काली से मधुर वचन कहे —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २७",
+      "dev": "यस्माच्चण्डं च मुण्डं च गृहीत्वा त्वमुपागता ।\nचामुण्डेति ततो लोके ख्याता देवी भविष्यसि॥",
+      "roman": "yasmaachchandam cha mundam cha griheetvaa tvamupaagataa |\nchaamundeti tato loke khyaataa devee bhavishyasi ||",
+      "arth": "\"क्योंकि तुम चण्ड और मुण्ड को लेकर आई हो, इसलिए हे देवी, तुम संसार में 'चामुण्डा' नाम से प्रसिद्ध होगी।\"",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "मार्कण्डेय पुराण (अध्याय ८१–९३) — देवी माहात्म्य",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ एक जाँचे हुए छपे संस्करण से है, और मार्कण्डेय पुराण के दूसरे स्वतंत्र संस्करण से अक्षर-दर-अक्षर मिलाया गया है — लगभग ९९% अक्षर एक मिले। श्लोक-संख्या इसी संस्करण की है; छपी पुस्तकों में गिनती थोड़ी अलग हो सकती है।\n\n\"ऐं\", \"ह्रीं\", \"क्लीं\" बीजाक्षर हैं — कुछ परंपराओं में बीज-मंत्र गुरु से लेकर ही जपे जाते हैं; घर में इनके बिना भी पाठ होता है।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं; ग्रंथ के एक पुराने, सबके लिए खुले अनुवाद से श्लोक-दर-श्लोक मिलाया गया। कुछ श्लोक दो खंडों में बँटे हैं, तो उनका अर्थ अगले खंड में पूरा होता है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

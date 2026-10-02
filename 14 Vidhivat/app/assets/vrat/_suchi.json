@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "_note": "सारे व्रत, एक ही ढाँचे में (→ D-075, docs/26_VRAT_YOJANA.md)। जो लिखा जा चुका उस पर taiyar सच है और उसी नाम की .json फ़ाइल इसी फ़ोल्डर में है। charan = योजना का चरण। engine = इंजन के vratNiyam की id, जहाँ तारीख़ पंचांग से आती है; vaar = सप्ताह का दिन (सोमवार 1 … रविवार 7)।",
+  "samuh": [
+    { "id": "vaar", "naam": "हर हफ़्ते", "ekLine": "वार के व्रत" },
+    { "id": "tithi", "naam": "हर महीने", "ekLine": "तिथि के व्रत — तारीख़ पंचांग से" },
+    { "id": "ekadashi_varsh", "naam": "साल की एकादशियाँ", "ekLine": "हर एकादशी अपनी कथा के साथ" },
+    { "id": "varshik", "naam": "साल के बड़े व्रत", "ekLine": "साल में एक बार" }
+  ],
+  "vrat": [
+    { "id": "somvar", "naam": "सोमवार व्रत", "samuh": "vaar", "devta": "भगवान शिव और माता पार्वती", "vaar": 1, "charan": 1, "taiyar": true, "paas": false },
+    { "id": "mangalvar", "naam": "मंगलवार व्रत", "samuh": "vaar", "devta": "हनुमान जी", "vaar": 2, "charan": 1, "taiyar": true, "paas": false },
+    { "id": "brihaspativar", "naam": "बृहस्पतिवार व्रत", "samuh": "vaar", "devta": "भगवान विष्णु और बृहस्पति देव", "vaar": 4, "charan": 1, "taiyar": true, "paas": false },
+    { "id": "ravivar", "naam": "रविवार व्रत", "samuh": "vaar", "devta": "सूर्य देव", "vaar": 7, "charan": 2, "taiyar": true, "paas": false },
+    { "id": "budhvar", "naam": "बुधवार व्रत", "samuh": "vaar", "devta": "गणेश जी और बुध देव", "vaar": 3, "charan": 2, "taiyar": true, "paas": false },
+    { "id": "shukravar", "naam": "शुक्रवार व्रत", "samuh": "vaar", "devta": "संतोषी माता", "vaar": 5, "charan": 2, "taiyar": true, "paas": false },
+    { "id": "shanivar", "naam": "शनिवार व्रत", "samuh": "vaar", "devta": "शनि देव और हनुमान जी", "vaar": 6, "charan": 2, "taiyar": true, "paas": false },
+    { "id": "solah_somvar", "naam": "सोलह सोमवार व्रत", "samuh": "vaar", "devta": "भगवान शिव और माता पार्वती", "vaar": 1, "charan": 2, "taiyar": true, "paas": false },
+
+    { "id": "ekadashi", "naam": "एकादशी व्रत", "samuh": "tithi", "devta": "भगवान विष्णु", "engine": "ekadashi", "charan": 1, "taiyar": true, "paas": false },
+    { "id": "pradosh", "naam": "प्रदोष व्रत", "samuh": "tithi", "devta": "भगवान शिव", "engine": "pradosh", "charan": 2, "taiyar": true, "paas": false },
+    { "id": "sankashti", "naam": "संकष्टी चतुर्थी", "samuh": "tithi", "devta": "गणेश जी", "engine": "sankashti", "charan": 2, "taiyar": true, "paas": false },
+    { "id": "purnima", "naam": "पूर्णिमा व्रत", "samuh": "tithi", "devta": "भगवान सत्यनारायण", "engine": "purnima", "charan": 2, "taiyar": true, "paas": false },
+    { "id": "amavasya", "naam": "अमावस्या", "samuh": "tithi", "devta": "पितर", "engine": "amavasya", "charan": 2, "taiyar": true, "paas": false },
+    { "id": "masik_shivratri", "naam": "मासिक शिवरात्रि", "samuh": "tithi", "devta": "भगवान शिव", "engine": "masik_shivratri", "charan": 2, "taiyar": true, "paas": false },
+    { "id": "vinayak_chaturthi", "naam": "विनायक चतुर्थी", "samuh": "tithi", "devta": "गणेश जी", "engine": null, "charan": 3, "taiyar": true, "paas": false },
+    { "id": "masik_durgashtami", "naam": "मासिक दुर्गाष्टमी", "samuh": "tithi", "devta": "माँ दुर्गा", "engine": null, "charan": 3, "taiyar": true, "paas": false },
+
+    { "id": "ekadashi_varsh", "naam": "साल की एकादशियाँ और उनकी कथाएँ", "samuh": "ekadashi_varsh", "devta": "भगवान विष्णु", "faail": "_ekadashi_varsh.json", "charan": 3, "taiyar": true, "paas": false },
+
+    { "id": "hartalika", "naam": "हरितालिका तीज", "samuh": "varshik", "devta": "शिव-पार्वती", "vidhiId": "hartalika_teej", "charan": 4, "taiyar": true, "paas": false },
+    { "id": "karwa_chauth", "naam": "करवा चौथ", "samuh": "varshik", "devta": "शिव-पार्वती, गणेश और चंद्र", "vidhiId": "karwa_chauth", "charan": 4, "taiyar": true, "paas": false },
+    { "id": "vat_savitri", "naam": "वट सावित्री", "samuh": "varshik", "devta": "सावित्री-सत्यवान, वट वृक्ष", "vidhiId": "vat_savitri", "charan": 4, "taiyar": true, "paas": false },
+    { "id": "chhath", "naam": "छठ", "samuh": "varshik", "devta": "सूर्य देव और छठी मैया", "vidhiId": "chhath_pooja", "charan": 4, "taiyar": true, "paas": false },
+    { "id": "varalakshmi", "naam": "वरलक्ष्मी व्रत", "samuh": "varshik", "devta": "लक्ष्मी जी", "vidhiId": "varalakshmi_vrat", "charan": 4, "taiyar": true, "paas": false },
+    { "id": "navratri", "naam": "नवरात्रि व्रत", "samuh": "varshik", "devta": "माँ दुर्गा", "vidhiId": "kalash_sthapana", "charan": 4, "taiyar": true, "paas": false },
+    { "id": "mahashivratri", "naam": "महाशिवरात्रि", "samuh": "varshik", "devta": "भगवान शिव", "charan": 4, "taiyar": true, "paas": false },
+    { "id": "janmashtami", "naam": "जन्माष्टमी", "samuh": "varshik", "devta": "श्रीकृष्ण", "charan": 4, "taiyar": true, "paas": false },
+    { "id": "ahoi_ashtami", "naam": "अहोई अष्टमी", "samuh": "varshik", "devta": "अहोई माता", "charan": 4, "taiyar": true, "paas": false },
+    { "id": "jivitputrika", "naam": "जीवित्पुत्रिका (जितिया)", "samuh": "varshik", "devta": "जीमूतवाहन", "charan": 4, "taiyar": true, "paas": false },
+    { "id": "gangaur", "naam": "गणगौर", "samuh": "varshik", "devta": "शिव-पार्वती", "charan": 4, "taiyar": true, "paas": false },
+    { "id": "rishi_panchami", "naam": "ऋषि पंचमी", "samuh": "varshik", "devta": "सप्तर्षि", "charan": 4, "taiyar": true, "paas": false },
+    { "id": "anant_chaturdashi", "naam": "अनंत चतुर्दशी", "samuh": "varshik", "devta": "भगवान अनंत (विष्णु)", "charan": 4, "taiyar": true, "paas": false },
+    { "id": "sakat_chauth", "naam": "सकट चौथ", "samuh": "varshik", "devta": "गणेश जी और सकट माता", "charan": 4, "taiyar": true, "paas": false }
+  ]
+}

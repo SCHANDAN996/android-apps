@@ -1,30 +1,32 @@
-import 'package:flutter/foundation.dart' show TargetPlatform, defaultTargetPlatform;
+import 'package:flutter/foundation.dart'
+    show TargetPlatform, defaultTargetPlatform;
 import 'package:flutter/material.dart';
 
 import 'services/dakshina_service.dart';
 import 'services/device_location_service.dart';
+import 'services/pitru_reminders.dart';
 import 'screens/calendar_screen.dart';
 import 'screens/home_dashboard_screen.dart';
 import 'screens/more_screen.dart';
 import 'screens/vidhi_list_screen.dart';
 import 'state/settings.dart';
+import 'state/ancestor_profiles.dart';
 import 'theme.dart';
 import 'widgets/design_system.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await settings.load();
+  await ancestorProfiles.load();
+  // केवल पहले से opt-in किए reminder दोबारा तय होते हैं; अनुमति नहीं माँगी जाती।
+  pitruReminders.refresh();
   await dakshina.load();
 
-  // दक्षिणा का द्वार सिर्फ़ उन्हीं platform पर, जहाँ दुकान होती है।
-  // ⚠️ `PlayBillingDwar()` बनते ही `InAppPurchase.instance` छू जाता है,
-  // जो desktop पर फिंकता है — इसीलिए यह जाँच पहले।
-  //
-  // पहरा ऐप खुलते ही बैठता है, बटन दबने पर नहीं: UPI वाली ख़रीद कुछ
-  // मिनट बाद पूरी होती है, और तब तक यूज़र पन्ना छोड़ चुका होता है।
+  // दक्षिणा का द्वार — PayU का पन्ना बाहर खुलता है (→ D-090)। सिर्फ़
+  // फ़ोन पर; desktop पर चलाने/जाँचने में कोई पन्ना नहीं खुलना चाहिए।
   if (defaultTargetPlatform == TargetPlatform.android ||
       defaultTargetPlatform == TargetPlatform.iOS) {
-    dakshina.shuru(PlayBillingDwar());
+    dakshina.shuru(PayuDwar());
   }
 
   runApp(const VidhivatApp());
@@ -127,6 +129,14 @@ class HomeShell extends StatefulWidget {
 
 class _HomeShellState extends State<HomeShell> {
   int _index = 0;
+  final Set<int> _visitedTabs = {0};
+
+  void _onTabSelected(int i) {
+    setState(() {
+      _index = i;
+      _visitedTabs.add(i);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -142,11 +152,17 @@ class _HomeShellState extends State<HomeShell> {
             index: _index,
             children: [
               HomeDashboardScreen(
-                onOpenPujaLibrary: () => setState(() => _index = 1),
+                onOpenPujaLibrary: () => _onTabSelected(1),
               ),
-              const VidhiListScreen(),
-              const CalendarScreen(),
-              const MoreScreen(),
+              _visitedTabs.contains(1)
+                  ? const VidhiListScreen()
+                  : const SizedBox.shrink(),
+              _visitedTabs.contains(2)
+                  ? const CalendarScreen()
+                  : const SizedBox.shrink(),
+              _visitedTabs.contains(3)
+                  ? const MoreScreen()
+                  : const SizedBox.shrink(),
             ],
           ),
         ),
@@ -167,7 +183,7 @@ class _HomeShellState extends State<HomeShell> {
         child: NavigationBar(
           selectedIndex: _index,
           labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-          onDestinationSelected: (i) => setState(() => _index = i),
+          onDestinationSelected: _onTabSelected,
           destinations: const [
             NavigationDestination(
               icon: Icon(Icons.home_outlined),

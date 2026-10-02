@@ -53,10 +53,9 @@ String tarikhChhoti(DateTime d) => '${d.day} ${_mahineChhote[d.month]}';
 /// 21 मई 2031 के सूर्यग्रहण का सूतक **एक दिन पहले** 21:17 पर लगता है।
 /// बिना तारीख़ के कार्ड पर लिखा आता था *"सूतक 21:17 बजे से 15:07 बजे
 /// तक"* — जो उल्टा पढ़ा जाता है, जैसे समय पीछे चल रहा हो।
-String samayAurDin(DateTime pal, DateTime aadhar) =>
-    _usiDinKa(pal, aadhar)
-        ? '${hm(pal)} बजे'
-        : '${tarikhChhoti(pal)} को ${hm(pal)} बजे';
+String samayAurDin(DateTime pal, DateTime aadhar) => _usiDinKa(pal, aadhar)
+    ? '${hm(pal)} बजे'
+    : '${tarikhChhoti(pal)} को ${hm(pal)} बजे';
 
 /// वही बात, पर `Pankti` के मान वाले खाने के लिए — "बजे" के बिना।
 ///
@@ -64,9 +63,7 @@ String samayAurDin(DateTime pal, DateTime aadhar) =>
 /// स्पर्श 22:50 (15 जून का) और मध्य 00:02 (16 जून का) एक साथ लिखे थे,
 /// दोनों बिना तारीख़ के।
 String samayAurDinChhota(DateTime pal, DateTime aadhar) =>
-    _usiDinKa(pal, aadhar)
-        ? hm(pal)
-        : '${tarikhChhoti(pal)}, ${hm(pal)}';
+    _usiDinKa(pal, aadhar) ? hm(pal) : '${tarikhChhoti(pal)}, ${hm(pal)}';
 
 bool _usiDinKa(DateTime a, DateTime b) =>
     a.year == b.year && a.month == b.month && a.day == b.day;
@@ -238,6 +235,7 @@ class VidhivatReadableWidth extends StatelessWidget {
 class Panna extends StatelessWidget {
   final List<Widget> children;
   final EdgeInsets padding;
+  final ScrollController? controller;
 
   const Panna({
     super.key,
@@ -248,6 +246,7 @@ class Panna extends StatelessWidget {
       VidhivatSpacing.md,
       VidhivatSpacing.xxl,
     ),
+    this.controller,
   });
 
   @override
@@ -256,6 +255,7 @@ class Panna extends StatelessWidget {
   // बीच में सिमटते हैं (→ D-062)।
   Widget build(BuildContext context) => LayoutBuilder(
         builder: (context, c) => ListView(
+          controller: controller,
           padding: padding +
               EdgeInsets.symmetric(
                 horizontal: VidhivatReadableWidth.kinareKiJagah(c),

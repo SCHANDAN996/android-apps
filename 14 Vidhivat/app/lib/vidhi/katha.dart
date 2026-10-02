@@ -182,10 +182,13 @@ class Katha {
   }
 }
 
+/// ⚠️ `**मोटे**` के तारे पढ़ते ही हटते हैं। कथा की JSON में ये पंडित जी
+/// वाली `.md` शीट के लिए लिखे हैं; ऐप में markdown renderer नहीं है, तो
+/// वरना कथा के बीच कच्चे तारे दिखते (वही वजह जो `vidhi.dart` में है)।
 String _str(String file, Map<String, dynamic> j, String key) {
   final v = j[key];
   if (v is! String || v.trim().isEmpty) {
     throw VidhiFormatException(file, '"$key" भरा होना चाहिए');
   }
-  return v;
+  return v.replaceAll('**', '');
 }

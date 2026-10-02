@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 1,
+  "id": "gita_10",
+  "naam": "अध्याय १० — विभूतियोग",
+  "upnaam": [
+    "श्रीमद्भगवद्गीता अध्याय १०",
+    "गीता अध्याय १०",
+    "विभूतियोगो नाम दशमोऽध्यायः"
+  ],
+  "prakar": "granth",
+  "devta": "श्रीकृष्ण",
+  "rachnakar": "महर्षि वेदव्यास — महाभारत",
+  "bhasha": "संस्कृत",
+  "parichay": "अर्जुन पूछते हैं कि किन-किन रूपों में चिन्तन करें। श्रीकृष्ण अपनी मुख्य विभूतियाँ गिनाते हैं — हर वर्ग में जो सबसे श्रेष्ठ है, वह वे ही हैं — और कहते हैं कि यह सारा जगत उनके एक अंश में टिका है।",
+  "kabPadhein": "किसी भी दिन, किसी भी समय। बहुत घरों में रोज़ थोड़ा-थोड़ा पढ़ने का चलन है। मार्गशीर्ष शुक्ल एकादशी (मोक्षदा एकादशी) को गीता जयंती मनाई जाती है।",
+  "kaisePadhein": "शान्त जगह बैठकर पढ़ें। पूरा पाठ एक बैठक में न हो तो रोज़ एक अध्याय या कुछ श्लोक पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है।\n\nहर अध्याय के अन्त में उसका समापन-वाक्य दिया है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "श्लोक १",
+      "dev": "श्रीभगवानुवाच\nभूय एव महाबाहो शृणु मे परमं वचः ।\nयत्तेऽहं प्रीयमाणाय वक्ष्यामि हितकाम्यया॥",
+      "roman": "shreebhagavaanuvaacha\nbhooya eva mahaabaaho shrinu me paramam vachah |\nyatte'ham preeyamaanaaya vakshyaami hitakaamyayaa ||",
+      "arth": "श्रीभगवान बोले — हे महाबाहो! मेरा परम वचन फिर से सुनो, जो मैं तुम्हारे भले की इच्छा से कहूँगा, क्योंकि तुम इसे प्रेम से सुन रहे हो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "न मे विदुः सुरगणाः प्रभवं न महर्षयः ।\nअहमादिर्हि देवानां महर्षीणां च सर्वशः॥",
+      "roman": "na me viduh suraganaah prabhavam na maharshayah |\nahamaadirhi devaanaam maharsheenaam cha sarvashah ||",
+      "arth": "मेरी उत्पत्ति को न देवताओं के समूह जानते हैं, न महर्षि; क्योंकि मैं ही हर तरह से देवताओं और महर्षियों का आदि हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "यो मामजमनादिं च वेत्ति लोकमहेश्वरम् ।\nअसम्मूढः स मर्त्येषु सर्वपापैः प्रमुच्यते॥",
+      "roman": "yo maamajamanaadim cha vetti lokamaheshvaram |\nasammoodhah sa martyeshu sarvapaapaih pramuchyate ||",
+      "arth": "जो मुझे अजन्मा, अनादि और लोकों का महान ईश्वर जानता है, वह मनुष्यों में मोह से रहित है और सब पापों से छूट जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "बुद्धिर्ज्ञानमसम्मोहः क्षमा सत्यं दमः शमः ।\nसुखं दुःखं भवोऽभावो भयं चाभयमेव च॥",
+      "roman": "buddhirjnaanamasammohah kshamaa satyam damah shamah |\nsukham duhkham bhavo'bhaavo bhayam chaabhayameva cha ||",
+      "arth": "बुद्धि, ज्ञान, मोह का न होना, क्षमा, सत्य, इन्द्रियों का संयम, मन की शान्ति, सुख, दुख, होना, न होना, भय और अभय;",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "अहिंसा समता तुष्टिस्तपो दानं यशोऽयशः ।\nभवन्ति भावा भूतानां मत्त एव पृथग्विधाः॥",
+      "roman": "ahimsaa samataa tushtistapo daanam yasho'yashah |\nbhavanti bhaavaa bhootaanaam matta eva prithagvidhaah ||",
+      "arth": "अहिंसा, समता, सन्तोष, तप, दान, यश और अपयश — प्राणियों के ये तरह-तरह के भाव मुझसे ही होते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "महर्षयः सप्त पूर्वे चत्वारो मनवस्तथा ।\nमद्भावा मानसा जाता येषां लोक इमाः प्रजाः॥",
+      "roman": "maharshayah sapta poorve chatvaaro manavastathaa |\nmadbhaavaa maanasaa jaataa yeshaam loka imaah prajaah ||",
+      "arth": "सात महर्षि, उनसे पहले के चार और मनु — ये मुझमें भाव रखने वाले मेरे मन से पैदा हुए, और संसार की यह सारी प्रजा इन्हीं की है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "एतां विभूतिं योगं च मम यो वेत्ति तत्त्वतः ।\nसोऽविकम्पेन योगेन युज्यते नात्र संशयः॥",
+      "roman": "etaam vibhootim yogam cha mama yo vetti tattvatah |\nso'vikampena yogena yujyate naatra samshayah ||",
+      "arth": "जो मेरी इस विभूति और योग को तत्त्व से जानता है, वह अडिग योग से जुड़ जाता है — इसमें संशय नहीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "अहं सर्वस्य प्रभवो मत्तः सर्वं प्रवर्तते ।\nइति मत्वा भजन्ते मां बुधा भावसमन्विताः॥",
+      "roman": "aham sarvasya prabhavo mattah sarvam pravartate |\niti matvaa bhajante maam budhaa bhaavasamanvitaah ||",
+      "arth": "मैं सबकी उत्पत्ति का कारण हूँ, मुझसे ही सब कुछ चलता है — ऐसा मानकर भाव से भरे ज्ञानी मुझे भजते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "मच्चित्ता मद्गतप्राणा बोधयन्तः परस्परम् ।\nकथयन्तश्च मां नित्यं तुष्यन्ति च रमन्ति च॥",
+      "roman": "machchittaa madgatapraanaa bodhayantah parasparam |\nkathayantashcha maam nityam tushyanti cha ramanti cha ||",
+      "arth": "जिनका चित्त मुझमें है और जिनके प्राण मुझमें लगे हैं, वे आपस में मेरी बात समझाते हुए और सदा मेरी चर्चा करते हुए सन्तुष्ट रहते हैं और आनन्द में रमते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "तेषां सततयुक्तानां भजतां प्रीतिपूर्वकम् ।\nददामि बुद्धियोगं तं येन मामुपयान्ति ते॥",
+      "roman": "teshaam satatayuktaanaam bhajataam preetipoorvakam |\ndadaami buddhiyogam tam yena maamupayaanti te ||",
+      "arth": "सदा मुझसे जुड़े हुए और प्रेम से भजने वाले उन लोगों को मैं वह बुद्धियोग देता हूँ, जिससे वे मुझे पा लेते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "तेषामेवानुकम्पार्थमहमज्ञानजं तमः ।\nनाशयाम्यात्मभावस्थो ज्ञानदीपेन भास्वता॥",
+      "roman": "teshaamevaanukampaarthamahamajnaanajam tamah |\nnaashayaamyaatmabhaavastho jnaanadeepena bhaasvataa ||",
+      "arth": "उन्हीं पर कृपा करने के लिए मैं उनके अन्तःकरण में रहकर, ज्ञान के चमकते दीपक से, अज्ञान से पैदा हुए अँधेरे को नष्ट कर देता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "अर्जुन उवाच\nपरं ब्रह्म परं धाम पवित्रं परमं भवान् ।\nपुरुषं शाश्वतं दिव्यमादिदेवमजं विभुम्॥",
+      "roman": "arjuna uvaacha\nparam brahma param dhaama pavitram paramam bhavaan |\npurusham shaashvatam divyamaadidevamajam vibhum ||",
+      "arth": "अर्जुन बोले — आप परम ब्रह्म, परम धाम और परम पवित्र हैं। आपको सनातन दिव्य पुरुष, आदिदेव, अजन्मा और सब जगह रहने वाला —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "आहुस्त्वामृषयः सर्वे देवर्षिर्नारदस्तथा ।\nअसितो देवलो व्यासः स्वयं चैव ब्रवीषि मे॥",
+      "roman": "aahustvaamrishayah sarve devarshirnaaradastathaa |\nasito devalo vyaasah svayam chaiva braveeshi me ||",
+      "arth": "— सब ऋषि कहते हैं; देवर्षि नारद, असित, देवल और व्यास भी; और आप ख़ुद भी मुझसे यही कहते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "सर्वमेतदृतं मन्ये यन्मां वदसि केशव ।\nन हि ते भगवन्व्यक्तिं विदुर्देवा न दानवाः॥",
+      "roman": "sarvametadritam manye yanmaam vadasi keshava |\nna hi te bhagavanvyaktim vidurdevaa na daanavaah ||",
+      "arth": "हे केशव! आप मुझसे जो कुछ कहते हैं, उस सबको मैं सच मानता हूँ। हे भगवन्! आपके प्रकट स्वरूप को न देवता जानते हैं, न दानव।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "स्वयमेवात्मनात्मानं वेत्थ त्वं पुरुषोत्तम ।\nभूतभावन भूतेश देवदेव जगत्पते॥",
+      "roman": "svayamevaatmanaatmaanam vettha tvam purushottama |\nbhootabhaavana bhootesha devadeva jagatpate ||",
+      "arth": "हे पुरुषोत्तम! हे प्राणियों को पैदा करने वाले! हे प्राणियों के ईश्वर! हे देवों के देव! हे जगत के स्वामी! आप ख़ुद ही अपने से अपने को जानते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "वक्तुमर्हस्यशेषेण दिव्या ह्यात्मविभूतयः ।\nयाभिर्विभूतिभिर्लोकानिमांस्त्वं व्याप्य तिष्ठसि॥",
+      "roman": "vaktumarhasyasheshena divyaa hyaatmavibhootayah |\nyaabhirvibhootibhirlokaanimaamstvam vyaapya tishthasi ||",
+      "arth": "अपनी उन दिव्य विभूतियों को, जिनसे आप इन लोकों में व्याप्त होकर स्थित हैं, आप ही पूरा-पूरा बता सकते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "कथं विद्यामहं योगिंस्त्वां सदा परिचिन्तयन् ।\nकेषु केषु च भावेषु चिन्त्योऽसि भगवन्मया॥",
+      "roman": "katham vidyaamaham yogimstvaam sadaa parichintayan |\nkeshu keshu cha bhaaveshu chintyo'si bhagavanmayaa ||",
+      "arth": "हे योगी! सदा चिन्तन करता हुआ मैं आपको कैसे जानूँ? हे भगवन्! किन-किन भावों में मुझे आपका चिन्तन करना चाहिए?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "विस्तरेणात्मनो योगं विभूतिं च जनार्दन ।\nभूयः कथय तृप्तिर्हि शृण्वतो नास्ति मेऽमृतम्॥",
+      "roman": "vistarenaatmano yogam vibhootim cha janaardana |\nbhooyah kathaya triptirhi shrinvato naasti me'mritam ||",
+      "arth": "हे जनार्दन! अपने योग और विभूति को फिर विस्तार से कहिए, क्योंकि आपके अमृत जैसे वचन सुनते हुए मुझे तृप्ति नहीं होती।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "श्रीभगवानुवाच\nहन्त ते कथयिष्यामि दिव्या ह्यात्मविभूतयः ।\nप्राधान्यतः कुरुश्रेष्ठ नास्त्यन्तो विस्तरस्य मे॥",
+      "roman": "shreebhagavaanuvaacha\nhanta te kathayishyaami divyaa hyaatmavibhootayah |\npraadhaanyatah kurushreshtha naastyanto vistarasya me ||",
+      "arth": "श्रीभगवान बोले — अच्छा, हे कुरुश्रेष्ठ! मैं तुम्हें अपनी दिव्य विभूतियाँ मुख्य-मुख्य बताऊँगा, क्योंकि मेरे विस्तार का अन्त नहीं है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "अहमात्मा गुडाकेश सर्वभूताशयस्थितः ।\nअहमादिश्च मध्यं च भूतानामन्त एव च॥",
+      "roman": "ahamaatmaa gudaakesha sarvabhootaashayasthitah |\nahamaadishcha madhyam cha bhootaanaamanta eva cha ||",
+      "arth": "हे गुडाकेश! मैं सब प्राणियों के हृदय में बैठा हुआ आत्मा हूँ; मैं ही प्राणियों का आदि, मध्य और अन्त भी हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "आदित्यानामहं विष्णुर्ज्योतिषां रविरंशुमान् ।\nमरीचिर्मरुतामस्मि नक्षत्राणामहं शशी॥",
+      "roman": "aadityaanaamaham vishnurjyotishaam raviramshumaan |\nmareechirmarutaamasmi nakshatraanaamaham shashee ||",
+      "arth": "आदित्यों में मैं विष्णु हूँ, ज्योतियों में किरणों वाला सूर्य हूँ, मरुतों में मरीचि हूँ, और नक्षत्रों में चन्द्रमा हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "वेदानां सामवेदोऽस्मि देवानामस्मि वासवः ।\nइन्द्रियाणां मनश्चास्मि भूतानामस्मि चेतना॥",
+      "roman": "vedaanaam saamavedo'smi devaanaamasmi vaasavah |\nindriyaanaam manashchaasmi bhootaanaamasmi chetanaa ||",
+      "arth": "वेदों में मैं सामवेद हूँ, देवताओं में इन्द्र हूँ, इन्द्रियों में मन हूँ, और प्राणियों में चेतना हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "रुद्राणां शङ्करश्चास्मि वित्तेशो यक्षरक्षसाम् ।\nवसूनां पावकश्चास्मि मेरुः शिखरिणामहम्॥",
+      "roman": "rudraanaam shankarashchaasmi vittesho yaksharakshasaam |\nvasoonaam paavakashchaasmi meruh shikharinaamaham ||",
+      "arth": "रुद्रों में मैं शंकर हूँ, यक्षों और राक्षसों में धन का स्वामी कुबेर हूँ, वसुओं में अग्नि हूँ, और शिखर वाले पर्वतों में मेरु हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "पुरोधसां च मुख्यं मां विद्धि पार्थ बृहस्पतिम् ।\nसेनानीनामहं स्कन्दः सरसामस्मि सागरः॥",
+      "roman": "purodhasaam cha mukhyam maam viddhi paartha brihaspatim |\nsenaaneenaamaham skandah sarasaamasmi saagarah ||",
+      "arth": "हे पार्थ! पुरोहितों में मुझे मुख्य बृहस्पति जानो। सेनापतियों में मैं स्कन्द (कार्तिकेय) हूँ, और जलाशयों में समुद्र हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २५",
+      "dev": "महर्षीणां भृगुरहं गिरामस्म्येकमक्षरम् ।\nयज्ञानां जपयज्ञोऽस्मि स्थावराणां हिमालयः॥",
+      "roman": "maharsheenaam bhriguraham giraamasmyekamaksharam |\nyajnaanaam japayajno'smi sthaavaraanaam himaalayah ||",
+      "arth": "महर्षियों में मैं भृगु हूँ, वाणी में एक अक्षर (ओंकार) हूँ, यज्ञों में जप-यज्ञ हूँ, और अचल चीज़ों में हिमालय हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २६",
+      "dev": "अश्वत्थः सर्ववृक्षाणां देवर्षीणां च नारदः ।\nगन्धर्वाणां चित्ररथः सिद्धानां कपिलो मुनिः॥",
+      "roman": "ashvatthah sarvavrikshaanaam devarsheenaam cha naaradah |\ngandharvaanaam chitrarathah siddhaanaam kapilo munih ||",
+      "arth": "सब वृक्षों में मैं पीपल हूँ, देवर्षियों में नारद, गन्धर्वों में चित्ररथ, और सिद्धों में कपिल मुनि हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २७",
+      "dev": "उच्चैःश्रवसमश्वानां विद्धि माममृतोद्भवम् ।\nऐरावतं गजेन्द्राणां नराणां च नराधिपम्॥",
+      "roman": "uchchaihshravasamashvaanaam viddhi maamamritodbhavam |\nairaavatam gajendraanaam naraanaam cha naraadhipam ||",
+      "arth": "घोड़ों में मुझे अमृत के साथ निकला उच्चैःश्रवा जानो, श्रेष्ठ हाथियों में ऐरावत, और मनुष्यों में राजा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २८",
+      "dev": "आयुधानामहं वज्रं धेनूनामस्मि कामधुक् ।\nप्रजनश्चास्मि कन्दर्पः सर्पाणामस्मि वासुकिः॥",
+      "roman": "aayudhaanaamaham vajram dhenoonaamasmi kaamadhuk |\nprajanashchaasmi kandarpah sarpaanaamasmi vaasukih ||",
+      "arth": "शस्त्रों में मैं वज्र हूँ, गायों में कामधेनु हूँ; सन्तान की उत्पत्ति का कारण कामदेव हूँ, और सर्पों में वासुकि हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २९",
+      "dev": "अनन्तश्चास्मि नागानां वरुणो यादसामहम् ।\nपितॄणामर्यमा चास्मि यमः संयमतामहम्॥",
+      "roman": "anantashchaasmi naagaanaam varuno yaadasaamaham |\npitreenaamaryamaa chaasmi yamah samyamataamaham ||",
+      "arth": "नागों में मैं अनन्त (शेषनाग) हूँ, जल के जीवों में वरुण हूँ, पितरों में अर्यमा हूँ, और शासन करने वालों में यम हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३०",
+      "dev": "प्रह्लादश्चास्मि दैत्यानां कालः कलयतामहम् ।\nमृगाणां च मृगेन्द्रोऽहं वैनतेयश्च पक्षिणाम्॥",
+      "roman": "prahlaadashchaasmi daityaanaam kaalah kalayataamaham |\nmrigaanaam cha mrigendro'ham vainateyashcha pakshinaam ||",
+      "arth": "दैत्यों में मैं प्रह्लाद हूँ, गिनती करने वालों में काल हूँ, पशुओं में सिंह हूँ, और पक्षियों में गरुड़ हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३१",
+      "dev": "पवनः पवतामस्मि रामः शस्त्रभृतामहम् ।\nझषाणां मकरश्चास्मि स्रोतसामस्मि जाह्नवी॥",
+      "roman": "pavanah pavataamasmi raamah shastrabhritaamaham |\njhashaanaam makarashchaasmi srotasaamasmi jaahnavee ||",
+      "arth": "पवित्र करने वालों में मैं वायु हूँ, शस्त्र धारण करने वालों में राम हूँ, मछलियों में मगर हूँ, और नदियों में गंगा हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३२",
+      "dev": "सर्गाणामादिरन्तश्च मध्यं चैवाहमर्जुन ।\nअध्यात्मविद्या विद्यानां वादः प्रवदतामहम्॥",
+      "roman": "sargaanaamaadirantashcha madhyam chaivaahamarjuna |\nadhyaatmavidyaa vidyaanaam vaadah pravadataamaham ||",
+      "arth": "हे अर्जुन! सृष्टियों का आदि, अन्त और मध्य मैं ही हूँ। विद्याओं में मैं अध्यात्म-विद्या हूँ, और वाद-विवाद करने वालों का तत्त्व-निर्णय वाला वाद हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३३",
+      "dev": "अक्षराणामकारोऽस्मि द्वन्द्वः सामासिकस्य च ।\nअहमेवाक्षयः कालो धाताहं विश्वतोमुखः॥",
+      "roman": "aksharaanaamakaaro'smi dvandvah saamaasikasya cha |\nahamevaakshayah kaalo dhaataaham vishvatomukhah ||",
+      "arth": "अक्षरों में मैं अकार हूँ, और समासों में द्वन्द्व समास हूँ। मैं ही कभी न घटने वाला काल हूँ, और सब ओर मुख वाला धारण करने वाला भी मैं हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३४",
+      "dev": "मृत्युः सर्वहरश्चाहमुद्भवश्च भविष्यताम् ।\nकीर्तिः श्रीर्वाक्च नारीणां स्मृतिर्मेधा धृतिः क्षमा॥",
+      "roman": "mrityuh sarvaharashchaahamudbhavashcha bhavishyataam |\nkeertih shreervaakcha naareenaam smritirmedhaa dhritih kshamaa ||",
+      "arth": "मैं सबको हर लेने वाली मृत्यु हूँ, और आगे होने वालों की उत्पत्ति का कारण हूँ। स्त्रियों में मैं कीर्ति, श्री, वाणी, स्मृति, मेधा, धैर्य और क्षमा हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३५",
+      "dev": "बृहत्साम तथा साम्नां गायत्री छन्दसामहम् ।\nमासानां मार्गशीर्षोऽहमृतूनां कुसुमाकरः॥",
+      "roman": "brihatsaama tathaa saamnaam gaayatree chhandasaamaham |\nmaasaanaam maargasheersho'hamritoonaam kusumaakarah ||",
+      "arth": "साम के मन्त्रों में मैं बृहत्साम हूँ, छन्दों में गायत्री हूँ, महीनों में मार्गशीर्ष (अगहन) हूँ, और ऋतुओं में वसन्त हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३६",
+      "dev": "द्यूतं छलयतामस्मि तेजस्तेजस्विनामहम् ।\nजयोऽस्मि व्यवसायोऽस्मि सत्त्वं सत्त्ववतामहम्॥",
+      "roman": "dyootam chhalayataamasmi tejastejasvinaamaham |\njayo'smi vyavasaayo'smi sattvam sattvavataamaham ||",
+      "arth": "छल करने वालों में मैं जुआ हूँ, तेजस्वियों का तेज हूँ। मैं जीत हूँ, निश्चय हूँ, और सात्त्विक लोगों का सत्त्व हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३७",
+      "dev": "वृष्णीनां वासुदेवोऽस्मि पाण्डवानां धनञ्जयः ।\nमुनीनामप्यहं व्यासः कवीनामुशना कविः॥",
+      "roman": "vrishneenaam vaasudevo'smi paandavaanaam dhananjayah |\nmuneenaamapyaham vyaasah kaveenaamushanaa kavih ||",
+      "arth": "वृष्णिवंशियों में मैं वासुदेव (कृष्ण) हूँ, पाण्डवों में धनंजय (अर्जुन) हूँ, मुनियों में व्यास हूँ, और कवियों में शुक्राचार्य कवि हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३८",
+      "dev": "दण्डो दमयतामस्मि नीतिरस्मि जिगीषताम् ।\nमौनं चैवास्मि गुह्यानां ज्ञानं ज्ञानवतामहम्॥",
+      "roman": "dando damayataamasmi neetirasmi jigeeshataam |\nmaunam chaivaasmi guhyaanaam jnaanam jnaanavataamaham ||",
+      "arth": "दमन करने वालों का मैं दण्ड हूँ, जीत चाहने वालों की नीति हूँ, गुप्त रखने योग्य बातों में मौन हूँ, और ज्ञानियों का ज्ञान हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३९",
+      "dev": "यच्चापि सर्वभूतानां बीजं तदहमर्जुन ।\nन तदस्ति विना यत्स्यान्मया भूतं चराचरम्॥",
+      "roman": "yachchaapi sarvabhootaanaam beejam tadahamarjuna |\nna tadasti vinaa yatsyaanmayaa bhootam charaacharam ||",
+      "arth": "हे अर्जुन! सब प्राणियों का जो बीज है, वह भी मैं ही हूँ। चर या अचर ऐसा कोई प्राणी नहीं जो मेरे बिना हो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४०",
+      "dev": "नान्तोऽस्ति मम दिव्यानां विभूतीनां परन्तप ।\nएष तूद्देशतः प्रोक्तो विभूतेर्विस्तरो मया॥",
+      "roman": "naanto'sti mama divyaanaam vibhooteenaam parantapa |\nesha tooddeshatah prokto vibhootervistaro mayaa ||",
+      "arth": "हे शत्रुओं को तपाने वाले! मेरी दिव्य विभूतियों का अन्त नहीं है। विभूतियों का यह विस्तार तो मैंने केवल संक्षेप में कहा है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४१",
+      "dev": "यद्यद्विभूतिमत्सत्त्वं श्रीमदूर्जितमेव वा ।\nतत्तदेवावगच्छ त्वं मम तेजोंऽशसम्भवम्॥",
+      "roman": "yadyadvibhootimatsattvam shreemadoorjitameva vaa |\ntattadevaavagachchha tvam mama tejom'shasambhavam ||",
+      "arth": "जो-जो भी वस्तु ऐश्वर्य वाली, शोभा वाली या शक्ति वाली है, उस-उसको तुम मेरे तेज के अंश से ही पैदा हुई जानो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४२",
+      "dev": "अथवा बहुनैतेन किं ज्ञातेन तवार्जुन ।\nविष्टभ्याहमिदं कृत्स्नमेकांशेन स्थितो जगत्॥",
+      "roman": "athavaa bahunaitena kim jnaatena tavaarjuna |\nvishtabhyaahamidam kritsnamekaamshena sthito jagat ||",
+      "arth": "अथवा हे अर्जुन! इतना सब जानने से तुम्हें क्या करना है? मैं इस सारे जगत को अपने एक अंश से धारण करके स्थित हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "समापन",
+      "dev": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु\nब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे\nविभूतियोगो नाम दशमोऽध्यायः॥",
+      "roman": "om tatsaditi shreemadbhagavadgeetaasoopanishatsu\nbrahmavidyaayaam yogashaastre shreekrishnaarjunasamvaade\nvibhootiyogo naama dashamo'dhyaayah ||",
+      "arth": "इस तरह उपनिषद रूप श्रीमद्भगवद्गीता में, जो ब्रह्मविद्या और योगशास्त्र है, श्रीकृष्ण और अर्जुन के संवाद में \"विभूतियोग\" नाम का दसवाँ अध्याय पूरा हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, भीष्म पर्व — श्रीमद्भगवद्गीता",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ पाँच अलग संस्करणों से श्लोक-दर-श्लोक मिलाया गया है। सात सौ में से पाँच सौ सतहत्तर श्लोक पाँचों में अक्षर-अक्षर एक मिले; बाक़ी में वही रूप लिया गया जिस पर अधिक संस्करण एक थे।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं। आचार्यों ने कई श्लोकों को अलग-अलग ढंग से समझाया है; यहाँ किसी एक मत की व्याख्या नहीं, सीधा अर्थ दिया गया है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

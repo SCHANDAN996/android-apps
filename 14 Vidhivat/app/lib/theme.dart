@@ -371,14 +371,14 @@ abstract final class VidhivatIconSize {
 }
 
 /// Minimum action dimensions keep tap targets consistent and accessible.
-/// पन्ने की चौड़ाई — चौड़ी स्क्रीन पर भी पढ़ने लायक़ (→ D-062)।
+/// पन्ने की चौड़ाई — चौड़ी स्क्रीन पर भी पढ़ने लायक़ (→ D-062)।
 abstract final class VidhivatLayout {
-  /// पन्ने की सबसे ज़्यादा चौड़ाई।
+  /// पन्ने की सबसे ज़्यादा चौड़ाई।
   ///
-  /// फ़ोन खड़ा हो तो इसका कोई असर नहीं — वहाँ चौड़ाई 384dp के
+  /// फ़ोन खड़ा हो तो इसका कोई असर नहीं — वहाँ चौड़ाई 384dp के
   /// आस-पास रहती है। लेटाने पर वो 853dp हो जाती है, और तब अक्षर
-  /// पूरी चौड़ाई में फैल जाते हैं — एक पंक्ति इतनी लंबी हो जाती है कि
-  /// आँख अगली पंक्ति का सिरा ढूँढ़ नहीं पाती।
+  /// पूरी चौड़ाई में फैल जाते हैं — एक पंक्ति इतनी लंबी हो जाती है कि
+  /// आँख अगली पंक्ति का सिरा ढूँढ़ नहीं पाती।
   ///
   /// 600 यहीं से आया — एक पंक्ति में लगभग उतने अक्षर जितने छपी
   /// पुस्तक में होते हैं।
@@ -417,8 +417,14 @@ class VidhivatTheme {
       Theme.of(context).extension<VidhivatTypography>() ??
       VidhivatTypography.from(colorsOf(context));
 
-  static ThemeData light() => _build(VidhivatColorTokens.light);
-  static ThemeData dark() => _build(VidhivatColorTokens.dark);
+  // ⚡ एक बार बनाकर याद — MaterialApp हर settings बदलाव पर दोबारा बनता है,
+  // और हर बार पूरा ThemeData (typography, सारे component theme) नया बनाना
+  // बेकार का काम था।
+  static final ThemeData _light = _build(VidhivatColorTokens.light);
+  static final ThemeData _dark = _build(VidhivatColorTokens.dark);
+
+  static ThemeData light() => _light;
+  static ThemeData dark() => _dark;
 
   static ThemeData _build(VidhivatColorTokens colors) {
     final isDark = colors == VidhivatColorTokens.dark;

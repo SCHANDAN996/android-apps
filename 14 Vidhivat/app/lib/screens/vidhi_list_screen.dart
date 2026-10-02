@@ -1,25 +1,41 @@
 import 'package:flutter/material.dart';
 
-import '../theme.dart';
 import '../state/settings.dart';
+import '../theme.dart';
+import '../vidhi/aane_wale_din.dart';
 import '../vidhi/bhandar.dart';
 import '../vidhi/devotional_assets.dart';
 import '../vidhi/parv.dart';
 import '../vidhi/parv_aaj.dart';
+import '../vidhi/parv_home.dart';
 import '../vidhi/planned_puja_catalog.dart';
 import '../vidhi/vidhi.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
 import 'vidhi_screen.dart';
-import 'parv_screen.dart';
+import 'parv_kholo.dart';
 
 /// विधि का home — catalogue नहीं, पूजा चुनने की शुरुआती जगह।
 ///
 /// सारी सामग्री assets से ही आती है। इस screen में कोई नई पूजा, समय या
 /// धार्मिक दावा नहीं लिखा जाता; वह सिर्फ़ मौजूदा catalogue को पढ़ने में
 /// आसान क्रम में रखती है।
+///
+/// ## ढाँचा (→ D-086)
+///
+/// 1. **आने वाली पूजाएँ** — बग़ल में खिसकने वाली पट्टी, पंचांग से
+/// 2. **रोज़ की पूजा** — नित्य पूजा भी यहीं, बाक़ी जैसा एक कार्ड
+/// 3. **त्योहार** — जो पहले आ रहा है वो पहले, कार्ड पर अगली तारीख़
+/// 4. **व्रत**, फिर **संस्कार और पारिवारिक कर्म**
+/// 5. जल्द आने वाली विधियाँ
+///
+/// पहले सबसे ऊपर नित्य पूजा का बड़ा कार्ड पूरी स्क्रीन घेर लेता था — फ़ोन
+/// पर खोलते ही बाक़ी अट्ठाईस पूजाओं का पता ही नहीं चलता था।
 class VidhiListScreen extends StatefulWidget {
-  const VidhiListScreen({super.key});
+  /// "आज" — सिर्फ़ जाँच के लिए; ऐप में हमेशा `DateTime.now()`।
+  final DateTime? aaj;
+
+  const VidhiListScreen({super.key, this.aaj});
 
   @override
   State<VidhiListScreen> createState() => _VidhiListScreenState();
@@ -35,6 +51,7 @@ class _VidhiListScreenState extends State<VidhiListScreen> {
   }
 
   Future<_VidhiHomeData> _loadHome() async {
+    final aaj = widget.aaj ?? DateTime.now();
     final entries = await vidhiBhandar.suchi();
     final ready =
         entries.where((entry) => entry.taiyar).toList(growable: false);
@@ -42,45 +59,122 @@ class _VidhiListScreenState extends State<VidhiListScreen> {
       throw StateError('पूजा की कोई तैयार विधि नहीं मिली।');
     }
 
-    // नित्य पूजा एक real, frequently useful entry है। वह उपलब्ध न हो तो
-    // catalogue की पहली तैयार पूजा feature बनती है — कोई placeholder नहीं।
-    final featuredEntry = ready.firstWhere(
-      (entry) => entry.id == 'nitya_pooja',
-      orElse: () => ready.first,
+    final sabhiVidhi = await Future.wait(
+      ready.map((entry) => vidhiBhandar.vidhi(entry.id)),
+    );
+    final navratri = await parvBhandar.parv('navratri');
+
+    // ── आने वाली पूजाएँ — होम वाली ही गिनती (→ D-038, D-086) ──────
+    //
+    // वही `aaneWaliPujaayein` जो होम की पट्टी चलाता है, ताकि दोनों जगह
+    // तारीख़ें कभी अलग न हों। हर हफ़्ते वाली पूजा (हनुमान = मंगल, शनि)
+    // यहाँ सिर्फ़ **उसी दिन** आती है, वरना हर हफ़्ते दो जगह घेर लेती।
+    final aage = aaneWaliPujaayein(
+      pujaayein: sabhiVidhi,
+      place: settings.place,
+      masaSystem: settings.masaSystem,
+      aaj: aaj,
+      kitne: 12,
+      dinAage: 45,
+    );
+    final navratriAvsar = navratriHomeAvsar(
+      parv: navratri,
+      aaj: navratriAaj(aaj: aaj, place: settings.place),
+      aajKiTarikh: aaj,
     );
 
     return _VidhiHomeData(
       entries: entries,
-      featuredEntry: featuredEntry,
-      featuredVidhi: await vidhiBhandar.vidhi(featuredEntry.id),
-      navratri: await parvBhandar.parv('navratri'),
+      navratri: navratri,
+      aaneWali: _banaoAaneWali(aage, navratri, navratriAvsar),
+      tyoharTarikh: agliTyoharTarikh(place: settings.place, aaj: aaj),
+      aaj: DateTime(aaj.year, aaj.month, aaj.day),
     );
+  }
+
+  /// पट्टी के कार्ड, बाएँ से दाएँ — आज पहले, फिर तारीख़ के क्रम से।
+  static List<_AaneWali> _banaoAaneWali(
+    List<PujaAvsar> aage,
+    Parv navratri,
+    ParvHomeAvsar? navratriAvsar,
+  ) {
+    final sab = <_AaneWali>[];
+    final liyeGaye = <String>{};
+
+    _AaneWali? navratriKa;
+    if (navratriAvsar != null) {
+      navratriKa = _AaneWali(
+        upar: navratriAvsar.upar,
+        naam: navratriAvsar.naam,
+        neeche: navratriAvsar.neeche,
+        artwork: navratriAvsar.artworkAsset,
+        // हर नवरात्रि पत्ता पूरा पर्व-पन्ना खोलता है — आज की विधि उसी पन्ने
+        // पर है (होम जैसा, डेवलपर का फ़ैसला 22 सित 2026)।
+        pujaId: null,
+        parv: true,
+        kitneDinBaad: navratriAvsar.kitneDinBaad,
+      );
+      final id = navratriAvsar.vidhiId;
+      if (id != null) liyeGaye.add(id);
+      if (navratriAvsar.aajKa) {
+        sab.add(navratriKa);
+        navratriKa = null;
+      }
+    }
+
+    for (final avsar in aage) {
+      if (avsar.karan == AvsarKaKaran.vaar && avsar.kitneDinBaad > 0) {
+        continue;
+      }
+      if (navratriKa != null && avsar.kitneDinBaad > navratriKa.kitneDinBaad) {
+        sab.add(navratriKa);
+        navratriKa = null;
+      }
+      // घटस्थापना — नवरात्रि का अपना पत्ता हो तो वही; न हो (पंद्रह दिन से
+      // ज़्यादा दूर) तो यही पत्ता पूरे पर्व का बनता है, कलश की विधि का नहीं।
+      if (avsar.naam.startsWith('शारदीय नवरात्रि')) {
+        if (navratriAvsar != null) continue;
+        sab.add(_AaneWali(
+          upar: avsar.kabLikha,
+          naam: navratri.naam,
+          neeche: 'घटस्थापना · ${tarikhChhoti(avsar.tarikh)}',
+          artwork: navratri.artworkAsset,
+          pujaId: null,
+          parv: true,
+          kitneDinBaad: avsar.kitneDinBaad,
+        ));
+        continue;
+      }
+      if (avsar.khulSaktiHai && !liyeGaye.add(avsar.pujaId)) continue;
+      sab.add(_AaneWali(
+        upar: avsar.kabLikha,
+        naam: avsar.naam,
+        neeche: avsar.kitneDinBaad == 0
+            ? avsar.kyon
+            : '${avsar.kyon} · ${tarikhChhoti(avsar.tarikh)}',
+        artwork: DevotionalAssets.forVidhiId(avsar.pujaId).assetPath,
+        pujaId: avsar.khulSaktiHai ? avsar.pujaId : null,
+        parv: false,
+        kitneDinBaad: avsar.kitneDinBaad,
+      ));
+    }
+    if (navratriKa != null) sab.add(navratriKa);
+
+    return List.unmodifiable(sab.take(6));
   }
 
   void _open(VidhiSuchiEntry entry) {
     if (!entry.taiyar) return;
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => VidhiScreen(id: entry.id)),
-    );
+    _openId(entry.id);
   }
 
-  void _openVidhiId(String id) {
+  void _openId(String id) {
     Navigator.of(context).push(
       MaterialPageRoute(builder: (_) => VidhiScreen(id: id)),
     );
   }
 
-  void _openNavratri(Parv parv) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (_) => ParvScreen(
-          parv: parv,
-          aaj: navratriAaj(aaj: DateTime.now(), place: settings.place),
-          onVidhiKholo: _openVidhiId,
-        ),
-      ),
-    );
-  }
+  void _openNavratri(Parv parv) => kholoNavratri(context, parv);
 
   @override
   Widget build(BuildContext context) {
@@ -113,6 +207,7 @@ class _VidhiListScreenState extends State<VidhiListScreen> {
             child: _VidhiHome(
               data: home,
               onOpen: _open,
+              onOpenId: _openId,
               onParvOpen: _openNavratri,
             ),
           );
@@ -125,26 +220,50 @@ class _VidhiListScreenState extends State<VidhiListScreen> {
 class _VidhiHome extends StatelessWidget {
   final _VidhiHomeData data;
   final ValueChanged<VidhiSuchiEntry> onOpen;
+  final ValueChanged<String> onOpenId;
   final ValueChanged<Parv> onParvOpen;
 
   const _VidhiHome({
     required this.data,
     required this.onOpen,
+    required this.onOpenId,
     required this.onParvOpen,
   });
 
   @override
   Widget build(BuildContext context) {
+    // नित्य पूजा बाक़ी पूजाओं जैसा ही एक कार्ड है — बस "रोज़ की पूजा" में
+    // सबसे पहले, क्योंकि रोज़ सबसे ज़्यादा वही खुलती है।
     final daily = data.entries
+        .where((entry) => entry.shreni == Shreni.nitya)
+        .toList()
+      ..sort((a, b) => (a.id == 'nitya_pooja' ? 0 : 1)
+          .compareTo(b.id == 'nitya_pooja' ? 0 : 1));
+
+    // त्योहार और व्रत — जिसकी अगली तारीख़ पहले, वो पहले। जिनकी तारीख़
+    // इंजन के त्योहार-नियम से नहीं निकलती (हर महीने वाली) वे बाद में,
+    // सूची के अपने क्रम में।
+    List<VidhiSuchiEntry> tarikhSe(Shreni shreni) {
+      final sab = data.entries.where((e) => e.shreni == shreni).toList();
+      final dated = sab
+          .where((e) => data.tyoharTarikh.containsKey(e.id))
+          .toList()
+        ..sort((a, b) =>
+            data.tyoharTarikh[a.id]!.compareTo(data.tyoharTarikh[b.id]!));
+      return [
+        ...dated,
+        ...sab.where((e) => !data.tyoharTarikh.containsKey(e.id)),
+      ];
+    }
+
+    final orderedFestivals = tarikhSe(Shreni.tyohar);
+    final festivals = orderedFestivals;
+    final vrat = tarikhSe(Shreni.vrat);
+    final parivar = data.entries
         .where((entry) =>
-            entry.shreni == Shreni.nitya && entry.id != data.featuredEntry.id)
-        .toList(growable: false);
-    final festivals = data.entries
-        .where((entry) => entry.shreni == Shreni.tyohar)
-        .toList(growable: false);
-    final special = data.entries
-        .where((entry) =>
-            entry.shreni != Shreni.nitya && entry.shreni != Shreni.tyohar)
+            entry.shreni != Shreni.nitya &&
+            entry.shreni != Shreni.tyohar &&
+            entry.shreni != Shreni.vrat)
         .toList(growable: false);
 
     return VidhivatSacredBackdrop(
@@ -166,17 +285,24 @@ class _VidhiHome extends StatelessWidget {
             'आज क्या करना चाहते हैं?',
             style: VidhivatTheme.typographyOf(context).bodyMedium,
           ),
-          const SizedBox(height: VidhivatSpacing.xxl),
-          _FeaturedPuja(
-            entry: data.featuredEntry,
-            vidhi: data.featuredVidhi,
-            onOpen: () => onOpen(data.featuredEntry),
-          ),
+          if (data.aaneWali.isNotEmpty) ...[
+            const SizedBox(height: VidhivatSpacing.xl),
+            const VidhivatSectionHeader(
+              title: 'आने वाली पूजाएँ',
+              supportingText: 'आपके शहर के पंचांग से',
+            ),
+            const SizedBox(height: VidhivatSpacing.md),
+            _AaneWaliPatti(
+              sab: data.aaneWali,
+              onOpenId: onOpenId,
+              onParvOpen: () => onParvOpen(data.navratri),
+            ),
+          ],
           if (daily.isNotEmpty) ...[
             const SizedBox(height: VidhivatSpacing.xxl),
             const VidhivatSectionHeader(
-              title: 'दैनिक पूजा',
-              supportingText: 'रोज़मर्रा की सरल विधियाँ',
+              title: 'रोज़ की पूजा',
+              supportingText: 'हर दिन की सरल विधियाँ',
             ),
             const SizedBox(height: VidhivatSpacing.md),
             _PujaGrid(entries: daily, onOpen: onOpen),
@@ -185,7 +311,7 @@ class _VidhiHome extends StatelessWidget {
             const SizedBox(height: VidhivatSpacing.xxl),
             const VidhivatSectionHeader(
               title: 'त्योहार',
-              supportingText: 'विशेष दिन की पूजा-विधियाँ',
+              supportingText: 'जो पहले आ रहा है, वो पहले',
             ),
             const SizedBox(height: VidhivatSpacing.md),
             _ParvCard(
@@ -193,16 +319,41 @@ class _VidhiHome extends StatelessWidget {
               onOpen: () => onParvOpen(data.navratri),
             ),
             const SizedBox(height: VidhivatSpacing.sm),
-            _PujaGrid(entries: festivals, onOpen: onOpen),
+            _PujaGrid(
+              entries: orderedFestivals,
+              onOpen: onOpen,
+              tarikh: data.tyoharTarikh,
+              aaj: data.aaj,
+            ),
           ],
-          if (special.isNotEmpty) ...[
+          if (vrat.isNotEmpty) ...[
             const SizedBox(height: VidhivatSpacing.xxl),
             const VidhivatSectionHeader(
-              title: 'विशेष पूजा और संस्कार',
-              supportingText: 'परिवार और विशेष अवसरों के लिए',
+              title: 'व्रत',
+              supportingText: 'जो पहले आ रहा है, वो पहले',
             ),
             const SizedBox(height: VidhivatSpacing.md),
-            _PujaGrid(entries: special, onOpen: onOpen),
+            _PujaGrid(
+              entries: vrat,
+              onOpen: onOpen,
+              tarikh: data.tyoharTarikh,
+              aaj: data.aaj,
+            ),
+          ],
+          if (parivar.isNotEmpty) ...[
+            const SizedBox(height: VidhivatSpacing.xxl),
+            const VidhivatSectionHeader(
+              title: 'संस्कार और पारिवारिक कर्म',
+              supportingText: 'घर, परिवार और पितरों के लिए',
+            ),
+            const SizedBox(height: VidhivatSpacing.md),
+            // श्राद्ध पर पितृ पक्ष की तारीख़ — बाक़ी संस्कारों की कोई नहीं
+            _PujaGrid(
+              entries: parivar,
+              onOpen: onOpen,
+              tarikh: data.tyoharTarikh,
+              aaj: data.aaj,
+            ),
           ],
           for (final section in plannedPujaSections) ...[
             const SizedBox(height: VidhivatSpacing.xxl),
@@ -244,88 +395,228 @@ class _ParvCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = VidhivatTheme.colorsOf(context);
     final type = VidhivatTheme.typographyOf(context);
     return VidhivatSurfaceCard(
       key: const Key('navratri_parv_card'),
-      variant: VidhivatCardVariant.highlight,
+      variant: VidhivatCardVariant.elevated,
       onTap: onOpen,
       semanticLabel: '${parv.naam} पर्व खोलें। ${parv.ekLine}',
-      child: Row(
-        children: [
-          const VidhivatStatusChip(
-            label: 'पर्व',
-            tone: VidhivatStatusTone.primary,
-            icon: Icons.auto_awesome_outlined,
-          ),
-          const SizedBox(width: VidhivatSpacing.sm),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(parv.naam, style: type.cardTitle),
-                const SizedBox(height: VidhivatSpacing.xxs),
-                Text(parv.ekLine, style: type.bodySmall),
-              ],
-            ),
-          ),
-          const SizedBox(width: VidhivatSpacing.xs),
-          const Icon(Icons.arrow_forward_ios),
-        ],
+      padding: const EdgeInsets.all(VidhivatSpacing.md),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final imageSize =
+              (constraints.maxWidth * 0.31).clamp(92.0, 124.0).toDouble();
+          final cacheSize =
+              (imageSize * MediaQuery.devicePixelRatioOf(context)).round();
+          return Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ExcludeSemantics(
+                child: Container(
+                  width: imageSize,
+                  height: imageSize,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: colors.primary.withValues(alpha: 0.25),
+                        blurRadius: imageSize * 0.32,
+                      ),
+                    ],
+                  ),
+                  child: Image.asset(
+                    parv.artworkAsset,
+                    fit: BoxFit.contain,
+                    // अनुपात बचाने के लिए दोनों cache dimensions न दें।
+                    cacheHeight: cacheSize,
+                    filterQuality: FilterQuality.high,
+                    errorBuilder: (context, error, stackTrace) => Icon(
+                      Icons.auto_awesome_outlined,
+                      color: colors.primary,
+                      size: imageSize * 0.55,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(width: VidhivatSpacing.md),
+              Expanded(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const VidhivatStatusChip(
+                      label: 'नौ दिन का पर्व',
+                      tone: VidhivatStatusTone.primary,
+                      icon: Icons.auto_awesome_outlined,
+                    ),
+                    const SizedBox(height: VidhivatSpacing.sm),
+                    Text(parv.naam, style: type.cardTitle),
+                    const SizedBox(height: VidhivatSpacing.xxs),
+                    Text(parv.ekLine, style: type.bodySmall),
+                    const SizedBox(height: VidhivatSpacing.sm),
+                    Text(
+                      'संक्षिप्त पूजा और दिन-प्रतिदिन पूर्ण विधि',
+                      style: type.caption.copyWith(color: colors.textSecondary),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: VidhivatSpacing.xs),
+              Icon(Icons.arrow_forward_ios, color: colors.textSecondary),
+            ],
+          );
+        },
       ),
     );
   }
 }
 
-class _FeaturedPuja extends StatelessWidget {
-  final VidhiSuchiEntry entry;
-  final Vidhi vidhi;
-  final VoidCallback onOpen;
+/// पट्टी का एक कार्ड — किस दिन, कौन सी पूजा, और क्यों।
+class _AaneWali {
+  /// "आज" · "कल" · "3 दिन बाद"
+  final String upar;
+  final String naam;
 
-  const _FeaturedPuja({
-    required this.entry,
-    required this.vidhi,
-    required this.onOpen,
+  /// "पूर्णिमा · 26 सित" — आज वाले पर सिर्फ़ वजह।
+  final String neeche;
+  final String artwork;
+
+  /// दबाने पर खुलने वाली विधि; `null` और [parv] भी नहीं = खुलता नहीं।
+  final String? pujaId;
+
+  /// दबाने पर नवरात्रि का पूरा पर्व-पन्ना खुले।
+  final bool parv;
+  final int kitneDinBaad;
+
+  const _AaneWali({
+    required this.upar,
+    required this.naam,
+    required this.neeche,
+    required this.artwork,
+    required this.pujaId,
+    required this.parv,
+    required this.kitneDinBaad,
+  });
+
+  bool get khulta => parv || pujaId != null;
+}
+
+/// आने वाली पूजाएँ — बग़ल में खिसकने वाली पट्टी (→ D-086)।
+///
+/// कार्ड की चौड़ाई जान-बूझकर ऐसी है कि तीसरा कार्ड आधा कटकर दिखे —
+/// उससे बिना बताए समझ आता है कि पट्टी खिसकती है।
+class _AaneWaliPatti extends StatelessWidget {
+  final List<_AaneWali> sab;
+  final ValueChanged<String> onOpenId;
+  final VoidCallback onParvOpen;
+
+  const _AaneWaliPatti({
+    required this.sab,
+    required this.onOpenId,
+    required this.onParvOpen,
   });
 
   @override
+  Widget build(BuildContext context) => LayoutBuilder(
+        builder: (context, constraints) {
+          final width = ((constraints.maxWidth - VidhivatSpacing.sm * 2) / 2.4)
+              .clamp(124.0, 172.0)
+              .toDouble();
+          return SingleChildScrollView(
+            key: const Key('aane_wali_patti'),
+            scrollDirection: Axis.horizontal,
+            clipBehavior: Clip.none,
+            child: IntrinsicHeight(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  for (var i = 0; i < sab.length; i++) ...[
+                    if (i > 0) const SizedBox(width: VidhivatSpacing.sm),
+                    SizedBox(
+                      width: width,
+                      child: _AaneWaliCard(
+                        avsar: sab[i],
+                        onOpen: sab[i].parv
+                            ? onParvOpen
+                            : sab[i].pujaId == null
+                                ? null
+                                : () => onOpenId(sab[i].pujaId!),
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          );
+        },
+      );
+}
+
+class _AaneWaliCard extends StatelessWidget {
+  final _AaneWali avsar;
+  final VoidCallback? onOpen;
+
+  const _AaneWaliCard({required this.avsar, required this.onOpen});
+
+  @override
   Widget build(BuildContext context) {
-    return VidhivatSacredHero(
-      eyebrow: 'आज की सरल शुरुआत',
-      title: entry.naam,
-      subtitle: entry.ekLine,
-      icon: Icons.local_fire_department_outlined,
-      artworkAsset: DevotionalAssets.forVidhiId(entry.id).assetPath,
-      artworkSemanticLabel: DevotionalAssets.forVidhiId(entry.id).semanticLabel,
-      artworkScale: entry.id == 'nitya_pooja' ? 1.25 : 1,
-      semanticLabel: '${entry.naam} की featured विधि',
-      footer: Column(
+    final colors = VidhivatTheme.colorsOf(context);
+    final type = VidhivatTheme.typographyOf(context);
+    final aaj = avsar.kitneDinBaad == 0;
+    const artworkSize = 76.0;
+    final cacheSize =
+        (artworkSize * MediaQuery.devicePixelRatioOf(context)).round();
+    return VidhivatSurfaceCard(
+      onTap: onOpen,
+      variant: VidhivatCardVariant.elevated,
+      semanticLabel: avsar.khulta
+          ? '${avsar.upar}: ${avsar.naam}, ${avsar.neeche}। विधि देखें'
+          : '${avsar.upar}: ${avsar.naam}, ${avsar.neeche}। विधि अभी नहीं',
+      padding: const EdgeInsets.all(VidhivatSpacing.sm),
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Wrap(
-            spacing: VidhivatSpacing.xs,
-            runSpacing: VidhivatSpacing.xs,
-            children: [
-              VidhivatStatusChip(
-                label: vidhi.samayLikha,
-                icon: Icons.schedule_outlined,
-              ),
-              VidhivatStatusChip(
-                label: '${vidhi.charan.length} चरण',
-                icon: Icons.format_list_numbered,
-              ),
-              VidhivatStatusChip(label: entry.shreni.naam),
-              // "जाँच बाकी" वाला नारंगी chip यहाँ से हटा दिया गया —
-              // वो ठीक "विधि देखें" बटन के ऊपर बैठकर हर पूजा को
-              // संदिग्ध बना रहा था, और उससे यूज़र कुछ कर भी नहीं सकता था।
-            ],
+          VidhivatStatusChip(
+            label: avsar.upar,
+            tone: aaj ? VidhivatStatusTone.primary : VidhivatStatusTone.neutral,
+            icon: aaj ? Icons.today_outlined : Icons.event_outlined,
           ),
-          const SizedBox(height: VidhivatSpacing.lg),
-          VidhivatButton(
-            label: 'विधि देखें',
-            semanticLabel: '${entry.naam} की विधि देखें',
-            onPressed: onOpen,
-            icon: Icons.arrow_forward,
-            fullWidth: true,
+          const SizedBox(height: VidhivatSpacing.sm),
+          Center(
+            child: ExcludeSemantics(
+              child: SizedBox(
+                width: artworkSize,
+                height: artworkSize,
+                child: Image.asset(
+                  avsar.artwork,
+                  fit: BoxFit.contain,
+                  // अनुपात बचाने के लिए दोनों cache dimensions न दें (→ D-057)।
+                  cacheHeight: cacheSize,
+                  filterQuality: FilterQuality.high,
+                  errorBuilder: (context, error, stackTrace) => Icon(
+                    Icons.auto_awesome_outlined,
+                    color: colors.primary,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: VidhivatSpacing.sm),
+          Text(
+            avsar.naam,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: type.cardTitle.copyWith(
+              color: avsar.khulta ? colors.textPrimary : colors.textTertiary,
+            ),
+          ),
+          const SizedBox(height: VidhivatSpacing.xxs),
+          Text(
+            avsar.khulta ? avsar.neeche : '${avsar.neeche} · विधि अभी नहीं',
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: type.caption.copyWith(color: colors.textSecondary),
           ),
         ],
       ),
@@ -340,7 +631,31 @@ class _PujaGrid extends StatelessWidget {
   final List<VidhiSuchiEntry> entries;
   final ValueChanged<VidhiSuchiEntry> onOpen;
 
-  const _PujaGrid({required this.entries, required this.onOpen});
+  /// त्योहार वाले कार्डों की अगली तारीख़ (`pujaId → दिन`) — बाक़ी में ख़ाली।
+  final Map<String, DateTime> tarikh;
+  final DateTime? aaj;
+
+  const _PujaGrid({
+    required this.entries,
+    required this.onOpen,
+    this.tarikh = const {},
+    this.aaj,
+  });
+
+  /// "आज" · "कल" · "8 नव"
+  String? _tarikhLikha(String id) {
+    final din = tarikh[id];
+    final shuru = aaj;
+    if (din == null || shuru == null) return null;
+    final baad = DateTime.utc(din.year, din.month, din.day)
+        .difference(DateTime.utc(shuru.year, shuru.month, shuru.day))
+        .inDays;
+    return switch (baad) {
+      0 => 'आज',
+      1 => 'कल',
+      _ => tarikhChhoti(din),
+    };
+  }
 
   @override
   Widget build(BuildContext context) => LayoutBuilder(
@@ -356,6 +671,7 @@ class _PujaGrid extends StatelessWidget {
                   child: _PujaGridCard(
                     entry: entry,
                     onOpen: () => onOpen(entry),
+                    tarikh: _tarikhLikha(entry.id),
                   ),
                 ),
             ],
@@ -368,7 +684,14 @@ class _PujaGridCard extends StatelessWidget {
   final VidhiSuchiEntry entry;
   final VoidCallback onOpen;
 
-  const _PujaGridCard({required this.entry, required this.onOpen});
+  /// ऊपर बाएँ कोने की छोटी तारीख़ — सिर्फ़ त्योहार वाले कार्डों पर।
+  final String? tarikh;
+
+  const _PujaGridCard({
+    required this.entry,
+    required this.onOpen,
+    this.tarikh,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -384,71 +707,107 @@ class _PujaGridCard extends StatelessWidget {
     return VidhivatSurfaceCard(
       onTap: available ? onOpen : null,
       variant: VidhivatCardVariant.elevated,
-      semanticLabel:
-          available ? '${entry.naam} की विधि देखें' : '${entry.naam} जल्द आएगी',
+      semanticLabel: available
+          ? '${entry.naam} की विधि देखें'
+              '${tarikh == null ? '' : '। अगली बार: $tarikh'}'
+          : '${entry.naam} जल्द आएगी',
       padding: const EdgeInsets.all(VidhivatSpacing.md),
       child: SizedBox(
         height: cardHeight,
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            final artworkSize =
-                (constraints.maxWidth * 0.93).clamp(84.0, 134.0).toDouble();
-            final cacheSize =
-                (artworkSize * MediaQuery.devicePixelRatioOf(context)).round();
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Center(
-                    child: ExcludeSemantics(
-                      child: Container(
-                        width: artworkSize,
-                        height: artworkSize,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: colors.primary.withValues(alpha: 0.25),
-                              blurRadius: artworkSize * 0.38,
-                              spreadRadius: artworkSize * 0.02,
+        child: Stack(
+          children: [
+            Positioned.fill(child: LayoutBuilder(
+              builder: (context, constraints) {
+                final artworkSize =
+                    (constraints.maxWidth * 0.93).clamp(84.0, 134.0).toDouble();
+                final cacheSize =
+                    (artworkSize * MediaQuery.devicePixelRatioOf(context))
+                        .round();
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Center(
+                        child: ExcludeSemantics(
+                          child: Container(
+                            width: artworkSize,
+                            height: artworkSize,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: colors.primary.withValues(alpha: 0.25),
+                                  blurRadius: artworkSize * 0.38,
+                                  spreadRadius: artworkSize * 0.02,
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                        child: Image.asset(
-                          artwork.assetPath,
-                          fit: BoxFit.contain,
-                          // ⚠ **`cacheWidth` और `cacheHeight` दोनों मत देना।**
-                          //
-                          // दोनों देने पर Flutter बिंब को ठीक उसी नाप पर **खींच** देता
-                          // है — अनुपात नहीं बचाता (`ImageDescriptor.instantiateCodec`)। और
-                          // `BoxFit.contain` उसे सुधार नहीं सकता, क्योंकि जो bitmap उसे मिलता
-                          // है वो पहले से खिंचा हुआ होता है।
-                          //
-                          // यहाँ डिब्बा वर्गाकार है, इसलिए खिंचाव कम था (720×900 वाले
-                          // चित्रों पर 1.25×) — पर था ज़रूर। → D-057
-                          cacheHeight: cacheSize,
-                          filterQuality: FilterQuality.high,
-                          errorBuilder: (context, error, stackTrace) => Icon(
-                            Icons.auto_awesome_outlined,
-                            color: colors.primary,
+                            child: Image.asset(
+                              artwork.assetPath,
+                              fit: BoxFit.contain,
+                              // ⚠ **`cacheWidth` और `cacheHeight` दोनों मत देना।**
+                              //
+                              // दोनों देने पर Flutter बिंब को ठीक उसी नाप पर **खींच** देता
+                              // है — अनुपात नहीं बचाता (`ImageDescriptor.instantiateCodec`)। और
+                              // `BoxFit.contain` उसे सुधार नहीं सकता, क्योंकि जो bitmap उसे मिलता
+                              // है वो पहले से खिंचा हुआ होता है।
+                              //
+                              // यहाँ डिब्बा वर्गाकार है, इसलिए खिंचाव कम था (720×900 वाले
+                              // चित्रों पर 1.25×) — पर था ज़रूर। → D-057
+                              cacheHeight: cacheSize,
+                              filterQuality: FilterQuality.high,
+                              errorBuilder: (context, error, stackTrace) =>
+                                  Icon(
+                                Icons.auto_awesome_outlined,
+                                color: colors.primary,
+                              ),
+                            ),
                           ),
                         ),
                       ),
                     ),
+                    Text(
+                      entry.naam,
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: type.cardTitle.copyWith(
+                        color: available
+                            ? colors.textPrimary
+                            : colors.textTertiary,
+                      ),
+                    ),
+                  ],
+                );
+              },
+            )),
+            if (tarikh != null)
+              Positioned(
+                top: 0,
+                left: 0,
+                child: ExcludeSemantics(
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: colors.surfaceElevated.withValues(alpha: 0.94),
+                      borderRadius: VidhivatRadius.pill,
+                      border: Border.all(
+                        color: colors.primary.withValues(alpha: 0.38),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: VidhivatSpacing.sm,
+                        vertical: VidhivatSpacing.xxs,
+                      ),
+                      child: Text(
+                        tarikh!,
+                        style: type.caption.copyWith(color: colors.primary),
+                      ),
+                    ),
                   ),
                 ),
-                Text(
-                  entry.naam,
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: type.cardTitle.copyWith(
-                    color: available ? colors.textPrimary : colors.textTertiary,
-                  ),
-                ),
-              ],
-            );
-          },
+              ),
+          ],
         ),
       ),
     );
@@ -604,14 +963,16 @@ class _PlannedPujaCard extends StatelessWidget {
 
 class _VidhiHomeData {
   final List<VidhiSuchiEntry> entries;
-  final VidhiSuchiEntry featuredEntry;
-  final Vidhi featuredVidhi;
   final Parv navratri;
+  final List<_AaneWali> aaneWali;
+  final Map<String, DateTime> tyoharTarikh;
+  final DateTime aaj;
 
   const _VidhiHomeData({
     required this.entries,
-    required this.featuredEntry,
-    required this.featuredVidhi,
     required this.navratri,
+    required this.aaneWali,
+    required this.tyoharTarikh,
+    required this.aaj,
   });
 }

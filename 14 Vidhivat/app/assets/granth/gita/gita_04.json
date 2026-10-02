@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 1,
+  "id": "gita_04",
+  "naam": "अध्याय ४ — ज्ञानकर्मसंन्यासयोग",
+  "upnaam": [
+    "श्रीमद्भगवद्गीता अध्याय ४",
+    "गीता अध्याय ४",
+    "ज्ञानकर्मसंन्यासयोगो नाम चतुर्थोऽध्यायः"
+  ],
+  "prakar": "granth",
+  "devta": "श्रीकृष्ण",
+  "rachnakar": "महर्षि वेदव्यास — महाभारत",
+  "bhasha": "संस्कृत",
+  "parichay": "श्रीकृष्ण बताते हैं कि यह योग बहुत पुराना है, और वे धर्म की रक्षा के लिए युग-युग में प्रकट होते हैं। फिर कर्म और अकर्म का भेद, तरह-तरह के यज्ञ, और ज्ञान की महिमा।",
+  "kabPadhein": "किसी भी दिन, किसी भी समय। बहुत घरों में रोज़ थोड़ा-थोड़ा पढ़ने का चलन है। मार्गशीर्ष शुक्ल एकादशी (मोक्षदा एकादशी) को गीता जयंती मनाई जाती है।",
+  "kaisePadhein": "शान्त जगह बैठकर पढ़ें। पूरा पाठ एक बैठक में न हो तो रोज़ एक अध्याय या कुछ श्लोक पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है।\n\nहर अध्याय के अन्त में उसका समापन-वाक्य दिया है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "श्लोक १",
+      "dev": "श्रीभगवानुवाच\nइमं विवस्वते योगं प्रोक्तवानहमव्ययम् ।\nविवस्वान्मनवे प्राह मनुरिक्ष्वाकवेऽब्रवीत्॥",
+      "roman": "shreebhagavaanuvaacha\nimam vivasvate yogam proktavaanahamavyayam |\nvivasvaanmanave praaha manurikshvaakave'braveet ||",
+      "arth": "श्रीभगवान बोले — यह अविनाशी योग मैंने विवस्वान (सूर्य) से कहा था; विवस्वान ने मनु से कहा, और मनु ने इक्ष्वाकु से कहा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "एवं परम्पराप्राप्तमिमं राजर्षयो विदुः ।\nस कालेनेह महता योगो नष्टः परन्तप॥",
+      "roman": "evam paramparaapraaptamimam raajarshayo viduh |\nsa kaaleneha mahataa yogo nashtah parantapa ||",
+      "arth": "इस तरह परम्परा से मिले इस योग को राजर्षियों ने जाना। पर हे शत्रुओं को तपाने वाले! बहुत समय बीतने से वह योग यहाँ लुप्त हो गया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "स एवायं मया तेऽद्य योगः प्रोक्तः पुरातनः ।\nभक्तोऽसि मे सखा चेति रहस्यं ह्येतदुत्तमम्॥",
+      "roman": "sa evaayam mayaa te'dya yogah proktah puraatanah |\nbhakto'si me sakhaa cheti rahasyam hyetaduttamam ||",
+      "arth": "वही पुरातन योग आज मैंने तुमसे कहा है, क्योंकि तुम मेरे भक्त और मित्र हो; और यह उत्तम रहस्य है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "अर्जुन उवाच\nअपरं भवतो जन्म परं जन्म विवस्वतः ।\nकथमेतद्विजानीयां त्वमादौ प्रोक्तवानिति॥",
+      "roman": "arjuna uvaacha\naparam bhavato janma param janma vivasvatah |\nkathametadvijaaneeyaam tvamaadau proktavaaniti ||",
+      "arth": "अर्जुन बोले — आपका जन्म तो बाद का है और विवस्वान का जन्म पहले का। फिर मैं कैसे समझूँ कि आपने ही शुरू में यह कहा था?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "श्रीभगवानुवाच\nबहूनि मे व्यतीतानि जन्मानि तव चार्जुन ।\nतान्यहं वेद सर्वाणि न त्वं वेत्थ परन्तप॥",
+      "roman": "shreebhagavaanuvaacha\nbahooni me vyateetaani janmaani tava chaarjuna |\ntaanyaham veda sarvaani na tvam vettha parantapa ||",
+      "arth": "श्रीभगवान बोले — हे अर्जुन! मेरे और तुम्हारे बहुत से जन्म बीत चुके हैं। मैं उन सबको जानता हूँ; हे शत्रुओं को तपाने वाले! तुम नहीं जानते।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "अजोऽपि सन्नव्ययात्मा भूतानामीश्वरोऽपि सन् ।\nप्रकृतिं स्वामधिष्ठाय सम्भवाम्यात्ममायया॥",
+      "roman": "ajo'pi sannavyayaatmaa bhootaanaameeshvaro'pi san |\nprakritim svaamadhishthaaya sambhavaamyaatmamaayayaa ||",
+      "arth": "मैं अजन्मा और अविनाशी स्वरूप वाला हूँ, सब प्राणियों का ईश्वर हूँ — फिर भी अपनी प्रकृति को अपने अधीन रखकर अपनी माया से प्रकट होता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।\nअभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम्॥",
+      "roman": "yadaa yadaa hi dharmasya glaanirbhavati bhaarata |\nabhyutthaanamadharmasya tadaatmaanam srijaamyaham ||",
+      "arth": "हे भारत! जब-जब धर्म की हानि और अधर्म की बढ़त होती है, तब-तब मैं अपने को प्रकट करता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "परित्राणाय साधूनां विनाशाय च दुष्कृताम् ।\nधर्मसंस्थापनार्थाय सम्भवामि युगे युगे॥",
+      "roman": "paritraanaaya saadhoonaam vinaashaaya cha dushkritaam |\ndharmasamsthaapanaarthaaya sambhavaami yuge yuge ||",
+      "arth": "सज्जनों की रक्षा के लिए, दुष्टों के नाश के लिए और धर्म को फिर से स्थापित करने के लिए मैं युग-युग में प्रकट होता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "जन्म कर्म च मे दिव्यमेवं यो वेत्ति तत्त्वतः ।\nत्यक्त्वा देहं पुनर्जन्म नैति मामेति सोऽर्जुन॥",
+      "roman": "janma karma cha me divyamevam yo vetti tattvatah |\ntyaktvaa deham punarjanma naiti maameti so'rjuna ||",
+      "arth": "हे अर्जुन! मेरा जन्म और कर्म दिव्य हैं — जो इसे तत्त्व से जान लेता है, वह शरीर छोड़ने पर फिर जन्म नहीं लेता; वह मुझे ही पा लेता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "वीतरागभयक्रोधा मन्मया मामुपाश्रिताः ।\nबहवो ज्ञानतपसा पूता मद्भावमागताः॥",
+      "roman": "veetaraagabhayakrodhaa manmayaa maamupaashritaah |\nbahavo jnaanatapasaa pootaa madbhaavamaagataah ||",
+      "arth": "राग, भय और क्रोध से छूटे हुए, मुझमें ही लीन और मेरी शरण लिए हुए बहुत से लोग ज्ञान रूपी तप से पवित्र होकर मेरे स्वरूप को पा चुके हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "ये यथा मां प्रपद्यन्ते तांस्तथैव भजाम्यहम् ।\nमम वर्त्मानुवर्तन्ते मनुष्याः पार्थ सर्वशः॥",
+      "roman": "ye yathaa maam prapadyante taamstathaiva bhajaamyaham |\nmama vartmaanuvartante manushyaah paartha sarvashah ||",
+      "arth": "जो जिस भाव से मेरी शरण में आते हैं, मैं उन्हें उसी भाव से अपनाता हूँ। हे पार्थ! मनुष्य सब तरह से मेरे ही रास्ते पर चलते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "काङ्क्षन्तः कर्मणां सिद्धिं यजन्त इह देवताः ।\nक्षिप्रं हि मानुषे लोके सिद्धिर्भवति कर्मजा॥",
+      "roman": "kaankshantah karmanaam siddhim yajanta iha devataah |\nkshipram hi maanushe loke siddhirbhavati karmajaa ||",
+      "arth": "कर्मों का फल चाहने वाले लोग यहाँ देवताओं को पूजते हैं, क्योंकि मनुष्य-लोक में कर्म से होने वाली सिद्धि जल्दी मिलती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "चातुर्वर्ण्यं मया सृष्टं गुणकर्मविभागशः ।\nतस्य कर्तारमपि मां विद्ध्यकर्तारमव्ययम्॥",
+      "roman": "chaaturvarnyam mayaa srishtam gunakarmavibhaagashah |\ntasya kartaaramapi maam viddhyakartaaramavyayam ||",
+      "arth": "गुणों और कर्मों के बँटवारे के अनुसार चार वर्णों की रचना मैंने की है। उसका कर्ता होने पर भी मुझ अविनाशी को अकर्ता ही जानो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "न मां कर्माणि लिम्पन्ति न मे कर्मफले स्पृहा ।\nइति मां योऽभिजानाति कर्मभिर्न स बध्यते॥",
+      "roman": "na maam karmaani limpanti na me karmaphale sprihaa |\niti maam yo'bhijaanaati karmabhirna sa badhyate ||",
+      "arth": "कर्म मुझे लिप्त नहीं करते, और कर्म के फल में मेरी कोई लालसा नहीं। जो मुझे इस तरह जान लेता है, वह कर्मों से नहीं बँधता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "एवं ज्ञात्वा कृतं कर्म पूर्वैरपि मुमुक्षुभिः ।\nकुरु कर्मैव तस्मात्त्वं पूर्वैः पूर्वतरं कृतम्॥",
+      "roman": "evam jnaatvaa kritam karma poorvairapi mumukshubhih |\nkuru karmaiva tasmaattvam poorvaih poorvataram kritam ||",
+      "arth": "ऐसा जानकर ही पहले के मोक्ष चाहने वालों ने भी कर्म किया। इसलिए तुम भी वैसे ही कर्म करो जैसे पूर्वज पहले से करते आए हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "किं कर्म किमकर्मेति कवयोऽप्यत्र मोहिताः ।\nतत्ते कर्म प्रवक्ष्यामि यज्ज्ञात्वा मोक्ष्यसेऽशुभात्॥",
+      "roman": "kim karma kimakarmeti kavayo'pyatra mohitaah |\ntatte karma pravakshyaami yajjnaatvaa mokshyase'shubhaat ||",
+      "arth": "कर्म क्या है और अकर्म क्या है — इसमें बुद्धिमान भी उलझ जाते हैं। वह कर्म मैं तुम्हें बताऊँगा, जिसे जानकर तुम अशुभ से छूट जाओगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "कर्मणो ह्यपि बोद्धव्यं बोद्धव्यं च विकर्मणः ।\nअकर्मणश्च बोद्धव्यं गहना कर्मणो गतिः॥",
+      "roman": "karmano hyapi boddhavyam boddhavyam cha vikarmanah |\nakarmanashcha boddhavyam gahanaa karmano gatih ||",
+      "arth": "कर्म को भी जानना चाहिए, विकर्म (न करने योग्य कर्म) को भी जानना चाहिए, और अकर्म को भी जानना चाहिए — कर्म की चाल बड़ी गहरी है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "कर्मण्यकर्म यः पश्येदकर्मणि च कर्म यः ।\nस बुद्धिमान्मनुष्येषु स युक्तः कृत्स्नकर्मकृत्॥",
+      "roman": "karmanyakarma yah pashyedakarmani cha karma yah |\nsa buddhimaanmanushyeshu sa yuktah kritsnakarmakrit ||",
+      "arth": "जो कर्म में अकर्म देखता है और अकर्म में कर्म देखता है, वह मनुष्यों में बुद्धिमान है; वह योगी है और सब कर्मों को करने वाला है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "यस्य सर्वे समारम्भाः कामसङ्कल्पवर्जिताः ।\nज्ञानाग्निदग्धकर्माणं तमाहुः पण्डितं बुधाः॥",
+      "roman": "yasya sarve samaarambhaah kaamasankalpavarjitaah |\njnaanaagnidagdhakarmaanam tamaahuh panditam budhaah ||",
+      "arth": "जिसके सारे काम कामना और संकल्प से रहित हैं, और जिसके कर्म ज्ञान की आग में जल चुके हैं, उसे ज्ञानी लोग पण्डित कहते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "त्यक्त्वा कर्मफलासङ्गं नित्यतृप्तो निराश्रयः ।\nकर्मण्यभिप्रवृत्तोऽपि नैव किञ्चित्करोति सः॥",
+      "roman": "tyaktvaa karmaphalaasangam nityatripto niraashrayah |\nkarmanyabhipravritto'pi naiva kinchitkaroti sah ||",
+      "arth": "जो कर्म के फल की आसक्ति छोड़कर सदा तृप्त और किसी के सहारे पर न टिका हुआ है, वह कर्म में लगा रहकर भी कुछ नहीं करता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "निराशीर्यतचित्तात्मा त्यक्तसर्वपरिग्रहः ।\nशारीरं केवलं कर्म कुर्वन्नाप्नोति किल्बिषम्॥",
+      "roman": "niraasheeryatachittaatmaa tyaktasarvaparigrahah |\nshaareeram kevalam karma kurvannaapnoti kilbisham ||",
+      "arth": "जिसे कोई आशा नहीं, जिसने मन और शरीर को वश में कर लिया है और सब तरह का संग्रह छोड़ दिया है, वह केवल शरीर का कर्म करता हुआ पाप का भागी नहीं होता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "यदृच्छालाभसन्तुष्टो द्वन्द्वातीतो विमत्सरः ।\nसमः सिद्धावसिद्धौ च कृत्वापि न निबध्यते॥",
+      "roman": "yadrichchhaalaabhasantushto dvandvaateeto vimatsarah |\nsamah siddhaavasiddhau cha kritvaapi na nibadhyate ||",
+      "arth": "जो अपने आप मिले हुए में सन्तुष्ट है, द्वन्द्वों से ऊपर है, जलन से रहित है, और सफलता-असफलता में एक जैसा है — वह कर्म करके भी नहीं बँधता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "गतसङ्गस्य मुक्तस्य ज्ञानावस्थितचेतसः ।\nयज्ञायाचरतः कर्म समग्रं प्रविलीयते॥",
+      "roman": "gatasangasya muktasya jnaanaavasthitachetasah |\nyajnaayaacharatah karma samagram pravileeyate ||",
+      "arth": "जिसकी आसक्ति जा चुकी है, जो मुक्त है, जिसका चित्त ज्ञान में टिका है और जो यज्ञ के लिए ही कर्म करता है — उसका सारा कर्म लीन हो जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "ब्रह्मार्पणं ब्रह्म हविर्ब्रह्माग्नौ ब्रह्मणा हुतम् ।\nब्रह्मैव तेन गन्तव्यं ब्रह्मकर्मसमाधिना॥",
+      "roman": "brahmaarpanam brahma havirbrahmaagnau brahmanaa hutam |\nbrahmaiva tena gantavyam brahmakarmasamaadhinaa ||",
+      "arth": "अर्पण ब्रह्म है, हवि ब्रह्म है, ब्रह्म रूपी अग्नि में ब्रह्म रूपी कर्ता द्वारा आहुति दी जाती है। जिसकी कर्म में ऐसी ब्रह्म-दृष्टि टिकी है, उसे ब्रह्म ही मिलता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २५",
+      "dev": "दैवमेवापरे यज्ञं योगिनः पर्युपासते ।\nब्रह्माग्नावपरे यज्ञं यज्ञेनैवोपजुह्वति॥",
+      "roman": "daivamevaapare yajnam yoginah paryupaasate |\nbrahmaagnaavapare yajnam yajnenaivopajuhvati ||",
+      "arth": "कुछ योगी देवताओं के पूजन रूपी यज्ञ को ही करते हैं; दूसरे ब्रह्म रूपी अग्नि में यज्ञ के द्वारा यज्ञ की ही आहुति देते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २६",
+      "dev": "श्रोत्रादीनीन्द्रियाण्यन्ये संयमाग्निषु जुह्वति ।\nशब्दादीन्विषयानन्य इन्द्रियाग्निषु जुह्वति॥",
+      "roman": "shrotraadeeneendriyaanyanye samyamaagnishu juhvati |\nshabdaadeenvishayaananya indriyaagnishu juhvati ||",
+      "arth": "कुछ लोग कान आदि इन्द्रियों को संयम रूपी अग्नियों में होमते हैं; दूसरे शब्द आदि विषयों को इन्द्रिय रूपी अग्नियों में होमते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २७",
+      "dev": "सर्वाणीन्द्रियकर्माणि प्राणकर्माणि चापरे ।\nआत्मसंयमयोगाग्नौ जुह्वति ज्ञानदीपिते॥",
+      "roman": "sarvaaneendriyakarmaani praanakarmaani chaapare |\naatmasamyamayogaagnau juhvati jnaanadeepite ||",
+      "arth": "दूसरे लोग इन्द्रियों के सारे कामों और प्राण के कामों को ज्ञान से जली हुई आत्म-संयम रूपी योग की अग्नि में होमते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २८",
+      "dev": "द्रव्ययज्ञास्तपोयज्ञा योगयज्ञास्तथापरे ।\nस्वाध्यायज्ञानयज्ञाश्च यतयः संशितव्रताः॥",
+      "roman": "dravyayajnaastapoyajnaa yogayajnaastathaapare |\nsvaadhyaayajnaanayajnaashcha yatayah samshitavrataah ||",
+      "arth": "कुछ द्रव्य से यज्ञ करते हैं, कुछ तप से, कुछ योग से; और कड़े व्रत वाले कुछ यत्नशील लोग स्वाध्याय और ज्ञान रूपी यज्ञ करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २९",
+      "dev": "अपाने जुह्वति प्राणं प्राणेऽपानं तथापरे ।\nप्राणापानगती रुद्ध्वा प्राणायामपरायणाः॥",
+      "roman": "apaane juhvati praanam praane'paanam tathaapare |\npraanaapaanagatee ruddhvaa praanaayaamaparaayanaah ||",
+      "arth": "प्राणायाम में लगे हुए दूसरे लोग प्राण और अपान की गति रोककर अपान में प्राण को और प्राण में अपान को होमते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३०",
+      "dev": "अपरे नियताहाराः प्राणान्प्राणेषु जुह्वति ।\nसर्वेऽप्येते यज्ञविदो यज्ञक्षपितकल्मषाः॥",
+      "roman": "apare niyataahaaraah praanaanpraaneshu juhvati |\nsarve'pyete yajnavido yajnakshapitakalmashaah ||",
+      "arth": "दूसरे, नियमित आहार करने वाले, प्राणों को प्राणों में ही होमते हैं। ये सभी यज्ञ को जानने वाले हैं, और यज्ञ से इनके पाप मिट चुके हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३१",
+      "dev": "यज्ञशिष्टामृतभुजो यान्ति ब्रह्म सनातनम् ।\nनायं लोकोऽस्त्ययज्ञस्य कुतोऽन्यः कुरुसत्तम॥",
+      "roman": "yajnashishtaamritabhujo yaanti brahma sanaatanam |\nnaayam loko'styayajnasya kuto'nyah kurusattama ||",
+      "arth": "यज्ञ से बचा हुआ अमृत खाने वाले सनातन ब्रह्म को पाते हैं। हे कुरुश्रेष्ठ! जो यज्ञ नहीं करता, उसके लिए यह लोक भी नहीं है, फिर दूसरा कहाँ?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३२",
+      "dev": "एवं बहुविधा यज्ञा वितता ब्रह्मणो मुखे ।\nकर्मजान्विद्धि तान्सर्वानेवं ज्ञात्वा विमोक्ष्यसे॥",
+      "roman": "evam bahuvidhaa yajnaa vitataa brahmano mukhe |\nkarmajaanviddhi taansarvaanevam jnaatvaa vimokshyase ||",
+      "arth": "इस तरह बहुत प्रकार के यज्ञ ब्रह्म के मुख में (वेद की वाणी में) फैलाकर कहे गए हैं। उन सबको कर्म से होने वाला जानो; ऐसा जानकर तुम मुक्त हो जाओगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३३",
+      "dev": "श्रेयान्द्रव्यमयाद्यज्ञाज्ज्ञानयज्ञः परन्तप ।\nसर्वं कर्माखिलं पार्थ ज्ञाने परिसमाप्यते॥",
+      "roman": "shreyaandravyamayaadyajnaajjnaanayajnah parantapa |\nsarvam karmaakhilam paartha jnaane parisamaapyate ||",
+      "arth": "हे शत्रुओं को तपाने वाले! द्रव्य से होने वाले यज्ञ से ज्ञान-यज्ञ श्रेष्ठ है। हे पार्थ! सारे के सारे कर्म ज्ञान में जाकर पूरे हो जाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३४",
+      "dev": "तद्विद्धि प्रणिपातेन परिप्रश्नेन सेवया ।\nउपदेक्ष्यन्ति ते ज्ञानं ज्ञानिनस्तत्त्वदर्शिनः॥",
+      "roman": "tadviddhi pranipaatena pariprashnena sevayaa |\nupadekshyanti te jnaanam jnaaninastattvadarshinah ||",
+      "arth": "उस ज्ञान को तुम दण्डवत प्रणाम करके, विनय से प्रश्न करके और सेवा करके जानो। तत्त्व को देखने वाले ज्ञानी तुम्हें उस ज्ञान का उपदेश देंगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३५",
+      "dev": "यज्ज्ञात्वा न पुनर्मोहमेवं यास्यसि पाण्डव ।\nयेन भूतान्यशेषेण द्रक्ष्यस्यात्मन्यथो मयि॥",
+      "roman": "yajjnaatvaa na punarmohamevam yaasyasi paandava |\nyena bhootaanyasheshena drakshyasyaatmanyatho mayi ||",
+      "arth": "हे पाण्डव! जिसे जानकर तुम फिर इस तरह मोह में नहीं पड़ोगे, और जिससे सारे प्राणियों को अपने आत्मा में और फिर मुझमें देखोगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३६",
+      "dev": "अपि चेदसि पापेभ्यः सर्वेभ्यः पापकृत्तमः ।\nसर्वं ज्ञानप्लवेनैव वृजिनं सन्तरिष्यसि॥",
+      "roman": "api chedasi paapebhyah sarvebhyah paapakrittamah |\nsarvam jnaanaplavenaiva vrijinam santarishyasi ||",
+      "arth": "यदि तुम सब पापियों से भी बढ़कर पाप करने वाले हो, तब भी ज्ञान की नाव से ही सारे पाप के सागर को पार कर जाओगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३७",
+      "dev": "यथैधांसि समिद्धोऽग्निर्भस्मसात्कुरुतेऽर्जुन ।\nज्ञानाग्निः सर्वकर्माणि भस्मसात्कुरुते तथा॥",
+      "roman": "yathaidhaamsi samiddho'gnirbhasmasaatkurute'rjuna |\njnaanaagnih sarvakarmaani bhasmasaatkurute tathaa ||",
+      "arth": "हे अर्जुन! जैसे जलती हुई आग लकड़ियों को राख कर देती है, वैसे ही ज्ञान की आग सारे कर्मों को राख कर देती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३८",
+      "dev": "न हि ज्ञानेन सदृशं पवित्रमिह विद्यते ।\nतत्स्वयं योगसंसिद्धः कालेनात्मनि विन्दति॥",
+      "roman": "na hi jnaanena sadrisham pavitramiha vidyate |\ntatsvayam yogasamsiddhah kaalenaatmani vindati ||",
+      "arth": "इस संसार में ज्ञान के समान पवित्र करने वाला कुछ भी नहीं है। योग में सिद्ध हुआ मनुष्य समय आने पर उसे अपने भीतर अपने आप पा लेता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३९",
+      "dev": "श्रद्धावाँल्लभते ज्ञानं तत्परः संयतेन्द्रियः ।\nज्ञानं लब्ध्वा परां शान्तिमचिरेणाधिगच्छति॥",
+      "roman": "shraddhaavaanllabhate jnaanam tatparah samyatendriyah |\njnaanam labdhvaa paraam shaantimachirenaadhigachchhati ||",
+      "arth": "श्रद्धा वाला, ज्ञान में लगा हुआ और इन्द्रियों को वश में रखने वाला मनुष्य ज्ञान पाता है; और ज्ञान पाकर वह जल्दी ही परम शान्ति को पा लेता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४०",
+      "dev": "अज्ञश्चाश्रद्दधानश्च संशयात्मा विनश्यति ।\nनायं लोकोऽस्ति न परो न सुखं संशयात्मनः॥",
+      "roman": "ajnashchaashraddadhaanashcha samshayaatmaa vinashyati |\nnaayam loko'sti na paro na sukham samshayaatmanah ||",
+      "arth": "जो अज्ञानी है, श्रद्धा नहीं रखता और संशय से भरा है, वह नष्ट हो जाता है। संशय करने वाले के लिए न यह लोक है, न परलोक, न सुख।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४१",
+      "dev": "योगसंन्यस्तकर्माणं ज्ञानसञ्छिन्नसंशयम् ।\nआत्मवन्तं न कर्माणि निबध्नन्ति धनञ्जय॥",
+      "roman": "yogasamnyastakarmaanam jnaanasanchhinnasamshayam |\naatmavantam na karmaani nibadhnanti dhananjaya ||",
+      "arth": "हे धनंजय! जिसने योग से कर्मों का त्याग कर दिया है, ज्ञान से जिसके संशय कट गए हैं और जो अपने आप में स्थित है — उसे कर्म नहीं बाँधते।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४२",
+      "dev": "तस्मादज्ञानसम्भूतं हृत्स्थं ज्ञानासिनात्मनः ।\nछित्त्वैनं संशयं योगमातिष्ठोत्तिष्ठ भारत॥",
+      "roman": "tasmaadajnaanasambhootam hritstham jnaanaasinaatmanah |\nchhittvainam samshayam yogamaatishthottishtha bhaarata ||",
+      "arth": "इसलिए हे भारत! अज्ञान से पैदा हुए, हृदय में बैठे इस संशय को ज्ञान की तलवार से काटकर योग का सहारा लो और उठ खड़े हो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "समापन",
+      "dev": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु\nब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे\nज्ञानकर्मसंन्यासयोगो नाम चतुर्थोऽध्यायः॥",
+      "roman": "om tatsaditi shreemadbhagavadgeetaasoopanishatsu\nbrahmavidyaayaam yogashaastre shreekrishnaarjunasamvaade\njnaanakarmasamnyaasayogo naama chaturtho'dhyaayah ||",
+      "arth": "इस तरह उपनिषद रूप श्रीमद्भगवद्गीता में, जो ब्रह्मविद्या और योगशास्त्र है, श्रीकृष्ण और अर्जुन के संवाद में \"ज्ञानकर्मसंन्यासयोग\" नाम का चौथा अध्याय पूरा हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, भीष्म पर्व — श्रीमद्भगवद्गीता",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ पाँच अलग संस्करणों से श्लोक-दर-श्लोक मिलाया गया है। सात सौ में से पाँच सौ सतहत्तर श्लोक पाँचों में अक्षर-अक्षर एक मिले; बाक़ी में वही रूप लिया गया जिस पर अधिक संस्करण एक थे।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं। आचार्यों ने कई श्लोकों को अलग-अलग ढंग से समझाया है; यहाँ किसी एक मत की व्याख्या नहीं, सीधा अर्थ दिया गया है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

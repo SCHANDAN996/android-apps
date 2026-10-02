@@ -1,4 +1,5 @@
 import 'julian.dart';
+import 'moonrise.dart';
 import 'names.dart';
 import 'panchang.dart';
 import 'place.dart';
@@ -39,6 +40,9 @@ enum Vyapini {
 
   /// निशीथ (रात का आठवाँ मुहूर्त) — महाशिवरात्रि, जन्माष्टमी
   nishitha,
+
+  /// चंद्रोदय पर — करवा चौथ (व्रत चाँद देखकर खुलता है)
+  chandrodaya,
 }
 
 extension VyapiniName on Vyapini {
@@ -48,6 +52,7 @@ extension VyapiniName on Vyapini {
         Vyapini.aparahna => 'अपराह्न व्यापिनी',
         Vyapini.pradosha => 'प्रदोष व्यापिनी',
         Vyapini.nishitha => 'निशीथ व्यापिनी',
+        Vyapini.chandrodaya => 'चंद्रोदय व्यापिनी',
       };
 
   String get kaalName => switch (this) {
@@ -56,6 +61,7 @@ extension VyapiniName on Vyapini {
         Vyapini.aparahna => 'अपराह्न',
         Vyapini.pradosha => 'प्रदोष',
         Vyapini.nishitha => 'निशीथ',
+        Vyapini.chandrodaya => 'चंद्रोदय',
       };
 }
 
@@ -82,6 +88,11 @@ class FestivalRule {
   /// मास किस पद्धति से गिनना है। उत्तर भारत के त्योहार पूर्णिमांत से।
   final MasaSystem masaSystem;
 
+  /// तिथि से नहीं, **उस तिथि से पहले पड़ने वाले इस वार** से तय होने वाला
+  /// त्योहार (`DateTime.friday` जैसा)। तिथि वाला दिन ख़ुद उसी वार का हो
+  /// तो वही दिन। वरलक्ष्मी व्रत = श्रावण पूर्णिमा से पहले का शुक्रवार।
+  final int? vaarPehle;
+
   const FestivalRule({
     required this.id,
     required this.name,
@@ -91,6 +102,7 @@ class FestivalRule {
     this.vyapini = Vyapini.sunrise,
     this.avoidBhadra = false,
     this.masaSystem = MasaSystem.purnimanta,
+    this.vaarPehle,
   });
 
   /// तीस तिथियों वाली गिनती में यह तिथि कहाँ पड़ती है (0 से)।
@@ -202,6 +214,13 @@ class FestivalDate {
         end: sunsetLocal.add(const Duration(hours: 2, minutes: 24)),
       );
 
+    case Vyapini.chandrodaya:
+      // चंद्रोदय भी एक क्षण है — सूर्योदय की तरह एक मिनट की खिड़की।
+      // किसी दिन चाँद उगे ही नहीं (महीने में एक बार) तो वह दिन दावेदार नहीं।
+      final rise = moonriseMoonset(year, month, day, place).moonrise;
+      if (rise == null) return null;
+      return (start: rise, end: rise.add(const Duration(minutes: 1)));
+
     case Vyapini.nishitha:
       final next = DateTime.utc(year, month, day).add(const Duration(days: 1));
       final nextRise =
@@ -252,7 +271,8 @@ class FestivalDate {
   return null;
 }
 
-bool _overlaps(DateTime aStart, DateTime aEnd, DateTime bStart, DateTime bEnd) =>
+bool _overlaps(
+        DateTime aStart, DateTime aEnd, DateTime bStart, DateTime bEnd) =>
     aStart.isBefore(bEnd) && bStart.isBefore(aEnd);
 
 /// भद्रा उस काल को **पूरी तरह** ढक रही है?
@@ -269,9 +289,14 @@ bool _bhadraBlocks(({DateTime start, DateTime end})? bhadra, DateTime kaalStart,
 /// एक चांद्र मास — कब शुरू हुआ, कौन सा है, अधिक तो नहीं।
 typedef LunarMonth = ({double newMoonJd, int amantaMasa, bool isAdhika});
 
+final Map<int, List<LunarMonth>> _lunarMonthsCache = {};
+
 /// किसी ग्रेगोरियन साल के आसपास के सारे चांद्र मास।
 /// (पिछले साल के दिसम्बर से अगले साल के फ़रवरी तक, ताकि किनारे न छूटें)
 List<LunarMonth> lunarMonthsAround(int year, Place place) {
+  final cached = _lunarMonthsCache[year];
+  if (cached != null) return cached;
+
   final months = <LunarMonth>[];
   var jd = previousNewMoon(julianDay(year - 1, 12, 1.0));
 
@@ -289,7 +314,10 @@ List<LunarMonth> lunarMonthsAround(int year, Place place) {
     jd = nextJd;
   }
 
-  return months;
+  if (_lunarMonthsCache.length >= 10) {
+    _lunarMonthsCache.remove(_lunarMonthsCache.keys.first);
+  }
+  return _lunarMonthsCache[year] = List.unmodifiable(months);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -304,14 +332,20 @@ List<LunarMonth> lunarMonthsAround(int year, Place place) {
 /// 2. उस मास में तिथि का पूरा अंतराल निकालो
 /// 3. जिन दिनों के ज़रूरी काल में वो तिथि चालू हो, वे दावेदार
 /// 4. भद्रा और क्षय-तिथि वाले नियम लगाओ
-FestivalDate? findFestival(FestivalRule rule, int year, Place place) {
+FestivalDate? findFestival(
+  FestivalRule rule,
+  int year,
+  Place place, [
+  List<LunarMonth>? precomputedMonths,
+]) {
   // पूर्णिमांत में कृष्ण पक्ष का त्योहार पिछले अमांत मास में पड़ता है
   final targetAmanta =
       rule.masaSystem == MasaSystem.purnimanta && rule.paksha == 1
           ? (rule.masa - 1 + 12) % 12
           : rule.masa;
 
-  for (final month in lunarMonthsAround(year, place)) {
+  final months = precomputedMonths ?? lunarMonthsAround(year, place);
+  for (final month in months) {
     if (month.isAdhika) continue; // त्योहार अधिक मास में नहीं
     if (month.amantaMasa != targetAmanta) continue;
 
@@ -323,10 +357,35 @@ FestivalDate? findFestival(FestivalRule rule, int year, Place place) {
         : null;
 
     final result = _pickDay(rule, tithi, bhadra, place);
-    if (result != null) return result;
+    if (result != null) return _vaarPehle(rule, result);
   }
 
   return null;
+}
+
+/// [FestivalRule.vaarPehle] वाले त्योहार — तिथि वाले दिन से पीछे जाकर
+/// पहला वही वार। बाक़ी सब नियम ज्यों के त्यों।
+FestivalDate _vaarPehle(FestivalRule rule, FestivalDate tithiKaDin) {
+  final vaar = rule.vaarPehle;
+  if (vaar == null) return tithiKaDin;
+
+  final peeche = (tithiKaDin.date.weekday - vaar + 7) % 7;
+  final din = tithiKaDin.date.subtract(Duration(days: peeche));
+  return FestivalDate(
+    rule: rule,
+    date: din,
+    tithiStart: tithiKaDin.tithiStart,
+    tithiEnd: tithiKaDin.tithiEnd,
+    kaalStart: tithiKaDin.kaalStart,
+    kaalEnd: tithiKaDin.kaalEnd,
+    shiftedForBhadra: false,
+    missedKaal: false,
+    ambiguous: false,
+    otherCandidate: null,
+    explanation: '${tithiKaDin.explanation}\n'
+        '${rule.masaName} ${rule.tithiName} से पहले का '
+        '${varaNames[vaar % 7]} (उसी दिन हो तो वही)',
+  );
 }
 
 FestivalDate? _pickDay(
@@ -338,12 +397,8 @@ FestivalDate? _pickDay(
   final firstDay =
       DateTime.utc(tithi.start.year, tithi.start.month, tithi.start.day);
 
-  final candidates = <({
-    DateTime day,
-    DateTime kaalStart,
-    DateTime kaalEnd,
-    bool blocked
-  })>[];
+  final candidates =
+      <({DateTime day, DateTime kaalStart, DateTime kaalEnd, bool blocked})>[];
 
   // −1 से इसलिए कि निशीथ की खिड़की आधी रात के *बाद* पड़ती है — यानी
   // 20 तारीख़ का निशीथ असल में 21 की सुबह है। सिर्फ़ आगे देखने पर वो छूट
@@ -441,8 +496,14 @@ FestivalDate? _pickDay(
   // मत रखना। असली नियम छपे पंचांग से मिलाकर ही डालना।
   usable.sort((a, b) {
     Duration overlapOf(
-        ({DateTime day, DateTime kaalStart, DateTime kaalEnd, bool blocked}) c) {
-      final start = c.kaalStart.isAfter(tithi.start) ? c.kaalStart : tithi.start;
+        ({
+          DateTime day,
+          DateTime kaalStart,
+          DateTime kaalEnd,
+          bool blocked
+        }) c) {
+      final start =
+          c.kaalStart.isAfter(tithi.start) ? c.kaalStart : tithi.start;
       final end = c.kaalEnd.isBefore(tithi.end) ? c.kaalEnd : tithi.end;
       return end.difference(start);
     }
@@ -560,7 +621,7 @@ String _explain(
 // त्योहारों की सूची
 // ─────────────────────────────────────────────────────────────
 
-/// **आठों तारीख़ें drikpanchang.com से पक्की की हुई हैं** (2026, दिल्ली) —
+/// **पहली बारह तारीख़ें drikpanchang.com से पक्की की हुई हैं** (2026, दिल्ली) —
 /// हर एक के लिए उस दिन का पन्ना खोलकर देखा गया कि Drik ख़ुद वहाँ उस
 /// त्योहार का नाम लिखता है या नहीं। लट्ठा `docs/08_VERIFICATION.md` में।
 ///
@@ -633,15 +694,140 @@ const List<FestivalRule> festivalRules = [
     tithi: 15, // अमावस्या
     vyapini: Vyapini.pradosha,
   ),
+  FestivalRule(
+    id: 'dhanteras',
+    name: 'धनतेरस',
+    masa: 7, // कार्तिक
+    paksha: 1,
+    tithi: 13,
+    vyapini: Vyapini.pradosha,
+  ),
+  FestivalRule(
+    id: 'govardhan_puja',
+    name: 'गोवर्धन पूजा',
+    masa: 7, // कार्तिक
+    paksha: 0,
+    tithi: 1,
+    vyapini: Vyapini.sunrise,
+  ),
+  FestivalRule(
+    id: 'bhai_dooj',
+    name: 'भाई दूज',
+    masa: 7, // कार्तिक
+    paksha: 0,
+    tithi: 2,
+    vyapini: Vyapini.aparahna,
+  ),
+  FestivalRule(
+    id: 'vasant_panchami',
+    name: 'वसंत पंचमी',
+    masa: 10, // माघ
+    paksha: 0,
+    tithi: 5,
+    vyapini: Vyapini.madhyahna,
+  ),
+
+  // ── 22 सित 2026 — व्रत और पितृ पक्ष (→ D-087) ────────────────────────
+  //
+  // हर नियम की व्यापिनी अंदाज़े से नहीं चुनी: 2024–2028 के पाँचों साल
+  // (दिल्ली) संदर्भ-पंचांग के उस दिन वाले पन्ने से मिलाकर। जिस व्यापिनी पर
+  // पाँचों मेल खाए वही रखी — बाक़ी क्यों नहीं, `docs/08_VERIFICATION.md` में।
+  FestivalRule(
+    id: 'vat_savitri',
+    name: 'वट सावित्री व्रत',
+    masa: 2, // ज्येष्ठ (पूर्णिमांत) — अमांत में यह वैशाख की अमावस्या है
+    paksha: 1,
+    tithi: 15, // अमावस्या
+    // सूर्योदय वाला नियम 2025 में 27 मई देता — असल 26 मई
+    vyapini: Vyapini.madhyahna,
+  ),
+  FestivalRule(
+    id: 'varalakshmi_vrat',
+    name: 'वरलक्ष्मी व्रत',
+    masa: 4, // श्रावण
+    paksha: 0,
+    tithi: 15, // पूर्णिमा — व्रत उससे पहले वाले शुक्रवार को
+    vaarPehle: DateTime.friday,
+  ),
+  FestivalRule(
+    id: 'hartalika_teej',
+    name: 'हरितालिका तीज',
+    masa: 5, // भाद्रपद
+    paksha: 0,
+    tithi: 3,
+    // मध्याह्न वाला नियम 2026 में 13 सित देता — असल 14 सित
+    vyapini: Vyapini.sunrise,
+  ),
+  FestivalRule(
+    id: 'pitru_paksha_arambh',
+    name: 'पितृ पक्ष आरम्भ',
+    masa: 6, // आश्विन (पूर्णिमांत) — कृष्ण प्रतिपदा
+    paksha: 1,
+    tithi: 1,
+    vyapini: Vyapini.aparahna, // श्राद्ध अपराह्न में
+  ),
+  FestivalRule(
+    id: 'sarvapitri_amavasya',
+    name: 'सर्वपितृ अमावस्या',
+    masa: 6, // आश्विन (पूर्णिमांत)
+    paksha: 1,
+    tithi: 15,
+    // सूर्योदय वाला नियम 2027 में 30 सित देता — असल 29 सित
+    vyapini: Vyapini.aparahna,
+  ),
+  FestivalRule(
+    id: 'dussehra',
+    name: 'दशहरा',
+    masa: 6, // आश्विन
+    paksha: 0,
+    tithi: 10,
+    // सूर्योदय वाला नियम 2024 में 13 अक्टू देता — असल 12 अक्टू
+    vyapini: Vyapini.aparahna,
+  ),
+  FestivalRule(
+    id: 'karwa_chauth',
+    name: 'करवा चौथ',
+    masa: 7, // कार्तिक (पूर्णिमांत)
+    paksha: 1,
+    tithi: 4,
+    // व्रत चाँद देखकर खुलता है — चतुर्थी चंद्रोदय पर चाहिए
+    vyapini: Vyapini.chandrodaya,
+  ),
+  FestivalRule(
+    id: 'chhath',
+    name: 'छठ पूजा',
+    masa: 7, // कार्तिक
+    paksha: 0,
+    tithi: 6, // षष्ठी — संध्या अर्घ्य का दिन
+    vyapini: Vyapini.aparahna,
+  ),
 ];
 
 /// पूरे साल के त्योहार, तारीख़ के हिसाब से।
+///
+/// ⚡ एक बार का हिसाब याद रहता है (साल + शहर)। होम, कैलेंडर, "आज" और
+/// आने वाली पूजाएँ — चारों यही माँगते हैं, और हर बार का हिसाब फ़ोन पर
+/// कुछ सौ मिलीसेकंड था। सूची बदली नहीं जा सकती, ताकि कोई एक पन्ना
+/// दूसरे का कैश न बिगाड़े।
 List<FestivalDate> festivalsInYear(int year, Place place) {
+  final key = '$year|${place.latitude}|${place.longitude}|'
+      '${place.timeZoneOffset.inMinutes}';
+  final yaad = _festivalsCache[key];
+  if (yaad != null) return yaad;
+
+  final months = lunarMonthsAround(year, place);
   final found = <FestivalDate>[];
   for (final rule in festivalRules) {
-    final date = findFestival(rule, year, place);
+    final date = findFestival(rule, year, place, months);
     if (date != null) found.add(date);
   }
   found.sort((a, b) => a.date.compareTo(b.date));
-  return found;
+
+  if (_festivalsCache.length >= _festivalsCacheSize) {
+    _festivalsCache.remove(_festivalsCache.keys.first);
+  }
+  return _festivalsCache[key] = List.unmodifiable(found);
 }
+
+const _festivalsCacheSize = 8;
+final Map<String, List<FestivalDate>> _festivalsCache = {};

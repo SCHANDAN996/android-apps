@@ -7,6 +7,7 @@ import '../vidhi/paath_assets.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
 import 'paath_screen.dart';
+import 'saptashati_screen.dart';
 
 /// चालीसा और स्तोत्र की सूची — **पूजा से अलग जगह** (→ D-039)।
 ///
@@ -119,6 +120,17 @@ class _PaathListScreenState extends State<PaathListScreen> {
                     ),
                   ],
                   const SizedBox(height: VidhivatSpacing.xxl),
+                  // दुर्गा सप्तशती — सोलह पाठ, पर सूची में एक ही पंक्ति; वह
+                  // अपना पन्ना खोलती है जहाँ पूरा क्रम है (→ D-084)।
+                  if (_chhanni == null || _chhanni == PaathPrakar.stotra) ...[
+                    _SaptashatiTile(
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (_) => const SaptashatiScreen()),
+                      ),
+                    ),
+                    const SizedBox(height: VidhivatSpacing.sm),
+                  ],
                   for (final entry in entries) ...[
                     _PaathTile(entry: entry, onTap: () => _open(entry)),
                     const SizedBox(height: VidhivatSpacing.sm),
@@ -137,6 +149,57 @@ class _PaathListScreenState extends State<PaathListScreen> {
             },
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _SaptashatiTile extends StatelessWidget {
+  final VoidCallback onTap;
+
+  const _SaptashatiTile({required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    final type = VidhivatTheme.typographyOf(context);
+    final colors = VidhivatTheme.colorsOf(context);
+    return VidhivatSurfaceCard(
+      onTap: onTap,
+      child: Row(
+        children: [
+          Container(
+            width: 46,
+            height: 46,
+            decoration: BoxDecoration(
+              color: colors.primaryMuted,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            alignment: Alignment.center,
+            child: Padding(
+              padding: const EdgeInsets.all(3),
+              child: Image.asset(
+                PaathAssets.durga.assetPath,
+                fit: BoxFit.contain,
+                cacheHeight: 92,
+                filterQuality: FilterQuality.medium,
+                excludeFromSemantics: true,
+              ),
+            ),
+          ),
+          const SizedBox(width: VidhivatSpacing.md),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('दुर्गा सप्तशती', style: type.cardTitle),
+                const SizedBox(height: 2),
+                Text('तेरह अध्याय — कवच, अर्गला और कीलक सहित',
+                    style: type.bodySmall),
+              ],
+            ),
+          ),
+          Icon(Icons.chevron_right, color: colors.textTertiary),
+        ],
       ),
     );
   }

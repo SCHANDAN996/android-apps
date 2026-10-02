@@ -3,8 +3,12 @@ import 'package:panchang_engine/panchang_engine.dart';
 
 import '../state/settings.dart';
 import '../theme.dart';
+import '../vidhi/bhandar.dart';
+import '../vidhi/vrat_artwork.dart';
+import '../vidhi/vrat_panna.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
+import 'vrat_panna_screen.dart';
 
 /// **व्रत और उपवास** — कौन सा व्रत किस दिन पड़ता है।
 ///
@@ -91,6 +95,8 @@ class _VratScreenState extends State<VratScreen> {
                     _VratSuchi(sab: sab),
                   const SizedBox(height: VidhivatSpacing.xl),
                   const _KaunSeVrat(),
+                  const SizedBox(height: VidhivatSpacing.xl),
+                  const _SabVrat(),
                 ],
               );
             },
@@ -109,8 +115,8 @@ class _VratSuchi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = VidhivatTheme.colorsOf(context);
     final type = VidhivatTheme.typographyOf(context);
+    final colors = VidhivatTheme.colorsOf(context);
 
     return VidhivatSurfaceCard(
       padding: EdgeInsets.zero,
@@ -124,50 +130,62 @@ class _VratSuchi extends StatelessWidget {
               label: '${sab[i].niyam.naam}, ${sab[i].kabLikha}, '
                   '${tarikh(sab[i].tarikh)}, ${sab[i].tithiNaam}',
               excludeSemantics: true,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: VidhivatSpacing.lg,
-                  vertical: VidhivatSpacing.md,
+              button: true,
+              child: InkWell(
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    // इंजन के व्रत की id और व्रत-पन्ने की id एक ही है।
+                    builder: (_) => VratPannaScreen(id: sab[i].niyam.id),
+                  ),
                 ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      width: 82,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            sab[i].kabLikha,
-                            style: type.label.copyWith(
-                              color: sab[i].kitneDinBaad == 0
-                                  ? colors.primary
-                                  : colors.textSecondary,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: VidhivatSpacing.lg,
+                    vertical: VidhivatSpacing.md,
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: 82,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              sab[i].kabLikha,
+                              style: type.label.copyWith(
+                                color: sab[i].kitneDinBaad == 0
+                                    ? colors.primary
+                                    : colors.textSecondary,
+                              ),
                             ),
-                          ),
-                          Text(
-                            tarikhChhoti(sab[i].tarikh),
-                            style: type.caption
-                                .copyWith(color: colors.textTertiary),
-                          ),
-                        ],
+                            Text(
+                              tarikhChhoti(sab[i].tarikh),
+                              style: type.caption
+                                  .copyWith(color: colors.textTertiary),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(sab[i].niyam.naam, style: type.cardTitle),
-                          const SizedBox(height: 2),
-                          Text(
-                            sab[i].tithiNaam,
-                            style: type.bodySmall
-                                .copyWith(color: colors.textSecondary),
-                          ),
-                        ],
+                      const SizedBox(width: VidhivatSpacing.sm),
+                      _VratThumbnail(id: sab[i].niyam.id, size: 52),
+                      const SizedBox(width: VidhivatSpacing.sm),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(sab[i].niyam.naam, style: type.cardTitle),
+                            const SizedBox(height: 2),
+                            Text(
+                              sab[i].tithiNaam,
+                              style: type.bodySmall
+                                  .copyWith(color: colors.textSecondary),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -194,4 +212,164 @@ class _KaunSeVrat extends StatelessWidget {
             'दूसरे शहर के पंचांग से एक दिन का फ़र्क़ हो सकता है। आपके घर या '
             'क्षेत्र का चलन अलग हो तो वही सही है।',
       );
+}
+
+/// **सब व्रत** — हर व्रत का पूरा पन्ना, समूहों में (→ D-075)।
+///
+/// ऊपर की सूची बताती है कि *कब*; यह बताती है कि *क्या* — भाव, नियम,
+/// भोजन, पारण, पूजा, कथा। तारीख़ सिर्फ़ उन्हीं की है जिन्हें इंजन गिनता है।
+class _SabVrat extends StatefulWidget {
+  const _SabVrat();
+
+  @override
+  State<_SabVrat> createState() => _SabVratState();
+}
+
+class _SabVratState extends State<_SabVrat> {
+  late final Future<List<VratSuchiEntry>> _suchi = vratBhandar.suchi();
+
+  @override
+  Widget build(BuildContext context) {
+    final type = VidhivatTheme.typographyOf(context);
+
+    return FutureBuilder<List<VratSuchiEntry>>(
+      future: _suchi,
+      builder: (context, snap) {
+        final sab = snap.data?.where((e) => e.taiyar).toList();
+        if (sab == null || sab.isEmpty) return const SizedBox.shrink();
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const VidhivatSectionHeader(
+              title: 'हर व्रत का पूरा पन्ना',
+              supportingText: 'नियम, भोजन, पारण, पूजा, मंत्र और कथा',
+            ),
+            for (final samuh in VratSamuh.values)
+              if (sab.any((e) => e.samuh == samuh)) ...[
+                const SizedBox(height: VidhivatSpacing.lg),
+                Text(samuh.naam, style: type.label),
+                const SizedBox(height: VidhivatSpacing.xs),
+                LayoutBuilder(
+                  builder: (context, constraints) {
+                    final width =
+                        (constraints.maxWidth - VidhivatSpacing.sm) / 2;
+                    return Wrap(
+                      spacing: VidhivatSpacing.sm,
+                      runSpacing: VidhivatSpacing.sm,
+                      children: [
+                        for (final e in sab.where((e) => e.samuh == samuh))
+                          SizedBox(
+                            width: width,
+                            child: _VratGridCard(
+                              entry: e,
+                              onOpen: () => Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => e.faail != null
+                                      ? const EkadashiVarshScreen()
+                                      : VratPannaScreen(id: e.id),
+                                ),
+                              ),
+                            ),
+                          ),
+                      ],
+                    );
+                  },
+                ),
+              ],
+          ],
+        );
+      },
+    );
+  }
+}
+
+class _VratThumbnail extends StatelessWidget {
+  final String id;
+  final double size;
+
+  const _VratThumbnail({required this.id, required this.size});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = VidhivatTheme.colorsOf(context);
+    final artwork = VratArtwork.forVratId(id);
+    final cacheSize = (size * MediaQuery.devicePixelRatioOf(context)).round();
+    return ExcludeSemantics(
+      child: Container(
+        width: size,
+        height: size,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: colors.primary.withValues(alpha: 0.08),
+          border: Border.all(color: colors.primary.withValues(alpha: 0.20)),
+        ),
+        child: Image.asset(
+          artwork.assetPath,
+          fit: BoxFit.contain,
+          cacheHeight: cacheSize,
+          filterQuality: FilterQuality.high,
+          errorBuilder: (context, error, stackTrace) => Icon(
+            Icons.auto_awesome_outlined,
+            color: colors.primary,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _VratGridCard extends StatelessWidget {
+  final VratSuchiEntry entry;
+  final VoidCallback onOpen;
+
+  const _VratGridCard({required this.entry, required this.onOpen});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = VidhivatTheme.colorsOf(context);
+    final type = VidhivatTheme.typographyOf(context);
+    final textScale = MediaQuery.textScalerOf(context).scale(1);
+    final cardHeight = 214 + ((textScale - 1).clamp(0.0, 1.0) * 96);
+    return VidhivatSurfaceCard(
+      onTap: onOpen,
+      variant: VidhivatCardVariant.elevated,
+      semanticLabel: '${entry.naam} का व्रत पन्ना खोलें',
+      padding: const EdgeInsets.all(VidhivatSpacing.md),
+      child: SizedBox(
+        height: cardHeight,
+        child: Column(
+          children: [
+            Expanded(
+                child: Center(child: _VratThumbnail(id: entry.id, size: 108))),
+            Text(
+              entry.naam,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
+              style: type.cardTitle,
+            ),
+            const SizedBox(height: 2),
+            Text(
+              entry.devta,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
+              style: type.caption.copyWith(color: colors.textSecondary),
+            ),
+            const SizedBox(height: VidhivatSpacing.sm),
+            // Card भी tap हो सकता है, पर action को सिर्फ़ hint या chevron
+            // पर नहीं छोड़ा: dark UI में यह साफ़ filled button दिखता है।
+            VidhivatButton(
+              label: 'व्रत देखें',
+              icon: Icons.arrow_forward_rounded,
+              variant: VidhivatButtonVariant.secondary,
+              compact: true,
+              fullWidth: true,
+              onPressed: onOpen,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }

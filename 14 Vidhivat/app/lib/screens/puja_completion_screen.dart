@@ -40,6 +40,7 @@ class PujaCompletionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = VidhivatTheme.colorsOf(context);
     final type = VidhivatTheme.typographyOf(context);
+    final completionArtwork = DevotionalAssets.completionForVidhiId(vidhi.id);
     return Scaffold(
       appBar: AppBar(title: const Text('मार्गदर्शिका')),
       body: VidhivatSacredBackdrop(
@@ -70,9 +71,8 @@ class PujaCompletionScreen extends StatelessWidget {
                         subtitle:
                             'आपने इस मार्गदर्शिका के सभी चरण देख लिए हैं।',
                         icon: Icons.auto_awesome_outlined,
-                        artworkAsset: DevotionalAssets.completion.assetPath,
-                        artworkSemanticLabel:
-                            DevotionalAssets.completion.semanticLabel,
+                        artworkAsset: completionArtwork.assetPath,
+                        artworkSemanticLabel: completionArtwork.semanticLabel,
                         semanticLabel: '${vidhi.naam} की मार्गदर्शिका पूरी हुई',
                         footer: Text(
                           vidhi.naam,
@@ -114,7 +114,7 @@ class PujaCompletionScreen extends StatelessWidget {
           top: false,
           child: VidhivatReadableWidth(
             // लेटे रूप में यह बटन 853dp चौड़ा हो जाता था (→ D-062)।
-              child: Padding(
+            child: Padding(
               padding: const EdgeInsets.fromLTRB(
                 VidhivatSpacing.lg,
                 VidhivatSpacing.sm,

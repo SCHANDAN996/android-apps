@@ -180,7 +180,7 @@ class AppSettings extends ChangeNotifier {
     //
     // ⚠ कुछ सहेजा न हो तो **डिफ़ॉल्ट पर लौटना ज़रूरी है।** पहले
     // यहाँ कुछ नहीं होता था, यानी `_city` पिछली बार वाला ही बना
-    // रह जाता था। जाँच ने पकड़ा (→ D-058)।
+    // रह जाता था। जाँच ने पकड़ा (→ D-058)।
     final savedCity = _cityFromJson(_prefs!.getString(_kCityDetails));
     if (savedCity != null) {
       _city = savedCity;
@@ -201,8 +201,8 @@ class AppSettings extends ChangeNotifier {
     _gotra = _prefs!.getString(_kGotra) ?? gotraJabPataNaHo;
     // पुराने यूज़र, जिन्होंने A12 से पहले गोत्र भरा था — उन्हें दोबारा
     // मत पूछो। गोत्र सहेजा हुआ है, यानी उन्होंने ख़ुद चुना था।
-    _gotraPataHai = _prefs!.getBool(_kGotraPataHai) ??
-        (_prefs!.getString(_kGotra) != null);
+    _gotraPataHai =
+        _prefs!.getBool(_kGotraPataHai) ?? (_prefs!.getString(_kGotra) != null);
     _yajaman = yajamanFromName(_prefs!.getString(_kYajaman));
 
     // जगह का प्रकार — यूज़र ने चुना हो तो वही, वरना शहर के नाम से
@@ -224,6 +224,7 @@ class AppSettings extends ChangeNotifier {
 
   Future<void> setCity(City value) async {
     _city = value;
+    _clearPanchangCache();
     // सूर्योदय जगह से बदलता है, इसलिए हिंदू दिन की सीमा भी (→ D-044)।
     _hinduDin = null;
     await _prefs?.setString(_kCity, value.name);
@@ -236,14 +237,14 @@ class AppSettings extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// ── जगह का नाम यूज़र ने ख़ुद लिखा (→ D-058) ───────────
+  /// ── जगह का नाम यूज़र ने ख़ुद लिखा (→ D-058) ───────────
   ///
-  /// सूची चाहे जितनी बड़ी हो, गाँव उसमें नहीं आएगा — और संकल्प में
+  /// सूची चाहे जितनी बड़ी हो, गाँव उसमें नहीं आएगा — और संकल्प में
   /// वही नाम बोला जाता है।
   ///
   /// ⚠ नाम बदलने से **पंचांग नहीं बदलता** — अक्षांश-देशांतर वही
   /// रहते हैं। पर जगह का **प्रकार** दोबारा आँका जाता है — कोई
-  /// "काशी" लिखे तो वह तीर्थ है, बशर्ते यूज़र ने ख़ुद कुछ न चुना हो।
+  /// "काशी" लिखे तो वह तीर्थ है, बशर्ते यूज़र ने ख़ुद कुछ न चुना हो।
   Future<void> setSthanNaam(String naam) async {
     final saaf = naam.trim();
     if (saaf.isEmpty) return;
@@ -286,6 +287,7 @@ class AppSettings extends ChangeNotifier {
 
   Future<void> setMasaSystem(MasaSystem value) async {
     _masaSystem = value;
+    _clearPanchangCache();
     await _prefs?.setString(
         _kMasaSystem, value == MasaSystem.amanta ? 'amanta' : 'purnimanta');
     notifyListeners();
@@ -428,13 +430,15 @@ class AppSettings extends ChangeNotifier {
       _samagriKey(pujaId),
       ab.map((i) => i.toString()).toList(),
     );
-    notifyListeners();
+    // ⚡ notifyListeners() नहीं — टिक सिर्फ़ सामग्री पन्ना दिखाता है, और वह
+    // अपना setState ख़ुद करता है। पहले हर टिक पर पूरा MaterialApp, दोनों
+    // theme और चारों tab दोबारा बनते थे।
   }
 
   /// सारी टिक हटा दो — अगली बार पूजा करते वक़्त काम आता है।
   Future<void> clearSamagriTicks(String pujaId) async {
     await _prefs?.remove(_samagriKey(pujaId));
-    notifyListeners();
+    // notifyListeners() नहीं — ऊपर setSamagriTick वाली वजह।
   }
 
   // ── विधि player में आख़िरी पहुँची हुई जगह ──
@@ -531,7 +535,9 @@ class AppSettings extends ChangeNotifier {
       updatedAt: DateTime.now().millisecondsSinceEpoch,
     );
     await _writePlayerProgress();
-    notifyListeners();
+    // तकनीकी player position से शहर/थीम/मुख्य ऐप नहीं बदला। हर चरण पर
+    // notifyListeners() से पूरा MaterialApp और चारों home tabs बनते थे।
+    // संबंधित पन्ने route से लौटने पर अपनी position फिर पढ़ते हैं।
   }
 
   /// Completion clears only the active technical resume location. No history,
@@ -539,7 +545,6 @@ class AppSettings extends ChangeNotifier {
   Future<void> clearPlayerProgress(String pujaId) async {
     if (_playerProgress.remove(pujaId) == null) return;
     await _writePlayerProgress();
-    notifyListeners();
   }
 
   void _loadPlayerProgress(String? raw) {
@@ -573,14 +578,31 @@ class AppSettings extends ChangeNotifier {
     }
   }
 
-  /// आज का पंचांग, चुनी हुई जगह और पद्धति से।
-  Panchang panchangFor(DateTime day) => computePanchang(
-        day.year,
-        day.month,
-        day.day,
-        place,
-        masaSystem: _masaSystem,
-      );
+  static const _maxPanchangCacheSize = 180;
+  final Map<String, Panchang> _panchangCache = {};
+
+  void _clearPanchangCache() => _panchangCache.clear();
+
+  /// आज का पंचांग, चुनी हुई जगह और पद्धति से (कैश सहित)।
+  Panchang panchangFor(DateTime day) {
+    final key =
+        '${day.year}-${day.month}-${day.day}|${city.cacheKey}|${_masaSystem.name}';
+    final cached = _panchangCache[key];
+    if (cached != null) return cached;
+
+    final p = computePanchang(
+      day.year,
+      day.month,
+      day.day,
+      place,
+      masaSystem: _masaSystem,
+    );
+
+    if (_panchangCache.length >= _maxPanchangCacheSize) {
+      _panchangCache.remove(_panchangCache.keys.first);
+    }
+    return _panchangCache[key] = p;
+  }
 }
 
 /// पूरे ऐप के लिए एक ही सेटिंग।

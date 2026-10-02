@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "id": "saptashati_03",
+  "naam": "अध्याय ३ — महिषासुर वध",
+  "upnaam": [
+    "दुर्गा सप्तशती तृतीय अध्याय",
+    "देवी माहात्म्य अध्याय ३",
+    "महिषासुरवधो नाम तृतीयोऽध्यायः"
+  ],
+  "prakar": "stotra",
+  "devta": "दुर्गा माँ",
+  "rachnakar": "महर्षि मार्कण्डेय — मार्कण्डेय पुराण",
+  "bhasha": "संस्कृत",
+  "parichay": "महिषासुर के सेनापति एक-एक करके लड़ने आते हैं और मारे जाते हैं। फिर महिषासुर स्वयं आता है और भैंसे, सिंह, हाथी जैसे रूप बदलता है। देवी उसका वध करती हैं।",
+  "kabPadhein": "नवरात्रि के नौ दिन — और घर की परंपरा अनुसार किसी भी दिन।",
+  "kaisePadhein": "सप्तशती का क्रम है: कवच, अर्गला और कीलक — फिर तेरह अध्याय। पूरा पाठ एक बैठक में न हो तो नौ दिन में बाँटकर कर सकते हैं; बहुत घरों में एक दिन में एक या कुछ अध्याय पढ़े जाते हैं।\n\nअध्याय के बीच में न रुकें — जहाँ तक पढ़ें, अध्याय पूरा करके रुकें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "ध्यान",
+      "dev": "ॐ उद्यद्भानुसहस्रकान्तिमरुणक्षौमां शिरोमालिकां\nरक्तालिप्तपयोधरां जपवटीं विद्यामभीतिं वरम् ।\nहस्ताब्जैर्दधतीं त्रिनेत्रविलसद्वक्त्रारविन्दश्रियं\nदेवीं बद्धहिमांशुरत्नमुकुटां वन्देऽरविन्दस्थिताम् ।",
+      "roman": "om udyadbhaanusahasrakaantimarunakshaumaam shiromaalikaam\nraktaaliptapayodharaam japavateem vidyaamabheetim varam |\nhastaabjairdadhateem trinetravilasadvaktraaravindashriyam\ndeveem baddhahimaamshuratnamukutaam vande'ravindasthitaam |",
+      "arth": "जिनकी कांति उदय होते हज़ारों सूर्यों जैसी है, जो लाल रेशमी वस्त्र और मुण्डमाला पहने हैं, जिनके वक्ष पर रक्त-चंदन का लेप है, जो अपने कमल जैसे हाथों में जपमाला, विद्या (पुस्तक), अभय मुद्रा और वर मुद्रा धारण करती हैं, जिनका कमल-मुख तीन नेत्रों से शोभित है, जिनके रत्न-मुकुट में चन्द्रमा बँधा है और जो कमल पर विराजती हैं — उन देवी को मैं प्रणाम करता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १",
+      "dev": "ॐ ऋषिरुवाच॥",
+      "roman": "om rishiruvaacha ||",
+      "arth": "ऋषि बोले —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "निहन्यमानं तत्सैन्यमवलोक्य महासुरः ।\nसेनानीश्चिक्षुरः कोपाद्ययौ योद्धुमथाम्बिकाम्॥",
+      "roman": "nihanyamaanam tatsainyamavalokya mahaasurah |\nsenaaneeshchikshurah kopaadyayau yoddhumathaambikaam ||",
+      "arth": "अपनी सेना को मरते देखकर महिषासुर का सेनापति महान असुर चिक्षुर क्रोध से भरकर अम्बिका से लड़ने चला।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "स देवीं शरवर्षेण ववर्ष समरेऽसुरः ।\nयथा मेरुगिरेः शृङ्गं तोयवर्षेण तोयदः॥",
+      "roman": "sa deveem sharavarshena vavarsha samare'surah |\nyathaa merugireh shringam toyavarshena toyadah ||",
+      "arth": "उस असुर ने रण में देवी पर बाणों की ऐसी वर्षा की, जैसे बादल मेरु पर्वत की चोटी पर पानी बरसाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "तस्य छित्वा ततो देवी लीलयैव शरोत्करान् ।\nजघान तुरगान्बाणैर्यन्तारं चैव वाजिनाम्॥",
+      "roman": "tasya chhitvaa tato devee leelayaiva sharotkaraan |\njaghaana turagaanbaanairyantaaram chaiva vaajinaam ||",
+      "arth": "तब देवी ने खेल-खेल में उसके बाणों के ढेर काट डाले, और अपने बाणों से उसके घोड़ों और सारथी को मार गिराया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "चिच्छेद च धनुः सद्यो ध्वजं चातिसमुच्छृतम् ।\nविव्याध चैव गात्रेषु छिन्नधन्वानमाशुगैः॥",
+      "roman": "chichchheda cha dhanuh sadyo dhvajam chaatisamuchchhritam |\nvivyaadha chaiva gaatreshu chhinnadhanvaanamaashugaih ||",
+      "arth": "उन्होंने तुरंत उसका धनुष और ऊँची ध्वजा काट दी, और धनुष कटे उस असुर के अंगों को तेज़ बाणों से बींध दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "सच्छिन्नधन्वा विरथो हताश्वो हतसारथिः ।\nअभ्यधावत तां देवीं खड्गचर्मधरोऽसुरः॥",
+      "roman": "sachchhinnadhanvaa viratho hataashvo hatasaarathih |\nabhyadhaavata taam deveem khadgacharmadharo'surah ||",
+      "arth": "धनुष कटा, रथ टूटा, घोड़े और सारथी मारे गए — तब वह असुर तलवार और ढाल लेकर देवी की ओर दौड़ा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "सिंहमाहत्य खड्गेन तीक्ष्णधारेण मूर्धनि ।\nआजघान भुजे सव्ये देवीमप्यतिवेगवान्॥",
+      "roman": "simhamaahatya khadgena teekshnadhaarena moordhani |\naajaghaana bhuje savye deveemapyativegavaan ||",
+      "arth": "उसने बड़े वेग से तेज़ धार वाली तलवार सिंह के माथे पर मारी, और देवी की बाईं भुजा पर भी वार किया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "तस्याः खड्गो भुजं प्राप्य पफाल नृपनन्दन ।\nततो जग्राह शूलं स कोपादरुणलोचनः॥",
+      "roman": "tasyaah khadgo bhujam praapya paphaala nripanandana |\ntato jagraaha shoolam sa kopaadarunalochanah ||",
+      "arth": "हे राजकुमार, देवी की भुजा से टकराते ही उसकी तलवार टूटकर बिखर गई। तब क्रोध से लाल आँखों वाले उस असुर ने शूल उठाया —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "चिक्षेप च ततस्तत्तु भद्रकाल्यां महासुरः ।\nजाज्वल्यमानं तेजोभी रविबिम्बमिवाम्बरात्॥",
+      "roman": "chikshepa cha tatastattu bhadrakaalyaam mahaasurah |\njaajvalyamaanam tejobhee ravibimbamivaambaraat ||",
+      "arth": "और उस महान असुर ने वह शूल भद्रकाली पर फेंका, जो आकाश से गिरते सूर्य-मंडल की तरह तेज़ से जल रहा था।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "दृष्ट्वा तदापतच्छूलं देवी शूलममुञ्चत ।\nतेन तच्छतधा नीतं शूलं स च महासुरः॥",
+      "roman": "drishtvaa tadaapatachchhoolam devee shoolamamunchata |\ntena tachchhatadhaa neetam shoolam sa cha mahaasurah ||",
+      "arth": "उस शूल को आते देखकर देवी ने भी शूल छोड़ा। उससे उस असुर के शूल के सौ टुकड़े हो गए, और वह महान असुर भी (मारा गया)।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "हते तस्मिन्महावीर्ये महिषस्य चमूपतौ ।\nआजगाम गजारूढश्चामरस्त्रिदशार्दनः॥",
+      "roman": "hate tasminmahaaveerye mahishasya chamoopatau |\naajagaama gajaaroodhashchaamarastridashaardanah ||",
+      "arth": "महिषासुर के उस महाबली सेनापति के मारे जाने पर देवताओं को सताने वाला चामर हाथी पर चढ़कर आया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "सोऽपि शक्तिं मुमोचाथ देव्यास्तामम्बिका द्रुतम् ।\nहुङ्काराभिहतां भूमौ पातयामास निष्प्रभाम्॥",
+      "roman": "so'pi shaktim mumochaatha devyaastaamambikaa drutam |\nhunkaaraabhihataam bhoomau paatayaamaasa nishprabhaam ||",
+      "arth": "उसने भी देवी पर शक्ति चलाई, पर अम्बिका ने तुरंत अपने हुंकार से उसे निस्तेज करके धरती पर गिरा दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "भग्नां शक्तिं निपतितां दृष्ट्वा क्रोधसमन्वितः ।\nचिक्षेप चामरः शूलं बाणैस्तदपि साच्छिनत्॥",
+      "roman": "bhagnaam shaktim nipatitaam drishtvaa krodhasamanvitah |\nchikshepa chaamarah shoolam baanaistadapi saachchhinat ||",
+      "arth": "अपनी शक्ति को टूटकर गिरा देखकर चामर ने क्रोध से भरकर शूल फेंका; देवी ने उसे भी बाणों से काट दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "ततः सिंहः समुत्पत्य गजकुम्भान्तरे स्थितः ।\nबाहुयुद्धेन युयुधे तेनोच्चैस्त्रिदशारिणा॥",
+      "roman": "tatah simhah samutpatya gajakumbhaantare sthitah |\nbaahuyuddhena yuyudhe tenochchaistridashaarinaa ||",
+      "arth": "तब देवी का सिंह उछलकर हाथी के मस्तक पर जा बैठा और देवताओं के उस शत्रु से ज़ोर-ज़ोर से बाहुयुद्ध करने लगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "युध्यमानौ ततस्तौ तु तस्मान्नागान्महीं गतौ ।\nयुयुधातेऽतिसंरब्धौ प्रहारैरतिदारुणैः॥",
+      "roman": "yudhyamaanau tatastau tu tasmaannaagaanmaheem gatau |\nyuyudhaate'tisamrabdhau prahaarairatidaarunaih ||",
+      "arth": "लड़ते-लड़ते वे दोनों उस हाथी से धरती पर आ गए और बड़े क्रोध में भयंकर प्रहारों से लड़ने लगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "ततो वेगात् खमुत्पत्य निपत्य च मृगारिणा ।\nकरप्रहारेण शिरश्चामरस्य पृथक् कृतम्॥",
+      "roman": "tato vegaat khamutpatya nipatya cha mrigaarinaa |\nkaraprahaarena shirashchaamarasya prithak kritam ||",
+      "arth": "तब सिंह ने वेग से आकाश में उछलकर नीचे झपटते हुए पंजे के वार से चामर का सिर धड़ से अलग कर दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "उदग्रश्च रणे देव्या शिलावृक्षादिभिर्हतः ।\nदन्तमुष्टितलैश्चैव करालश्च निपातितः॥",
+      "roman": "udagrashcha rane devyaa shilaavrikshaadibhirhatah |\ndantamushtitalaishchaiva karaalashcha nipaatitah ||",
+      "arth": "देवी ने रण में पत्थरों और पेड़ों आदि से उदग्र को मारा, और दाँतों, मुक्कों और थप्पड़ों से कराल को गिरा दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "देवी क्रुद्धा गदापातैश्चूर्णयामास चोद्धतम् ।\nबाष्कलं भिन्दिपालेन बाणैस्ताम्रं तथान्धकम्॥",
+      "roman": "devee kruddhaa gadaapaataishchoornayaamaasa choddhatam |\nbaashkalam bhindipaalena baanaistaamram tathaandhakam ||",
+      "arth": "क्रोध में भरी देवी ने गदा की मार से उद्धत को चूर-चूर कर दिया, भिन्दिपाल से बाष्कल को, और बाणों से ताम्र और अंधक को मार डाला।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "उग्रास्यमुग्रवीर्यं च तथैव च महाहनुम् ।\nत्रिनेत्रा च त्रिशूलेन जघान परमेश्वरी॥",
+      "roman": "ugraasyamugraveeryam cha tathaiva cha mahaahanum |\ntrinetraa cha trishoolena jaghaana parameshvaree ||",
+      "arth": "तीन नेत्रों वाली परमेश्वरी ने उग्रास्य, उग्रवीर्य और महाहनु को त्रिशूल से मार डाला।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "बिडालस्यासिना कायात् पातयामास वै शिरः ।\nदुर्धरं दुर्मुखं चोभौ शरैर्निन्ये यमक्षयम्॥",
+      "roman": "bidaalasyaasinaa kaayaat paatayaamaasa vai shirah |\ndurdharam durmukham chobhau sharairninye yamakshayam ||",
+      "arth": "तलवार से बिडाल का सिर धड़ से गिरा दिया, और दुर्धर तथा दुर्मुख दोनों को बाणों से यमलोक भेज दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "एवं सङ्क्षीयमाणे तु स्वसैन्ये महिषासुरः ।\nमाहिषेण स्वरूपेण त्रासयामास तान् गणान्॥",
+      "roman": "evam sanksheeyamaane tu svasainye mahishaasurah |\nmaahishena svaroopena traasayaamaasa taan ganaan ||",
+      "arth": "इस तरह अपनी सेना का नाश होते देखकर महिषासुर ने अपने भैंसे वाले रूप से देवी के गणों को डराना शुरू किया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "कांश्चित्तुण्डप्रहारेण खुरक्षेपैस्तथापरान् ।\nलाङ्गूलताडितांश्चान्यान् शृङ्गाभ्यां च विदारितान्॥",
+      "roman": "kaamshchittundaprahaarena khurakshepaistathaaparaan |\nlaangoolataaditaamshchaanyaan shringaabhyaam cha vidaaritaan ||",
+      "arth": "किसी को थूथन की मार से, किसी को खुरों की ठोकर से, किसी को पूँछ की फटकार से और किसी को सींगों से फाड़कर —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "वेगेन कांश्चिदपरान्नादेन भ्रमणेन च ।\nनिःश्वासपवनेनान्यान्पातयामास भूतले॥",
+      "roman": "vegena kaamshchidaparaannaadena bhramanena cha |\nnihshvaasapavanenaanyaanpaatayaamaasa bhootale ||",
+      "arth": "किसी को वेग से, किसी को गर्जना और चक्कर से, और किसी को साँस की आँधी से उसने धरती पर गिरा दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "निपात्य प्रमथानीकमभ्यधावत सोऽसुरः ।\nसिंहं हन्तुं महादेव्याः कोपं चक्रे ततोऽम्बिका॥",
+      "roman": "nipaatya pramathaaneekamabhyadhaavata so'surah |\nsimham hantum mahaadevyaah kopam chakre tato'mbikaa ||",
+      "arth": "गणों की सेना को गिराकर वह असुर महादेवी के सिंह को मारने दौड़ा। तब अम्बिका को क्रोध आया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २५",
+      "dev": "सोऽपि कोपान्महावीर्यः खुरक्षुण्णमहीतलः ।\nशृङ्गाभ्यां पर्वतानुच्चांश्चिक्षेप च ननाद च॥",
+      "roman": "so'pi kopaanmahaaveeryah khurakshunnamaheetalah |\nshringaabhyaam parvataanuchchaamshchikshepa cha nanaada cha ||",
+      "arth": "महाबली महिषासुर भी क्रोध से खुरों से धरती को रौंदने लगा, सींगों से ऊँचे पर्वत उछालने लगा और गरजने लगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २६",
+      "dev": "वेगभ्रमणविक्षुण्णा मही तस्य व्यशीर्यत ।\nलाङ्गूलेनाहतश्चाब्धिः प्लावयामास सर्वतः॥",
+      "roman": "vegabhramanavikshunnaa mahee tasya vyasheeryata |\nlaangoolenaahatashchaabdhih plaavayaamaasa sarvatah ||",
+      "arth": "उसके वेग से घूमने से रौंदी गई धरती फटने लगी; उसकी पूँछ की मार से समुद्र उमड़कर चारों ओर फैल गया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २७",
+      "dev": "धुतशृङ्गविभिन्नाश्च खण्डं खण्डं ययुर्घनाः ।\nश्वासानिलास्ताः शतशो निपेतुर्नभसोऽचलाः॥",
+      "roman": "dhutashringavibhinnaashcha khandam khandam yayurghanaah |\nshvaasaanilaastaah shatasho nipeturnabhaso'chalaah ||",
+      "arth": "उसके हिलते सींगों से फटकर बादल टुकड़े-टुकड़े हो गए, और उसकी साँस की हवा से उड़कर सैकड़ों पर्वत आकाश से गिरने लगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २८",
+      "dev": "इति क्रोधसमाध्मातमापतन्तं महासुरम् ।\nदृष्ट्वा सा चण्डिका कोपं तद्वधाय तदाकरोत्॥",
+      "roman": "iti krodhasamaadhmaatamaapatantam mahaasuram |\ndrishtvaa saa chandikaa kopam tadvadhaaya tadaakarot ||",
+      "arth": "इस तरह क्रोध से फूले उस महान असुर को आते देखकर चण्डिका ने उसके वध के लिए क्रोध किया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २९",
+      "dev": "सा क्षिप्त्वा तस्य वै पाशं तं बबन्ध महासुरम् ।\nतत्याज माहिषं रूपं सोऽपि बद्धो महामृधे॥",
+      "roman": "saa kshiptvaa tasya vai paasham tam babandha mahaasuram |\ntatyaaja maahisham roopam so'pi baddho mahaamridhe ||",
+      "arth": "उन्होंने उस पर पाश फेंककर उस महान असुर को बाँध लिया। उस महायुद्ध में बँधते ही उसने भैंसे का रूप छोड़ दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३०",
+      "dev": "ततः सिंहोऽभवत्सद्यो यावत्तस्याम्बिका शिरः ।\nछिनत्ति तावत् पुरुषः खड्गपाणिरदृश्यत॥",
+      "roman": "tatah simho'bhavatsadyo yaavattasyaambikaa shirah |\nchhinatti taavat purushah khadgapaaniradrishyata ||",
+      "arth": "तब वह तुरंत सिंह बन गया। जैसे ही अम्बिका उसका सिर काटने लगीं, वह तलवार हाथ में लिए पुरुष के रूप में दिखने लगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३१",
+      "dev": "तत एवाशु पुरुषं देवी चिच्छेद सायकैः ।\nतं खड्गचर्मणा सार्धं ततः सोऽभून्महागजः॥",
+      "roman": "tata evaashu purusham devee chichchheda saayakaih |\ntam khadgacharmanaa saardham tatah so'bhoonmahaagajah ||",
+      "arth": "देवी ने तुरंत बाणों से उस पुरुष को उसकी तलवार और ढाल समेत काट डाला। तब वह एक विशाल हाथी बन गया —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३२",
+      "dev": "करेण च महासिंहं तं चकर्ष जगर्ज च ।\nकर्षतस्तु करं देवी खड्गेन निरकृन्तत॥",
+      "roman": "karena cha mahaasimham tam chakarsha jagarja cha |\nkarshatastu karam devee khadgena nirakrintata ||",
+      "arth": "और अपनी सूँड़ से देवी के महान सिंह को खींचने और गरजने लगा। खींचते हुए उसकी सूँड़ को देवी ने तलवार से काट दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३३",
+      "dev": "ततो महासुरो भूयो माहिषं वपुरास्थितः ।\nतथैव क्षोभयामास त्रैलोक्यं सचराचरम्॥",
+      "roman": "tato mahaasuro bhooyo maahisham vapuraasthitah |\ntathaiva kshobhayaamaasa trailokyam sacharaacharam ||",
+      "arth": "तब वह महान असुर फिर से भैंसे का शरीर धरकर पहले की तरह चर-अचर सहित तीनों लोकों को खलबलाने लगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३४",
+      "dev": "ततः क्रुद्धा जगन्माता चण्डिका पानमुत्तमम् ।\nपपौ पुनः पुनश्चैव जहासारुणलोचना॥",
+      "roman": "tatah kruddhaa jaganmaataa chandikaa paanamuttamam |\npapau punah punashchaiva jahaasaarunalochanaa ||",
+      "arth": "तब क्रोध में भरी जगन्माता चण्डिका बार-बार उत्तम पेय पीने लगीं, और लाल आँखें करके हँसने लगीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३५",
+      "dev": "ननर्द चासुरः सोऽपि बलवीर्यमदोद्धतः ।\nविषाणाभ्यां च चिक्षेप चण्डिकां प्रति भूधरान्॥",
+      "roman": "nanarda chaasurah so'pi balaveeryamadoddhatah |\nvishaanaabhyaam cha chikshepa chandikaam prati bhoodharaan ||",
+      "arth": "अपने बल और पराक्रम के मद में चूर वह असुर भी गरजने लगा, और सींगों से चण्डिका पर पर्वत फेंकने लगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३६",
+      "dev": "सा च तान्प्रहितांस्तेन चूर्णयन्ती शरोत्करैः ।\nउवाच तं मदोद्धूतमुखरागाकुलाक्षरम्॥",
+      "roman": "saa cha taanprahitaamstena choornayantee sharotkaraih |\nuvaacha tam madoddhootamukharaagaakulaaksharam ||",
+      "arth": "उसके फेंके पर्वतों को बाणों की बौछार से चूर करती हुई देवी ने, मद के कारण लड़खड़ाते शब्दों में, उससे कहा —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३७",
+      "dev": "देव्युवाच॥",
+      "roman": "devyuvaacha ||",
+      "arth": "देवी बोलीं —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३८",
+      "dev": "गर्ज गर्ज क्षणं मूढ मधु यावत्पिबाम्यहम् ।\nमया त्वयि हतेऽत्रैव गर्जिष्यन्त्याशु देवताः॥",
+      "roman": "garja garja kshanam moodha madhu yaavatpibaamyaham |\nmayaa tvayi hate'traiva garjishyantyaashu devataah ||",
+      "arth": "अरे मूढ़, जब तक मैं मधु पीती हूँ, तब तक क्षण भर गरज ले, गरज ले। मेरे हाथों यहीं तेरे मारे जाने पर जल्दी ही देवता गरजेंगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३९",
+      "dev": "ऋषिरुवाच॥",
+      "roman": "rishiruvaacha ||",
+      "arth": "ऋषि बोले —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४०",
+      "dev": "एवमुक्त्वा समुत्पत्य सारूढा तं महासुरम् ।\nपादेनाक्रम्य कण्ठे च शूलेनैनमताडयत्॥",
+      "roman": "evamuktvaa samutpatya saaroodhaa tam mahaasuram |\npaadenaakramya kanthe cha shoolenainamataadayat ||",
+      "arth": "यह कहकर देवी उछलकर उस महान असुर पर चढ़ गईं, उसे पैर से दबाया और गले में शूल से प्रहार किया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४१",
+      "dev": "ततः सोऽपि पदाक्रान्तस्तया निजमुखात्तदा ।\nअर्धनिष्क्रान्त एवासीद्देव्या वीर्येण संवृतः॥",
+      "roman": "tatah so'pi padaakraantastayaa nijamukhaattadaa |\nardhanishkraanta evaaseeddevyaa veeryena samvritah ||",
+      "arth": "देवी के पैर से दबा हुआ वह अपने (भैंसे के) मुख से आधा ही बाहर निकल पाया था कि देवी के प्रभाव से वहीं रुक गया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४२",
+      "dev": "अर्धनिष्क्रान्त एवासौ युध्यमानो महासुरः ।\nतया महासिना देव्या शिरश्छित्त्वा निपातितः॥",
+      "roman": "ardhanishkraanta evaasau yudhyamaano mahaasurah |\ntayaa mahaasinaa devyaa shirashchhittvaa nipaatitah ||",
+      "arth": "आधा निकला हुआ ही वह महान असुर लड़ता रहा, और देवी ने अपनी बड़ी तलवार से उसका सिर काटकर उसे गिरा दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४३",
+      "dev": "ततो हाहाकृतं सर्वं दैत्यसैन्यं ननाश तत् ।\nप्रहर्षं च परं जग्मुः सकला देवतागणाः॥",
+      "roman": "tato haahaakritam sarvam daityasainyam nanaasha tat |\npraharsham cha param jagmuh sakalaa devataaganaah ||",
+      "arth": "तब हाहाकार करती हुई दैत्यों की सारी सेना नष्ट हो गई, और सब देवता अत्यंत प्रसन्न हुए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४४",
+      "dev": "तुष्टुवुस्तां सुरा देवीं सहदिव्यैर्महर्षिभिः ।\nजगुर्गन्धर्वपतयो ननृतुश्चाप्सरोगणाः॥",
+      "roman": "tushtuvustaam suraa deveem sahadivyairmaharshibhih |\njagurgandharvapatayo nanritushchaapsaroganaah ||",
+      "arth": "देवताओं ने दिव्य महर्षियों के साथ उन देवी की स्तुति की। गन्धर्वों के राजा गाने लगे और अप्सराएँ नाचने लगीं।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "मार्कण्डेय पुराण (अध्याय ८१–९३) — देवी माहात्म्य",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ एक जाँचे हुए छपे संस्करण से है, और मार्कण्डेय पुराण के दूसरे स्वतंत्र संस्करण से अक्षर-दर-अक्षर मिलाया गया है — लगभग ९९% अक्षर एक मिले। श्लोक-संख्या इसी संस्करण की है; छपी पुस्तकों में गिनती थोड़ी अलग हो सकती है।\n\n\"ऐं\", \"ह्रीं\", \"क्लीं\" बीजाक्षर हैं — कुछ परंपराओं में बीज-मंत्र गुरु से लेकर ही जपे जाते हैं; घर में इनके बिना भी पाठ होता है।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं; ग्रंथ के एक पुराने, सबके लिए खुले अनुवाद से श्लोक-दर-श्लोक मिलाया गया। कुछ श्लोक दो खंडों में बँटे हैं, तो उनका अर्थ अगले खंड में पूरा होता है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

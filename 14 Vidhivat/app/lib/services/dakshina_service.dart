@@ -7,7 +7,13 @@
 ///
 /// यह विनम्रता नहीं, **Google Play की शर्त** है: भुगतान से किसी digital
 /// चीज़ का रास्ता खुलते ही वह "दक्षिणा" नहीं रहती, एक साधारण in-app
-/// purchase बन जाती है। इसीलिए इस फ़ाइल में कहीं भी कोई `unlock`, `isPro`
+/// purchase बन जाती है — और तब Play Billing अनिवार्य हो जाती।
+///
+/// ## भुगतान अब PayU से (→ D-090)
+///
+/// Play की नीति कहती है: tip का 100% पाने वाले को जाए और बदले में कुछ न
+/// मिले, तो वह peer-to-peer भुगतान है और Play Billing ज़रूरी नहीं। इसी
+/// छूट पर यह चलता है — इसलिए ऊपर वाला नियम अब **दोगुना** ज़रूरी है। इसीलिए इस फ़ाइल में कहीं भी कोई `unlock`, `isPro`
 /// या `premium` जैसा झंडा नहीं है — और न कभी जोड़ना।
 ///
 /// पूरी योजना और हर शब्द → `docs/20_KAMAI_YOJANA.md`
@@ -16,14 +22,13 @@ library;
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-/// एक राशि। दाम Play Console में तय होते हैं, इसलिए "अपनी राशि" वाला
-/// खाना बन ही नहीं सकता — छह ही रहेंगी।
+/// एक सुझाई हुई राशि। PayU के पन्ने पर आदमी राशि ख़ुद भरता है; यहाँ
+/// चुनी राशि वहाँ भरने का सुझाव है।
 ///
-/// ⚠️ [id] ठीक वही रहे जो Play Console में बना है। बदलने पर पुरानी
-/// ख़रीदें अनाथ हो जाएँगी।
+/// [id] अब सिर्फ़ पहचान है (पहले Play Console के product की id थी)।
 class DakshinaRaashi {
   final String id;
   final int rupaye;
@@ -34,22 +39,19 @@ class DakshinaRaashi {
   String get label => '₹$rupaye';
 }
 
-/// सात तय राशियाँ, छोटी से बड़ी।
+/// सात तय राशियाँ, छोटी से बड़ी।
 ///
-/// ➕ **₹11 बाद में जोड़ा गया** (6 सितम्बर 2026)। पहले छह थीं और
+/// ➕ **₹11 बाद में जोड़ा गया** (6 सितम्बर 2026)। पहले छह थीं और
 /// सबसे छोटी ₹21। वजह वही है जो ₹21 को पहले रखने की थी — **मना
-/// करने लायक़ छोटा पहला क़दम सबसे ज़्यादा लोगों से मिलता है।** ₹11
+/// करने लायक़ छोटा पहला क़दम सबसे ज़्यादा लोगों से मिलता है।** ₹11
 /// भी शगुन का अंक है, और Play की भारत वाली सबसे कम क़ीमत (₹10) से
 /// ऊपर भी है।
 ///
 /// ₹1100 "अपनी राशि" की जगह है, ऊपर वाला सिरा।
 ///
 /// ⛔ इनमें से किसी पर भी कोई ठप्पा मत लगाना, और कोई भी राशि
-/// **पहले से चुनी हुई मत रखना** — यूज़र ने चुना ही नहीं होता।
+/// **पहले से चुनी हुई मत रखना** — यूज़र ने चुना ही नहीं होता।
 ///
-/// ⚠ नई राशि जोड़ने पर Play Console में **उसी id से consumable
-/// product बनाना पड़ता है**, वरना वो चिप दबाने पर "अभी Play से
-/// बात नहीं हो पा रही" दिखाएगी।
 const dakshinaRaashiyan = <DakshinaRaashi>[
   DakshinaRaashi('dakshina_11', 11),
   DakshinaRaashi('dakshina_21', 21),
@@ -66,9 +68,9 @@ const dakshinaRaashiyan = <DakshinaRaashi>[
 /// राशि पहले से चुनी हुई मत रखना" — डेवलपर ने 9 सितम्बर 2026
 /// को जोख़िम जानते हुए यह बदलवाया।
 ///
-/// जो रक्षा बची हुई है: **बटन एक बार दबाना फिर भी पड़ता है**,
-/// और उसके बाद Play की अपनी शीट खुलती है। पैसा अपने आप कभी
-/// नहीं कटता — और यह बात कभी नहीं बदलनी चाहिए।
+/// जो रक्षा बची हुई है: **बटन एक बार दबाना फिर भी पड़ता है**,
+/// और उसके बाद PayU का पन्ना खुलता है, जहाँ आदमी ख़ुद भरता और चुकाता
+/// है। पैसा अपने आप कभी नहीं कटता — और यह बात कभी नहीं बदलनी चाहिए।
 DakshinaRaashi get pehleSeChuniRaashi =>
     dakshinaRaashiyan.firstWhere((r) => r.rupaye == 51);
 
@@ -80,31 +82,29 @@ enum DakshinaNatija {
   /// यूज़र ने बीच में छोड़ दिया। **कुछ मत कहो** — यह पूरी तरह उसका हक़ है।
   radd,
 
-  /// Play का दरवाज़ा खुला ही नहीं (नेटवर्क नहीं, या दुकान उपलब्ध नहीं)।
+  /// भुगतान का पन्ना खुला ही नहीं (कोई browser/UPI app नहीं मिला)।
   upalabdhNahi,
+
+  /// PayU का पन्ना बाहर खुल गया। **ऐप को पता नहीं चलता कि पैसा गया या
+  /// नहीं** — इसलिए लौटने पर आदमी से ही पूछा जाता है, अपने आप कुछ दर्ज
+  /// नहीं होता (→ D-090)।
+  baharKhula,
 
   /// कुछ टूटा। शांत भाषा में बताओ, और दोबारा कोशिश करने दो।
   truti,
 }
 
-/// जहाँ से पैसा आता है। Play Billing इसका एक रूप है।
+/// जहाँ से पैसा आता है। PayU का पन्ना इसका एक रूप है ([PayuDwar])।
 ///
-/// यह परत सिर्फ़ इसलिए है कि **जाँचें असली Play को छुए बिना चल सकें**।
+/// यह परत सिर्फ़ इसलिए है कि **जाँचें असली पन्ना खोले बिना चल सकें**।
 abstract class DakshinaDwar {
   const DakshinaDwar();
 
   /// दुकान खुली है या नहीं।
   Future<bool> khulaHai();
 
-  /// एक राशि की दक्षिणा। लौटने तक यूज़र Play की अपनी शीट में रहता है।
+  /// एक राशि की दक्षिणा।
   Future<DakshinaNatija> dena(DakshinaRaashi raashi);
-
-  /// ऐप खुलते ही पहरा — बीच में अटकी ख़रीद बाद में पूरी हो तो वह भी
-  /// दर्ज हो जाए (UPI में यह आम है: पैसा कुछ मिनट बाद कटता है)।
-  void pehraShuru({required void Function() jabMile}) {}
-
-  /// पहरा बंद।
-  Future<void> pehraBand() async {}
 }
 
 /// दक्षिणा की बही — किसने कब दी, और डिब्बा कब दिखे।
@@ -134,8 +134,8 @@ class DakshinaBahi extends ChangeNotifier {
   int _dikhiGinti = 0;
   DateTime? _dikhiKab;
 
-  /// पैसा किस रास्ते आए। `main.dart` में [PlayBillingDwar] लगता है;
-  /// जाँचों में नक़ली द्वार, ताकि असली Play कभी न छुए।
+  /// पैसा किस रास्ते आए। `main.dart` में [PayuDwar] लगता है;
+  /// जाँचों में नक़ली द्वार, ताकि असली पन्ना कभी न खुले।
   DakshinaDwar? dwar;
 
   /// यूज़र कभी दक्षिणा दे चुका है?
@@ -157,7 +157,7 @@ class DakshinaBahi extends ChangeNotifier {
   /// ── यह नियम 9 सितम्बर 2026 को नरम हुआ (→ D-063) ──────
   ///
   /// पहले दो आराम थे — दे चुके हैं तो छह महीने, और **बिना दिए
-  /// तीन बार दिख जाए तो तीस दिन**। फ़ोन पर दिखा कि बहुत पूजाओं
+  /// तीन बार दिख जाए तो तीस दिन**। फ़ोन पर दिखा कि बहुत पूजाओं
   /// के बाद डिब्बा गायब हो जाता है, और डेवलपर ने दूसरा आराम
   /// हटाने को कहा।
   ///
@@ -195,10 +195,9 @@ class DakshinaBahi extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// ऐप खुलते ही एक बार — द्वार लगाओ और पहरा बिठाओ।
+  /// ऐप खुलते ही एक बार — द्वार लगाओ।
   void shuru(DakshinaDwar naya) {
     dwar = naya;
-    naya.pehraShuru(jabMile: () => mili(DateTime.now()));
   }
 
   /// एक राशि की दक्षिणा दो।
@@ -217,96 +216,39 @@ class DakshinaBahi extends ChangeNotifier {
 /// पूरे ऐप की एक ही बही — वैसे ही जैसे `settings`।
 final dakshina = DakshinaBahi();
 
-/// Play Billing वाला द्वार। **असली Play को यही छूता है।**
+/// PayU का "payment handle" — दक्षिणा का पन्ना। **डेवलपर का अपना link।**
 ///
-/// ⚠️ इसे सिर्फ़ `main.dart` में बनाना। इसका बनना ही
-/// `InAppPurchase.instance` को छू लेता है, जो जाँचों में नहीं चलता।
+/// PayU Dashboard → Business summary → Payment Handle → copy link।
+/// यह पन्ना PayU का है: राशि, UPI/कार्ड, सब वहीं भरा जाता है।
+const String payuDakshinaLink = 'https://u.payu.in/GIebkTbsw8X7';
+
+/// PayU वाला द्वार — link बाहर (browser या UPI app में) खोलता है।
 ///
-/// ## तीन बातें जो यहाँ सँभालनी पड़ीं
-/// 1. **हर ख़रीद `completePurchase` माँगती है** — तीन दिन में न करो तो
-///    Google पैसा अपने आप वापस कर देता है।
-/// 2. **UPI की ख़रीद बाद में पूरी होती है** — इसीलिए ऐप खुलते ही पहरा
-///    ([pehraShuru]) बैठता है, सिर्फ़ बटन दबने पर नहीं।
-/// 3. **कोई timeout नहीं** — यूज़र Play की शीट में जितना चाहे लगाए।
-class PlayBillingDwar extends DakshinaDwar {
-  final InAppPurchase _iap;
-  StreamSubscription<List<PurchaseDetails>>? _pehra;
-  final Map<String, Completer<DakshinaNatija>> _intezaar = {};
-  void Function()? _jabMile;
+/// ## ऐप को नतीजा क्यों पता नहीं चलता
+/// बिना सर्वर के PayU से "पैसा आया" की पुष्टि का कोई रास्ता नहीं, और
+/// सर्वर हम बनाते नहीं (`CLAUDE.md`)। इसलिए यह सिर्फ़
+/// [DakshinaNatija.baharKhula] लौटाता है — आगे आदमी ख़ुद बताता है।
+class PayuDwar extends DakshinaDwar {
+  final String link;
+  final Future<bool> Function(Uri uri) _kholo;
 
-  PlayBillingDwar({InAppPurchase? iap}) : _iap = iap ?? InAppPurchase.instance;
-
-  @override
-  void pehraShuru({required void Function() jabMile}) {
-    _jabMile = jabMile;
-    _pehra ??= _iap.purchaseStream.listen(
-      _aayi,
-      // दुकान का टूटना यूज़र की पूजा नहीं रोकेगा। ऐप बाक़ी सब वैसे ही
-      // चलता रहेगा — दक्षिणा के सिवा कुछ इस पर टिका ही नहीं है।
-      onError: (Object _) {},
-    );
-  }
+  PayuDwar({
+    this.link = payuDakshinaLink,
+    Future<bool> Function(Uri uri)? kholo,
+  }) : _kholo = kholo ??
+            ((uri) => launchUrl(uri, mode: LaunchMode.externalApplication));
 
   @override
-  Future<void> pehraBand() async {
-    await _pehra?.cancel();
-    _pehra = null;
-  }
-
-  Future<void> _aayi(List<PurchaseDetails> kharidein) async {
-    for (final kharid in kharidein) {
-      // अभी चल रही है (UPI में यह मिनटों तक रह सकती है) — इंतज़ार।
-      if (kharid.status == PurchaseStatus.pending) continue;
-
-      if (kharid.pendingCompletePurchase) {
-        await _iap.completePurchase(kharid);
-      }
-
-      final DakshinaNatija natija;
-      if (kharid.status == PurchaseStatus.purchased ||
-          kharid.status == PurchaseStatus.restored) {
-        natija = DakshinaNatija.mili;
-        _jabMile?.call();
-      } else if (kharid.status == PurchaseStatus.canceled) {
-        natija = DakshinaNatija.radd;
-      } else {
-        natija = DakshinaNatija.truti;
-      }
-
-      final koiIntezaarMein = _intezaar.remove(kharid.productID);
-      if (koiIntezaarMein != null && !koiIntezaarMein.isCompleted) {
-        koiIntezaarMein.complete(natija);
-      }
-    }
-  }
-
-  @override
-  Future<bool> khulaHai() => _iap.isAvailable();
+  Future<bool> khulaHai() async => link.startsWith('https://');
 
   @override
   Future<DakshinaNatija> dena(DakshinaRaashi raashi) async {
-    if (!await _iap.isAvailable()) return DakshinaNatija.upalabdhNahi;
-
-    final jawab = await _iap.queryProductDetails({raashi.id});
-    final mile =
-        jawab.productDetails.where((product) => product.id == raashi.id);
-    if (mile.isEmpty) return DakshinaNatija.upalabdhNahi;
-    final saamaan = mile.first;
-
-    final intezaar = Completer<DakshinaNatija>();
-    _intezaar[raashi.id] = intezaar;
+    if (!await khulaHai()) return DakshinaNatija.upalabdhNahi;
     try {
-      final chala = await _iap.buyConsumable(
-        purchaseParam: PurchaseParam(productDetails: saamaan),
-      );
-      if (!chala) {
-        _intezaar.remove(raashi.id);
-        return DakshinaNatija.truti;
-      }
-      return await intezaar.future;
+      final khula = await _kholo(Uri.parse(link));
+      return khula ? DakshinaNatija.baharKhula : DakshinaNatija.upalabdhNahi;
     } catch (_) {
-      _intezaar.remove(raashi.id);
-      return DakshinaNatija.truti;
+      return DakshinaNatija.upalabdhNahi;
     }
   }
 }

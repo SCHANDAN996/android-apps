@@ -25,8 +25,12 @@ class _SamagriScreenState extends State<SamagriScreen> {
   Vidhi get vidhi => widget.vidhi;
 
   Future<void> _setTick(int index, bool value) async {
-    await settings.setSamagriTick(vidhi.id, index, value);
+    // ⚡ टिक तुरंत दिखे — फ़ोन की storage में लिखना पूरा होने का इंतज़ार
+    // नहीं। SharedPreferences अपनी memory पहले ही (इसी क्षण) बदल देता है,
+    // इसलिए नीचे का setState नई टिक ही पढ़ता है।
+    final likhna = settings.setSamagriTick(vidhi.id, index, value);
     if (mounted) setState(() {});
+    await likhna;
   }
 
   @override
@@ -116,8 +120,8 @@ class _SamagriScreenState extends State<SamagriScreen> {
       bottomNavigationBar: SafeArea(
         top: false,
         child: VidhivatReadableWidth(
-          // लेटे रूप में यह बटन 853dp चौड़ा हो जाता था (→ D-062)।
-            child: Padding(
+          // लेटे रूप में यह बटन 853dp चौड़ा हो जाता था (→ D-062)।
+          child: Padding(
             padding: const EdgeInsets.fromLTRB(
               VidhivatSpacing.lg,
               VidhivatSpacing.sm,

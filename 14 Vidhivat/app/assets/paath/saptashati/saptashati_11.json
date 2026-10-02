@@ -1,0 +1,478 @@
+{
+  "schemaVersion": 1,
+  "id": "saptashati_11",
+  "naam": "अध्याय ११ — नारायणी स्तुति",
+  "upnaam": [
+    "दुर्गा सप्तशती एकादश अध्याय",
+    "देवी माहात्म्य अध्याय ११",
+    "नारायणीस्तुतिर्नामैकादशोऽध्यायः"
+  ],
+  "prakar": "stotra",
+  "devta": "दुर्गा माँ",
+  "rachnakar": "महर्षि मार्कण्डेय — मार्कण्डेय पुराण",
+  "bhasha": "संस्कृत",
+  "parichay": "असुरों के नाश के बाद देवता देवी की स्तुति करते हैं — \"सर्वमङ्गलमाङ्गल्ये…\" वाला श्लोक इसी अध्याय में है। देवी वर देती हैं और आगे के अपने अवतारों की बात बताती हैं।",
+  "kabPadhein": "नवरात्रि के नौ दिन — और घर की परंपरा अनुसार किसी भी दिन।",
+  "kaisePadhein": "सप्तशती का क्रम है: कवच, अर्गला और कीलक — फिर तेरह अध्याय। पूरा पाठ एक बैठक में न हो तो नौ दिन में बाँटकर कर सकते हैं; बहुत घरों में एक दिन में एक या कुछ अध्याय पढ़े जाते हैं।\n\nअध्याय के बीच में न रुकें — जहाँ तक पढ़ें, अध्याय पूरा करके रुकें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "ध्यान",
+      "dev": "ॐ बालरविद्युतिमिन्दुकिरीटां तुङ्गकुचां नयनत्रययुक्ताम् ।\nस्मेरमुखीं वरदाङ्कुशपाशाभीतिकरां प्रभजे भुवनेशीम् ॥",
+      "roman": "om baalaravidyutimindukireetaam tungakuchaam nayanatrayayuktaam |\nsmeramukheem varadaankushapaashaabheetikaraam prabhaje bhuvanesheem ||",
+      "arth": "जिनकी कांति उगते सूर्य जैसी है, जिनके मुकुट पर चन्द्रमा है, जिनके तीन नेत्र हैं, जिनका मुख मुस्कुराता है और जिनके हाथों में वर मुद्रा, अंकुश, पाश और अभय मुद्रा हैं — उन भुवनेश्वरी देवी का मैं भजन करता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १",
+      "dev": "ॐ ऋषिरुवाच॥",
+      "roman": "om rishiruvaacha ||",
+      "arth": "ऋषि बोले —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "देव्या हते तत्र महासुरेन्द्रे\nसेन्द्राः सुरा वह्निपुरोगमास्ताम् ।\nकात्यायनीं तुष्टुवुरिष्टलाभाद्\nविकाशिवक्त्राब्जविकाशिताशाः॥",
+      "roman": "devyaa hate tatra mahaasurendre\nsendraah suraa vahnipurogamaastaam |\nkaatyaayaneem tushtuvurishtalaabhaad\nvikaashivaktraabjavikaashitaashaah ||",
+      "arth": "देवी के हाथों वहाँ उस महान असुरराज के मारे जाने पर इन्द्र सहित, अग्नि को आगे करके देवता उन कात्यायनी की स्तुति करने लगे। मनचाही वस्तु मिल जाने से उनके खिले हुए मुख-कमलों से दिशाएँ भी खिल उठी थीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "देवि प्रपन्नार्तिहरे प्रसीद\nप्रसीद मातर्जगतोऽखिलस्य ।\nप्रसीद विश्वेश्वरि पाहि विश्वं\nत्वमीश्वरी देवि चराचरस्य॥",
+      "roman": "devi prapannaartihare praseeda\npraseeda maatarjagato'khilasya |\npraseeda vishveshvari paahi vishvam\ntvameeshvaree devi charaacharasya ||",
+      "arth": "हे शरण में आए लोगों की पीड़ा हरने वाली देवी, प्रसन्न होइए। हे सारे जगत की माता, प्रसन्न होइए। हे विश्व की ईश्वरी, प्रसन्न होइए, विश्व की रक्षा कीजिए। हे देवी, आप ही चर-अचर की ईश्वरी हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "आधारभूता जगतस्त्वमेका\nमहीस्वरूपेण यतः स्थितासि ।\nअपां स्वरूपस्थितया त्वयैत-\nदाप्यायते कृत्स्नमलङ्घ्यवीर्ये॥",
+      "roman": "aadhaarabhootaa jagatastvamekaa\nmaheesvaroopena yatah sthitaasi |\napaam svaroopasthitayaa tvayaita\ndaapyaayate kritsnamalanghyaveerye ||",
+      "arth": "आप ही अकेली इस जगत का आधार हैं, क्योंकि आप पृथ्वी के रूप में स्थित हैं। हे अलंघ्य पराक्रम वाली, जल के रूप में स्थित होकर आप ही इस सारे जगत को तृप्त करती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "त्वं वैष्णवीशक्तिरनन्तवीर्या\nविश्वस्य बीजं परमासि माया ।\nसम्मोहितं देवि समस्तमेतत्\nत्वं वै प्रसन्ना भुवि मुक्तिहेतुः॥",
+      "roman": "tvam vaishnaveeshaktiranantaveeryaa\nvishvasya beejam paramaasi maayaa |\nsammohitam devi samastametat\ntvam vai prasannaa bhuvi muktihetuh ||",
+      "arth": "आप अनंत पराक्रम वाली वैष्णवी शक्ति हैं, विश्व का बीज और परम माया हैं। हे देवी, आपने ही यह सारा जगत मोहित कर रखा है, और आप ही प्रसन्न होने पर इस धरती पर मुक्ति का कारण बनती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "विद्याः समस्तास्तव देवि भेदाः\nस्त्रियः समस्ताः सकला जगत्सु ।\nत्वयैकया पूरितमम्बयैतत्\nका ते स्तुतिः स्तव्यपरापरोक्तिः॥",
+      "roman": "vidyaah samastaastava devi bhedaah\nstriyah samastaah sakalaa jagatsu |\ntvayaikayaa pooritamambayaitat\nkaa te stutih stavyaparaaparoktih ||",
+      "arth": "हे देवी, सारी विद्याएँ आपके ही भेद हैं, और जगत की सारी स्त्रियाँ भी आपके ही रूप हैं। हे माता, आप अकेली ने ही इस जगत को भर रखा है। आपकी स्तुति क्या हो? आप तो स्तुति के योग्य ऊँचे-नीचे सब वचनों से परे हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "सर्वभूता यदा देवी भुक्तिमुक्तिप्रदायिनी ।\nत्वं स्तुता स्तुतये का वा भवन्तु परमोक्तयः॥",
+      "roman": "sarvabhootaa yadaa devee bhuktimuktipradaayinee |\ntvam stutaa stutaye kaa vaa bhavantu paramoktayah ||",
+      "arth": "जब आप सर्वस्वरूपा हैं, भोग और मोक्ष देने वाली हैं, तो इसी से आपकी स्तुति हो गई। आपकी स्तुति के लिए इससे उत्तम वचन और क्या हो सकते हैं?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "सर्वस्य बुद्धिरूपेण जनस्य हृदि संस्थिते ।\nस्वर्गापवर्गदे देवि नारायणि नमोऽस्तु ते॥",
+      "roman": "sarvasya buddhiroopena janasya hridi samsthite |\nsvargaapavargade devi naaraayani namo'stu te ||",
+      "arth": "बुद्धि के रूप में सब लोगों के हृदय में स्थित रहने वाली, स्वर्ग और मोक्ष देने वाली देवी — हे नारायणी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "कलाकाष्ठादिरूपेण परिणामप्रदायिनि ।\nविश्वस्योपरतौ शक्ते नारायणि नमोऽस्तु ते॥",
+      "roman": "kalaakaashthaadiroopena parinaamapradaayini |\nvishvasyoparatau shakte naaraayani namo'stu te ||",
+      "arth": "कला, काष्ठा आदि (समय के भागों) के रूप में सबको बदलने वाली, और विश्व का अंत करने में समर्थ — हे नारायणी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थसाधिके ।\nशरण्ये त्र्यम्बके गौरि नारायणि नमोऽस्तु ते॥",
+      "roman": "sarvamangalamaangalye shive sarvaarthasaadhike |\nsharanye tryambake gauri naaraayani namo'stu te ||",
+      "arth": "सब मंगलों में मंगल रूप, कल्याण करने वाली, सारे प्रयोजन सिद्ध करने वाली, शरण देने वाली, तीन नेत्रों वाली गौरी — हे नारायणी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "सृष्टिस्थितिविनाशानां शक्तिभूते सनातनि ।\nगुणाश्रये गुणमये नारायणि नमोऽस्तु ते॥",
+      "roman": "srishtisthitivinaashaanaam shaktibhoote sanaatani |\ngunaashraye gunamaye naaraayani namo'stu te ||",
+      "arth": "सृष्टि, पालन और संहार की शक्ति रूपा, सनातनी, गुणों का आश्रय और गुणमयी — हे नारायणी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "शरणागतदीनार्तपरित्राणपरायणे ।\nसर्वस्यार्तिहरे देवि नारायणि नमोऽस्तु ते॥",
+      "roman": "sharanaagatadeenaartaparitraanaparaayane |\nsarvasyaartihare devi naaraayani namo'stu te ||",
+      "arth": "शरण में आए हुए दीन और दुखी लोगों की रक्षा में लगी रहने वाली, सबकी पीड़ा हरने वाली देवी — हे नारायणी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "हंसयुक्तविमानस्थे ब्रह्माणीरूपधारिणि ।\nकौशाम्भःक्षरिके देवि नारायणि नमोऽस्तु ते॥",
+      "roman": "hamsayuktavimaanasthe brahmaaneeroopadhaarini |\nkaushaambhahksharike devi naaraayani namo'stu te ||",
+      "arth": "हंसों वाले विमान पर बैठी, ब्रह्माणी का रूप धारण करने वाली, कुश से जल छिड़कने वाली देवी — हे नारायणी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "त्रिशूलचन्द्राहिधरे महावृषभवाहिनि ।\nमाहेश्वरीस्वरूपेण नारायणि नमोऽस्तुते॥",
+      "roman": "trishoolachandraahidhare mahaavrishabhavaahini |\nmaaheshvareesvaroopena naaraayani namo'stute ||",
+      "arth": "त्रिशूल, चन्द्रमा और सर्प धारण करने वाली, बड़े बैल पर सवार, माहेश्वरी रूप वाली — हे नारायणी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "मयूरकुक्कुटवृते महाशक्तिधरेऽनघे ।\nकौमारीरूपसंस्थाने नारायणि नमोऽस्तु ते॥",
+      "roman": "mayoorakukkutavrite mahaashaktidhare'naghe |\nkaumaareeroopasamsthaane naaraayani namo'stu te ||",
+      "arth": "मोर और मुर्गे से घिरी, बड़ी शक्ति धारण करने वाली, निष्पाप, कौमारी रूप वाली — हे नारायणी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "शङ्खचक्रगदाशार्ङ्गगृहीतपरमायुधे ।\nप्रसीद वैष्णवीरूपे नारायणि नमोऽस्तु ते॥",
+      "roman": "shankhachakragadaashaarngagriheetaparamaayudhe |\npraseeda vaishnaveeroope naaraayani namo'stu te ||",
+      "arth": "शंख, चक्र, गदा और शार्ङ्ग धनुष जैसे उत्तम आयुध धारण करने वाली, वैष्णवी रूप वाली — प्रसन्न होइए; हे नारायणी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "गृहीतोग्रमहाचक्रे दंष्ट्रोद्धृतवसुन्धरे ।\nवराहरूपिणि शिवे नारायणि नमोऽस्तु ते॥",
+      "roman": "griheetogramahaachakre damshtroddhritavasundhare |\nvaraaharoopini shive naaraayani namo'stu te ||",
+      "arth": "हाथ में उग्र महाचक्र लेने वाली, अपनी दाढ़ पर पृथ्वी को उठाने वाली, वाराह रूप वाली कल्याणी — हे नारायणी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "नृसिंहरूपेणोग्रेण हन्तुं दैत्यान् कृतोद्यमे ।\nत्रैलोक्यत्राणसहिते नारायणि नमोऽस्तु ते॥",
+      "roman": "nrisimharoopenogrena hantum daityaan kritodyame |\ntrailokyatraanasahite naaraayani namo'stu te ||",
+      "arth": "उग्र नृसिंह रूप से दैत्यों को मारने के लिए उद्यत, तीनों लोकों की रक्षा में लगी — हे नारायणी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "किरीटिनि महावज्रे सहस्रनयनोज्ज्वले ।\nवृत्रप्राणहरे चैन्द्रि नारायणि नमोऽस्तु ते॥",
+      "roman": "kireetini mahaavajre sahasranayanojjvale |\nvritrapraanahare chaindri naaraayani namo'stu te ||",
+      "arth": "मुकुट और महावज्र धारण करने वाली, हज़ार नेत्रों से चमकने वाली, वृत्रासुर के प्राण हरने वाली ऐन्द्री — हे नारायणी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "शिवदूतीस्वरूपेण हतदैत्यमहाबले ।\nघोररूपे महारावे नारायणि नमोऽस्तु ते॥",
+      "roman": "shivadooteesvaroopena hatadaityamahaabale |\nghoraroope mahaaraave naaraayani namo'stu te ||",
+      "arth": "शिवदूती रूप से दैत्यों की बड़ी सेना को मारने वाली, भयंकर रूप और भारी गर्जना वाली — हे नारायणी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "दंष्ट्राकरालवदने शिरोमालाविभूषणे ।\nचामुण्डे मुण्डमथने नारायणि नमोऽस्तु ते॥",
+      "roman": "damshtraakaraalavadane shiromaalaavibhooshane |\nchaamunde mundamathane naaraayani namo'stu te ||",
+      "arth": "दाढ़ों से विकराल मुख वाली, मुण्डों की माला से सजी, मुण्ड का वध करने वाली चामुण्डा — हे नारायणी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "लक्ष्मि लज्जे महाविद्ये श्रद्धे पुष्टि स्वधे ध्रुवे ।\nमहारात्रि महामाये नारायणि नमोऽस्तु ते॥",
+      "roman": "lakshmi lajje mahaavidye shraddhe pushti svadhe dhruve |\nmahaaraatri mahaamaaye naaraayani namo'stu te ||",
+      "arth": "हे लक्ष्मी, लज्जा, महाविद्या, श्रद्धा, पुष्टि, स्वधा, ध्रुवा (अटल), महारात्रि और महामाया — हे नारायणी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "मेधे सरस्वति वरे भूति बाभ्रवि तामसि ।\nनियते त्वं प्रसीदेशे नारायणि नमोऽस्तुते॥",
+      "roman": "medhe sarasvati vare bhooti baabhravi taamasi |\nniyate tvam praseedeshe naaraayani namo'stute ||",
+      "arth": "हे मेधा, सरस्वती, श्रेष्ठा, विभूति, बाभ्रवी (भूरे वर्ण वाली), तामसी, नियता (संयमी) ईश्वरी — प्रसन्न होइए; हे नारायणी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "सर्वस्वरूपे सर्वेशे सर्वशक्तिसमन्विते ।\nभयेभ्यस्त्राहि नो देवि दुर्गे देवि नमोऽस्तु ते॥",
+      "roman": "sarvasvaroope sarveshe sarvashaktisamanvite |\nbhayebhyastraahi no devi durge devi namo'stu te ||",
+      "arth": "सब रूपों वाली, सबकी स्वामिनी, सारी शक्तियों से युक्त देवी — भयों से हमारी रक्षा कीजिए। हे दुर्गा देवी, आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २५",
+      "dev": "एतत्ते वदनं सौम्यं लोचनत्रयभूषितम् ।\nपातु नः सर्वभूतेभ्यः कात्यायनि नमोऽस्तु ते॥",
+      "roman": "etatte vadanam saumyam lochanatrayabhooshitam |\npaatu nah sarvabhootebhyah kaatyaayani namo'stu te ||",
+      "arth": "हे कात्यायनी, तीन नेत्रों से सजा आपका यह सौम्य मुख सब प्राणियों से हमारी रक्षा करे। आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २६",
+      "dev": "ज्वालाकरालमत्युग्रमशेषासुरसूदनम् ।\nत्रिशूलं पातु नो भीतेर्भद्रकालि नमोऽस्तु ते॥",
+      "roman": "jvaalaakaraalamatyugramasheshaasurasoodanam |\ntrishoolam paatu no bheeterbhadrakaali namo'stu te ||",
+      "arth": "हे भद्रकाली, ज्वालाओं से विकराल, अत्यंत उग्र, सारे असुरों का संहार करने वाला आपका त्रिशूल भय से हमारी रक्षा करे। आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २७",
+      "dev": "हिनस्ति दैत्यतेजांसि स्वनेनापूर्य या जगत् ।\nसा घण्टा पातु नो देवि पापेभ्यो नः सुतानिव॥",
+      "roman": "hinasti daityatejaamsi svanenaapoorya yaa jagat |\nsaa ghantaa paatu no devi paapebhyo nah sutaaniva ||",
+      "arth": "हे देवी, जो अपनी ध्वनि से जगत को भरकर दैत्यों का तेज नष्ट कर देता है, वह आपका घंटा हमारी पापों से वैसे ही रक्षा करे जैसे माँ अपने बच्चों की करती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २८",
+      "dev": "असुरासृग्वसापङ्कचर्चितस्ते करोज्ज्वलः ।\nशुभाय खड्गो भवतु चण्डिके त्वां नता वयम्॥",
+      "roman": "asuraasrigvasaapankacharchitaste karojjvalah |\nshubhaaya khadgo bhavatu chandike tvaam nataa vayam ||",
+      "arth": "हे चण्डिका, असुरों के ख़ून और चर्बी के कीचड़ से सना, आपके हाथ में चमकता खड्ग हमारा कल्याण करे। हम आपको प्रणाम करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २९",
+      "dev": "रोगानशेषानपहंसि तुष्टा\nरुष्टा तु कामान् सकलानभीष्टान् ।\nत्वामाश्रितानां न विपन्नराणां\nत्वामाश्रिता ह्याश्रयतां प्रयान्ति॥",
+      "roman": "rogaanasheshaanapahamsi tushtaa\nrushtaa tu kaamaan sakalaanabheeshtaan |\ntvaamaashritaanaam na vipannaraanaam\ntvaamaashritaa hyaashrayataam prayaanti ||",
+      "arth": "प्रसन्न होने पर आप सारे रोग हर लेती हैं, और रुष्ट होने पर चाही हुई सब कामनाएँ। जो आपकी शरण में हैं उन पर विपत्ति नहीं आती — और वे दूसरों के लिए शरण बन जाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३०",
+      "dev": "एतत्कृतं यत्कदनं त्वयाद्य\nधर्मद्विषां देवि महासुराणाम् ।\nरूपैरनेकैर्बहुधात्ममूर्तिं\nकृत्वाम्बिके तत्प्रकरोति कान्या॥",
+      "roman": "etatkritam yatkadanam tvayaadya\ndharmadvishaam devi mahaasuraanaam |\nroopairanekairbahudhaatmamoortim\nkritvaambike tatprakaroti kaanyaa ||",
+      "arth": "हे देवी अम्बिका, आज आपने अपने ही रूप को अनेक प्रकार से बहुत-से रूपों में बाँटकर धर्म से द्वेष करने वाले महान असुरों का जो संहार किया है — वह दूसरी कौन कर सकती है?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३१",
+      "dev": "विद्यासु शास्त्रेषु विवेकदीपे-\nष्वाद्येषु वाक्येषु च का त्वदन्या ।\nममत्वगर्तेऽतिमहान्धकारे\nविभ्रामयत्येतदतीव विश्वम्॥",
+      "roman": "vidyaasu shaastreshu vivekadeepe\nshvaadyeshu vaakyeshu cha kaa tvadanyaa |\nmamatvagarte'timahaandhakaare\nvibhraamayatyetadateeva vishvam ||",
+      "arth": "विद्याओं में, शास्त्रों में, विवेक का दीपक जलाने वाले आदि-वचनों (वेदों) में आपके सिवा और कौन है? और इस विश्व को ममता के अत्यंत अंधेरे गड्ढे में बार-बार भटकाने वाली भी आपके सिवा और कौन है?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३२",
+      "dev": "रक्षांसि यत्रोग्रविषाश्च नागा\nयत्रारयो दस्युबलानि यत्र ।\nदावानलो यत्र तथाब्धिमध्ये\nतत्र स्थिता त्वं परिपासि विश्वम्॥",
+      "roman": "rakshaamsi yatrogravishaashcha naagaa\nyatraarayo dasyubalaani yatra |\ndaavaanalo yatra tathaabdhimadhye\ntatra sthitaa tvam paripaasi vishvam ||",
+      "arth": "जहाँ राक्षस हों, जहाँ भयंकर विष वाले नाग हों, जहाँ शत्रु हों, जहाँ लुटेरों की सेनाएँ हों, जहाँ दावानल हो, और समुद्र के बीच भी — वहाँ रहकर आप विश्व की रक्षा करती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३३",
+      "dev": "विश्वेश्वरि त्वं परिपासि विश्वं\nविश्वात्मिका धारयसीह विश्वम् ।\nविश्वेशवन्द्या भवती भवन्ति\nविश्वाश्रया ये त्वयि भक्तिनम्राः॥",
+      "roman": "vishveshvari tvam paripaasi vishvam\nvishvaatmikaa dhaarayaseeha vishvam |\nvishveshavandyaa bhavatee bhavanti\nvishvaashrayaa ye tvayi bhaktinamraah ||",
+      "arth": "हे विश्वेश्वरी, आप विश्व की रक्षा करती हैं। विश्व-स्वरूपा होकर आप विश्व को धारण करती हैं। आप विश्व के स्वामी (भगवान) के लिए भी वंदनीय हैं। जो भक्ति से आपके आगे झुकते हैं, वे विश्व के आश्रय बन जाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३४",
+      "dev": "देवि प्रसीद परिपालय नोऽरिभीते-\nर्नित्यं यथासुरवधादधुनैव सद्यः ।\nपापानि सर्वजगतां प्रशमं नयाशु\nउत्पातपाकजनितांश्च महोपसर्गान्॥",
+      "roman": "devi praseeda paripaalaya no'ribheete\nrnityam yathaasuravadhaadadhunaiva sadyah |\npaapaani sarvajagataam prashamam nayaashu\nutpaatapaakajanitaamshcha mahopasargaan ||",
+      "arth": "हे देवी, प्रसन्न होइए। जैसे अभी असुरों को मारकर आपने तुरंत हमारी रक्षा की, वैसे ही सदा शत्रुओं के भय से हमारी रक्षा कीजिए। सारे जगत के पापों को, और उत्पातों के फल से होने वाले बड़े उपद्रवों को जल्दी शांत कीजिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३५",
+      "dev": "प्रणतानां प्रसीद त्वं देवि विश्वार्तिहारिणि ।\nत्रैलोक्यवासिनामीड्ये लोकानां वरदा भव॥",
+      "roman": "pranataanaam praseeda tvam devi vishvaartihaarini |\ntrailokyavaasinaameedye lokaanaam varadaa bhava ||",
+      "arth": "हे विश्व की पीड़ा हरने वाली देवी, हम प्रणाम करने वालों पर प्रसन्न होइए। हे तीनों लोकों के निवासियों की पूज्य, सब लोकों को वर देने वाली बनिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३६",
+      "dev": "देव्युवाच॥",
+      "roman": "devyuvaacha ||",
+      "arth": "देवी बोलीं —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३७",
+      "dev": "वरदाहं सुरगणा वरं यन्मनसेच्छथ ।\nतं वृणुध्वं प्रयच्छामि जगतामुपकारकम्॥",
+      "roman": "varadaaham suraganaa varam yanmanasechchhatha |\ntam vrinudhvam prayachchhaami jagataamupakaarakam ||",
+      "arth": "हे देवताओ, मैं वर देने को तैयार हूँ। जगत का उपकार करने वाला जो वर तुम मन से चाहते हो, वह माँग लो — मैं दूँगी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३८",
+      "dev": "देवा ऊचुः॥",
+      "roman": "devaa oochuh ||",
+      "arth": "देवता बोले —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३९",
+      "dev": "सर्वाबाधाप्रशमनं त्रैलोक्यस्याखिलेश्वरि ।\nएवमेव त्वया कार्यमस्मद्वैरिविनाशनम्॥",
+      "roman": "sarvaabaadhaaprashamanam trailokyasyaakhileshvari |\nevameva tvayaa kaaryamasmadvairivinaashanam ||",
+      "arth": "हे तीनों लोकों की स्वामिनी, तीनों लोकों की सारी बाधाओं का शमन — यही आपका काम है; और वैसे ही हमारे शत्रुभाव का नाश भी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४०",
+      "dev": "देव्युवाच॥",
+      "roman": "devyuvaacha ||",
+      "arth": "देवी बोलीं —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४१",
+      "dev": "वैवस्वतेऽन्तरे प्राप्ते अष्टाविंशतिमे युगे ।\nशुम्भो निशुम्भश्चैवान्यावुत्पत्स्येते महासुरौ॥",
+      "roman": "vaivasvate'ntare praapte ashtaavimshatime yuge |\nshumbho nishumbhashchaivaanyaavutpatsyete mahaasurau ||",
+      "arth": "वैवस्वत मन्वन्तर के अट्ठाईसवें युग में शुम्भ और निशुम्भ नाम के दो दूसरे महान असुर उत्पन्न होंगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४२",
+      "dev": "नन्दगोपगृहे जाता यशोदागर्भसम्भवा ।\nततस्तौ नाशयिष्यामि विन्ध्याचलनिवासिनी॥",
+      "roman": "nandagopagrihe jaataa yashodaagarbhasambhavaa |\ntatastau naashayishyaami vindhyaachalanivaasinee ||",
+      "arth": "तब मैं नन्द गोप के घर यशोदा के गर्भ से जन्म लूँगी, और विन्ध्याचल पर रहकर उन दोनों का नाश करूँगी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४३",
+      "dev": "पुनरप्यतिरौद्रेण रूपेण पृथिवीतले ।\nअवतीर्य हनिष्यामि वैप्रचित्तांश्च दानवान्॥",
+      "roman": "punarapyatiraudrena roopena prithiveetale |\navateerya hanishyaami vaiprachittaamshcha daanavaan ||",
+      "arth": "फिर अत्यंत रौद्र रूप से पृथ्वी पर अवतार लेकर मैं वैप्रचित्त नाम के दानवों का वध करूँगी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४४",
+      "dev": "भक्षयन्त्याश्च तानुग्रान् वैप्रचित्तान् महासुरान् ।\nरक्ता दन्ता भविष्यन्ति दाडिमीकुसुमोपमाः॥",
+      "roman": "bhakshayantyaashcha taanugraan vaiprachittaan mahaasuraan |\nraktaa dantaa bhavishyanti daadimeekusumopamaah ||",
+      "arth": "उन भयंकर वैप्रचित्त महान असुरों को खाते समय मेरे दाँत अनार के फूल जैसे लाल हो जाएँगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४५",
+      "dev": "ततो मां देवताः स्वर्गे मर्त्यलोके च मानवाः ।\nस्तुवन्तो व्याहरिष्यन्ति सततं रक्तदन्तिकाम्॥",
+      "roman": "tato maam devataah svarge martyaloke cha maanavaah |\nstuvanto vyaaharishyanti satatam raktadantikaam ||",
+      "arth": "तब स्वर्ग में देवता और मृत्युलोक में मनुष्य मेरी स्तुति करते हुए मुझे सदा \"रक्तदन्तिका\" कहकर पुकारेंगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४६",
+      "dev": "भूयश्च शतवार्षिक्यामनावृष्ट्यामनम्भसि ।\nमुनिभिः संस्मृता भूमौ सम्भविष्याम्ययोनिजा॥",
+      "roman": "bhooyashcha shatavaarshikyaamanaavrishtyaamanambhasi |\nmunibhih samsmritaa bhoomau sambhavishyaamyayonijaa ||",
+      "arth": "फिर जब सौ वर्ष तक वर्षा नहीं होगी और पानी का अभाव हो जाएगा, तब मुनियों के स्मरण करने पर मैं बिना माता के गर्भ के धरती पर प्रकट होऊँगी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४७",
+      "dev": "ततः शतेन नेत्राणां निरीक्षिष्याम्यहं मुनीन् ।\nकीर्तयिष्यन्ति मनुजाः शताक्षीमिति मां ततः॥",
+      "roman": "tatah shatena netraanaam nireekshishyaamyaham muneen |\nkeertayishyanti manujaah shataaksheemiti maam tatah ||",
+      "arth": "तब मैं सौ नेत्रों से मुनियों को देखूँगी, इसलिए मनुष्य मुझे \"शताक्षी\" कहकर मेरा कीर्तन करेंगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४८",
+      "dev": "ततोऽहमखिलं लोकमात्मदेहसमुद्भवैः ।\nभरिष्यामि सुराः शाकैरावृष्टेः प्राणधारकैः॥",
+      "roman": "tato'hamakhilam lokamaatmadehasamudbhavaih |\nbharishyaami suraah shaakairaavrishteh praanadhaarakaih ||",
+      "arth": "हे देवताओ, तब जब तक वर्षा न हो, तब तक मैं अपने शरीर से उत्पन्न, प्राणों को धारण कराने वाले शाकों (साग-सब्ज़ियों) से सारे लोक का पालन करूँगी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४९",
+      "dev": "शाकम्भरीति विख्यातिं तदा यास्याम्यहं भुवि ।\nतत्रैव च वधिष्यामि दुर्गमाख्यं महासुरम्॥",
+      "roman": "shaakambhareeti vikhyaatim tadaa yaasyaamyaham bhuvi |\ntatraiva cha vadhishyaami durgamaakhyam mahaasuram ||",
+      "arth": "तब मैं धरती पर \"शाकम्भरी\" नाम से प्रसिद्ध होऊँगी, और उसी समय दुर्गम नाम के महान असुर का वध करूँगी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५०",
+      "dev": "दुर्गादेवीति विख्यातं तन्मे नाम भविष्यति ।\nपुनश्चाहं यदा भीमं रूपं कृत्वा हिमाचले॥",
+      "roman": "durgaadeveeti vikhyaatam tanme naama bhavishyati |\npunashchaaham yadaa bheemam roopam kritvaa himaachale ||",
+      "arth": "इससे मेरा नाम \"दुर्गा देवी\" प्रसिद्ध होगा। फिर जब मैं हिमालय पर भयंकर रूप धारण करके —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५१",
+      "dev": "रक्षांसि भक्षयिष्यामि मुनीनां त्राणकारणात् ।\nतदा मां मुनयः सर्वे स्तोष्यन्त्यानम्रमूर्तयः॥",
+      "roman": "rakshaamsi bhakshayishyaami muneenaam traanakaaranaat |\ntadaa maam munayah sarve stoshyantyaanamramoortayah ||",
+      "arth": "मुनियों की रक्षा के लिए राक्षसों को खाऊँगी, तब सब मुनि झुककर मेरी स्तुति करेंगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५२",
+      "dev": "भीमादेवीति विख्यातं तन्मे नाम भविष्यति ।\nयदारुणाख्यस्त्रैलोक्ये महाबाधां करिष्यति॥",
+      "roman": "bheemaadeveeti vikhyaatam tanme naama bhavishyati |\nyadaarunaakhyastrailokye mahaabaadhaam karishyati ||",
+      "arth": "तब मेरा नाम \"भीमा देवी\" प्रसिद्ध होगा। जब अरुण नाम का असुर तीनों लोकों में भारी उपद्रव करेगा —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५३",
+      "dev": "तदाहं भ्रामरं रूपं कृत्वासङ्ख्येयषट्पदम् ।\nत्रैलोक्यस्य हितार्थाय वधिष्यामि महासुरम्॥",
+      "roman": "tadaaham bhraamaram roopam kritvaasankhyeyashatpadam |\ntrailokyasya hitaarthaaya vadhishyaami mahaasuram ||",
+      "arth": "तब मैं असंख्य भौंरों वाला भ्रामरी रूप धारण करके तीनों लोकों के हित के लिए उस महान असुर का वध करूँगी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५४",
+      "dev": "भ्रामरीति च मां लोकास्तदा स्तोष्यन्ति सर्वतः ।\nइत्थं यदा यदा बाधा दानवोत्था भविष्यति॥",
+      "roman": "bhraamareeti cha maam lokaastadaa stoshyanti sarvatah |\nittham yadaa yadaa baadhaa daanavotthaa bhavishyati ||",
+      "arth": "तब सब लोग सब ओर मुझे \"भ्रामरी\" कहकर मेरी स्तुति करेंगे। इस तरह जब-जब दानवों से बाधा होगी —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५५",
+      "dev": "तदा तदावतीर्याहं करिष्याम्यरिसङ्क्षयम्॥",
+      "roman": "tadaa tadaavateeryaaham karishyaamyarisankshayam ||",
+      "arth": "तब-तब मैं अवतार लेकर शत्रुओं का नाश करूँगी।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "मार्कण्डेय पुराण (अध्याय ८१–९३) — देवी माहात्म्य",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ एक जाँचे हुए छपे संस्करण से है, और मार्कण्डेय पुराण के दूसरे स्वतंत्र संस्करण से अक्षर-दर-अक्षर मिलाया गया है — लगभग ९९% अक्षर एक मिले। श्लोक-संख्या इसी संस्करण की है; छपी पुस्तकों में गिनती थोड़ी अलग हो सकती है।\n\n\"ऐं\", \"ह्रीं\", \"क्लीं\" बीजाक्षर हैं — कुछ परंपराओं में बीज-मंत्र गुरु से लेकर ही जपे जाते हैं; घर में इनके बिना भी पाठ होता है।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं; ग्रंथ के एक पुराने, सबके लिए खुले अनुवाद से श्लोक-दर-श्लोक मिलाया गया। कुछ श्लोक दो खंडों में बँटे हैं, तो उनका अर्थ अगले खंड में पूरा होता है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

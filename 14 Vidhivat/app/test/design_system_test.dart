@@ -40,6 +40,18 @@ void main() {
     expect(presses, 0);
   });
 
+  testWidgets('secondary action gets a visible filled UI surface',
+      (tester) async {
+    await tester.pumpWidget(host(const VidhivatButton(
+      label: 'व्रत का पन्ना खोलें',
+      onPressed: null,
+      variant: VidhivatButtonVariant.secondary,
+    )));
+
+    expect(find.byType(FilledButton), findsOneWidget);
+    expect(find.byType(OutlinedButton), findsNothing);
+  });
+
   testWidgets('surface and status primitives expose their semantic state',
       (tester) async {
     await tester.pumpWidget(host(const Column(

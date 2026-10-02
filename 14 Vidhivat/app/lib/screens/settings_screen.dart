@@ -67,7 +67,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 label: const Text('शहर हाथ से चुनें'),
               ),
               const SizedBox(height: VidhivatSpacing.md),
-              
+
               // ── अपनी जगह का नाम (→ D-058) ───────────────────
               //
               // सूची में 480 शहर हैं, फिर भी गाँव उसमें कभी नहीं आएगा —

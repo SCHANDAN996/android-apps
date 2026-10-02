@@ -58,6 +58,7 @@ void main() {
       if (shellKeAndar.contains(naam)) continue;
       // नीचे अपनी पट्टी है तो उसी पर SafeArea काफ़ी है — वो अलग जाँच में।
       if (src.contains('bottomNavigationBar:')) continue;
+      if (!src.contains('Scaffold(')) continue;
 
       for (final m in RegExp('body:').allMatches(src)) {
         final aage = src.substring(

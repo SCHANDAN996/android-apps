@@ -1,0 +1,478 @@
+{
+  "schemaVersion": 1,
+  "id": "gita_11",
+  "naam": "अध्याय ११ — विश्वरूपदर्शनयोग",
+  "upnaam": [
+    "श्रीमद्भगवद्गीता अध्याय ११",
+    "गीता अध्याय ११",
+    "विश्वरूपदर्शनयोगो नामैकादशोऽध्यायः"
+  ],
+  "prakar": "granth",
+  "devta": "श्रीकृष्ण",
+  "rachnakar": "महर्षि वेदव्यास — महाभारत",
+  "bhasha": "संस्कृत",
+  "parichay": "अर्जुन के कहने पर श्रीकृष्ण उन्हें दिव्य दृष्टि देकर अपना विश्वरूप दिखाते हैं। अर्जुन उसे देखकर चकित और भयभीत होते हैं, स्तुति करते हैं और क्षमा माँगते हैं। फिर श्रीकृष्ण अपना सौम्य रूप दिखाते हैं।",
+  "kabPadhein": "किसी भी दिन, किसी भी समय। बहुत घरों में रोज़ थोड़ा-थोड़ा पढ़ने का चलन है। मार्गशीर्ष शुक्ल एकादशी (मोक्षदा एकादशी) को गीता जयंती मनाई जाती है।",
+  "kaisePadhein": "शान्त जगह बैठकर पढ़ें। पूरा पाठ एक बैठक में न हो तो रोज़ एक अध्याय या कुछ श्लोक पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है।\n\nहर अध्याय के अन्त में उसका समापन-वाक्य दिया है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "श्लोक १",
+      "dev": "अर्जुन उवाच\nमदनुग्रहाय परमं गुह्यमध्यात्मसंज्ञितम् ।\nयत्त्वयोक्तं वचस्तेन मोहोऽयं विगतो मम॥",
+      "roman": "arjuna uvaacha\nmadanugrahaaya paramam guhyamadhyaatmasamjnitam |\nyattvayoktam vachastena moho'yam vigato mama ||",
+      "arth": "अर्जुन बोले — मुझ पर कृपा करने के लिए आपने अध्यात्म नाम का जो परम गुप्त वचन कहा, उससे मेरा यह मोह चला गया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "भवाप्ययौ हि भूतानां श्रुतौ विस्तरशो मया ।\nत्वत्तः कमलपत्राक्ष माहात्म्यमपि चाव्ययम्॥",
+      "roman": "bhavaapyayau hi bhootaanaam shrutau vistarasho mayaa |\ntvattah kamalapatraaksha maahaatmyamapi chaavyayam ||",
+      "arth": "हे कमल की पंखुड़ी जैसी आँखों वाले! मैंने आपसे प्राणियों की उत्पत्ति और प्रलय विस्तार से सुनी, और आपकी अविनाशी महिमा भी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "एवमेतद्यथात्थ त्वमात्मानं परमेश्वर ।\nद्रष्टुमिच्छामि ते रूपमैश्वरं पुरुषोत्तम॥",
+      "roman": "evametadyathaattha tvamaatmaanam parameshvara |\ndrashtumichchhaami te roopamaishvaram purushottama ||",
+      "arth": "हे परमेश्वर! आप अपने को जैसा कहते हैं, वह ठीक वैसा ही है। हे पुरुषोत्तम! मैं आपका वह ईश्वरीय रूप देखना चाहता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "मन्यसे यदि तच्छक्यं मया द्रष्टुमिति प्रभो ।\nयोगेश्वर ततो मे त्वं दर्शयात्मानमव्ययम्॥",
+      "roman": "manyase yadi tachchhakyam mayaa drashtumiti prabho |\nyogeshvara tato me tvam darshayaatmaanamavyayam ||",
+      "arth": "हे प्रभो! यदि आप मानते हैं कि मैं उसे देख सकता हूँ, तो हे योगेश्वर! मुझे अपना अविनाशी स्वरूप दिखाइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "श्रीभगवानुवाच\nपश्य मे पार्थ रूपाणि शतशोऽथ सहस्रशः ।\nनानाविधानि दिव्यानि नानावर्णाकृतीनि च॥",
+      "roman": "shreebhagavaanuvaacha\npashya me paartha roopaani shatasho'tha sahasrashah |\nnaanaavidhaani divyaani naanaavarnaakriteeni cha ||",
+      "arth": "श्रीभगवान बोले — हे पार्थ! मेरे सैकड़ों और हज़ारों रूप देखो — तरह-तरह के, दिव्य, और अनेक रंगों तथा आकारों वाले।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "पश्यादित्यान्वसून्रुद्रानश्विनौ मरुतस्तथा ।\nबहून्यदृष्टपूर्वाणि पश्याश्चर्याणि भारत॥",
+      "roman": "pashyaadityaanvasoonrudraanashvinau marutastathaa |\nbahoonyadrishtapoorvaani pashyaashcharyaani bhaarata ||",
+      "arth": "हे भारत! आदित्यों, वसुओं, रुद्रों, दोनों अश्विनीकुमारों और मरुतों को देखो; और बहुत से ऐसे आश्चर्य देखो जो पहले कभी नहीं देखे गए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "इहैकस्थं जगत्कृत्स्नं पश्याद्य सचराचरम् ।\nमम देहे गुडाकेश यच्चान्यद् द्रष्टुमिच्छसि॥",
+      "roman": "ihaikastham jagatkritsnam pashyaadya sacharaacharam |\nmama dehe gudaakesha yachchaanyad drashtumichchhasi ||",
+      "arth": "हे गुडाकेश! आज यहाँ मेरे शरीर में एक ही जगह चर और अचर समेत सारा जगत देखो, और जो कुछ और देखना चाहते हो वह भी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "न तु मां शक्यसे द्रष्टुमनेनैव स्वचक्षुषा ।\nदिव्यं ददामि ते चक्षुः पश्य मे योगमैश्वरम्॥",
+      "roman": "na tu maam shakyase drashtumanenaiva svachakshushaa |\ndivyam dadaami te chakshuh pashya me yogamaishvaram ||",
+      "arth": "पर तुम अपनी इन्हीं आँखों से मुझे नहीं देख सकते। मैं तुम्हें दिव्य दृष्टि देता हूँ; मेरा ईश्वरीय योग देखो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "सञ्जय उवाच\nएवमुक्त्वा ततो राजन्महायोगेश्वरो हरिः ।\nदर्शयामास पार्थाय परमं रूपमैश्वरम्॥",
+      "roman": "sanjaya uvaacha\nevamuktvaa tato raajanmahaayogeshvaro harih |\ndarshayaamaasa paarthaaya paramam roopamaishvaram ||",
+      "arth": "संजय बोले — हे राजन्! ऐसा कहकर महायोगेश्वर हरि ने अर्जुन को अपना परम ईश्वरीय रूप दिखाया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "अनेकवक्त्रनयनमनेकाद्भुतदर्शनम् ।\nअनेकदिव्याभरणं दिव्यानेकोद्यतायुधम्॥",
+      "roman": "anekavaktranayanamanekaadbhutadarshanam |\nanekadivyaabharanam divyaanekodyataayudham ||",
+      "arth": "उस रूप में अनेक मुख और आँखें थीं, अनेक अद्भुत दृश्य थे, अनेक दिव्य गहने थे, और अनेक उठे हुए दिव्य शस्त्र थे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "दिव्यमाल्याम्बरधरं दिव्यगन्धानुलेपनम् ।\nसर्वाश्चर्यमयं देवमनन्तं विश्वतोमुखम्॥",
+      "roman": "divyamaalyaambaradharam divyagandhaanulepanam |\nsarvaashcharyamayam devamanantam vishvatomukham ||",
+      "arth": "वह दिव्य मालाएँ और वस्त्र पहने था, दिव्य गन्ध का लेप लगाए था; वह सब आश्चर्यों से भरा, प्रकाशमान, अनन्त और सब ओर मुख वाला था।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "दिवि सूर्यसहस्रस्य भवेद्युगपदुत्थिता ।\nयदि भाः सदृशी सा स्याद्भासस्तस्य महात्मनः॥",
+      "roman": "divi sooryasahasrasya bhavedyugapadutthitaa |\nyadi bhaah sadrishee saa syaadbhaasastasya mahaatmanah ||",
+      "arth": "यदि आकाश में हज़ार सूर्यों का प्रकाश एक साथ उठे, तो वह शायद उस महात्मा के प्रकाश जैसा हो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "तत्रैकस्थं जगत्कृत्स्नं प्रविभक्तमनेकधा ।\nअपश्यद्देवदेवस्य शरीरे पाण्डवस्तदा॥",
+      "roman": "tatraikastham jagatkritsnam pravibhaktamanekadhaa |\napashyaddevadevasya shareere paandavastadaa ||",
+      "arth": "तब अर्जुन ने देवों के देव के उस शरीर में, अनेक तरह से बँटा हुआ सारा जगत एक ही जगह देखा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "ततः स विस्मयाविष्टो हृष्टरोमा धनञ्जयः ।\nप्रणम्य शिरसा देवं कृताञ्जलिरभाषत॥",
+      "roman": "tatah sa vismayaavishto hrishtaromaa dhananjayah |\npranamya shirasaa devam kritaanjalirabhaashata ||",
+      "arth": "तब आश्चर्य से भरे और रोमांचित हुए धनंजय ने उस देव को सिर झुकाकर प्रणाम किया और हाथ जोड़कर कहा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "अर्जुन उवाच\nपश्यामि देवांस्तव देव देहे\nसर्वांस्तथा भूतविशेषसङ्घान् ।\nब्रह्माणमीशं कमलासनस्थ-\nमृषींश्च सर्वानुरगांश्च दिव्यान्॥",
+      "roman": "arjuna uvaacha\npashyaami devaamstava deva dehe\nsarvaamstathaa bhootavisheshasanghaan |\nbrahmaanameesham kamalaasanastha-\nmrisheemshcha sarvaanuragaamshcha divyaan ||",
+      "arth": "अर्जुन बोले — हे देव! मैं आपके शरीर में सब देवताओं को, तरह-तरह के प्राणियों के समूहों को, कमल के आसन पर बैठे स्वामी ब्रह्मा को, सब ऋषियों को और दिव्य सर्पों को देख रहा हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "अनेकबाहूदरवक्त्रनेत्रं\nपश्यामि त्वां सर्वतोऽनन्तरूपम् ।\nनान्तं न मध्यं न पुनस्तवादिं\nपश्यामि विश्वेश्वर विश्वरूप॥",
+      "roman": "anekabaahoodaravaktranetram\npashyaami tvaam sarvato'nantaroopam |\nnaantam na madhyam na punastavaadim\npashyaami vishveshvara vishvaroopa ||",
+      "arth": "हे विश्व के ईश्वर! हे विश्वरूप! मैं आपको अनेक भुजाओं, पेटों, मुखों और आँखों वाला, सब ओर से अनन्त रूपों वाला देख रहा हूँ। मुझे न आपका अन्त दिखता है, न मध्य, न आदि।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "किरीटिनं गदिनं चक्रिणं च\nतेजोराशिं सर्वतो दीप्तिमन्तम् ।\nपश्यामि त्वां दुर्निरीक्ष्यं समन्ता-\nद्दीप्तानलार्कद्युतिमप्रमेयम्॥",
+      "roman": "kireetinam gadinam chakrinam cha\ntejoraashim sarvato deeptimantam |\npashyaami tvaam durnireekshyam samantaa-\nddeeptaanalaarkadyutimaprameyam ||",
+      "arth": "मैं आपको मुकुट, गदा और चक्र धारण किए, सब ओर चमकते तेज का पुंज देख रहा हूँ — जिसे देखना कठिन है, जो जलती आग और सूर्य जैसी कान्ति वाला है और जिसकी कोई माप नहीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "त्वमक्षरं परमं वेदितव्यं\nत्वमस्य विश्वस्य परं निधानम् ।\nत्वमव्ययः शाश्वतधर्मगोप्ता\nसनातनस्त्वं पुरुषो मतो मे॥",
+      "roman": "tvamaksharam paramam veditavyam\ntvamasya vishvasya param nidhaanam |\ntvamavyayah shaashvatadharmagoptaa\nsanaatanastvam purusho mato me ||",
+      "arth": "आप जानने योग्य परम अक्षर हैं, आप इस विश्व के परम आधार हैं, आप सनातन धर्म के अविनाशी रक्षक हैं; आप ही सनातन पुरुष हैं — यह मेरा मत है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "अनादिमध्यान्तमनन्तवीर्य-\nमनन्तबाहुं शशिसूर्यनेत्रम् ।\nपश्यामि त्वां दीप्तहुताशवक्त्रं\nस्वतेजसा विश्वमिदं तपन्तम्॥",
+      "roman": "anaadimadhyaantamanantaveerya-\nmanantabaahum shashisooryanetram |\npashyaami tvaam deeptahutaashavaktram\nsvatejasaa vishvamidam tapantam ||",
+      "arth": "मैं आपको आदि, मध्य और अन्त से रहित, अनन्त शक्ति वाला, अनन्त भुजाओं वाला, चन्द्रमा और सूर्य रूपी आँखों वाला, जलती आग जैसे मुख वाला और अपने तेज से इस विश्व को तपाता हुआ देख रहा हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "द्यावापृथिव्योरिदमन्तरं हि\nव्याप्तं त्वयैकेन दिशश्च सर्वाः ।\nदृष्ट्वाद्भुतं रूपमुग्रं तवेदं\nलोकत्रयं प्रव्यथितं महात्मन्॥",
+      "roman": "dyaavaaprithivyoridamantaram hi\nvyaaptam tvayaikena dishashcha sarvaah |\ndrishtvaadbhutam roopamugram tavedam\nlokatrayam pravyathitam mahaatman ||",
+      "arth": "आकाश और पृथ्वी के बीच का यह सारा स्थान और सारी दिशाएँ अकेले आपसे ही भरी हुई हैं। हे महात्मा! आपके इस अद्भुत और भयंकर रूप को देखकर तीनों लोक काँप रहे हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "अमी हि त्वां सुरसङ्घा विशन्ति\nकेचिद्भीताः प्राञ्जलयो गृणन्ति ।\nस्वस्तीत्युक्त्वा महर्षिसिद्धसङ्घाः\nस्तुवन्ति त्वां स्तुतिभिः पुष्कलाभिः॥",
+      "roman": "amee hi tvaam surasanghaa vishanti\nkechidbheetaah praanjalayo grinanti |\nsvasteetyuktvaa maharshisiddhasanghaah\nstuvanti tvaam stutibhih pushkalaabhih ||",
+      "arth": "देवताओं के ये समूह आपमें प्रवेश कर रहे हैं; कुछ डरे हुए हाथ जोड़कर आपका गुणगान कर रहे हैं। महर्षियों और सिद्धों के समूह कल्याण हो कहकर बहुत-सी स्तुतियों से आपकी स्तुति कर रहे हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "रुद्रादित्या वसवो ये च साध्या\nविश्वेऽश्विनौ मरुतश्चोष्मपाश्च ।\nगन्धर्वयक्षासुरसिद्धसङ्घा\nवीक्षन्ते त्वां विस्मिताश्चैव सर्वे॥",
+      "roman": "rudraadityaa vasavo ye cha saadhyaa\nvishve'shvinau marutashchoshmapaashcha |\ngandharvayakshaasurasiddhasanghaa\nveekshante tvaam vismitaashchaiva sarve ||",
+      "arth": "रुद्र, आदित्य, वसु, साध्य, विश्वेदेव, दोनों अश्विनीकुमार, मरुत, पितर, तथा गन्धर्व, यक्ष, असुर और सिद्धों के समूह — सभी चकित होकर आपको देख रहे हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "रूपं महत्ते बहुवक्त्रनेत्रं\nमहाबाहो बहुबाहूरुपादम् ।\nबहूदरं बहुदंष्ट्राकरालं\nदृष्ट्वा लोकाः प्रव्यथितास्तथाहम्॥",
+      "roman": "roopam mahatte bahuvaktranetram\nmahaabaaho bahubaahoorupaadam |\nbahoodaram bahudamshtraakaraalam\ndrishtvaa lokaah pravyathitaastathaaham ||",
+      "arth": "हे महाबाहो! बहुत मुखों और आँखों वाले, बहुत भुजाओं, जाँघों और पैरों वाले, बहुत पेटों वाले और बहुत-सी दाढ़ों से भयानक आपके इस विशाल रूप को देखकर सब लोग काँप रहे हैं, और मैं भी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "नभःस्पृशं दीप्तमनेकवर्णं\nव्यात्ताननं दीप्तविशालनेत्रम् ।\nदृष्ट्वा हि त्वां प्रव्यथितान्तरात्मा\nधृतिं न विन्दामि शमं च विष्णो॥",
+      "roman": "nabhahsprisham deeptamanekavarnam\nvyaattaananam deeptavishaalanetram |\ndrishtvaa hi tvaam pravyathitaantaraatmaa\ndhritim na vindaami shamam cha vishno ||",
+      "arth": "हे विष्णु! आकाश को छूते, चमकते, अनेक रंगों वाले, फैले हुए मुख और चमकती बड़ी आँखों वाले आपको देखकर मेरा अन्तर्मन काँप रहा है; मुझे न धैर्य मिल रहा है, न शान्ति।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २५",
+      "dev": "दंष्ट्राकरालानि च ते मुखानि\nदृष्ट्वैव कालानलसन्निभानि ।\nदिशो न जाने न लभे च शर्म\nप्रसीद देवेश जगन्निवास॥",
+      "roman": "damshtraakaraalaani cha te mukhaani\ndrishtvaiva kaalaanalasannibhaani |\ndisho na jaane na labhe cha sharma\npraseeda devesha jagannivaasa ||",
+      "arth": "दाढ़ों से भयानक और प्रलय की आग जैसे आपके मुखों को देखकर मुझे न दिशाएँ सूझ रही हैं, न चैन मिल रहा है। हे देवों के ईश्वर! हे जगत के निवास! प्रसन्न होइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २६",
+      "dev": "अमी च त्वां धृतराष्ट्रस्य पुत्राः\nसर्वे सहैवावनिपालसङ्घैः ।\nभीष्मो द्रोणः सूतपुत्रस्तथासौ\nसहास्मदीयैरपि योधमुख्यैः॥",
+      "roman": "amee cha tvaam dhritaraashtrasya putraah\nsarve sahaivaavanipaalasanghaih |\nbheeshmo dronah sootaputrastathaasau\nsahaasmadeeyairapi yodhamukhyaih ||",
+      "arth": "धृतराष्ट्र के ये सब पुत्र राजाओं के समूहों के साथ, और भीष्म, द्रोण, वह सूत-पुत्र कर्ण, और हमारी ओर के मुख्य योद्धा भी —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २७",
+      "dev": "वक्त्राणि ते त्वरमाणा विशन्ति\nदंष्ट्राकरालानि भयानकानि ।\nकेचिद्विलग्ना दशनान्तरेषु\nसन्दृश्यन्ते चूर्णितैरुत्तमाङ्गैः॥",
+      "roman": "vaktraani te tvaramaanaa vishanti\ndamshtraakaraalaani bhayaanakaani |\nkechidvilagnaa dashanaantareshu\nsandrishyante choornitairuttamaangaih ||",
+      "arth": "— दाढ़ों से भयानक आपके डरावने मुखों में तेज़ी से घुसे जा रहे हैं। कुछ चूर हुए सिरों के साथ आपके दाँतों के बीच फँसे दिख रहे हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २८",
+      "dev": "यथा नदीनां बहवोऽम्बुवेगाः\nसमुद्रमेवाभिमुखा द्रवन्ति ।\nतथा तवामी नरलोकवीरा\nविशन्ति वक्त्राण्यभिविज्वलन्ति॥",
+      "roman": "yathaa nadeenaam bahavo'mbuvegaah\nsamudramevaabhimukhaa dravanti |\ntathaa tavaamee naralokaveeraa\nvishanti vaktraanyabhivijvalanti ||",
+      "arth": "जैसे नदियों की बहुत-सी जलधाराएँ समुद्र की ही ओर दौड़ती हैं, वैसे ही मनुष्य-लोक के ये वीर आपके धधकते मुखों में प्रवेश कर रहे हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २९",
+      "dev": "यथा प्रदीप्तं ज्वलनं पतङ्गा\nविशन्ति नाशाय समृद्धवेगाः ।\nतथैव नाशाय विशन्ति लोका-\nस्तवापि वक्त्राणि समृद्धवेगाः॥",
+      "roman": "yathaa pradeeptam jvalanam patangaa\nvishanti naashaaya samriddhavegaah |\ntathaiva naashaaya vishanti lokaa-\nstavaapi vaktraani samriddhavegaah ||",
+      "arth": "जैसे पतंगे अपने नाश के लिए बड़े वेग से जलती आग में घुसते हैं, वैसे ही ये लोग भी अपने नाश के लिए बड़े वेग से आपके मुखों में घुस रहे हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३०",
+      "dev": "लेलिह्यसे ग्रसमानः समन्ता-\nल्लोकान्समग्रान्वदनैर्ज्वलद्भिः ।\nतेजोभिरापूर्य जगत्समग्रं\nभासस्तवोग्राः प्रतपन्ति विष्णो॥",
+      "roman": "lelihyase grasamaanah samantaa-\nllokaansamagraanvadanairjvaladbhih |\ntejobhiraapoorya jagatsamagram\nbhaasastavograah pratapanti vishno ||",
+      "arth": "आप अपने जलते मुखों से सब लोकों को सब ओर से निगलते हुए चाट रहे हैं। हे विष्णु! आपकी उग्र किरणें सारे जगत को तेज से भरकर तपा रही हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३१",
+      "dev": "आख्याहि मे को भवानुग्ररूपो\nनमोऽस्तु ते देववर प्रसीद ।\nविज्ञातुमिच्छामि भवन्तमाद्यं\nन हि प्रजानामि तव प्रवृत्तिम्॥",
+      "roman": "aakhyaahi me ko bhavaanugraroopo\nnamo'stu te devavara praseeda |\nvijnaatumichchhaami bhavantamaadyam\nna hi prajaanaami tava pravrittim ||",
+      "arth": "मुझे बताइए, इस उग्र रूप वाले आप कौन हैं? हे देवों में श्रेष्ठ! आपको नमस्कार है, प्रसन्न होइए। मैं आप आदि पुरुष को जानना चाहता हूँ, क्योंकि आपकी प्रवृत्ति मेरी समझ में नहीं आ रही।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३२",
+      "dev": "श्रीभगवानुवाच\nकालोऽस्मि लोकक्षयकृत्प्रवृद्धो\nलोकान्समाहर्तुमिह प्रवृत्तः ।\nऋतेऽपि त्वां न भविष्यन्ति सर्वे\nयेऽवस्थिताः प्रत्यनीकेषु योधाः॥",
+      "roman": "shreebhagavaanuvaacha\nkaalo'smi lokakshayakritpravriddho\nlokaansamaahartumiha pravrittah |\nrite'pi tvaam na bhavishyanti sarve\nye'vasthitaah pratyaneekeshu yodhaah ||",
+      "arth": "श्रीभगवान बोले — मैं लोकों का नाश करने वाला बढ़ा हुआ काल हूँ, और यहाँ लोकों को समेटने में लगा हूँ। तुम्हारे बिना भी, सामने की सेनाओं में खड़े ये सब योद्धा नहीं रहेंगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३३",
+      "dev": "तस्मात्त्वमुत्तिष्ठ यशो लभस्व\nजित्वा शत्रून् भुङ्क्ष्व राज्यं समृद्धम् ।\nमयैवैते निहताः पूर्वमेव\nनिमित्तमात्रं भव सव्यसाचिन्॥",
+      "roman": "tasmaattvamuttishtha yasho labhasva\njitvaa shatroon bhunkshva raajyam samriddham |\nmayaivaite nihataah poorvameva\nnimittamaatram bhava savyasaachin ||",
+      "arth": "इसलिए तुम उठो, यश पाओ, शत्रुओं को जीतकर समृद्ध राज्य भोगो। ये सब मेरे द्वारा पहले ही मारे जा चुके हैं; हे बाएँ हाथ से भी बाण चलाने वाले! तुम केवल निमित्त बन जाओ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३४",
+      "dev": "द्रोणं च भीष्मं च जयद्रथं च\nकर्णं तथान्यानपि योधवीरान् ।\nमया हतांस्त्वं जहि मा व्यथिष्ठा\nयुध्यस्व जेतासि रणे सपत्नान्॥",
+      "roman": "dronam cha bheeshmam cha jayadratham cha\nkarnam tathaanyaanapi yodhaveeraan |\nmayaa hataamstvam jahi maa vyathishthaa\nyudhyasva jetaasi rane sapatnaan ||",
+      "arth": "द्रोण, भीष्म, जयद्रथ, कर्ण और दूसरे वीर योद्धा भी मेरे द्वारा मारे जा चुके हैं; तुम उन्हें मारो, घबराओ मत। युद्ध करो; तुम रण में शत्रुओं को जीतोगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३५",
+      "dev": "सञ्जय उवाच\nएतच्छ्रुत्वा वचनं केशवस्य\nकृताञ्जलिर्वेपमानः किरीटी ।\nनमस्कृत्वा भूय एवाह कृष्णं\nसगद्गदं भीतभीतः प्रणम्य॥",
+      "roman": "sanjaya uvaacha\netachchhrutvaa vachanam keshavasya\nkritaanjalirvepamaanah kireetee |\nnamaskritvaa bhooya evaaha krishnam\nsagadgadam bheetabheetah pranamya ||",
+      "arth": "संजय बोले — केशव का यह वचन सुनकर मुकुटधारी अर्जुन काँपते हुए, हाथ जोड़कर, नमस्कार करके, बहुत डरा हुआ, प्रणाम करके भरे गले से कृष्ण से फिर बोला।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३६",
+      "dev": "अर्जुन उवाच\nस्थाने हृषीकेश तव प्रकीर्त्या\nजगत्प्रहृष्यत्यनुरज्यते च ।\nरक्षांसि भीतानि दिशो द्रवन्ति\nसर्वे नमस्यन्ति च सिद्धसङ्घाः॥",
+      "roman": "arjuna uvaacha\nsthaane hrisheekesha tava prakeertyaa\njagatprahrishyatyanurajyate cha |\nrakshaamsi bheetaani disho dravanti\nsarve namasyanti cha siddhasanghaah ||",
+      "arth": "अर्जुन बोले — हे हृषीकेश! यह ठीक ही है कि आपके गुणगान से जगत हर्षित होता है और प्रेम से भर जाता है; राक्षस डरकर दिशाओं में भागते हैं, और सिद्धों के सब समूह नमस्कार करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३७",
+      "dev": "कस्माच्च ते न नमेरन्महात्मन्\nगरीयसे ब्रह्मणोऽप्यादिकर्त्रे ।\nअनन्त देवेश जगन्निवास\nत्वमक्षरं सदसत्तत्परं यत्॥",
+      "roman": "kasmaachcha te na nameranmahaatman\ngareeyase brahmano'pyaadikartre |\nananta devesha jagannivaasa\ntvamaksharam sadasattatparam yat ||",
+      "arth": "हे महात्मा! वे आपको नमस्कार क्यों न करें? आप ब्रह्मा से भी बड़े और उनके भी आदि कर्ता हैं। हे अनन्त! हे देवों के ईश्वर! हे जगत के निवास! आप अक्षर हैं; सत्, असत् और उनसे परे जो है, वह भी आप ही हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३८",
+      "dev": "त्वमादिदेवः पुरुषः पुराण-\nस्त्वमस्य विश्वस्य परं निधानम् ।\nवेत्तासि वेद्यं च परं च धाम\nत्वया ततं विश्वमनन्तरूप॥",
+      "roman": "tvamaadidevah purushah puraana-\nstvamasya vishvasya param nidhaanam |\nvettaasi vedyam cha param cha dhaama\ntvayaa tatam vishvamanantaroopa ||",
+      "arth": "आप आदिदेव और पुरातन पुरुष हैं; आप इस विश्व के परम आधार हैं। आप ही जानने वाले हैं, जानने योग्य हैं और परम धाम हैं। हे अनन्त रूप वाले! यह विश्व आपसे ही व्याप्त है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३९",
+      "dev": "वायुर्यमोऽग्निर्वरुणः शशाङ्कः\nप्रजापतिस्त्वं प्रपितामहश्च ।\nनमो नमस्तेऽस्तु सहस्रकृत्वः\nपुनश्च भूयोऽपि नमो नमस्ते॥",
+      "roman": "vaayuryamo'gnirvarunah shashaankah\nprajaapatistvam prapitaamahashcha |\nnamo namaste'stu sahasrakritvah\npunashcha bhooyo'pi namo namaste ||",
+      "arth": "आप वायु, यम, अग्नि, वरुण, चन्द्रमा, प्रजापति और परदादा (ब्रह्मा के भी पिता) हैं। आपको हज़ार बार नमस्कार है, नमस्कार है; और फिर बार-बार नमस्कार है, नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४०",
+      "dev": "नमः पुरस्तादथ पृष्ठतस्ते\nनमोऽस्तु ते सर्वत एव सर्व ।\nअनन्तवीर्यामितविक्रमस्त्वं\nसर्वं समाप्नोषि ततोऽसि सर्वः॥",
+      "roman": "namah purastaadatha prishthataste\nnamo'stu te sarvata eva sarva |\nanantaveeryaamitavikramastvam\nsarvam samaapnoshi tato'si sarvah ||",
+      "arth": "हे सब कुछ! आपको आगे से नमस्कार, पीछे से नमस्कार, और सब ओर से नमस्कार है। आपकी शक्ति अनन्त और पराक्रम अपार है; आप सबमें व्याप्त हैं, इसलिए आप ही सब कुछ हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४१",
+      "dev": "सखेति मत्वा प्रसभं यदुक्तं\nहे कृष्ण हे यादव हे सखेति ।\nअजानता महिमानं तवेदं\nमया प्रमादात्प्रणयेन वापि॥",
+      "roman": "sakheti matvaa prasabham yaduktam\nhe krishna he yaadava he sakheti |\najaanataa mahimaanam tavedam\nmayaa pramaadaatpranayena vaapi ||",
+      "arth": "आपकी इस महिमा को न जानते हुए, आपको मित्र मानकर, लापरवाही से या प्रेम से भी मैंने जो हठ में कह दिया — हे कृष्ण, हे यादव, हे सखा —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४२",
+      "dev": "यच्चावहासार्थमसत्कृतोऽसि\nविहारशय्यासनभोजनेषु ।\nएकोऽथवाप्यच्युत तत्समक्षं\nतत्क्षामये त्वामहमप्रमेयम्॥",
+      "roman": "yachchaavahaasaarthamasatkrito'si\nvihaarashayyaasanabhojaneshu |\neko'thavaapyachyuta tatsamaksham\ntatkshaamaye tvaamahamaprameyam ||",
+      "arth": "— और हे अच्युत! घूमते, लेटते, बैठते और खाते समय, अकेले में या दूसरों के सामने, हँसी-मज़ाक में जो आपका अनादर हुआ — उस सबके लिए मैं आप अपार से क्षमा माँगता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४३",
+      "dev": "पितासि लोकस्य चराचरस्य\nत्वमस्य पूज्यश्च गुरुर्गरीयान् ।\nन त्वत्समोऽस्त्यभ्यधिकः कुतोऽन्यो\nलोकत्रयेऽप्यप्रतिमप्रभाव॥",
+      "roman": "pitaasi lokasya charaacharasya\ntvamasya poojyashcha gururgareeyaan |\nna tvatsamo'styabhyadhikah kuto'nyo\nlokatraye'pyapratimaprabhaava ||",
+      "arth": "आप इस चर और अचर जगत के पिता हैं; आप इसके पूजनीय और सबसे बड़े गुरु हैं। हे अतुलनीय प्रभाव वाले! तीनों लोकों में आपके बराबर कोई दूसरा नहीं है, फिर आपसे बढ़कर कहाँ से होगा?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४४",
+      "dev": "तस्मात्प्रणम्य प्रणिधाय कायं\nप्रसादये त्वामहमीशमीड्यम् ।\nपितेव पुत्रस्य सखेव सख्युः\nप्रियः प्रियायार्हसि देव सोढुम्॥",
+      "roman": "tasmaatpranamya pranidhaaya kaayam\nprasaadaye tvaamahameeshameedyam |\npiteva putrasya sakheva sakhyuh\npriyah priyaayaarhasi deva sodhum ||",
+      "arth": "इसलिए मैं शरीर को झुकाकर, प्रणाम करके, आप स्तुति-योग्य ईश्वर को प्रसन्न करना चाहता हूँ। हे देव! जैसे पिता पुत्र के, मित्र मित्र के और प्रेमी अपने प्रिय के अपराध सहता है, वैसे ही आप मेरे अपराध सह लीजिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४५",
+      "dev": "अदृष्टपूर्वं हृषितोऽस्मि दृष्ट्वा\nभयेन च प्रव्यथितं मनो मे ।\nतदेव मे दर्शय देव रूपं\nप्रसीद देवेश जगन्निवास॥",
+      "roman": "adrishtapoorvam hrishito'smi drishtvaa\nbhayena cha pravyathitam mano me |\ntadeva me darshaya deva roopam\npraseeda devesha jagannivaasa ||",
+      "arth": "जो पहले कभी नहीं देखा था, उसे देखकर मैं हर्षित हूँ, और मेरा मन भय से व्याकुल भी है। हे देव! मुझे वही (पहला) रूप दिखाइए। हे देवों के ईश्वर! हे जगत के निवास! प्रसन्न होइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४६",
+      "dev": "किरीटिनं गदिनं चक्रहस्त-\nमिच्छामि त्वां द्रष्टुमहं तथैव ।\nतेनैव रूपेण चतुर्भुजेन\nसहस्रबाहो भव विश्वमूर्ते॥",
+      "roman": "kireetinam gadinam chakrahasta-\nmichchhaami tvaam drashtumaham tathaiva |\ntenaiva roopena chaturbhujena\nsahasrabaaho bhava vishvamoorte ||",
+      "arth": "मैं आपको वैसे ही मुकुट पहने, गदा लिए और हाथ में चक्र लिए देखना चाहता हूँ। हे हज़ार भुजाओं वाले! हे विश्वमूर्ति! उसी चार भुजाओं वाले रूप में हो जाइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४७",
+      "dev": "श्रीभगवानुवाच\nमया प्रसन्नेन तवार्जुनेदं\nरूपं परं दर्शितमात्मयोगात् ।\nतेजोमयं विश्वमनन्तमाद्यं\nयन्मे त्वदन्येन न दृष्टपूर्वम्॥",
+      "roman": "shreebhagavaanuvaacha\nmayaa prasannena tavaarjunedam\nroopam param darshitamaatmayogaat |\ntejomayam vishvamanantamaadyam\nyanme tvadanyena na drishtapoorvam ||",
+      "arth": "श्रीभगवान बोले — हे अर्जुन! मैंने प्रसन्न होकर अपनी योगशक्ति से तुम्हें यह परम रूप दिखाया है — तेज से भरा, सारे विश्व वाला, अनन्त और आदि; जिसे तुम्हारे सिवा किसी और ने पहले नहीं देखा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४८",
+      "dev": "न वेदयज्ञाध्ययनैर्न दानै-\nर्न च क्रियाभिर्न तपोभिरुग्रैः ।\nएवंरूपः शक्य अहं नृलोके\nद्रष्टुं त्वदन्येन कुरुप्रवीर॥",
+      "roman": "na vedayajnaadhyayanairna daanai-\nrna cha kriyaabhirna tapobhirugraih |\nevamroopah shakya aham nriloke\ndrashtum tvadanyena kurupraveera ||",
+      "arth": "हे कुरुवंश के वीर! मनुष्य-लोक में तुम्हारे सिवा कोई दूसरा मुझे इस रूप में नहीं देख सकता — न वेदों और यज्ञों के अध्ययन से, न दानों से, न क्रियाओं से, न कठोर तपों से।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४९",
+      "dev": "मा ते व्यथा मा च विमूढभावो\nदृष्ट्वा रूपं घोरमीदृङ्ममेदम् ।\nव्यपेतभीः प्रीतमनाः पुनस्त्वं\nतदेव मे रूपमिदं प्रपश्य॥",
+      "roman": "maa te vyathaa maa cha vimoodhabhaavo\ndrishtvaa roopam ghorameedrinmamedam |\nvyapetabheeh preetamanaah punastvam\ntadeva me roopamidam prapashya ||",
+      "arth": "मेरे इस घोर रूप को देखकर तुम्हें न घबराहट हो, न मूढ़ता। भय छोड़कर, प्रसन्न मन से तुम फिर मेरे उसी रूप को देखो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५०",
+      "dev": "सञ्जय उवाच\nइत्यर्जुनं वासुदेवस्तथोक्त्वा\nस्वकं रूपं दर्शयामास भूयः ।\nआश्वासयामास च भीतमेनं\nभूत्वा पुनः सौम्यवपुर्महात्मा॥",
+      "roman": "sanjaya uvaacha\nityarjunam vaasudevastathoktvaa\nsvakam roopam darshayaamaasa bhooyah |\naashvaasayaamaasa cha bheetamenam\nbhootvaa punah saumyavapurmahaatmaa ||",
+      "arth": "संजय बोले — वासुदेव ने अर्जुन से ऐसा कहकर फिर अपना (पहला) रूप दिखाया; और उन महात्मा ने फिर सौम्य शरीर धारण करके उस डरे हुए अर्जुन को धीरज दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५१",
+      "dev": "अर्जुन उवाच\nदृष्ट्वेदं मानुषं रूपं तव सौम्यं जनार्दन ।\nइदानीमस्मि संवृत्तः सचेताः प्रकृतिं गतः॥",
+      "roman": "arjuna uvaacha\ndrishtvedam maanusham roopam tava saumyam janaardana |\nidaaneemasmi samvrittah sachetaah prakritim gatah ||",
+      "arth": "अर्जुन बोले — हे जनार्दन! आपका यह सौम्य मनुष्य रूप देखकर अब मेरा चित्त ठिकाने आ गया है और मैं अपनी सहज अवस्था में लौट आया हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५२",
+      "dev": "श्रीभगवानुवाच\nसुदुर्दर्शमिदं रूपं दृष्टवानसि यन्मम ।\nदेवा अप्यस्य रूपस्य नित्यं दर्शनकाङ्क्षिणः॥",
+      "roman": "shreebhagavaanuvaacha\nsudurdarshamidam roopam drishtavaanasi yanmama |\ndevaa apyasya roopasya nityam darshanakaankshinah ||",
+      "arth": "श्रीभगवान बोले — मेरा जो यह रूप तुमने देखा है, उसका दर्शन बहुत दुर्लभ है। देवता भी सदा इस रूप के दर्शन की इच्छा रखते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५३",
+      "dev": "नाहं वेदैर्न तपसा न दानेन न चेज्यया ।\nशक्य एवंविधो द्रष्टुं दृष्टवानसि मां यथा॥",
+      "roman": "naaham vedairna tapasaa na daanena na chejyayaa |\nshakya evamvidho drashtum drishtavaanasi maam yathaa ||",
+      "arth": "तुमने मुझे जैसा देखा है, वैसा मैं न वेदों से देखा जा सकता हूँ, न तप से, न दान से, न यज्ञ से।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५४",
+      "dev": "भक्त्या त्वनन्यया शक्य अहमेवंविधोऽर्जुन ।\nज्ञातुं द्रष्टुं च तत्त्वेन प्रवेष्टुं च परन्तप॥",
+      "roman": "bhaktyaa tvananyayaa shakya ahamevamvidho'rjuna |\njnaatum drashtum cha tattvena praveshtum cha parantapa ||",
+      "arth": "पर हे अर्जुन! हे शत्रुओं को तपाने वाले! अनन्य भक्ति से मैं इस रूप में तत्त्व से जाना जा सकता हूँ, देखा जा सकता हूँ, और मुझमें प्रवेश भी किया जा सकता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५५",
+      "dev": "मत्कर्मकृन्मत्परमो मद्भक्तः सङ्गवर्जितः ।\nनिर्वैरः सर्वभूतेषु यः स मामेति पाण्डव॥",
+      "roman": "matkarmakrinmatparamo madbhaktah sangavarjitah |\nnirvairah sarvabhooteshu yah sa maameti paandava ||",
+      "arth": "हे पाण्डव! जो मेरे लिए कर्म करता है, मुझे ही परम मानता है, मेरा भक्त है, आसक्ति से रहित है और किसी भी प्राणी से वैर नहीं रखता — वह मुझे पा लेता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "समापन",
+      "dev": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु\nब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे\nविश्वरूपदर्शनयोगो नामैकादशोऽध्यायः॥",
+      "roman": "om tatsaditi shreemadbhagavadgeetaasoopanishatsu\nbrahmavidyaayaam yogashaastre shreekrishnaarjunasamvaade\nvishvaroopadarshanayogo naamaikaadasho'dhyaayah ||",
+      "arth": "इस तरह उपनिषद रूप श्रीमद्भगवद्गीता में, जो ब्रह्मविद्या और योगशास्त्र है, श्रीकृष्ण और अर्जुन के संवाद में \"विश्वरूपदर्शनयोग\" नाम का ग्यारहवाँ अध्याय पूरा हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, भीष्म पर्व — श्रीमद्भगवद्गीता",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ पाँच अलग संस्करणों से श्लोक-दर-श्लोक मिलाया गया है। सात सौ में से पाँच सौ सतहत्तर श्लोक पाँचों में अक्षर-अक्षर एक मिले; बाक़ी में वही रूप लिया गया जिस पर अधिक संस्करण एक थे।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं। आचार्यों ने कई श्लोकों को अलग-अलग ढंग से समझाया है; यहाँ किसी एक मत की व्याख्या नहीं, सीधा अर्थ दिया गया है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

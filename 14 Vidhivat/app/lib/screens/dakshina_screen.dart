@@ -20,18 +20,21 @@ class DakshinaScreen extends StatelessWidget {
 
   /// राशि कहाँ लगती है — पाँच सच्ची पंक्तियाँ।
   ///
-  /// ⚠️ इनमें कोई ऐसी चीज़ मत जोड़ना जो सचमुच न होती हो। ₹800 वाला अंक
-  /// `docs/18_SROT_PANJI.md` से आया है और यूज़र उसे जाँच सकता है — यही
-  /// इस पन्ने की असली ताक़त है, कोई भावनात्मक वाक्य नहीं।
+  /// ⚠️ इनमें कोई ऐसी चीज़ मत जोड़ना जो सचमुच न होती हो — यही इस
+  /// पन्ने की असली ताक़त है, कोई भावनात्मक वाक्य नहीं।
+  ///
+  /// 23 सित 2026 (→ D-090): पहली पंक्ति थी "पंडित जी से हर पूजा की
+  /// जाँच — लगभग ₹800 प्रति पूजा"। पंडित जी की जाँच होती ही नहीं
+  /// (→ D-072), इसलिए वह पंक्ति झूठी थी — हटी।
   static const _kharch = <(IconData, String)>[
     (
       Icons.verified_outlined,
-      'पंडित जी से हर पूजा की जाँच — लगभग ₹800 प्रति पूजा'
+      'हर पूजा और पाठ को दो-तीन ग्रंथों से मिलाकर जाँचना'
     ),
     (Icons.mic_none_outlined, 'मंत्रों की रिकॉर्डिंग'),
     (Icons.menu_book_outlined, 'पंचांग और शास्त्र की पुस्तकें'),
     (Icons.add_circle_outline, 'नई पूजाएँ और नए पाठ जोड़ना'),
-    (Icons.storefront_outlined, 'Play Store की फ़ीस'),
+    (Icons.storefront_outlined, 'Play Store और भुगतान की फ़ीस'),
   ];
 
   /// तीनों पंक्तियाँ ज़रूरी हैं। तीसरी सबसे ज़्यादा।
@@ -92,7 +95,7 @@ class DakshinaScreen extends StatelessWidget {
                   children: [
                     // ⚠ यहाँ "मुफ़्त" और "कोई विज्ञापन नहीं" दोबारा मत कहना —
                     // ऊपर hero की पहली लाइन वही कह चुकी है। फ़ोन पर देखने पर
-                    // दोनों चार लाइन के फ़ासले पर एक साथ पढ़े जा रहे थे (→ D-057)।
+                    // दोनों चार लाइन के फ़ासले पर एक साथ पढ़े जा रहे थे (→ D-057)।
                     Text(
                       'कोई खाता नहीं, कोई सदस्यता नहीं। जो आज इसमें है, वह सबके लिए है।',
                       style: type.bodyMedium,
@@ -102,8 +105,7 @@ class DakshinaScreen extends StatelessWidget {
                     const SizedBox(height: VidhivatSpacing.md),
                     Text(
                       DakshinaShabd.vaikalpik,
-                      style:
-                          type.caption.copyWith(color: colors.textSecondary),
+                      style: type.caption.copyWith(color: colors.textSecondary),
                     ),
                     const SizedBox(height: VidhivatSpacing.xs),
                     // पैसा किस रास्ते जाएगा — यह बिना पूछे हर आदमी सोचता है।

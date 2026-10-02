@@ -29,16 +29,28 @@ class GrahanScreen extends StatefulWidget {
 }
 
 class _GrahanScreenState extends State<GrahanScreen> {
+  static List<GrahanDarshan>? _cachedSab;
+  static String? _cachedCityKey;
+  static int? _cachedYear;
+
   /// अगले पाँच साल — ग्रहण साल में दो-तीन ही होते हैं, इसलिए इतनी दूर
   /// तक देखना पड़ता है कि सूची ख़ाली न लगे।
   late final Future<List<GrahanDarshan>> _sab = _nikalo();
 
   Future<List<GrahanDarshan>> _nikalo() async {
     final aaj = DateTime.now();
-    return chandraGrahan(
+    if (_cachedSab != null &&
+        _cachedCityKey == settings.city.cacheKey &&
+        _cachedYear == aaj.year) {
+      return _cachedSab!;
+    }
+    final result = chandraGrahan(
       se: aaj,
       tak: DateTime(aaj.year + 5, aaj.month, aaj.day),
     ).map((g) => dekhaJayega(g, settings.place)).toList(growable: false);
+    _cachedCityKey = settings.city.cacheKey;
+    _cachedYear = aaj.year;
+    return _cachedSab = result;
   }
 
   @override
@@ -111,8 +123,7 @@ class _GrahanScreenState extends State<GrahanScreen> {
 /// ⚠️ इंजन के ग्रहण-समय **असली UTC पल** हैं (यह `muhurta.dart` वाले
 /// घड़ी-वाले नक़ली UTC से अलग बात है — → D-043)। दिखाने से पहले शहर का
 /// समय-क्षेत्र जोड़ना पड़ता है, वरना साढ़े पाँच घंटे पीछे दिखेगा।
-DateTime _shaharKiGhadi(DateTime utc) =>
-    utc.add(settings.place.timeZoneOffset);
+DateTime _shaharKiGhadi(DateTime utc) => utc.add(settings.place.timeZoneOffset);
 
 class _GrahanCard extends StatelessWidget {
   final GrahanDarshan darshan;
@@ -144,8 +155,8 @@ class _GrahanCard extends StatelessWidget {
                     const SizedBox(height: 2),
                     Text(
                       g.prakar.naam,
-                      style: type.bodySmall
-                          .copyWith(color: colors.textSecondary),
+                      style:
+                          type.bodySmall.copyWith(color: colors.textSecondary),
                     ),
                   ],
                 ),
@@ -255,8 +266,7 @@ class _GrahanCard extends StatelessWidget {
                 padding: const EdgeInsets.only(top: VidhivatSpacing.sm),
                 child: Text(
                   'उपछाया ग्रहण पर सूतक नहीं माना जाता।',
-                  style:
-                      type.bodySmall.copyWith(color: colors.textSecondary),
+                  style: type.bodySmall.copyWith(color: colors.textSecondary),
                 ),
               ),
           ],
@@ -274,10 +284,10 @@ class _GrahanKeNiyam extends StatelessWidget {
   Widget build(BuildContext context) => const VidhivatSrotButton(
         label: 'ग्रहण और सूतक के बारे में',
         panktiyan: [
-          VidhivatSrotPankti('खग्रास',
-              'पूरा चंद्रमा पृथ्वी की असली छाया में आ जाता है।'),
-          VidhivatSrotPankti('खंडग्रास',
-              'चंद्रमा का कुछ हिस्सा ही असली छाया में आता है।'),
+          VidhivatSrotPankti(
+              'खग्रास', 'पूरा चंद्रमा पृथ्वी की असली छाया में आ जाता है।'),
+          VidhivatSrotPankti(
+              'खंडग्रास', 'चंद्रमा का कुछ हिस्सा ही असली छाया में आता है।'),
           VidhivatSrotPankti(
               'उपछाया',
               'चंद्रमा सिर्फ़ हल्की छाया से गुज़रता है — आँख से लगभग कुछ '
@@ -297,9 +307,10 @@ class _GrahanKeNiyam extends StatelessWidget {
               'बच्चे, बूढ़े और बीमार',
               'उनके लिए सूतक सिर्फ़ एक प्रहर पहले से माना जाता है, तीन '
                   'नहीं।'),
-          VidhivatSrotPankti('गणना',
+          VidhivatSrotPankti(
+              'गणना',
               'Meeus की विधि से — समय NASA के ग्रहण-कैटलॉग से और सूतक '
-                  'Drik Panchang से मिलाया हुआ।'),
+                  'प्रचलित पंचांग-पद्धति से मिलाया हुआ।'),
         ],
         antimBaat: 'ऐप सिर्फ़ समय बताता है। ग्रहण के फल या किसी राशि पर '
             'असर का कोई दावा यहाँ नहीं है। सूतक में क्या करना है, यह अपने '

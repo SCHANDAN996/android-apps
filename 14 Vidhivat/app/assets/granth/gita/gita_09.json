@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "id": "gita_09",
+  "naam": "अध्याय ९ — राजविद्याराजगुह्ययोग",
+  "upnaam": [
+    "श्रीमद्भगवद्गीता अध्याय ९",
+    "गीता अध्याय ९",
+    "राजविद्याराजगुह्ययोगो नाम नवमोऽध्यायः"
+  ],
+  "prakar": "granth",
+  "devta": "श्रीकृष्ण",
+  "rachnakar": "महर्षि वेदव्यास — महाभारत",
+  "bhasha": "संस्कृत",
+  "parichay": "श्रीकृष्ण बताते हैं कि सारा जगत उनसे व्याप्त है, फिर भी वे उससे बँधे नहीं। जो पत्ता, फूल, फल या जल भी भक्ति से चढ़ाता है, वे उसे स्वीकार करते हैं; और उनकी शरण लेने वाला कोई भी हो, परम गति पाता है।",
+  "kabPadhein": "किसी भी दिन, किसी भी समय। बहुत घरों में रोज़ थोड़ा-थोड़ा पढ़ने का चलन है। मार्गशीर्ष शुक्ल एकादशी (मोक्षदा एकादशी) को गीता जयंती मनाई जाती है।",
+  "kaisePadhein": "शान्त जगह बैठकर पढ़ें। पूरा पाठ एक बैठक में न हो तो रोज़ एक अध्याय या कुछ श्लोक पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है।\n\nहर अध्याय के अन्त में उसका समापन-वाक्य दिया है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "श्लोक १",
+      "dev": "श्रीभगवानुवाच\nइदं तु ते गुह्यतमं प्रवक्ष्याम्यनसूयवे ।\nज्ञानं विज्ञानसहितं यज्ज्ञात्वा मोक्ष्यसेऽशुभात्॥",
+      "roman": "shreebhagavaanuvaacha\nidam tu te guhyatamam pravakshyaamyanasooyave |\njnaanam vijnaanasahitam yajjnaatvaa mokshyase'shubhaat ||",
+      "arth": "श्रीभगवान बोले — तुम दोष नहीं निकालते, इसलिए तुम्हें यह सबसे गुप्त ज्ञान अनुभव सहित बताऊँगा, जिसे जानकर तुम अशुभ से छूट जाओगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "राजविद्या राजगुह्यं पवित्रमिदमुत्तमम् ।\nप्रत्यक्षावगमं धर्म्यं सुसुखं कर्तुमव्ययम्॥",
+      "roman": "raajavidyaa raajaguhyam pavitramidamuttamam |\npratyakshaavagamam dharmyam susukham kartumavyayam ||",
+      "arth": "यह विद्याओं का राजा, रहस्यों का राजा, पवित्र और उत्तम है; सीधे अनुभव में आने वाला, धर्म के अनुकूल, करने में बहुत सहज और अविनाशी है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "अश्रद्दधानाः पुरुषा धर्मस्यास्य परन्तप ।\nअप्राप्य मां निवर्तन्ते मृत्युसंसारवर्त्मनि॥",
+      "roman": "ashraddadhaanaah purushaa dharmasyaasya parantapa |\napraapya maam nivartante mrityusamsaaravartmani ||",
+      "arth": "हे शत्रुओं को तपाने वाले! इस धर्म में श्रद्धा न रखने वाले मनुष्य मुझे न पाकर मृत्यु वाले संसार के रास्ते पर लौटते रहते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "मया ततमिदं सर्वं जगदव्यक्तमूर्तिना ।\nमत्स्थानि सर्वभूतानि न चाहं तेष्ववस्थितः॥",
+      "roman": "mayaa tatamidam sarvam jagadavyaktamoortinaa |\nmatsthaani sarvabhootaani na chaaham teshvavasthitah ||",
+      "arth": "मुझ अप्रकट रूप वाले से यह सारा जगत व्याप्त है। सब प्राणी मुझमें टिके हैं, पर मैं उनमें टिका हुआ नहीं हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "न च मत्स्थानि भूतानि पश्य मे योगमैश्वरम् ।\nभूतभृन्न च भूतस्थो ममात्मा भूतभावनः॥",
+      "roman": "na cha matsthaani bhootaani pashya me yogamaishvaram |\nbhootabhrinna cha bhootastho mamaatmaa bhootabhaavanah ||",
+      "arth": "और (सच पूछो तो) प्राणी मुझमें टिके भी नहीं हैं — मेरा यह ईश्वरीय योग देखो। मेरा आत्मा प्राणियों को पैदा करने और पालने वाला है, फिर भी प्राणियों में टिका नहीं है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "यथाकाशस्थितो नित्यं वायुः सर्वत्रगो महान् ।\nतथा सर्वाणि भूतानि मत्स्थानीत्युपधारय॥",
+      "roman": "yathaakaashasthito nityam vaayuh sarvatrago mahaan |\ntathaa sarvaani bhootaani matsthaaneetyupadhaaraya ||",
+      "arth": "जैसे सब जगह चलने वाली महान वायु सदा आकाश में ही रहती है, वैसे ही सब प्राणी मुझमें रहते हैं — ऐसा समझो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "सर्वभूतानि कौन्तेय प्रकृतिं यान्ति मामिकाम् ।\nकल्पक्षये पुनस्तानि कल्पादौ विसृजाम्यहम्॥",
+      "roman": "sarvabhootaani kaunteya prakritim yaanti maamikaam |\nkalpakshaye punastaani kalpaadau visrijaamyaham ||",
+      "arth": "हे कुन्ती-पुत्र! कल्प के अन्त में सब प्राणी मेरी प्रकृति में चले जाते हैं, और कल्प के आरम्भ में मैं उन्हें फिर रचता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "प्रकृतिं स्वामवष्टभ्य विसृजामि पुनः पुनः ।\nभूतग्राममिमं कृत्स्नमवशं प्रकृतेर्वशात्॥",
+      "roman": "prakritim svaamavashtabhya visrijaami punah punah |\nbhootagraamamimam kritsnamavasham prakritervashaat ||",
+      "arth": "अपनी प्रकृति को थामकर मैं प्राणियों के इस पूरे समूह को, जो प्रकृति के वश में होने से बेबस है, बार-बार रचता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "न च मां तानि कर्माणि निबध्नन्ति धनञ्जय ।\nउदासीनवदासीनमसक्तं तेषु कर्मसु॥",
+      "roman": "na cha maam taani karmaani nibadhnanti dhananjaya |\nudaaseenavadaaseenamasaktam teshu karmasu ||",
+      "arth": "हे धनंजय! वे कर्म मुझे नहीं बाँधते, क्योंकि मैं उन कर्मों में आसक्ति के बिना, उदासीन की तरह बैठा रहता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "मयाध्यक्षेण प्रकृतिः सूयते सचराचरम् ।\nहेतुनानेन कौन्तेय जगद्विपरिवर्तते॥",
+      "roman": "mayaadhyakshena prakritih sooyate sacharaacharam |\nhetunaanena kaunteya jagadviparivartate ||",
+      "arth": "मेरी देख-रेख में प्रकृति चर और अचर समेत सारे जगत को पैदा करती है। हे कुन्ती-पुत्र! इसी कारण यह जगत घूमता रहता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "अवजानन्ति मां मूढा मानुषीं तनुमाश्रितम् ।\nपरं भावमजानन्तो मम भूतमहेश्वरम्॥",
+      "roman": "avajaananti maam moodhaa maanusheem tanumaashritam |\nparam bhaavamajaananto mama bhootamaheshvaram ||",
+      "arth": "मूढ़ लोग मेरे उस परम भाव को नहीं जानते कि मैं सब प्राणियों का महान ईश्वर हूँ, और मनुष्य शरीर धारण किए हुए मुझको तुच्छ समझते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "मोघाशा मोघकर्माणो मोघज्ञाना विचेतसः ।\nराक्षसीमासुरीं चैव प्रकृतिं मोहिनीं श्रिताः॥",
+      "roman": "moghaashaa moghakarmaano moghajnaanaa vichetasah |\nraakshaseemaasureem chaiva prakritim mohineem shritaah ||",
+      "arth": "उनकी आशाएँ व्यर्थ, कर्म व्यर्थ और ज्ञान व्यर्थ होता है; वे विवेकहीन लोग मोह में डालने वाले राक्षसी और आसुरी स्वभाव को अपनाए रहते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "महात्मानस्तु मां पार्थ दैवीं प्रकृतिमाश्रिताः ।\nभजन्त्यनन्यमनसो ज्ञात्वा भूतादिमव्ययम्॥",
+      "roman": "mahaatmaanastu maam paartha daiveem prakritimaashritaah |\nbhajantyananyamanaso jnaatvaa bhootaadimavyayam ||",
+      "arth": "पर हे पार्थ! दैवी स्वभाव का सहारा लेने वाले महात्मा लोग मुझे सब प्राणियों का आदि और अविनाशी जानकर, दूसरे में मन न लगाकर मुझे भजते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "सततं कीर्तयन्तो मां यतन्तश्च दृढव्रताः ।\nनमस्यन्तश्च मां भक्त्या नित्ययुक्ता उपासते॥",
+      "roman": "satatam keertayanto maam yatantashcha dridhavrataah |\nnamasyantashcha maam bhaktyaa nityayuktaa upaasate ||",
+      "arth": "वे सदा मेरा कीर्तन करते हुए, पक्के व्रत के साथ प्रयत्न करते हुए और भक्ति से मुझे नमस्कार करते हुए, सदा जुड़े रहकर मेरी उपासना करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "ज्ञानयज्ञेन चाप्यन्ये यजन्तो मामुपासते ।\nएकत्वेन पृथक्त्वेन बहुधा विश्वतोमुखम्॥",
+      "roman": "jnaanayajnena chaapyanye yajanto maamupaasate |\nekatvena prithaktvena bahudhaa vishvatomukham ||",
+      "arth": "दूसरे लोग ज्ञान रूपी यज्ञ से मुझे पूजते हुए मेरी उपासना करते हैं — कोई एक मानकर, कोई अलग मानकर, और कोई सब ओर मुख वाले मुझको बहुत तरह से।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "अहं क्रतुरहं यज्ञः स्वधाहमहमौषधम् ।\nमन्त्रोऽहमहमेवाज्यमहमग्निरहं हुतम्॥",
+      "roman": "aham kraturaham yajnah svadhaahamahamaushadham |\nmantro'hamahamevaajyamahamagniraham hutam ||",
+      "arth": "मैं क्रतु हूँ, मैं यज्ञ हूँ, मैं स्वधा हूँ, मैं औषधि हूँ, मैं मन्त्र हूँ, मैं ही घी हूँ, मैं अग्नि हूँ और मैं ही आहुति हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "पिताहमस्य जगतो माता धाता पितामहः ।\nवेद्यं पवित्रमोङ्कार ऋक्साम यजुरेव च॥",
+      "roman": "pitaahamasya jagato maataa dhaataa pitaamahah |\nvedyam pavitramonkaara riksaama yajureva cha ||",
+      "arth": "मैं इस जगत का पिता, माता, धारण करने वाला और पितामह हूँ; मैं जानने योग्य, पवित्र करने वाला, ओंकार, और ऋग्वेद, सामवेद तथा यजुर्वेद भी हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "गतिर्भर्ता प्रभुः साक्षी निवासः शरणं सुहृत् ।\nप्रभवः प्रलयः स्थानं निधानं बीजमव्ययम्॥",
+      "roman": "gatirbhartaa prabhuh saakshee nivaasah sharanam suhrit |\nprabhavah pralayah sthaanam nidhaanam beejamavyayam ||",
+      "arth": "मैं ही गति, पालन करने वाला, स्वामी, साक्षी, रहने की जगह, शरण और हितैषी मित्र हूँ; मैं ही उत्पत्ति, प्रलय, आधार, भण्डार और अविनाशी बीज हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "तपाम्यहमहं वर्षं निगृह्णाम्युत्सृजामि च ।\nअमृतं चैव मृत्युश्च सदसच्चाहमर्जुन॥",
+      "roman": "tapaamyahamaham varsham nigrihnaamyutsrijaami cha |\namritam chaiva mrityushcha sadasachchaahamarjuna ||",
+      "arth": "हे अर्जुन! मैं तपता हूँ, मैं ही वर्षा को रोकता और बरसाता हूँ; मैं ही अमृत हूँ और मृत्यु भी, सत् भी और असत् भी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "त्रैविद्या मां सोमपाः पूतपापा\nयज्ञैरिष्ट्वा स्वर्गतिं प्रार्थयन्ते ।\nते पुण्यमासाद्य सुरेन्द्रलोक-\nमश्नन्ति दिव्यान्दिवि देवभोगान्॥",
+      "roman": "traividyaa maam somapaah pootapaapaa\nyajnairishtvaa svargatim praarthayante |\nte punyamaasaadya surendraloka-\nmashnanti divyaandivi devabhogaan ||",
+      "arth": "तीनों वेदों को जानने वाले, सोम पीने वाले, पाप से शुद्ध हुए लोग यज्ञों से मुझे पूजकर स्वर्ग जाना चाहते हैं। वे पुण्य से इन्द्र का लोक पाकर स्वर्ग में देवताओं के दिव्य भोग भोगते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "ते तं भुक्त्वा स्वर्गलोकं विशालं\nक्षीणे पुण्ये मर्त्यलोकं विशन्ति ।\nएवं त्रयीधर्ममनुप्रपन्ना\nगतागतं कामकामा लभन्ते॥",
+      "roman": "te tam bhuktvaa svargalokam vishaalam\nksheene punye martyalokam vishanti |\nevam trayeedharmamanuprapannaa\ngataagatam kaamakaamaa labhante ||",
+      "arth": "वे उस विशाल स्वर्गलोक को भोगकर पुण्य घट जाने पर मृत्युलोक में लौट आते हैं। इस तरह तीनों वेदों के धर्म पर चलने वाले, भोग चाहने वाले लोग आना-जाना ही पाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "अनन्याश्चिन्तयन्तो मां ये जनाः पर्युपासते ।\nतेषां नित्याभियुक्तानां योगक्षेमं वहाम्यहम्॥",
+      "roman": "ananyaashchintayanto maam ye janaah paryupaasate |\nteshaam nityaabhiyuktaanaam yogakshemam vahaamyaham ||",
+      "arth": "जो लोग दूसरे में मन न लगाकर मेरा ही चिन्तन करते हुए मेरी उपासना करते हैं, उन सदा मुझमें लगे हुओं का योगक्षेम (जो नहीं है उसे देना और जो है उसकी रक्षा) मैं ख़ुद उठाता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "येऽप्यन्यदेवता भक्ता यजन्ते श्रद्धयान्विताः ।\nतेऽपि मामेव कौन्तेय यजन्त्यविधिपूर्वकम्॥",
+      "roman": "ye'pyanyadevataa bhaktaa yajante shraddhayaanvitaah |\nte'pi maameva kaunteya yajantyavidhipoorvakam ||",
+      "arth": "हे कुन्ती-पुत्र! जो भक्त श्रद्धा के साथ दूसरे देवताओं को पूजते हैं, वे भी मुझे ही पूजते हैं, पर विधि के बिना।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "अहं हि सर्वयज्ञानां भोक्ता च प्रभुरेव च ।\nन तु मामभिजानन्ति तत्त्वेनातश्च्यवन्ति ते॥",
+      "roman": "aham hi sarvayajnaanaam bhoktaa cha prabhureva cha |\nna tu maamabhijaananti tattvenaatashchyavanti te ||",
+      "arth": "क्योंकि सब यज्ञों का भोगने वाला और स्वामी मैं ही हूँ; पर वे मुझे तत्त्व से नहीं जानते, इसलिए गिर जाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २५",
+      "dev": "यान्ति देवव्रता देवान्पितॄन्यान्ति पितृव्रताः ।\nभूतानि यान्ति भूतेज्या यान्ति मद्याजिनोऽपि माम्॥",
+      "roman": "yaanti devavrataa devaanpitreenyaanti pitrivrataah |\nbhootaani yaanti bhootejyaa yaanti madyaajino'pi maam ||",
+      "arth": "देवताओं का व्रत रखने वाले देवताओं को पाते हैं, पितरों का व्रत रखने वाले पितरों को, भूतों को पूजने वाले भूतों को; और मुझे पूजने वाले मुझे ही पाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २६",
+      "dev": "पत्रं पुष्पं फलं तोयं यो मे भक्त्या प्रयच्छति ।\nतदहं भक्त्युपहृतमश्नामि प्रयतात्मनः॥",
+      "roman": "patram pushpam phalam toyam yo me bhaktyaa prayachchhati |\ntadaham bhaktyupahritamashnaami prayataatmanah ||",
+      "arth": "जो भक्ति से मुझे पत्ता, फूल, फल या जल चढ़ाता है, उस शुद्ध मन वाले का भक्ति से चढ़ाया हुआ वह मैं स्वीकार करता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २७",
+      "dev": "यत्करोषि यदश्नासि यज्जुहोषि ददासि यत् ।\nयत्तपस्यसि कौन्तेय तत्कुरुष्व मदर्पणम्॥",
+      "roman": "yatkaroshi yadashnaasi yajjuhoshi dadaasi yat |\nyattapasyasi kaunteya tatkurushva madarpanam ||",
+      "arth": "हे कुन्ती-पुत्र! तुम जो कुछ करते हो, जो खाते हो, जो हवन करते हो, जो दान देते हो और जो तप करते हो — वह सब मुझे अर्पण कर दो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २८",
+      "dev": "शुभाशुभफलैरेवं मोक्ष्यसे कर्मबन्धनैः ।\nसंन्यासयोगयुक्तात्मा विमुक्तो मामुपैष्यसि॥",
+      "roman": "shubhaashubhaphalairevam mokshyase karmabandhanaih |\nsamnyaasayogayuktaatmaa vimukto maamupaishyasi ||",
+      "arth": "इस तरह तुम शुभ और अशुभ फल वाले कर्म के बन्धनों से छूट जाओगे; और संन्यास रूपी योग में मन लगाकर, मुक्त होकर मुझे पा लोगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २९",
+      "dev": "समोऽहं सर्वभूतेषु न मे द्वेष्योऽस्ति न प्रियः ।\nये भजन्ति तु मां भक्त्या मयि ते तेषु चाप्यहम्॥",
+      "roman": "samo'ham sarvabhooteshu na me dveshyo'sti na priyah |\nye bhajanti tu maam bhaktyaa mayi te teshu chaapyaham ||",
+      "arth": "मैं सब प्राणियों में समान हूँ; न कोई मेरा द्वेष का पात्र है, न प्रिय। पर जो भक्ति से मुझे भजते हैं, वे मुझमें हैं और मैं भी उनमें हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३०",
+      "dev": "अपि चेत्सुदुराचारो भजते मामनन्यभाक् ।\nसाधुरेव स मन्तव्यः सम्यग्व्यवसितो हि सः॥",
+      "roman": "api chetsuduraachaaro bhajate maamananyabhaak |\nsaadhureva sa mantavyah samyagvyavasito hi sah ||",
+      "arth": "यदि कोई बहुत बुरे आचरण वाला भी दूसरे को न भजकर मुझे ही भजता है, तो उसे साधु ही मानना चाहिए, क्योंकि उसने ठीक निश्चय कर लिया है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३१",
+      "dev": "क्षिप्रं भवति धर्मात्मा शश्वच्छान्तिं निगच्छति ।\nकौन्तेय प्रतिजानीहि न मे भक्तः प्रणश्यति॥",
+      "roman": "kshipram bhavati dharmaatmaa shashvachchhaantim nigachchhati |\nkaunteya pratijaaneehi na me bhaktah pranashyati ||",
+      "arth": "वह जल्दी ही धर्मात्मा बन जाता है और सदा रहने वाली शान्ति पाता है। हे कुन्ती-पुत्र! यह पक्का जान लो कि मेरे भक्त का नाश नहीं होता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३२",
+      "dev": "मां हि पार्थ व्यपाश्रित्य येऽपि स्युः पापयोनयः ।\nस्त्रियो वैश्यास्तथा शूद्रास्तेऽपि यान्ति परां गतिम्॥",
+      "roman": "maam hi paartha vyapaashritya ye'pi syuh paapayonayah |\nstriyo vaishyaastathaa shoodraaste'pi yaanti paraam gatim ||",
+      "arth": "हे पार्थ! जो पाप-योनि में जन्मे कहे जाते हैं, तथा स्त्रियाँ, वैश्य और शूद्र — वे भी मेरी शरण लेकर परम गति पाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३३",
+      "dev": "किं पुनर्ब्राह्मणाः पुण्या भक्ता राजर्षयस्तथा ।\nअनित्यमसुखं लोकमिमं प्राप्य भजस्व माम्॥",
+      "roman": "kim punarbraahmanaah punyaa bhaktaa raajarshayastathaa |\nanityamasukham lokamimam praapya bhajasva maam ||",
+      "arth": "फिर पुण्यवान ब्राह्मणों और भक्त राजर्षियों की तो बात ही क्या। इस नाशवान और सुख-रहित लोक को पाकर तुम मुझे ही भजो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३४",
+      "dev": "मन्मना भव मद्भक्तो मद्याजी मां नमस्कुरु ।\nमामेवैष्यसि युक्त्वैवमात्मानं मत्परायणः॥",
+      "roman": "manmanaa bhava madbhakto madyaajee maam namaskuru |\nmaamevaishyasi yuktvaivamaatmaanam matparaayanah ||",
+      "arth": "मुझमें मन लगाओ, मेरे भक्त बनो, मेरा पूजन करो, मुझे नमस्कार करो। इस तरह अपने को मुझसे जोड़कर और मुझे ही परम लक्ष्य मानकर तुम मुझे ही पाओगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "समापन",
+      "dev": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु\nब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे\nराजविद्याराजगुह्ययोगो नाम नवमोऽध्यायः॥",
+      "roman": "om tatsaditi shreemadbhagavadgeetaasoopanishatsu\nbrahmavidyaayaam yogashaastre shreekrishnaarjunasamvaade\nraajavidyaaraajaguhyayogo naama navamo'dhyaayah ||",
+      "arth": "इस तरह उपनिषद रूप श्रीमद्भगवद्गीता में, जो ब्रह्मविद्या और योगशास्त्र है, श्रीकृष्ण और अर्जुन के संवाद में \"राजविद्याराजगुह्ययोग\" नाम का नौवाँ अध्याय पूरा हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, भीष्म पर्व — श्रीमद्भगवद्गीता",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ पाँच अलग संस्करणों से श्लोक-दर-श्लोक मिलाया गया है। सात सौ में से पाँच सौ सतहत्तर श्लोक पाँचों में अक्षर-अक्षर एक मिले; बाक़ी में वही रूप लिया गया जिस पर अधिक संस्करण एक थे।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं। आचार्यों ने कई श्लोकों को अलग-अलग ढंग से समझाया है; यहाँ किसी एक मत की व्याख्या नहीं, सीधा अर्थ दिया गया है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

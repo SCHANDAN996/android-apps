@@ -6,16 +6,20 @@ import '../vidhi/aane_wale_din.dart';
 import '../vidhi/bhandar.dart';
 import '../vidhi/devotional_assets.dart';
 import '../vidhi/paath.dart';
+import '../vidhi/parv.dart';
+import '../vidhi/parv_aaj.dart';
+import '../vidhi/parv_home.dart';
 import '../vidhi/vidhi.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
 import 'muhurta_screen.dart';
 import 'paath_list_screen.dart';
 import 'paath_screen.dart';
-import 'samagri_screen.dart';
+import 'parv_kholo.dart';
 import 'sankalp_screen.dart';
 import 'settings_screen.dart';
 import 'vidhi_screen.dart';
+import 'vrat_screen.dart';
 
 /// The four-tab shell's starting point. It composes only real catalogue,
 /// Panchang and locally saved progress data; it does not infer a ritual or
@@ -23,9 +27,13 @@ import 'vidhi_screen.dart';
 class HomeDashboardScreen extends StatefulWidget {
   final VoidCallback onOpenPujaLibrary;
 
+  /// "आज" — जाँच में कोई तारीख़ मानकर देखने के लिए। ऐप में `null` (अभी)।
+  final DateTime? aaj;
+
   const HomeDashboardScreen({
     super.key,
     required this.onOpenPujaLibrary,
+    this.aaj,
   });
 
   @override
@@ -56,6 +64,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
   }
 
   Future<_DashboardData> _loadData() async {
+    final aaj = widget.aaj ?? DateTime.now();
     final entries = await vidhiBhandar.suchi();
     final ready = entries.where((entry) => entry.taiyar).toList();
     if (ready.isEmpty) {
@@ -85,11 +94,14 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
     final featuredVidhi =
         resumeVidhi ?? await vidhiBhandar.vidhi(featuredEntry.id);
 
+    // गृह प्रवेश और वाहन पूजा की जगह नवरात्रि और पितृ पक्ष — डेवलपर का
+    // फ़ैसला (22 सित 2026)। नवरात्रि का कार्ड कलश स्थापना की विधि नहीं,
+    // पूरा पर्व-पन्ना खोलता है; पितृ पक्ष का कार्ड श्राद्ध की विधि।
     const preferredPopular = [
       'ganesh_poojan',
       'satyanarayan',
-      'grih_pravesh',
-      'vahan_pooja',
+      'kalash_sthapana',
+      'shraadh',
     ];
     final popular = <VidhiSuchiEntry>[];
     for (final id in preferredPopular) {
@@ -106,18 +118,28 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
     // पूरी सूची पंचांग से बनती है — त्योहार इंजन के व्यापिनी नियम से,
     // और बाक़ी हर पूजा की अपनी `kabKarein` से। कोई तारीख़ हाथ से नहीं
     // भरी, इसलिए दस साल बाद भी सही रहेगी (→ D-038)।
-    final sabhiVidhi = <Vidhi>[];
-    for (final entry in ready) {
-      sabhiVidhi.add(await vidhiBhandar.vidhi(entry.id));
-    }
+    final sabhiVidhi = await Future.wait(
+      ready.map((entry) => vidhiBhandar.vidhi(entry.id)),
+    );
     final aage = aaneWaliPujaayein(
       pujaayein: sabhiVidhi,
       place: settings.place,
       masaSystem: settings.masaSystem,
+      aaj: aaj,
       kitne: 5,
       dinAage: 45,
     );
 
+    // ── नवरात्रि का अपना पत्ता (→ D-074) ──────────────────────────
+    //
+    // ऊपर की पाँच जगहों की गिनती में **नहीं** — वरना हर हफ़्ते वाली
+    // पूजाएँ इसे फिर बाहर धकेल देतीं, जो ठीक पहले की ग़लती थी।
+    final navratri = await parvBhandar.parv('navratri');
+    final navratriAvsar = navratriHomeAvsar(
+      parv: navratri,
+      aaj: navratriAaj(aaj: aaj, place: settings.place),
+      aajKiTarikh: aaj,
+    );
     // ── चालीसा और आरती — होम पर अपना हिस्सा ────────────────────
     //
     // ये पूजा नहीं हैं (→ D-039), इसलिए पूजा की सूची में नहीं घुसाए
@@ -131,9 +153,12 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
       featuredVidhi: featuredVidhi,
       popular: popular,
       paath: paathReady.take(4).toList(growable: false),
+      navratri: navratri,
       patte: _banaoPatte(
         resumeEntry: resumeEntry,
         resumeVidhi: resumeVidhi,
+        navratri: navratriAvsar,
+        navratriParv: navratri,
         aage: aage,
         vidhiById: {for (final vidhi in sabhiVidhi) vidhi.id: vidhi},
         nityaEntry: featuredEntry,
@@ -147,7 +172,8 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
   /// क्रम में एक ही बात है — **आज पहले, फिर आगे का।**
   ///
   /// 1. अधूरी छूटी पूजा, अगर आज की ही है (`settings` वो ख़ुद जाँचता है)
-  /// 2. आज पड़ने वाली पूजा या त्योहार
+  /// 2. आज पड़ने वाली पूजा या त्योहार — नवरात्रि चल रही हो तो उसका पत्ता
+  ///    सबसे पहले (→ D-074)
   /// 3. आज कुछ न हो तो **नित्य पूजा** — ताकि पहला पत्ता कभी ख़ाली न रहे
   /// 4. आगे के दिन — कल, परसों, बारह दिन बाद…
   ///
@@ -156,6 +182,8 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
   List<_Patta> _banaoPatte({
     required VidhiSuchiEntry? resumeEntry,
     required Vidhi? resumeVidhi,
+    required ParvHomeAvsar? navratri,
+    required Parv navratriParv,
     required List<PujaAvsar> aage,
     required Map<String, Vidhi> vidhiById,
     required VidhiSuchiEntry nityaEntry,
@@ -185,7 +213,64 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
       }
     }
 
+    // ── नवरात्रि (→ D-074) ─────────────────────────────────────────
+    //
+    // पर्व चल रहा हो तो "आज" वाली जगह — अधूरी पूजा के ठीक बाद, उस दिन की
+    // बाक़ी पूजाओं से पहले। पहले से हो तो तारीख़ के क्रम से, नीचे के लूप में।
+    _Patta? navratriPatta;
+    final navratriKaId = navratri?.vidhiId;
+    if (navratri != null &&
+        (navratriKaId == null || !liyeGaye.contains(navratriKaId))) {
+      navratriPatta = _Patta(
+        upar: navratri.upar,
+        naam: navratri.naam,
+        neeche: navratri.neeche,
+        artwork: navratri.artworkAsset,
+        pujaId: navratriKaId,
+        // Dashboard पर “माँ स्कंदमाता” जैसे पत्ते को दबाने पर भी पूरा
+        // शारदीय नवरात्रि पन्ना खुलना चाहिए। आज की विधि इसी पन्ने के
+        // “आज की पूजा” रास्ते में है; सीधे विधि खोलने पर मुख्य section
+        // छूट रहा था (डेवलपर ने फ़ोन पर पकड़ा, 22 सित 2026)।
+        parvId: 'navratri',
+        samayAurCharan: null,
+        bulawa: navratriKaId == null ? navratri.bulawa : 'नवरात्रि देखें',
+      );
+      if (navratriKaId != null) liyeGaye.add(navratriKaId);
+      if (navratri.aajKa) {
+        patte.add(navratriPatta);
+        navratriPatta = null;
+      }
+    }
+
     for (final avsar in aage) {
+      // पुराना "शारदीय नवरात्रि — घटस्थापना" पत्ता — अब नवरात्रि का अपना
+      // पत्ता है, एक ही चीज़ के दो पत्ते नहीं।
+      if (navratri != null && avsar.naam.startsWith('शारदीय नवरात्रि')) {
+        continue;
+      }
+      // नवरात्रि पंद्रह दिन से दूर हो तो ऊपर वाला पत्ता नहीं बनता, और यही
+      // घटस्थापना वाला पत्ता आता है। पहले यह सीधे कलश स्थापना की विधि
+      // खोलता था, जबकि पूजा section का नवरात्रि कार्ड पूरा पर्व-पन्ना —
+      // अब दोनों एक जगह ले जाते हैं (डेवलपर ने फ़ोन पर पकड़ा, 22 सित 2026)।
+      if (avsar.naam.startsWith('शारदीय नवरात्रि')) {
+        patte.add(_Patta(
+          upar: avsar.kabLikha,
+          naam: navratriParv.naam,
+          neeche: 'घटस्थापना · ${tarikhChhoti(avsar.tarikh)}',
+          artwork: navratriParv.artworkAsset,
+          pujaId: null,
+          parvId: 'navratri',
+          samayAurCharan: null,
+          bulawa: 'पर्व देखें',
+        ));
+        if (avsar.pujaId.isNotEmpty) liyeGaye.add(avsar.pujaId);
+        continue;
+      }
+      if (navratriPatta != null &&
+          avsar.kitneDinBaad > navratri!.kitneDinBaad) {
+        patte.add(navratriPatta);
+        navratriPatta = null;
+      }
       if (avsar.pujaId.isNotEmpty && !liyeGaye.add(avsar.pujaId)) continue;
       final vidhi = vidhiById[avsar.pujaId];
       patte.add(_Patta(
@@ -200,6 +285,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
         bulawa: avsar.khulSaktiHai ? 'विधि देखें' : 'विधि अभी नहीं',
       ));
     }
+    if (navratriPatta != null) patte.add(navratriPatta);
 
     // आज के लिए कुछ नहीं बना — तब नित्य पूजा सबसे आगे। ऐसा दिन आम है,
     // और उस दिन भी पहला पत्ता कुछ *करने लायक* होना चाहिए।
@@ -224,8 +310,12 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
     return patte;
   }
 
-  void _push(Widget screen) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (_) => screen));
+  Future<void> _push(Widget screen) async {
+    await Navigator.of(context).push(MaterialPageRoute(builder: (_) => screen));
+    if (!mounted) return;
+    // Player में हर चरण पर global settings notification नहीं भेजते।
+    // Home का resume-card केवल लौटने पर नई saved position पढ़ता है।
+    if (screen is VidhiScreen) setState(_refreshData);
   }
 
   void _openPuja(String id) => _push(VidhiScreen(id: id));
@@ -284,6 +374,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                     _PujaCarousel(
                       patte: data.patte,
                       onOpen: _openPuja,
+                      onParvOpen: (_) => kholoNavratri(context, data.navratri),
                       onRemoveProgress: _removeProgress,
                     ),
                     const SizedBox(height: VidhivatSpacing.lg),
@@ -297,9 +388,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                     const SizedBox(height: VidhivatSpacing.md),
                     _QuickActionGrid(
                       onPuja: widget.onOpenPujaLibrary,
-                      onMaterials: () => _push(
-                        SamagriScreen(vidhi: data.featuredVidhi),
-                      ),
+                      onVrat: () => _push(const VratScreen()),
                       onSankalp: () => _push(const SankalpScreen()),
                       onMuhurta: () => _push(const MuhurtaScreen()),
                     ),
@@ -313,7 +402,10 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                     const SizedBox(height: VidhivatSpacing.md),
                     _PopularPujaGrid(
                       entries: data.popular,
-                      onOpen: _openPuja,
+                      navratriArtwork: data.navratri.artworkAsset,
+                      onOpen: (id) => id == 'kalash_sthapana'
+                          ? kholoNavratri(context, data.navratri)
+                          : _openPuja(id),
                     ),
                     // ── "सभी देखें" अब सूची के **नीचे** ─────────────
                     //
@@ -430,11 +522,13 @@ class _HomeHeader extends StatelessWidget {
 class _PujaCarousel extends StatefulWidget {
   final List<_Patta> patte;
   final void Function(String id) onOpen;
+  final void Function(String parvId) onParvOpen;
   final Future<void> Function(String id) onRemoveProgress;
 
   const _PujaCarousel({
     required this.patte,
     required this.onOpen,
+    required this.onParvOpen,
     required this.onRemoveProgress,
   });
 
@@ -490,6 +584,7 @@ class _PujaCarouselState extends State<_PujaCarousel> {
               child: _PujaPatta(
                 patta: patte[i],
                 onOpen: widget.onOpen,
+                onParvOpen: widget.onParvOpen,
                 onRemoveProgress: widget.onRemoveProgress,
               ),
             ),
@@ -555,11 +650,13 @@ class _Bindu extends StatelessWidget {
 class _PujaPatta extends StatelessWidget {
   final _Patta patta;
   final void Function(String id) onOpen;
+  final void Function(String parvId) onParvOpen;
 
   final Future<void> Function(String id) onRemoveProgress;
   const _PujaPatta({
     required this.patta,
     required this.onOpen,
+    required this.onParvOpen,
     required this.onRemoveProgress,
   });
 
@@ -594,7 +691,7 @@ class _PujaPatta extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = VidhivatTheme.colorsOf(context);
     final type = VidhivatTheme.typographyOf(context);
-    final khulSaktaHai = patta.pujaId != null;
+    final khulSaktaHai = patta.pujaId != null || patta.parvId != null;
 
     return Semantics(
       container: true,
@@ -643,6 +740,7 @@ class _PujaPatta extends StatelessWidget {
                   patta.artwork,
                   fit: BoxFit.fitHeight,
                   alignment: Alignment.centerRight,
+                  cacheHeight: (210 * MediaQuery.devicePixelRatioOf(context)).round(),
                   filterQuality: FilterQuality.high,
                   errorBuilder: (_, __, ___) => const SizedBox.shrink(),
                 ),
@@ -725,7 +823,9 @@ class _PujaPatta extends StatelessWidget {
                             child: VidhivatButton(
                               label: patta.bulawa,
                               semanticLabel: '${patta.naam} — ${patta.bulawa}',
-                              onPressed: () => onOpen(patta.pujaId!),
+                              onPressed: () => patta.parvId != null
+                                  ? onParvOpen(patta.parvId!)
+                                  : onOpen(patta.pujaId!),
                               compact: true,
                               fullWidth: true,
                             ),
@@ -788,8 +888,12 @@ class _Patta {
 
   final String artwork;
 
-  /// `null` = यह पत्ता खुलता नहीं (विधि अभी बनी ही नहीं)।
+  /// `null` = यह पत्ता कोई विधि नहीं खोलता।
   final String? pujaId;
+
+  /// कोई विधि नहीं, पूरा पर्व-पन्ना खुले (→ D-074)। [pujaId] और यह
+  /// दोनों `null` हों तो पत्ता खुलता ही नहीं (विधि अभी बनी नहीं)।
+  final String? parvId;
 
   /// "22 मिनट • 9 चरण", या अधूरी पूजा पर "चरण 8 / 9"।
   /// विधि न हो तो `null`।
@@ -811,6 +915,7 @@ class _Patta {
     required this.pujaId,
     required this.samayAurCharan,
     required this.bulawa,
+    this.parvId,
     this.canRemoveProgress = false,
     this.samayChihn = Icons.schedule_outlined,
   });
@@ -987,13 +1092,13 @@ class _PanchangMetric extends StatelessWidget {
 
 class _QuickActionGrid extends StatelessWidget {
   final VoidCallback onPuja;
-  final VoidCallback onMaterials;
+  final VoidCallback onVrat;
   final VoidCallback onSankalp;
   final VoidCallback onMuhurta;
 
   const _QuickActionGrid({
     required this.onPuja,
-    required this.onMaterials,
+    required this.onVrat,
     required this.onSankalp,
     required this.onMuhurta,
   });
@@ -1002,7 +1107,7 @@ class _QuickActionGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     final actions = <({String label, IconData icon, VoidCallback tap})>[
       (label: 'पूजा विधि', icon: Icons.menu_book_outlined, tap: onPuja),
-      (label: 'सामग्री', icon: Icons.ramen_dining_outlined, tap: onMaterials),
+      (label: 'व्रत', icon: Icons.spa_outlined, tap: onVrat),
       (label: 'संकल्प', icon: Icons.water_drop_outlined, tap: onSankalp),
       (label: 'चौघड़िया', icon: Icons.calendar_month_outlined, tap: onMuhurta),
     ];
@@ -1080,7 +1185,14 @@ class _PopularPujaGrid extends StatelessWidget {
   final List<VidhiSuchiEntry> entries;
   final ValueChanged<String> onOpen;
 
-  const _PopularPujaGrid({required this.entries, required this.onOpen});
+  /// नवरात्रि वाले कार्ड का चित्र — पर्व का, कलश स्थापना का नहीं।
+  final String navratriArtwork;
+
+  const _PopularPujaGrid({
+    required this.entries,
+    required this.onOpen,
+    required this.navratriArtwork,
+  });
 
   @override
   Widget build(BuildContext context) => LayoutBuilder(
@@ -1095,6 +1207,7 @@ class _PopularPujaGrid extends StatelessWidget {
                   width: width,
                   child: _PopularPujaCard(
                     entry: entry,
+                    navratriArtwork: navratriArtwork,
                     onTap: () => onOpen(entry.id),
                   ),
                 ),
@@ -1107,21 +1220,35 @@ class _PopularPujaGrid extends StatelessWidget {
 class _PopularPujaCard extends StatelessWidget {
   final VidhiSuchiEntry entry;
   final VoidCallback onTap;
+  final String navratriArtwork;
 
-  const _PopularPujaCard({required this.entry, required this.onTap});
+  const _PopularPujaCard({
+    required this.entry,
+    required this.onTap,
+    required this.navratriArtwork,
+  });
 
   @override
   Widget build(BuildContext context) {
     final colors = VidhivatTheme.colorsOf(context);
     final type = VidhivatTheme.typographyOf(context);
     final scale = MediaQuery.textScalerOf(context).scale(1);
-    final artwork = DevotionalAssets.forVidhiId(entry.id);
-    final displayName =
-        entry.id == 'satyanarayan' ? 'सत्यनारायण पूजा' : entry.naam;
+    final navratri = entry.id == 'kalash_sthapana';
+    final artworkPath = navratri
+        ? navratriArtwork
+        : DevotionalAssets.forVidhiId(entry.id).assetPath;
+    final displayName = switch (entry.id) {
+      'satyanarayan' => 'सत्यनारायण पूजा',
+      'kalash_sthapana' => 'शारदीय नवरात्रि',
+      'shraadh' => 'पितृ पक्ष — श्राद्ध',
+      _ => entry.naam,
+    };
     return VidhivatSurfaceCard(
       onTap: onTap,
       variant: VidhivatCardVariant.elevated,
-      semanticLabel: '${entry.naam} की विधि देखें',
+      semanticLabel: navratri
+          ? 'शारदीय नवरात्रि पर्व खोलें'
+          : '$displayName की विधि देखें',
       padding: const EdgeInsets.all(VidhivatSpacing.sm),
       child: SizedBox(
         height: 148 + ((scale - 1).clamp(0.0, 1.0) * 56),
@@ -1141,8 +1268,9 @@ class _PopularPujaCard extends StatelessWidget {
                     ],
                   ),
                   child: Image.asset(
-                    artwork.assetPath,
+                    artworkPath,
                     fit: BoxFit.contain,
+                    cacheHeight: (76 * MediaQuery.devicePixelRatioOf(context)).round(),
                     filterQuality: FilterQuality.high,
                     errorBuilder: (_, __, ___) => Icon(
                       Icons.auto_awesome_outlined,
@@ -1178,11 +1306,15 @@ class _DashboardData {
   /// सबसे ऊपर वाली पट्टी के पत्ते — आज पहला, फिर आगे के दिन (→ D-046)।
   final List<_Patta> patte;
 
+  /// नवरात्रि का पर्व — पत्ता दबाने पर यही पन्ना खुलता है (→ D-074)।
+  final Parv navratri;
+
   const _DashboardData({
     required this.featuredEntry,
     required this.featuredVidhi,
     required this.popular,
     required this.paath,
     required this.patte,
+    required this.navratri,
   });
 }

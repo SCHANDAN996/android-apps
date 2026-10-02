@@ -3,7 +3,8 @@ import 'package:test/test.dart';
 
 /// त्योहार की तारीख़ों की जाँच।
 ///
-/// **आठों तारीख़ें drikpanchang.com से पक्की की हुई हैं** — हर एक के लिए
+/// **बारह पुरानी तारीख़ें drikpanchang.com से पक्की की हुई हैं** (और
+/// व्रत-पितृ पक्ष वाले आठ नियमों की पाँच-पाँच साल की, → D-087) — हर एक के लिए
 /// उस दिन का पन्ना खोलकर देखा गया कि Drik ख़ुद वहाँ उस त्योहार का नाम
 /// लिखता है या नहीं। पूरा लट्ठा `docs/08_VERIFICATION.md` में।
 ///
@@ -22,6 +23,10 @@ void main() {
       'ganesh_chaturthi': (9, 14, 'Ganesh Chaturthi'),
       'navratri_ghatasthapana': (10, 11, 'Navratri Begins / Ghatasthapana'),
       'diwali': (11, 8, 'Diwali'),
+      'dhanteras': (11, 6, 'Dhantrayodashi'),
+      'govardhan_puja': (11, 10, 'Govardhan Puja'),
+      'bhai_dooj': (11, 11, 'Bhai Dooj'),
+      'vasant_panchami': (1, 23, 'Vasant Panchami'),
     };
 
     for (final entry in verified.entries) {
@@ -36,6 +41,128 @@ void main() {
         expect(found.date.day, day, reason: 'दिन');
       });
     }
+  });
+
+  group('व्रत और पितृ पक्ष — पाँच साल, हर तारीख़ संदर्भ-पंचांग से (→ D-087)',
+      () {
+    // 2024–2028, दिल्ली। हर तारीख़ के लिए संदर्भ-पंचांग का उस दिन वाला
+    // पन्ना खोलकर देखा कि वो ख़ुद उस दिन यह नाम लिखता है। व्यापिनी वही
+    // रखी जिस पर पाँचों साल मेल खाए (बाक़ी क्यों नहीं — नियम के ऊपर लिखा)।
+    const verified = {
+      'vat_savitri': [
+        (2024, 6, 6),
+        (2025, 5, 26),
+        (2026, 5, 16),
+        (2027, 6, 4),
+        (2028, 5, 24)
+      ],
+      'varalakshmi_vrat': [
+        (2024, 8, 16),
+        (2025, 8, 8),
+        (2026, 8, 28),
+        (2027, 8, 13),
+        (2028, 8, 4)
+      ],
+      'hartalika_teej': [
+        (2024, 9, 6),
+        (2025, 8, 26),
+        (2026, 9, 14),
+        (2027, 9, 3),
+        (2028, 8, 22)
+      ],
+      'pitru_paksha_arambh': [
+        (2024, 9, 18),
+        (2025, 9, 8),
+        (2026, 9, 27),
+        (2027, 9, 16),
+        (2028, 9, 4)
+      ],
+      'sarvapitri_amavasya': [
+        (2024, 10, 2),
+        (2025, 9, 21),
+        (2026, 10, 10),
+        (2027, 9, 29),
+        (2028, 9, 18)
+      ],
+      'dussehra': [
+        (2024, 10, 12),
+        (2025, 10, 2),
+        (2026, 10, 20),
+        (2027, 10, 9),
+        (2028, 9, 27)
+      ],
+      'karwa_chauth': [
+        (2024, 10, 20),
+        (2025, 10, 10),
+        (2026, 10, 29),
+        (2027, 10, 18),
+        (2028, 10, 7)
+      ],
+      'chhath': [
+        (2024, 11, 7),
+        (2025, 10, 27),
+        (2026, 11, 15),
+        (2027, 11, 4),
+        (2028, 10, 23)
+      ],
+    };
+
+    for (final entry in verified.entries) {
+      final rule = festivalRules.firstWhere((r) => r.id == entry.key);
+      for (final (year, month, day) in entry.value) {
+        test('${rule.name} $year → $day/$month', () {
+          final found = findFestival(rule, year, Place.delhi);
+          expect(found, isNotNull, reason: '${rule.name} मिला ही नहीं');
+          expect(found!.date, DateTime.utc(year, month, day));
+        });
+      }
+    }
+
+    test('वरलक्ष्मी व्रत हमेशा शुक्रवार, और श्रावण पूर्णिमा से पहले या उसी दिन',
+        () {
+      final purnima = festivalRules.firstWhere((r) => r.id == 'raksha_bandhan');
+      final vara = festivalRules.firstWhere((r) => r.id == 'varalakshmi_vrat');
+      for (var y = 2024; y <= 2035; y++) {
+        final v = findFestival(vara, y, Place.delhi)!;
+        final p = findFestival(
+          FestivalRule(
+            id: 'p',
+            name: 'p',
+            masa: purnima.masa,
+            paksha: 0,
+            tithi: 15,
+          ),
+          y,
+          Place.delhi,
+        )!;
+        expect(v.date.weekday, DateTime.friday, reason: '$y');
+        final peeche = p.date.difference(v.date).inDays;
+        expect(peeche, inInclusiveRange(0, 6), reason: '$y');
+        expect(v.explanation, contains('शुक्रवार'));
+      }
+    });
+
+    test('करवा चौथ का हिसाब चंद्रोदय से', () {
+      final rule = festivalRules.firstWhere((r) => r.id == 'karwa_chauth');
+      expect(rule.vyapini, Vyapini.chandrodaya);
+      final f = findFestival(rule, 2026, Place.delhi)!;
+      expect(f.explanation, contains('चंद्रोदय व्यापिनी'));
+      // चंद्रोदय की खिड़की शाम-रात में — कृष्ण चतुर्थी का चाँद देर से उगता है
+      final w = kaalWindow(Vyapini.chandrodaya, 2026, 10, 29, Place.delhi)!;
+      expect(w.start.hour, inInclusiveRange(18, 23));
+    });
+
+    test('पितृ पक्ष आरम्भ से सर्वपितृ अमावस्या तक चौदह-पंद्रह दिन', () {
+      final a = festivalRules.firstWhere((r) => r.id == 'pitru_paksha_arambh');
+      final z = festivalRules.firstWhere((r) => r.id == 'sarvapitri_amavasya');
+      for (var y = 2024; y <= 2035; y++) {
+        final din = findFestival(z, y, Place.delhi)!
+            .date
+            .difference(findFestival(a, y, Place.delhi)!.date)
+            .inDays;
+        expect(din, inInclusiveRange(12, 15), reason: '$y');
+      }
+    });
   });
 
   group('भद्रा वाला नियम', () {
@@ -98,7 +225,8 @@ void main() {
 
     test('मध्याह्न और अपराह्न दिन के तीसरे-चौथे पंचमांश हैं', () {
       final p = computePanchang(2026, 9, 14, Place.delhi);
-      final madhyahna = kaalWindow(Vyapini.madhyahna, 2026, 9, 14, Place.delhi)!;
+      final madhyahna =
+          kaalWindow(Vyapini.madhyahna, 2026, 9, 14, Place.delhi)!;
       final aparahna = kaalWindow(Vyapini.aparahna, 2026, 9, 14, Place.delhi)!;
 
       final fifth = p.dinamana!.inSeconds / 5;
@@ -106,8 +234,8 @@ void main() {
       expect(madhyahna.end, aparahna.start, reason: 'दोनों लगातार हैं');
       expect(madhyahna.end.difference(madhyahna.start).inSeconds,
           closeTo(fifth, 2));
-      expect(aparahna.end.difference(aparahna.start).inSeconds,
-          closeTo(fifth, 2));
+      expect(
+          aparahna.end.difference(aparahna.start).inSeconds, closeTo(fifth, 2));
     });
   });
 
@@ -123,17 +251,31 @@ void main() {
       'ganesh_chaturthi': [8, 9],
       'navratri_ghatasthapana': [9, 10],
       'diwali': [10, 11],
+      'dhanteras': [10, 11],
+      'govardhan_puja': [10, 11],
+      'bhai_dooj': [10, 11],
+      'vasant_panchami': [1, 2],
+      'vat_savitri': [5, 6],
+      'varalakshmi_vrat': [7, 8, 9],
+      'hartalika_teej': [8, 9],
+      'pitru_paksha_arambh': [9, 10],
+      'sarvapitri_amavasya': [9, 10],
+      'dussehra': [9, 10],
+      'karwa_chauth': [10, 11],
+      'chhath': [10, 11],
     };
 
     for (var year = 2024; year <= 2032; year++) {
       test('$year — सब त्योहार अपने मौसम में', () {
         for (final rule in festivalRules) {
           final found = findFestival(rule, year, Place.delhi);
-          expect(found, isNotNull, reason: '$year में ${rule.name} मिला ही नहीं');
+          expect(found, isNotNull,
+              reason: '$year में ${rule.name} मिला ही नहीं');
 
           final allowed = seasons[rule.id]!;
           expect(allowed, contains(found!.date.month),
-              reason: '$year — ${rule.name} ${found.date.day}/${found.date.month} '
+              reason:
+                  '$year — ${rule.name} ${found.date.day}/${found.date.month} '
                   'पर पड़ा, जो अपेक्षित महीनों $allowed में नहीं');
           expect(found.date.year, year);
         }
@@ -177,8 +319,8 @@ void main() {
         final f = findFestival(rule, 2026, Place.delhi)!;
 
         expect(f.tithiStart.isBefore(f.tithiEnd), isTrue, reason: rule.name);
-        final gap = f.date.difference(
-            DateTime.utc(f.tithiStart.year, f.tithiStart.month, f.tithiStart.day));
+        final gap = f.date.difference(DateTime.utc(
+            f.tithiStart.year, f.tithiStart.month, f.tithiStart.day));
         expect(gap.inDays.abs(), lessThanOrEqualTo(2), reason: rule.name);
       }
     });
@@ -189,8 +331,10 @@ void main() {
       final list = festivalsInYear(2026, Place.delhi);
 
       expect(list.length, festivalRules.length);
+      // एक दिन पर दो भी हो सकते हैं — 2026 में रक्षाबंधन और वरलक्ष्मी
+      // व्रत दोनों 28 अगस्त (पूर्णिमा ख़ुद शुक्रवार है)।
       for (var i = 1; i < list.length; i++) {
-        expect(list[i].date.isAfter(list[i - 1].date), isTrue);
+        expect(list[i].date.isBefore(list[i - 1].date), isFalse);
       }
     });
 

@@ -24,8 +24,8 @@ void main() {
     );
     pujaayein = [
       for (final e in suchi.where((e) => e.taiyar))
-        Vidhi.parse('$dir/${e.id}.json',
-            File('$dir/${e.id}.json').readAsStringSync()),
+        Vidhi.parse(
+            '$dir/${e.id}.json', File('$dir/${e.id}.json').readAsStringSync()),
     ];
   });
 
@@ -47,18 +47,30 @@ void main() {
     });
 
     test('तारीख़ें बढ़ते क्रम में हैं', () {
+      // एक दिन पर दो त्योहार हो सकते हैं (28 अग 2026 — रक्षाबंधन और
+      // वरलक्ष्मी व्रत), इसलिए "पहले से पहले नहीं", "ठीक बाद" नहीं।
       final avsar = aage(DateTime(2026, 8, 26), kitne: 10);
       for (var i = 1; i < avsar.length; i++) {
-        expect(avsar[i].tarikh.isAfter(avsar[i - 1].tarikh), isTrue,
+        expect(avsar[i].tarikh.isBefore(avsar[i - 1].tarikh), isFalse,
             reason: '${avsar[i].naam} पिछले से पहले आ गई');
       }
     });
 
-    test('एक दिन पर एक ही पूजा आती है', () {
+    test('एक दिन पर एक ही तिथि-वार वाली पूजा आती है', () {
       // वरना पूर्णिमा वाले शनिवार को सत्यनारायण और हनुमान दोनों आ जाते।
+      // त्योहार अलग बात हैं — एक दिन पर दो सचमुच पड़ें तो दोनों दिखें
+      // (→ D-087), और उस दिन कोई तिथि-वार वाली पूजा नहीं जुड़ती।
       final avsar = aage(DateTime(2026, 8, 26), kitne: 12, dinAage: 60);
-      final tarikhein = avsar.map((a) => a.tarikh).toList();
-      expect(tarikhein.toSet(), hasLength(tarikhein.length));
+      final baaki = avsar
+          .where((a) => a.karan != AvsarKaKaran.tyohar)
+          .map((a) => a.tarikh)
+          .toList();
+      expect(baaki.toSet(), hasLength(baaki.length));
+      final tyoharDin = avsar
+          .where((a) => a.karan == AvsarKaKaran.tyohar)
+          .map((a) => a.tarikh)
+          .toSet();
+      expect(baaki.toSet().intersection(tyoharDin), isEmpty);
     });
 
     test('कोई भी अवसर आज से पहले का नहीं', () {
@@ -89,14 +101,39 @@ void main() {
       expect(j.first.pujaId, 'krishna_pooja');
     });
 
-    test('जिस त्योहार की विधि नहीं है वो दिखता तो है, खुलता नहीं', () {
-      // रक्षाबंधन 2026 — 28 अगस्त (Drik से जाँचा हुआ)। उसकी अपनी विधि
-      // अभी नहीं बनी, इसलिए तारीख़ दिखेगी पर पन्ना नहीं खुलेगा।
+    test('रक्षाबंधन 2026 — 28 अगस्त, अपनी पूजा-विधि से जुड़ा', () {
+      // तारीख़ Drik से जाँची हुई है।
       final avsar = aage(DateTime(2026, 8, 26), kitne: 12, dinAage: 10);
       final r = avsar.where((a) => a.naam == 'रक्षाबंधन');
       expect(r, hasLength(1));
-      expect(r.first.pujaId, isEmpty);
-      expect(r.first.khulSaktiHai, isFalse);
+      expect(r.first.tarikh, DateTime(2026, 8, 28));
+      expect(r.first.pujaId, 'raksha_bandhan_pooja');
+      expect(r.first.khulSaktiHai, isTrue);
+    });
+
+    test('धनतेरस, गोवर्धन और भाई दूज अपनी-अपनी विधि खोलते हैं', () {
+      final avsar = aage(DateTime(2026, 11, 1), kitne: 20, dinAage: 15);
+      final expected = {
+        'धनतेरस': (DateTime(2026, 11, 6), 'dhanteras'),
+        'गोवर्धन पूजा': (DateTime(2026, 11, 10), 'govardhan_annakut'),
+        'भाई दूज': (DateTime(2026, 11, 11), 'bhai_dooj_pooja'),
+      };
+      for (final MapEntry(key: naam, value: (tarikh, id)) in expected.entries) {
+        final mila = avsar.where((a) => a.naam == naam).toList();
+        expect(mila, hasLength(1), reason: naam);
+        expect(mila.single.tarikh, tarikh, reason: naam);
+        expect(mila.single.pujaId, id, reason: naam);
+        expect(mila.single.khulSaktiHai, isTrue, reason: naam);
+      }
+    });
+
+    test('वसंत पंचमी 2026 — 23 जनवरी, सरस्वती पूजा से जुड़ी', () {
+      final avsar = aage(DateTime(2026, 1, 20), kitne: 10, dinAage: 10);
+      final v = avsar.where((a) => a.naam == 'वसंत पंचमी').toList();
+      expect(v, hasLength(1));
+      expect(v.single.tarikh, DateTime(2026, 1, 23));
+      expect(v.single.pujaId, 'saraswati_pooja');
+      expect(v.single.khulSaktiHai, isTrue);
     });
 
     test('हर जुड़ी हुई पूजा सचमुच ऐप में मौजूद है', () {
@@ -106,6 +143,79 @@ void main() {
         expect(maujud, contains(entry.value),
             reason: '"${entry.key}" जिस पूजा से जुड़ी है वो है ही नहीं');
       }
+    });
+  });
+
+  group('संक्रांति वाली पूजा — विश्वकर्मा पूजा', () {
+    // Drik Panchang: 2024 में 16 सितम्बर (संक्रांति शाम 7:53), 2026 में
+    // 17 सितम्बर (सुबह 7:58)। इंजन की अपनी जाँच `engine/test/sankranti_test.dart`।
+    test('2026 — 17 सितम्बर, होम वाली गिनती (5 जगह, 45 दिन) में भी', () {
+      // 5 सितम्बर से बारह दिन दूर — बीच में हर हफ़्ते वाली पूजाएँ पाँचों
+      // जगह भर देती हैं। पुराने नियम (सब तारीख़ से छाँटो, पहले पाँच लो)
+      // में यह त्योहार बाहर रह जाता था।
+      //
+      // (पहले यह 25 अगस्त से जाँचा जाता था। अब इंजन व्रत भी जानता है —
+      // 25 अगस्त से पाँच जगहें रक्षाबंधन, वरलक्ष्मी, जन्माष्टमी, तीज और
+      // गणेश चतुर्थी से भर जाती हैं; पाँचों असली त्योहार, इसलिए ठीक है।)
+      final avsar = aage(DateTime(2026, 9, 5), kitne: 5, dinAage: 45);
+      final v = avsar.where((a) => a.naam == 'विश्वकर्मा पूजा');
+      expect(v, hasLength(1),
+          reason: 'हर हफ़्ते वाली पूजाओं ने त्योहार को बाहर धकेल दिया');
+      expect(v.first.tarikh, DateTime(2026, 9, 17));
+      expect(v.first.pujaId, 'vishwakarma_pooja');
+      expect(v.first.kyon, 'कन्या संक्रांति');
+      expect(v.first.karan, AvsarKaKaran.tyohar);
+    });
+
+    test('2024 — 16 सितम्बर (संक्रांति शाम को थी, दिन वही)', () {
+      final avsar = aage(DateTime(2024, 9, 1), kitne: 12, dinAage: 30);
+      final v = avsar.where((a) => a.naam == 'विश्वकर्मा पूजा');
+      expect(v, hasLength(1));
+      expect(v.first.tarikh, DateTime(2024, 9, 16));
+    });
+
+    test('उसी दिन "आज", और अगले दिन से सूची में नहीं', () {
+      final aaj = aage(DateTime(2026, 9, 17), kitne: 5, dinAage: 45);
+      expect(aaj.first.naam, 'विश्वकर्मा पूजा');
+      expect(aaj.first.kabLikha, 'आज');
+
+      final baad = aage(DateTime(2026, 9, 18), kitne: 12, dinAage: 45);
+      expect(baad.map((a) => a.naam), isNot(contains('विश्वकर्मा पूजा')));
+    });
+
+    test('त्योहार पहले चुने जाते हैं, पर सूची तारीख़ के क्रम में रहती है', () {
+      final avsar = aage(DateTime(2026, 9, 10), kitne: 5, dinAage: 45);
+      for (var i = 1; i < avsar.length; i++) {
+        expect(avsar[i].kitneDinBaad,
+            greaterThanOrEqualTo(avsar[i - 1].kitneDinBaad));
+      }
+    });
+
+    test('हर संक्रांति वाली पूजा सचमुच ऐप में है', () {
+      final maujud = pujaayein.map((v) => v.id).toSet();
+      for (final puja in sankrantiKiPuja.values) {
+        expect(maujud, contains(puja.id), reason: puja.naam);
+      }
+    });
+  });
+
+  group('मकर संक्रांति — स्थानीय सूर्यास्त वाला दिन-नियम', () {
+    test('2026 में दिन का प्रवेश — 14 जनवरी को अपनी विधि', () {
+      final avsar = aage(DateTime(2026, 1, 10), kitne: 10, dinAage: 10);
+      final m = avsar.where((a) => a.naam == 'मकर संक्रांति').toList();
+      expect(m, hasLength(1));
+      expect(m.single.tarikh, DateTime(2026, 1, 14));
+      expect(m.single.pujaId, 'makar_sankranti_pooja');
+      expect(m.single.khulSaktiHai, isTrue);
+    });
+
+    test('2027 में रात का प्रवेश — पुण्यकाल 15 जनवरी को', () {
+      // Drik Delhi: प्रवेश 14 जनवरी 21:14, अवलोकन 15 जनवरी।
+      final avsar = aage(DateTime(2027, 1, 10), kitne: 10, dinAage: 10);
+      final m = avsar.where((a) => a.naam == 'मकर संक्रांति').toList();
+      expect(m, hasLength(1));
+      expect(m.single.tarikh, DateTime(2027, 1, 15));
+      expect(m.single.pujaId, 'makar_sankranti_pooja');
     });
   });
 
@@ -122,8 +232,8 @@ void main() {
     test('हनुमान पूजा मंगल या शनि को ही आती है', () {
       final avsar = aage(DateTime(2026, 8, 26), kitne: 20, dinAage: 40);
       for (final a in avsar.where((a) => a.pujaId == 'hanuman_pooja')) {
-        expect([DateTime.tuesday, DateTime.saturday],
-            contains(a.tarikh.weekday),
+        expect(
+            [DateTime.tuesday, DateTime.saturday], contains(a.tarikh.weekday),
             reason: '${a.tarikh} मंगल या शनि नहीं है');
       }
     });
@@ -171,10 +281,14 @@ void main() {
         'mundan',
         'upanayan',
         'vahan_pooja',
-        'shraadh',
       ]) {
         expect(ids, isNot(contains(id)),
             reason: '$id का नियम दोहराता नहीं, फिर भी सूची में आ गई');
+      }
+      // श्राद्ध अब पितृ पक्ष के त्योहार-नियम से आता है (→ D-087) — पर
+      // कभी अपनी तिथि या वार से नहीं।
+      for (final a in avsar.where((a) => a.pujaId == 'shraadh')) {
+        expect(a.karan, AvsarKaKaran.tyohar);
       }
     });
 
@@ -218,6 +332,121 @@ void main() {
       ]) {
         expect(banao(din).kabLikha, likha);
       }
+    });
+  });
+
+  /// पूजा section में त्योहार के कार्डों की तारीख़ (→ D-086)।
+  group('हर सालाना त्योहार की अगली तारीख़', () {
+    final agli =
+        agliTyoharTarikh(place: Place.delhi, aaj: DateTime(2026, 9, 22));
+
+    test('आगे वाली तारीख़ें — दिल्ली, 22 सित 2026 से', () {
+      expect(agli['kalash_sthapana'], DateTime(2026, 10, 11));
+      expect(agli['dhanteras'], DateTime(2026, 11, 6));
+      expect(agli['lakshmi_poojan'], DateTime(2026, 11, 8));
+    });
+
+    test('बीत चुका त्योहार अगले साल का दिखता है, पिछला नहीं', () {
+      // विश्वकर्मा पूजा 17 सित 2026 को बीत गई
+      expect(agli['vishwakarma_pooja']!.year, 2027);
+      for (final din in agli.values) {
+        expect(din.isBefore(DateTime(2026, 9, 22)), isFalse);
+      }
+    });
+
+    test('हर महीने वाली पूजाएँ इसमें नहीं', () {
+      expect(agli.containsKey('satyanarayan'), isFalse);
+      expect(agli.containsKey('hanuman_pooja'), isFalse);
+      expect(agli.containsKey('ganesh_poojan'), isTrue,
+          reason: 'गणेश चतुर्थी — साल में एक बार वाला त्योहार');
+    });
+  });
+
+  /// व्रत और पितृ पक्ष — इंजन के नए नियम (→ D-087)।
+  group('व्रत और पितृ पक्ष आने वाली पूजाओं में', () {
+    PujaAvsar? naamSe(List<PujaAvsar> l, String naam) {
+      final mile = l.where((a) => a.naam == naam);
+      return mile.isEmpty ? null : mile.first;
+    }
+
+    test('पितृ पक्ष से पहले — आरम्भ का दिन, श्राद्ध की विधि के साथ', () {
+      final l = aage(DateTime(2026, 9, 22), kitne: 12, dinAage: 30);
+      final a = naamSe(l, 'पितृ पक्ष आरम्भ')!;
+      expect(a.tarikh, DateTime(2026, 9, 27));
+      expect(a.pujaId, 'shraadh');
+      // एक पूजा एक बार — अमावस्या अलग से नहीं
+      expect(naamSe(l, 'सर्वपितृ अमावस्या'), isNull);
+    });
+
+    test('पितृ पक्ष के बीच — "आज" का पत्ता, अमावस्या तक', () {
+      final l = aage(DateTime(2026, 9, 30), kitne: 12, dinAage: 30);
+      final a = naamSe(l, 'पितृ पक्ष')!;
+      expect(a.kitneDinBaad, 0);
+      expect(a.pujaId, 'shraadh');
+      expect(a.kyon, 'सर्वपितृ अमावस्या तक');
+      expect(l.where((x) => x.pujaId == 'shraadh'), hasLength(1));
+    });
+
+    test('सर्वपितृ अमावस्या के दिन वही नाम, "आज"', () {
+      final l = aage(DateTime(2026, 10, 10), kitne: 12, dinAage: 30);
+      final a = naamSe(l, 'सर्वपितृ अमावस्या')!;
+      expect(a.kitneDinBaad, 0);
+      expect(naamSe(l, 'पितृ पक्ष'), isNull);
+    });
+
+    test('पितृ पक्ष से महीनों पहले "आज" वाला पत्ता नहीं', () {
+      final l = aage(DateTime(2026, 6, 1), kitne: 12, dinAage: 45);
+      expect(naamSe(l, 'पितृ पक्ष'), isNull);
+    });
+
+    test('एक दिन पर दो त्योहार — रक्षाबंधन और वरलक्ष्मी व्रत, दोनों', () {
+      final l = aage(DateTime(2026, 8, 20), kitne: 12, dinAage: 20);
+      expect(naamSe(l, 'रक्षाबंधन')!.tarikh, DateTime(2026, 8, 28));
+      expect(naamSe(l, 'वरलक्ष्मी व्रत')!.tarikh, DateTime(2026, 8, 28));
+    });
+
+    test('करवा चौथ और छठ अपनी विधि खोलते हैं', () {
+      final l = aage(DateTime(2026, 10, 20), kitne: 12, dinAage: 30);
+      expect(naamSe(l, 'करवा चौथ')!.pujaId, 'karwa_chauth');
+      expect(naamSe(l, 'करवा चौथ')!.tarikh, DateTime(2026, 10, 29));
+      expect(naamSe(l, 'छठ पूजा')!.pujaId, 'chhath_pooja');
+    });
+
+    test('दशहरा अलग पत्ता नहीं बनता — वो नवरात्रि पर्व का दिन है', () {
+      final l = aage(DateTime(2026, 10, 1), kitne: 20, dinAage: 45);
+      expect(naamSe(l, 'दशहरा'), isNull);
+    });
+
+    test('व्रतों की अगली तारीख़ें भी', () {
+      final agli =
+          agliTyoharTarikh(place: Place.delhi, aaj: DateTime(2026, 9, 22));
+      expect(agli['shraadh'], DateTime(2026, 9, 27));
+      expect(agli['karwa_chauth'], DateTime(2026, 10, 29));
+      expect(agli['chhath_pooja'], DateTime(2026, 11, 15));
+      expect(agli['vat_savitri']!.year, 2027);
+    });
+  });
+
+  /// 22 सित 2026, फ़ोन पर: "शिवरात्रि … 3 दिन बाद · चतुर्दशी" — वह शुक्ल
+  /// चतुर्दशी थी, और पढ़ने में महाशिवरात्रि लगती थी।
+  group('मासिक शिवरात्रि', () {
+    test('शुक्ल चतुर्दशी को शिव अभिषेक नहीं — अगली कृष्ण चतुर्दशी को', () {
+      final l = aage(DateTime(2026, 9, 22), kitne: 12, dinAage: 30);
+      final shiv = l.where((a) => a.pujaId == 'rudrabhishek').toList();
+      expect(shiv, hasLength(1));
+      expect(shiv.single.tarikh, isNot(DateTime(2026, 9, 25)));
+      expect(shiv.single.kyon, 'मासिक शिवरात्रि');
+      final p = computePanchang(shiv.single.tarikh.year,
+          shiv.single.tarikh.month, shiv.single.tarikh.day, Place.delhi);
+      expect(p.tithi.number, 29, reason: 'कृष्ण चतुर्दशी');
+    });
+
+    test('हर महीने वाली पूजा के नीचे पक्ष या मासिक नाम', () {
+      expect(maasikKyon(29, 'कृष्ण', 'चतुर्दशी'), 'मासिक शिवरात्रि');
+      expect(maasikKyon(19, 'कृष्ण', 'चतुर्थी'), 'संकष्टी चतुर्थी');
+      expect(maasikKyon(4, 'शुक्ल', 'चतुर्थी'), 'विनायक चतुर्थी');
+      expect(maasikKyon(9, 'शुक्ल', 'नवमी'), 'शुक्ल नवमी');
+      expect(maasikKyon(15, 'शुक्ल', 'पूर्णिमा'), 'पूर्णिमा');
     });
   });
 }

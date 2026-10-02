@@ -3,8 +3,11 @@ import 'package:panchang_engine/panchang_engine.dart';
 
 import '../state/settings.dart';
 import '../theme.dart';
+import '../vidhi/tyohar_saal.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
+import 'aaj_screen.dart';
+import 'festival_destination.dart';
 
 /// महीने का कैलेंडर और साल के त्योहार।
 class CalendarScreen extends StatefulWidget {
@@ -23,6 +26,7 @@ class _CalendarScreenState extends State<CalendarScreen>
   late DateTime _selectedDay;
   final Map<String, List<FestivalDate>> _festivalCache = {};
   final Map<String, Panchang> _panchangCache = {};
+  final Map<String, SuryodayaTithi> _tithiCache = {};
 
   @override
   void initState() {
@@ -60,7 +64,9 @@ class _CalendarScreenState extends State<CalendarScreen>
     if (_festivalCache.length >= _maxFestivalCacheEntries) {
       _festivalCache.remove(_festivalCache.keys.first);
     }
-    return _festivalCache[key] = festivalsInYear(year, settings.place);
+    // संक्रांति वाली पूजाएँ भी (विश्वकर्मा पूजा) — इंजन का `festivalsInYear`
+    // सिर्फ़ तिथि वाले त्योहार जानता है।
+    return _festivalCache[key] = tyoharSaalBhar(year, settings.place);
   }
 
   Panchang _panchangFor(DateTime day) {
@@ -72,6 +78,22 @@ class _CalendarScreenState extends State<CalendarScreen>
       _panchangCache.remove(_panchangCache.keys.first);
     }
     return _panchangCache[key] = settings.panchangFor(day);
+  }
+
+  /// महीने के खाने — सिर्फ़ सूर्योदय की तिथि और वार (engine का
+  /// `suryodayaTithi`)। पूरा पंचांग सिर्फ़ चुने हुए दिन का बनता है।
+  ///
+  /// ⚡ पहले हर खाना पूरा पंचांग बनाता था — महीना बदलते ही 30 पंचांग
+  /// main thread पर, और सस्ते फ़ोन पर पन्ना लगभग एक सेकंड अटकता था।
+  SuryodayaTithi _tithiFor(DateTime day) {
+    final key = '${day.year}-${day.month}-${day.day}|${settings.city.cacheKey}';
+    final cached = _tithiCache[key];
+    if (cached != null) return cached;
+    if (_tithiCache.length >= _maxPanchangCacheEntries) {
+      _tithiCache.remove(_tithiCache.keys.first);
+    }
+    return _tithiCache[key] =
+        suryodayaTithi(day.year, day.month, day.day, settings.place);
   }
 
   @override
@@ -107,7 +129,15 @@ class _CalendarScreenState extends State<CalendarScreen>
                 selectedDay: _selectedDay,
                 festivals: festivals,
                 panchangFor: _panchangFor,
+                tithiFor: _tithiFor,
                 onShift: _shiftMonth,
+                onToday: () {
+                  final today = DateTime.now();
+                  setState(() {
+                    _month = DateTime(today.year, today.month);
+                    _selectedDay = DateTime(today.year, today.month, today.day);
+                  });
+                },
                 onSelect: (day) => setState(() => _selectedDay = day),
               ),
               _TyoharTab(year: _month.year, festivals: festivals),
@@ -124,7 +154,9 @@ class _MahinaTab extends StatelessWidget {
   final DateTime selectedDay;
   final List<FestivalDate> festivals;
   final Panchang Function(DateTime) panchangFor;
+  final SuryodayaTithi Function(DateTime) tithiFor;
   final void Function(int) onShift;
+  final VoidCallback onToday;
   final ValueChanged<DateTime> onSelect;
 
   const _MahinaTab({
@@ -132,7 +164,9 @@ class _MahinaTab extends StatelessWidget {
     required this.selectedDay,
     required this.festivals,
     required this.panchangFor,
+    required this.tithiFor,
     required this.onShift,
+    required this.onToday,
     required this.onSelect,
   });
 
@@ -172,6 +206,13 @@ class _MahinaTab extends StatelessWidget {
                     style: VidhivatTheme.typographyOf(context).sectionTitle,
                   ),
                 ),
+                VidhivatButton(
+                  label: 'आज',
+                  icon: Icons.today_outlined,
+                  compact: true,
+                  variant: VidhivatButtonVariant.text,
+                  onPressed: onToday,
+                ),
                 VidhivatIconAction(
                   key: const Key('calendar_next_month'),
                   onPressed: () => onShift(1),
@@ -200,14 +241,16 @@ class _MahinaTab extends StatelessWidget {
             }
             final dayNumber = index - leadingEmptyCells + 1;
             final day = DateTime(month.year, month.month, dayNumber);
-            final dayPanchang = panchangFor(day);
+            final dayTithi = tithiFor(day);
             final dayFestivals = _festivalsOn(day, festivals);
             return _CalendarDay(
               day: day,
-              panchang: dayPanchang,
+              tithi: dayTithi,
               selected: _sameDay(day, selectedDay),
               today: _sameDay(day, today),
               festivals: dayFestivals,
+              festivalLabel:
+                  dayFestivals.isEmpty ? null : dayFestivals.first.rule.name,
               onTap: () => onSelect(day),
             );
           },
@@ -231,7 +274,39 @@ class _MahinaTab extends StatelessWidget {
                   '${selectedPanchang.pakshaName} ${selectedPanchang.tithi.name}',
                 ),
                 Pankti('नक्षत्र', selectedPanchang.nakshatra.name),
+                const Divider(height: VidhivatSpacing.lg),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(
+                    VidhivatSpacing.sm,
+                    0,
+                    VidhivatSpacing.sm,
+                    VidhivatSpacing.sm,
+                  ),
+                  child: Wrap(
+                    spacing: VidhivatSpacing.xs,
+                    runSpacing: VidhivatSpacing.xs,
+                    children: [
+                      _PanchangChip('तिथि', selectedPanchang.tithi.name),
+                      _PanchangChip('नक्षत्र', selectedPanchang.nakshatra.name),
+                      _PanchangChip('पक्ष', selectedPanchang.pakshaName),
+                    ],
+                  ),
+                ),
               ],
+            ),
+          ),
+        ),
+        const SizedBox(height: VidhivatSpacing.sm),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: VidhivatSpacing.sm),
+          child: VidhivatButton(
+            label: 'पूरा पंचांग देखें',
+            icon: Icons.menu_book_outlined,
+            fullWidth: true,
+            variant: VidhivatButtonVariant.secondary,
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                  builder: (_) => AajScreen(initialDay: selectedDay)),
             ),
           ),
         ),
@@ -270,6 +345,19 @@ class _MahinaTab extends StatelessWidget {
                                 const VidhivatStatusChip(
                                   label: 'दो तारीख़ें',
                                   tone: VidhivatStatusTone.info,
+                                ),
+                              const SizedBox(width: VidhivatSpacing.xs),
+                              if (festivalDestination(festival.rule.name) !=
+                                  null)
+                                IconButton(
+                                  tooltip:
+                                      '${festival.rule.name} की विधि देखें',
+                                  onPressed: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (_) => festivalDestination(
+                                            festival.rule.name)!),
+                                  ),
+                                  icon: const Icon(Icons.arrow_forward_rounded),
                                 ),
                             ],
                           ),
@@ -316,20 +404,48 @@ class _WeekdayHeader extends StatelessWidget {
       );
 }
 
+class _PanchangChip extends StatelessWidget {
+  final String label;
+  final String value;
+
+  const _PanchangChip(this.label, this.value);
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = VidhivatTheme.colorsOf(context);
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: VidhivatSpacing.sm,
+        vertical: VidhivatSpacing.xxs,
+      ),
+      decoration: BoxDecoration(
+        color: colors.surfaceSubtle,
+        borderRadius: VidhivatRadius.pill,
+      ),
+      child: Text(
+        '$label · $value',
+        style: VidhivatTheme.typographyOf(context).caption,
+      ),
+    );
+  }
+}
+
 class _CalendarDay extends StatelessWidget {
   final DateTime day;
-  final Panchang panchang;
+  final SuryodayaTithi tithi;
   final bool selected;
   final bool today;
   final List<FestivalDate> festivals;
+  final String? festivalLabel;
   final VoidCallback onTap;
 
   const _CalendarDay({
     required this.day,
-    required this.panchang,
+    required this.tithi,
     required this.selected,
     required this.today,
     required this.festivals,
+    required this.festivalLabel,
     required this.onTap,
   });
 
@@ -339,8 +455,8 @@ class _CalendarDay extends StatelessWidget {
     final festivalNames = festivals.map((f) => f.rule.name).join(', ');
     final label = <String>[
       tarikh(day),
-      panchang.varaName,
-      '${panchang.pakshaName} ${panchang.tithi.name}',
+      tithi.varaName,
+      '${tithi.pakshaName} ${tithi.tithiName}',
       if (today) 'आज',
       if (festivals.isNotEmpty) 'त्योहार: $festivalNames',
     ].join(', ');
@@ -377,25 +493,50 @@ class _CalendarDay extends StatelessWidget {
             type: MaterialType.transparency,
             child: InkWell(
               onTap: onTap,
+              // ⚠️ खाना 64 dp ऊँचा है (किनारे और padding के बाद ~52)। अंक का
+              // 32 + त्योहार का नाम ~18 + निशानों की पंक्ति 12 = 62 — जिस दिन
+              // त्योहार हो उस दिन Column 4–7 px बाहर निकलता था, और बड़े अक्षर
+              // (1.5x/2x) पर और ज़्यादा। इसलिए अंक और नाम दोनों `Flexible`:
+              // जगह कम हो तो अंक छोटा होता है और नाम कटता है, टूटता कुछ नहीं।
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    height: VidhivatSpacing.xxl,
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        '${day.day}',
-                        maxLines: 1,
-                        style: VidhivatTheme.typographyOf(context)
-                            .label
-                            .copyWith(
-                              fontWeight:
-                                  selected || today ? FontWeight.w700 : null,
-                            ),
+                  Flexible(
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(
+                        maxHeight: VidhivatSpacing.xxl,
+                      ),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          '${day.day}',
+                          maxLines: 1,
+                          style: VidhivatTheme.typographyOf(context)
+                              .label
+                              .copyWith(
+                                fontWeight:
+                                    selected || today ? FontWeight.w700 : null,
+                              ),
+                        ),
                       ),
                     ),
                   ),
+                  if (festivalLabel != null)
+                    Flexible(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: VidhivatSpacing.xxs,
+                        ),
+                        child: Text(
+                          festivalLabel!,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: VidhivatTheme.typographyOf(context)
+                              .caption
+                              .copyWith(color: colors.primary),
+                        ),
+                      ),
+                    ),
                   SizedBox(
                     height: VidhivatSpacing.sm,
                     child: Row(
@@ -428,24 +569,98 @@ class _CalendarDay extends StatelessWidget {
   }
 }
 
-class _TyoharTab extends StatelessWidget {
+class _TyoharTab extends StatefulWidget {
   final int year;
   final List<FestivalDate> festivals;
 
   const _TyoharTab({required this.year, required this.festivals});
 
   @override
+  State<_TyoharTab> createState() => _TyoharTabState();
+}
+
+class _TyoharTabState extends State<_TyoharTab> {
+  _FestivalFilter _filter = _FestivalFilter.all;
+
+  @override
   Widget build(BuildContext context) {
+    final filtered = widget.festivals
+        .where((festival) => _matchesFestivalFilter(festival, _filter))
+        .toList(growable: false);
+    final today = DateTime.now();
+    final todayStart = DateTime(today.year, today.month, today.day);
+    FestivalDate? next;
+    for (final festival in widget.festivals) {
+      if (!festival.date.isBefore(todayStart)) {
+        next = festival;
+        break;
+      }
+    }
     return Panna(
       children: [
         VidhivatSectionHeader(
-            title: '$year के त्योहार',
+            title: '${widget.year} के त्योहार',
             supportingText: 'तारीख़ें आपके शहर के सूर्योदय से'),
         const SizedBox(height: VidhivatSpacing.lg),
-        for (final f in festivals) _TyoharCard(f: f),
+        if (next != null) ...[
+          const VidhivatSectionHeader(title: 'अगला महत्वपूर्ण दिन'),
+          const SizedBox(height: VidhivatSpacing.sm),
+          _TyoharCard(f: next),
+          const SizedBox(height: VidhivatSpacing.lg),
+        ],
+        Wrap(
+          spacing: VidhivatSpacing.xs,
+          runSpacing: VidhivatSpacing.xs,
+          children: [
+            for (final value in _FestivalFilter.values)
+              ChoiceChip(
+                label: Text(value.label),
+                selected: _filter == value,
+                onSelected: (_) => setState(() => _filter = value),
+              ),
+          ],
+        ),
+        const SizedBox(height: VidhivatSpacing.lg),
+        if (filtered.isEmpty)
+          Text(
+            'इस श्रेणी में कोई दिन नहीं मिला।',
+            style: VidhivatTheme.typographyOf(context).bodySmall,
+          )
+        else
+          for (final f in filtered) _TyoharCard(f: f),
       ],
     );
   }
+}
+
+enum _FestivalFilter {
+  all('सभी'),
+  vrat('व्रत'),
+  parv('पर्व'),
+  grahan('ग्रहण');
+
+  final String label;
+  const _FestivalFilter(this.label);
+}
+
+bool _matchesFestivalFilter(FestivalDate festival, _FestivalFilter filter) {
+  if (filter == _FestivalFilter.all) return true;
+  final name = festival.rule.name;
+  const vratWords = [
+    'एकादशी',
+    'प्रदोष',
+    'चतुर्थी',
+    'चौथ',
+    'शिवरात्रि',
+    'पूर्णिमा',
+    'अमावस्या',
+    'व्रत'
+  ];
+  if (filter == _FestivalFilter.vrat) {
+    return vratWords.any(name.contains);
+  }
+  if (filter == _FestivalFilter.grahan) return name.contains('ग्रहण');
+  return !vratWords.any(name.contains) && !name.contains('ग्रहण');
 }
 
 class _TyoharCard extends StatelessWidget {
@@ -530,6 +745,19 @@ class _TyoharCard extends StatelessWidget {
             // दूसरे पंचांग से फ़र्क़ दिखे — और तब वो पूरा मिलना चाहिए,
             // इसलिए मिटाया नहीं, एक दबाव पीछे किया (→ D-045, D-056)।
             _TyoharKaHisaab(f: f),
+            if (festivalDestination(f.rule.name) != null) ...[
+              const SizedBox(height: VidhivatSpacing.xs),
+              VidhivatButton(
+                label: 'विधि देखें',
+                icon: Icons.arrow_forward_rounded,
+                variant: VidhivatButtonVariant.text,
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => festivalDestination(f.rule.name)!,
+                  ),
+                ),
+              ),
+            ],
           ],
         ),
       ),

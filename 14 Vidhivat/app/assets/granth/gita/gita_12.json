@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "id": "gita_12",
+  "naam": "अध्याय १२ — भक्तियोग",
+  "upnaam": [
+    "श्रीमद्भगवद्गीता अध्याय १२",
+    "गीता अध्याय १२",
+    "भक्तियोगो नाम द्वादशोऽध्यायः"
+  ],
+  "prakar": "granth",
+  "devta": "श्रीकृष्ण",
+  "rachnakar": "महर्षि वेदव्यास — महाभारत",
+  "bhasha": "संस्कृत",
+  "parichay": "साकार की उपासना और अप्रकट की उपासना — दोनों में कौन श्रेष्ठ, इस प्रश्न का उत्तर। फिर मन न टिके तो क्या करें — एक के बाद एक सरल उपाय। अन्त में उस भक्त के लक्षण जो भगवान को प्रिय है।",
+  "kabPadhein": "किसी भी दिन, किसी भी समय। बहुत घरों में रोज़ थोड़ा-थोड़ा पढ़ने का चलन है। मार्गशीर्ष शुक्ल एकादशी (मोक्षदा एकादशी) को गीता जयंती मनाई जाती है।",
+  "kaisePadhein": "शान्त जगह बैठकर पढ़ें। पूरा पाठ एक बैठक में न हो तो रोज़ एक अध्याय या कुछ श्लोक पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है।\n\nहर अध्याय के अन्त में उसका समापन-वाक्य दिया है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "श्लोक १",
+      "dev": "अर्जुन उवाच\nएवं सततयुक्ता ये भक्तास्त्वां पर्युपासते ।\nये चाप्यक्षरमव्यक्तं तेषां के योगवित्तमाः॥",
+      "roman": "arjuna uvaacha\nevam satatayuktaa ye bhaktaastvaam paryupaasate |\nye chaapyaksharamavyaktam teshaam ke yogavittamaah ||",
+      "arth": "अर्जुन बोले — जो भक्त इस तरह सदा आपसे जुड़े रहकर आपकी उपासना करते हैं, और जो अविनाशी अप्रकट की उपासना करते हैं — उनमें योग को सबसे अच्छा जानने वाले कौन हैं?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "श्रीभगवानुवाच\nमय्यावेश्य मनो ये मां नित्ययुक्ता उपासते ।\nश्रद्धया परयोपेतास्ते मे युक्ततमा मताः॥",
+      "roman": "shreebhagavaanuvaacha\nmayyaaveshya mano ye maam nityayuktaa upaasate |\nshraddhayaa parayopetaaste me yuktatamaa mataah ||",
+      "arth": "श्रीभगवान बोले — जो मुझमें मन लगाकर, सदा मुझसे जुड़े रहकर, परम श्रद्धा के साथ मेरी उपासना करते हैं, उन्हें मैं सबसे श्रेष्ठ योगी मानता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "ये त्वक्षरमनिर्देश्यमव्यक्तं पर्युपासते ।\nसर्वत्रगमचिन्त्यं च कूटस्थमचलं ध्रुवम्॥",
+      "roman": "ye tvaksharamanirdeshyamavyaktam paryupaasate |\nsarvatragamachintyam cha kootasthamachalam dhruvam ||",
+      "arth": "पर जो उस अविनाशी, बताए न जा सकने वाले, अप्रकट, सब जगह रहने वाले, सोच से परे, अडिग, अचल और नित्य की उपासना करते हैं —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "सन्नियम्येन्द्रियग्रामं सर्वत्र समबुद्धयः ।\nते प्राप्नुवन्ति मामेव सर्वभूतहिते रताः॥",
+      "roman": "sanniyamyendriyagraamam sarvatra samabuddhayah |\nte praapnuvanti maameva sarvabhootahite rataah ||",
+      "arth": "— इन्द्रियों के समूह को वश में करके, सबमें समान बुद्धि रखकर और सब प्राणियों के भले में लगे रहकर — वे भी मुझे ही पाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "क्लेशोऽधिकतरस्तेषामव्यक्तासक्तचेतसाम् ।\nअव्यक्ता हि गतिर्दुःखं देहवद्भिरवाप्यते॥",
+      "roman": "klesho'dhikatarasteshaamavyaktaasaktachetasaam |\navyaktaa hi gatirduhkham dehavadbhiravaapyate ||",
+      "arth": "जिनका चित्त अप्रकट में लगा है, उन्हें कष्ट अधिक होता है; क्योंकि शरीरधारियों के लिए अप्रकट की राह कठिनाई से मिलती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "ये तु सर्वाणि कर्माणि मयि संन्यस्य मत्पराः ।\nअनन्येनैव योगेन मां ध्यायन्त उपासते॥",
+      "roman": "ye tu sarvaani karmaani mayi samnyasya matparaah |\nananyenaiva yogena maam dhyaayanta upaasate ||",
+      "arth": "पर जो सब कर्म मुझे सौंपकर, मुझे ही परम मानकर, अनन्य योग से मेरा ध्यान करते हुए मेरी उपासना करते हैं —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "तेषामहं समुद्धर्ता मृत्युसंसारसागरात् ।\nभवामि नचिरात्पार्थ मय्यावेशितचेतसाम्॥",
+      "roman": "teshaamaham samuddhartaa mrityusamsaarasaagaraat |\nbhavaami nachiraatpaartha mayyaaveshitachetasaam ||",
+      "arth": "— हे पार्थ! मुझमें चित्त लगाने वाले उन लोगों का मैं मृत्यु वाले संसार-सागर से जल्दी ही उद्धार कर देता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "मय्येव मन आधत्स्व मयि बुद्धिं निवेशय ।\nनिवसिष्यसि मय्येव अत ऊर्ध्वं न संशयः॥",
+      "roman": "mayyeva mana aadhatsva mayi buddhim niveshaya |\nnivasishyasi mayyeva ata oordhvam na samshayah ||",
+      "arth": "मुझमें ही मन लगाओ, मुझमें ही बुद्धि को ठहराओ। इसके बाद तुम मुझमें ही निवास करोगे — इसमें संशय नहीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "अथ चित्तं समाधातुं न शक्नोषि मयि स्थिरम् ।\nअभ्यासयोगेन ततो मामिच्छाप्तुं धनञ्जय॥",
+      "roman": "atha chittam samaadhaatum na shaknoshi mayi sthiram |\nabhyaasayogena tato maamichchhaaptum dhananjaya ||",
+      "arth": "और यदि तुम चित्त को मुझमें स्थिर नहीं टिका सकते, तो हे धनंजय! अभ्यास रूपी योग से मुझे पाने की इच्छा करो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "अभ्यासेऽप्यसमर्थोऽसि मत्कर्मपरमो भव ।\nमदर्थमपि कर्माणि कुर्वन्सिद्धिमवाप्स्यसि॥",
+      "roman": "abhyaase'pyasamartho'si matkarmaparamo bhava |\nmadarthamapi karmaani kurvansiddhimavaapsyasi ||",
+      "arth": "यदि अभ्यास में भी असमर्थ हो, तो मेरे लिए कर्म करने को ही अपना लक्ष्य बना लो। मेरे लिए कर्म करते हुए भी तुम सिद्धि पा लोगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "अथैतदप्यशक्तोऽसि कर्तुं मद्योगमाश्रितः ।\nसर्वकर्मफलत्यागं ततः कुरु यतात्मवान्॥",
+      "roman": "athaitadapyashakto'si kartum madyogamaashritah |\nsarvakarmaphalatyaagam tatah kuru yataatmavaan ||",
+      "arth": "और यदि यह भी नहीं कर सकते, तो मेरे योग का सहारा लेकर, मन को वश में रखकर, सब कर्मों के फल का त्याग करो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "श्रेयो हि ज्ञानमभ्यासाज्ज्ञानाद्ध्यानं विशिष्यते ।\nध्यानात्कर्मफलत्यागस्त्यागाच्छान्तिरनन्तरम्॥",
+      "roman": "shreyo hi jnaanamabhyaasaajjnaanaaddhyaanam vishishyate |\ndhyaanaatkarmaphalatyaagastyaagaachchhaantiranantaram ||",
+      "arth": "अभ्यास से ज्ञान श्रेष्ठ है, ज्ञान से ध्यान श्रेष्ठ है, और ध्यान से कर्म-फल का त्याग श्रेष्ठ है; त्याग से तुरन्त शान्ति मिलती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "अद्वेष्टा सर्वभूतानां मैत्रः करुण एव च ।\nनिर्ममो निरहङ्कारः समदुःखसुखः क्षमी॥",
+      "roman": "adveshtaa sarvabhootaanaam maitrah karuna eva cha |\nnirmamo nirahankaarah samaduhkhasukhah kshamee ||",
+      "arth": "जो किसी प्राणी से द्वेष नहीं करता, सबका मित्र और दयालु है, ममता और अहंकार से रहित है, सुख-दुख में समान और क्षमाशील है;",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "सन्तुष्टः सततं योगी यतात्मा दृढनिश्चयः ।\nमय्यर्पितमनोबुद्धिर्यो मद्भक्तः स मे प्रियः॥",
+      "roman": "santushtah satatam yogee yataatmaa dridhanishchayah |\nmayyarpitamanobuddhiryo madbhaktah sa me priyah ||",
+      "arth": "जो सदा सन्तुष्ट, योगी, मन को वश में रखने वाला और पक्के निश्चय वाला है, और जिसने मन और बुद्धि मुझे सौंप दी है — ऐसा मेरा भक्त मुझे प्रिय है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "यस्मान्नोद्विजते लोको लोकान्नोद्विजते च यः ।\nहर्षामर्षभयोद्वेगैर्मुक्तो यः स च मे प्रियः॥",
+      "roman": "yasmaannodvijate loko lokaannodvijate cha yah |\nharshaamarshabhayodvegairmukto yah sa cha me priyah ||",
+      "arth": "जिससे कोई घबराता नहीं और जो किसी से घबराता नहीं; जो हर्ष, जलन, भय और घबराहट से छूटा हुआ है — वह मुझे प्रिय है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "अनपेक्षः शुचिर्दक्ष उदासीनो गतव्यथः ।\nसर्वारम्भपरित्यागी यो मद्भक्तः स मे प्रियः॥",
+      "roman": "anapekshah shuchirdaksha udaaseeno gatavyathah |\nsarvaarambhaparityaagee yo madbhaktah sa me priyah ||",
+      "arth": "जिसे कोई अपेक्षा नहीं, जो पवित्र, कुशल, उदासीन और दुख से रहित है, और जिसने सब कामों की दौड़-धूप छोड़ दी है — ऐसा मेरा भक्त मुझे प्रिय है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "यो न हृष्यति न द्वेष्टि न शोचति न काङ्क्षति ।\nशुभाशुभपरित्यागी भक्तिमान्यः स मे प्रियः॥",
+      "roman": "yo na hrishyati na dveshti na shochati na kaankshati |\nshubhaashubhaparityaagee bhaktimaanyah sa me priyah ||",
+      "arth": "जो न हर्षित होता है, न द्वेष करता है, न शोक करता है, न कुछ चाहता है; जिसने शुभ और अशुभ दोनों को छोड़ दिया है — ऐसा भक्तिमान मुझे प्रिय है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "समः शत्रौ च मित्रे च तथा मानापमानयोः ।\nशीतोष्णसुखदुःखेषु समः सङ्गविवर्जितः॥",
+      "roman": "samah shatrau cha mitre cha tathaa maanaapamaanayoh |\nsheetoshnasukhaduhkheshu samah sangavivarjitah ||",
+      "arth": "जो शत्रु और मित्र में, मान और अपमान में समान है; सर्दी-गर्मी और सुख-दुख में समान है; और आसक्ति से रहित है;",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "तुल्यनिन्दास्तुतिर्मौनी सन्तुष्टो येन केनचित् ।\nअनिकेतः स्थिरमतिर्भक्तिमान्मे प्रियो नरः॥",
+      "roman": "tulyanindaastutirmaunee santushto yena kenachit |\naniketah sthiramatirbhaktimaanme priyo narah ||",
+      "arth": "जिसके लिए निन्दा और स्तुति बराबर हैं, जो कम बोलता है, जो कुछ भी मिल जाए उसी में सन्तुष्ट है, जिसका कोई पक्का ठिकाना नहीं और जिसकी बुद्धि स्थिर है — ऐसा भक्तिमान मनुष्य मुझे प्रिय है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "ये तु धर्म्यामृतमिदं यथोक्तं पर्युपासते ।\nश्रद्दधाना मत्परमा भक्तास्तेऽतीव मे प्रियाः॥",
+      "roman": "ye tu dharmyaamritamidam yathoktam paryupaasate |\nshraddadhaanaa matparamaa bhaktaaste'teeva me priyaah ||",
+      "arth": "और जो श्रद्धा के साथ, मुझे ही परम मानकर, ऊपर कहे गए इस धर्म रूपी अमृत का सेवन करते हैं — वे भक्त मुझे बहुत ही प्रिय हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "समापन",
+      "dev": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु\nब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे\nभक्तियोगो नाम द्वादशोऽध्यायः॥",
+      "roman": "om tatsaditi shreemadbhagavadgeetaasoopanishatsu\nbrahmavidyaayaam yogashaastre shreekrishnaarjunasamvaade\nbhaktiyogo naama dvaadasho'dhyaayah ||",
+      "arth": "इस तरह उपनिषद रूप श्रीमद्भगवद्गीता में, जो ब्रह्मविद्या और योगशास्त्र है, श्रीकृष्ण और अर्जुन के संवाद में \"भक्तियोग\" नाम का बारहवाँ अध्याय पूरा हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, भीष्म पर्व — श्रीमद्भगवद्गीता",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ पाँच अलग संस्करणों से श्लोक-दर-श्लोक मिलाया गया है। सात सौ में से पाँच सौ सतहत्तर श्लोक पाँचों में अक्षर-अक्षर एक मिले; बाक़ी में वही रूप लिया गया जिस पर अधिक संस्करण एक थे।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं। आचार्यों ने कई श्लोकों को अलग-अलग ढंग से समझाया है; यहाँ किसी एक मत की व्याख्या नहीं, सीधा अर्थ दिया गया है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

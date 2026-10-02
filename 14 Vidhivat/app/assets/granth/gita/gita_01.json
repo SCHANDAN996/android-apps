@@ -1,0 +1,414 @@
+{
+  "schemaVersion": 1,
+  "id": "gita_01",
+  "naam": "अध्याय १ — अर्जुनविषादयोग",
+  "upnaam": [
+    "श्रीमद्भगवद्गीता अध्याय १",
+    "गीता अध्याय १",
+    "अर्जुनविषादयोगो नाम प्रथमोऽध्यायः"
+  ],
+  "prakar": "granth",
+  "devta": "श्रीकृष्ण",
+  "rachnakar": "महर्षि वेदव्यास — महाभारत",
+  "bhasha": "संस्कृत",
+  "parichay": "कुरुक्षेत्र में दोनों सेनाएँ आमने-सामने खड़ी हैं। अर्जुन रथ को बीच में ले जाने को कहते हैं, और सामने अपने ही गुरुओं और सम्बन्धियों को देखकर शोक से भर जाते हैं। वे धनुष रख देते हैं और कहते हैं कि युद्ध नहीं करेंगे।",
+  "kabPadhein": "किसी भी दिन, किसी भी समय। बहुत घरों में रोज़ थोड़ा-थोड़ा पढ़ने का चलन है। मार्गशीर्ष शुक्ल एकादशी (मोक्षदा एकादशी) को गीता जयंती मनाई जाती है।",
+  "kaisePadhein": "शान्त जगह बैठकर पढ़ें। पूरा पाठ एक बैठक में न हो तो रोज़ एक अध्याय या कुछ श्लोक पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है।\n\nहर अध्याय के अन्त में उसका समापन-वाक्य दिया है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "श्लोक १",
+      "dev": "धृतराष्ट्र उवाच\nधर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः ।\nमामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय॥",
+      "roman": "dhritaraashtra uvaacha\ndharmakshetre kurukshetre samavetaa yuyutsavah |\nmaamakaah paandavaashchaiva kimakurvata sanjaya ||",
+      "arth": "धृतराष्ट्र बोले — हे संजय! धर्म की भूमि कुरुक्षेत्र में युद्ध की इच्छा से इकट्ठे हुए मेरे पुत्रों और पाण्डु के पुत्रों ने क्या किया?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "सञ्जय उवाच\nदृष्ट्वा तु पाण्डवानीकं व्यूढं दुर्योधनस्तदा ।\nआचार्यमुपसङ्गम्य राजा वचनमब्रवीत्॥",
+      "roman": "sanjaya uvaacha\ndrishtvaa tu paandavaaneekam vyoodham duryodhanastadaa |\naachaaryamupasangamya raajaa vachanamabraveet ||",
+      "arth": "संजय बोले — उस समय पाण्डवों की सेना को व्यूह में खड़ी देखकर राजा दुर्योधन आचार्य द्रोण के पास गया और यह बात बोला।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "पश्यैतां पाण्डुपुत्राणामाचार्य महतीं चमूम् ।\nव्यूढां द्रुपदपुत्रेण तव शिष्येण धीमता॥",
+      "roman": "pashyaitaam paanduputraanaamaachaarya mahateem chamoom |\nvyoodhaam drupadaputrena tava shishyena dheemataa ||",
+      "arth": "हे आचार्य! पाण्डु के पुत्रों की इस विशाल सेना को देखिए, जिसे आपके बुद्धिमान शिष्य, द्रुपद के पुत्र धृष्टद्युम्न ने व्यूह में खड़ा किया है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "अत्र शूरा महेष्वासा भीमार्जुनसमा युधि ।\nयुयुधानो विराटश्च द्रुपदश्च महारथः॥",
+      "roman": "atra shooraa maheshvaasaa bheemaarjunasamaa yudhi |\nyuyudhaano viraatashcha drupadashcha mahaarathah ||",
+      "arth": "इसमें बड़े-बड़े धनुष वाले शूरवीर हैं, जो युद्ध में भीम और अर्जुन के बराबर हैं — युयुधान (सात्यकि), विराट और महारथी द्रुपद,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "धृष्टकेतुश्चेकितानः काशिराजश्च वीर्यवान् ।\nपुरुजित्कुन्तिभोजश्च शैब्यश्च नरपुङ्गवः॥",
+      "roman": "dhrishtaketushchekitaanah kaashiraajashcha veeryavaan |\npurujitkuntibhojashcha shaibyashcha narapungavah ||",
+      "arth": "धृष्टकेतु, चेकितान और बलवान काशिराज, पुरुजित, कुन्तिभोज और मनुष्यों में श्रेष्ठ शैब्य,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "युधामन्युश्च विक्रान्त उत्तमौजाश्च वीर्यवान् ।\nसौभद्रो द्रौपदेयाश्च सर्व एव महारथाः॥",
+      "roman": "yudhaamanyushcha vikraanta uttamaujaashcha veeryavaan |\nsaubhadro draupadeyaashcha sarva eva mahaarathaah ||",
+      "arth": "पराक्रमी युधामन्यु और बलवान उत्तमौजा, सुभद्रा का पुत्र अभिमन्यु और द्रौपदी के पुत्र — ये सभी महारथी हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "अस्माकं तु विशिष्टा ये तान्निबोध द्विजोत्तम ।\nनायका मम सैन्यस्य संज्ञार्थं तान्ब्रवीमि ते॥",
+      "roman": "asmaakam tu vishishtaa ye taannibodha dvijottama |\nnaayakaa mama sainyasya samjnaartham taanbraveemi te ||",
+      "arth": "हे ब्राह्मणों में श्रेष्ठ! अब हमारी ओर जो विशेष योद्धा हैं, उन्हें भी जान लीजिए। अपनी सेना के नायकों के नाम मैं आपकी जानकारी के लिए बताता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "भवान्भीष्मश्च कर्णश्च कृपश्च समितिञ्जयः ।\nअश्वत्थामा विकर्णश्च सौमदत्तिस्तथैव च॥",
+      "roman": "bhavaanbheeshmashcha karnashcha kripashcha samitinjayah |\nashvatthaamaa vikarnashcha saumadattistathaiva cha ||",
+      "arth": "आप स्वयं, भीष्म, कर्ण और युद्ध में विजयी रहने वाले कृपाचार्य; वैसे ही अश्वत्थामा, विकर्ण और सोमदत्त का पुत्र भूरिश्रवा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "अन्ये च बहवः शूरा मदर्थे त्यक्तजीविताः ।\nनानाशस्त्रप्रहरणाः सर्वे युद्धविशारदाः॥",
+      "roman": "anye cha bahavah shooraa madarthe tyaktajeevitaah |\nnaanaashastrapraharanaah sarve yuddhavishaaradaah ||",
+      "arth": "और भी बहुत से शूरवीर हैं, जो मेरे लिए जीवन का मोह छोड़ चुके हैं। वे तरह-तरह के शस्त्रों से सजे हैं और सब के सब युद्ध में निपुण हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "अपर्याप्तं तदस्माकं बलं भीष्माभिरक्षितम् ।\nपर्याप्तं त्विदमेतेषां बलं भीमाभिरक्षितम्॥",
+      "roman": "aparyaaptam tadasmaakam balam bheeshmaabhirakshitam |\nparyaaptam tvidameteshaam balam bheemaabhirakshitam ||",
+      "arth": "भीष्म की रक्षा में खड़ी हमारी वह सेना अपार है, और भीम की रक्षा में खड़ी इन लोगों की यह सेना सीमित है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "अयनेषु च सर्वेषु यथाभागमवस्थिताः ।\nभीष्ममेवाभिरक्षन्तु भवन्तः सर्व एव हि॥",
+      "roman": "ayaneshu cha sarveshu yathaabhaagamavasthitaah |\nbheeshmamevaabhirakshantu bhavantah sarva eva hi ||",
+      "arth": "इसलिए सब मोर्चों पर अपनी-अपनी जगह डटे रहकर आप सब लोग हर तरफ़ से भीष्म की ही रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "तस्य सञ्जनयन्हर्षं कुरुवृद्धः पितामहः ।\nसिंहनादं विनद्योच्चैः शङ्खं दध्मौ प्रतापवान्॥",
+      "roman": "tasya sanjanayanharsham kuruvriddhah pitaamahah |\nsimhanaadam vinadyochchaih shankham dadhmau prataapavaan ||",
+      "arth": "तब कौरवों में सबसे बड़े, प्रतापी पितामह भीष्म ने दुर्योधन का हर्ष बढ़ाते हुए ऊँचे स्वर में सिंह की तरह गरजकर शंख बजाया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "ततः शङ्खाश्च भेर्यश्च पणवानकगोमुखाः ।\nसहसैवाभ्यहन्यन्त स शब्दस्तुमुलोऽभवत्॥",
+      "roman": "tatah shankhaashcha bheryashcha panavaanakagomukhaah |\nsahasaivaabhyahanyanta sa shabdastumulo'bhavat ||",
+      "arth": "इसके बाद शंख, नगाड़े, ढोल, मृदंग और नरसिंघे एक साथ बज उठे। वह शब्द बड़ा भयंकर हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "ततः श्वेतैर्हयैर्युक्ते महति स्यन्दने स्थितौ ।\nमाधवः पाण्डवश्चैव दिव्यौ शङ्खौ प्रदध्मतुः॥",
+      "roman": "tatah shvetairhayairyukte mahati syandane sthitau |\nmaadhavah paandavashchaiva divyau shankhau pradadhmatuh ||",
+      "arth": "फिर सफ़ेद घोड़ों से जुते विशाल रथ में बैठे माधव (श्रीकृष्ण) और पाण्डु-पुत्र अर्जुन ने भी अपने दिव्य शंख बजाए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "पाञ्चजन्यं हृषीकेशो देवदत्तं धनञ्जयः ।\nपौण्ड्रं दध्मौ महाशङ्खं भीमकर्मा वृकोदरः॥",
+      "roman": "paanchajanyam hrisheekesho devadattam dhananjayah |\npaundram dadhmau mahaashankham bheemakarmaa vrikodarah ||",
+      "arth": "हृषीकेश (श्रीकृष्ण) ने पाञ्चजन्य, धनंजय (अर्जुन) ने देवदत्त और भयानक कर्म करने वाले वृकोदर (भीम) ने पौण्ड्र नाम का महाशंख बजाया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "अनन्तविजयं राजा कुन्तीपुत्रो युधिष्ठिरः ।\nनकुलः सहदेवश्च सुघोषमणिपुष्पकौ॥",
+      "roman": "anantavijayam raajaa kunteeputro yudhishthirah |\nnakulah sahadevashcha sughoshamanipushpakau ||",
+      "arth": "कुन्ती के पुत्र राजा युधिष्ठिर ने अनन्तविजय, और नकुल तथा सहदेव ने सुघोष और मणिपुष्पक नाम के शंख बजाए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "काश्यश्च परमेष्वासः शिखण्डी च महारथः ।\nधृष्टद्युम्नो विराटश्च सात्यकिश्चापराजितः॥",
+      "roman": "kaashyashcha parameshvaasah shikhandee cha mahaarathah |\ndhrishtadyumno viraatashcha saatyakishchaaparaajitah ||",
+      "arth": "श्रेष्ठ धनुष वाले काशिराज, महारथी शिखण्डी, धृष्टद्युम्न, विराट और कभी न हारने वाले सात्यकि,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "द्रुपदो द्रौपदेयाश्च सर्वशः पृथिवीपते ।\nसौभद्रश्च महाबाहुः शङ्खान्दध्मुः पृथक्पृथक्॥",
+      "roman": "drupado draupadeyaashcha sarvashah prithiveepate |\nsaubhadrashcha mahaabaahuh shankhaandadhmuh prithakprithak ||",
+      "arth": "द्रुपद, द्रौपदी के पुत्र और बड़ी भुजाओं वाला सुभद्रा-पुत्र अभिमन्यु — हे राजन्! इन सबने चारों ओर से अलग-अलग शंख बजाए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "स घोषो धार्तराष्ट्राणां हृदयानि व्यदारयत् ।\nनभश्च पृथिवीं चैव तुमुलो व्यनुनादयन्॥",
+      "roman": "sa ghosho dhaartaraashtraanaam hridayaani vyadaarayat |\nnabhashcha prithiveem chaiva tumulo vyanunaadayan ||",
+      "arth": "उस भयंकर ध्वनि ने आकाश और पृथ्वी को गुँजाते हुए धृतराष्ट्र के पुत्रों के हृदय चीर दिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "अथ व्यवस्थितान्दृष्ट्वा धार्तराष्ट्रान्कपिध्वजः ।\nप्रवृत्ते शस्त्रसम्पाते धनुरुद्यम्य पाण्डवः॥",
+      "roman": "atha vyavasthitaandrishtvaa dhaartaraashtraankapidhvajah |\npravritte shastrasampaate dhanurudyamya paandavah ||",
+      "arth": "हे राजन्! इसके बाद, जब शस्त्र चलने ही वाले थे, तब जिनकी ध्वजा पर हनुमान हैं उन पाण्डु-पुत्र अर्जुन ने धृतराष्ट्र के पुत्रों को सामने डटे देखकर धनुष उठाया —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "हृषीकेशं तदा वाक्यमिदमाह महीपते ।\nअर्जुन उवाच\nसेनयोरुभयोर्मध्ये रथं स्थापय मेऽच्युत॥",
+      "roman": "hrisheekesham tadaa vaakyamidamaaha maheepate |\narjuna uvaacha\nsenayorubhayormadhye ratham sthaapaya me'chyuta ||",
+      "arth": "— और हृषीकेश से यह बात कही। अर्जुन बोले — हे अच्युत! मेरा रथ दोनों सेनाओं के बीच में खड़ा कीजिए,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "यावदेतान्निरीक्षेऽहं योद्धुकामानवस्थितान् ।\nकैर्मया सह योद्धव्यमस्मिन् रणसमुद्यमे॥",
+      "roman": "yaavadetaannireekshe'ham yoddhukaamaanavasthitaan |\nkairmayaa saha yoddhavyamasmin ranasamudyame ||",
+      "arth": "ताकि मैं युद्ध की इच्छा से खड़े इन लोगों को देख लूँ — कि इस युद्ध में मुझे किन-किन के साथ लड़ना है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "योत्स्यमानानवेक्षेऽहं य एतेऽत्र समागताः ।\nधार्तराष्ट्रस्य दुर्बुद्धेर्युद्धे प्रियचिकीर्षवः॥",
+      "roman": "yotsyamaanaanavekshe'ham ya ete'tra samaagataah |\ndhaartaraashtrasya durbuddheryuddhe priyachikeershavah ||",
+      "arth": "दुर्बुद्धि दुर्योधन का युद्ध में भला चाहने वाले जो लोग यहाँ इकट्ठे हुए हैं, लड़ने को तैयार उन सबको मैं देखना चाहता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "सञ्जय उवाच\nएवमुक्तो हृषीकेशो गुडाकेशेन भारत ।\nसेनयोरुभयोर्मध्ये स्थापयित्वा रथोत्तमम्॥",
+      "roman": "sanjaya uvaacha\nevamukto hrisheekesho gudaakeshena bhaarata |\nsenayorubhayormadhye sthaapayitvaa rathottamam ||",
+      "arth": "संजय बोले — हे भारत (धृतराष्ट्र)! गुडाकेश (अर्जुन) के ऐसा कहने पर हृषीकेश ने वह उत्तम रथ दोनों सेनाओं के बीच में खड़ा किया —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २५",
+      "dev": "भीष्मद्रोणप्रमुखतः सर्वेषां च महीक्षिताम् ।\nउवाच पार्थ पश्यैतान्समवेतान्कुरूनिति॥",
+      "roman": "bheeshmadronapramukhatah sarveshaam cha maheekshitaam |\nuvaacha paartha pashyaitaansamavetaankurooniti ||",
+      "arth": "— भीष्म, द्रोण और सब राजाओं के सामने; और कहा — हे पार्थ! इकट्ठे हुए इन कौरवों को देखो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २६",
+      "dev": "तत्रापश्यत्स्थितान्पार्थः पितॄनथ पितामहान् ।\nआचार्यान्मातुलान्भ्रातॄन्पुत्रान्पौत्रान्सखींस्तथा॥",
+      "roman": "tatraapashyatsthitaanpaarthah pitreenatha pitaamahaan |\naachaaryaanmaatulaanbhraatreenputraanpautraansakheemstathaa ||",
+      "arth": "वहाँ अर्जुन ने दोनों ही सेनाओं में खड़े पिता समान बड़ों, दादाओं, गुरुओं, मामाओं, भाइयों, पुत्रों, पोतों और मित्रों को देखा,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २७",
+      "dev": "श्वशुरान्सुहृदश्चैव सेनयोरुभयोरपि ।\nतान्समीक्ष्य स कौन्तेयः सर्वान्बन्धूनवस्थितान्॥",
+      "roman": "shvashuraansuhridashchaiva senayorubhayorapi |\ntaansameekshya sa kaunteyah sarvaanbandhoonavasthitaan ||",
+      "arth": "ससुरों और हितैषियों को भी। उन सब बन्धुओं को खड़ा देखकर वह कुन्ती-पुत्र अर्जुन —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २८",
+      "dev": "कृपया परयाविष्टो विषीदन्निदमब्रवीत् ।\nअर्जुन उवाच\nदृष्ट्वेमं स्वजनं कृष्ण युयुत्सुं समुपस्थितम्॥",
+      "roman": "kripayaa parayaavishto visheedannidamabraveet |\narjuna uvaacha\ndrishtvemam svajanam krishna yuyutsum samupasthitam ||",
+      "arth": "— गहरी करुणा से भर गया और दुखी होकर यह बोला। अर्जुन बोले — हे कृष्ण! युद्ध की इच्छा से सामने खड़े इन अपने ही लोगों को देखकर",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २९",
+      "dev": "सीदन्ति मम गात्राणि मुखं च परिशुष्यति ।\nवेपथुश्च शरीरे मे रोमहर्षश्च जायते॥",
+      "roman": "seedanti mama gaatraani mukham cha parishushyati |\nvepathushcha shareere me romaharshashcha jaayate ||",
+      "arth": "मेरे अंग ढीले पड़ रहे हैं, मुँह सूख रहा है, शरीर काँप रहा है और रोंगटे खड़े हो रहे हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३०",
+      "dev": "गाण्डीवं स्रंसते हस्तात्त्वक्चैव परिदह्यते ।\nन च शक्नोम्यवस्थातुं भ्रमतीव च मे मनः॥",
+      "roman": "gaandeevam sramsate hastaattvakchaiva paridahyate |\nna cha shaknomyavasthaatum bhramateeva cha me manah ||",
+      "arth": "हाथ से गाण्डीव धनुष छूट रहा है, त्वचा जल रही है। मैं खड़ा भी नहीं रह पा रहा, और मेरा मन मानो चक्कर खा रहा है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३१",
+      "dev": "निमित्तानि च पश्यामि विपरीतानि केशव ।\nन च श्रेयोऽनुपश्यामि हत्वा स्वजनमाहवे॥",
+      "roman": "nimittaani cha pashyaami vipareetaani keshava |\nna cha shreyo'nupashyaami hatvaa svajanamaahave ||",
+      "arth": "हे केशव! मुझे लक्षण भी उलटे ही दिखाई दे रहे हैं। युद्ध में अपने ही लोगों को मारकर मुझे कोई भलाई नहीं दिखती।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३२",
+      "dev": "न काङ्क्षे विजयं कृष्ण न च राज्यं सुखानि च ।\nकिं नो राज्येन गोविन्द किं भोगैर्जीवितेन वा॥",
+      "roman": "na kaankshe vijayam krishna na cha raajyam sukhaani cha |\nkim no raajyena govinda kim bhogairjeevitena vaa ||",
+      "arth": "हे कृष्ण! मुझे न विजय चाहिए, न राज्य, न सुख। हे गोविन्द! हमें राज्य से क्या, भोगों से क्या, या जीने से भी क्या लेना?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३३",
+      "dev": "येषामर्थे काङ्क्षितं नो राज्यं भोगाः सुखानि च ।\nत इमेऽवस्थिता युद्धे प्राणांस्त्यक्त्वा धनानि च॥",
+      "roman": "yeshaamarthe kaankshitam no raajyam bhogaah sukhaani cha |\nta ime'vasthitaa yuddhe praanaamstyaktvaa dhanaani cha ||",
+      "arth": "जिनके लिए हमें राज्य, भोग और सुख चाहिए थे, वे ही लोग प्राण और धन की आशा छोड़कर यहाँ युद्ध में खड़े हैं —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३४",
+      "dev": "आचार्याः पितरः पुत्रास्तथैव च पितामहाः ।\nमातुलाः श्वशुराः पौत्राः श्यालाः सम्बन्धिनस्तथा॥",
+      "roman": "aachaaryaah pitarah putraastathaiva cha pitaamahaah |\nmaatulaah shvashuraah pautraah shyaalaah sambandhinastathaa ||",
+      "arth": "गुरु, पिता, पुत्र और वैसे ही दादा, मामा, ससुर, पोते, साले और दूसरे सम्बन्धी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३५",
+      "dev": "एतान्न हन्तुमिच्छामि घ्नतोऽपि मधुसूदन ।\nअपि त्रैलोक्यराज्यस्य हेतोः किं नु महीकृते॥",
+      "roman": "etaanna hantumichchhaami ghnato'pi madhusoodana |\napi trailokyaraajyasya hetoh kim nu maheekrite ||",
+      "arth": "हे मधुसूदन! ये मुझे मार भी डालें, तब भी मैं इन्हें मारना नहीं चाहता — तीनों लोकों के राज्य के लिए भी नहीं, फिर इस पृथ्वी के लिए तो बात ही क्या।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३६",
+      "dev": "निहत्य धार्तराष्ट्रान्नः का प्रीतिः स्याज्जनार्दन ।\nपापमेवाश्रयेदस्मान्हत्वैतानाततायिनः॥",
+      "roman": "nihatya dhaartaraashtraannah kaa preetih syaajjanaardana |\npaapamevaashrayedasmaanhatvaitaanaatataayinah ||",
+      "arth": "हे जनार्दन! धृतराष्ट्र के पुत्रों को मारकर हमें क्या ख़ुशी मिलेगी? इन आततायियों को मारने पर भी हमें पाप ही लगेगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३७",
+      "dev": "तस्मान्नार्हा वयं हन्तुं धार्तराष्ट्रान्स्वबान्धवान् ।\nस्वजनं हि कथं हत्वा सुखिनः स्याम माधव॥",
+      "roman": "tasmaannaarhaa vayam hantum dhaartaraashtraansvabaandhavaan |\nsvajanam hi katham hatvaa sukhinah syaama maadhava ||",
+      "arth": "इसलिए हे माधव! अपने ही बन्धु, धृतराष्ट्र के पुत्रों को मारना हमारे लिए ठीक नहीं। अपने ही लोगों को मारकर हम सुखी कैसे होंगे?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३८",
+      "dev": "यद्यप्येते न पश्यन्ति लोभोपहतचेतसः ।\nकुलक्षयकृतं दोषं मित्रद्रोहे च पातकम्॥",
+      "roman": "yadyapyete na pashyanti lobhopahatachetasah |\nkulakshayakritam dosham mitradrohe cha paatakam ||",
+      "arth": "लोभ से जिनकी बुद्धि मारी गई है, वे ये लोग भले ही कुल के नाश से होने वाला दोष और मित्रों से द्रोह करने का पाप नहीं देखते,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३९",
+      "dev": "कथं न ज्ञेयमस्माभिः पापादस्मान्निवर्तितुम् ।\nकुलक्षयकृतं दोषं प्रपश्यद्भिर्जनार्दन॥",
+      "roman": "katham na jneyamasmaabhih paapaadasmaannivartitum |\nkulakshayakritam dosham prapashyadbhirjanaardana ||",
+      "arth": "पर हे जनार्दन! कुल के नाश का दोष साफ़ देखने वाले हम लोग इस पाप से बचने की बात क्यों न सोचें?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४०",
+      "dev": "कुलक्षये प्रणश्यन्ति कुलधर्माः सनातनाः ।\nधर्मे नष्टे कुलं कृत्स्नमधर्मोऽभिभवत्युत॥",
+      "roman": "kulakshaye pranashyanti kuladharmaah sanaatanaah |\ndharme nashte kulam kritsnamadharmo'bhibhavatyuta ||",
+      "arth": "कुल का नाश होने पर कुल के सनातन धर्म नष्ट हो जाते हैं, और धर्म के नष्ट होने पर पूरे कुल को अधर्म दबा लेता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४१",
+      "dev": "अधर्माभिभवात्कृष्ण प्रदुष्यन्ति कुलस्त्रियः ।\nस्त्रीषु दुष्टासु वार्ष्णेय जायते वर्णसङ्करः॥",
+      "roman": "adharmaabhibhavaatkrishna pradushyanti kulastriyah |\nstreeshu dushtaasu vaarshneya jaayate varnasankarah ||",
+      "arth": "हे कृष्ण! अधर्म के बढ़ने पर कुल की स्त्रियाँ बिगड़ जाती हैं; और हे वार्ष्णेय! स्त्रियों के बिगड़ने पर वर्णसंकर पैदा होता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४२",
+      "dev": "सङ्करो नरकायैव कुलघ्नानां कुलस्य च ।\nपतन्ति पितरो ह्येषां लुप्तपिण्डोदकक्रियाः॥",
+      "roman": "sankaro narakaayaiva kulaghnaanaam kulasya cha |\npatanti pitaro hyeshaam luptapindodakakriyaah ||",
+      "arth": "वर्णसंकर कुल का नाश करने वालों को और कुल को नरक में ही ले जाता है। पिण्ड और जल की क्रिया बन्द हो जाने से इनके पितर भी गिर जाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४३",
+      "dev": "दोषैरेतैः कुलघ्नानां वर्णसङ्करकारकैः ।\nउत्साद्यन्ते जातिधर्माः कुलधर्माश्च शाश्वताः॥",
+      "roman": "doshairetaih kulaghnaanaam varnasankarakaarakaih |\nutsaadyante jaatidharmaah kuladharmaashcha shaashvataah ||",
+      "arth": "कुल का नाश करने वालों के इन वर्णसंकर पैदा करने वाले दोषों से सदा से चले आते जाति-धर्म और कुल-धर्म मिट जाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४४",
+      "dev": "उत्सन्नकुलधर्माणां मनुष्याणां जनार्दन ।\nनरकेऽनियतं वासो भवतीत्यनुशुश्रुम॥",
+      "roman": "utsannakuladharmaanaam manushyaanaam janaardana |\nnarake'niyatam vaaso bhavateetyanushushruma ||",
+      "arth": "हे जनार्दन! जिनके कुल-धर्म मिट गए हैं, उन मनुष्यों का अनिश्चित काल तक नरक में वास होता है — ऐसा हम सुनते आए हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४५",
+      "dev": "अहो बत महत्पापं कर्तुं व्यवसिता वयम् ।\nयद्राज्यसुखलोभेन हन्तुं स्वजनमुद्यताः॥",
+      "roman": "aho bata mahatpaapam kartum vyavasitaa vayam |\nyadraajyasukhalobhena hantum svajanamudyataah ||",
+      "arth": "अरे! कितने दुख की बात है कि हम बड़ा भारी पाप करने को तैयार हो गए — राज्य के सुख के लोभ में अपने ही लोगों को मारने पर उतारू हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४६",
+      "dev": "यदि मामप्रतीकारमशस्त्रं शस्त्रपाणयः ।\nधार्तराष्ट्रा रणे हन्युस्तन्मे क्षेमतरं भवेत्॥",
+      "roman": "yadi maamaprateekaaramashastram shastrapaanayah |\ndhaartaraashtraa rane hanyustanme kshemataram bhavet ||",
+      "arth": "यदि हाथ में शस्त्र लिए धृतराष्ट्र के पुत्र मुझ बिना शस्त्र वाले, सामना न करने वाले को युद्ध में मार डालें, तो वह मेरे लिए कहीं अधिक भला होगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४७",
+      "dev": "सञ्जय उवाच\nएवमुक्त्वार्जुनः सङ्ख्ये रथोपस्थ उपाविशत् ।\nविसृज्य सशरं चापं शोकसंविग्नमानसः॥",
+      "roman": "sanjaya uvaacha\nevamuktvaarjunah sankhye rathopastha upaavishat |\nvisrijya sasharam chaapam shokasamvignamaanasah ||",
+      "arth": "संजय बोले — युद्धभूमि में ऐसा कहकर, शोक से व्याकुल मन वाला अर्जुन बाण समेत धनुष छोड़कर रथ के पिछले भाग में बैठ गया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "समापन",
+      "dev": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु\nब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे\nअर्जुनविषादयोगो नाम प्रथमोऽध्यायः॥",
+      "roman": "om tatsaditi shreemadbhagavadgeetaasoopanishatsu\nbrahmavidyaayaam yogashaastre shreekrishnaarjunasamvaade\narjunavishaadayogo naama prathamo'dhyaayah ||",
+      "arth": "इस तरह उपनिषद रूप श्रीमद्भगवद्गीता में, जो ब्रह्मविद्या और योगशास्त्र है, श्रीकृष्ण और अर्जुन के संवाद में \"अर्जुनविषादयोग\" नाम का पहला अध्याय पूरा हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, भीष्म पर्व — श्रीमद्भगवद्गीता",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ पाँच अलग संस्करणों से श्लोक-दर-श्लोक मिलाया गया है। सात सौ में से पाँच सौ सतहत्तर श्लोक पाँचों में अक्षर-अक्षर एक मिले; बाक़ी में वही रूप लिया गया जिस पर अधिक संस्करण एक थे।\n\nश्लोक १० के \"अपर्याप्तं\" और \"पर्याप्तं\" का अर्थ दो तरह से किया जाता है — अपार और सीमित, या अपर्याप्त और पर्याप्त।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं। आचार्यों ने कई श्लोकों को अलग-अलग ढंग से समझाया है; यहाँ किसी एक मत की व्याख्या नहीं, सीधा अर्थ दिया गया है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

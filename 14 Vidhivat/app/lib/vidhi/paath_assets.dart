@@ -50,20 +50,40 @@ abstract final class PaathAssets {
     semanticLabel: 'सरस्वती जी का सजावटी चित्र',
   );
 
+  /// विश्वकर्मा पूजा वाला ही चित्र — सूक्त उसी पूजा के आवाहन से खुलता है।
+  static const vishwakarma = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/vishwakarma_pooja_v1.webp',
+    semanticLabel: 'विश्वकर्मा जी और शिल्प-औज़ारों का सजावटी चित्र',
+  );
+
   static const Map<String, DevotionalArtwork> _byPaathId = {
     'hanuman_chalisa': hanuman,
     'ganesh_aarti': ganesha,
     'hanuman_aarti': hanuman,
     'lakshmi_aarti': lakshmi,
     'durga_aarti': durga,
+    // दोनों दुर्गा आरतियों का चित्र एक ही — वे एक ही देवी की दो रचनाएँ
+    // हैं, दो अलग चीज़ें नहीं। सूची में नाम से फ़र्क़ साफ़ है।
+    'jagjanani_aarti': durga,
+    'saptashloki_durga': durga,
     'shiv_aarti': shiva,
     'satyanarayan_aarti': vishnu,
     'krishna_aarti': krishna,
     'ram_aarti': ram,
     'saraswati_aarti': saraswati,
     'jagdish_aarti': vishnu,
+    'vishwakarma_sukta': vishwakarma,
   };
 
   static DevotionalArtwork forPaathId(String id) =>
       _byPaathId[id] ?? DevotionalAssets.diya;
+
+  /// ग्रंथालय की सूची में ग्रंथ का चित्र — उसी देवता का जिनका वह ग्रंथ है।
+  static const Map<String, DevotionalArtwork> _byGranthId = {
+    'gita': krishna,
+    'saptashati': durga,
+  };
+
+  static DevotionalArtwork forGranthId(String id) =>
+      _byGranthId[id] ?? DevotionalAssets.diya;
 }

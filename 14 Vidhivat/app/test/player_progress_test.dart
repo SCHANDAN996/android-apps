@@ -28,6 +28,23 @@ void main() {
     expect(settings.playerProgressFor('nitya_pooja', 9), isNull);
   });
 
+  test('चरण save होने पर global settings listeners नहीं जागते', () async {
+    var changes = 0;
+    void listener() => changes++;
+    settings.addListener(listener);
+    try {
+      await settings.recordLastReachedStep(
+        pujaId: 'shraadh',
+        stepIndex: 1,
+        totalSteps: 10,
+      );
+      await settings.clearPlayerProgress('shraadh');
+      expect(changes, 0);
+    } finally {
+      settings.removeListener(listener);
+    }
+  });
+
   test('पीछे जाने से furthest app position मिटती नहीं', () async {
     await settings.recordLastReachedStep(
       pujaId: 'satyanarayan',
@@ -95,7 +112,8 @@ void main() {
       await rakhoPuraniProgress(
           DateTime.now().subtract(const Duration(minutes: 20)));
 
-      expect(settings.playerProgressFor('satyanarayan', 14)?.lastReachedStepIndex,
+      expect(
+          settings.playerProgressFor('satyanarayan', 14)?.lastReachedStepIndex,
           6);
       expect(settings.latestPlayerProgressPujaId, 'satyanarayan');
     });

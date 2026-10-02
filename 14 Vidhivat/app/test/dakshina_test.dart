@@ -82,8 +82,8 @@ void main() {
     test('फ़ोन की घड़ी पीछे चली जाए तो ऐप चुप रहता है, दोबारा नहीं पूछता',
         () async {
       await dakshina.mili(abhi);
-      expect(dakshina.dikhega(abhi.subtract(const Duration(days: 400))),
-          isFalse);
+      expect(
+          dakshina.dikhega(abhi.subtract(const Duration(days: 400))), isFalse);
     });
   });
 
@@ -108,20 +108,90 @@ void main() {
       expect(dakshina.kabhiDiThi, isTrue);
     });
 
-    test('छह राशियाँ, और उनके id वही जो Play Console में बनेंगे', () {
+    test('सात राशियाँ, छोटी से बड़ी', () {
       expect(dakshinaRaashiyan.length, 7);
       expect(
         dakshinaRaashiyan.map((r) => r.id).toList(),
-        ['dakshina_11', 'dakshina_21', 'dakshina_51', 'dakshina_101',
-         'dakshina_251', 'dakshina_501', 'dakshina_1100'],
+        [
+          'dakshina_11',
+          'dakshina_21',
+          'dakshina_51',
+          'dakshina_101',
+          'dakshina_251',
+          'dakshina_501',
+          'dakshina_1100'
+        ],
       );
       expect(dakshinaRaashiyan.map((r) => r.rupaye).toList(),
           [11, 21, 51, 101, 251, 501, 1100]);
       // सबसे छोटी राशि सबसे पहले — मना करने लायक छोटा पहला क़दम।
       // ₹11 सबसे पहले — मना करने लायक़ छोटा पहला क़दम।
       expect(dakshinaRaashiyan.first.rupaye, 11);
-      // और Play की भारत वाली सबसे कम क़ीमत (₹10) से नीचे कोई न हो।
       expect(dakshinaRaashiyan.every((r) => r.rupaye >= 10), isTrue);
+    });
+  });
+
+  // ─────────────────────────────────────────────────────────────
+  // PayU — पन्ना बाहर खुलता है, नतीजा आदमी बताता है (→ D-090)
+  // ─────────────────────────────────────────────────────────────
+
+  group('PayU का द्वार', () {
+    test('असली link भरा है और https है', () {
+      expect(payuDakshinaLink, startsWith('https://'),
+          reason: 'PayU Dashboard → Payment Handle वाला link भरना है');
+    });
+
+    test('link खोलता है, और "मिली" कभी अपने आप नहीं कहता', () async {
+      Uri? khula;
+      final dwar = PayuDwar(
+        link: 'https://example.invalid/dakshina',
+        kholo: (uri) async {
+          khula = uri;
+          return true;
+        },
+      );
+      expect(await dwar.dena(dakshinaRaashiyan[2]), DakshinaNatija.baharKhula);
+      expect(khula.toString(), 'https://example.invalid/dakshina');
+
+      dakshina.dwar = dwar;
+      await dakshina.dena(dakshinaRaashiyan[2]);
+      expect(dakshina.kabhiDiThi, isFalse,
+          reason: 'पन्ना खुलने भर से दक्षिणा दर्ज नहीं होनी चाहिए');
+    });
+
+    test('link ख़ाली या पन्ना न खुले तो "उपलब्ध नहीं"', () async {
+      expect(
+          await PayuDwar(link: '', kholo: (_) async => true)
+              .dena(dakshinaRaashiyan.first),
+          DakshinaNatija.upalabdhNahi);
+      expect(
+          await PayuDwar(link: 'https://x.invalid', kholo: (_) async => false)
+              .dena(dakshinaRaashiyan.first),
+          DakshinaNatija.upalabdhNahi);
+      expect(
+          await PayuDwar(
+              link: 'https://x.invalid',
+              kholo: (_) async => throw 'x').dena(dakshinaRaashiyan.first),
+          DakshinaNatija.upalabdhNahi);
+    });
+
+    testWidgets('पन्ना खुलने के बाद पूछता है — "हाँ" पर ही धन्यवाद और चुप्पी',
+        (tester) async {
+      dakshina.dwar = _NakliDwar(DakshinaNatija.baharKhula);
+      await tester.pumpWidget(app(const DakshinaChunav()));
+      await tester.tap(find.text('₹101'));
+      await tester.pump();
+      await tester.tap(find.text('दक्षिणा दें'));
+      await tester.pumpAndSettle();
+
+      expect(find.byKey(const Key('dakshina_bahar_khula')), findsOneWidget);
+      expect(find.textContaining('₹101 भरकर'), findsOneWidget);
+      expect(dakshina.kabhiDiThi, isFalse);
+
+      await tester.tap(find.text(DakshinaShabd.deDi));
+      await tester.pumpAndSettle();
+      expect(find.byKey(const Key('dakshina_dhanyavaad')), findsOneWidget);
+      expect(dakshina.kabhiDiThi, isTrue);
     });
   });
 
@@ -161,7 +231,7 @@ void main() {
 
       // पन्ना खुला, ₹51 चुनी हुई — पर द्वार तक कोई माँग नहीं गई।
       expect(dwar.maangiGayi, isNull,
-          reason: 'बटन दबाए बिना Play की शीट कभी नहीं खुलनी चाहिए');
+          reason: 'बटन दबाए बिना भुगतान का पन्ना कभी नहीं खुलना चाहिए');
     });
 
     testWidgets('₹11 चुनकर दी जा सकती है', (tester) async {
@@ -182,10 +252,12 @@ void main() {
       // ⚠ यहाँ ज़रा सी चूक से पैसे वाला काम रुक जाता है।
       await tester.pumpWidget(app(const DakshinaChunav()));
       for (final raashi in dakshinaRaashiyan) {
-        final naap = tester.getSize(find.ancestor(
-          of: find.text(raashi.label),
-          matching: find.byType(ConstrainedBox),
-        ).first);
+        final naap = tester.getSize(find
+            .ancestor(
+              of: find.text(raashi.label),
+              matching: find.byType(ConstrainedBox),
+            )
+            .first);
         expect(naap.height,
             greaterThanOrEqualTo(VidhivatActionSize.minimumTouchTarget),
             reason: '${raashi.label} की चिप बहुत छोटी है');
@@ -253,8 +325,7 @@ void main() {
   // पन्ना — तीनों सच्ची पंक्तियाँ
   // ─────────────────────────────────────────────────────────────
 
-  testWidgets('दक्षिणा का पन्ना तीनों साफ़-साफ़ बातें कहता है',
-      (tester) async {
+  testWidgets('दक्षिणा का पन्ना तीनों साफ़-साफ़ बातें कहता है', (tester) async {
     // पूरा पन्ना एक बार में बन जाए — `Panna` एक ListView है, और छोटी
     // खिड़की में नीचे वाला हिस्सा बनता ही नहीं।
     tester.view.physicalSize = const Size(393 * 3, 2400 * 3);
@@ -267,11 +338,14 @@ void main() {
     );
 
     expect(find.text(DakshinaShabd.shirshak), findsOneWidget);
-    expect(find.textContaining('किसी मंदिर, संस्था या पंडित को'),
-        findsOneWidget);
+    expect(
+        find.textContaining('किसी मंदिर, संस्था या पंडित को'), findsOneWidget);
     expect(find.textContaining('कुछ नया नहीं खुलता'), findsOneWidget);
     expect(find.textContaining('यह पूजा की दक्षिणा नहीं है'), findsOneWidget);
-    expect(find.textContaining('लगभग ₹800 प्रति पूजा'), findsOneWidget);
+    // पंडित जी की जाँच होती ही नहीं (→ D-072) — उसका ख़र्च गिनाना झूठ था
+    expect(find.textContaining('₹800'), findsNothing);
+    expect(find.textContaining('पंडित जी से'), findsNothing);
+    expect(find.textContaining('PayU'), findsOneWidget);
   });
 
   // ─────────────────────────────────────────────────────────────
@@ -292,8 +366,12 @@ void main() {
     test('पूजा वाली स्क्रीनों पर दक्षिणा का नाम तक नहीं', () {
       for (final raah in pavitraScreens) {
         final source = File(raah).readAsStringSync();
-        for (final nishani in ['DakshinaCard', 'DakshinaChunav',
-                               'DakshinaScreen', 'dakshina.dena']) {
+        for (final nishani in [
+          'DakshinaCard',
+          'DakshinaChunav',
+          'DakshinaScreen',
+          'dakshina.dena'
+        ]) {
           expect(source.contains(nishani), isFalse,
               reason: '$raah में "$nishani" नहीं होना चाहिए — वहाँ आदमी '
                   'पूजा कर रहा है (→ D-008, D-053)');
@@ -371,7 +449,7 @@ String _stringLiterals(String source) {
   ].join(' ');
 }
 
-/// नक़ली द्वार — असली Play को छुए बिना पूरा रास्ता जाँचने के लिए।
+/// नक़ली द्वार — असली पन्ना खोले बिना पूरा रास्ता जाँचने के लिए।
 class _NakliDwar extends DakshinaDwar {
   final DakshinaNatija natija;
   DakshinaRaashi? maangiGayi;

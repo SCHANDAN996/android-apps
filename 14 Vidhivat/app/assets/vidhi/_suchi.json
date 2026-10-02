@@ -225,6 +225,14 @@
       "ekLine": "नौ कन्याओं का पूजन और भोजन",
       "taiyar": true,
       "paas": false
+    },
+    {
+      "id": "vishwakarma_pooja",
+      "naam": "विश्वकर्मा पूजा",
+      "shreni": "tyohar",
+      "ekLine": "कन्या संक्रांति — औज़ार, मशीन और कार्यस्थल की पूजा",
+      "taiyar": true,
+      "paas": false
     }
   ]
 }

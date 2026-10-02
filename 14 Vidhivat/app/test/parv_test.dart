@@ -94,5 +94,18 @@ void main() {
     for (final id in sabhiId) {
       expect((await vidhiBhandar.vidhi(id)).id, id);
     }
+
+    // पर्व-पन्ने पर लिखा समय उस दिन की विधि से मेल खाए। 13 सित 2026 को
+    // फ़ोन पर दिन 7 की पट्टी "30 मिनट" कह रही थी और खुलने पर विधि "29
+    // मिनट" — समय हाथ से लिखा था और विधि बदलने पर पीछे रह गया।
+    for (final din in parv.din) {
+      final id = din.vidhiId;
+      if (id == null) continue;
+      expect(din.samayMinute, (await vidhiBhandar.vidhi(id)).samayMinute,
+          reason: 'दिन ${din.ank} ($id) का समय');
+    }
+    expect(parv.sankshipt.samayMinute,
+        (await vidhiBhandar.vidhi(parv.sankshipt.vidhiId!)).samayMinute,
+        reason: 'संक्षिप्त पूजा का समय');
   });
 }

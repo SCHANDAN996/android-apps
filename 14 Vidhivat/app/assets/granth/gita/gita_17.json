@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "id": "gita_17",
+  "naam": "अध्याय १७ — श्रद्धात्रयविभागयोग",
+  "upnaam": [
+    "श्रीमद्भगवद्गीता अध्याय १७",
+    "गीता अध्याय १७",
+    "श्रद्धात्रयविभागयोगो नाम सप्तदशोऽध्यायः"
+  ],
+  "prakar": "granth",
+  "devta": "श्रीकृष्ण",
+  "rachnakar": "महर्षि वेदव्यास — महाभारत",
+  "bhasha": "संस्कृत",
+  "parichay": "श्रद्धा तीन तरह की होती है, और उसी के अनुसार भोजन, यज्ञ, तप और दान भी सात्त्विक, राजस और तामस होते हैं। अन्त में ॐ, तत् और सत् — इन तीन शब्दों का अर्थ।",
+  "kabPadhein": "किसी भी दिन, किसी भी समय। बहुत घरों में रोज़ थोड़ा-थोड़ा पढ़ने का चलन है। मार्गशीर्ष शुक्ल एकादशी (मोक्षदा एकादशी) को गीता जयंती मनाई जाती है।",
+  "kaisePadhein": "शान्त जगह बैठकर पढ़ें। पूरा पाठ एक बैठक में न हो तो रोज़ एक अध्याय या कुछ श्लोक पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है।\n\nहर अध्याय के अन्त में उसका समापन-वाक्य दिया है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "श्लोक १",
+      "dev": "अर्जुन उवाच\nये शास्त्रविधिमुत्सृज्य यजन्ते श्रद्धयान्विताः ।\nतेषां निष्ठा तु का कृष्ण सत्त्वमाहो रजस्तमः॥",
+      "roman": "arjuna uvaacha\nye shaastravidhimutsrijya yajante shraddhayaanvitaah |\nteshaam nishthaa tu kaa krishna sattvamaaho rajastamah ||",
+      "arth": "अर्जुन बोले — हे कृष्ण! जो लोग शास्त्र की विधि को छोड़कर, पर श्रद्धा के साथ पूजन करते हैं, उनकी निष्ठा कैसी है — सात्त्विक, राजस या तामस?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "श्रीभगवानुवाच\nत्रिविधा भवति श्रद्धा देहिनां सा स्वभावजा ।\nसात्त्विकी राजसी चैव तामसी चेति तां शृणु॥",
+      "roman": "shreebhagavaanuvaacha\ntrividhaa bhavati shraddhaa dehinaam saa svabhaavajaa |\nsaattvikee raajasee chaiva taamasee cheti taam shrinu ||",
+      "arth": "श्रीभगवान बोले — शरीरधारियों की श्रद्धा, जो उनके स्वभाव से पैदा होती है, तीन तरह की होती है — सात्त्विक, राजस और तामस। उसे सुनो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "सत्त्वानुरूपा सर्वस्य श्रद्धा भवति भारत ।\nश्रद्धामयोऽयं पुरुषो यो यच्छ्रद्धः स एव सः॥",
+      "roman": "sattvaanuroopaa sarvasya shraddhaa bhavati bhaarata |\nshraddhaamayo'yam purusho yo yachchhraddhah sa eva sah ||",
+      "arth": "हे भारत! हर एक की श्रद्धा उसके अन्तःकरण के अनुसार होती है। यह मनुष्य श्रद्धा से ही बना है; जिसकी जैसी श्रद्धा है, वह वैसा ही है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "यजन्ते सात्त्विका देवान्यक्षरक्षांसि राजसाः ।\nप्रेतान्भूतगणांश्चान्ये यजन्ते तामसा जनाः॥",
+      "roman": "yajante saattvikaa devaanyaksharakshaamsi raajasaah |\npretaanbhootaganaamshchaanye yajante taamasaa janaah ||",
+      "arth": "सात्त्विक लोग देवताओं को पूजते हैं, राजस लोग यक्षों और राक्षसों को; और दूसरे, तामस लोग प्रेतों और भूतों के समूहों को पूजते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "अशास्त्रविहितं घोरं तप्यन्ते ये तपो जनाः ।\nदम्भाहङ्कारसंयुक्ताः कामरागबलान्विताः॥",
+      "roman": "ashaastravihitam ghoram tapyante ye tapo janaah |\ndambhaahankaarasamyuktaah kaamaraagabalaanvitaah ||",
+      "arth": "जो लोग दिखावे और अहंकार से भरे हुए, कामना और आसक्ति के बल पर ऐसा घोर तप करते हैं जो शास्त्र में नहीं बताया गया;",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "कर्षयन्तः शरीरस्थं भूतग्राममचेतसः ।\nमां चैवान्तःशरीरस्थं तान्विद्ध्यासुरनिश्चयान्॥",
+      "roman": "karshayantah shareerastham bhootagraamamachetasah |\nmaam chaivaantahshareerastham taanviddhyaasuranishchayaan ||",
+      "arth": "जो विवेकहीन लोग शरीर में स्थित तत्त्वों के समूह को, और शरीर के भीतर बैठे मुझको भी कष्ट देते हैं — उन्हें आसुरी निश्चय वाला जानो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "आहारस्त्वपि सर्वस्य त्रिविधो भवति प्रियः ।\nयज्ञस्तपस्तथा दानं तेषां भेदमिमं शृणु॥",
+      "roman": "aahaarastvapi sarvasya trividho bhavati priyah |\nyajnastapastathaa daanam teshaam bhedamimam shrinu ||",
+      "arth": "भोजन भी हर एक को तीन तरह का प्रिय होता है; वैसे ही यज्ञ, तप और दान भी। उनका यह भेद सुनो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "आयुःसत्त्वबलारोग्यसुखप्रीतिविवर्धनाः ।\nरस्याः स्निग्धाः स्थिरा हृद्या आहाराः सात्त्विकप्रियाः॥",
+      "roman": "aayuhsattvabalaarogyasukhapreetivivardhanaah |\nrasyaah snigdhaah sthiraa hridyaa aahaaraah saattvikapriyaah ||",
+      "arth": "जो भोजन आयु, सत्त्व, बल, आरोग्य, सुख और प्रसन्नता बढ़ाते हैं; जो रसीले, चिकने, शरीर में देर तक टिकने वाले और मन को भाने वाले हैं — वे सात्त्विक लोगों को प्रिय होते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "कट्वम्ललवणात्युष्णतीक्ष्णरूक्षविदाहिनः ।\nआहारा राजसस्येष्टा दुःखशोकामयप्रदाः॥",
+      "roman": "katvamlalavanaatyushnateekshnarookshavidaahinah |\naahaaraa raajasasyeshtaa duhkhashokaamayapradaah ||",
+      "arth": "कड़वे, खट्टे, नमकीन, बहुत गरम, तीखे, रूखे और जलन पैदा करने वाले भोजन राजस मनुष्य को प्रिय होते हैं; ये दुख, शोक और रोग देते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "यातयामं गतरसं पूति पर्युषितं च यत् ।\nउच्छिष्टमपि चामेध्यं भोजनं तामसप्रियम्॥",
+      "roman": "yaatayaamam gatarasam pooti paryushitam cha yat |\nuchchhishtamapi chaamedhyam bhojanam taamasapriyam ||",
+      "arth": "जो भोजन देर का रखा, बेस्वाद, दुर्गन्ध वाला, बासी, जूठा और अपवित्र हो — वह तामस लोगों को प्रिय होता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "अफलाकाङ्क्षिभिर्यज्ञो विधिदृष्टो य इज्यते ।\nयष्टव्यमेवेति मनः समाधाय स सात्त्विकः॥",
+      "roman": "aphalaakaankshibhiryajno vidhidrishto ya ijyate |\nyashtavyameveti manah samaadhaaya sa saattvikah ||",
+      "arth": "फल की इच्छा न रखने वाले लोग, यह मानकर कि यज्ञ करना ही कर्तव्य है, मन को ठहराकर, विधि के अनुसार जो यज्ञ करते हैं — वह सात्त्विक है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "अभिसन्धाय तु फलं दम्भार्थमपि चैव यत् ।\nइज्यते भरतश्रेष्ठ तं यज्ञं विद्धि राजसम्॥",
+      "roman": "abhisandhaaya tu phalam dambhaarthamapi chaiva yat |\nijyate bharatashreshtha tam yajnam viddhi raajasam ||",
+      "arth": "पर हे भरतश्रेष्ठ! जो यज्ञ फल को ध्यान में रखकर और दिखावे के लिए भी किया जाता है, उसे राजस जानो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "विधिहीनमसृष्टान्नं मन्त्रहीनमदक्षिणम् ।\nश्रद्धाविरहितं यज्ञं तामसं परिचक्षते॥",
+      "roman": "vidhiheenamasrishtaannam mantraheenamadakshinam |\nshraddhaavirahitam yajnam taamasam parichakshate ||",
+      "arth": "जो यज्ञ विधि के बिना, अन्न बाँटे बिना, मन्त्रों के बिना, दक्षिणा के बिना और श्रद्धा के बिना किया जाए — उसे तामस कहते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "देवद्विजगुरुप्राज्ञपूजनं शौचमार्जवम् ।\nब्रह्मचर्यमहिंसा च शारीरं तप उच्यते॥",
+      "roman": "devadvijagurupraajnapoojanam shauchamaarjavam |\nbrahmacharyamahimsaa cha shaareeram tapa uchyate ||",
+      "arth": "देवता, ब्राह्मण, गुरु और ज्ञानी का पूजन, पवित्रता, सरलता, ब्रह्मचर्य और अहिंसा — यह शरीर का तप कहलाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "अनुद्वेगकरं वाक्यं सत्यं प्रियहितं च यत् ।\nस्वाध्यायाभ्यसनं चैव वाङ्मयं तप उच्यते॥",
+      "roman": "anudvegakaram vaakyam satyam priyahitam cha yat |\nsvaadhyaayaabhyasanam chaiva vaanmayam tapa uchyate ||",
+      "arth": "ऐसी बात जो किसी को बेचैन न करे, जो सच, प्रिय और भला करने वाली हो; और स्वाध्याय का अभ्यास — यह वाणी का तप कहलाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "मनः प्रसादः सौम्यत्वं मौनमात्मविनिग्रहः ।\nभावसंशुद्धिरित्येतत्तपो मानसमुच्यते॥",
+      "roman": "manah prasaadah saumyatvam maunamaatmavinigrahah |\nbhaavasamshuddhirityetattapo maanasamuchyate ||",
+      "arth": "मन की प्रसन्नता, सौम्यता, मौन, अपने पर क़ाबू और भावों की शुद्धि — यह मन का तप कहलाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "श्रद्धया परया तप्तं तपस्तत्त्रिविधं नरैः ।\nअफलाकाङ्क्षिभिर्युक्तैः सात्त्विकं परिचक्षते॥",
+      "roman": "shraddhayaa parayaa taptam tapastattrividham naraih |\naphalaakaankshibhiryuktaih saattvikam parichakshate ||",
+      "arth": "फल की इच्छा न रखने वाले, योग में लगे मनुष्य जब यह तीन तरह का तप परम श्रद्धा से करते हैं, तो उसे सात्त्विक कहते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "सत्कारमानपूजार्थं तपो दम्भेन चैव यत् ।\nक्रियते तदिह प्रोक्तं राजसं चलमध्रुवम्॥",
+      "roman": "satkaaramaanapoojaartham tapo dambhena chaiva yat |\nkriyate tadiha proktam raajasam chalamadhruvam ||",
+      "arth": "जो तप सत्कार, मान और पूजा पाने के लिए और दिखावे से किया जाता है — वह यहाँ राजस कहा गया है; वह चंचल और अस्थिर होता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "मूढग्राहेणात्मनो यत्पीडया क्रियते तपः ।\nपरस्योत्सादनार्थं वा तत्तामसमुदाहृतम्॥",
+      "roman": "moodhagraahenaatmano yatpeedayaa kriyate tapah |\nparasyotsaadanaartham vaa tattaamasamudaahritam ||",
+      "arth": "जो तप मूढ़ हठ से, अपने को कष्ट देकर, या दूसरे का नाश करने के लिए किया जाता है — वह तामस कहा गया है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "दातव्यमिति यद्दानं दीयतेऽनुपकारिणे ।\nदेशे काले च पात्रे च तद्दानं सात्त्विकं स्मृतम्॥",
+      "roman": "daatavyamiti yaddaanam deeyate'nupakaarine |\ndeshe kaale cha paatre cha taddaanam saattvikam smritam ||",
+      "arth": "देना ही कर्तव्य है — यह सोचकर जो दान सही जगह, सही समय और योग्य पात्र को, बदले में उपकार न कर सकने वाले को दिया जाता है — वह दान सात्त्विक माना गया है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "यत्तु प्रत्युपकारार्थं फलमुद्दिश्य वा पुनः ।\nदीयते च परिक्लिष्टं तद्दानं राजसं स्मृतम्॥",
+      "roman": "yattu pratyupakaaraartham phalamuddishya vaa punah |\ndeeyate cha pariklishtam taddaanam raajasam smritam ||",
+      "arth": "पर जो दान बदले में उपकार पाने के लिए, या फल को ध्यान में रखकर, या मन मारकर दिया जाता है — वह दान राजस माना गया है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "अदेशकाले यद्दानमपात्रेभ्यश्च दीयते ।\nअसत्कृतमवज्ञातं तत्तामसमुदाहृतम्॥",
+      "roman": "adeshakaale yaddaanamapaatrebhyashcha deeyate |\nasatkritamavajnaatam tattaamasamudaahritam ||",
+      "arth": "जो दान ग़लत जगह, ग़लत समय पर, अयोग्य लोगों को, बिना आदर के और तिरस्कार के साथ दिया जाता है — वह तामस कहा गया है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "ॐतत्सदिति निर्देशो ब्रह्मणस्त्रिविधः स्मृतः ।\nब्राह्मणास्तेन वेदाश्च यज्ञाश्च विहिताः पुरा॥",
+      "roman": "omtatsaditi nirdesho brahmanastrividhah smritah |\nbraahmanaastena vedaashcha yajnaashcha vihitaah puraa ||",
+      "arth": "ॐ, तत्, सत् — यह ब्रह्म का तीन तरह का नाम माना गया है। उसी से पहले ब्राह्मण, वेद और यज्ञ रचे गए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "तस्मादोमित्युदाहृत्य यज्ञदानतपःक्रियाः ।\nप्रवर्तन्ते विधानोक्ताः सततं ब्रह्मवादिनाम्॥",
+      "roman": "tasmaadomityudaahritya yajnadaanatapahkriyaah |\npravartante vidhaanoktaah satatam brahmavaadinaam ||",
+      "arth": "इसलिए ब्रह्म को मानने वालों की शास्त्र में बताई यज्ञ, दान और तप की क्रियाएँ सदा ॐ का उच्चारण करके ही शुरू होती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २५",
+      "dev": "तदित्यनभिसन्धाय फलं यज्ञतपःक्रियाः ।\nदानक्रियाश्च विविधाः क्रियन्ते मोक्षकाङ्क्षिभिः॥",
+      "roman": "tadityanabhisandhaaya phalam yajnatapahkriyaah |\ndaanakriyaashcha vividhaah kriyante mokshakaankshibhih ||",
+      "arth": "मोक्ष चाहने वाले लोग तत् कहकर, फल की इच्छा किए बिना, यज्ञ और तप की क्रियाएँ तथा तरह-तरह के दान करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २६",
+      "dev": "सद्भावे साधुभावे च सदित्येतत्प्रयुज्यते ।\nप्रशस्ते कर्मणि तथा सच्छब्दः पार्थ युज्यते॥",
+      "roman": "sadbhaave saadhubhaave cha sadityetatprayujyate |\nprashaste karmani tathaa sachchhabdah paartha yujyate ||",
+      "arth": "सत् शब्द का प्रयोग सत्य के भाव में और अच्छाई के भाव में होता है। हे पार्थ! उत्तम कर्म में भी सत् शब्द लगाया जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २७",
+      "dev": "यज्ञे तपसि दाने च स्थितिः सदिति चोच्यते ।\nकर्म चैव तदर्थीयं सदित्येवाभिधीयते॥",
+      "roman": "yajne tapasi daane cha sthitih saditi chochyate |\nkarma chaiva tadartheeyam sadityevaabhidheeyate ||",
+      "arth": "यज्ञ, तप और दान में टिके रहने को भी सत् कहते हैं; और उसी (तत्) के लिए किया गया कर्म भी सत् ही कहलाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २८",
+      "dev": "अश्रद्धया हुतं दत्तं तपस्तप्तं कृतं च यत् ।\nअसदित्युच्यते पार्थ न च तत्प्रेत्य नो इह॥",
+      "roman": "ashraddhayaa hutam dattam tapastaptam kritam cha yat |\nasadityuchyate paartha na cha tatpretya no iha ||",
+      "arth": "हे पार्थ! श्रद्धा के बिना किया गया हवन, दिया गया दान, तपा गया तप, और जो कुछ भी किया गया — वह असत् कहलाता है; वह न मरने के बाद काम का है, न यहाँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "समापन",
+      "dev": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु\nब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे\nश्रद्धात्रयविभागयोगो नाम सप्तदशोऽध्यायः॥",
+      "roman": "om tatsaditi shreemadbhagavadgeetaasoopanishatsu\nbrahmavidyaayaam yogashaastre shreekrishnaarjunasamvaade\nshraddhaatrayavibhaagayogo naama saptadasho'dhyaayah ||",
+      "arth": "इस तरह उपनिषद रूप श्रीमद्भगवद्गीता में, जो ब्रह्मविद्या और योगशास्त्र है, श्रीकृष्ण और अर्जुन के संवाद में \"श्रद्धात्रयविभागयोग\" नाम का सत्रहवाँ अध्याय पूरा हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, भीष्म पर्व — श्रीमद्भगवद्गीता",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ पाँच अलग संस्करणों से श्लोक-दर-श्लोक मिलाया गया है। सात सौ में से पाँच सौ सतहत्तर श्लोक पाँचों में अक्षर-अक्षर एक मिले; बाक़ी में वही रूप लिया गया जिस पर अधिक संस्करण एक थे।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं। आचार्यों ने कई श्लोकों को अलग-अलग ढंग से समझाया है; यहाँ किसी एक मत की व्याख्या नहीं, सीधा अर्थ दिया गया है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

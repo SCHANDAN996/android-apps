@@ -84,6 +84,50 @@ void main() {
       );
     });
 
+    test('पूजा पूर्ण होने पर जाँचा हुआ व्यक्तिगत आशीर्वाद चित्र मिलता है', () {
+      final expected = {
+        'ganesh_poojan': DevotionalAssets.completionGanesha,
+        'hanuman_pooja': DevotionalAssets.completionHanuman,
+        'rudrabhishek': DevotionalAssets.completionShiva,
+        'govardhan_annakut': DevotionalAssets.completionGovardhanAnnakut,
+        'makar_sankranti_pooja': DevotionalAssets.completionMakarSankranti,
+        'chhath_pooja': DevotionalAssets.completionChhath,
+        'vat_savitri': DevotionalAssets.completionVatSavitri,
+        'karwa_chauth': DevotionalAssets.completionKarwaChauth,
+        'hartalika_teej': DevotionalAssets.completionHartalikaTeej,
+        'kalash_sthapana': DevotionalAssets.completionKalashSthapana,
+        'lakshmi_poojan': DevotionalAssets.completionLakshmiPoojan,
+        'nitya_pooja': DevotionalAssets.completionNityaPooja,
+        'grih_pravesh': DevotionalAssets.completionGrihPravesh,
+        'mundan': DevotionalAssets.completionMundan,
+        'vahan_pooja': DevotionalAssets.completionVahanPooja,
+        'shraadh': DevotionalAssets.completionShraadh,
+        'bhai_dooj_pooja': DevotionalAssets.completionBhaiDooj,
+        'raksha_bandhan_pooja': DevotionalAssets.completionRakshaBandhan,
+        'navratri_sankshipt': DevotionalAssets.completionNavratriSankshipt,
+        'navratri_din_2': DevotionalAssets.completionNavratriBrahmacharini,
+        'navratri_din_3': DevotionalAssets.completionNavratriChandraghanta,
+        'navratri_din_4': DevotionalAssets.completionNavratriKushmanda,
+        'navratri_din_5': DevotionalAssets.completionNavratriSkandamata,
+        'navratri_din_6': DevotionalAssets.completionNavratriKatyayani,
+        'navratri_din_7': DevotionalAssets.completionNavratriKalaratri,
+        'navratri_navami_havan': DevotionalAssets.completionNavratriNavamiHavan,
+        'vijayadashami': DevotionalAssets.completionVijayadashami,
+        'vishwakarma_pooja': DevotionalAssets.completionVishwakarma,
+      };
+      for (final entry in expected.entries) {
+        expect(
+          DevotionalAssets.completionForVidhiId(entry.key),
+          same(entry.value),
+        );
+        expect(File(entry.value.assetPath).existsSync(), isTrue);
+      }
+      expect(
+        DevotionalAssets.completionForVidhiId('future_puja'),
+        same(DevotionalAssets.completion),
+      );
+    });
+
     test('नवरात्रि की हर नई विधि सही स्थानीय artwork खोलती है', () {
       final expected = <String, DevotionalArtwork>{
         'navratri_sankshipt': DevotionalAssets.navratriParv,

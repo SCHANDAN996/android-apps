@@ -67,7 +67,7 @@ python tools/bharo_aarti.py
 | `krishna_aarti` | कृष्ण पूजा · गोवर्धन / अन्नकूट |
 | `ram_aarti` | राम पूजा |
 | `saraswati_aarti` | सरस्वती पूजा |
-| `jagdish_aarti` | नित्य पूजा · मुंडन · उपनयन · वाहन पूजा · मकर संक्रांति |
+| `jagdish_aarti` | नित्य पूजा · मुंडन · उपनयन · वाहन पूजा · मकर संक्रांति · विश्वकर्मा पूजा |
 
 **यानी सबसे ज़्यादा फ़ायदा `ganesh_aarti`, `lakshmi_aarti` और
 `jagdish_aarti` भरने से होगा** — वे अकेले तेरह जगह जुड़ती हैं।

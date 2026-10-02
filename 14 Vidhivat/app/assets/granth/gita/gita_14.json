@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "id": "gita_14",
+  "naam": "अध्याय १४ — गुणत्रयविभागयोग",
+  "upnaam": [
+    "श्रीमद्भगवद्गीता अध्याय १४",
+    "गीता अध्याय १४",
+    "गुणत्रयविभागयोगो नाम चतुर्दशोऽध्यायः"
+  ],
+  "prakar": "granth",
+  "devta": "श्रीकृष्ण",
+  "rachnakar": "महर्षि वेदव्यास — महाभारत",
+  "bhasha": "संस्कृत",
+  "parichay": "प्रकृति के तीन गुण मनुष्य को कैसे बाँधते हैं, हर गुण के बढ़ने के क्या लक्षण हैं और उनका क्या फल है। अन्त में उस मनुष्य के लक्षण जो तीनों गुणों से पार हो गया है।",
+  "kabPadhein": "किसी भी दिन, किसी भी समय। बहुत घरों में रोज़ थोड़ा-थोड़ा पढ़ने का चलन है। मार्गशीर्ष शुक्ल एकादशी (मोक्षदा एकादशी) को गीता जयंती मनाई जाती है।",
+  "kaisePadhein": "शान्त जगह बैठकर पढ़ें। पूरा पाठ एक बैठक में न हो तो रोज़ एक अध्याय या कुछ श्लोक पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है।\n\nहर अध्याय के अन्त में उसका समापन-वाक्य दिया है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "श्लोक १",
+      "dev": "श्रीभगवानुवाच\nपरं भूयः प्रवक्ष्यामि ज्ञानानां ज्ञानमुत्तमम् ।\nयज्ज्ञात्वा मुनयः सर्वे परां सिद्धिमितो गताः॥",
+      "roman": "shreebhagavaanuvaacha\nparam bhooyah pravakshyaami jnaanaanaam jnaanamuttamam |\nyajjnaatvaa munayah sarve paraam siddhimito gataah ||",
+      "arth": "श्रीभगवान बोले — मैं फिर वह परम ज्ञान कहूँगा, जो ज्ञानों में सबसे उत्तम है; जिसे जानकर सब मुनि इस संसार से परम सिद्धि को पा गए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "इदं ज्ञानमुपाश्रित्य मम साधर्म्यमागताः ।\nसर्गेऽपि नोपजायन्ते प्रलये न व्यथन्ति च॥",
+      "roman": "idam jnaanamupaashritya mama saadharmyamaagataah |\nsarge'pi nopajaayante pralaye na vyathanti cha ||",
+      "arth": "इस ज्ञान का सहारा लेकर मेरे जैसे स्वभाव को पाए हुए लोग सृष्टि के समय भी पैदा नहीं होते, और प्रलय में भी व्याकुल नहीं होते।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "मम योनिर्महद्ब्रह्म तस्मिन्गर्भं दधाम्यहम् ।\nसम्भवः सर्वभूतानां ततो भवति भारत॥",
+      "roman": "mama yonirmahadbrahma tasmingarbham dadhaamyaham |\nsambhavah sarvabhootaanaam tato bhavati bhaarata ||",
+      "arth": "हे भारत! महान ब्रह्म (मूल प्रकृति) मेरी योनि है; उसमें मैं गर्भ रखता हूँ। उसी से सब प्राणियों की उत्पत्ति होती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "सर्वयोनिषु कौन्तेय मूर्तयः सम्भवन्ति याः ।\nतासां ब्रह्म महद्योनिरहं बीजप्रदः पिता॥",
+      "roman": "sarvayonishu kaunteya moortayah sambhavanti yaah |\ntaasaam brahma mahadyoniraham beejapradah pitaa ||",
+      "arth": "हे कुन्ती-पुत्र! सब योनियों में जो भी शरीर पैदा होते हैं, उनकी योनि (माता) महान ब्रह्म है, और मैं बीज देने वाला पिता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "सत्त्वं रजस्तम इति गुणाः प्रकृतिसम्भवाः ।\nनिबध्नन्ति महाबाहो देहे देहिनमव्ययम्॥",
+      "roman": "sattvam rajastama iti gunaah prakritisambhavaah |\nnibadhnanti mahaabaaho dehe dehinamavyayam ||",
+      "arth": "हे महाबाहो! सत्त्व, रज और तम — प्रकृति से पैदा हुए ये गुण अविनाशी शरीरधारी को शरीर में बाँधते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "तत्र सत्त्वं निर्मलत्वात्प्रकाशकमनामयम् ।\nसुखसङ्गेन बध्नाति ज्ञानसङ्गेन चानघ॥",
+      "roman": "tatra sattvam nirmalatvaatprakaashakamanaamayam |\nsukhasangena badhnaati jnaanasangena chaanagha ||",
+      "arth": "हे निष्पाप! उनमें सत्त्व निर्मल होने से प्रकाश देने वाला और विकार-रहित है; वह सुख के लगाव और ज्ञान के लगाव से बाँधता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "रजो रागात्मकं विद्धि तृष्णासङ्गसमुद्भवम् ।\nतन्निबध्नाति कौन्तेय कर्मसङ्गेन देहिनम्॥",
+      "roman": "rajo raagaatmakam viddhi trishnaasangasamudbhavam |\ntannibadhnaati kaunteya karmasangena dehinam ||",
+      "arth": "रजोगुण को राग रूप जानो; वह तृष्णा और आसक्ति से पैदा होता है। हे कुन्ती-पुत्र! वह शरीरधारी को कर्म के लगाव से बाँधता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "तमस्त्वज्ञानजं विद्धि मोहनं सर्वदेहिनाम् ।\nप्रमादालस्यनिद्राभिस्तन्निबध्नाति भारत॥",
+      "roman": "tamastvajnaanajam viddhi mohanam sarvadehinaam |\npramaadaalasyanidraabhistannibadhnaati bhaarata ||",
+      "arth": "और तमोगुण को अज्ञान से पैदा हुआ जानो; वह सब शरीरधारियों को मोह में डालता है। हे भारत! वह लापरवाही, आलस और नींद से बाँधता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "सत्त्वं सुखे सञ्जयति रजः कर्मणि भारत ।\nज्ञानमावृत्य तु तमः प्रमादे सञ्जयत्युत॥",
+      "roman": "sattvam sukhe sanjayati rajah karmani bhaarata |\njnaanamaavritya tu tamah pramaade sanjayatyuta ||",
+      "arth": "हे भारत! सत्त्व सुख में लगाता है, रज कर्म में लगाता है, और तम ज्ञान को ढककर लापरवाही में लगाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "रजस्तमश्चाभिभूय सत्त्वं भवति भारत ।\nरजः सत्त्वं तमश्चैव तमः सत्त्वं रजस्तथा॥",
+      "roman": "rajastamashchaabhibhooya sattvam bhavati bhaarata |\nrajah sattvam tamashchaiva tamah sattvam rajastathaa ||",
+      "arth": "हे भारत! रज और तम को दबाकर सत्त्व बढ़ता है; सत्त्व और तम को दबाकर रज; और सत्त्व और रज को दबाकर तम।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "सर्वद्वारेषु देहेऽस्मिन्प्रकाश उपजायते ।\nज्ञानं यदा तदा विद्याद्विवृद्धं सत्त्वमित्युत॥",
+      "roman": "sarvadvaareshu dehe'sminprakaasha upajaayate |\njnaanam yadaa tadaa vidyaadvivriddham sattvamityuta ||",
+      "arth": "जब इस शरीर के सब द्वारों में प्रकाश और ज्ञान पैदा होता है, तब जानना चाहिए कि सत्त्व बढ़ा हुआ है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "लोभः प्रवृत्तिरारम्भः कर्मणामशमः स्पृहा ।\nरजस्येतानि जायन्ते विवृद्धे भरतर्षभ॥",
+      "roman": "lobhah pravrittiraarambhah karmanaamashamah sprihaa |\nrajasyetaani jaayante vivriddhe bharatarshabha ||",
+      "arth": "हे भरतश्रेष्ठ! लोभ, दौड़-धूप, कर्मों का आरम्भ, बेचैनी और लालसा — ये रजोगुण के बढ़ने पर पैदा होते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "अप्रकाशोऽप्रवृत्तिश्च प्रमादो मोह एव च ।\nतमस्येतानि जायन्ते विवृद्धे कुरुनन्दन॥",
+      "roman": "aprakaasho'pravrittishcha pramaado moha eva cha |\ntamasyetaani jaayante vivriddhe kurunandana ||",
+      "arth": "हे कुरुनन्दन! अँधेरा (समझ का न होना), कुछ न करने का मन, लापरवाही और मोह — ये तमोगुण के बढ़ने पर पैदा होते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "यदा सत्त्वे प्रवृद्धे तु प्रलयं याति देहभृत् ।\nतदोत्तमविदां लोकानमलान्प्रतिपद्यते॥",
+      "roman": "yadaa sattve pravriddhe tu pralayam yaati dehabhrit |\ntadottamavidaam lokaanamalaanpratipadyate ||",
+      "arth": "जब शरीरधारी सत्त्व के बढ़े होने पर मरता है, तब वह उत्तम तत्त्व को जानने वालों के निर्मल लोकों को पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "रजसि प्रलयं गत्वा कर्मसङ्गिषु जायते ।\nतथा प्रलीनस्तमसि मूढयोनिषु जायते॥",
+      "roman": "rajasi pralayam gatvaa karmasangishu jaayate |\ntathaa praleenastamasi moodhayonishu jaayate ||",
+      "arth": "रजोगुण में मरकर वह कर्म में आसक्त लोगों में जन्म लेता है; और तमोगुण में मरा हुआ मूढ़ योनियों में जन्म लेता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "कर्मणः सुकृतस्याहुः सात्त्विकं निर्मलं फलम् ।\nरजसस्तु फलं दुःखमज्ञानं तमसः फलम्॥",
+      "roman": "karmanah sukritasyaahuh saattvikam nirmalam phalam |\nrajasastu phalam duhkhamajnaanam tamasah phalam ||",
+      "arth": "अच्छे कर्म का फल सात्त्विक और निर्मल कहा गया है; राजस कर्म का फल दुख है, और तामस का फल अज्ञान।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "सत्त्वात्सञ्जायते ज्ञानं रजसो लोभ एव च ।\nप्रमादमोहौ तमसो भवतोऽज्ञानमेव च॥",
+      "roman": "sattvaatsanjaayate jnaanam rajaso lobha eva cha |\npramaadamohau tamaso bhavato'jnaanameva cha ||",
+      "arth": "सत्त्व से ज्ञान पैदा होता है, रज से लोभ, और तम से लापरवाही, मोह और अज्ञान ही होते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "ऊर्ध्वं गच्छन्ति सत्त्वस्था मध्ये तिष्ठन्ति राजसाः ।\nजघन्यगुणवृत्तिस्था अधो गच्छन्ति तामसाः॥",
+      "roman": "oordhvam gachchhanti sattvasthaa madhye tishthanti raajasaah |\njaghanyagunavrittisthaa adho gachchhanti taamasaah ||",
+      "arth": "सत्त्व में टिके लोग ऊपर जाते हैं, राजस लोग बीच में रहते हैं, और सबसे नीचे गुण के बरताव में टिके तामस लोग नीचे जाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "नान्यं गुणेभ्यः कर्तारं यदा द्रष्टानुपश्यति ।\nगुणेभ्यश्च परं वेत्ति मद्भावं सोऽधिगच्छति॥",
+      "roman": "naanyam gunebhyah kartaaram yadaa drashtaanupashyati |\ngunebhyashcha param vetti madbhaavam so'dhigachchhati ||",
+      "arth": "जब देखने वाला गुणों के सिवा किसी और को कर्ता नहीं देखता, और गुणों से परे को जान लेता है, तब वह मेरे स्वरूप को पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "गुणानेतानतीत्य त्रीन्देही देहसमुद्भवान् ।\nजन्ममृत्युजरादुःखैर्विमुक्तोऽमृतमश्नुते॥",
+      "roman": "gunaanetaanateetya treendehee dehasamudbhavaan |\njanmamrityujaraaduhkhairvimukto'mritamashnute ||",
+      "arth": "शरीर को पैदा करने वाले इन तीनों गुणों को पार करके शरीरधारी जन्म, मृत्यु, बुढ़ापे और दुखों से छूटकर अमरता पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "अर्जुन उवाच\nकैर्लिङ्गैस्त्रीन्गुणानेतानतीतो भवति प्रभो ।\nकिमाचारः कथं चैतांस्त्रीन्गुणानतिवर्तते॥",
+      "roman": "arjuna uvaacha\nkairlingaistreengunaanetaanateeto bhavati prabho |\nkimaachaarah katham chaitaamstreengunaanativartate ||",
+      "arth": "अर्जुन बोले — हे प्रभो! इन तीनों गुणों से पार हुआ मनुष्य किन लक्षणों वाला होता है? उसका आचरण कैसा होता है? और वह इन तीनों गुणों को कैसे पार करता है?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "श्रीभगवानुवाच\nप्रकाशं च प्रवृत्तिं च मोहमेव च पाण्डव ।\nन द्वेष्टि सम्प्रवृत्तानि न निवृत्तानि काङ्क्षति॥",
+      "roman": "shreebhagavaanuvaacha\nprakaasham cha pravrittim cha mohameva cha paandava |\nna dveshti sampravrittaani na nivrittaani kaankshati ||",
+      "arth": "श्रीभगवान बोले — हे पाण्डव! जो प्रकाश, प्रवृत्ति और मोह के आने पर उनसे द्वेष नहीं करता, और उनके चले जाने पर उन्हें चाहता नहीं;",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "उदासीनवदासीनो गुणैर्यो न विचाल्यते ।\nगुणा वर्तन्त इत्येव योऽवतिष्ठति नेङ्गते॥",
+      "roman": "udaaseenavadaaseeno gunairyo na vichaalyate |\ngunaa vartanta ityeva yo'vatishthati nengate ||",
+      "arth": "जो उदासीन की तरह बैठा रहता है और गुणों से विचलित नहीं होता; जो यह समझकर कि गुण ही बरत रहे हैं, स्थिर रहता है और डिगता नहीं;",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "समदुःखसुखः स्वस्थः समलोष्टाश्मकाञ्चनः ।\nतुल्यप्रियाप्रियो धीरस्तुल्यनिन्दात्मसंस्तुतिः॥",
+      "roman": "samaduhkhasukhah svasthah samaloshtaashmakaanchanah |\ntulyapriyaapriyo dheerastulyanindaatmasamstutih ||",
+      "arth": "जो सुख-दुख में समान और अपने आप में स्थित है; जिसके लिए मिट्टी का ढेला, पत्थर और सोना बराबर हैं; जो प्रिय और अप्रिय में एक जैसा, धीर, और अपनी निन्दा और स्तुति में समान है;",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २५",
+      "dev": "मानापमानयोस्तुल्यस्तुल्यो मित्रारिपक्षयोः ।\nसर्वारम्भपरित्यागी गुणातीतः स उच्यते॥",
+      "roman": "maanaapamaanayostulyastulyo mitraaripakshayoh |\nsarvaarambhaparityaagee gunaateetah sa uchyate ||",
+      "arth": "जो मान और अपमान में समान है, मित्र और शत्रु के पक्ष में समान है, और जिसने सब कामों की दौड़-धूप छोड़ दी है — वह गुणों से पार हुआ कहलाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २६",
+      "dev": "मां च योऽव्यभिचारेण भक्तियोगेन सेवते ।\nस गुणान्समतीत्यैतान्ब्रह्मभूयाय कल्पते॥",
+      "roman": "maam cha yo'vyabhichaarena bhaktiyogena sevate |\nsa gunaansamateetyaitaanbrahmabhooyaaya kalpate ||",
+      "arth": "और जो कभी न डिगने वाले भक्तियोग से मेरी सेवा करता है, वह इन गुणों को पार करके ब्रह्म-रूप होने के योग्य हो जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २७",
+      "dev": "ब्रह्मणो हि प्रतिष्ठाहममृतस्याव्ययस्य च ।\nशाश्वतस्य च धर्मस्य सुखस्यैकान्तिकस्य च॥",
+      "roman": "brahmano hi pratishthaahamamritasyaavyayasya cha |\nshaashvatasya cha dharmasya sukhasyaikaantikasya cha ||",
+      "arth": "क्योंकि मैं ही अविनाशी और अमर ब्रह्म का, सनातन धर्म का और अखण्ड सुख का आधार हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "समापन",
+      "dev": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु\nब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे\nगुणत्रयविभागयोगो नाम चतुर्दशोऽध्यायः॥",
+      "roman": "om tatsaditi shreemadbhagavadgeetaasoopanishatsu\nbrahmavidyaayaam yogashaastre shreekrishnaarjunasamvaade\ngunatrayavibhaagayogo naama chaturdasho'dhyaayah ||",
+      "arth": "इस तरह उपनिषद रूप श्रीमद्भगवद्गीता में, जो ब्रह्मविद्या और योगशास्त्र है, श्रीकृष्ण और अर्जुन के संवाद में \"गुणत्रयविभागयोग\" नाम का चौदहवाँ अध्याय पूरा हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, भीष्म पर्व — श्रीमद्भगवद्गीता",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ पाँच अलग संस्करणों से श्लोक-दर-श्लोक मिलाया गया है। सात सौ में से पाँच सौ सतहत्तर श्लोक पाँचों में अक्षर-अक्षर एक मिले; बाक़ी में वही रूप लिया गया जिस पर अधिक संस्करण एक थे।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं। आचार्यों ने कई श्लोकों को अलग-अलग ढंग से समझाया है; यहाँ किसी एक मत की व्याख्या नहीं, सीधा अर्थ दिया गया है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

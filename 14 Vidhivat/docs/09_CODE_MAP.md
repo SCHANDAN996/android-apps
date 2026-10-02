@@ -180,6 +180,7 @@ sunrise moonrise ayanamsa  moon      │
 | `Kaal` | एक कालखंड — राहुकाल, भद्रा वग़ैरह |
 | `Panchang` | पूरे दिन का नतीजा |
 | `computePanchang(y,m,d,place, {masaSystem})` | **मुख्य प्रवेश-द्वार** |
+| `suryodayaTithi(y,m,d,place)` → `SuryodayaTithi` | सिर्फ़ सूर्योदय की तिथि + वार, ~37 गुना तेज़ — कैलेंडर के खाने और आने वाली पूजाएँ (→ D-097) |
 | `elongationAt` `moonSiderealAt` `sunSiderealAt` `yogaAngleAt` | चार कोण |
 | `findCrossing` `findPreviousCrossing` | जड़-खोज, 1 सेकंड तक |
 | `previousNewMoon(jd)` | पिछली अमावस्या — मास इसी से तय होता है |
@@ -500,3 +501,128 @@ app/lib/screens/
 3. `flutter test test/paath_test.dart` — ढाँचा बता देगा क्या छूटा
 4. `python tools/banao_pandit_sheet.py` — शीट के भाग ५ में अपने आप आएगा
 5. ⚠️ **पाठ याददाश्त से मत लिखना** — अपनी पुस्तिका से, `sthiti: "khaali"` छोड़ दो
+
+### व्रत के पन्ने (→ D-075, D-077)
+
+| फ़ाइल | क्या |
+|---|---|
+| `app/assets/vrat/_suchi.json` | सारे व्रत, समूह, `taiyar`, `engine`/`faail` |
+| `app/assets/vrat/<id>.json` | एक व्रत, बारह खाने (`schemaVersion: 1`) |
+| `app/assets/vrat/_ekadashi_varsh.json` | साल की 26 एकादशियाँ |
+| `app/lib/vidhi/vrat_panna.dart` | `VratPanna`, `VratSuchiEntry`, `EkadashiVarsh`, `VratSamuh` |
+| `app/lib/vidhi/bhandar.dart` | `vratBhandar` — सूची, पन्ना, एकादशियाँ |
+| `app/lib/screens/vrat_panna_screen.dart` | `VratPannaScreen`, `KathaScreen`, `EkadashiVarshScreen` |
+| `app/lib/widgets/katha_khand.dart` | `KathaKhand` — प्लेयर और कथा-पन्ना दोनों |
+| `app/lib/widgets/mantra_khand.dart` | `MantraKhand`, `PaathKeBaareMein` |
+| `tools/jaancho_vrat.py` | कंटेंट की जाँच, बिना Flutter |
+| `app/test/vrat_content_test.dart` · `vrat_panna_screen_test.dart` | कंटेंट और पन्ने की जाँच |
+
+### नया व्रत जोड़ना हो तो
+1. `assets/vrat/<id>.json` — किसी मौजूदा व्रत की नक़ल से, बारहों खाने
+2. कथा `assets/katha/` में; न लेनी हो तो `kathaIds: []` और `kathaKyonNahi`
+3. `_suchi.json` में `taiyar: true`
+4. `python tools/jaancho_vrat.py`, फिर `flutter test test/vrat_content_test.dart`
+
+
+---
+
+## ग्रह — `engine/lib/src/graha.dart` + `vsop_data.dart` (→ D-100)
+
+`panchang.dart` के **बग़ल** में बैठती है, ऊपर नहीं: `julian`, `nutation`,
+`ayanamsa`, `angles` पर टिकी है, और `sun.dart` / `moon.dart` को छूती नहीं।
+
+| नाम | क्या |
+|---|---|
+| `enum Graha` | `mangal` · `budh` · `guru` · `shukra` · `shani` (+ `naam`) |
+| `grahaHeliocentric(g, jde)` | सूर्य-केंद्रित L, B, R — Meeus 32 |
+| `grahaApparent(g, jde)` | **मुख्य प्रवेश-द्वार** — पृथ्वी से आभासी देशांतर, अक्षांश, दूरी |
+| `grahaLongitude` · `grahaNirayan` | सायन · निरयन (लाहिड़ी) देशांतर |
+| `grahaGati` · `grahaVakri` | रोज़ की चाल; ऋणात्मक = वक्री |
+| `grahaSuryaSeDoori(g, jde, सूर्य)` | सूर्य से कोणीय दूरी — अस्त का गणित (नियम नहीं) |
+| `rahuMadhya` · `rahuMadhyaNirayan` · `ketuSe` | औसत राहु; केतु = +180° |
+| `rahuSpasht` · `rahuSpashtNirayan` | स्पष्ट राहु — ⚠️ सन्निकट, 0.18° तक |
+| `earthHeliocentric` · `sunLongitudeVsop` | ⚠️ **सिर्फ़ जाँच के लिए** — पंचांग इन्हें नहीं लेता |
+
+`vsop_data.dart` — 2544 पद, औज़ार से बनी (`tools/banao_vsop.py`)।
+🔑 **हाथ से कभी नहीं छूनी।**
+
+| जाँच / औज़ार | क्या |
+|---|---|
+| `test/graha_test.dart` | VSOP के जाँच-मान · Meeus की मिसाल · JPL Horizons (5 ग्रह × 20 तारीख़ें) · वक्री/राहु के नियम |
+| `test/data/horizons_graha.json` | Horizons का जाँच-डेटा (`tools/horizons_lao.py`) |
+| `test/data/vsop_chk.json` | `vsop87.chk` के मान |
+| `tool/graha_milan.dart` | हर पिंड का Horizons से सबसे बड़ा फ़र्क़ छापता है |
+
+⚠️ अभी ऐप में कहीं नहीं जुड़ी। कुंडली की स्क्रीन K2 की जाँच के बाद ही
+(→ `docs/29` §9)।
+
+---
+
+## ग्रंथालय — `lib/vidhi/granth.dart` + `assets/granth/` (→ D-098, D-099)
+
+पूरे ग्रंथ, अध्याय-दर-अध्याय। हर अध्याय एक साधारण `Paath` है (`prakar:
+granth`) और उसी `PaathScreen` से खुलता है; ग्रंथ सिर्फ़ **क्रम** जोड़ता है।
+
+```
+app/assets/granth/
+├── _suchi.json            ग्रंथालय की सूची (अभी: गीता)
+└── gita/
+    ├── _kram.json         18 अध्याय, तीन हिस्सों में
+    └── gita_01.json … 18  700 श्लोक + हर अध्याय का समापन-वाक्य
+app/assets/paath/saptashati/   सप्तशती यहीं रही (उसकी `_kram.json` में अब `id`)
+
+app/lib/vidhi/granth.dart            GranthKram · GranthHissa · GranthPaath · GranthSuchiEntry
+app/lib/vidhi/saptashati.dart        अब सिर्फ़ typedef — SaptashatiKram = GranthKram
+app/lib/vidhi/bhandar.dart           GranthBhandar (suchi, kram) + PaathBhandar.pathFor
+app/lib/screens/granthalaya_screen.dart   सूची: गीता, सप्तशती
+app/lib/screens/granth_screen.dart        अध्याय-सूची + "जहाँ छोड़ा वहीं से"
+app/lib/screens/saptashati_screen.dart    अब GranthScreen का पतला लिफ़ाफ़ा
+app/lib/screens/paath_screen.dart         GranthNavigation — नीचे की पट्टी
+```
+
+| नाम | क्या |
+|---|---|
+| `GranthKram` | एक ग्रंथ का क्रम — `id`, `naam`, `parichay`, `hisse`; हर पाठ की id `<ग्रंथ>_…` से शुरू होनी ही चाहिए |
+| `GranthSuchiEntry` | सूची की एक पंक्ति — `chhotaNaam`, `ikai` ("अध्याय"/"पाठ"), `khandIkai` ("श्लोक"/"पाठ") |
+| `GranthSuchiEntry.saptashati` | सप्तशती कोड में लिखी है (`_suchi.json` में नहीं) |
+| `GranthBhandar.granthIds` | जिन ग्रंथों के पाठ ऐप में हैं — id से फ़ोल्डर तय होता है |
+| `GranthNavigation` | पट्टी: "गीता · अध्याय 2/18", पिछला/अगला; कुंजी `<ग्रंथ>_aakhri_khand_<पाठ>` |
+| `Charan.granth` | पूजा के कदम पर ग्रंथ का बटन — कृष्ण पूजा का "पाठ" कदम गीता खोलता है |
+| `PaathPrakar.granth` | "चालीसा और आरती" की छन्नी में नहीं आता |
+
+| औज़ार / जाँच | क्या |
+|---|---|
+| `tools/banao_granth.py <id>` | `tools/granth_paath/<id>/` → ऐप की JSON |
+| `tools/jaancho_granth.py` | ऐप की JSON औज़ार के नतीजे से हूबहू है या नहीं + कंटेंट के नियम |
+| `tools/lipi.py` | रोमन (`roman_sanskrit`), नुक़्ता खोलना (`khula`), देवनागरी अंक |
+| `tools/granth_paath/gita/milan/` | पाँच स्रोतों का मिलान → `mool.txt` |
+| `app/test/granth_test.dart` | गिनती 700, क्रम, हर खंड भरा, नुक़्ता, उवाच 59, समापन |
+| `app/test/granth_screens_test.dart` | ग्रंथालय → अध्याय → अगला; याद रखना; कृष्ण पूजा से गीता |
+
+### नया ग्रंथ जोड़ना हो तो
+`tools/granth_paath/gita/00_PADHIYE.md` के आख़िरी खंड में पाँचों कदम हैं।
+🔑 `app/assets/granth/<id>/*.json` **हाथ से कभी नहीं** — औज़ार से।
+
+### कुंडली — `engine/lib/src/kundali.dart` + `dasha.dart` (→ D-101)
+
+🚧 **अधूरा — ऐप में मत दिखाना।** `kundaliIsReady = false`
+
+`graha.dart`, `sun.dart`, `moon.dart`, `sunrise.dart` (नाक्षत्र काल) के ऊपर
+बैठती है; `panchang.dart` को छूती नहीं।
+
+| नाम | क्या |
+|---|---|
+| `computeKundali(janmUtc, place, {spashtRahu})` | **मुख्य प्रवेश-द्वार** → `Kundali` |
+| `Kundali` | `lagna` · `grahas` (नौ) · `bhav(g)` · `chandraSeBhav(g)` · `navamshaBhav(g)` · `bhavMein(n)` · `lagnaSandhiMein()` |
+| `RashiSthiti` | एक निरयन देशांतर से: `rashi` · `ansh` · `nakshatra` · `charan` · `navamsha` |
+| `GrahaSthiti` | `RashiSthiti` + `graha` · `gati` · `vakri` |
+| `enum KundaliGraha` | सूर्य … केतु, नौ |
+| `lagnaSayan` · `lagnaNirayan` · `localSiderealTime` | लग्न और उसकी जड़ |
+| `vimshottariMahadasha(janmUtc, चंद्र)` | दस `DashaKhand` — जन्म से 120 साल |
+| `vimshottariAntardasha(maha)` | नौ अंतर्दशाएँ |
+| `nakshatraSwami` · `janmParDashaShesh` · `vimshottariKram` · `vimshottariVarsh` | तालिकाएँ |
+
+`test/kundali_test.dart` (28 जाँचें) · `tool/kundali_cli.dart` — छपी जन्मपत्री
+से मिलाने के लिए।
+
+⛔ फलादेश, राशिफल, उपाय — इन फ़ाइलों में नहीं हैं और नहीं आएँगे।

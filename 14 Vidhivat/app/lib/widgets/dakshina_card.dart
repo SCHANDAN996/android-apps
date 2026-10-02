@@ -22,9 +22,13 @@ abstract final class DakshinaShabd {
 
   /// असली हिसाब, गोल बात नहीं। यही सबसे ज़्यादा असर करता है — और यह
   /// जाँचा जा सकता है (→ `docs/18_SROT_PANJI.md`)।
+  ///
+  /// ⚠ 23 सित 2026 को सुधरा (→ D-090): पहले "पंडित जी से जँचवाने में …
+  /// ₹800" लिखा था, पर पंडित जी की जाँच होती ही नहीं (→ D-072)। पैसा
+  /// माँगते वक़्त झूठा ख़र्च गिनाना इस पन्ने की पूरी ईमानदारी तोड़ देता।
   static const hisaab = 'विधिवत मुफ़्त है, और पूरे ऐप में एक भी विज्ञापन '
-      'नहीं है। एक पूजा को लिखने और पंडित जी से जँचवाने में लगभग सात घंटे '
-      'और ₹800 लगते हैं।';
+      'नहीं है। एक पूजा को ग्रंथों से मिलाकर लिखने में लगभग सात घंटे '
+      'लगते हैं।';
 
   static const nyota = 'उपयोगी लगा हो तो स्वेच्छा से दक्षिणा दीजिए।';
 
@@ -36,11 +40,10 @@ abstract final class DakshinaShabd {
 
   /// पैसा किस रास्ते जाता है — यह पूछे बिना हर आदमी सोचता है।
   ///
-  /// Play Billing में ऐप को कार्ड या UPI का कोई विवरण मिलता ही
-  /// नहीं — पूरी ख़रीद Play की अपनी शीट में होती है। यह डर मिटाना
-  /// ज़रूरी है, और यह सच भी है।
-  static const bhugtaan = 'भुगतान Google Play से होता है। ऐप आपके '
-      'कार्ड या UPI का कोई विवरण नहीं देखता।';
+  /// भुगतान PayU के अपने पन्ने पर होता है (→ D-090) — ऐप को कार्ड या
+  /// UPI का कोई विवरण मिलता ही नहीं। यह डर मिटाना ज़रूरी है, और सच भी है।
+  static const bhugtaan = 'भुगतान PayU के सुरक्षित पन्ने पर होता है — UPI, '
+      'कार्ड या नेट-बैंकिंग से। ऐप आपके कार्ड या UPI का कोई विवरण नहीं देखता।';
 
   /// बटन बंद क्यों है — सुनने वाले को semantics से पता चल जाता
   /// था, पर देखने वाले को सिर्फ़ एक फीका बटन दिखता था।
@@ -48,10 +51,23 @@ abstract final class DakshinaShabd {
 
   static const vistaar = 'यह राशि कहाँ लगती है';
 
-  static const dhanyavaad = 'आपकी दक्षिणा मिल गई। इसी से अगली पूजा जुड़ेगी।';
+  static const dhanyavaad = 'धन्यवाद! आपकी दक्षिणा से ही अगली पूजा जुड़ती है।';
 
-  /// दुकान ही नहीं खुली। दोष यूज़र पर नहीं डालना।
-  static const dukaanBand = 'अभी Play से बात नहीं हो पा रही। बाद में कभी।';
+  /// पन्ना ही नहीं खुला। दोष यूज़र पर नहीं डालना।
+  static const dukaanBand =
+      'भुगतान का पन्ना अभी नहीं खुल सका। बाद में कभी दोबारा कोशिश करें।';
+
+  /// PayU का पन्ना बाहर खुल गया — ऐप को नहीं पता पैसा गया या नहीं।
+  static String baharKhula(DakshinaRaashi raashi) =>
+      'PayU का पन्ना खुल गया है। वहाँ ${raashi.label} भरकर दक्षिणा दीजिए।';
+
+  /// लौटकर आदमी ख़ुद बताता है। "हाँ" पर सिर्फ़ इतना होता है कि छह
+  /// महीने तक दोबारा नहीं पूछा जाता — ऐप में कुछ खुलता नहीं (→ D-053)।
+  static const deDiPoochh = 'दे दी हो तो बताइए — फिर छह महीने तक नहीं पूछेंगे।';
+
+  static const deDi = 'हाँ, दक्षिणा दे दी';
+
+  static const phirKholo = 'पन्ना फिर से खोलें';
 
   static const kuchhAtka = 'कुछ अटक गया। दोबारा कोशिश कर सकते हैं।';
 }
@@ -72,7 +88,7 @@ class _DakshinaChunavState extends State<DakshinaChunav> {
   /// ── ₹51 पहले से चुनी रहती है (→ D-063) ────────────────
   ///
   /// ⚠ यह D-053 से पलटा हुआ है। वहाँ लिखा था कि कोई राशि पहले
-  /// से चुनी हुई न हो, क्योंकि "यूज़र ने चुना ही नहीं होता"।
+  /// से चुनी हुई न हो, क्योंकि "यूज़र ने चुना ही नहीं होता"।
   /// डेवलपर ने जोख़िम जानते हुए यह बदलवाया (9 सित 2026)।
   ///
   /// ⛔ पर एक बात नहीं बदली, और नहीं बदलनी चाहिए — **पैसा बटन
@@ -81,6 +97,9 @@ class _DakshinaChunavState extends State<DakshinaChunav> {
 
   bool _chalRahiHai = false;
   bool _mili = false;
+
+  /// PayU का पन्ना बाहर खुल चुका — लौटने पर "दे दी?" पूछना है।
+  DakshinaRaashi? _baharKhula;
   String? _gadbad;
 
   Future<void> _do() async {
@@ -99,6 +118,8 @@ class _DakshinaChunavState extends State<DakshinaChunav> {
       switch (natija) {
         case DakshinaNatija.mili:
           _mili = true;
+        case DakshinaNatija.baharKhula:
+          _baharKhula = raashi;
         // यूज़र ने बीच में छोड़ा — **कुछ मत कहो।** यह उसका पूरा हक़ है,
         // और यहाँ एक भी शब्द ताना बन जाता है।
         case DakshinaNatija.radd:
@@ -111,6 +132,17 @@ class _DakshinaChunavState extends State<DakshinaChunav> {
     });
 
     if (natija == DakshinaNatija.mili) widget.onMili?.call();
+  }
+
+  /// आदमी ने बताया कि दे दी। बही में दर्ज — बस इतना।
+  Future<void> _deDi() async {
+    await dakshina.mili(DateTime.now());
+    if (!mounted) return;
+    setState(() {
+      _baharKhula = null;
+      _mili = true;
+    });
+    widget.onMili?.call();
   }
 
   @override
@@ -136,6 +168,35 @@ class _DakshinaChunavState extends State<DakshinaChunav> {
       );
     }
 
+    final bahar = _baharKhula;
+    if (bahar != null) {
+      return Column(
+        key: const Key('dakshina_bahar_khula'),
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(DakshinaShabd.baharKhula(bahar), style: type.bodyMedium),
+          const SizedBox(height: VidhivatSpacing.xs),
+          Text(
+            DakshinaShabd.deDiPoochh,
+            style: type.caption.copyWith(color: colors.textSecondary),
+          ),
+          const SizedBox(height: VidhivatSpacing.md),
+          VidhivatButton(
+            label: DakshinaShabd.deDi,
+            onPressed: _deDi,
+            fullWidth: true,
+          ),
+          const SizedBox(height: VidhivatSpacing.xs),
+          VidhivatButton(
+            label: DakshinaShabd.phirKholo,
+            variant: VidhivatButtonVariant.text,
+            onPressed: _chalRahiHai ? null : _do,
+            fullWidth: true,
+          ),
+        ],
+      );
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -147,9 +208,8 @@ class _DakshinaChunavState extends State<DakshinaChunav> {
               _RaashiChip(
                 raashi: raashi,
                 chuni: _chuni == raashi,
-                onTap: _chalRahiHai
-                    ? null
-                    : () => setState(() => _chuni = raashi),
+                onTap:
+                    _chalRahiHai ? null : () => setState(() => _chuni = raashi),
               ),
           ],
         ),
@@ -211,8 +271,8 @@ class _RaashiChip extends StatelessWidget {
         horizontal: VidhivatSpacing.lg,
         vertical: VidhivatSpacing.sm,
       ),
-      // ⚠ ऊँचाई ख़ुद बाँधनी पड़ती है। सिर्फ़ padding से चिप 44 dp के
-      // आस-पास रह जाती थी — यहाँ ज़रा सी चूक से पैसे वाला काम रुक
+      // ⚠ ऊँचाई ख़ुद बाँधनी पड़ती है। सिर्फ़ padding से चिप 44 dp के
+      // आस-पास रह जाती थी — यहाँ ज़रा सी चूक से पैसे वाला काम रुक
       // जाता है, इसलिए पूरी उँगली भर जगह दी जाती है।
       child: ConstrainedBox(
         constraints: const BoxConstraints(

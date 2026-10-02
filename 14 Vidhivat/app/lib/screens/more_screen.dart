@@ -8,6 +8,7 @@ import 'dakshina_screen.dart';
 import 'muhurta_screen.dart';
 import 'paath_list_screen.dart';
 import 'grahan_screen.dart';
+import 'granthalaya_screen.dart';
 import 'vrat_screen.dart';
 import 'sankalp_screen.dart';
 import 'settings_screen.dart';
@@ -82,6 +83,17 @@ class MoreScreen extends StatelessWidget {
                   title: 'चालीसा और आरती',
                   subtitle: 'हनुमान चालीसा और दस आरतियाँ',
                   onTap: () => _open(context, const PaathListScreen()),
+                ),
+                const SizedBox(height: VidhivatSpacing.sm),
+                // ── ग्रंथालय (→ D-098) ──────────────────────────────
+                //
+                // चालीसा-आरती एक बैठक की चीज़ें हैं; ग्रंथ कई दिनों में
+                // पढ़ा जाता है और याद रखता है कि कहाँ तक पहुँचे।
+                _MoreItem(
+                  icon: Icons.auto_stories_outlined,
+                  title: 'ग्रंथालय',
+                  subtitle: 'श्रीमद्भगवद्गीता और दुर्गा सप्तशती — अर्थ सहित',
+                  onTap: () => _open(context, const GranthalayaScreen()),
                 ),
                 // ── व्रत और ग्रहण — दोनों तिथि-काल की चीज़ें ─────────
                 //

@@ -84,6 +84,14 @@ void main() {
     await tester.pumpAndSettle();
   }
 
+  /// पूजा section की सूची वाला कार्ड — ऊपर की पट्टी वाला नहीं।
+  ///
+  /// एक ही पूजा दोनों जगह हो सकती है (→ D-086)। सूची के grid `Wrap` हैं,
+  /// पट्टी `Row` — इसलिए `Wrap` के अंदर ढूँढो। `.last` काम नहीं करता:
+  /// आलसी सूची में नीचे का कार्ड बना ही न हो तो वो ख़ाली पर टूट जाता है।
+  Finder suchiMein(String naam) =>
+      find.descendant(of: find.byType(Wrap), matching: find.text(naam));
+
   /// ℹ बटन तक जाओ और उसकी शीट खोलो (→ D-045, D-056)।
   ///
   /// स्रोत, भरोसा और पद्धति वाली हर बात अब एक दबाव पीछे है —
@@ -157,7 +165,8 @@ void main() {
     expect(find.text('आज क्या करना चाहते हैं?'), findsOneWidget);
     await scrollTak(tester, find.text('त्योहार'));
     expect(find.text('त्योहार'), findsOneWidget);
-    await scrollTak(tester, find.text('विशेष पूजा और संस्कार'));
+    await scrollTak(tester, find.text('व्रत'));
+    await scrollTak(tester, find.text('संस्कार और पारिवारिक कर्म'));
     expect(tester.takeException(), isNull, reason: '${width}dp पर overflow');
   }
 
@@ -166,8 +175,9 @@ void main() {
     phoneNaap(tester);
     await tester.pumpWidget(app(const VidhiListScreen()));
     await tester.pumpAndSettle();
-    await scrollTak(tester, find.text('त्योहार'));
-    await tester.tap(find.text('सत्यनारायण पूजा'));
+    // पट्टी में भी हो सकती है — सूची वाला कार्ड आख़िरी है
+    await scrollTak(tester, suchiMein('सत्यनारायण पूजा'));
+    await tester.tap(suchiMein('सत्यनारायण पूजा'));
     await tester.pumpAndSettle();
   }
 
@@ -487,7 +497,183 @@ void main() {
     });
   });
 
+  group('पूजा section का ढाँचा (→ D-086)', () {
+    // 22 सित 2026 मंगलवार है: हनुमान आज, 25 को चतुर्दशी, 26 को पूर्णिमा,
+    // 11 अक्टूबर को घटस्थापना। तारीख़ तय है ताकि जाँच कल भी वही नतीजा दे।
+    final mangal = DateTime(2026, 9, 22);
+
+    Finder patti() => find.byKey(const Key('aane_wali_patti'));
+    Finder pattiMein(Finder f) => find.descendant(of: patti(), matching: f);
+    Finder pattiKaScroll() =>
+        find.descendant(of: patti(), matching: find.byType(Scrollable));
+
+    testWidgets('नित्य पूजा बड़ा कार्ड नहीं — खोलते ही बाक़ी पूजाएँ दिखती हैं',
+        (tester) async {
+      phoneNaap(tester);
+      await tester.pumpWidget(app(VidhiListScreen(aaj: mangal)));
+      await tester.pumpAndSettle();
+
+      // पुराना पूरी स्क्रीन वाला कार्ड और उसका बटन नहीं
+      expect(find.text('आज की सरल शुरुआत'), findsNothing);
+      expect(find.byType(VidhivatButton), findsNothing);
+
+      // बिना स्क्रॉल किए: पट्टी, और "रोज़ की पूजा" का शीर्षक
+      expect(patti(), findsOneWidget);
+      final roz = find.text('रोज़ की पूजा');
+      expect(tester.getTopLeft(roz).dy, lessThan(800));
+
+      // नित्य पूजा उसी grid का पहला कार्ड
+      await scrollTak(tester, find.text('सूर्य अर्घ्य'));
+      final nitya = tester.getTopLeft(find.text('नित्य पूजा'));
+      final surya = tester.getTopLeft(find.text('सूर्य अर्घ्य'));
+      expect(nitya.dy, lessThanOrEqualTo(surya.dy));
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('आने वाली पूजाएँ — आज पहले, फिर तारीख़ के क्रम से',
+        (tester) async {
+      phoneNaap(tester);
+      await tester.pumpWidget(app(VidhiListScreen(aaj: mangal)));
+      await tester.pumpAndSettle();
+
+      expect(pattiMein(find.text('आज')), findsOneWidget);
+      expect(pattiMein(find.text('हनुमान पूजा')), findsOneWidget);
+      expect(pattiMein(find.text('पूर्णिमा · 26 सित')), findsOneWidget);
+      // नवरात्रि पंद्रह दिन से दूर — फिर भी पूरे पर्व का पत्ता, कलश का नहीं
+      expect(pattiMein(find.text('शारदीय नवरात्रि')), findsOneWidget);
+      expect(pattiMein(find.text('घटस्थापना · 11 अक्तू')), findsOneWidget);
+
+      double x(String t) => tester.getTopLeft(pattiMein(find.text(t))).dx;
+      expect(x('हनुमान पूजा'), lessThan(x('सत्यनारायण पूजा')));
+      expect(x('सत्यनारायण पूजा'), lessThan(x('शारदीय नवरात्रि')));
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('हर हफ़्ते वाली पूजा पट्टी में सिर्फ़ अपने दिन',
+        (tester) async {
+      phoneNaap(tester);
+      await tester.pumpWidget(app(VidhiListScreen(aaj: DateTime(2026, 9, 23))));
+      await tester.pumpAndSettle();
+
+      // बुधवार — अगला मंगल छह दिन दूर है, पर हनुमान पूजा पहले से नहीं दिखती
+      expect(pattiMein(find.text('हनुमान पूजा')), findsNothing);
+      expect(pattiMein(find.text('सत्यनारायण पूजा')), findsOneWidget);
+    });
+
+    testWidgets(
+        'पट्टी के कार्ड खुलते हैं — पूजा अपनी विधि पर, पर्व पर्व-पन्ने पर',
+        (tester) async {
+      phoneNaap(tester);
+      await tester.pumpWidget(app(VidhiListScreen(aaj: mangal)));
+      await tester.pumpAndSettle();
+
+      final satya = pattiMein(find.text('सत्यनारायण पूजा'));
+      await tester.scrollUntilVisible(satya, 100, scrollable: pattiKaScroll());
+      await tester.tap(satya);
+      await tester.pumpAndSettle();
+      expect(find.byType(VidhiScreen), findsOneWidget);
+      Navigator.of(tester.element(find.byType(VidhiScreen))).pop();
+      await tester.pumpAndSettle();
+
+      final navratri = pattiMein(find.text('शारदीय नवरात्रि'));
+      await tester.scrollUntilVisible(navratri, 100,
+          scrollable: pattiKaScroll());
+      await tester.tap(navratri);
+      await tester.pumpAndSettle();
+      expect(find.byType(ParvScreen), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('नवरात्रि चल रही हो तो उसका पत्ता सबसे पहले', (tester) async {
+      phoneNaap(tester);
+      await tester
+          .pumpWidget(app(VidhiListScreen(aaj: DateTime(2026, 10, 13))));
+      await tester.pumpAndSettle();
+
+      // 13 अक्टूबर मंगलवार भी है — हनुमान पूजा भी "आज", पर नवरात्रि पहले
+      final paath = tester
+          .widgetList<Text>(pattiMein(find.byType(Text)))
+          .map((t) => t.data ?? '')
+          .toList();
+      expect(paath[0], 'आज');
+      expect(paath[1], startsWith('माँ'));
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('त्योहार — अगली तारीख़ कार्ड पर, और जो पहले आए वो पहले',
+        (tester) async {
+      phoneNaap(tester);
+      await tester.pumpWidget(app(VidhiListScreen(aaj: mangal)));
+      await tester.pumpAndSettle();
+
+      final kalash = suchiMein('नवरात्रि कलश स्थापना');
+      await scrollTak(tester, kalash);
+      expect(find.text('11 अक्तू'), findsOneWidget);
+
+      // कलश (11 अक्तू), धनतेरस (6 नव), दीपावली (8 नव) — इसी क्रम में
+      final diwali = suchiMein('दीपावली लक्ष्मी-गणेश पूजन');
+      await scrollTak(tester, diwali);
+      expect(find.text('8 नव'), findsOneWidget);
+      expect(
+          tester.getTopLeft(kalash).dy, lessThan(tester.getTopLeft(diwali).dy));
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('व्रत अलग, संस्कार और श्राद्ध अलग', (tester) async {
+      phoneNaap(tester);
+      await tester.pumpWidget(app(VidhiListScreen(aaj: mangal)));
+      await tester.pumpAndSettle();
+
+      // शीर्षक तक जाओ — उसके ठीक नीचे वाले कार्ड भी तब बने होते हैं
+      await scrollTak(tester, find.text('व्रत'));
+      final vrat = tester.getTopLeft(find.text('व्रत')).dy;
+      final karwa = tester.getTopLeft(find.text('करवा चौथ पूजन')).dy;
+      expect(vrat, lessThan(karwa));
+
+      await scrollTak(tester, find.text('संस्कार और पारिवारिक कर्म'));
+      final parivar =
+          tester.getTopLeft(find.text('संस्कार और पारिवारिक कर्म')).dy;
+      final grih = tester.getTopLeft(find.text('गृह प्रवेश')).dy;
+      expect(parivar, lessThan(grih));
+      await scrollTak(tester, find.text('श्राद्ध और तर्पण'));
+      expect(find.text('श्राद्ध और तर्पण'), findsOneWidget);
+      expect(find.text('विशेष पूजा और संस्कार'), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
+  });
+
   group('पूजाओं की सूची', () {
+    testWidgets(
+        'शारदीय नवरात्रि का पर्व-card चित्र सहित और छोटे फ़ोन पर सुरक्षित है',
+        (tester) async {
+      phoneNaap(tester, width: 320);
+      await tester.pumpWidget(app(
+        const VidhiListScreen(),
+        textScaler: const TextScaler.linear(1.5),
+      ));
+      await tester.pumpAndSettle();
+
+      final card = find.byKey(const Key('navratri_parv_card'));
+      await scrollTak(tester, card);
+      expect(find.text('नौ दिन का पर्व'), findsOneWidget);
+      expect(find.text('संक्षिप्त पूजा और दिन-प्रतिदिन पूर्ण विधि'),
+          findsOneWidget);
+
+      final images = tester.widgetList<Image>(
+        find.descendant(of: card, matching: find.byType(Image)),
+      );
+      expect(
+        images.any((image) =>
+            image.image is ResizeImage &&
+            (image.image as ResizeImage).imageProvider is AssetImage &&
+            ((image.image as ResizeImage).imageProvider as AssetImage)
+                    .assetName ==
+                'assets/images/devotional/navratri_parv_v2.webp'),
+        isTrue,
+      );
+      expect(tester.takeException(), isNull);
+    });
+
     testWidgets('नवरात्रि पर्व-card से पूरा पंचांग-आधारित पन्ना खुलता है',
         (tester) async {
       phoneNaap(tester);
@@ -502,7 +688,7 @@ void main() {
       expect(find.text('शारदीय नवरात्रि'), findsWidgets);
       await scrollTak(tester, find.text('संक्षिप्त पूजा'));
       expect(find.text('संक्षिप्त पूजा'), findsOneWidget);
-      expect(find.text('पूर्ण नवरात्रि'), findsOneWidget);
+      expect(find.text('पूर्ण पूजा'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
@@ -513,7 +699,7 @@ void main() {
 
       expect(find.text('आज क्या करना चाहते हैं?'), findsOneWidget);
       await scrollTak(tester, find.text('त्योहार'));
-      expect(find.text('सत्यनारायण पूजा'), findsOneWidget);
+      expect(find.text('सत्यनारायण पूजा'), findsWidgets);
     });
 
     testWidgets('नई खोज-परतें बिना overflow के दिखती हैं', (tester) async {
@@ -521,11 +707,14 @@ void main() {
       await tester.pumpWidget(app(const VidhiListScreen()));
       await tester.pumpAndSettle();
 
-      expect(find.text('दैनिक पूजा'), findsOneWidget);
+      await scrollTak(tester, find.text('रोज़ की पूजा'));
+      expect(find.text('रोज़ की पूजा'), findsOneWidget);
       await scrollTak(tester, find.text('त्योहार'));
       expect(find.text('त्योहार'), findsOneWidget);
-      await scrollTak(tester, find.text('विशेष पूजा और संस्कार'));
-      expect(find.text('विशेष पूजा और संस्कार'), findsOneWidget);
+      await scrollTak(tester, find.text('व्रत'));
+      expect(find.text('व्रत'), findsOneWidget);
+      await scrollTak(tester, find.text('संस्कार और पारिवारिक कर्म'));
+      expect(find.text('संस्कार और पारिवारिक कर्म'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
@@ -541,23 +730,22 @@ void main() {
     testWidgets('412 dp पर खोज-परतें सुरक्षित रहती हैं',
         (tester) => expectVidhiHomeFits(tester, 412));
 
-    testWidgets('1.5x अक्षर आकार में पूजा grid और featured CTA सुरक्षित हैं',
+    testWidgets('1.5x अक्षर आकार में पट्टी और पूजा grid सुरक्षित हैं',
         (tester) async {
       phoneNaap(tester, width: 320);
-      final semantics = tester.ensureSemantics();
       await tester.pumpWidget(app(
-        const VidhiListScreen(),
+        VidhiListScreen(aaj: DateTime(2026, 9, 22)),
         textScaler: const TextScaler.linear(1.5),
       ));
       await tester.pumpAndSettle();
 
-      final ctaSemantics = tester.getSemantics(find.byType(VidhivatButton));
-      expect(ctaSemantics.label, contains('नित्य पूजा की विधि देखें'));
-      expect(ctaSemantics.flagsCollection.isButton, isTrue);
+      expect(find.byKey(const Key('aane_wali_patti')), findsOneWidget);
+      await scrollTak(tester, find.text('नित्य पूजा'));
+      expect(find.text('नित्य पूजा'), findsOneWidget);
       await scrollTak(tester, find.text('त्योहार'));
-      expect(find.text('सत्यनारायण पूजा'), findsOneWidget);
+      await scrollTak(tester, find.text('सत्यनारायण पूजा'));
+      expect(find.text('सत्यनारायण पूजा'), findsWidgets);
       expect(tester.takeException(), isNull);
-      semantics.dispose();
     });
 
     test('आने वाली पूजाओं में वो नहीं जो बन चुकी हैं', () async {
@@ -593,8 +781,8 @@ void main() {
       await tester.pumpWidget(app(const VidhiListScreen()));
       await tester.pumpAndSettle();
 
-      await scrollTak(tester, find.text('गणेश पूजन'));
-      await tester.tap(find.text('गणेश पूजन'));
+      await scrollTak(tester, suchiMein('गणेश पूजन'));
+      await tester.tap(suchiMein('गणेश पूजन'));
       await tester.pumpAndSettle();
       expect(find.text('पूजा शुरू करें'), findsOneWidget);
 
@@ -602,8 +790,8 @@ void main() {
       await tester.pumpAndSettle();
 
       // हनुमान पूजा अब असली विधि है — खुलनी चाहिए।
-      await scrollTak(tester, find.text('हनुमान पूजा'));
-      await tester.tap(find.text('हनुमान पूजा'));
+      await scrollTak(tester, suchiMein('हनुमान पूजा'));
+      await tester.tap(suchiMein('हनुमान पूजा'));
       await tester.pumpAndSettle();
       expect(find.text('पूजा शुरू करें'), findsOneWidget);
       Navigator.of(tester.element(find.byType(VidhiScreen))).pop();
@@ -723,17 +911,15 @@ void main() {
           findsNothing);
     });
 
-    testWidgets('अधूरे मंत्रों की गिनती साफ़ लिखी है', (tester) async {
+    testWidgets('मंत्र भरने के बाद अधूरे पाठ का दावा नहीं दिखता', (tester) async {
       await kholoSatyanarayan(tester);
       // यह गिनती भी अब उसी ℹ के अंदर है (→ D-056)।
       //
-      // ⚠ इससे वो चेतावनी नहीं हटी जो हर ख़ाली कदम पर खुली
-      // मिलती है — वहाँ ऐप अपनी कमी मान रहा होता है (→ D-049)।
       await kholoSrot(tester, 'यह विधि कहाँ से आई');
       await srotMeinNeeche(tester, find.text('अभी क्या कम है'));
       expect(find.text('अभी क्या कम है'), findsOneWidget);
       expect(find.textContaining('मंत्रों का पाठ अभी जोड़ा नहीं गया'),
-          findsOneWidget);
+          findsNothing);
     });
   });
 
@@ -1079,8 +1265,8 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.byType(VidhiListScreen), findsOneWidget);
 
-      await scrollTak(tester, find.text('त्योहार'));
-      await tester.tap(find.text('सत्यनारायण पूजा'));
+      await scrollTak(tester, suchiMein('सत्यनारायण पूजा'));
+      await tester.tap(suchiMein('सत्यनारायण पूजा'));
       await tester.pumpAndSettle();
       expect(find.text('आप यहाँ तक पहुँचे थे'), findsNothing);
       expect(find.text('पूजा शुरू करें'), findsOneWidget);
@@ -1112,11 +1298,11 @@ void main() {
           'कमलनयन भगवान को याद कर ले वो भीतर और बाहर दोनों तरफ़ से शुद्ध हो '
           'जाता है।';
       // "स्रोत — " उपसर्ग अब नहीं — sheet में सिर्फ़ पाठ दिखता है
-      const strot = 'sanskritbhasi.blogspot.com — देव पूजा विधि '
-          '(आचमन, पवित्रीकरण)। पवित्रीकरण वाला श्लोक webdunia की महालक्ष्मी '
-          'पूजन विधि में भी हूबहू यही मिला। पाँचों नामों का क्रम — तीन '
-          'आचमन, हृषीकेश से होंठ, गोविन्द से हाथ — jyotish.guru के मंगलाचरण '
-          'वाले पन्ने की विधि में इसी तरह लिखा है।';
+      const strot = 'गीताप्रेस के नित्यकर्म-पूजाप्रकाश की आचमन-विधि में '
+          'केशव, नारायण और माधव नाम से तीन आचमन तथा हृषीकेश नाम से होंठ '
+          'पोंछने का क्रम मिलता है। एक प्रकाशित मंदिर पूजा-पद्धति में इसी '
+          'क्रम के बाद गोविन्द नाम और ‘अपवित्रः पवित्रो वा’ पवित्रीकरण-पाठ '
+          'भी मिलता है। संप्रदाय के अनुसार आगे के नाम और क्रिया बदल सकती है।';
 
       // ⚠ पन्ना आलसी `ListView` है — जो तह से नीचे है वो बनता ही
       // नहीं। चौड़ी स्क्रीन पर अक्षर अब 600dp में सिमटते हैं (→ D-062),
@@ -1174,10 +1360,9 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('जिस कदम का मंत्र ख़ाली है वहाँ बना हुआ मंत्र नहीं दिखता',
+    testWidgets('नवग्रह चरण में वैकल्पिक शांति-प्रार्थना दिखती है',
         (tester) async {
-      // अंदाज़े से मंत्र लिखना इस प्रोजेक्ट की सबसे बड़ी मनाही है।
-      // आठवाँ कदम नवग्रह का है — उसके नौ मंत्र जान-बूझकर नहीं लिखे गए।
+      // आठवें कदम में शांति-प्रार्थना है; नौ अलग ग्रह-मंत्र अब भी नहीं हैं।
       await kholoPlayer(tester);
 
       for (var i = 0; i < 7; i++) {
@@ -1186,22 +1371,12 @@ void main() {
       }
 
       expect(find.text('चरण 8 / 16'), findsOneWidget);
-      expect(find.text('मंत्र'), findsNothing);
-
-      await scrollTak(
-          tester, find.textContaining('मंत्र अभी ऐप में नहीं जोड़ा गया'));
-      expect(
-        find.textContaining('मंत्र अभी ऐप में नहीं जोड़ा गया'),
-        findsOneWidget,
-      );
-      // ख़ाली छोड़ने की वजह भी दिखनी चाहिए।
-      await scrollTak(
-          tester, find.textContaining('नवग्रह के लिए नौ अलग मंत्र'));
-      expect(find.textContaining('नवग्रह के लिए नौ अलग मंत्र'), findsOneWidget);
-
-      // और वो चेतावनी भी, कि "सुप्रभातम्" वाला श्लोक यहाँ का नहीं है
-      await scrollTak(tester, find.textContaining('सुप्रभातम्'));
-      expect(find.textContaining('सुप्रभातम्'), findsOneWidget);
+      await scrollTak(tester, find.textContaining('शान्तिकरा भवन्तु'));
+      expect(find.textContaining('शान्तिकरा भवन्तु'), findsOneWidget);
+      await scrollTak(tester, find.textContaining('इस पाठ के बारे में'));
+      await tester.tap(find.textContaining('इस पाठ के बारे में'));
+      await tester.pumpAndSettle();
+      expect(find.text('इस पाठ के बारे में'), findsOneWidget);
     });
 
     testWidgets(

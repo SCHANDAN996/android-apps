@@ -27,6 +27,9 @@ export 'src/moon.dart'
         moonMeanLongitude,
         moonGeometricLongitude;
 export 'src/nutation.dart' show nutationInLongitude;
+export 'src/dasha.dart';
+export 'src/graha.dart';
+export 'src/kundali.dart';
 export 'src/festival.dart';
 export 'src/grahan.dart';
 export 'src/muhurta.dart';
@@ -38,6 +41,7 @@ export 'src/vrat.dart';
 export 'src/taalne_wale_din.dart';
 export 'src/shubh_muhurat.dart';
 export 'src/panchang.dart';
+export 'src/sankranti.dart';
 export 'src/place.dart' show Place;
 export 'src/sun.dart'
     show

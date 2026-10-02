@@ -8,9 +8,12 @@ import '../vidhi/vidhi.dart';
 import '../vidhi/instructional_assets.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
+import '../widgets/katha_khand.dart';
+import '../widgets/mantra_khand.dart';
 import '../vidhi/bhandar.dart';
-import '../vidhi/katha.dart';
+import '../vidhi/granth.dart';
 import '../vidhi/paath.dart';
+import 'granth_screen.dart';
 import 'paath_screen.dart';
 import 'puja_completion_screen.dart';
 import 'samagri_screen.dart';
@@ -29,9 +32,9 @@ import 'sankalp_screen.dart';
 ///
 /// ## ⛔ इस स्क्रीन पर विज्ञापन कभी नहीं (→ D-008)
 /// चाहे मुफ़्त यूज़र हो। आदमी संकल्प ले रहा है और स्क्रीन पर विज्ञापन आ
-/// गया — वो 1 स्टार देगा और लिखेगा कि ऐप ने पूजा भ्रष्ट कर दी। Drik
-/// Panchang की सबसे बड़ी शिकायत यही है; उसकी सबसे बड़ी कमज़ोरी को अपनी
-/// सबसे बड़ी ताक़त बनाना है। **यहाँ कोई ad widget मत जोड़ना।**
+/// गया — वो 1 स्टार देगा और लिखेगा कि ऐप ने पूजा भ्रष्ट कर दी। दूसरे
+/// पूजा ऐपों में बीच अनुष्ठान आने वाले विज्ञापनों की शिकायत आम है;
+/// Vidhivat में यही अनुभव साफ़ रहना चाहिए। **यहाँ कोई ad widget मत जोड़ना।**
 class VidhiPlayerScreen extends StatefulWidget {
   final Vidhi vidhi;
   final int initialStepIndex;
@@ -150,6 +153,7 @@ class _VidhiPlayerScreenState extends State<VidhiPlayerScreen> {
       );
     }
     final aakhri = _index == kul - 1;
+    final vaikalpik = vidhi.charan[_index].vaikalpik;
     final colors = VidhivatTheme.colorsOf(context);
 
     return Scaffold(
@@ -182,6 +186,11 @@ class _VidhiPlayerScreenState extends State<VidhiPlayerScreen> {
         child: PageView.builder(
           controller: _pages,
           itemCount: kul,
+          // ⚡ अगला (और पिछला) कदम पहले से बना रहता है — उसकी तस्वीर decode
+          // और कथा की फ़ाइल swipe शुरू होने से पहले ही तैयार। पहले "आगे"
+          // दबाते ही यह सब एक साथ होता था, और सस्ते फ़ोन पर तस्वीर एक पल
+          // बाद "कूदकर" आती थी।
+          allowImplicitScrolling: true,
           onPageChanged: (i) {
             setState(() => _index = i);
             _saveLastReachedStep(i);
@@ -211,20 +220,36 @@ class _VidhiPlayerScreenState extends State<VidhiPlayerScreen> {
         child: SafeArea(
           top: false,
           child: VidhivatReadableWidth(
-            // लेटे रूप में यह बटन 853dp चौड़ा हो जाता था (→ D-062)।
-              child: Padding(
+            // लेटे रूप में यह बटन 853dp चौड़ा हो जाता था (→ D-062)।
+            child: Padding(
               padding: const EdgeInsets.fromLTRB(
                 VidhivatSpacing.lg,
                 VidhivatSpacing.sm,
                 VidhivatSpacing.lg,
                 VidhivatSpacing.md,
               ),
-              child: _CharanNavigation(
-                first: _index == 0,
-                last: aakhri,
-                title: vidhi.naam,
-                onPrevious: () => _jao(_index - 1),
-                onContinue: aakhri ? _poojaPuriKaro : () => _jao(_index + 1),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _CharanNavigation(
+                    first: _index == 0,
+                    last: aakhri,
+                    title: vidhi.naam,
+                    onPrevious: () => _jao(_index - 1),
+                    onContinue:
+                        aakhri ? _poojaPuriKaro : () => _jao(_index + 1),
+                  ),
+                  if (vaikalpik && !aakhri) ...[
+                    const SizedBox(height: VidhivatSpacing.xs),
+                    VidhivatButton(
+                      key: const Key('skip_optional_step'),
+                      label: 'यह वैकल्पिक कदम छोड़ें',
+                      onPressed: () => _jao(_index + 1),
+                      variant: VidhivatButtonVariant.text,
+                      fullWidth: true,
+                    ),
+                  ],
+                ],
               ),
             ),
           ),
@@ -301,6 +326,10 @@ class _CharanPanna extends StatelessWidget {
             icon: Icons.schedule_outlined,
           ),
         ],
+        if (charan.vaikalpik) ...[
+          const SizedBox(height: VidhivatSpacing.sm),
+          const VidhivatStatusChip(label: 'वैकल्पिक', icon: Icons.tune),
+        ],
         if (charan.vishesh == CharanVishesh.sankalp) ...[
           const SizedBox(height: VidhivatSpacing.xxl),
           const VidhivatSectionHeader(title: 'संकल्प'),
@@ -311,16 +340,24 @@ class _CharanPanna extends StatelessWidget {
           const SizedBox(height: VidhivatSpacing.xxl),
           // ── कथा (→ D-060) ──────────────────────────────
           //
-          // पहले यहाँ सिर्फ़ लिखा था "कथा अभी जोड़ी नहीं गई"। अब जो
-          // जुड़ चुकी है वो खुलती है, और जो नहीं जुड़ी उस पर वही ईमानदार
+          // पहले यहाँ सिर्फ़ लिखा था "कथा अभी जोड़ी नहीं गई"। अब जो
+          // जुड़ चुकी है वो खुलती है, और जो नहीं जुड़ी उस पर वही ईमानदार
           // वाक्य रहता है।
-          if (charan.katha.isEmpty)
+          // जिस कदम पर ग्रंथ का बटन है (कृष्ण पूजा में गीता), वहाँ "पाठ
+          // ऐप में नहीं है" कहना झूठ होता — वही बात जो आरती पर थी
+          // (→ D-049)।
+          if (charan.katha.isEmpty && charan.granth.isEmpty)
             const Chetavni(
-              'कथा का पूरा पाठ अभी ऐप में नहीं जोड़ा गया है। तब तक अपनी '
-              'कथा-पुस्तिका से पढ़ें।',
+              'कथा का पूरा पाठ अभी ऐप में नहीं जोड़ा गया है। तब तक अपनी '
+              'कथा-पुस्तिका से पढ़ें।',
             )
-          else
-            _KathaKhand(id: charan.katha),
+          else if (charan.katha.isNotEmpty)
+            KathaKhand(id: charan.katha),
+        ],
+        // ग्रंथ वाले कदम पर सीधे ग्रंथ खोलने का रास्ता (→ D-098)।
+        if (charan.granth.isNotEmpty) ...[
+          const SizedBox(height: VidhivatSpacing.xxl),
+          _GranthKholo(id: charan.granth),
         ],
         // आरती वाले कदम पर सीधे आरती खोलने का रास्ता (→ D-039)।
         // पाठ यहाँ दोहराया नहीं जाता — वो एक ही जगह रहता है।
@@ -342,7 +379,7 @@ class _CharanPanna extends StatelessWidget {
         if (charan.mantra != null &&
             !(charan.paath.isNotEmpty && !charan.mantra!.hasPath)) ...[
           const SizedBox(height: VidhivatSpacing.xxl),
-          _MantraKhand(mantra: charan.mantra!),
+          MantraKhand(mantra: charan.mantra!),
         ],
       ],
     );
@@ -664,118 +701,6 @@ class _PlayerSankalpFormatSelector extends StatelessWidget {
   }
 }
 
-/// मंत्र वाला हिस्सा।
-///
-/// पाठ न भरा हो तो **ख़ाली डिब्बा दिखाते हैं, बना हुआ मंत्र नहीं।**
-/// अंदाज़े से मंत्र लिखना इस प्रोजेक्ट में सबसे बड़ी ग़लती मानी गई है —
-/// मंत्र ग़लत होना तिथि ग़लत होने से भी बुरा है।
-class _MantraKhand extends StatelessWidget {
-  final Mantra mantra;
-
-  const _MantraKhand({required this.mantra});
-
-  @override
-  Widget build(BuildContext context) {
-    final type = VidhivatTheme.typographyOf(context);
-
-    if (!mantra.hasPath) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const VidhivatSectionHeader(title: 'मंत्र'),
-          const SizedBox(height: VidhivatSpacing.sm),
-          const Chetavni(
-            'इस कदम का मंत्र अभी ऐप में नहीं जोड़ा गया है। जब तक प्रामाणिक '
-            'स्रोत से न आ जाए, हम अंदाज़े से कुछ नहीं लिखेंगे — तब तक अपनी '
-            'पूजा-पुस्तिका से पढ़ें, या मन ही मन भगवान का नाम लें।',
-          ),
-          // ⚠️ यह **खुला ही रहेगा।** एक बार इसे भी ⓘ के पीछे भेजा गया
-          // था (भरे मंत्र वाले नियम के साथ मिलाने के चक्कर में), पर
-          // जाँच ने पकड़ लिया — और वो सही थी।
-          //
-          // भरे मंत्र पर ⓘ के अंदर *हवाला* होता है, जो पूजा के बीच
-          // नहीं चाहिए। यहाँ उसमें **वजह** होती है — कि मंत्र ख़ाली
-          // क्यों है ("नवग्रह के नौ अलग मंत्र होते हैं", "सुप्रभातम्
-          // वाला श्लोक यहाँ का नहीं है")। वो ठीक उसी जगह चाहिए जहाँ
-          // ऐप अपनी कमी मान रहा है — वरना चेतावनी अधूरी रह जाती है।
-          if (mantra.vikalp.isNotEmpty)
-            Text(mantra.vikalp, style: type.bodySmall),
-        ],
-      );
-    }
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const VidhivatSectionHeader(title: 'मंत्र'),
-        const SizedBox(height: VidhivatSpacing.sm),
-        VidhivatSurfaceCard(
-          variant: VidhivatCardVariant.elevated,
-          padding: const EdgeInsets.all(VidhivatSpacing.lg),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // सबसे बड़ा अक्षर पूरे ऐप में — यही बोलकर पढ़ा जाता है।
-              SelectableText(mantra.devanagari, style: type.mantra),
-              if (mantra.roman.isNotEmpty) ...[
-                const SizedBox(height: VidhivatSpacing.lg),
-                const VidhivatDivider(),
-                const SizedBox(height: VidhivatSpacing.sm),
-                Text('उच्चारण', style: type.label),
-                const SizedBox(height: VidhivatSpacing.xxs),
-                Text(mantra.roman, style: type.mantraTransliteration),
-              ],
-              if (mantra.arth.isNotEmpty) ...[
-                const SizedBox(height: VidhivatSpacing.lg),
-                const VidhivatDivider(),
-                const SizedBox(height: VidhivatSpacing.sm),
-                Text('अर्थ', style: type.label),
-                const SizedBox(height: VidhivatSpacing.xxs),
-                Text(mantra.arth, style: type.mantraMeaning),
-              ],
-            ],
-          ),
-        ),
-        const SizedBox(height: VidhivatSpacing.md),
-
-        // ── यहाँ पहले हर मंत्र पर लाल चेतावनी थी — अब नहीं (→ D-042) ──
-        //
-        // वो वाक्य था "यह मंत्र अभी पंडित जी से पास नहीं हुआ है", और वो
-        // **हर** भरे हुए मंत्र पर दिखता था — 203 में से 150 कदमों पर।
-        // दो दिक़्क़तें थीं:
-        //
-        // 1. वो ठीक उसी कदम पर नीचे छपे स्रोत से टकराता था — यूज़र
-        //    "स्रोत: ऋग्वेद ७.५९.१२ · भरोसा ऊँचा" और "पास नहीं हुआ"
-        //    एक साथ पढ़ता था।
-        // 2. जब हर कदम पर चेतावनी हो, तो वो पढ़ी ही नहीं जाती।
-        //
-        // अब पूजा के पन्ने पर **एक बार** साफ़ लिखा है कि यह घर की सरल
-        // पद्धति है और हर पाठ के नीचे स्रोत मिलेगा। यहाँ वही दो चीज़ें
-        // दिखती हैं जो सचमुच काम की हैं — **दूसरा चलन** और **स्रोत**।
-        //
-        // ⚠️ जिस कदम का पाठ **है ही नहीं**, वहाँ चेतावनी अब भी पूरी
-        // ताक़त से लगती है (ऊपर `!mantra.hasPath` वाला हिस्सा) — वही
-        // असली चेतावनी है, और वो अब भीड़ में नहीं खोती।
-
-        // ── स्रोत, भरोसा और दूसरा चलन — ⓘ के अंदर ──────────────
-        //
-        // ये तीनों पहले मंत्र के नीचे खुले पड़े थे। नापने पर पता चला
-        // कि **मंत्र से सवा तीन गुना ज़्यादा** सहायक-पाठ था (मंत्र
-        // औसतन 107 अक्षर, स्रोत 175, दूसरा चलन 165)।
-        //
-        // पूजा करते आदमी को मंत्र चाहिए, हवाला नहीं। इसलिए तीनों अब
-        // एक बटन के पीछे हैं — जिसे जानना हो वो दबाए।
-        //
-        // ⚠️ जिस कदम का पाठ **है ही नहीं**, वहाँ की चेतावनी छिपाई
-        // नहीं गई (ऊपर `!mantra.hasPath` वाला हिस्सा) — वही असली
-        // चेतावनी है और वो दिखती ही रहनी चाहिए (→ D-042)।
-        if (mantra.strot.isNotEmpty || mantra.vikalp.isNotEmpty)
-          _IsPaathKeBaareMein(mantra: mantra),
-      ],
-    );
-  }
-}
-
 /// आरती वाले कदम पर — "आरती खोलें" (→ D-039)।
 ///
 /// ## यहाँ पाठ क्यों नहीं छपता
@@ -790,15 +715,26 @@ class _MantraKhand extends StatelessWidget {
 ///
 /// एक कदम पर एक से ज़्यादा भी हो सकती हैं (दीपावली में गणेश और लक्ष्मी
 /// दोनों की), इसलिए यह सूची लेता है।
-class _PaathKholo extends StatelessWidget {
+class _PaathKholo extends StatefulWidget {
   final List<String> ids;
 
   const _PaathKholo({required this.ids});
 
   @override
+  State<_PaathKholo> createState() => _PaathKholoState();
+}
+
+class _PaathKholoState extends State<_PaathKholo> {
+  // ⚡ future एक बार — `build()` के अंदर `paathBhandar.suchi()` लिखने से हर
+  // rebuild पर नया future बनता था।
+  late final Future<List<PaathSuchiEntry>> _suchi = paathBhandar.suchi();
+
+  List<String> get ids => widget.ids;
+
+  @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<PaathSuchiEntry>>(
-      future: paathBhandar.suchi(),
+      future: _suchi,
       builder: (context, snap) {
         final suchi = snap.data;
         if (suchi == null) return const SizedBox.shrink();
@@ -839,183 +775,49 @@ class _PaathKholo extends StatelessWidget {
   }
 }
 
-/// "इस पाठ के बारे में" — स्रोत, भरोसा और दूसरा चलन, एक बटन के पीछे।
+/// कदम पर लिखे ग्रंथ का पन्ना खोलने वाला बटन (→ D-098)।
 ///
-/// ## यह क्यों बना
-///
-/// पहले ये तीनों मंत्र के नीचे खुले पड़े थे। नापने पर निकला कि हर भरे
-/// मंत्र के साथ **मंत्र से सवा तीन गुना ज़्यादा** सहायक-पाठ है —
-/// मंत्र औसतन 107 अक्षर, स्रोत 175, दूसरा चलन 165।
-///
-/// पूजा के बीच में आदमी को **मंत्र** चाहिए; स्रोत और पाठ-भेद तब काम
-/// आते हैं जब कोई जाँचने बैठे। इसलिए वो सब यहाँ, एक दबाव पीछे।
-///
-/// छिपाया कुछ नहीं गया — बटन पर साफ़ लिखा है कि अंदर क्या है, और जहाँ
-/// दो चलन हों वो बटन पर ही दिख जाता है।
-///
-/// ⚠️ अब यही रूप चालीसा और पूजा-विवरण पर भी है, इसलिए शीट बनाने का
-/// काम [VidhivatSrotButton] करता है — तीनों जगह एक जैसा (→ D-045)।
-class _IsPaathKeBaareMein extends StatelessWidget {
-  final Mantra mantra;
-
-  const _IsPaathKeBaareMein({required this.mantra});
-
-  @override
-  Widget build(BuildContext context) => VidhivatSrotButton(
-        label: mantra.vikalp.isNotEmpty
-            ? 'इस पाठ के बारे में · इस पर दो चलन हैं'
-            : 'इस पाठ के बारे में',
-        shirshak: 'इस पाठ के बारे में',
-        panktiyan: [
-          VidhivatSrotPankti('भरोसा', mantra.bharosa.naam),
-          VidhivatSrotPankti('यह पाठ कहाँ से है', mantra.strot),
-          VidhivatSrotPankti('दूसरा चलन', mantra.vikalp),
-        ],
-        antimBaat: 'आपके घर या क्षेत्र का चलन अलग हो तो वही सही है।',
-      );
-}
-
-/// **कथा** — पाँच अध्याय, एक-एक करके (→ D-060)।
-///
-/// ## यह अकेला सबसे लंबा कदम है
-///
-/// सत्यनारायण की कथा लगभग तीन हज़ार शब्द है — पढ़ने में बीस से पच्चीस
-/// मिनट। पूरी कथा एक साथ खोल देने पर पन्ना इतना लंबा हो जाता है कि
-/// पढ़ने वाला अपनी जगह खो देता है, और यह वो कदम है जहाँ पूरा परिवार
-/// बैठकर सुन रहा होता है।
-///
-/// इसलिए अध्याय **एक-एक करके** खुलते हैं। हर अध्याय के ऊपर उसका सार और
-/// लगभग कितने मिनट लगेंगे, यह लिखा रहता है।
-///
-/// ⚠️ **कोई अध्याय छिपा नहीं है।** पाँचों के शीर्षक हमेशा दिखते हैं —
-/// यह वैसा ही है जैसा ℹ पर तय हुआ था (→ D-056): एक दबाव पीछे, ग़ायब
-/// नहीं। जो सुन रहा है उसे यह भी पता रहना चाहिए कि आगे कितना बाक़ी है।
-class _KathaKhand extends StatefulWidget {
+/// [_PaathKholo] जैसा ही, पर यह एक पाठ नहीं, पूरे ग्रंथ की अध्याय-सूची
+/// खोलता है — वहाँ से जो अध्याय पढ़ना हो वह चुना जाता है, और ग्रंथ याद
+/// रखता है कि पिछली बार कहाँ तक पहुँचे थे।
+class _GranthKholo extends StatefulWidget {
   final String id;
 
-  const _KathaKhand({required this.id});
+  const _GranthKholo({required this.id});
 
   @override
-  State<_KathaKhand> createState() => _KathaKhandState();
+  State<_GranthKholo> createState() => _GranthKholoState();
 }
 
-class _KathaKhandState extends State<_KathaKhand> {
-  late final Future<Katha> _katha = kathaBhandar.katha(widget.id);
-
-  /// कौन-कौन से अध्याय खुले हैं। पहला शुरू से खुला रहता है, ताकि
-  /// पढ़ना शुरू करने के लिए एक दबाव भी न लगे।
-  final Set<int> _khule = {1};
+class _GranthKholoState extends State<_GranthKholo> {
+  late final Future<List<GranthSuchiEntry>> _suchi = granthBhandar.suchi();
 
   @override
   Widget build(BuildContext context) {
-    final type = VidhivatTheme.typographyOf(context);
-    final colors = VidhivatTheme.colorsOf(context);
-
-    return FutureBuilder<Katha>(
-      future: _katha,
+    return FutureBuilder<List<GranthSuchiEntry>>(
+      future: _suchi,
       builder: (context, snap) {
-        if (snap.hasError) {
-          return const Chetavni(
-            'कथा खुल नहीं सकी। ऐप दोबारा खोलकर कोशिश करें — तब तक अपनी '
-            'कथा-पुस्तिका से पढ़ें।',
-            serious: true,
-          );
-        }
-        if (!snap.hasData) {
-          return Text('कथा खुल रही है…', style: type.bodySmall);
-        }
-        final katha = snap.data!;
+        final mila = [
+          ...?snap.data,
+          GranthSuchiEntry.saptashati,
+        ].where((g) => g.id == widget.id).firstOrNull;
+        if (snap.data == null || mila == null) return const SizedBox.shrink();
 
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            VidhivatSectionHeader(
-              title: katha.naam,
-              supportingText: '${katha.adhyayKul} अध्याय · '
-                  'लगभग ${katha.minute} मिनट',
-            ),
+            const VidhivatSectionHeader(title: 'पाठ'),
             const SizedBox(height: VidhivatSpacing.sm),
-
-            // ⚠️ यह पंक्ति हटाई नहीं जा सकती। कथा हिंदी में कही गई है,
-            // शब्दशः संस्कृत पाठ नहीं — और यूज़र को यह पता होना चाहिए,
-            // क्योंकि उसकी पोथी से फ़र्क़ मिलेगा (→ D-060)।
-            Chetavni(katha.roop.batao),
-
-            for (final a in katha.adhyay) ...[
-              const SizedBox(height: VidhivatSpacing.sm),
-              VidhivatSurfaceCard(
-                padding: EdgeInsets.zero,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    InkWell(
-                      onTap: () => setState(() {
-                        _khule.contains(a.kram)
-                            ? _khule.remove(a.kram)
-                            : _khule.add(a.kram);
-                      }),
-                      child: Padding(
-                        padding: const EdgeInsets.all(VidhivatSpacing.md),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(a.shirshak, style: type.cardTitle),
-                                  const SizedBox(height: VidhivatSpacing.xxs),
-                                  Text(
-                                    '${a.saar}  ·  लगभग ${a.minute} मिनट',
-                                    style: type.bodySmall.copyWith(
-                                      color: colors.textSecondary,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Icon(
-                              _khule.contains(a.kram)
-                                  ? Icons.expand_less
-                                  : Icons.expand_more,
-                              color: colors.textTertiary,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    if (_khule.contains(a.kram))
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(
-                          VidhivatSpacing.md,
-                          0,
-                          VidhivatSpacing.md,
-                          VidhivatSpacing.md,
-                        ),
-                        // ⚠️ कथा ज़ोर से पढ़ी जाती है, और फ़ोन दो फ़ुट दूर
-                        // रखा होता है — इसलिए `bodyLarge`, `bodyMedium`
-                        // नहीं। वही वजह जो संकल्प पर थी।
-                        child: SelectableText(
-                          a.gadya,
-                          textAlign: TextAlign.justify,
-                          style: type.bodyLarge.copyWith(height: 1.75),
-                        ),
-                      ),
-                  ],
-                ),
+            VidhivatButton(
+              label: mila.naam,
+              semanticLabel: '${mila.naam} खोलें',
+              icon: Icons.auto_stories_outlined,
+              variant: VidhivatButtonVariant.secondary,
+              fullWidth: true,
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                    builder: (_) => GranthScreen(granth: mila)),
               ),
-            ],
-
-            const SizedBox(height: VidhivatSpacing.md),
-            VidhivatSrotButton(
-              label: 'यह कथा कहाँ से आई',
-              panktiyan: [
-                VidhivatSrotPankti('रूप', katha.roop.batao),
-                VidhivatSrotPankti('स्रोत', katha.strot),
-                VidhivatSrotPankti('कब सुनाई जाती है', katha.kabSunayen),
-              ],
-              antimBaat: 'आपके घर या क्षेत्र में कथा थोड़ी अलग कही जाती हो '
-                  'तो वही सही है।',
             ),
           ],
         );

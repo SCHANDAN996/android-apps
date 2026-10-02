@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -7,6 +10,7 @@ import 'package:vidhivat/screens/paath_screen.dart';
 import 'package:vidhivat/state/settings.dart';
 import 'package:vidhivat/theme.dart';
 import 'package:vidhivat/vidhi/paath.dart';
+import 'package:vidhivat/widgets/design_system.dart';
 
 /// चालीसा और आरती वाले section की जाँच — उँगली चलाकर (→ D-039)।
 void main() {
@@ -39,7 +43,8 @@ void main() {
       tak,
       500,
       scrollable: find
-          .descendant(of: find.byType(ListView), matching: find.byType(Scrollable))
+          .descendant(
+              of: find.byType(ListView), matching: find.byType(Scrollable))
           .first,
     );
     await tester.pumpAndSettle();
@@ -80,7 +85,97 @@ void main() {
     });
   });
 
+  /// **आरती: हर पद के बाद उसकी शुरुआती पंक्तियाँ, और कोई लेबल नहीं** (→ D-083)।
+  ///
+  /// पहले "टेक" सिर्फ़ सबसे ऊपर एक बार थी — गाने वाले को हर पद के बाद
+  /// ऊपर स्क्रॉल करना पड़ता — और हर खंड पर "टेक", "पद १" लिखा आता था।
+  group('आरती का क्रम', () {
+    // गणेश आरती सबसे छोटी है (शुरुआत + चार पद); ऊँची स्क्रीन पर पूरी
+    // एक साथ बन जाती है, ताकि गिनती में ListView का आलस आड़े न आए।
+    void oonchaPhone(WidgetTester tester) {
+      tester.view.physicalSize = const Size(360 * 3, 9000 * 3);
+      tester.view.devicePixelRatio = 3.0;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+    }
+
+    testWidgets('शुरुआती पंक्तियाँ ऊपर एक बार और हर पद के बाद फिर',
+        (tester) async {
+      oonchaPhone(tester);
+      await tester.pumpWidget(app(const PaathScreen(id: 'ganesh_aarti')));
+      await tester.pumpAndSettle();
+
+      final raw =
+          jsonDecode(File('assets/paath/ganesh_aarti.json').readAsStringSync())
+              as Map;
+      final khand = (raw['khand'] as List).cast<Map>();
+      final shuru = khand.first['dev'] as String;
+      final padGinti = khand.length - 1;
+
+      // ऊपर एक बार + हर पद के बाद एक बार
+      expect(find.text(shuru), findsNWidgets(1 + padGinti));
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('आरती में कोई लेबल नहीं — न "टेक", न "पद १"', (tester) async {
+      oonchaPhone(tester);
+      await tester.pumpWidget(app(const PaathScreen(id: 'ganesh_aarti')));
+      await tester.pumpAndSettle();
+
+      expect(find.text('पद १'), findsNothing);
+      expect(find.textContaining('टेक'), findsNothing);
+      // हल्की पंक्तियाँ क्या हैं — यह एक बार, "पाठ" के नीचे
+      expect(find.textContaining('हर पद के बाद दोहराएँ'), findsOneWidget);
+    });
+
+    testWidgets('चालीसा में लेबल बने रहते हैं, और कुछ दोहराया नहीं जाता',
+        (tester) async {
+      phoneNaap(tester);
+      await tester.pumpWidget(app(const PaathScreen(id: 'hanuman_chalisa')));
+      await tester.pumpAndSettle();
+
+      await scrollTak(tester, find.text('चौपाई १'));
+      expect(find.text('चौपाई १'), findsOneWidget);
+      expect(find.textContaining('हर पद के बाद दोहराएँ'), findsNothing);
+    });
+
+    testWidgets('320 चौड़ाई और बड़े अक्षर पर भी आरती नहीं टूटती',
+        (tester) async {
+      tester.view.physicalSize = const Size(320 * 3, 9000 * 3);
+      tester.view.devicePixelRatio = 3.0;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      await tester.pumpWidget(MaterialApp(
+        theme: VidhivatTheme.dark(),
+        builder: (context, child) => MediaQuery(
+          data: MediaQuery.of(context)
+              .copyWith(textScaler: const TextScaler.linear(1.5)),
+          child: child!,
+        ),
+        home: const PaathScreen(id: 'jagjanani_aarti'),
+      ));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('अर्थ दिखाएँ'));
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+    });
+  });
+
   group('पाठ पढ़ने वाला पन्ना', () {
+    testWidgets('अर्थ दिखाने का control app के primary रंग वाला button है',
+        (tester) async {
+      phoneNaap(tester);
+      await tester.pumpWidget(app(const PaathScreen(id: 'hanuman_chalisa')));
+      await tester.pumpAndSettle();
+      await scrollTak(tester, find.text('अर्थ दिखाएँ'));
+
+      final button = tester.widget<VidhivatButton>(
+        find.widgetWithText(VidhivatButton, 'अर्थ दिखाएँ'),
+      );
+      expect(button.variant, VidhivatButtonVariant.primary);
+      expect(button.icon, Icons.visibility_rounded);
+    });
+
     testWidgets('चालीसा के पद पाठ के साथ दिखते हैं', (tester) async {
       phoneNaap(tester);
       await tester.pumpWidget(app(const PaathScreen(id: 'hanuman_chalisa')));
@@ -89,7 +184,7 @@ void main() {
       await scrollTak(tester, find.text('दोहा १'));
       expect(find.textContaining('श्रीगुरु चरन सरोज रज'), findsOneWidget);
 
-      await scrollTak(tester, find.text('चौपाई 1'));
+      await scrollTak(tester, find.text('चौपाई १'));
       expect(find.textContaining('जय हनुमान ज्ञान गुन सागर'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
@@ -103,7 +198,7 @@ void main() {
       await tester.pumpWidget(app(const PaathScreen(id: 'hanuman_chalisa')));
       await tester.pumpAndSettle();
 
-      await scrollTak(tester, find.text('चौपाई 1'));
+      await scrollTak(tester, find.text('चौपाई १'));
       expect(find.textContaining('जय हनुमान ज्ञान गुन सागर'), findsOneWidget);
       // रोमन और अर्थ छिपे रहने चाहिए
       expect(find.textContaining('jai hanumaan gyaan'), findsNothing);
@@ -124,7 +219,7 @@ void main() {
       // तह से बाहर चला जाता है, इसलिए यहीं देख लो।
       expect(find.text('सिर्फ़ पाठ'), findsOneWidget);
 
-      await scrollTak(tester, find.text('चौपाई 1'));
+      await scrollTak(tester, find.text('चौपाई १'));
       expect(find.textContaining('jai hanumaan gyaan'), findsOneWidget);
       expect(find.textContaining('ज्ञान और गुणों के सागर'), findsOneWidget);
       expect(tester.takeException(), isNull);
@@ -147,8 +242,7 @@ void main() {
       expect(find.text('पाठ अभी जोड़ा नहीं गया'), findsNothing);
     });
 
-    testWidgets('आधा भरा पाठ — चेतावनी दिखती है, गिनती के साथ',
-        (tester) async {
+    testWidgets('आधा भरा पाठ — चेतावनी दिखती है, गिनती के साथ', (tester) async {
       // यही असली चेतावनी है, और यह ग़ायब नहीं होनी चाहिए (→ D-022)।
       phoneNaap(tester);
       await tester.pumpWidget(app(PaathReader(paath: _adhuraPaath())));

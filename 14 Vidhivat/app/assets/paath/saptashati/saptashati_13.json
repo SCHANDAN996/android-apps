@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "id": "saptashati_13",
+  "naam": "अध्याय १३ — सुरथ और वैश्य को वरदान",
+  "upnaam": [
+    "दुर्गा सप्तशती त्रयोदश अध्याय",
+    "देवी माहात्म्य अध्याय १३",
+    "सुरथवैश्ययोर्वरप्रदानं नाम त्रयोदशोऽध्यायः"
+  ],
+  "prakar": "stotra",
+  "devta": "दुर्गा माँ",
+  "rachnakar": "महर्षि मार्कण्डेय — मार्कण्डेय पुराण",
+  "bhasha": "संस्कृत",
+  "parichay": "मेधा ऋषि की कथा पूरी होती है। राजा सुरथ और समाधि वैश्य नदी के तट पर देवी की आराधना करते हैं। देवी प्रसन्न होकर सुरथ को उनका राज्य और समाधि को ज्ञान का वर देती हैं।",
+  "kabPadhein": "नवरात्रि के नौ दिन — और घर की परंपरा अनुसार किसी भी दिन।",
+  "kaisePadhein": "सप्तशती का क्रम है: कवच, अर्गला और कीलक — फिर तेरह अध्याय। पूरा पाठ एक बैठक में न हो तो नौ दिन में बाँटकर कर सकते हैं; बहुत घरों में एक दिन में एक या कुछ अध्याय पढ़े जाते हैं।\n\nअध्याय के बीच में न रुकें — जहाँ तक पढ़ें, अध्याय पूरा करके रुकें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "ध्यान",
+      "dev": "ॐ बालार्कमण्डलाभासां चतुर्बाहुं त्रिलोचनाम् ।\nपाशाङ्कुशवराभीतिर्धारयन्तीं शिवां भजे ॥",
+      "roman": "om baalaarkamandalaabhaasaam chaturbaahum trilochanaam |\npaashaankushavaraabheetirdhaarayanteem shivaam bhaje ||",
+      "arth": "जिनकी आभा उगते सूर्य के मंडल जैसी है, जिनकी चार भुजाएँ और तीन नेत्र हैं, और जो पाश, अंकुश, वर मुद्रा और अभय मुद्रा धारण करती हैं — उन कल्याणी शिवा का मैं भजन करता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १",
+      "dev": "ॐ ऋषिरुवाच॥",
+      "roman": "om rishiruvaacha ||",
+      "arth": "ऋषि बोले —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "एतत्ते कथितं भूप देवीमाहात्म्यमुत्तमम् ।\nएवं प्रभावा सा देवी ययेदं धार्यते जगत्॥",
+      "roman": "etatte kathitam bhoopa deveemaahaatmyamuttamam |\nevam prabhaavaa saa devee yayedam dhaaryate jagat ||",
+      "arth": "हे राजन, इस तरह मैंने तुम्हें देवी का यह उत्तम माहात्म्य सुनाया। जिनसे यह जगत धारण किया जाता है, वे देवी ऐसे प्रभाव वाली हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "विद्या तथैव क्रियते भगवद्विष्णुमायया ।\nतया त्वमेष वैश्यश्च तथैवान्ये विवेकिनः॥",
+      "roman": "vidyaa tathaiva kriyate bhagavadvishnumaayayaa |\ntayaa tvamesha vaishyashcha tathaivaanye vivekinah ||",
+      "arth": "भगवान विष्णु की माया रूपी वही देवी विद्या (ज्ञान) भी देती हैं। उन्हीं से तुम, यह वैश्य और दूसरे विवेकी लोग भी —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "मोह्यन्ते मोहिताश्चैव मोहमेष्यन्ति चापरे ।\nतामुपैहि महाराज शरणं परमेश्वरीम्॥",
+      "roman": "mohyante mohitaashchaiva mohameshyanti chaapare |\ntaamupaihi mahaaraaja sharanam parameshvareem ||",
+      "arth": "मोहित किए जाते हैं, मोहित हुए हैं और आगे भी मोह में पड़ेंगे। हे महाराज, उन्हीं परमेश्वरी की शरण में जाओ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "आराधिता सैव नृणां भोगस्वर्गापवर्गदा॥",
+      "roman": "aaraadhitaa saiva nrinaam bhogasvargaapavargadaa ||",
+      "arth": "आराधना करने पर वही मनुष्यों को भोग, स्वर्ग और मोक्ष देती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "मार्कण्डेय उवाच॥",
+      "roman": "maarkandeya uvaacha ||",
+      "arth": "मार्कण्डेय ऋषि बोले —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "इति तस्य वचः श्रुत्वा सुरथः स नराधिपः॥",
+      "roman": "iti tasya vachah shrutvaa surathah sa naraadhipah ||",
+      "arth": "मेधा ऋषि की यह बात सुनकर राजा सुरथ ने —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "प्रणिपत्य महाभागं तमृषिं संशितव्रतम् ।\nनिर्विण्णोऽतिममत्वेन राज्यापहरणेन च॥",
+      "roman": "pranipatya mahaabhaagam tamrishim samshitavratam |\nnirvinno'timamatvena raajyaapaharanena cha ||",
+      "arth": "कठोर व्रत वाले उन महाभाग ऋषि को प्रणाम किया। अत्यधिक ममता और राज्य छिन जाने से वे विरक्त हो गए थे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "जगाम सद्यस्तपसे स च वैश्यो महामुने ।\nसन्दर्शनार्थमम्बाया नदीपुलिनमास्थितः॥",
+      "roman": "jagaama sadyastapase sa cha vaishyo mahaamune |\nsandarshanaarthamambaayaa nadeepulinamaasthitah ||",
+      "arth": "हे महामुनि, वे और वह वैश्य तुरंत तपस्या के लिए चले गए, और माता जगदम्बा के दर्शन के लिए नदी के तट पर रहने लगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "स च वैश्यस्तपस्तेपे देवीसूक्तं परं जपन् ।\nतौ तस्मिन् पुलिने देव्याः कृत्वा मूर्तिं महीमयीम्॥",
+      "roman": "sa cha vaishyastapastepe deveesooktam param japan |\ntau tasmin puline devyaah kritvaa moortim maheemayeem ||",
+      "arth": "वह वैश्य उत्तम देवी सूक्त का जप करते हुए तप करने लगा। उन दोनों ने उस तट पर देवी की मिट्टी की मूर्ति बनाकर —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "अर्हणां चक्रतुस्तस्याः पुष्पधूपाग्नितर्पणैः ।\nनिराहारौ यतात्मानौ तन्मनस्कौ समाहितौ॥",
+      "roman": "arhanaam chakratustasyaah pushpadhoopaagnitarpanaih |\nniraahaarau yataatmaanau tanmanaskau samaahitau ||",
+      "arth": "फूल, धूप, अग्नि (हवन) और तर्पण से उनकी पूजा की। वे निराहार रहकर, मन को वश में करके, देवी में ही मन लगाकर एकाग्र रहे —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "ददतुस्तौ बलिं चैव निजगात्रासृगुक्षितम् ।\nएवं समाराधयतोस्त्रिभिर्वर्षैर्यतात्मनोः॥",
+      "roman": "dadatustau balim chaiva nijagaatraasrigukshitam |\nevam samaaraadhayatostribhirvarshairyataatmanoh ||",
+      "arth": "और अपने शरीर के ख़ून से सींची हुई बलि भी दी। इस तरह संयम से आराधना करते हुए तीन वर्ष बीतने पर —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "परितुष्टा जगद्धात्री प्रत्यक्षं प्राह चण्डिका॥",
+      "roman": "paritushtaa jagaddhaatree pratyaksham praaha chandikaa ||",
+      "arth": "जगत को धारण करने वाली चण्डिका ने प्रसन्न होकर प्रत्यक्ष दर्शन दिए और कहा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "देव्युवाच॥",
+      "roman": "devyuvaacha ||",
+      "arth": "देवी बोलीं —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "यत्प्रार्थ्यते त्वया भूप त्वया च कुलनन्दन ।\nमत्तस्तत्प्राप्यतां सर्वं परितुष्टा ददामिते॥",
+      "roman": "yatpraarthyate tvayaa bhoopa tvayaa cha kulanandana |\nmattastatpraapyataam sarvam paritushtaa dadaamite ||",
+      "arth": "हे राजन, और हे कुल को आनंद देने वाले वैश्य, तुम दोनों जो माँगते हो, वह सब मुझसे पा लो। मैं प्रसन्न होकर तुम्हें देती हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "मार्कण्डेय उवाच॥",
+      "roman": "maarkandeya uvaacha ||",
+      "arth": "मार्कण्डेय ऋषि बोले —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "ततो वव्रे नृपो राज्यमविभ्रंश्यन्यजन्मनि ।\nअत्रैव च निजं राज्यं हतशत्रुबलं बलात्॥",
+      "roman": "tato vavre nripo raajyamavibhramshyanyajanmani |\natraiva cha nijam raajyam hatashatrubalam balaat ||",
+      "arth": "तब राजा ने अगले जन्म में कभी नष्ट न होने वाला राज्य माँगा, और इसी जन्म में शत्रुओं की सेना को बलपूर्वक नष्ट करके अपना राज्य भी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "सोऽपि वैश्यस्ततो ज्ञानं वव्रे निर्विण्णमानसः ।\nममेत्यहमिति प्राज्ञः सङ्गविच्युतिकारकम्॥",
+      "roman": "so'pi vaishyastato jnaanam vavre nirvinnamaanasah |\nmametyahamiti praajnah sangavichyutikaarakam ||",
+      "arth": "विरक्त मन वाले उस बुद्धिमान वैश्य ने ऐसा ज्ञान माँगा जो \"मैं\" और \"मेरा\" के बंधन को छुड़ा दे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "देव्युवाच॥",
+      "roman": "devyuvaacha ||",
+      "arth": "देवी बोलीं —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "स्वल्पैरहोभिर्नृपते स्वं राज्यं प्राप्स्यते भवान्॥",
+      "roman": "svalpairahobhirnripate svam raajyam praapsyate bhavaan ||",
+      "arth": "हे राजन, थोड़े ही दिनों में तुम अपना राज्य पा लोगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "हत्वा रिपूनस्खलितं तव तत्र भविष्यति॥",
+      "roman": "hatvaa ripoonaskhalitam tava tatra bhavishyati ||",
+      "arth": "शत्रुओं को मारकर वहाँ तुम्हारा राज्य अटल रहेगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "मृतश्च भूयः सम्प्राप्य जन्म देवाद्विवस्वतः॥",
+      "roman": "mritashcha bhooyah sampraapya janma devaadvivasvatah ||",
+      "arth": "और मृत्यु के बाद तुम फिर सूर्यदेव से जन्म लेकर —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "सावर्णिको मनुर्नाम भवान्भुवि भविष्यति॥",
+      "roman": "saavarniko manurnaama bhavaanbhuvi bhavishyati ||",
+      "arth": "पृथ्वी पर \"सावर्णिक मनु\" नाम से प्रसिद्ध होगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "वैश्यवर्य त्वया यश्च वरोऽस्मत्तोऽभिवाञ्छितः॥",
+      "roman": "vaishyavarya tvayaa yashcha varo'smatto'bhivaanchhitah ||",
+      "arth": "हे श्रेष्ठ वैश्य, तुमने मुझसे जो वर चाहा है —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २५",
+      "dev": "तं प्रयच्छामि संसिद्ध्यै तव ज्ञानं भविष्यति॥",
+      "roman": "tam prayachchhaami samsiddhyai tava jnaanam bhavishyati ||",
+      "arth": "वह मैं तुम्हें देती हूँ; तुम्हें मोक्ष के लिए ज्ञान प्राप्त होगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २६",
+      "dev": "मार्कण्डेय उवाच॥",
+      "roman": "maarkandeya uvaacha ||",
+      "arth": "मार्कण्डेय ऋषि बोले —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २७",
+      "dev": "इति दत्त्वा तयोर्देवी यथाभिलषितं वरम्॥",
+      "roman": "iti dattvaa tayordevee yathaabhilashitam varam ||",
+      "arth": "इस तरह उन दोनों को मनचाहा वर देकर —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २८",
+      "dev": "बभूवान्तर्हिता सद्यो भक्त्या ताभ्यामभिष्टुता ।\nएवं देव्या वरं लब्ध्वा सुरथः क्षत्रियर्षभः॥",
+      "roman": "babhoovaantarhitaa sadyo bhaktyaa taabhyaamabhishtutaa |\nevam devyaa varam labdhvaa surathah kshatriyarshabhah ||",
+      "arth": "उन दोनों की भक्तिपूर्ण स्तुति सुनकर देवी तुरंत अंतर्धान हो गईं। इस तरह देवी से वर पाकर क्षत्रियों में श्रेष्ठ सुरथ —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २९",
+      "dev": "सूर्याज्जन्म समासाद्य सावर्णिर्भविता मनुः॥",
+      "roman": "sooryaajjanma samaasaadya saavarnirbhavitaa manuh ||",
+      "arth": "सूर्य से जन्म लेकर सावर्णि मनु होंगे।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "मार्कण्डेय पुराण (अध्याय ८१–९३) — देवी माहात्म्य",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ एक जाँचे हुए छपे संस्करण से है, और मार्कण्डेय पुराण के दूसरे स्वतंत्र संस्करण से अक्षर-दर-अक्षर मिलाया गया है — लगभग ९९% अक्षर एक मिले। श्लोक-संख्या इसी संस्करण की है; छपी पुस्तकों में गिनती थोड़ी अलग हो सकती है।\n\n\"ऐं\", \"ह्रीं\", \"क्लीं\" बीजाक्षर हैं — कुछ परंपराओं में बीज-मंत्र गुरु से लेकर ही जपे जाते हैं; घर में इनके बिना भी पाठ होता है।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं; ग्रंथ के एक पुराने, सबके लिए खुले अनुवाद से श्लोक-दर-श्लोक मिलाया गया। कुछ श्लोक दो खंडों में बँटे हैं, तो उनका अर्थ अगले खंड में पूरा होता है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

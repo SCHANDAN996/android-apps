@@ -4,6 +4,9 @@ import '../theme.dart';
 import '../vidhi/parv.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
+import 'paath_screen.dart';
+import 'saptashati_screen.dart';
+import 'vrat_panna_screen.dart';
 
 /// कई दिनों के पर्व के संक्षिप्त और दिन-प्रतिदिन रास्ते।
 class ParvScreen extends StatefulWidget {
@@ -23,7 +26,9 @@ class ParvScreen extends StatefulWidget {
 }
 
 class _ParvScreenState extends State<ParvScreen> {
-  late bool _poorna = widget.aaj.aajKaDin != null;
+  // आज की पूजा ऊपर अपने अलग कार्ड में सीधे खुलती है। पूरी सूची अपने-आप
+  // खोलने पर वही दिन दोबारा दिखता और व्रत बहुत नीचे चला जाता था।
+  bool _poorna = false;
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +88,19 @@ class _ParvScreenState extends State<ParvScreen> {
                 sahayak: 'अष्टमी के अंतिम 24 और नवमी के पहले 24 मिनट',
               ),
             ],
+            if (widget.aaj.tippani != null) ...[
+              const SizedBox(height: VidhivatSpacing.md),
+              _TithiTippani(text: widget.aaj.tippani!),
+            ],
+            // 📖 "आज का पाठ" — संक्षिप्त/पूर्ण के **ऊपर**, जान-बूझकर।
+            //
+            // पाठ *पूजा नहीं है* (→ D-039): वह दोनों रास्तों के साथ चलता
+            // है — संक्षिप्त करने वाला भी करता है, नौ दिन वाला भी।
+            // इसलिए वह किसी एक रास्ते के अंदर नहीं, दोनों के ऊपर बैठता है।
+            const SizedBox(height: VidhivatSpacing.xxl),
+            const _AajKaPaath(),
+            const SizedBox(height: VidhivatSpacing.xl),
+            const _VratKaLink(),
             const SizedBox(height: VidhivatSpacing.xxl),
             const VidhivatSectionHeader(title: 'कैसे करना है'),
             const SizedBox(height: VidhivatSpacing.md),
@@ -104,17 +122,158 @@ class _ParvScreenState extends State<ParvScreen> {
                 rasta: widget.parv.sankshipt,
                 onVidhiKholo: widget.onVidhiKholo,
               ),
-            if (widget.aaj.tippani != null) ...[
-              const SizedBox(height: VidhivatSpacing.xl),
-              _TithiTippani(text: widget.aaj.tippani!),
-            ],
             const SizedBox(height: VidhivatSpacing.xl),
             const VidhivatSrotButton(
               label: 'यह पर्व कहाँ से आया',
-              panktiyan: [],
+              panktiyan: [
+                VidhivatSrotPankti(
+                  'नौ रूपों के नाम',
+                  'देवी कवच के श्लोक 3–5 में शैलपुत्री से सिद्धिदात्री तक '
+                      'नवदुर्गा के नौ नाम इसी क्रम में आते हैं।',
+                ),
+                VidhivatSrotPankti(
+                  'नवरात्रि का मुख्य पाठ',
+                  'दुर्गा सप्तशती अर्थात देवी माहात्म्य के तेरह अध्याय ऐप '
+                      'में पूरे हैं। पारंपरिक पाठ-क्रम में साथ पढ़े जाने वाले '
+                      'कवच, अर्गला और कीलक भी अलग पूरे दिए गए हैं।',
+                ),
+                VidhivatSrotPankti(
+                  'तारीख और समय',
+                  'ऐप आपके शहर के सूर्योदय और तिथि-व्याप्ति से दिन निकालता '
+                      'है। घटस्थापना, संधि पूजा और विजयादशमी के समय भी इसी '
+                      'स्थानीय पंचांग-गणना से आते हैं।',
+                ),
+                VidhivatSrotPankti(
+                  'घर की पूजा-विधि',
+                  'कलश, जवारे, दीप, भोग और कन्या-पूजन का क्रम सरल घरेलू '
+                      'पद्धति है। आपके घर या क्षेत्र की परंपरा अलग हो तो वही '
+                      'मानें।',
+                ),
+              ],
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+/// नवरात्रि का पाठ — पूरी दुर्गा सप्तशती, और समय कम हो तो सप्तश्लोकी।
+///
+/// ## पहले यहाँ क्या था
+/// *"वह पूरी ऐप में नहीं है; अपनी पुस्तिका से पढ़िए।"* — डेवलपर ने साफ़
+/// कहा कि पूरा पाठ ऐप में चाहिए। अब तेरह अध्याय, कवच, अर्गला और कीलक
+/// सब ऐप में हैं, अपने पन्ने पर (→ D-084)।
+class _AajKaPaath extends StatelessWidget {
+  const _AajKaPaath();
+
+  @override
+  Widget build(BuildContext context) {
+    final type = VidhivatTheme.typographyOf(context);
+    final colors = VidhivatTheme.colorsOf(context);
+
+    return VidhivatSurfaceCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.menu_book_outlined, color: colors.primary),
+              const SizedBox(width: VidhivatSpacing.sm),
+              Expanded(
+                child: Text('नवरात्रि का पाठ', style: type.sectionTitle),
+              ),
+            ],
+          ),
+          const SizedBox(height: VidhivatSpacing.xs),
+          Text(
+            'नवरात्रि में दुर्गा सप्तशती का पाठ किया जाता है — कवच, अर्गला, '
+            'कीलक और तेरह अध्याय। पूरा पाठ ऐप में है, और जहाँ छोड़ेंगे वहीं '
+            'से आगे खुलेगा। अध्यायों को नौ दिनों में बाँटने के अलग-अलग चलन '
+            'हैं; ऐप कोई एक बँटवारा अनिवार्य नहीं बताता।\n\n'
+            'समय कम हो तो सप्तश्लोकी दुर्गा — सात श्लोक, पाँच मिनट।',
+            style: type.bodyMedium,
+            textAlign: TextAlign.justify,
+          ),
+          const SizedBox(height: VidhivatSpacing.md),
+          VidhivatButton(
+            label: 'दुर्गा सप्तशती पढ़ें',
+            semanticLabel: 'दुर्गा सप्तशती का पाठ खोलें',
+            icon: Icons.menu_book_outlined,
+            fullWidth: true,
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const SaptashatiScreen()),
+            ),
+          ),
+          const SizedBox(height: VidhivatSpacing.sm),
+          VidhivatButton(
+            label: 'सप्तश्लोकी दुर्गा पढ़ें',
+            semanticLabel: 'सप्तश्लोकी दुर्गा का पाठ खोलें',
+            icon: Icons.timer_outlined,
+            variant: VidhivatButtonVariant.secondary,
+            fullWidth: true,
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const PaathScreen(id: 'saptashloki_durga'),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// नवरात्रि का व्रत — पन्ना पहले से बना है, रास्ता नहीं था।
+///
+/// पूजा और व्रत दो अलग चीज़ें हैं (→ D-075): पूजा एक बैठक का काम है,
+/// व्रत पूरे दिन का नियम। इसलिए व्रत की बात पूजा के कदमों में नहीं
+/// घुसाई गई — पर नवरात्रि में व्रत रखने वाला आदमी इसी पन्ने पर खड़ा
+/// होता है, और उसे नियम, भोजन, पारण और कथा तक पहुँचने का एक दरवाज़ा
+/// चाहिए।
+class _VratKaLink extends StatelessWidget {
+  const _VratKaLink();
+
+  @override
+  Widget build(BuildContext context) {
+    final type = VidhivatTheme.typographyOf(context);
+    final colors = VidhivatTheme.colorsOf(context);
+
+    return VidhivatSurfaceCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.spa_outlined, color: colors.primary),
+              const SizedBox(width: VidhivatSpacing.sm),
+              Expanded(
+                child: Text('नवरात्रि का व्रत', style: type.sectionTitle),
+              ),
+            ],
+          ),
+          const SizedBox(height: VidhivatSpacing.xs),
+          Text(
+            'व्रत रख रहे हैं तो उसके नियम, भोजन, पारण और कथा अलग पन्ने '
+            'पर हैं। ऐप निर्जल व्रत का सुझाव कभी नहीं देता — अपनी सेहत '
+            'सबसे ऊपर रखें।',
+            style: type.bodyMedium,
+            textAlign: TextAlign.justify,
+          ),
+          const SizedBox(height: VidhivatSpacing.md),
+          VidhivatButton(
+            label: 'व्रत का पन्ना खोलें',
+            semanticLabel: 'नवरात्रि व्रत का पन्ना खोलें',
+            icon: Icons.menu_book_outlined,
+            variant: VidhivatButtonVariant.secondary,
+            fullWidth: true,
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const VratPannaScreen(id: 'navratri'),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -290,17 +449,24 @@ class _RastaChunav extends StatelessWidget {
             key: const Key('parv_sankshipt_rasta'),
             shirshak: 'संक्षिप्त पूजा',
             vivaran: '${parv.sankshipt.samayMinute} मिनट · एक ही बैठक',
+            artworkAsset:
+                'assets/images/devotional/navratri_sankshipt_rasta_v1.webp',
+            artworkLabel: 'पूजा थाली, दीप और पुष्पों का सजावटी चित्र',
             selected: !poorna,
             onTap: () => onBadlo(false),
           );
           final poora = _RastaCard(
             key: const Key('parv_poorna_rasta'),
-            shirshak: 'पूर्ण नवरात्रि',
+            shirshak: 'पूर्ण पूजा',
             vivaran: '${aaj.kulDin} दिन · रोज़ थोड़ा-थोड़ा',
+            artworkAsset:
+                'assets/images/devotional/navratri_poorna_rasta_v1.webp',
+            artworkLabel:
+                'नवरात्रि कलश, जवारे, अखंड दीप और पुष्पों का सजावटी चित्र',
             selected: poorna,
             onTap: () => onBadlo(true),
           );
-          if (constraints.maxWidth < 360) {
+          if (constraints.maxWidth < 240) {
             return Column(
               children: [
                 sankshipt,
@@ -309,13 +475,15 @@ class _RastaChunav extends StatelessWidget {
               ],
             );
           }
-          return Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(child: sankshipt),
-              const SizedBox(width: VidhivatSpacing.sm),
-              Expanded(child: poora),
-            ],
+          return IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(child: sankshipt),
+                const SizedBox(width: VidhivatSpacing.sm),
+                Expanded(child: poora),
+              ],
+            ),
           );
         },
       );
@@ -324,6 +492,8 @@ class _RastaChunav extends StatelessWidget {
 class _RastaCard extends StatelessWidget {
   final String shirshak;
   final String vivaran;
+  final String artworkAsset;
+  final String artworkLabel;
   final bool selected;
   final VoidCallback onTap;
 
@@ -331,6 +501,8 @@ class _RastaCard extends StatelessWidget {
     super.key,
     required this.shirshak,
     required this.vivaran,
+    required this.artworkAsset,
+    required this.artworkLabel,
     required this.selected,
     required this.onTap,
   });
@@ -338,17 +510,62 @@ class _RastaCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final type = VidhivatTheme.typographyOf(context);
+    final colors = VidhivatTheme.colorsOf(context);
     return VidhivatSurfaceCard(
       variant: VidhivatCardVariant.selectable,
       selected: selected,
       onTap: onTap,
       semanticLabel: '$shirshak चुनें। $vivaran',
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(shirshak, style: type.cardTitle),
-          const SizedBox(height: VidhivatSpacing.xs),
-          Text(vivaran, style: type.bodySmall),
+          Semantics(
+            image: true,
+            label: artworkLabel,
+            child: ExcludeSemantics(
+              child: SizedBox(
+                height: 108,
+                child: Image.asset(
+                  artworkAsset,
+                  fit: BoxFit.contain,
+                  cacheHeight: 324,
+                  errorBuilder: (_, __, ___) => const Icon(
+                    Icons.auto_awesome_outlined,
+                    size: 48,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: VidhivatSpacing.sm),
+          Text(
+            shirshak,
+            style: type.cardTitle,
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+          const SizedBox(height: VidhivatSpacing.xxs),
+          Text(
+            vivaran,
+            style: type.bodySmall,
+            textAlign: TextAlign.center,
+          ),
+          if (selected) ...[
+            const SizedBox(height: VidhivatSpacing.xs),
+            Wrap(
+              alignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: VidhivatSpacing.xxs,
+              children: [
+                Icon(Icons.check_circle, size: 17, color: colors.primary),
+                Text(
+                  'चुना हुआ',
+                  style: type.caption.copyWith(color: colors.primary),
+                ),
+              ],
+            ),
+          ],
         ],
       ),
     );
@@ -429,6 +646,8 @@ class _DinCard extends StatelessWidget {
     final beetGaya = aaj.aajKaDin != null && din.ank < aaj.aajKaDin!;
     final milaHua = aaj.mileHueDin.contains(din.ank);
     final uplabdh = din.vidhiId != null;
+    final tarikhein = aaj.dinTarikhein[din.ank] ?? const <DateTime>[];
+    final tarikhLikhi = tarikhein.map(tarikhChhoti).join(' / ');
 
     return Opacity(
       opacity: beetGaya ? 0.72 : 1,
@@ -438,13 +657,174 @@ class _DinCard extends StatelessWidget {
             ? VidhivatCardVariant.highlight
             : VidhivatCardVariant.standard,
         onTap: uplabdh ? () => onVidhiKholo(din.vidhiId!) : null,
-        semanticLabel: 'दिन ${din.ank}, ${din.shirshak}, ${din.tithiNaam}, '
+        semanticLabel: 'दिन ${din.ank}, ${din.shirshak}, ${din.tithiNaam}'
+            '${tarikhLikhi.isEmpty ? '' : ', $tarikhLikhi'}, '
             '${din.ekLine}, ${din.samayMinute} मिनट'
             '${uplabdh ? ', पूजा खोलें' : ', विधि अभी नहीं'}',
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            VidhivatStatusChip(
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _DinArtwork(
+                  din: din,
+                  beetGaya: beetGaya,
+                  aajHai: aajHai,
+                ),
+                const SizedBox(width: VidhivatSpacing.md),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (din.ank == 10)
+                        const VidhivatStatusChip(
+                          label: 'समापन',
+                          tone: VidhivatStatusTone.success,
+                        ),
+                      if (din.ank == 10)
+                        const SizedBox(height: VidhivatSpacing.xs),
+                      Text(
+                        din.ank == 10 ? din.shirshak : 'माँ ${din.shirshak}',
+                        style: type.cardTitle,
+                      ),
+                      const SizedBox(height: VidhivatSpacing.xxs),
+                      Text(
+                        din.tithiNaam,
+                        style: type.label.copyWith(color: colors.primary),
+                      ),
+                      if (tarikhLikhi.isNotEmpty) ...[
+                        const SizedBox(height: VidhivatSpacing.xxs),
+                        Text(
+                          tarikhLikhi,
+                          style: type.bodySmall.copyWith(
+                            color: colors.textSecondary,
+                          ),
+                        ),
+                      ],
+                      const SizedBox(height: VidhivatSpacing.xs),
+                      Text(din.ekLine, style: type.bodyMedium),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: VidhivatSpacing.md),
+            Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: VidhivatSpacing.sm,
+                vertical: VidhivatSpacing.xs,
+              ),
+              decoration: BoxDecoration(
+                color: colors.primary.withValues(alpha: 0.07),
+                borderRadius: BorderRadius.circular(14),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(
+                    Icons.restaurant_outlined,
+                    size: 18,
+                    color: colors.primary,
+                  ),
+                  const SizedBox(width: VidhivatSpacing.xs),
+                  Expanded(
+                    child: Text(
+                      'प्रचलित भोग · ${din.bhog}',
+                      style: type.bodySmall,
+                    ),
+                  ),
+                  const SizedBox(width: VidhivatSpacing.sm),
+                  Icon(
+                    Icons.schedule_outlined,
+                    size: 18,
+                    color: colors.textSecondary,
+                  ),
+                  const SizedBox(width: VidhivatSpacing.xxs),
+                  Text('${din.samayMinute} मिनट', style: type.caption),
+                ],
+              ),
+            ),
+            if (aajHai || !uplabdh || milaHua) ...[
+              const SizedBox(height: VidhivatSpacing.sm),
+              Wrap(
+                spacing: VidhivatSpacing.xs,
+                runSpacing: VidhivatSpacing.xs,
+                children: [
+                  if (aajHai)
+                    const VidhivatStatusChip(
+                      label: 'आज',
+                      tone: VidhivatStatusTone.primary,
+                      selected: true,
+                    ),
+                  if (!uplabdh)
+                    const VidhivatStatusChip(label: 'विधि अभी नहीं'),
+                  if (milaHua)
+                    const VidhivatStatusChip(
+                      label: 'इस साल एक साथ',
+                      tone: VidhivatStatusTone.info,
+                    ),
+                ],
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _DinArtwork extends StatelessWidget {
+  final ParvDin din;
+  final bool beetGaya;
+  final bool aajHai;
+
+  const _DinArtwork({
+    required this.din,
+    required this.beetGaya,
+    required this.aajHai,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = VidhivatTheme.colorsOf(context);
+    return SizedBox(
+      width: 116,
+      height: 144,
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          Positioned.fill(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: colors.primary.withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(18),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(VidhivatSpacing.xs),
+                child: Semantics(
+                  image: true,
+                  label: din.artworkLabel,
+                  child: ExcludeSemantics(
+                    child: Image.asset(
+                      din.artworkAsset,
+                      fit: BoxFit.contain,
+                      cacheHeight: 432,
+                      errorBuilder: (_, __, ___) => Icon(
+                        Icons.auto_awesome_outlined,
+                        size: 44,
+                        color: colors.primary,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            left: -4,
+            top: -4,
+            child: VidhivatStatusChip(
               label: '${din.ank}',
               tone: beetGaya
                   ? VidhivatStatusTone.success
@@ -452,45 +832,8 @@ class _DinCard extends StatelessWidget {
               icon: beetGaya ? Icons.check : null,
               selected: aajHai,
             ),
-            const SizedBox(width: VidhivatSpacing.sm),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(din.shirshak, style: type.cardTitle),
-                  const SizedBox(height: VidhivatSpacing.xxs),
-                  Text(
-                    '${din.tithiNaam} · भोग: ${din.bhog}',
-                    style: type.bodySmall.copyWith(color: colors.textSecondary),
-                  ),
-                  const SizedBox(height: VidhivatSpacing.xs),
-                  Text(din.ekLine, style: type.bodyMedium),
-                  const SizedBox(height: VidhivatSpacing.sm),
-                  Wrap(
-                    spacing: VidhivatSpacing.xs,
-                    runSpacing: VidhivatSpacing.xs,
-                    children: [
-                      Text('${din.samayMinute} मिनट', style: type.caption),
-                      if (aajHai)
-                        const VidhivatStatusChip(
-                          label: 'आज',
-                          tone: VidhivatStatusTone.primary,
-                          selected: true,
-                        ),
-                      if (!uplabdh)
-                        const VidhivatStatusChip(label: 'विधि अभी नहीं'),
-                      if (milaHua)
-                        const VidhivatStatusChip(
-                          label: 'इस साल एक साथ',
-                          tone: VidhivatStatusTone.info,
-                        ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

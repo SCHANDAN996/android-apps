@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "id": "gita_08",
+  "naam": "अध्याय ८ — अक्षरब्रह्मयोग",
+  "upnaam": [
+    "श्रीमद्भगवद्गीता अध्याय ८",
+    "गीता अध्याय ८",
+    "अक्षरब्रह्मयोगो नामाष्टमोऽध्यायः"
+  ],
+  "prakar": "granth",
+  "devta": "श्रीकृष्ण",
+  "rachnakar": "महर्षि वेदव्यास — महाभारत",
+  "bhasha": "संस्कृत",
+  "parichay": "ब्रह्म, अध्यात्म, कर्म आदि पर अर्जुन के प्रश्नों के उत्तर। अन्त समय में जिसका स्मरण रहता है, मनुष्य उसी को पाता है — इसलिए हर समय स्मरण भी और कर्म भी। फिर ब्रह्मा के दिन-रात और जाने के दो रास्ते।",
+  "kabPadhein": "किसी भी दिन, किसी भी समय। बहुत घरों में रोज़ थोड़ा-थोड़ा पढ़ने का चलन है। मार्गशीर्ष शुक्ल एकादशी (मोक्षदा एकादशी) को गीता जयंती मनाई जाती है।",
+  "kaisePadhein": "शान्त जगह बैठकर पढ़ें। पूरा पाठ एक बैठक में न हो तो रोज़ एक अध्याय या कुछ श्लोक पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है।\n\nहर अध्याय के अन्त में उसका समापन-वाक्य दिया है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "श्लोक १",
+      "dev": "अर्जुन उवाच\nकिं तद्ब्रह्म किमध्यात्मं किं कर्म पुरुषोत्तम ।\nअधिभूतं च किं प्रोक्तमधिदैवं किमुच्यते॥",
+      "roman": "arjuna uvaacha\nkim tadbrahma kimadhyaatmam kim karma purushottama |\nadhibhootam cha kim proktamadhidaivam kimuchyate ||",
+      "arth": "अर्जुन बोले — हे पुरुषोत्तम! वह ब्रह्म क्या है? अध्यात्म क्या है? कर्म क्या है? अधिभूत किसे कहा गया है, और अधिदैव किसे कहते हैं?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "अधियज्ञः कथं कोऽत्र देहेऽस्मिन्मधुसूदन ।\nप्रयाणकाले च कथं ज्ञेयोऽसि नियतात्मभिः॥",
+      "roman": "adhiyajnah katham ko'tra dehe'sminmadhusoodana |\nprayaanakaale cha katham jneyo'si niyataatmabhih ||",
+      "arth": "हे मधुसूदन! इस शरीर में अधियज्ञ कौन है और कैसे है? और अपने को वश में रखने वाले लोग अन्त समय में आपको कैसे जानते हैं?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "श्रीभगवानुवाच\nअक्षरं ब्रह्म परमं स्वभावोऽध्यात्ममुच्यते ।\nभूतभावोद्भवकरो विसर्गः कर्मसंज्ञितः॥",
+      "roman": "shreebhagavaanuvaacha\naksharam brahma paramam svabhaavo'dhyaatmamuchyate |\nbhootabhaavodbhavakaro visargah karmasamjnitah ||",
+      "arth": "श्रीभगवान बोले — परम अविनाशी तत्त्व ब्रह्म है। अपना स्वभाव अध्यात्म कहलाता है। प्राणियों की उत्पत्ति और बढ़त करने वाला जो विसर्ग (रचने की क्रिया) है, उसका नाम कर्म है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "अधिभूतं क्षरो भावः पुरुषश्चाधिदैवतम् ।\nअधियज्ञोऽहमेवात्र देहे देहभृतां वर॥",
+      "roman": "adhibhootam ksharo bhaavah purushashchaadhidaivatam |\nadhiyajno'hamevaatra dehe dehabhritaam vara ||",
+      "arth": "नाश होने वाला पदार्थ अधिभूत है, और पुरुष अधिदैव है। हे देहधारियों में श्रेष्ठ! इस शरीर में अधियज्ञ मैं ही हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "अन्तकाले च मामेव स्मरन्मुक्त्वा कलेवरम् ।\nयः प्रयाति स मद्भावं याति नास्त्यत्र संशयः॥",
+      "roman": "antakaale cha maameva smaranmuktvaa kalevaram |\nyah prayaati sa madbhaavam yaati naastyatra samshayah ||",
+      "arth": "जो अन्त समय में मुझे ही याद करता हुआ शरीर छोड़कर जाता है, वह मेरे स्वरूप को पाता है — इसमें कोई संशय नहीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "यं यं वापि स्मरन्भावं त्यजत्यन्ते कलेवरम् ।\nतं तमेवैति कौन्तेय सदा तद्भावभावितः॥",
+      "roman": "yam yam vaapi smaranbhaavam tyajatyante kalevaram |\ntam tamevaiti kaunteya sadaa tadbhaavabhaavitah ||",
+      "arth": "हे कुन्ती-पुत्र! मनुष्य अन्त में जिस-जिस भाव को याद करता हुआ शरीर छोड़ता है, सदा उसी भाव में रमे रहने के कारण वह उसी को पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "तस्मात्सर्वेषु कालेषु मामनुस्मर युध्य च ।\nमय्यर्पितमनोबुद्धिर्मामेवैष्यस्यसंशयम्॥",
+      "roman": "tasmaatsarveshu kaaleshu maamanusmara yudhya cha |\nmayyarpitamanobuddhirmaamevaishyasyasamshayam ||",
+      "arth": "इसलिए हर समय मुझे याद करते रहो और युद्ध भी करो। मन और बुद्धि मुझे सौंप देने पर तुम बिना संशय के मुझे ही पाओगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "अभ्यासयोगयुक्तेन चेतसा नान्यगामिना ।\nपरमं पुरुषं दिव्यं याति पार्थानुचिन्तयन्॥",
+      "roman": "abhyaasayogayuktena chetasaa naanyagaaminaa |\nparamam purusham divyam yaati paarthaanuchintayan ||",
+      "arth": "हे पार्थ! अभ्यास रूपी योग में लगे, कहीं और न जाने वाले चित्त से लगातार चिन्तन करता हुआ मनुष्य उस दिव्य परम पुरुष को पा लेता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "कविं पुराणमनुशासितार-\nमणोरणीयांसमनुस्मरेद्यः ।\nसर्वस्य धातारमचिन्त्यरूप-\nमादित्यवर्णं तमसः परस्तात्॥",
+      "roman": "kavim puraanamanushaasitaara-\nmanoraneeyaamsamanusmaredyah |\nsarvasya dhaataaramachintyaroopa-\nmaadityavarnam tamasah parastaat ||",
+      "arth": "जो सब कुछ जानने वाला, पुरातन, सबका शासन करने वाला, सूक्ष्म से भी सूक्ष्म, सबको धारण करने वाला, सोच से परे रूप वाला, सूर्य जैसे रंग वाला और अँधेरे से परे है — जो उसका स्मरण करता है,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "प्रयाणकाले मनसाऽचलेन\nभक्त्या युक्तो योगबलेन चैव ।\nभ्रुवोर्मध्ये प्राणमावेश्य सम्यक्\nस तं परं पुरुषमुपैति दिव्यम्॥",
+      "roman": "prayaanakaale manasaa'chalena\nbhaktyaa yukto yogabalena chaiva |\nbhruvormadhye praanamaaveshya samyak\nsa tam param purushamupaiti divyam ||",
+      "arth": "वह अन्त समय में अचल मन से, भक्ति और योग के बल से जुड़कर, प्राण को भौंहों के बीच अच्छी तरह टिकाकर, उस दिव्य परम पुरुष को पा लेता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "यदक्षरं वेदविदो वदन्ति\nविशन्ति यद्यतयो वीतरागाः ।\nयदिच्छन्तो ब्रह्मचर्यं चरन्ति\nतत्ते पदं सङ्ग्रहेण प्रवक्ष्ये॥",
+      "roman": "yadaksharam vedavido vadanti\nvishanti yadyatayo veetaraagaah |\nyadichchhanto brahmacharyam charanti\ntatte padam sangrahena pravakshye ||",
+      "arth": "वेद जानने वाले जिसे अविनाशी कहते हैं, आसक्ति से रहित यत्नशील संन्यासी जिसमें प्रवेश करते हैं, और जिसे चाहने वाले ब्रह्मचर्य का पालन करते हैं — वह पद मैं तुम्हें संक्षेप में बताऊँगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "सर्वद्वाराणि संयम्य मनो हृदि निरुध्य च ।\nमूर्ध्न्याधायात्मनः प्राणमास्थितो योगधारणाम्॥",
+      "roman": "sarvadvaaraani samyamya mano hridi nirudhya cha |\nmoordhnyaadhaayaatmanah praanamaasthito yogadhaaranaam ||",
+      "arth": "सब द्वारों (इन्द्रियों) को रोककर, मन को हृदय में ठहराकर, अपने प्राण को सिर में टिकाकर, योग की धारणा में स्थित होकर —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "ओमित्येकाक्षरं ब्रह्म व्याहरन्मामनुस्मरन् ।\nयः प्रयाति त्यजन्देहं स याति परमां गतिम्॥",
+      "roman": "omityekaaksharam brahma vyaaharanmaamanusmaran |\nyah prayaati tyajandeham sa yaati paramaam gatim ||",
+      "arth": "— जो ओम् इस एक अक्षर रूपी ब्रह्म का उच्चारण करता हुआ और मुझे याद करता हुआ शरीर छोड़कर जाता है, वह परम गति पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "अनन्यचेताः सततं यो मां स्मरति नित्यशः ।\nतस्याहं सुलभः पार्थ नित्ययुक्तस्य योगिनः॥",
+      "roman": "ananyachetaah satatam yo maam smarati nityashah |\ntasyaaham sulabhah paartha nityayuktasya yoginah ||",
+      "arth": "हे पार्थ! जो दूसरे में मन न लगाकर सदा, लगातार मुझे याद करता है, उस सदा जुड़े हुए योगी के लिए मैं सुलभ हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "मामुपेत्य पुनर्जन्म दुःखालयमशाश्वतम् ।\nनाप्नुवन्ति महात्मानः संसिद्धिं परमां गताः॥",
+      "roman": "maamupetya punarjanma duhkhaalayamashaashvatam |\nnaapnuvanti mahaatmaanah samsiddhim paramaam gataah ||",
+      "arth": "परम सिद्धि को पहुँचे महात्मा लोग मुझे पाकर फिर उस जन्म को नहीं पाते, जो दुखों का घर और नाशवान है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "आब्रह्मभुवनाल्लोकाः पुनरावर्तिनोऽर्जुन ।\nमामुपेत्य तु कौन्तेय पुनर्जन्म न विद्यते॥",
+      "roman": "aabrahmabhuvanaallokaah punaraavartino'rjuna |\nmaamupetya tu kaunteya punarjanma na vidyate ||",
+      "arth": "हे अर्जुन! ब्रह्मा के लोक तक सारे लोक लौट-लौटकर आने वाले हैं। पर हे कुन्ती-पुत्र! मुझे पा लेने पर फिर जन्म नहीं होता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "सहस्रयुगपर्यन्तमहर्यद्ब्रह्मणो विदुः ।\nरात्रिं युगसहस्रान्तां तेऽहोरात्रविदो जनाः॥",
+      "roman": "sahasrayugaparyantamaharyadbrahmano viduh |\nraatrim yugasahasraantaam te'horaatravido janaah ||",
+      "arth": "जो लोग जानते हैं कि ब्रह्मा का एक दिन हज़ार युगों का होता है और रात भी हज़ार युगों की, वे ही दिन और रात को जानने वाले हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "अव्यक्ताद्व्यक्तयः सर्वाः प्रभवन्त्यहरागमे ।\nरात्र्यागमे प्रलीयन्ते तत्रैवाव्यक्तसंज्ञके॥",
+      "roman": "avyaktaadvyaktayah sarvaah prabhavantyaharaagame |\nraatryaagame praleeyante tatraivaavyaktasamjnake ||",
+      "arth": "दिन आने पर सारे प्रकट पदार्थ अप्रकट से पैदा होते हैं, और रात आने पर उसी अप्रकट नाम वाले में लीन हो जाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "भूतग्रामः स एवायं भूत्वा भूत्वा प्रलीयते ।\nरात्र्यागमेऽवशः पार्थ प्रभवत्यहरागमे॥",
+      "roman": "bhootagraamah sa evaayam bhootvaa bhootvaa praleeyate |\nraatryaagame'vashah paartha prabhavatyaharaagame ||",
+      "arth": "हे पार्थ! प्राणियों का वही यह समूह बार-बार पैदा होकर रात आने पर बेबस लीन हो जाता है, और दिन आने पर फिर पैदा हो जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "परस्तस्मात्तु भावोऽन्योऽव्यक्तोऽव्यक्तात्सनातनः ।\nयः स सर्वेषु भूतेषु नश्यत्सु न विनश्यति॥",
+      "roman": "parastasmaattu bhaavo'nyo'vyakto'vyaktaatsanaatanah |\nyah sa sarveshu bhooteshu nashyatsu na vinashyati ||",
+      "arth": "पर उस अप्रकट से भी परे एक दूसरा सनातन अप्रकट भाव है, जो सब प्राणियों के नष्ट होने पर भी नष्ट नहीं होता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "अव्यक्तोऽक्षर इत्युक्तस्तमाहुः परमां गतिम् ।\nयं प्राप्य न निवर्तन्ते तद्धाम परमं मम॥",
+      "roman": "avyakto'kshara ityuktastamaahuh paramaam gatim |\nyam praapya na nivartante taddhaama paramam mama ||",
+      "arth": "उसे अप्रकट और अविनाशी कहा गया है; उसी को परम गति कहते हैं। जिसे पाकर लौटना नहीं होता, वह मेरा परम धाम है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "पुरुषः स परः पार्थ भक्त्या लभ्यस्त्वनन्यया ।\nयस्यान्तःस्थानि भूतानि येन सर्वमिदं ततम्॥",
+      "roman": "purushah sa parah paartha bhaktyaa labhyastvananyayaa |\nyasyaantahsthaani bhootaani yena sarvamidam tatam ||",
+      "arth": "हे पार्थ! वह परम पुरुष, जिसके भीतर सारे प्राणी हैं और जिससे यह सब व्याप्त है, केवल अनन्य भक्ति से मिलता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "यत्र काले त्वनावृत्तिमावृत्तिं चैव योगिनः ।\nप्रयाता यान्ति तं कालं वक्ष्यामि भरतर्षभ॥",
+      "roman": "yatra kaale tvanaavrittimaavrittim chaiva yoginah |\nprayaataa yaanti tam kaalam vakshyaami bharatarshabha ||",
+      "arth": "हे भरतश्रेष्ठ! जिस काल में शरीर छोड़कर गए योगी लौटकर नहीं आते, और जिसमें गए हुए लौटते हैं — वह काल मैं बताऊँगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "अग्निर्ज्योतिरहः शुक्लः षण्मासा उत्तरायणम् ।\nतत्र प्रयाता गच्छन्ति ब्रह्म ब्रह्मविदो जनाः॥",
+      "roman": "agnirjyotirahah shuklah shanmaasaa uttaraayanam |\ntatra prayaataa gachchhanti brahma brahmavido janaah ||",
+      "arth": "अग्नि, ज्योति, दिन, शुक्ल पक्ष और उत्तरायण के छह महीने — इनमें जाने वाले ब्रह्म को जानने वाले लोग ब्रह्म को पाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २५",
+      "dev": "धूमो रात्रिस्तथा कृष्णः षण्मासा दक्षिणायनम् ।\nतत्र चान्द्रमसं ज्योतिर्योगी प्राप्य निवर्तते॥",
+      "roman": "dhoomo raatristathaa krishnah shanmaasaa dakshinaayanam |\ntatra chaandramasam jyotiryogee praapya nivartate ||",
+      "arth": "धुआँ, रात, कृष्ण पक्ष और दक्षिणायन के छह महीने — इनमें जाने वाला योगी चन्द्रमा की ज्योति पाकर लौट आता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २६",
+      "dev": "शुक्लकृष्णे गती ह्येते जगतः शाश्वते मते ।\nएकया यात्यनावृत्तिमन्ययावर्तते पुनः॥",
+      "roman": "shuklakrishne gatee hyete jagatah shaashvate mate |\nekayaa yaatyanaavrittimanyayaavartate punah ||",
+      "arth": "जगत के ये दो रास्ते — उजला और अँधेरा — सदा के माने गए हैं। एक से जाने वाला लौटता नहीं, दूसरे से जाने वाला फिर लौटता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २७",
+      "dev": "नैते सृती पार्थ जानन्योगी मुह्यति कश्चन ।\nतस्मात्सर्वेषु कालेषु योगयुक्तो भवार्जुन॥",
+      "roman": "naite sritee paartha jaananyogee muhyati kashchana |\ntasmaatsarveshu kaaleshu yogayukto bhavaarjuna ||",
+      "arth": "हे पार्थ! इन दोनों रास्तों को जानने वाला कोई भी योगी मोह में नहीं पड़ता। इसलिए हे अर्जुन! तुम हर समय योग में लगे रहो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २८",
+      "dev": "वेदेषु यज्ञेषु तपःसु चैव\nदानेषु यत्पुण्यफलं प्रदिष्टम् ।\nअत्येति तत्सर्वमिदं विदित्वा\nयोगी परं स्थानमुपैति चाद्यम्॥",
+      "roman": "vedeshu yajneshu tapahsu chaiva\ndaaneshu yatpunyaphalam pradishtam |\natyeti tatsarvamidam viditvaa\nyogee param sthaanamupaiti chaadyam ||",
+      "arth": "वेदों में, यज्ञों में, तपों में और दानों में जो पुण्य-फल बताया गया है, योगी यह सब जानकर उस सबसे आगे निकल जाता है और सबसे पहले वाले परम स्थान को पा लेता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "समापन",
+      "dev": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु\nब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे\nअक्षरब्रह्मयोगो नामाष्टमोऽध्यायः॥",
+      "roman": "om tatsaditi shreemadbhagavadgeetaasoopanishatsu\nbrahmavidyaayaam yogashaastre shreekrishnaarjunasamvaade\naksharabrahmayogo naamaashtamo'dhyaayah ||",
+      "arth": "इस तरह उपनिषद रूप श्रीमद्भगवद्गीता में, जो ब्रह्मविद्या और योगशास्त्र है, श्रीकृष्ण और अर्जुन के संवाद में \"अक्षरब्रह्मयोग\" नाम का आठवाँ अध्याय पूरा हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, भीष्म पर्व — श्रीमद्भगवद्गीता",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ पाँच अलग संस्करणों से श्लोक-दर-श्लोक मिलाया गया है। सात सौ में से पाँच सौ सतहत्तर श्लोक पाँचों में अक्षर-अक्षर एक मिले; बाक़ी में वही रूप लिया गया जिस पर अधिक संस्करण एक थे।\n\nश्लोक ७ के अन्त में कुछ पुस्तकों में \"असंशयः\" छपा है; अर्थ वही रहता है।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं। आचार्यों ने कई श्लोकों को अलग-अलग ढंग से समझाया है; यहाँ किसी एक मत की व्याख्या नहीं, सीधा अर्थ दिया गया है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

@@ -1,0 +1,460 @@
+{
+  "schemaVersion": 1,
+  "id": "saptashati_kavach",
+  "naam": "देवी कवच",
+  "upnaam": [
+    "दुर्गा सप्तशती — देवी कवच"
+  ],
+  "prakar": "stotra",
+  "devta": "दुर्गा माँ",
+  "rachnakar": "पारंपरिक — सप्तशती के अंग",
+  "bhasha": "संस्कृत",
+  "parichay": "सप्तशती के पाठ से पहले पढ़ा जाने वाला पहला अंग। ब्रह्मा जी मार्कण्डेय ऋषि को बताते हैं — नवदुर्गा के नौ नाम (\"प्रथमं शैलपुत्री च…\") इसी में हैं, और फिर देवी के अलग-अलग रूपों से शरीर के हर अंग की रक्षा की प्रार्थना।",
+  "kabPadhein": "सप्तशती के पाठ से पहले, इसी क्रम में — कवच, अर्गला, कीलक।",
+  "kaisePadhein": "सप्तशती का क्रम है: कवच, अर्गला और कीलक — फिर तेरह अध्याय। पूरा पाठ एक बैठक में न हो तो नौ दिन में बाँटकर कर सकते हैं; बहुत घरों में एक दिन में एक या कुछ अध्याय पढ़े जाते हैं।\n\nअध्याय के बीच में न रुकें — जहाँ तक पढ़ें, अध्याय पूरा करके रुकें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "विनियोग",
+      "dev": "अस्य श्रीचण्डीकवचस्य ब्रह्मा ऋषिः , अनुष्टुप् छन्दः ,\nचामुण्डा देवता , अङ्गन्यासोक्तमातरो बीजम् ,\nदिग्बन्धदेवतास्तत्त्वम् , श्रीजगदम्बाप्रीत्यर्थे जपे विनियोगः ।",
+      "roman": "asya shreechandeekavachasya brahmaa rishih anushtup chhandah \nchaamundaa devataa anganyaasoktamaataro beejam \ndigbandhadevataastattvam shreejagadambaapreetyarthe jape viniyogah |",
+      "arth": "इस श्री चण्डी कवच के ऋषि ब्रह्मा जी हैं, छंद अनुष्टुप् है, देवता चामुण्डा हैं, अंगन्यास में कही गई मातृ-शक्तियाँ बीज हैं, और दिशाओं को बाँधने वाले देवता तत्त्व हैं। श्री जगदम्बा की प्रसन्नता के लिए इसके जप में इसका विनियोग (उपयोग) है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १",
+      "dev": "ॐ नमश्चण्डिकायै ।\nॐ मार्कण्डेय उवाच ।\nॐ यद्गुह्यं परमं लोके सर्वरक्षाकरं नृणाम् ।\nयन्न कस्यचिदाख्यातं तन्मे ब्रूहि पितामह॥",
+      "roman": "om namashchandikaayai |\nom maarkandeya uvaacha |\nom yadguhyam paramam loke sarvarakshaakaram nrinaam |\nyanna kasyachidaakhyaatam tanme broohi pitaamaha ||",
+      "arth": "चण्डिका देवी को नमस्कार। मार्कण्डेय ऋषि बोले — हे पितामह, संसार में जो परम गुप्त है, मनुष्यों की हर तरह से रक्षा करने वाला है, और जो आपने अब तक किसी को नहीं बताया — वह मुझे बताइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "ब्रह्मोवाच ।\nअस्ति गुह्यतमं विप्र सर्वभूतोपकारकम् ।\nदेव्यास्तु कवचं पुण्यं तच्छृणुष्व महामुने॥",
+      "roman": "brahmovaacha |\nasti guhyatamam vipra sarvabhootopakaarakam |\ndevyaastu kavacham punyam tachchhrinushva mahaamune ||",
+      "arth": "ब्रह्मा जी बोले — हे ब्राह्मण, सब प्राणियों का उपकार करने वाला एक अत्यंत गुप्त, पवित्र देवी का कवच है। हे महामुनि, उसे सुनो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "प्रथमं शैलपुत्रीति द्वितीयं ब्रह्मचारिणी ।\nतृतीयं चन्द्रघण्टेति कूष्माण्डेति चतुर्थकम्॥",
+      "roman": "prathamam shailaputreeti dviteeyam brahmachaarinee |\ntriteeyam chandraghanteti kooshmaandeti chaturthakam ||",
+      "arth": "पहली शैलपुत्री, दूसरी ब्रह्मचारिणी, तीसरी चन्द्रघण्टा और चौथी कूष्माण्डा —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "पञ्चमं स्कन्दमातेति षष्ठं कात्यायनीति च ।\nसप्तमं कालरात्रिश्च महागौरीति चाष्टमम्॥",
+      "roman": "panchamam skandamaateti shashtham kaatyaayaneeti cha |\nsaptamam kaalaraatrishcha mahaagaureeti chaashtamam ||",
+      "arth": "पाँचवीं स्कन्दमाता, छठी कात्यायनी, सातवीं कालरात्रि और आठवीं महागौरी —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "नवमं सिद्धिदात्री च नवदुर्गाः प्रकीर्तिताः ।\nउक्तान्येतानि नामानि ब्रह्मणैव महात्मना॥",
+      "roman": "navamam siddhidaatree cha navadurgaah prakeertitaah |\nuktaanyetaani naamaani brahmanaiva mahaatmanaa ||",
+      "arth": "और नवीं सिद्धिदात्री — ये नवदुर्गा कही गई हैं। ये नाम स्वयं महात्मा ब्रह्मा जी ने ही बताए हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "अग्निना दह्यमानस्तु शत्रुमध्ये गतो रणे ।\nविषमे दुर्गे चैव भयार्ताः शरणं गताः॥",
+      "roman": "agninaa dahyamaanastu shatrumadhye gato rane |\nvishame durge chaiva bhayaartaah sharanam gataah ||",
+      "arth": "जो आग में जल रहा हो, युद्ध में शत्रुओं के बीच घिर गया हो, या कठिन संकट में फँसा हो — ऐसे भयभीत लोग जो देवी की शरण में जाते हैं —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "न तेषां जायते किञ्चिदशुभं रणसङ्कटे ।\nनापदं तस्य पश्यामि शोकदुःखभयं नहि॥",
+      "roman": "na teshaam jaayate kinchidashubham ranasankate |\nnaapadam tasya pashyaami shokaduhkhabhayam nahi ||",
+      "arth": "उनका युद्ध के संकट में भी कोई अशुभ नहीं होता। उन पर मैं कोई विपत्ति नहीं देखता, न उन्हें शोक, दुःख या भय होता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "यैस्तु भक्त्या स्मृता नूनं तेषां सिद्धिः प्रजायते ।\nये त्वां स्मरन्ति देवेशि रक्षसे तान्न संशयः । ८॥\nप्रेतसंस्था तु चामुण्डा वाराही महिषासना ।\nऐन्द्री गजसमारुढा वैष्णवी गरुडासना॥",
+      "roman": "yaistu bhaktyaa smritaa noonam teshaam siddhih prajaayate |\nye tvaam smaranti deveshi rakshase taanna samshayah | ||\npretasamsthaa tu chaamundaa vaaraahee mahishaasanaa |\naindree gajasamaarudhaa vaishnavee garudaasanaa ||",
+      "arth": "जिन्होंने भक्ति से देवी का स्मरण किया, उन्हें निश्चय ही सिद्धि मिलती है। हे देवेश्वरी, जो आपका स्मरण करते हैं, आप निःसंदेह उनकी रक्षा करती हैं। चामुण्डा प्रेत पर बैठती हैं, वाराही भैंसे पर, ऐन्द्री हाथी पर और वैष्णवी गरुड़ पर।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "माहेश्वरी वृषारुढा कौमारी शिखिवाहना ।\nलक्ष्मीः पद्मासना देवी पद्महस्ता हरिप्रिया॥",
+      "roman": "maaheshvaree vrishaarudhaa kaumaaree shikhivaahanaa |\nlakshmeeh padmaasanaa devee padmahastaa haripriyaa ||",
+      "arth": "माहेश्वरी बैल पर सवार हैं, कौमारी मोर पर; भगवान विष्णु की प्रिया लक्ष्मी देवी कमल पर बैठी हैं और हाथ में कमल लिए हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "श्वेतरूपधरा देवी ईश्वरी वृषवाहना ।\nब्राह्मी हंससमारुढा सर्वाभरणभूषिता॥",
+      "roman": "shvetaroopadharaa devee eeshvaree vrishavaahanaa |\nbraahmee hamsasamaarudhaa sarvaabharanabhooshitaa ||",
+      "arth": "श्वेत रूप वाली ईश्वरी देवी बैल पर सवार हैं, और सब आभूषणों से सजी ब्राह्मी हंस पर।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "इत्येता मातरः सर्वाः सर्वयोगसमन्विताः ।\nनानाभरणशोभाढ्या नानारत्नोपशोभिता॥",
+      "roman": "ityetaa maatarah sarvaah sarvayogasamanvitaah |\nnaanaabharanashobhaadhyaa naanaaratnopashobhitaa ||",
+      "arth": "ये सब मातृ-शक्तियाँ सब योग-शक्तियों से युक्त हैं, तरह-तरह के आभूषणों और रत्नों से शोभित हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "दृश्यन्ते रथमारुढा देव्यः क्रोधसमाकुलाः ।\nशङ्खं चक्रं गदां शक्तिं हलं च मुसलायुधम्॥",
+      "roman": "drishyante rathamaarudhaa devyah krodhasamaakulaah |\nshankham chakram gadaam shaktim halam cha musalaayudham ||",
+      "arth": "ये देवियाँ क्रोध से भरी हुई रथों पर सवार दिखाई देती हैं, और शंख, चक्र, गदा, शक्ति, हल और मूसल —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "खेटकं तोमरं चैव परशुं पाशमेव च ।\nकुन्तायुधं त्रिशूलं च शार्ङ्गमायुधमुत्तमम्॥",
+      "roman": "khetakam tomaram chaiva parashum paashameva cha |\nkuntaayudham trishoolam cha shaarngamaayudhamuttamam ||",
+      "arth": "ढाल, तोमर, फरसा, पाश, भाला, त्रिशूल और उत्तम शार्ङ्ग धनुष —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "दैत्यानां देहनाशाय भक्तानामभयाय च ।\nधारयन्त्यायुधानीत्थं देवानां च हिताय वै॥",
+      "roman": "daityaanaam dehanaashaaya bhaktaanaamabhayaaya cha |\ndhaarayantyaayudhaaneettham devaanaam cha hitaaya vai ||",
+      "arth": "ये आयुध वे दैत्यों के शरीर का नाश करने, भक्तों को अभय देने और देवताओं के हित के लिए धारण करती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "नमस्तेऽस्तु महारौद्रे महाघोरपराक्रमे ।\nमहाबले महोत्साहे महाभयविनाशिनी॥",
+      "roman": "namaste'stu mahaaraudre mahaaghoraparaakrame |\nmahaabale mahotsaahe mahaabhayavinaashinee ||",
+      "arth": "हे महारौद्र रूप वाली, महाघोर पराक्रम वाली, महाबल और महान उत्साह वाली, बड़े-बड़े भयों का नाश करने वाली देवी — आपको नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "त्राहि मां देवि दुष्प्रेक्ष्ये शत्रूणां भयवर्धिनि ।\nप्राच्यां रक्षतु मामैन्द्री आग्नेयामग्निदेवता॥",
+      "roman": "traahi maam devi dushprekshye shatroonaam bhayavardhini |\npraachyaam rakshatu maamaindree aagneyaamagnidevataa ||",
+      "arth": "हे देवी, जिनकी ओर देखना भी कठिन है, जो शत्रुओं का भय बढ़ाने वाली हैं — मेरी रक्षा कीजिए। पूर्व दिशा में ऐन्द्री मेरी रक्षा करें, और आग्नेय कोण (दक्षिण-पूर्व) में अग्नि-शक्ति।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "दक्षिणेऽवतु वाराही नैरृत्यां खड्गधारिणी ।\nप्रतीच्यां वारुणी रक्षेद्वायव्यां मृगवाहिनी॥",
+      "roman": "dakshine'vatu vaaraahee nairrityaam khadgadhaarinee |\nprateechyaam vaarunee rakshedvaayavyaam mrigavaahinee ||",
+      "arth": "दक्षिण में वाराही रक्षा करें, नैर्ऋत्य कोण (दक्षिण-पश्चिम) में खड्गधारिणी; पश्चिम में वारुणी रक्षा करें और वायव्य कोण (उत्तर-पश्चिम) में मृग पर सवार देवी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "उदीच्यां रक्ष कौबेरि ईशान्यां शूलधारिणी ।\nऊर्ध्वं ब्रह्माणी मे रक्षेदधस्ताद्वैष्णवी तथा॥",
+      "roman": "udeechyaam raksha kauberi eeshaanyaam shooladhaarinee |\noordhvam brahmaanee me rakshedadhastaadvaishnavee tathaa ||",
+      "arth": "उत्तर में कौबेरी रक्षा करें, ईशान कोण (उत्तर-पूर्व) में शूलधारिणी; ऊपर ब्रह्माणी मेरी रक्षा करें और नीचे वैष्णवी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "एवं दश दिशो रक्षेच्चामुण्डा शववाहना ।\nजया मे अग्रतः स्थातु विजया स्थातु पृष्ठतः॥",
+      "roman": "evam dasha disho rakshechchaamundaa shavavaahanaa |\njayaa me agratah sthaatu vijayaa sthaatu prishthatah ||",
+      "arth": "इस तरह शव पर सवार चामुण्डा दसों दिशाओं में रक्षा करें। जया मेरे आगे रहें, और विजया पीछे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "अजिता वामपार्श्वे तु दक्षिणे चापराजिता ।\nशिखां मे द्योतिनी रक्षेदुमा मूर्ध्नि व्यवस्थिता॥",
+      "roman": "ajitaa vaamapaarshve tu dakshine chaaparaajitaa |\nshikhaam me dyotinee rakshedumaa moordhni vyavasthitaa ||",
+      "arth": "बाईं ओर अजिता और दाईं ओर अपराजिता रहें। द्योतिनी मेरी शिखा की रक्षा करें, और उमा मस्तक पर विराजें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "मालाधरी ललाटे च भ्रुवौ रक्षेद्यशस्विनी ।\nत्रिनेत्रा च भ्रुवोर्मध्ये यमघण्टा च नासिके॥",
+      "roman": "maalaadharee lalaate cha bhruvau rakshedyashasvinee |\ntrinetraa cha bhruvormadhye yamaghantaa cha naasike ||",
+      "arth": "माला धारण करने वाली देवी ललाट की, और यशस्विनी भौंहों की रक्षा करें। भौंहों के बीच त्रिनेत्रा और नासिका में यमघण्टा रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "शङ्खिनी चक्षुषोर्मध्ये श्रोत्रयोर्द्वारवासिनी ।\nकपोलौ कालिका रक्षेत्कर्णमूले तु शाङ्करी॥",
+      "roman": "shankhinee chakshushormadhye shrotrayordvaaravaasinee |\nkapolau kaalikaa rakshetkarnamoole tu shaankaree ||",
+      "arth": "दोनों आँखों के बीच शंखिनी, कानों में द्वारवासिनी, गालों की कालिका और कानों की जड़ की शांकरी रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "नासिकायां सुगन्धा च उत्तरोष्ठे च चर्चिका ।\nअधरे चामृतकला जिह्वायां च सरस्वती॥",
+      "roman": "naasikaayaam sugandhaa cha uttaroshthe cha charchikaa |\nadhare chaamritakalaa jihvaayaam cha sarasvatee ||",
+      "arth": "नासिका में सुगंधा, ऊपर के होंठ पर चर्चिका, नीचे के होंठ पर अमृतकला और जीभ पर सरस्वती रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २५",
+      "dev": "दन्तान् रक्षतु कौमारी कण्ठमध्ये तु चण्डिका ।\nघण्टिकां चित्रघण्टा च महामाया च तालुके॥",
+      "roman": "dantaan rakshatu kaumaaree kanthamadhye tu chandikaa |\nghantikaam chitraghantaa cha mahaamaayaa cha taaluke ||",
+      "arth": "कौमारी दाँतों की रक्षा करें, कंठ के बीच चण्डिका, गले की घंटी की चित्रघण्टा और तालु की महामाया रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २६",
+      "dev": "कामाक्षी चिबुकं रक्षेद्वाचं मे सर्वमङ्गला ।\nग्रीवायां भद्रकाली च पृष्ठवंशे धनुर्धरी॥",
+      "roman": "kaamaakshee chibukam rakshedvaacham me sarvamangalaa |\ngreevaayaam bhadrakaalee cha prishthavamshe dhanurdharee ||",
+      "arth": "कामाक्षी ठोड़ी की और सर्वमंगला मेरी वाणी की रक्षा करें। गर्दन में भद्रकाली और रीढ़ की हड्डी में धनुर्धरी रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २८",
+      "dev": "नीलग्रीवा बहिःकण्ठे नलिकां नलकूबरी ।\nस्कन्धयोः खड्गिनी रक्षेद् बाहू मे वज्रधारिणी ॥ २७॥ खड्गधारिण्युभौ स्कन्धौ\nहस्तयोर्दण्डिनी रक्षेदम्बिका चाङ्गुलीस्तथा ।\nनखाञ्छूलेश्वरी रक्षेत् कुक्षौ रक्षेन्नलेश्वरी॥",
+      "roman": "neelagreevaa bahihkanthe nalikaam nalakoobaree |\nskandhayoh khadginee rakshed baahoo me vajradhaarinee || || khadgadhaarinyubhau skandhau\nhastayordandinee rakshedambikaa chaanguleestathaa |\nnakhaanchhooleshvaree rakshet kukshau rakshennaleshvaree ||",
+      "arth": "कंठ के बाहर नीलग्रीवा, कंठ की नली में नलकूबरी, दोनों कंधों में खड्गिनी और मेरी भुजाओं में वज्रधारिणी रक्षा करें। दोनों हाथों में दण्डिनी, उँगलियों में अम्बिका, नाख़ूनों में शूलेश्वरी और पेट (कोख) में नलेश्वरी रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २९",
+      "dev": "स्तनौ रक्षेन्महालक्ष्मीर्मनःशोकविनाशिनी ।\nहृदये ललितादेवी उदरे शूलधारिणी॥",
+      "roman": "stanau rakshenmahaalakshmeermanahshokavinaashinee |\nhridaye lalitaadevee udare shooladhaarinee ||",
+      "arth": "मन का शोक मिटाने वाली महालक्ष्मी वक्ष की, हृदय में ललिता देवी और उदर में शूलधारिणी रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३१",
+      "dev": "नाभौ च कामिनी रक्षेद्गुह्यं गुह्येश्वरी तथा ।\nपूतना कामिका मेढ्रं गुदे महिषवाहिनी ॥ ३०॥ भूतनाथा च मेढ्रं च\nकट्यां भगवती रक्षेज्जानुनी विन्ध्यवासिनी ।\nजङ्घे महाबला प्रोक्ता सर्वकामप्रदायिनी॥",
+      "roman": "naabhau cha kaaminee rakshedguhyam guhyeshvaree tathaa |\npootanaa kaamikaa medhram gude mahishavaahinee || || bhootanaathaa cha medhram cha\nkatyaam bhagavatee rakshejjaanunee vindhyavaasinee |\njanghe mahaabalaa proktaa sarvakaamapradaayinee ||",
+      "arth": "नाभि में कामिनी, गुप्त अंगों में गुह्येश्वरी, जननेन्द्रिय में पूतना-कामिका और गुदा में महिषवाहिनी रक्षा करें। कमर में भगवती, घुटनों में विन्ध्यवासिनी, और पिंडलियों में सब कामनाएँ पूरी करने वाली महाबला रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३२",
+      "dev": "गुल्फयोर्नारसिंही च पादौ चामिततेजसी ।\nपादाङ्गुलीः श्रीर्मे रक्षेत्पादाधस्तलवासिनी॥",
+      "roman": "gulphayornaarasimhee cha paadau chaamitatejasee |\npaadaanguleeh shreerme rakshetpaadaadhastalavaasinee ||",
+      "arth": "टखनों में नारसिंही, पैरों में अमिततेजसी, पैरों की उँगलियों में श्री और पैरों के तलवों में तलवासिनी मेरी रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३३",
+      "dev": "नखान्दंष्ट्राकराली च केशांश्चैवोर्ध्वकेशिनी ।\nरोमकूपेषु कौबेरी त्वचं वागीश्वरी तथा॥",
+      "roman": "nakhaandamshtraakaraalee cha keshaamshchaivordhvakeshinee |\nromakoopeshu kauberee tvacham vaageeshvaree tathaa ||",
+      "arth": "नाख़ूनों की दंष्ट्राकराली, बालों की ऊर्ध्वकेशिनी, रोमकूपों की कौबेरी और त्वचा की वागीश्वरी रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३४",
+      "dev": "रक्तमज्जावमांसान्यस्थिमेदांसी पार्वती ।\nअन्त्राणि कालरात्रिश्च पित्तं च मुकुटेश्वरी॥",
+      "roman": "raktamajjaavamaamsaanyasthimedaamsee paarvatee |\nantraani kaalaraatrishcha pittam cha mukuteshvaree ||",
+      "arth": "रक्त, मज्जा, वसा, मांस, हड्डी और मेद की पार्वती रक्षा करें; आँतों की कालरात्रि और पित्त की मुकुटेश्वरी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३५",
+      "dev": "पद्मावती पद्मकोशे कफे चुडामणिस्तथा ।\nज्वालामुखी नखज्वाला अभेद्या सर्वसन्धिषु॥",
+      "roman": "padmaavatee padmakoshe kaphe chudaamanistathaa |\njvaalaamukhee nakhajvaalaa abhedyaa sarvasandhishu ||",
+      "arth": "पद्मावती फेफड़ों (पद्मकोश) में, चूड़ामणि कफ में, ज्वालामुखी नाख़ूनों की चमक में, और अभेद्या सब जोड़ों में रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३६",
+      "dev": "शुक्रं ब्रह्माणी मे रक्षेच्छायां छत्रेश्वरी तथा ।\nअहङ्कारं मनो बुद्धिं रक्ष मे धर्मचारिणि॥",
+      "roman": "shukram brahmaanee me rakshechchhaayaam chhatreshvaree tathaa |\nahankaaram mano buddhim raksha me dharmachaarini ||",
+      "arth": "ब्रह्माणी मेरे वीर्य की, छत्रेश्वरी छाया की रक्षा करें। हे धर्मचारिणी, मेरे अहंकार, मन और बुद्धि की रक्षा कीजिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३७",
+      "dev": "प्राणापानौ तथा व्यानं समानोदानमेव च ।\nवज्रहस्ता च मे रेक्षेत्प्राणं कल्याणशोभना॥",
+      "roman": "praanaapaanau tathaa vyaanam samaanodaanameva cha |\nvajrahastaa cha me rekshetpraanam kalyaanashobhanaa ||",
+      "arth": "वज्रहस्ता मेरे प्राण, अपान, व्यान, समान और उदान वायु की रक्षा करें, और कल्याणशोभना मेरे प्राणों की रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३८",
+      "dev": "रसे रूपे च गन्धे च शब्दे स्पर्शे च योगिनी ।\nसत्त्वं रजस्तमश्चैव रक्षेन्नारायणी सदा॥",
+      "roman": "rase roope cha gandhe cha shabde sparshe cha yoginee |\nsattvam rajastamashchaiva rakshennaaraayanee sadaa ||",
+      "arth": "रस, रूप, गंध, शब्द और स्पर्श में योगिनी रक्षा करें, और नारायणी सदा सत्त्व, रज और तम की रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३९",
+      "dev": "आयू रक्षतु वाराही धर्मं रक्षतु वैष्णवी ।\nयशः कीर्तिं च लक्ष्मीं च धनं विद्यां च चक्रिणी॥",
+      "roman": "aayoo rakshatu vaaraahee dharmam rakshatu vaishnavee |\nyashah keertim cha lakshmeem cha dhanam vidyaam cha chakrinee ||",
+      "arth": "वाराही आयु की रक्षा करें, वैष्णवी धर्म की; और चक्रिणी यश, कीर्ति, लक्ष्मी, धन और विद्या की रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४०",
+      "dev": "गोत्रमिन्द्राणी मे रक्षेत्पशून्मे रक्ष चण्डिके ।\nपुत्रान् रक्षेन्महालक्ष्मीर्भार्यां रक्षतु भैरवी॥",
+      "roman": "gotramindraanee me rakshetpashoonme raksha chandike |\nputraan rakshenmahaalakshmeerbhaaryaam rakshatu bhairavee ||",
+      "arth": "इन्द्राणी मेरे गोत्र की रक्षा करें। हे चण्डिका, मेरे पशुओं की रक्षा कीजिए। महालक्ष्मी पुत्रों की और भैरवी पत्नी की रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४१",
+      "dev": "पन्थानं सुपथा रक्षेन्मार्गं क्षेमकरी तथा ।\nराजद्वारे महालक्ष्मीर्विजया सर्वतः स्थिता॥",
+      "roman": "panthaanam supathaa rakshenmaargam kshemakaree tathaa |\nraajadvaare mahaalakshmeervijayaa sarvatah sthitaa ||",
+      "arth": "सुपथा मेरे रास्ते की, क्षेमकरी मार्ग की रक्षा करें; राजद्वार में महालक्ष्मी और सब ओर विजया रक्षा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४२",
+      "dev": "रक्षाहीनं तु यत्स्थानं वर्जितं कवचेन तु ।\nतत्सर्वं रक्ष मे देवि जयन्ती पापनाशिनी॥",
+      "roman": "rakshaaheenam tu yatsthaanam varjitam kavachena tu |\ntatsarvam raksha me devi jayantee paapanaashinee ||",
+      "arth": "हे पापों का नाश करने वाली जयन्ती देवी, जो स्थान रक्षा से रहित है और कवच में छूट गया है, उस सबकी मेरी रक्षा कीजिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४३",
+      "dev": "पदमेकं न गच्छेत्तु यदीच्छेच्छुभमात्मनः ।\nकवचेनावृतो नित्यं यत्र यत्राधिगच्छति॥",
+      "roman": "padamekam na gachchhettu yadeechchhechchhubhamaatmanah |\nkavachenaavrito nityam yatra yatraadhigachchhati ||",
+      "arth": "जो अपना भला चाहे, वह बिना कवच के एक क़दम भी न चले। कवच से सदा घिरा हुआ मनुष्य जहाँ-जहाँ जाता है —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४४",
+      "dev": "तत्र तत्रार्थ लाभश्च विजयः सार्वकामिकः ।\nयं यं कामयते कामं तं तं प्राप्नोति निश्चितम् ।\nपरमैश्वर्यमतुलं प्राप्स्यते भूतले पुमान्॥",
+      "roman": "tatra tatraartha laabhashcha vijayah saarvakaamikah |\nyam yam kaamayate kaamam tam tam praapnoti nishchitam |\nparamaishvaryamatulam praapsyate bhootale pumaan ||",
+      "arth": "वहाँ-वहाँ उसे धन का लाभ और सब कामनाओं को पूरा करने वाली विजय मिलती है। वह जिस-जिस कामना को चाहता है, उसे निश्चित पा लेता है, और इस धरती पर अनुपम परम ऐश्वर्य पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४५",
+      "dev": "निर्भयो जायते मर्त्यः सङ्ग्रामेष्व पराजितः ।\nत्रैलोक्ये तु भवेत्पूज्यः कवचेनावृतः पुमान्॥",
+      "roman": "nirbhayo jaayate martyah sangraameshva paraajitah |\ntrailokye tu bhavetpoojyah kavachenaavritah pumaan ||",
+      "arth": "कवच से घिरा हुआ मनुष्य निर्भय हो जाता है, युद्धों में हारता नहीं, और तीनों लोकों में पूज्य होता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४६",
+      "dev": "इदं तु देव्याः कवचं देवानामपि दुर्लभम् ।\nयः पठेत्प्रयतो नित्यं त्रिसन्ध्यं श्रद्धयान्वितः॥",
+      "roman": "idam tu devyaah kavacham devaanaamapi durlabham |\nyah pathetprayato nityam trisandhyam shraddhayaanvitah ||",
+      "arth": "देवी का यह कवच देवताओं के लिए भी दुर्लभ है। जो पवित्र होकर श्रद्धा के साथ इसे नित्य तीनों संध्याओं में पढ़ता है —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४७",
+      "dev": "दैवी कला भवेत्तस्य त्रैलोकेष्व पराजितः ।\nजीवेद्वर्षशतं साग्रमपमृत्यु विवर्जितः॥",
+      "roman": "daivee kalaa bhavettasya trailokeshva paraajitah |\njeevedvarshashatam saagramapamrityu vivarjitah ||",
+      "arth": "उसे दैवी कला (शक्ति) प्राप्त होती है, वह तीनों लोकों में अपराजित रहता है, और अकाल मृत्यु से बचकर सौ से अधिक वर्ष जीता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४८",
+      "dev": "नश्यन्ति व्याधयः सर्वे लूताविस्फोटकादयः ।\nस्थावरं जङ्गमं वापि कृत्रिमं चापि यद्विषम्॥",
+      "roman": "nashyanti vyaadhayah sarve lootaavisphotakaadayah |\nsthaavaram jangamam vaapi kritrimam chaapi yadvisham ||",
+      "arth": "मकड़ी के विष, फोड़े-फुंसी आदि सारे रोग नष्ट हो जाते हैं। स्थावर (पौधों का), जंगम (जीवों का) या बनाया हुआ — जो भी विष हो —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४९",
+      "dev": "अभिचाराणि सर्वाणि मन्त्रयन्त्राणि भूतले ।\nभूचराः खेचराश्चैव जलजाश्चोपदेशिकाः॥",
+      "roman": "abhichaaraani sarvaani mantrayantraani bhootale |\nbhoocharaah khecharaashchaiva jalajaashchopadeshikaah ||",
+      "arth": "धरती पर के सारे अभिचार (टोने-टोटके), मंत्र-यंत्र, धरती पर, आकाश में और जल में रहने वाले, और उपदेश से भेजे गए —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५०",
+      "dev": "सहजाः कुलजा मालाः शाकिनी डाकिनी तथा ।\nअन्तरिक्षचरा घोरा डाकिन्यश्च महाबलाः॥",
+      "roman": "sahajaah kulajaa maalaah shaakinee daakinee tathaa |\nantarikshacharaa ghoraa daakinyashcha mahaabalaah ||",
+      "arth": "जन्म से साथ लगे, कुल में चले आ रहे, माला (के रूप में) पहनाए गए उपद्रव, शाकिनी, डाकिनी, और आकाश में घूमने वाली भयंकर, महाबली डाकिनियाँ —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५१",
+      "dev": "ग्रहभूतपिशाचाश्च यक्षगन्धर्वराक्षसाः ।\nब्रह्मराक्षसवेतालाः कूष्माण्डा भैरवादयः॥",
+      "roman": "grahabhootapishaachaashcha yakshagandharvaraakshasaah |\nbrahmaraakshasavetaalaah kooshmaandaa bhairavaadayah ||",
+      "arth": "ग्रह, भूत, पिशाच, यक्ष, गन्धर्व, राक्षस, ब्रह्मराक्षस, वेताल, कूष्माण्ड, भैरव आदि —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५२",
+      "dev": "नश्यन्ति दर्शनात्तस्य कवचे हृदि संस्थिते ।\nमानोन्नतिर्भवेद्राज्ञस्तेजोवृद्धिकरं परम्॥",
+      "roman": "nashyanti darshanaattasya kavache hridi samsthite |\nmaanonnatirbhavedraajnastejovriddhikaram param ||",
+      "arth": "हृदय में कवच धारण करने वाले मनुष्य को देखते ही नष्ट हो जाते हैं। राजा से उसे सम्मान मिलता है, और यह कवच तेज को बहुत बढ़ाने वाला है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५३",
+      "dev": "यशसा वर्धते सोऽपि कीर्तिमण्डितभूतले ।\nजपेत्सप्तशतीं चण्डीं कृत्वा तु कवचं पुरा॥",
+      "roman": "yashasaa vardhate so'pi keertimanditabhootale |\njapetsaptashateem chandeem kritvaa tu kavacham puraa ||",
+      "arth": "वह भी कीर्ति से सजी धरती पर यश से बढ़ता है। पहले कवच का पाठ करके फिर सप्तशती चण्डी का जप करना चाहिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५४",
+      "dev": "यावद्भूमण्डलं धत्ते सशैलवनकाननम् ।\nतावत्तिष्ठति मेदिन्यां सन्ततिः पुत्रपौत्रकी॥",
+      "roman": "yaavadbhoomandalam dhatte sashailavanakaananam |\ntaavattishthati medinyaam santatih putrapautrakee ||",
+      "arth": "जब तक पर्वतों, वनों और जंगलों सहित यह पृथ्वी टिकी है, तब तक धरती पर उसकी पुत्र-पौत्रों वाली संतान बनी रहती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५५",
+      "dev": "देहान्ते परमं स्थानं यत्सुरैरपि दुर्लभम् ।\nप्राप्नोति पुरुषो नित्यं महामायाप्रसादतः॥",
+      "roman": "dehaante paramam sthaanam yatsurairapi durlabham |\npraapnoti purusho nityam mahaamaayaaprasaadatah ||",
+      "arth": "शरीर छूटने पर मनुष्य महामाया की कृपा से वह परम स्थान पाता है जो देवताओं के लिए भी दुर्लभ है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५६",
+      "dev": "लभते परमं रूपं शिवेन सह मोदते॥",
+      "roman": "labhate paramam roopam shivena saha modate ||",
+      "arth": "वह परम रूप पाता है और भगवान शिव के साथ आनंद करता है।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "madhyam",
+  "strot": {
+    "paddhati": "दुर्गा सप्तशती के अंग",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ एक जाँचे हुए छपे संस्करण से है। ⚠️ सप्तशती के अंगों के छपे रूप आपस में पूरे नहीं मिलते — ख़ास तौर पर कीलक के दो अलग पाठ चलते हैं, जिनमें कई श्लोक अलग हैं। आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है।\n\nहर श्लोक का अर्थ सरल हिंदी में, अपने शब्दों में लिखा है — शब्दशः अनुवाद नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

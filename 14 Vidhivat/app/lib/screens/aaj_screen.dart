@@ -3,12 +3,16 @@ import 'package:panchang_engine/panchang_engine.dart';
 
 import '../state/settings.dart';
 import '../theme.dart';
+import '../vidhi/tyohar_saal.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
+import 'festival_destination.dart';
 
 /// आज का पंचांग — ऐप का मुख्य पन्ना, जो रोज़ खुलेगा।
 class AajScreen extends StatefulWidget {
-  const AajScreen({super.key});
+  final DateTime? initialDay;
+
+  const AajScreen({super.key, this.initialDay});
 
   @override
   State<AajScreen> createState() => _AajScreenState();
@@ -16,8 +20,14 @@ class AajScreen extends StatefulWidget {
 
 class _AajScreenState extends State<AajScreen> {
   static const _maxFestivalCacheEntries = 8;
-  DateTime _day = DateTime.now();
+  late DateTime _day;
   final Map<String, List<FestivalDate>> _festivalCache = {};
+
+  @override
+  void initState() {
+    super.initState();
+    _day = widget.initialDay ?? DateTime.now();
+  }
 
   void _shift(int days) =>
       setState(() => _day = _day.add(Duration(days: days)));
@@ -39,8 +49,10 @@ class _AajScreenState extends State<AajScreen> {
       if (_festivalCache.length >= _maxFestivalCacheEntries) {
         _festivalCache.remove(_festivalCache.keys.first);
       }
+      // संक्रांति वाली पूजाएँ भी (विश्वकर्मा पूजा) — सिर्फ़ इंजन के तिथि
+      // वाले त्योहार पढ़ने से वे यहाँ आती ही नहीं थीं।
       yearFestivals = _festivalCache[festivalKey] =
-          festivalsInYear(_day.year, settings.place);
+          tyoharSaalBhar(_day.year, settings.place);
     }
     final festivals = yearFestivals
         .where(
@@ -202,6 +214,18 @@ class _AajScreenState extends State<AajScreen> {
                       for (final festival in festivals)
                         ListTile(
                           title: Text(festival.rule.name),
+                          trailing:
+                              festivalDestination(festival.rule.name) == null
+                                  ? null
+                                  : const Icon(Icons.arrow_forward_rounded),
+                          onTap: festivalDestination(festival.rule.name) == null
+                              ? null
+                              : () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (_) => festivalDestination(
+                                          festival.rule.name)!,
+                                    ),
+                                  ),
                           subtitle: festival.ambiguous
                               ? const Text(
                                   'दो संभावित तारीख़ों में यह दिन भी है')
@@ -247,7 +271,8 @@ class _AajScreenState extends State<AajScreen> {
                 panktiyan: [
                   VidhivatSrotPankti('स्थान', settings.city.name),
                   const VidhivatSrotPankti('गणना', 'दृक् गणित'),
-                  const VidhivatSrotPankti('अयनांश की पद्धति', 'लाहिड़ी (चित्रपक्ष)'),
+                  const VidhivatSrotPankti(
+                      'अयनांश की पद्धति', 'लाहिड़ी (चित्रपक्ष)'),
                   VidhivatSrotPankti('आज का अयनांश', toDms(p.ayanamsa)),
                   VidhivatSrotPankti(
                     'मास की पद्धति',
@@ -255,7 +280,8 @@ class _AajScreenState extends State<AajScreen> {
                         ? 'पूर्णिमांत — मास पूर्णिमा पर बदलता है'
                         : 'अमांत — मास अमावस्या पर बदलता है',
                   ),
-                  const VidhivatSrotPankti('दिन', 'सूर्योदय से अगले सूर्योदय तक'),
+                  const VidhivatSrotPankti(
+                      'दिन', 'सूर्योदय से अगले सूर्योदय तक'),
                 ],
                 antimBaat: 'सब गणना इसी फ़ोन पर होती है — कोई सर्वर नहीं, कोई '
                     'इंटरनेट नहीं।',

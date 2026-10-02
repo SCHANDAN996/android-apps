@@ -1,0 +1,614 @@
+{
+  "schemaVersion": 1,
+  "id": "gita_02",
+  "naam": "अध्याय २ — साङ्ख्ययोग",
+  "upnaam": [
+    "श्रीमद्भगवद्गीता अध्याय २",
+    "गीता अध्याय २",
+    "साङ्ख्ययोगो नाम द्वितीयोऽध्यायः"
+  ],
+  "prakar": "granth",
+  "devta": "श्रीकृष्ण",
+  "rachnakar": "महर्षि वेदव्यास — महाभारत",
+  "bhasha": "संस्कृत",
+  "parichay": "अर्जुन श्रीकृष्ण की शरण लेते हैं और उपदेश शुरू होता है। पहले आत्मा के अमर होने की बात, फिर फल की आसक्ति के बिना कर्म करने की, और अन्त में स्थिर बुद्धि वाले मनुष्य के लक्षण।",
+  "kabPadhein": "किसी भी दिन, किसी भी समय। बहुत घरों में रोज़ थोड़ा-थोड़ा पढ़ने का चलन है। मार्गशीर्ष शुक्ल एकादशी (मोक्षदा एकादशी) को गीता जयंती मनाई जाती है।",
+  "kaisePadhein": "शान्त जगह बैठकर पढ़ें। पूरा पाठ एक बैठक में न हो तो रोज़ एक अध्याय या कुछ श्लोक पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है।\n\nहर अध्याय के अन्त में उसका समापन-वाक्य दिया है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "श्लोक १",
+      "dev": "सञ्जय उवाच\nतं तथा कृपयाविष्टमश्रुपूर्णाकुलेक्षणम् ।\nविषीदन्तमिदं वाक्यमुवाच मधुसूदनः॥",
+      "roman": "sanjaya uvaacha\ntam tathaa kripayaavishtamashrupoornaakulekshanam |\nvisheedantamidam vaakyamuvaacha madhusoodanah ||",
+      "arth": "संजय बोले — इस तरह करुणा से भरे, आँसुओं से डबडबाई व्याकुल आँखों वाले और शोक करते हुए अर्जुन से मधुसूदन (श्रीकृष्ण) ने यह बात कही।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "श्रीभगवानुवाच\nकुतस्त्वा कश्मलमिदं विषमे समुपस्थितम् ।\nअनार्यजुष्टमस्वर्ग्यमकीर्तिकरमर्जुन॥",
+      "roman": "shreebhagavaanuvaacha\nkutastvaa kashmalamidam vishame samupasthitam |\nanaaryajushtamasvargyamakeertikaramarjuna ||",
+      "arth": "श्रीभगवान बोले — हे अर्जुन! इस कठिन घड़ी में तुम्हें यह मोह कहाँ से आ गया? यह न श्रेष्ठ लोगों के लायक़ है, न स्वर्ग देने वाला है, न यश देने वाला।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "क्लैब्यं मा स्म गमः पार्थ नैतत्त्वय्युपपद्यते ।\nक्षुद्रं हृदयदौर्बल्यं त्यक्त्वोत्तिष्ठ परन्तप॥",
+      "roman": "klaibyam maa sma gamah paartha naitattvayyupapadyate |\nkshudram hridayadaurbalyam tyaktvottishtha parantapa ||",
+      "arth": "हे पार्थ! नामर्दी को मत अपनाओ, यह तुम्हें शोभा नहीं देती। हे शत्रुओं को तपाने वाले! हृदय की इस छोटी-सी कमज़ोरी को छोड़कर उठ खड़े हो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "अर्जुन उवाच\nकथं भीष्ममहं सङ्ख्ये द्रोणं च मधुसूदन ।\nइषुभिः प्रतियोत्स्यामि पूजार्हावरिसूदन॥",
+      "roman": "arjuna uvaacha\nkatham bheeshmamaham sankhye dronam cha madhusoodana |\nishubhih pratiyotsyaami poojaarhaavarisoodana ||",
+      "arth": "अर्जुन बोले — हे मधुसूदन! हे शत्रुओं का नाश करने वाले! मैं युद्ध में भीष्म और द्रोण पर बाण कैसे चलाऊँगा? ये दोनों तो पूजा के योग्य हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "गुरूनहत्वा हि महानुभावान्\nश्रेयो भोक्तुं भैक्ष्यमपीह लोके ।\nहत्वार्थकामांस्तु गुरूनिहैव\nभुञ्जीय भोगान् रुधिरप्रदिग्धान्॥",
+      "roman": "guroonahatvaa hi mahaanubhaavaan\nshreyo bhoktum bhaikshyamapeeha loke |\nhatvaarthakaamaamstu guroonihaiva\nbhunjeeya bhogaan rudhirapradigdhaan ||",
+      "arth": "इन महान गुरुओं को न मारकर इस संसार में भीख का अन्न खाना भी अच्छा है। गुरुओं को मारकर तो मैं यहीं उनके ख़ून से सने हुए धन और कामना के भोग ही भोगूँगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "न चैतद्विद्मः कतरन्नो गरीयो\nयद्वा जयेम यदि वा नो जयेयुः ।\nयानेव हत्वा न जिजीविषाम-\nस्तेऽवस्थिताः प्रमुखे धार्तराष्ट्राः॥",
+      "roman": "na chaitadvidmah kataranno gareeyo\nyadvaa jayema yadi vaa no jayeyuh |\nyaaneva hatvaa na jijeevishaama-\nste'vasthitaah pramukhe dhaartaraashtraah ||",
+      "arth": "हम यह भी नहीं जानते कि हमारे लिए क्या बेहतर है — हम जीतें, या वे हमें जीत लें। जिन्हें मारकर हम जीना भी नहीं चाहते, वे ही धृतराष्ट्र के पुत्र सामने खड़े हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "कार्पण्यदोषोपहतस्वभावः\nपृच्छामि त्वां धर्मसम्मूढचेताः ।\nयच्छ्रेयः स्यान्निश्चितं ब्रूहि तन्मे\nशिष्यस्तेऽहं शाधि मां त्वां प्रपन्नम्॥",
+      "roman": "kaarpanyadoshopahatasvabhaavah\nprichchhaami tvaam dharmasammoodhachetaah |\nyachchhreyah syaannishchitam broohi tanme\nshishyaste'ham shaadhi maam tvaam prapannam ||",
+      "arth": "कायरता के दोष से मेरा स्वभाव दब गया है और धर्म के बारे में मेरा मन उलझ गया है, इसलिए आपसे पूछता हूँ — जो निश्चित रूप से भला हो, वह मुझे बताइए। मैं आपका शिष्य हूँ, आपकी शरण में आया हूँ, मुझे शिक्षा दीजिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "न हि प्रपश्यामि ममापनुद्याद्\nयच्छोकमुच्छोषणमिन्द्रियाणाम् ।\nअवाप्य भूमावसपत्नमृद्धं\nराज्यं सुराणामपि चाधिपत्यम्॥",
+      "roman": "na hi prapashyaami mamaapanudyaad\nyachchhokamuchchhoshanamindriyaanaam |\navaapya bhoomaavasapatnamriddham\nraajyam suraanaamapi chaadhipatyam ||",
+      "arth": "पृथ्वी पर बिना शत्रु का समृद्ध राज्य और देवताओं का स्वामित्व पाकर भी मुझे ऐसा कुछ नहीं दिखता जो इन्द्रियों को सुखा देने वाले मेरे इस शोक को दूर कर सके।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "सञ्जय उवाच\nएवमुक्त्वा हृषीकेशं गुडाकेशः परन्तप ।\nन योत्स्य इति गोविन्दमुक्त्वा तूष्णीं बभूव ह॥",
+      "roman": "sanjaya uvaacha\nevamuktvaa hrisheekesham gudaakeshah parantapa |\nna yotsya iti govindamuktvaa tooshneem babhoova ha ||",
+      "arth": "संजय बोले — हे शत्रुओं को तपाने वाले राजन्! हृषीकेश से ऐसा कहकर गुडाकेश (अर्जुन) ने गोविन्द से कहा — मैं नहीं लड़ूँगा — और चुप हो गए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "तमुवाच हृषीकेशः प्रहसन्निव भारत ।\nसेनयोरुभयोर्मध्ये विषीदन्तमिदं वचः॥",
+      "roman": "tamuvaacha hrisheekeshah prahasanniva bhaarata |\nsenayorubhayormadhye visheedantamidam vachah ||",
+      "arth": "हे भारत! दोनों सेनाओं के बीच शोक करते हुए उस अर्जुन से हृषीकेश ने मानो मुस्कराते हुए यह वचन कहा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "श्रीभगवानुवाच\nअशोच्यानन्वशोचस्त्वं प्रज्ञावादांश्च भाषसे ।\nगतासूनगतासूंश्च नानुशोचन्ति पण्डिताः॥",
+      "roman": "shreebhagavaanuvaacha\nashochyaananvashochastvam prajnaavaadaamshcha bhaashase |\ngataasoonagataasoomshcha naanushochanti panditaah ||",
+      "arth": "श्रीभगवान बोले — तुम उनके लिए शोक करते हो जिनके लिए शोक नहीं करना चाहिए, और बातें ज्ञानियों जैसी करते हो। ज्ञानी लोग न मरे हुओं के लिए शोक करते हैं, न जीवितों के लिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "न त्वेवाहं जातु नासं न त्वं नेमे जनाधिपाः ।\nन चैव न भविष्यामः सर्वे वयमतः परम्॥",
+      "roman": "na tvevaaham jaatu naasam na tvam neme janaadhipaah |\nna chaiva na bhavishyaamah sarve vayamatah param ||",
+      "arth": "ऐसा कभी नहीं था कि मैं नहीं था, या तुम नहीं थे, या ये राजा नहीं थे; और ऐसा भी नहीं कि इसके बाद हम सब नहीं रहेंगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "देहिनोऽस्मिन्यथा देहे कौमारं यौवनं जरा ।\nतथा देहान्तरप्राप्तिर्धीरस्तत्र न मुह्यति॥",
+      "roman": "dehino'sminyathaa dehe kaumaaram yauvanam jaraa |\ntathaa dehaantarapraaptirdheerastatra na muhyati ||",
+      "arth": "जैसे इस शरीर में रहने वाले को बचपन, जवानी और बुढ़ापा मिलता है, वैसे ही उसे दूसरा शरीर मिलता है। धीर पुरुष इसमें मोहित नहीं होता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "मात्रास्पर्शास्तु कौन्तेय शीतोष्णसुखदुःखदाः ।\nआगमापायिनोऽनित्यास्तांस्तितिक्षस्व भारत॥",
+      "roman": "maatraasparshaastu kaunteya sheetoshnasukhaduhkhadaah |\naagamaapaayino'nityaastaamstitikshasva bhaarata ||",
+      "arth": "हे कुन्ती-पुत्र! इन्द्रियों का विषयों से मेल ही सर्दी-गर्मी और सुख-दुख देता है। ये आते-जाते रहते हैं, सदा नहीं टिकते। हे भारत! इन्हें सह लो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "यं हि न व्यथयन्त्येते पुरुषं पुरुषर्षभ ।\nसमदुःखसुखं धीरं सोऽमृतत्वाय कल्पते॥",
+      "roman": "yam hi na vyathayantyete purusham purusharshabha |\nsamaduhkhasukham dheeram so'mritatvaaya kalpate ||",
+      "arth": "हे पुरुषों में श्रेष्ठ! जिस धीर पुरुष को ये व्याकुल नहीं करते, जो दुख और सुख में एक जैसा रहता है, वही अमरता के योग्य होता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "नासतो विद्यते भावो नाभावो विद्यते सतः ।\nउभयोरपि दृष्टोऽन्तस्त्वनयोस्तत्त्वदर्शिभिः॥",
+      "roman": "naasato vidyate bhaavo naabhaavo vidyate satah |\nubhayorapi drishto'ntastvanayostattvadarshibhih ||",
+      "arth": "जो है ही नहीं (असत्), उसका होना नहीं होता; और जो है (सत्), उसका न होना नहीं होता। तत्त्व को देखने वालों ने इन दोनों का ही निचोड़ देख लिया है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "अविनाशि तु तद्विद्धि येन सर्वमिदं ततम् ।\nविनाशमव्ययस्यास्य न कश्चित्कर्तुमर्हति॥",
+      "roman": "avinaashi tu tadviddhi yena sarvamidam tatam |\nvinaashamavyayasyaasya na kashchitkartumarhati ||",
+      "arth": "जिससे यह सारा जगत व्याप्त है, उसे तुम नाशरहित जानो। इस अविनाशी का नाश कोई नहीं कर सकता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "अन्तवन्त इमे देहा नित्यस्योक्ताः शरीरिणः ।\nअनाशिनोऽप्रमेयस्य तस्माद्युध्यस्व भारत॥",
+      "roman": "antavanta ime dehaa nityasyoktaah shareerinah |\nanaashino'prameyasya tasmaadyudhyasva bhaarata ||",
+      "arth": "नित्य, नाशरहित और माप से परे इस शरीरधारी आत्मा के ये शरीर ही अन्त वाले कहे गए हैं। इसलिए हे भारत! युद्ध करो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "य एनं वेत्ति हन्तारं यश्चैनं मन्यते हतम् ।\nउभौ तौ न विजानीतो नायं हन्ति न हन्यते॥",
+      "roman": "ya enam vetti hantaaram yashchainam manyate hatam |\nubhau tau na vijaaneeto naayam hanti na hanyate ||",
+      "arth": "जो इसे मारने वाला समझता है, और जो इसे मरा हुआ मानता है — वे दोनों ही नहीं जानते। यह न मारता है, न मारा जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "न जायते म्रियते वा कदाचिन्\nनायं भूत्वा भविता वा न भूयः ।\nअजो नित्यः शाश्वतोऽयं पुराणो\nन हन्यते हन्यमाने शरीरे॥",
+      "roman": "na jaayate mriyate vaa kadaachin\nnaayam bhootvaa bhavitaa vaa na bhooyah |\najo nityah shaashvato'yam puraano\nna hanyate hanyamaane shareere ||",
+      "arth": "यह न कभी जन्म लेता है, न मरता है; न ऐसा है कि एक बार होकर फिर नहीं रहेगा। यह अजन्मा, नित्य, सदा रहने वाला और पुरातन है; शरीर के मारे जाने पर भी यह नहीं मारा जाता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "वेदाविनाशिनं नित्यं य एनमजमव्ययम् ।\nकथं स पुरुषः पार्थ कं घातयति हन्ति कम्॥",
+      "roman": "vedaavinaashinam nityam ya enamajamavyayam |\nkatham sa purushah paartha kam ghaatayati hanti kam ||",
+      "arth": "हे पार्थ! जो इसे नाशरहित, नित्य, अजन्मा और अविकारी जानता है, वह पुरुष कैसे किसी को मरवाएगा और किसे मारेगा?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "वासांसि जीर्णानि यथा विहाय\nनवानि गृह्णाति नरोऽपराणि ।\nतथा शरीराणि विहाय जीर्णा-\nन्यन्यानि संयाति नवानि देही॥",
+      "roman": "vaasaamsi jeernaani yathaa vihaaya\nnavaani grihnaati naro'paraani |\ntathaa shareeraani vihaaya jeernaa-\nnyanyaani samyaati navaani dehee ||",
+      "arth": "जैसे मनुष्य पुराने कपड़े उतारकर दूसरे नए कपड़े पहन लेता है, वैसे ही शरीर में रहने वाला आत्मा पुराने शरीर छोड़कर दूसरे नए शरीरों में चला जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "नैनं छिन्दन्ति शस्त्राणि नैनं दहति पावकः ।\nन चैनं क्लेदयन्त्यापो न शोषयति मारुतः॥",
+      "roman": "nainam chhindanti shastraani nainam dahati paavakah |\nna chainam kledayantyaapo na shoshayati maarutah ||",
+      "arth": "इसे शस्त्र काट नहीं सकते, आग जला नहीं सकती, पानी गला नहीं सकता और हवा सुखा नहीं सकती।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "अच्छेद्योऽयमदाह्योऽयमक्लेद्योऽशोष्य एव च ।\nनित्यः सर्वगतः स्थाणुरचलोऽयं सनातनः॥",
+      "roman": "achchhedyo'yamadaahyo'yamakledyo'shoshya eva cha |\nnityah sarvagatah sthaanurachalo'yam sanaatanah ||",
+      "arth": "यह काटा नहीं जा सकता, जलाया नहीं जा सकता, गलाया नहीं जा सकता और सुखाया भी नहीं जा सकता। यह नित्य, सब जगह पहुँचा हुआ, स्थिर, अचल और सनातन है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २५",
+      "dev": "अव्यक्तोऽयमचिन्त्योऽयमविकार्योऽयमुच्यते ।\nतस्मादेवं विदित्वैनं नानुशोचितुमर्हसि॥",
+      "roman": "avyakto'yamachintyo'yamavikaaryo'yamuchyate |\ntasmaadevam viditvainam naanushochitumarhasi ||",
+      "arth": "इसे अव्यक्त (इन्द्रियों से न दिखने वाला), सोच से परे और विकाररहित कहा जाता है। इसलिए इसे ऐसा जानकर तुम्हें शोक नहीं करना चाहिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २६",
+      "dev": "अथ चैनं नित्यजातं नित्यं वा मन्यसे मृतम् ।\nतथापि त्वं महाबाहो नैवं शोचितुमर्हसि॥",
+      "roman": "atha chainam nityajaatam nityam vaa manyase mritam |\ntathaapi tvam mahaabaaho naivam shochitumarhasi ||",
+      "arth": "और यदि तुम इसे सदा जन्म लेने वाला और सदा मरने वाला मानो, तब भी हे महाबाहो! तुम्हें इस तरह शोक नहीं करना चाहिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २७",
+      "dev": "जातस्य हि ध्रुवो मृत्युर्ध्रुवं जन्म मृतस्य च ।\nतस्मादपरिहार्येऽर्थे न त्वं शोचितुमर्हसि॥",
+      "roman": "jaatasya hi dhruvo mrityurdhruvam janma mritasya cha |\ntasmaadaparihaarye'rthe na tvam shochitumarhasi ||",
+      "arth": "क्योंकि जो जन्मा है उसकी मृत्यु निश्चित है, और जो मरा है उसका जन्म निश्चित है। इसलिए जिसे टाला नहीं जा सकता, उस बात पर तुम्हें शोक नहीं करना चाहिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २८",
+      "dev": "अव्यक्तादीनि भूतानि व्यक्तमध्यानि भारत ।\nअव्यक्तनिधनान्येव तत्र का परिदेवना॥",
+      "roman": "avyaktaadeeni bhootaani vyaktamadhyaani bhaarata |\navyaktanidhanaanyeva tatra kaa paridevanaa ||",
+      "arth": "हे भारत! सब प्राणी शुरू में अप्रकट होते हैं, बीच में प्रकट होते हैं और अन्त में फिर अप्रकट हो जाते हैं। फिर इसमें रोना कैसा?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २९",
+      "dev": "आश्चर्यवत्पश्यति कश्चिदेन-\nमाश्चर्यवद्वदति तथैव चान्यः ।\nआश्चर्यवच्चैनमन्यः शृणोति\nश्रुत्वाप्येनं वेद न चैव कश्चित्॥",
+      "roman": "aashcharyavatpashyati kashchidena-\nmaashcharyavadvadati tathaiva chaanyah |\naashcharyavachchainamanyah shrinoti\nshrutvaapyenam veda na chaiva kashchit ||",
+      "arth": "कोई इसे आश्चर्य की तरह देखता है, कोई दूसरा इसके बारे में आश्चर्य की तरह बोलता है, कोई और इसे आश्चर्य की तरह सुनता है — और सुनकर भी कोई इसे नहीं जान पाता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३०",
+      "dev": "देही नित्यमवध्योऽयं देहे सर्वस्य भारत ।\nतस्मात्सर्वाणि भूतानि न त्वं शोचितुमर्हसि॥",
+      "roman": "dehee nityamavadhyo'yam dehe sarvasya bhaarata |\ntasmaatsarvaani bhootaani na tvam shochitumarhasi ||",
+      "arth": "हे भारत! सबके शरीर में रहने वाला यह आत्मा कभी मारा नहीं जा सकता। इसलिए तुम्हें किसी भी प्राणी के लिए शोक नहीं करना चाहिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३१",
+      "dev": "स्वधर्ममपि चावेक्ष्य न विकम्पितुमर्हसि ।\nधर्म्याद्धि युद्धाच्छ्रेयोऽन्यत्क्षत्रियस्य न विद्यते॥",
+      "roman": "svadharmamapi chaavekshya na vikampitumarhasi |\ndharmyaaddhi yuddhaachchhreyo'nyatkshatriyasya na vidyate ||",
+      "arth": "अपने धर्म को देखकर भी तुम्हें डगमगाना नहीं चाहिए, क्योंकि क्षत्रिय के लिए धर्म के युद्ध से बढ़कर दूसरा कोई कल्याण नहीं है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३२",
+      "dev": "यदृच्छया चोपपन्नं स्वर्गद्वारमपावृतम् ।\nसुखिनः क्षत्रियाः पार्थ लभन्ते युद्धमीदृशम्॥",
+      "roman": "yadrichchhayaa chopapannam svargadvaaramapaavritam |\nsukhinah kshatriyaah paartha labhante yuddhameedrisham ||",
+      "arth": "हे पार्थ! अपने आप सामने आया यह युद्ध स्वर्ग का खुला द्वार है। ऐसा युद्ध भाग्यवान क्षत्रियों को ही मिलता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३३",
+      "dev": "अथ चेत्त्वमिमं धर्म्यं सङ्ग्रामं न करिष्यसि ।\nततः स्वधर्मं कीर्तिं च हित्वा पापमवाप्स्यसि॥",
+      "roman": "atha chettvamimam dharmyam sangraamam na karishyasi |\ntatah svadharmam keertim cha hitvaa paapamavaapsyasi ||",
+      "arth": "और यदि तुम यह धर्म का युद्ध नहीं करोगे, तो अपने धर्म और यश को खोकर पाप के भागी बनोगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३४",
+      "dev": "अकीर्तिं चापि भूतानि कथयिष्यन्ति तेऽव्ययाम् ।\nसम्भावितस्य चाकीर्तिर्मरणादतिरिच्यते॥",
+      "roman": "akeertim chaapi bhootaani kathayishyanti te'vyayaam |\nsambhaavitasya chaakeertirmaranaadatirichyate ||",
+      "arth": "लोग सदा तुम्हारी बदनामी की बातें करेंगे; और जिसका सम्मान रहा हो, उसके लिए बदनामी मृत्यु से भी बढ़कर है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३५",
+      "dev": "भयाद्रणादुपरतं मंस्यन्ते त्वां महारथाः ।\nयेषां च त्वं बहुमतो भूत्वा यास्यसि लाघवम्॥",
+      "roman": "bhayaadranaaduparatam mamsyante tvaam mahaarathaah |\nyeshaam cha tvam bahumato bhootvaa yaasyasi laaghavam ||",
+      "arth": "महारथी समझेंगे कि तुम डर के मारे युद्ध से हट गए। जिनकी नज़र में तुम बहुत ऊँचे थे, उन्हीं की नज़र में छोटे हो जाओगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३६",
+      "dev": "अवाच्यवादांश्च बहून्वदिष्यन्ति तवाहिताः ।\nनिन्दन्तस्तव सामर्थ्यं ततो दुःखतरं नु किम्॥",
+      "roman": "avaachyavaadaamshcha bahoonvadishyanti tavaahitaah |\nnindantastava saamarthyam tato duhkhataram nu kim ||",
+      "arth": "तुम्हारे शत्रु तुम्हारे सामर्थ्य की निन्दा करते हुए बहुत-सी न कहने लायक़ बातें कहेंगे। इससे बढ़कर दुख और क्या होगा?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३७",
+      "dev": "हतो वा प्राप्स्यसि स्वर्गं जित्वा वा भोक्ष्यसे महीम् ।\nतस्मादुत्तिष्ठ कौन्तेय युद्धाय कृतनिश्चयः॥",
+      "roman": "hato vaa praapsyasi svargam jitvaa vaa bhokshyase maheem |\ntasmaaduttishtha kaunteya yuddhaaya kritanishchayah ||",
+      "arth": "मारे गए तो स्वर्ग पाओगे, जीते तो पृथ्वी का राज्य भोगोगे। इसलिए हे कुन्ती-पुत्र! युद्ध का निश्चय करके उठ खड़े हो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३८",
+      "dev": "सुखदुःखे समे कृत्वा लाभालाभौ जयाजयौ ।\nततो युद्धाय युज्यस्व नैवं पापमवाप्स्यसि॥",
+      "roman": "sukhaduhkhe same kritvaa laabhaalaabhau jayaajayau |\ntato yuddhaaya yujyasva naivam paapamavaapsyasi ||",
+      "arth": "सुख-दुख, लाभ-हानि और जीत-हार को बराबर समझकर युद्ध के लिए तैयार हो जाओ। इस तरह तुम्हें पाप नहीं लगेगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३९",
+      "dev": "एषा तेऽभिहिता साङ्ख्ये बुद्धिर्योगे त्विमां शृणु ।\nबुद्ध्या युक्तो यया पार्थ कर्मबन्धं प्रहास्यसि॥",
+      "roman": "eshaa te'bhihitaa saankhye buddhiryoge tvimaam shrinu |\nbuddhyaa yukto yayaa paartha karmabandham prahaasyasi ||",
+      "arth": "हे पार्थ! यह समझ तुम्हें सांख्य (ज्ञान) की दृष्टि से कही गई; अब इसे योग (कर्मयोग) की दृष्टि से सुनो, जिस समझ से जुड़कर तुम कर्म के बन्धन को छोड़ दोगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४०",
+      "dev": "नेहाभिक्रमनाशोऽस्ति प्रत्यवायो न विद्यते ।\nस्वल्पमप्यस्य धर्मस्य त्रायते महतो भयात्॥",
+      "roman": "nehaabhikramanaasho'sti pratyavaayo na vidyate |\nsvalpamapyasya dharmasya traayate mahato bhayaat ||",
+      "arth": "इस मार्ग में शुरू किया हुआ काम नष्ट नहीं होता, और उलटा फल भी नहीं होता। इस धर्म का थोड़ा-सा पालन भी बड़े भय से बचा लेता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४१",
+      "dev": "व्यवसायात्मिका बुद्धिरेकेह कुरुनन्दन ।\nबहुशाखा ह्यनन्ताश्च बुद्धयोऽव्यवसायिनाम्॥",
+      "roman": "vyavasaayaatmikaa buddhirekeha kurunandana |\nbahushaakhaa hyanantaashcha buddhayo'vyavasaayinaam ||",
+      "arth": "हे कुरुनन्दन! इस मार्ग में निश्चय वाली बुद्धि एक ही होती है। जिनका निश्चय नहीं है, उनकी बुद्धियाँ बहुत शाखाओं वाली और अनन्त होती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४२",
+      "dev": "यामिमां पुष्पितां वाचं प्रवदन्त्यविपश्चितः ।\nवेदवादरताः पार्थ नान्यदस्तीति वादिनः॥",
+      "roman": "yaamimaam pushpitaam vaacham pravadantyavipashchitah |\nvedavaadarataah paartha naanyadasteeti vaadinah ||",
+      "arth": "हे पार्थ! जो नासमझ लोग वेद के (फल बताने वाले) वचनों में ही रमे रहते हैं और कहते हैं कि इसके सिवा और कुछ नहीं है, वे यह फूलों जैसी सजी हुई वाणी बोलते हैं —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४३",
+      "dev": "कामात्मानः स्वर्गपरा जन्मकर्मफलप्रदाम् ।\nक्रियाविशेषबहुलां भोगैश्वर्यगतिं प्रति॥",
+      "roman": "kaamaatmaanah svargaparaa janmakarmaphalapradaam |\nkriyaavisheshabahulaam bhogaishvaryagatim prati ||",
+      "arth": "वे कामनाओं से भरे हैं, स्वर्ग को ही सबसे ऊँचा मानते हैं; उनकी वह वाणी जन्म रूपी कर्म-फल देने वाली और भोग तथा ऐश्वर्य पाने के लिए तरह-तरह की बहुत-सी क्रियाएँ बताने वाली है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४४",
+      "dev": "भोगैश्वर्यप्रसक्तानां तयापहृतचेतसाम् ।\nव्यवसायात्मिका बुद्धिः समाधौ न विधीयते॥",
+      "roman": "bhogaishvaryaprasaktaanaam tayaapahritachetasaam |\nvyavasaayaatmikaa buddhih samaadhau na vidheeyate ||",
+      "arth": "उस वाणी से जिनका चित्त हर लिया गया है और जो भोग तथा ऐश्वर्य में फँसे हैं, उनकी बुद्धि समाधि में निश्चय के साथ नहीं टिकती।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४५",
+      "dev": "त्रैगुण्यविषया वेदा निस्त्रैगुण्यो भवार्जुन ।\nनिर्द्वन्द्वो नित्यसत्त्वस्थो निर्योगक्षेम आत्मवान्॥",
+      "roman": "traigunyavishayaa vedaa nistraigunyo bhavaarjuna |\nnirdvandvo nityasattvastho niryogakshema aatmavaan ||",
+      "arth": "हे अर्जुन! वेद तीन गुणों के विषयों की बात करते हैं; तुम तीनों गुणों से ऊपर उठो। द्वन्द्वों से मुक्त, सदा सत्त्व में स्थित, पाने और बचाने की चिन्ता से रहित और अपने आप में स्थित हो जाओ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४६",
+      "dev": "यावानर्थ उदपाने सर्वतः सम्प्लुतोदके ।\nतावान्सर्वेषु वेदेषु ब्राह्मणस्य विजानतः॥",
+      "roman": "yaavaanartha udapaane sarvatah samplutodake |\ntaavaansarveshu vedeshu braahmanasya vijaanatah ||",
+      "arth": "सब ओर से जल भर जाने पर छोटे जलाशय से जितना काम रह जाता है, ज्ञानी ब्राह्मण का सब वेदों से उतना ही काम रह जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४७",
+      "dev": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।\nमा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥",
+      "roman": "karmanyevaadhikaaraste maa phaleshu kadaachana |\nmaa karmaphalaheturbhoormaa te sango'stvakarmani ||",
+      "arth": "तुम्हारा अधिकार केवल कर्म करने में है, उसके फलों में कभी नहीं। कर्म के फल को अपना उद्देश्य मत बनाओ, और कर्म न करने में भी तुम्हारा लगाव न हो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४८",
+      "dev": "योगस्थः कुरु कर्माणि सङ्गं त्यक्त्वा धनञ्जय ।\nसिद्ध्यसिद्ध्योः समो भूत्वा समत्वं योग उच्यते॥",
+      "roman": "yogasthah kuru karmaani sangam tyaktvaa dhananjaya |\nsiddhyasiddhyoh samo bhootvaa samatvam yoga uchyate ||",
+      "arth": "हे धनंजय! आसक्ति छोड़कर, सफलता और असफलता में एक जैसा रहकर, योग में स्थित होकर कर्म करो। इसी समभाव को योग कहते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४९",
+      "dev": "दूरेण ह्यवरं कर्म बुद्धियोगाद्धनञ्जय ।\nबुद्धौ शरणमन्विच्छ कृपणाः फलहेतवः॥",
+      "roman": "doorena hyavaram karma buddhiyogaaddhananjaya |\nbuddhau sharanamanvichchha kripanaah phalahetavah ||",
+      "arth": "हे धनंजय! बुद्धियोग की तुलना में (फल की इच्छा वाला) कर्म बहुत नीचा है। तुम बुद्धि की शरण लो; फल को उद्देश्य बनाने वाले दीन होते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५०",
+      "dev": "बुद्धियुक्तो जहातीह उभे सुकृतदुष्कृते ।\nतस्माद्योगाय युज्यस्व योगः कर्मसु कौशलम्॥",
+      "roman": "buddhiyukto jahaateeha ubhe sukritadushkrite |\ntasmaadyogaaya yujyasva yogah karmasu kaushalam ||",
+      "arth": "समबुद्धि वाला मनुष्य इसी जीवन में पुण्य और पाप दोनों को छोड़ देता है। इसलिए योग में लग जाओ; कर्म करने की कुशलता ही योग है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५१",
+      "dev": "कर्मजं बुद्धियुक्ता हि फलं त्यक्त्वा मनीषिणः ।\nजन्मबन्धविनिर्मुक्ताः पदं गच्छन्त्यनामयम्॥",
+      "roman": "karmajam buddhiyuktaa hi phalam tyaktvaa maneeshinah |\njanmabandhavinirmuktaah padam gachchhantyanaamayam ||",
+      "arth": "समबुद्धि वाले ज्ञानी लोग कर्म से पैदा होने वाले फल को छोड़कर जन्म के बन्धन से मुक्त हो जाते हैं और उस पद को पाते हैं जहाँ कोई दुख नहीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५२",
+      "dev": "यदा ते मोहकलिलं बुद्धिर्व्यतितरिष्यति ।\nतदा गन्तासि निर्वेदं श्रोतव्यस्य श्रुतस्य च॥",
+      "roman": "yadaa te mohakalilam buddhirvyatitarishyati |\ntadaa gantaasi nirvedam shrotavyasya shrutasya cha ||",
+      "arth": "जब तुम्हारी बुद्धि मोह के दलदल को पार कर जाएगी, तब जो सुन चुके हो और जो सुनने वाला है, उन दोनों से तुम्हें वैराग्य हो जाएगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५३",
+      "dev": "श्रुतिविप्रतिपन्ना ते यदा स्थास्यति निश्चला ।\nसमाधावचला बुद्धिस्तदा योगमवाप्स्यसि॥",
+      "roman": "shrutivipratipannaa te yadaa sthaasyati nishchalaa |\nsamaadhaavachalaa buddhistadaa yogamavaapsyasi ||",
+      "arth": "तरह-तरह की बातें सुनकर उलझी हुई तुम्हारी बुद्धि जब समाधि में अचल और स्थिर टिक जाएगी, तब तुम योग को पा लोगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५४",
+      "dev": "अर्जुन उवाच\nस्थितप्रज्ञस्य का भाषा समाधिस्थस्य केशव ।\nस्थितधीः किं प्रभाषेत किमासीत व्रजेत किम्॥",
+      "roman": "arjuna uvaacha\nsthitaprajnasya kaa bhaashaa samaadhisthasya keshava |\nsthitadheeh kim prabhaasheta kimaaseeta vrajeta kim ||",
+      "arth": "अर्जुन बोले — हे केशव! समाधि में टिके हुए स्थिर बुद्धि वाले पुरुष की क्या पहचान है? स्थिर बुद्धि वाला कैसे बोलता है, कैसे बैठता है, कैसे चलता है?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५५",
+      "dev": "श्रीभगवानुवाच\nप्रजहाति यदा कामान्सर्वान्पार्थ मनोगतान् ।\nआत्मन्येवात्मना तुष्टः स्थितप्रज्ञस्तदोच्यते॥",
+      "roman": "shreebhagavaanuvaacha\nprajahaati yadaa kaamaansarvaanpaartha manogataan |\naatmanyevaatmanaa tushtah sthitaprajnastadochyate ||",
+      "arth": "श्रीभगवान बोले — हे पार्थ! जब मनुष्य मन में आई सारी कामनाओं को छोड़ देता है और अपने आप से अपने आप में ही सन्तुष्ट रहता है, तब उसे स्थिर बुद्धि वाला (स्थितप्रज्ञ) कहते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५६",
+      "dev": "दुःखेष्वनुद्विग्नमनाः सुखेषु विगतस्पृहः ।\nवीतरागभयक्रोधः स्थितधीर्मुनिरुच्यते॥",
+      "roman": "duhkheshvanudvignamanaah sukheshu vigatasprihah |\nveetaraagabhayakrodhah sthitadheermuniruchyate ||",
+      "arth": "दुखों में जिसका मन घबराता नहीं, सुखों की जिसे लालसा नहीं, और जिसके राग, भय और क्रोध मिट गए हैं — ऐसा मुनि स्थिर बुद्धि वाला कहलाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५७",
+      "dev": "यः सर्वत्रानभिस्नेहस्तत्तत्प्राप्य शुभाशुभम् ।\nनाभिनन्दति न द्वेष्टि तस्य प्रज्ञा प्रतिष्ठिता॥",
+      "roman": "yah sarvatraanabhisnehastattatpraapya shubhaashubham |\nnaabhinandati na dveshti tasya prajnaa pratishthitaa ||",
+      "arth": "जो कहीं भी लगाव नहीं रखता, और अच्छा या बुरा जो भी मिले उस पर न ख़ुश होता है, न द्वेष करता है — उसकी बुद्धि स्थिर है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५८",
+      "dev": "यदा संहरते चायं कूर्मोऽङ्गानीव सर्वशः ।\nइन्द्रियाणीन्द्रियार्थेभ्यस्तस्य प्रज्ञा प्रतिष्ठिता॥",
+      "roman": "yadaa samharate chaayam koormo'ngaaneeva sarvashah |\nindriyaaneendriyaarthebhyastasya prajnaa pratishthitaa ||",
+      "arth": "जैसे कछुआ अपने अंगों को सब ओर से समेट लेता है, वैसे ही जब यह पुरुष अपनी इन्द्रियों को उनके विषयों से समेट लेता है, तब उसकी बुद्धि स्थिर होती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५९",
+      "dev": "विषया विनिवर्तन्ते निराहारस्य देहिनः ।\nरसवर्जं रसोऽप्यस्य परं दृष्ट्वा निवर्तते॥",
+      "roman": "vishayaa vinivartante niraahaarasya dehinah |\nrasavarjam raso'pyasya param drishtvaa nivartate ||",
+      "arth": "जो शरीरधारी इन्द्रियों से विषयों को ग्रहण नहीं करता, उससे विषय तो हट जाते हैं, पर उनका स्वाद (चाह) नहीं हटता। परम तत्त्व को देख लेने पर उसकी वह चाह भी मिट जाती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६०",
+      "dev": "यततो ह्यपि कौन्तेय पुरुषस्य विपश्चितः ।\nइन्द्रियाणि प्रमाथीनि हरन्ति प्रसभं मनः॥",
+      "roman": "yatato hyapi kaunteya purushasya vipashchitah |\nindriyaani pramaatheeni haranti prasabham manah ||",
+      "arth": "हे कुन्ती-पुत्र! मथ डालने वाली ये इन्द्रियाँ प्रयत्न करते हुए समझदार पुरुष के मन को भी ज़बरदस्ती खींच ले जाती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६१",
+      "dev": "तानि सर्वाणि संयम्य युक्त आसीत मत्परः ।\nवशे हि यस्येन्द्रियाणि तस्य प्रज्ञा प्रतिष्ठिता॥",
+      "roman": "taani sarvaani samyamya yukta aaseeta matparah |\nvashe hi yasyendriyaani tasya prajnaa pratishthitaa ||",
+      "arth": "उन सब इन्द्रियों को वश में करके, योग में जुड़कर, मुझमें मन लगाकर बैठे। जिसकी इन्द्रियाँ वश में हैं, उसी की बुद्धि स्थिर है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६२",
+      "dev": "ध्यायतो विषयान्पुंसः सङ्गस्तेषूपजायते ।\nसङ्गात्सञ्जायते कामः कामात्क्रोधोऽभिजायते॥",
+      "roman": "dhyaayato vishayaanpumsah sangasteshoopajaayate |\nsangaatsanjaayate kaamah kaamaatkrodho'bhijaayate ||",
+      "arth": "विषयों का चिन्तन करने वाले मनुष्य का उनमें लगाव हो जाता है। लगाव से कामना पैदा होती है, और कामना से क्रोध पैदा होता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६३",
+      "dev": "क्रोधाद्भवति सम्मोहः सम्मोहात्स्मृतिविभ्रमः ।\nस्मृतिभ्रंशाद् बुद्धिनाशो बुद्धिनाशात्प्रणश्यति॥",
+      "roman": "krodhaadbhavati sammohah sammohaatsmritivibhramah |\nsmritibhramshaad buddhinaasho buddhinaashaatpranashyati ||",
+      "arth": "क्रोध से मूढ़ता आती है, मूढ़ता से स्मृति भटक जाती है, स्मृति के बिगड़ने से बुद्धि नष्ट होती है, और बुद्धि नष्ट होने से मनुष्य का पतन हो जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६४",
+      "dev": "रागद्वेषवियुक्तैस्तु विषयानिन्द्रियैश्चरन् ।\nआत्मवश्यैर्विधेयात्मा प्रसादमधिगच्छति॥",
+      "roman": "raagadveshaviyuktaistu vishayaanindriyaishcharan |\naatmavashyairvidheyaatmaa prasaadamadhigachchhati ||",
+      "arth": "पर जिसका मन अपने वश में है, वह राग और द्वेष से रहित, अपने क़ाबू की इन्द्रियों से विषयों में बरतता हुआ भी मन की प्रसन्नता पा लेता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६५",
+      "dev": "प्रसादे सर्वदुःखानां हानिरस्योपजायते ।\nप्रसन्नचेतसो ह्याशु बुद्धिः पर्यवतिष्ठते॥",
+      "roman": "prasaade sarvaduhkhaanaam haanirasyopajaayate |\nprasannachetaso hyaashu buddhih paryavatishthate ||",
+      "arth": "मन प्रसन्न होने पर उसके सारे दुख मिट जाते हैं, क्योंकि प्रसन्न चित्त वाले की बुद्धि जल्दी ही स्थिर हो जाती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६६",
+      "dev": "नास्ति बुद्धिरयुक्तस्य न चायुक्तस्य भावना ।\nन चाभावयतः शान्तिरशान्तस्य कुतः सुखम्॥",
+      "roman": "naasti buddhirayuktasya na chaayuktasya bhaavanaa |\nna chaabhaavayatah shaantirashaantasya kutah sukham ||",
+      "arth": "जो योग से जुड़ा नहीं है, उसमें न निश्चय वाली बुद्धि होती है, न भावना। भावना के बिना शान्ति नहीं, और जिसे शान्ति नहीं, उसे सुख कहाँ?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६७",
+      "dev": "इन्द्रियाणां हि चरतां यन्मनोऽनुविधीयते ।\nतदस्य हरति प्रज्ञां वायुर्नावमिवाम्भसि॥",
+      "roman": "indriyaanaam hi charataam yanmano'nuvidheeyate |\ntadasya harati prajnaam vaayurnaavamivaambhasi ||",
+      "arth": "विषयों में घूमती इन्द्रियों में से मन जिस एक के पीछे लग जाता है, वही इसकी बुद्धि को हर ले जाती है — जैसे हवा पानी में नाव को बहा ले जाती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६८",
+      "dev": "तस्माद्यस्य महाबाहो निगृहीतानि सर्वशः ।\nइन्द्रियाणीन्द्रियार्थेभ्यस्तस्य प्रज्ञा प्रतिष्ठिता॥",
+      "roman": "tasmaadyasya mahaabaaho nigriheetaani sarvashah |\nindriyaaneendriyaarthebhyastasya prajnaa pratishthitaa ||",
+      "arth": "इसलिए हे महाबाहो! जिसकी इन्द्रियाँ उनके विषयों से सब तरह रोक ली गई हैं, उसी की बुद्धि स्थिर है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६९",
+      "dev": "या निशा सर्वभूतानां तस्यां जागर्ति संयमी ।\nयस्यां जाग्रति भूतानि सा निशा पश्यतो मुनेः॥",
+      "roman": "yaa nishaa sarvabhootaanaam tasyaam jaagarti samyamee |\nyasyaam jaagrati bhootaani saa nishaa pashyato muneh ||",
+      "arth": "जो सब प्राणियों के लिए रात है, उसमें संयमी जागता है; और जिसमें सब प्राणी जागते हैं, वह तत्त्व को देखने वाले मुनि के लिए रात है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७०",
+      "dev": "आपूर्यमाणमचलप्रतिष्ठं\nसमुद्रमापः प्रविशन्ति यद्वत् ।\nतद्वत्कामा यं प्रविशन्ति सर्वे\nस शान्तिमाप्नोति न कामकामी॥",
+      "roman": "aapooryamaanamachalapratishtham\nsamudramaapah pravishanti yadvat |\ntadvatkaamaa yam pravishanti sarve\nsa shaantimaapnoti na kaamakaamee ||",
+      "arth": "जैसे चारों ओर से भरते रहने पर भी अपनी मर्यादा में अचल रहने वाले समुद्र में नदियों का जल समा जाता है, वैसे ही जिसमें सारी कामनाएँ समा जाती हैं, वही शान्ति पाता है — कामनाओं को चाहने वाला नहीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७१",
+      "dev": "विहाय कामान्यः सर्वान्पुमांश्चरति निःस्पृहः ।\nनिर्ममो निरहङ्कारः स शान्तिमधिगच्छति॥",
+      "roman": "vihaaya kaamaanyah sarvaanpumaamshcharati nihsprihah |\nnirmamo nirahankaarah sa shaantimadhigachchhati ||",
+      "arth": "जो पुरुष सारी कामनाओं को छोड़कर, बिना लालसा के, ममता और अहंकार से रहित होकर विचरता है, वही शान्ति पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७२",
+      "dev": "एषा ब्राह्मी स्थितिः पार्थ नैनां प्राप्य विमुह्यति ।\nस्थित्वास्यामन्तकालेऽपि ब्रह्मनिर्वाणमृच्छति॥",
+      "roman": "eshaa braahmee sthitih paartha nainaam praapya vimuhyati |\nsthitvaasyaamantakaale'pi brahmanirvaanamrichchhati ||",
+      "arth": "हे पार्थ! यह ब्रह्म में स्थित होने की अवस्था है। इसे पाकर मनुष्य फिर मोह में नहीं पड़ता; और अन्त समय में भी इसमें टिककर वह ब्रह्म-निर्वाण पा लेता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "समापन",
+      "dev": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु\nब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे\nसाङ्ख्ययोगो नाम द्वितीयोऽध्यायः॥",
+      "roman": "om tatsaditi shreemadbhagavadgeetaasoopanishatsu\nbrahmavidyaayaam yogashaastre shreekrishnaarjunasamvaade\nsaankhyayogo naama dviteeyo'dhyaayah ||",
+      "arth": "इस तरह उपनिषद रूप श्रीमद्भगवद्गीता में, जो ब्रह्मविद्या और योगशास्त्र है, श्रीकृष्ण और अर्जुन के संवाद में \"साङ्ख्ययोग\" नाम का दूसरा अध्याय पूरा हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, भीष्म पर्व — श्रीमद्भगवद्गीता",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ पाँच अलग संस्करणों से श्लोक-दर-श्लोक मिलाया गया है। सात सौ में से पाँच सौ सतहत्तर श्लोक पाँचों में अक्षर-अक्षर एक मिले; बाक़ी में वही रूप लिया गया जिस पर अधिक संस्करण एक थे।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं। आचार्यों ने कई श्लोकों को अलग-अलग ढंग से समझाया है; यहाँ किसी एक मत की व्याख्या नहीं, सीधा अर्थ दिया गया है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

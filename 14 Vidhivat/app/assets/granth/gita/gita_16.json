@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "id": "gita_16",
+  "naam": "अध्याय १६ — दैवासुरसम्पद्विभागयोग",
+  "upnaam": [
+    "श्रीमद्भगवद्गीता अध्याय १६",
+    "गीता अध्याय १६",
+    "दैवासुरसम्पद्विभागयोगो नाम षोडशोऽध्यायः"
+  ],
+  "prakar": "granth",
+  "devta": "श्रीकृष्ण",
+  "rachnakar": "महर्षि वेदव्यास — महाभारत",
+  "bhasha": "संस्कृत",
+  "parichay": "दैवी स्वभाव के गुण और आसुरी स्वभाव के लक्षण अलग-अलग गिनाए गए हैं। काम, क्रोध और लोभ को नरक के तीन द्वार कहा गया है, और शास्त्र को कर्म की कसौटी।",
+  "kabPadhein": "किसी भी दिन, किसी भी समय। बहुत घरों में रोज़ थोड़ा-थोड़ा पढ़ने का चलन है। मार्गशीर्ष शुक्ल एकादशी (मोक्षदा एकादशी) को गीता जयंती मनाई जाती है।",
+  "kaisePadhein": "शान्त जगह बैठकर पढ़ें। पूरा पाठ एक बैठक में न हो तो रोज़ एक अध्याय या कुछ श्लोक पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है।\n\nहर अध्याय के अन्त में उसका समापन-वाक्य दिया है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "श्लोक १",
+      "dev": "श्रीभगवानुवाच\nअभयं सत्त्वसंशुद्धिर्ज्ञानयोगव्यवस्थितिः ।\nदानं दमश्च यज्ञश्च स्वाध्यायस्तप आर्जवम्॥",
+      "roman": "shreebhagavaanuvaacha\nabhayam sattvasamshuddhirjnaanayogavyavasthitih |\ndaanam damashcha yajnashcha svaadhyaayastapa aarjavam ||",
+      "arth": "श्रीभगवान बोले — निर्भयता, अन्तःकरण की शुद्धि, ज्ञान और योग में टिके रहना, दान, इन्द्रियों का संयम, यज्ञ, स्वाध्याय, तप और सरलता;",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "अहिंसा सत्यमक्रोधस्त्यागः शान्तिरपैशुनम् ।\nदया भूतेष्वलोलुप्त्वं मार्दवं ह्रीरचापलम्॥",
+      "roman": "ahimsaa satyamakrodhastyaagah shaantirapaishunam |\ndayaa bhooteshvaloluptvam maardavam hreerachaapalam ||",
+      "arth": "अहिंसा, सत्य, क्रोध न करना, त्याग, शान्ति, चुग़ली न करना, प्राणियों पर दया, लालच न होना, कोमलता, लज्जा और चंचलता का न होना;",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "तेजः क्षमा धृतिः शौचमद्रोहो नातिमानिता ।\nभवन्ति सम्पदं दैवीमभिजातस्य भारत॥",
+      "roman": "tejah kshamaa dhritih shauchamadroho naatimaanitaa |\nbhavanti sampadam daiveemabhijaatasya bhaarata ||",
+      "arth": "तेज, क्षमा, धैर्य, पवित्रता, किसी से द्रोह न करना और अपने को बहुत बड़ा न मानना — हे भारत! ये दैवी सम्पदा लेकर जन्मे मनुष्य के गुण हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "दम्भो दर्पोऽभिमानश्च क्रोधः पारुष्यमेव च ।\nअज्ञानं चाभिजातस्य पार्थ सम्पदमासुरीम्॥",
+      "roman": "dambho darpo'bhimaanashcha krodhah paarushyameva cha |\najnaanam chaabhijaatasya paartha sampadamaasureem ||",
+      "arth": "हे पार्थ! दिखावा, घमण्ड, अभिमान, क्रोध, कठोरता और अज्ञान — ये आसुरी सम्पदा लेकर जन्मे मनुष्य के लक्षण हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "दैवी सम्पद्विमोक्षाय निबन्धायासुरी मता ।\nमा शुचः सम्पदं दैवीमभिजातोऽसि पाण्डव॥",
+      "roman": "daivee sampadvimokshaaya nibandhaayaasuree mataa |\nmaa shuchah sampadam daiveemabhijaato'si paandava ||",
+      "arth": "दैवी सम्पदा मोक्ष के लिए और आसुरी सम्पदा बन्धन के लिए मानी गई है। हे पाण्डव! शोक मत करो; तुम दैवी सम्पदा लेकर जन्मे हो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "द्वौ भूतसर्गौ लोकेऽस्मिन्दैव आसुर एव च ।\nदैवो विस्तरशः प्रोक्त आसुरं पार्थ मे शृणु॥",
+      "roman": "dvau bhootasargau loke'smindaiva aasura eva cha |\ndaivo vistarashah prokta aasuram paartha me shrinu ||",
+      "arth": "इस संसार में प्राणियों की दो तरह की सृष्टि है — दैवी और आसुरी। दैवी विस्तार से कही जा चुकी; हे पार्थ! अब आसुरी मुझसे सुनो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "प्रवृत्तिं च निवृत्तिं च जना न विदुरासुराः ।\nन शौचं नापि चाचारो न सत्यं तेषु विद्यते॥",
+      "roman": "pravrittim cha nivrittim cha janaa na viduraasuraah |\nna shaucham naapi chaachaaro na satyam teshu vidyate ||",
+      "arth": "आसुरी स्वभाव वाले लोग न यह जानते हैं कि क्या करना चाहिए, न यह कि किससे हटना चाहिए। उनमें न पवित्रता होती है, न अच्छा आचरण, न सत्य।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "असत्यमप्रतिष्ठं ते जगदाहुरनीश्वरम् ।\nअपरस्परसम्भूतं किमन्यत्कामहैतुकम्॥",
+      "roman": "asatyamapratishtham te jagadaahuraneeshvaram |\naparasparasambhootam kimanyatkaamahaitukam ||",
+      "arth": "वे कहते हैं कि जगत झूठा है, इसका कोई आधार नहीं, कोई ईश्वर नहीं; यह आपस के मेल से ही पैदा हुआ है — काम के सिवा इसका और क्या कारण है?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "एतां दृष्टिमवष्टभ्य नष्टात्मानोऽल्पबुद्धयः ।\nप्रभवन्त्युग्रकर्माणः क्षयाय जगतोऽहिताः॥",
+      "roman": "etaam drishtimavashtabhya nashtaatmaano'lpabuddhayah |\nprabhavantyugrakarmaanah kshayaaya jagato'hitaah ||",
+      "arth": "इस दृष्टि को पकड़कर, नष्ट आत्मा वाले, थोड़ी बुद्धि वाले, भयानक कर्म करने वाले और सबका बुरा चाहने वाले वे लोग जगत के नाश के लिए पैदा होते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "काममाश्रित्य दुष्पूरं दम्भमानमदान्विताः ।\nमोहाद्गृहीत्वासद्ग्राहान्प्रवर्तन्तेऽशुचिव्रताः॥",
+      "roman": "kaamamaashritya dushpooram dambhamaanamadaanvitaah |\nmohaadgriheetvaasadgraahaanpravartante'shuchivrataah ||",
+      "arth": "कभी न भरने वाली कामना का सहारा लेकर, दिखावे, मान और मद से भरे हुए वे लोग मोह से झूठी धारणाएँ पकड़कर अपवित्र व्रतों के साथ बरतते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "चिन्तामपरिमेयां च प्रलयान्तामुपाश्रिताः ।\nकामोपभोगपरमा एतावदिति निश्चिताः॥",
+      "roman": "chintaamaparimeyaam cha pralayaantaamupaashritaah |\nkaamopabhogaparamaa etaavaditi nishchitaah ||",
+      "arth": "वे मरते दम तक रहने वाली अनगिनत चिन्ताओं में डूबे रहते हैं; कामनाओं का भोग ही उनका परम लक्ष्य है, और उनका निश्चय है कि बस इतना ही सब कुछ है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "आशापाशशतैर्बद्धाः कामक्रोधपरायणाः ।\nईहन्ते कामभोगार्थमन्यायेनार्थसञ्चयान्॥",
+      "roman": "aashaapaashashatairbaddhaah kaamakrodhaparaayanaah |\neehante kaamabhogaarthamanyaayenaarthasanchayaan ||",
+      "arth": "आशा के सैकड़ों फन्दों में बँधे, काम और क्रोध में डूबे हुए वे लोग भोगों के लिए अन्याय से धन बटोरने की कोशिश करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "इदमद्य मया लब्धमिमं प्राप्स्ये मनोरथम् ।\nइदमस्तीदमपि मे भविष्यति पुनर्धनम्॥",
+      "roman": "idamadya mayaa labdhamimam praapsye manoratham |\nidamasteedamapi me bhavishyati punardhanam ||",
+      "arth": "आज मैंने यह पा लिया, अब यह मनोरथ पूरा करूँगा; यह धन मेरे पास है, और यह भी फिर मेरा हो जाएगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "असौ मया हतः शत्रुर्हनिष्ये चापरानपि ।\nईश्वरोऽहमहं भोगी सिद्धोऽहं बलवान्सुखी॥",
+      "roman": "asau mayaa hatah shatrurhanishye chaaparaanapi |\neeshvaro'hamaham bhogee siddho'ham balavaansukhee ||",
+      "arth": "उस शत्रु को मैंने मार दिया, दूसरों को भी मार डालूँगा। मैं ही स्वामी हूँ, मैं ही भोगने वाला हूँ; मैं सफल, बलवान और सुखी हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "आढ्योऽभिजनवानस्मि कोऽन्योऽस्ति सदृशो मया ।\nयक्ष्ये दास्यामि मोदिष्य इत्यज्ञानविमोहिताः॥",
+      "roman": "aadhyo'bhijanavaanasmi ko'nyo'sti sadrisho mayaa |\nyakshye daasyaami modishya ityajnaanavimohitaah ||",
+      "arth": "मैं धनी और ऊँचे कुल वाला हूँ; मेरे जैसा दूसरा कौन है? मैं यज्ञ करूँगा, दान दूँगा, मौज करूँगा — इस तरह अज्ञान से मोहित होकर,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "अनेकचित्तविभ्रान्ता मोहजालसमावृताः ।\nप्रसक्ताः कामभोगेषु पतन्ति नरकेऽशुचौ॥",
+      "roman": "anekachittavibhraantaa mohajaalasamaavritaah |\nprasaktaah kaamabhogeshu patanti narake'shuchau ||",
+      "arth": "अनेक तरह से भटके हुए चित्त वाले, मोह के जाल में फँसे और भोगों में डूबे हुए वे लोग अपवित्र नरक में गिरते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "आत्मसम्भाविताः स्तब्धा धनमानमदान्विताः ।\nयजन्ते नामयज्ञैस्ते दम्भेनाविधिपूर्वकम्॥",
+      "roman": "aatmasambhaavitaah stabdhaa dhanamaanamadaanvitaah |\nyajante naamayajnaiste dambhenaavidhipoorvakam ||",
+      "arth": "अपने को ही बड़ा मानने वाले, अकड़ वाले, धन और मान के नशे में चूर वे लोग केवल नाम के यज्ञ दिखावे के लिए, विधि के बिना करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "अहङ्कारं बलं दर्पं कामं क्रोधं च संश्रिताः ।\nमामात्मपरदेहेषु प्रद्विषन्तोऽभ्यसूयकाः॥",
+      "roman": "ahankaaram balam darpam kaamam krodham cha samshritaah |\nmaamaatmaparadeheshu pradvishanto'bhyasooyakaah ||",
+      "arth": "अहंकार, बल, घमण्ड, काम और क्रोध का सहारा लिए हुए, दोष निकालने वाले वे लोग अपने और दूसरों के शरीर में रहने वाले मुझसे द्वेष करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "तानहं द्विषतः क्रूरान्संसारेषु नराधमान् ।\nक्षिपाम्यजस्रमशुभानासुरीष्वेव योनिषु॥",
+      "roman": "taanaham dvishatah krooraansamsaareshu naraadhamaan |\nkshipaamyajasramashubhaanaasureeshveva yonishu ||",
+      "arth": "द्वेष करने वाले उन क्रूर, अशुभ, मनुष्यों में नीच लोगों को मैं संसार में बार-बार आसुरी योनियों में ही डालता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "आसुरीं योनिमापन्ना मूढा जन्मनि जन्मनि ।\nमामप्राप्यैव कौन्तेय ततो यान्त्यधमां गतिम्॥",
+      "roman": "aasureem yonimaapannaa moodhaa janmani janmani |\nmaamapraapyaiva kaunteya tato yaantyadhamaam gatim ||",
+      "arth": "हे कुन्ती-पुत्र! जन्म-जन्म में आसुरी योनि को पाकर वे मूढ़ लोग मुझे न पाकर उससे भी नीची गति को जाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "त्रिविधं नरकस्येदं द्वारं नाशनमात्मनः ।\nकामः क्रोधस्तथा लोभस्तस्मादेतत्त्रयं त्यजेत्॥",
+      "roman": "trividham narakasyedam dvaaram naashanamaatmanah |\nkaamah krodhastathaa lobhastasmaadetattrayam tyajet ||",
+      "arth": "काम, क्रोध और लोभ — ये नरक के तीन द्वार हैं, जो आत्मा का नाश करते हैं। इसलिए इन तीनों को छोड़ देना चाहिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "एतैर्विमुक्तः कौन्तेय तमोद्वारैस्त्रिभिर्नरः ।\nआचरत्यात्मनः श्रेयस्ततो याति परां गतिम्॥",
+      "roman": "etairvimuktah kaunteya tamodvaaraistribhirnarah |\naacharatyaatmanah shreyastato yaati paraam gatim ||",
+      "arth": "हे कुन्ती-पुत्र! अँधेरे के इन तीन द्वारों से छूटा हुआ मनुष्य अपने कल्याण का आचरण करता है, और उससे परम गति पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "यः शास्त्रविधिमुत्सृज्य वर्तते कामकारतः ।\nन स सिद्धिमवाप्नोति न सुखं न परां गतिम्॥",
+      "roman": "yah shaastravidhimutsrijya vartate kaamakaaratah |\nna sa siddhimavaapnoti na sukham na paraam gatim ||",
+      "arth": "जो शास्त्र की विधि को छोड़कर अपनी मनमानी से बरतता है, उसे न सिद्धि मिलती है, न सुख, न परम गति।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "तस्माच्छास्त्रं प्रमाणं ते कार्याकार्यव्यवस्थितौ ।\nज्ञात्वा शास्त्रविधानोक्तं कर्म कर्तुमिहार्हसि॥",
+      "roman": "tasmaachchhaastram pramaanam te kaaryaakaaryavyavasthitau |\njnaatvaa shaastravidhaanoktam karma kartumihaarhasi ||",
+      "arth": "इसलिए क्या करना है और क्या नहीं — यह तय करने में तुम्हारे लिए शास्त्र ही प्रमाण है। शास्त्र के विधान में कही बात को जानकर तुम्हें यहाँ कर्म करना चाहिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "समापन",
+      "dev": "ॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु\nब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे\nदैवासुरसम्पद्विभागयोगो नाम षोडशोऽध्यायः॥",
+      "roman": "om tatsaditi shreemadbhagavadgeetaasoopanishatsu\nbrahmavidyaayaam yogashaastre shreekrishnaarjunasamvaade\ndaivaasurasampadvibhaagayogo naama shodasho'dhyaayah ||",
+      "arth": "इस तरह उपनिषद रूप श्रीमद्भगवद्गीता में, जो ब्रह्मविद्या और योगशास्त्र है, श्रीकृष्ण और अर्जुन के संवाद में \"दैवासुरसम्पद्विभागयोग\" नाम का सोलहवाँ अध्याय पूरा हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, भीष्म पर्व — श्रीमद्भगवद्गीता",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ पाँच अलग संस्करणों से श्लोक-दर-श्लोक मिलाया गया है। सात सौ में से पाँच सौ सतहत्तर श्लोक पाँचों में अक्षर-अक्षर एक मिले; बाक़ी में वही रूप लिया गया जिस पर अधिक संस्करण एक थे।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं। आचार्यों ने कई श्लोकों को अलग-अलग ढंग से समझाया है; यहाँ किसी एक मत की व्याख्या नहीं, सीधा अर्थ दिया गया है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

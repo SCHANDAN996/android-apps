@@ -83,8 +83,25 @@ class VidhivatButton extends StatelessWidget {
           ),
         );
       case VidhivatButtonVariant.secondary:
-        button = OutlinedButton(
-            onPressed: callback, style: sizeStyle, child: content);
+        // Secondary actions भी action ही हैं, plain text नहीं। Dark UI में
+        // सिर्फ़ outline/transparent background आसानी से supporting copy जैसा
+        // लगता था। इसलिए primary gradient से हल्का, मगर साफ़ filled surface।
+        button = FilledButton(
+          onPressed: callback,
+          style: sizeStyle.copyWith(
+            elevation: const WidgetStatePropertyAll(VidhivatElevation.none),
+            shadowColor: const WidgetStatePropertyAll(Colors.transparent),
+            backgroundColor: WidgetStateProperty.resolveWith((states) =>
+                states.contains(WidgetState.disabled)
+                    ? colors.primary.withValues(alpha: 0.10)
+                    : colors.primary.withValues(alpha: 0.20)),
+            foregroundColor: WidgetStatePropertyAll(colors.primary),
+            overlayColor: WidgetStatePropertyAll(
+              colors.primary.withValues(alpha: 0.14),
+            ),
+          ),
+          child: content,
+        );
       case VidhivatButtonVariant.text:
         button =
             TextButton(onPressed: callback, style: sizeStyle, child: content);
@@ -418,7 +435,25 @@ class VidhivatSectionHeader extends StatelessWidget {
             ],
           ),
         ),
-        if (action != null) action!,
+        // ⚠️ बटन की अपनी चौड़ाई तय होती है और वह सिकुड़ता नहीं। 320
+        // चौड़ाई और 1.5 गुना अक्षर पर पाठ वाले पन्ने का "अर्थ दिखाएँ" बटन
+        // 16 पिक्सल बाहर निकल रहा था — चालीसा और हर आरती पर (21 सित 2026
+        // को आरती वाली जाँच लिखते समय पकड़ा)। अब बटन ज़्यादा से ज़्यादा आधी
+        // जगह लेता है, और उससे बड़ा हो तो थोड़ा छोटा दिखता है — कटता नहीं।
+        if (action != null)
+          Builder(
+            builder: (context) {
+              final chaudai = MediaQuery.sizeOf(context).width;
+              return ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: chaudai * 0.45),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.topRight,
+                  child: action!,
+                ),
+              );
+            },
+          ),
       ],
     );
   }
@@ -536,19 +571,21 @@ class VidhivatSacredBackdrop extends StatelessWidget {
             top: -120,
             right: -88,
             child: IgnorePointer(
-              child: Container(
-                width: 280,
-                height: 280,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: colors.secondary.withValues(alpha: 0.055),
-                  boxShadow: [
-                    BoxShadow(
-                      color: colors.primary.withValues(alpha: 0.045),
-                      blurRadius: 90,
-                      spreadRadius: 32,
-                    ),
-                  ],
+              child: RepaintBoundary(
+                child: Container(
+                  width: 280,
+                  height: 280,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: colors.secondary.withValues(alpha: 0.055),
+                    boxShadow: [
+                      BoxShadow(
+                        color: colors.primary.withValues(alpha: 0.045),
+                        blurRadius: 90,
+                        spreadRadius: 32,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

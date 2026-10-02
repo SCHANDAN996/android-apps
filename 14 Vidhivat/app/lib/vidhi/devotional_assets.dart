@@ -24,6 +24,192 @@ abstract final class DevotionalAssets {
     semanticLabel: 'मार्गदर्शिका पूर्ण होने का सजावटी दीपक चित्र',
   );
 
+  static const completionGanesha = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/completion_ganesha_blessing_v1.webp',
+    semanticLabel: 'अभय मुद्रा में आशीर्वाद देते गणेश जी का सजावटी चित्र',
+  );
+
+  static const completionVishwakarma = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/completion_vishwakarma_v1.webp',
+    semanticLabel: 'आशीर्वाद देते भगवान विश्वकर्मा का सजावटी चित्र',
+  );
+
+  static const completionShiva = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/completion_shiva_blessing_v1.webp',
+    semanticLabel: 'अभय मुद्रा में आशीर्वाद देते शिव जी का सजावटी चित्र',
+  );
+
+  static const completionHanuman = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/completion_hanuman_blessing_v1.webp',
+    semanticLabel: 'अभय मुद्रा में आशीर्वाद देते हनुमान जी का सजावटी चित्र',
+  );
+
+  static const completionSatyanarayan = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_satyanarayan_blessing_v1.webp',
+    semanticLabel: 'अभय मुद्रा में आशीर्वाद देते श्री सत्यनारायण का चित्र',
+  );
+  static const completionSaraswati = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/completion_saraswati_blessing_v1.webp',
+    semanticLabel: 'आशीर्वाद मुद्रा में माँ सरस्वती का सजावटी चित्र',
+  );
+  static const completionRam = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/completion_ram_blessing_v1.webp',
+    semanticLabel: 'अभय मुद्रा में आशीर्वाद देते श्रीराम का सजावटी चित्र',
+  );
+  static const completionKrishna = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/completion_krishna_blessing_v1.webp',
+    semanticLabel: 'अभय मुद्रा में आशीर्वाद देते श्रीकृष्ण का सजावटी चित्र',
+  );
+  static const completionSurya = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/completion_surya_blessing_v1.webp',
+    semanticLabel: 'अभय मुद्रा में आशीर्वाद देते सूर्यदेव का सजावटी चित्र',
+  );
+  static const completionDurga = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/completion_durga_blessing_v1.webp',
+    semanticLabel: 'अभय मुद्रा में आशीर्वाद देती माँ दुर्गा का सजावटी चित्र',
+  );
+  static const completionLakshmi = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/completion_lakshmi_blessing_v1.webp',
+    semanticLabel: 'अभय-वरद मुद्रा में माँ लक्ष्मी का सजावटी चित्र',
+  );
+  static const completionDhanvantari = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_dhanvantari_blessing_v1.webp',
+    semanticLabel: 'अभय मुद्रा में आशीर्वाद देते धन्वंतरि भगवान का चित्र',
+  );
+  static const completionGayatri = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/completion_gayatri_blessing_v1.webp',
+    semanticLabel: 'अभय मुद्रा में आशीर्वाद देती गायत्री माता का चित्र',
+  );
+  static const completionTulsiDevi = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_tulsi_devi_blessing_v1.webp',
+    semanticLabel: 'अभय मुद्रा में आशीर्वाद देती तुलसी देवी का चित्र',
+  );
+  static const completionShivaParvati = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_shiva_parvati_blessing_v1.webp',
+    semanticLabel: 'आशीर्वाद देते शिव-पार्वती का सजावटी चित्र',
+  );
+  static const completionGovardhanAnnakut = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_govardhan_annakut_blessing_v1.webp',
+    semanticLabel: 'गोवर्धन धारण कर आशीर्वाद देते श्रीकृष्ण का चित्र',
+  );
+  static const completionMakarSankranti = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_makar_sankranti_blessing_v1.webp',
+    semanticLabel: 'सप्ताश्व रथ पर आशीर्वाद देते सूर्यदेव का चित्र',
+  );
+  static const completionChhath = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/completion_chhath_blessing_v1.webp',
+    semanticLabel: 'छठी मैया और सूर्यदेव के आशीर्वाद का चित्र',
+  );
+  static const completionVatSavitri = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_vat_savitri_blessing_v1.webp',
+    semanticLabel: 'बरगद के नीचे आशीर्वाद देती माता सावित्री का चित्र',
+  );
+  static const completionKarwaChauth = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_karwa_chauth_blessing_v1.webp',
+    semanticLabel: 'करवा चौथ पर आशीर्वाद देते शिव-पार्वती का चित्र',
+  );
+  static const completionHartalikaTeej = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_hartalika_teej_blessing_v1.webp',
+    semanticLabel: 'हरतालिका तीज पर आशीर्वाद देते शिव-पार्वती का चित्र',
+  );
+  static const completionKalashSthapana = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_kalash_sthapana_blessing_v1.webp',
+    semanticLabel:
+        'कलश और जवारों के साथ आशीर्वाद देती अष्टभुजा दुर्गा का चित्र',
+  );
+  static const completionLakshmiPoojan = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_lakshmi_poojan_blessing_v1.webp',
+    semanticLabel: 'अभय मुद्रा में माँ लक्ष्मी और श्रीगणेश का चित्र',
+  );
+  static const completionNityaPooja = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_nitya_pooja_blessing_v1.webp',
+    semanticLabel: 'नित्य पूजा के पंचदेव आशीर्वाद का चित्र',
+  );
+  static const completionGrihPravesh = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_grih_pravesh_blessing_v1.webp',
+    semanticLabel: 'मंगल कलश के साथ आशीर्वाद देते श्रीगणेश का चित्र',
+  );
+  static const completionMundan = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/completion_mundan_blessing_v1.webp',
+    semanticLabel: 'मुंडन संस्कार पर आशीर्वाद देते श्रीगणेश का चित्र',
+  );
+  static const completionVahanPooja = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_vahan_pooja_blessing_v1.webp',
+    semanticLabel: 'वाहन पूजा पर आशीर्वाद देते श्रीगणेश का चित्र',
+  );
+  static const completionShraadh = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/completion_shraadh_blessing_v1.webp',
+    semanticLabel: 'श्राद्ध कर्म पर आशीर्वाद देते भगवान विष्णु का चित्र',
+  );
+  static const completionBhaiDooj = DevotionalArtwork(
+    assetPath: 'assets/images/devotional/completion_bhai_dooj_blessing_v1.webp',
+    semanticLabel: 'भाई दूज पर आशीर्वाद देते यमराज और यमुना का चित्र',
+  );
+  static const completionRakshaBandhan = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_raksha_bandhan_blessing_v1.webp',
+    semanticLabel: 'रक्षा बंधन पर आशीर्वाद देते श्रीकृष्ण और सुभद्रा का चित्र',
+  );
+  static const completionNavratriSankshipt = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_navratri_sankshipt_blessing_v1.webp',
+    semanticLabel: 'संक्षिप्त नवरात्रि पूजा पर अष्टभुजा दुर्गा का चित्र',
+  );
+  static const completionNavratriBrahmacharini = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_navratri_brahmacharini_blessing_v1.webp',
+    semanticLabel: 'माँ ब्रह्मचारिणी का जपमाला-कमंडल सहित चित्र',
+  );
+  static const completionNavratriChandraghanta = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_navratri_chandraghanta_blessing_v1.webp',
+    semanticLabel: 'दशभुजा माँ चंद्रघंटा का चित्र',
+  );
+  static const completionNavratriKushmanda = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_navratri_kushmanda_blessing_v1.webp',
+    semanticLabel: 'अष्टभुजा माँ कूष्मांडा का चित्र',
+  );
+  static const completionNavratriSkandamata = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_navratri_skandamata_blessing_v1.webp',
+    semanticLabel: 'बाल स्कंद के साथ माँ स्कंदमाता का चित्र',
+  );
+  static const completionNavratriKatyayani = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_navratri_katyayani_blessing_v1.webp',
+    semanticLabel: 'चतुर्भुजा माँ कात्यायनी का चित्र',
+  );
+  static const completionNavratriKalaratri = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_navratri_kalaratri_blessing_v1.webp',
+    semanticLabel: 'रक्षक रूप में माँ कालरात्रि का चित्र',
+  );
+  static const completionNavratriNavamiHavan = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_navratri_navami_havan_blessing_v1.webp',
+    semanticLabel: 'हवनकुंड के साथ माँ सिद्धिदात्री का चित्र',
+  );
+  static const completionVijayadashami = DevotionalArtwork(
+    assetPath:
+        'assets/images/devotional/completion_vijayadashami_blessing_v1.webp',
+    semanticLabel: 'जवारों के साथ विजयी दुर्गा का चित्र',
+  );
+
   static const nityaPooja = DevotionalArtwork(
     assetPath: 'assets/images/devotional/nitya_pooja.webp',
     semanticLabel: 'नित्य पूजा की थाली का सजावटी चित्र',
@@ -226,6 +412,10 @@ abstract final class DevotionalAssets {
       assetPath: 'assets/images/devotional/kanya_poojan_v1.webp',
       semanticLabel: 'कन्या पूजन का सजावटी चित्र',
     ),
+    'vishwakarma_pooja': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/vishwakarma_pooja_v1.webp',
+      semanticLabel: 'विश्वकर्मा पूजा और शिल्प-औज़ारों का सजावटी चित्र',
+    ),
     'navratri_sankshipt': navratriParv,
     'navratri_din_2': navratriBrahmacharini,
     'navratri_din_3': navratriChandraghanta,
@@ -238,4 +428,52 @@ abstract final class DevotionalAssets {
   };
 
   static DevotionalArtwork forVidhiId(String id) => _byVidhiId[id] ?? diya;
+
+  /// पूजा पूरी होने पर उसी आराध्य का आशीर्वाद-दर्शन।
+  ///
+  /// जिस विधि का अलग, जाँचा हुआ चित्र अभी नहीं बना है वहाँ neutral दीपक
+  /// ही रखा जाता है; केवल नाम देखकर देवता का अनुमान नहीं लगाया जाता।
+  static const Map<String, DevotionalArtwork> _completionByVidhiId = {
+    'ganesh_poojan': completionGanesha,
+    'hanuman_pooja': completionHanuman,
+    'rudrabhishek': completionShiva,
+    'satyanarayan': completionSatyanarayan,
+    'saraswati_pooja': completionSaraswati,
+    'ram_pooja': completionRam,
+    'krishna_pooja': completionKrishna,
+    'surya_arghya': completionSurya,
+    'durga_ashtami_kanya_poojan': completionDurga,
+    'vishwakarma_pooja': completionVishwakarma,
+    'varalakshmi_vrat': completionLakshmi,
+    'dhanteras': completionDhanvantari,
+    'upanayan': completionGayatri,
+    'tulsi_pooja': completionTulsiDevi,
+    'hartalika_teej': completionHartalikaTeej,
+    'karwa_chauth': completionKarwaChauth,
+    'govardhan_annakut': completionGovardhanAnnakut,
+    'makar_sankranti_pooja': completionMakarSankranti,
+    'chhath_pooja': completionChhath,
+    'vat_savitri': completionVatSavitri,
+    'kalash_sthapana': completionKalashSthapana,
+    'lakshmi_poojan': completionLakshmiPoojan,
+    'nitya_pooja': completionNityaPooja,
+    'grih_pravesh': completionGrihPravesh,
+    'mundan': completionMundan,
+    'vahan_pooja': completionVahanPooja,
+    'shraadh': completionShraadh,
+    'bhai_dooj_pooja': completionBhaiDooj,
+    'raksha_bandhan_pooja': completionRakshaBandhan,
+    'navratri_sankshipt': completionNavratriSankshipt,
+    'navratri_din_2': completionNavratriBrahmacharini,
+    'navratri_din_3': completionNavratriChandraghanta,
+    'navratri_din_4': completionNavratriKushmanda,
+    'navratri_din_5': completionNavratriSkandamata,
+    'navratri_din_6': completionNavratriKatyayani,
+    'navratri_din_7': completionNavratriKalaratri,
+    'navratri_navami_havan': completionNavratriNavamiHavan,
+    'vijayadashami': completionVijayadashami,
+  };
+
+  static DevotionalArtwork completionForVidhiId(String id) =>
+      _completionByVidhiId[id] ?? completion;
 }

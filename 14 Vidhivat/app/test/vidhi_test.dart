@@ -32,8 +32,14 @@ void main() {
       // "विष्णु को अक्षत नहीं" वाले श्लोक का ग्रंथ-प्रमाण नहीं मिला और
       // उस पर मतभेद है — इसलिए वह ऐप में नहीं आना चाहिए (→ docs/18 §3)।
       // दुर्गा-दूर्वा और सूर्य-बेलपत्र उसी श्लोक के हैं।
-      for (final id in ['ram_pooja', 'krishna_pooja', 'satyanarayan',
-                        'nitya_pooja', 'kalash_sthapana', 'surya_arghya']) {
+      for (final id in [
+        'ram_pooja',
+        'krishna_pooja',
+        'satyanarayan',
+        'nitya_pooja',
+        'kalash_sthapana',
+        'surya_arghya'
+      ]) {
         final path = 'assets/vidhi/$id.json';
         final v = Vidhi.parse(path, File(path).readAsStringSync());
         expect(v.varjya, isEmpty,
@@ -52,6 +58,31 @@ void main() {
       suchiPath,
       File(suchiPath).readAsStringSync(),
     );
+  });
+
+  test('सत्यनारायण के नवग्रह चरण में सही शांति-पाठ और सीमा है', () {
+    final v = Vidhi.parse('$dir/satyanarayan.json',
+        File('$dir/satyanarayan.json').readAsStringSync());
+    final charan = v.charan.singleWhere(
+        (c) => c.shirshak == 'नवग्रह और षोडश मातृका पूजन');
+    final mantra = charan.mantra!;
+    expect(mantra.devanagari, contains('सर्वे ग्रहाः शान्तिकरा भवन्तु'));
+    expect(mantra.devanagari, isNot(contains('सुप्रभातम्')));
+    expect(mantra.vikalp, contains('सुप्रभातम्'));
+    expect(mantra.vikalp, contains('नौ ग्रहों के अलग-अलग'));
+    expect(charan.vivaran, contains('चाहें तो'));
+    expect(mantra.strot, contains('पूजा संग्रह'));
+  });
+
+  test('सत्यनारायण की तस्वीर पहले रखी जाती है, चरण 9 में आसन अर्पित होता है', () {
+    final v = Vidhi.parse('$dir/satyanarayan.json',
+        File('$dir/satyanarayan.json').readAsStringSync());
+    expect(v.charan[1].shirshak, 'चौकी और मंडप सजाना');
+    expect(v.charan[1].vivaran, contains('अभी रख दें'));
+    expect(v.charan[8].shirshak, 'भगवान सत्यनारायण का आवाहन');
+    expect(v.charan[8].vivaran, contains('दोबारा उठाने की ज़रूरत नहीं'));
+    expect(v.charan[8].vivaran, contains('आसनं समर्पयामि'));
+    expect(v.charan[8].mantra!.devanagari, contains('आसनं समर्पयामि'));
   });
 
   group('सूची और फ़ाइलें आपस में मेल खाती हैं', () {
@@ -182,6 +213,15 @@ void main() {
           // है (→ D-006)। दो संकल्प चरण होना भी ग़लती है।
           final sankalpWale =
               v.charan.where((c) => c.vishesh == CharanVishesh.sankalp);
+          // श्राद्ध का simple home flow एक जानकार-निर्मित मृतक-संकल्प नहीं
+          // गढ़ता। उसका अपना plain-Hindi “स्मरण का संकल्प” है (→ D-096)।
+          if (v.id == 'shraadh') {
+            expect(sankalpWale, isEmpty);
+            expect(v.sankalpPurpose, isEmpty);
+            expect(
+                v.charan.any((c) => c.shirshak == 'स्मरण का संकल्प'), isTrue);
+            return;
+          }
           expect(sankalpWale.length, 1,
               reason:
                   'संकल्प वाले चरण ${sankalpWale.length} हैं, एक होना चाहिए');
@@ -308,7 +348,9 @@ void main() {
           final sabKadam = v.charan.map((c) => c.vivaran).join(' ');
           for (final cheez in ['पंचामृत', 'दूर्वा']) {
             if (sabKadam.contains(cheez)) {
-              expect(sooch.contains(cheez) || v.samagriSamuhWar.keys.join(' ').contains(cheez),
+              expect(
+                  sooch.contains(cheez) ||
+                      v.samagriSamuhWar.keys.join(' ').contains(cheez),
                   isTrue,
                   reason: '"$cheez" किसी कदम में माँगी है पर सामग्री में नहीं');
             }
@@ -325,8 +367,13 @@ void main() {
         // अब `_str()` पढ़ते ही हटा देता है — यह जाँच उसी का पहरा है।
         test('ऐप में कहीं markdown के कच्चे तारे नहीं दिखते', () {
           final sabText = [
-            v.naam, v.parichay, v.kabKarein.saral, v.kabKarein.note,
-            v.strot.paddhati, v.strot.kshetra, v.strot.note,
+            v.naam,
+            v.parichay,
+            v.kabKarein.saral,
+            v.kabKarein.note,
+            v.strot.paddhati,
+            v.strot.kshetra,
+            v.strot.note,
             ...v.upnaam,
             ...v.samagri.map((s) => '${s.vastu} ${s.note}'),
             ...v.varjya.map((x) => '${x.vastu} ${x.kyon} ${x.strot}'),
@@ -335,8 +382,12 @@ void main() {
                   c.shirshak,
                   c.vivaran,
                   if (c.mantra != null) ...[
-                    c.mantra!.devanagari, c.mantra!.roman, c.mantra!.arth,
-                    c.mantra!.strot, c.mantra!.vikalp,
+                    c.mantra!.devanagari,
+                    c.mantra!.roman,
+                    c.mantra!.arth,
+                    c.mantra!.strot,
+                    c.mantra!.vikalp,
+                    c.mantra!.chetavni,
                   ],
                 ]),
           ].join(' ');

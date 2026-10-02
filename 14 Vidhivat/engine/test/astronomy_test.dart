@@ -41,6 +41,32 @@ void main() {
     test('ΔT आज के दौर में 60–80 सेकंड के बीच है', () {
       expect(deltaTSeconds(2026, 8), inInclusiveRange(60, 80));
     });
+
+    // ── 1900–1961: जन्म-कुंडली के साल (→ D-098) ──────────────────────
+    //
+    // ΔT कई बहुपदों के टुकड़ों से बना है। कोई गुणांक ग़लत टाइप हो तो टुकड़े
+    // अपने जोड़ पर एक-दूसरे से छिटक जाते हैं — यह जाँच वही पकड़ती है, बिना
+    // किसी बाहरी तालिका के।
+    test('ΔT के टुकड़े अपने जोड़ों पर मिलते हैं (1920, 1941, 1961, 1986, 2005)',
+        () {
+      for (final saal in [1920, 1941, 1961, 1986, 2005]) {
+        // दिसम्बर (y = saal − 0.04) और जनवरी (y = saal + 0.04) — जोड़ के
+        // दोनों तरफ़; एक महीने में ΔT ~0.1 सेकंड ही बदलता है।
+        final pehle = deltaTSeconds(saal - 1, 12);
+        final baad = deltaTSeconds(saal, 1);
+        expect((baad - pehle).abs(), lessThan(0.3), reason: '$saal का जोड़');
+      }
+    });
+
+    test('ΔT बीसवीं सदी में — शुरू में लगभग शून्य, 1950 में ~29 सेकंड', () {
+      expect(deltaTSeconds(1900, 1), closeTo(-2.7, 0.3));
+      expect(deltaTSeconds(1920, 1), closeTo(21.2, 0.3));
+      expect(deltaTSeconds(1950, 1), closeTo(29.1, 0.3));
+      expect(deltaTSeconds(1975, 1), closeTo(45.5, 0.3));
+      expect(deltaTSeconds(2000, 1), closeTo(63.8, 0.3));
+      // 1900 से पहले का मोटा अनुमान जस का तस है — बस टूटे नहीं
+      expect(deltaTSeconds(1850, 1).isFinite, isTrue);
+    });
   });
 
   group('सूर्य', () {

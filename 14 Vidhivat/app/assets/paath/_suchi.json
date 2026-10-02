@@ -48,6 +48,24 @@
       "paas": false
     },
     {
+      "id": "jagjanani_aarti",
+      "naam": "श्री देवी जी की आरती — जगजननी जय जय",
+      "prakar": "aarti",
+      "devta": "दुर्गा माँ",
+      "ekLine": "दुर्गा माँ की दूसरी प्रचलित आरती — टेक और तेरह पद",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "saptashloki_durga",
+      "naam": "सप्तश्लोकी दुर्गा",
+      "prakar": "stotra",
+      "devta": "दुर्गा माँ",
+      "ekLine": "सात श्लोक — पूरी सप्तशती का सबसे छोटा रूप",
+      "taiyar": true,
+      "paas": false
+    },
+    {
       "id": "shiv_aarti",
       "naam": "श्री शिव जी की आरती",
       "prakar": "aarti",
@@ -98,6 +116,15 @@
       "prakar": "aarti",
       "devta": "विष्णु / सब देवता",
       "ekLine": "हर पूजा में चल जाने वाली आरती",
+      "taiyar": true,
+      "paas": false
+    },
+    {
+      "id": "vishwakarma_sukta",
+      "naam": "विश्वकर्मा सूक्त",
+      "prakar": "stotra",
+      "devta": "विश्वकर्मा जी",
+      "ekLine": "ऋग्वेद १०.८१ — सात मंत्र, विश्वकर्मा पूजा में",
       "taiyar": true,
       "paas": false
     }

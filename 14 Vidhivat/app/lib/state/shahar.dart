@@ -90,6 +90,7 @@ class City {
       };
 
   String get cacheKey => '$name|$state|$latitude|$longitude';
+
   /// यह नाम कहाँ से आया — और यह सच-सच कहना ज़रूरी है।
   ///
   /// पहले यह सिर्फ़ दो बातें कहता था — "फ़ोन से" या "हाथ से

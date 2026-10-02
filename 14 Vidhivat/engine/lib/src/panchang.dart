@@ -595,3 +595,52 @@ List<Anga> _angaSeries({
 
   return result;
 }
+
+/// सिर्फ़ सूर्योदय की तिथि और वार — पूरा पंचांग नहीं।
+///
+/// ## यह अलग क्यों है
+///
+/// [computePanchang] एक दिन के लिए चारों अंगों के शुरू-अंत खोजता है,
+/// चंद्रोदय-चंद्रास्त और मास भी — फ़ोन पर हर दिन के कई मिलीसेकंड। कैलेंडर
+/// के 31 खाने और होम की "आगे कौन सी पूजा" (45 दिन) में यह सब main thread
+/// पर एक साथ चलता था, और सस्ते फ़ोन पर पन्ना एक-दो सेकंड अटकता था।
+///
+/// उन जगहों को सिर्फ़ "सूर्योदय पर कौन सी तिथि, कौन सा वार" चाहिए। यह
+/// **वही सूत्र** है जो [computePanchang] की पहली तिथि का है — सूर्योदय पर
+/// चंद्र-सूर्य का अंतर ÷ 12° — बस बाक़ी खोज के बिना।
+///
+/// ⚠️ इसका नतीजा `computePanchang(...).tithi.index` से **हमेशा बराबर**
+/// होना चाहिए। `test/suryodaya_tithi_test.dart` हर शहर में दो साल के
+/// हर दिन पर यही जाँचता है। सूत्र बदले तो दोनों जगह बदलना।
+class SuryodayaTithi {
+  final DateTime date;
+
+  /// 0 से 29 — [Anga.index] जैसा।
+  final int tithiIndex;
+
+  /// 0 = रविवार — [Panchang.vara] जैसा।
+  final int vara;
+
+  const SuryodayaTithi({
+    required this.date,
+    required this.tithiIndex,
+    required this.vara,
+  });
+
+  /// 1 से 30 — [Anga.number] जैसा।
+  int get tithiNumber => tithiIndex + 1;
+  String get tithiName => tithiNames[tithiIndex];
+  int get paksha => tithiIndex < 15 ? 0 : 1;
+  String get pakshaName => pakshaNames[paksha];
+  String get varaName => varaNames[vara];
+}
+
+/// [SuryodayaTithi] देखो — कैलेंडर और सूचियों के लिए हल्की गणना।
+SuryodayaTithi suryodayaTithi(int year, int month, int day, Place place) {
+  final riseJd = sunriseJd(year, month, day, place);
+  return SuryodayaTithi(
+    date: DateTime.utc(year, month, day),
+    tithiIndex: (elongationAt(riseJd) / 12.0).floor() % 30,
+    vara: DateTime.utc(year, month, day).weekday % 7,
+  );
+}

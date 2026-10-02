@@ -306,3 +306,43 @@ static const navratriShailaputri = DevotionalArtwork(
 | दशमी / जवारे | 1 | 900 |
 | निर्देश-चित्र | 2 | 512 |
 | **कुल** | **14** | ~1.8 MB |
+
+---
+
+## ८ · विश्वकर्मा पूजा (17 सित 2026 · → D-078)
+
+विधि ऐप में जुड़ चुकी है; तब तक कार्ड पर दीया दिखता है।
+`app/test/devotional_assets_test.dart` के `chitraBaaki` में इसका नाम लिखा है —
+चित्र जोड़ने पर वहाँ से हटाना है, वरना जाँच टूटेगी।
+
+### देव-चित्र — `vishwakarma_v1.webp` · 900 × 900
+
+> ⚠️ **इकोनोग्राफ़ी घर-घर में अलग है।** उत्तर भारत के कैलेंडरों में विश्वकर्मा
+> जी वृद्ध, सफ़ेद दाढ़ी वाले, चार भुजाओं वाले और हंस पर बैठे दिखते हैं; बंगाल में
+> युवा, मूँछों वाले, हाथी के साथ। नीचे पहला रूप है — अपने इलाक़े का चलन अलग हो
+> तो वही बनवाइए।
+
+```
+Lord Vishwakarma, the divine architect and craftsman of the gods, seated
+calmly on a white swan (hamsa). A dignified elderly sage-like figure with
+a full neat white beard, a tall ornate golden crown, and four arms.
+Upper right hand holds a long measuring rod; upper left hand holds a
+palm-leaf manuscript; lower right hand holds a small hammer; lower left
+hand holds a brass water pot (kamandalu). Yellow and saffron silk
+dhoti and angavastram with gold borders, rudraksha and gold necklaces.
+At his feet, neatly arranged: a carpenter's chisel, a set square, a
+spirit level and a small cogwheel — clean and polished, symbolising all
+crafts and machines. Gentle, wise, benevolent expression.
+
+STYLE: <ऊपर वाला STYLE BLOCK चिपकाइए>
+```
+
+**बनने के बाद:**
+
+```bash
+python tools/banao_chitra.py "C:/path/to/downloaded.png" vishwakarma_v1 900
+```
+
+फिर `devotional_assets.dart` में `vishwakarma` की entry (`semanticLabel:
+'भगवान विश्वकर्मा का सजावटी चित्र'`), `_byVidhiId` में
+`'vishwakarma_pooja': vishwakarma`, और `chitraBaaki` से नाम हटाइए।

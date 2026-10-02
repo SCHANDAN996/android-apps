@@ -167,6 +167,10 @@ class ParvAaj {
   final int kulDin;
   final String? tippani;
   final Set<int> mileHueDin;
+
+  /// हर पूजा-दिन की नागरिक तारीख़ें। वृद्धि में एक दिन की दो तारीख़ें हो
+  /// सकती हैं; क्षय/मिलन में दो पूजा-दिन एक ही तारीख़ पर हो सकते हैं।
+  final Map<int, List<DateTime>> dinTarikhein;
   final DateTime? ghatasthapanaShuru;
   final DateTime? ghatasthapanaAnt;
   final DateTime? ghatasthapanaAbhijitShuru;
@@ -182,6 +186,7 @@ class ParvAaj {
     required this.kulDin,
     required this.tippani,
     required this.mileHueDin,
+    this.dinTarikhein = const {},
     this.ghatasthapanaShuru,
     this.ghatasthapanaAnt,
     this.ghatasthapanaAbhijitShuru,

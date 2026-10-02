@@ -98,7 +98,8 @@ enum Kathinai {
 /// रोक-टोक "अपने आप कर लीजिए" वाले रूप में दिखाना ग़लत सलाह है।
 enum Scope {
   /// घर पर अपने आप की जा सकती है — पूरी विधि दिखेगी।
-  selfGuided('self_guided', 'घर पर अपने आप', 'यह विधि घर पर अपने आप की जा सकती है।'),
+  selfGuided(
+      'self_guided', 'घर पर अपने आप', 'यह विधि घर पर अपने आप की जा सकती है।'),
 
   /// किसी एक क्षेत्र/परिवार की परंपरा है — विधि दिखेगी, पर साथ में यह
   /// चेतावनी कि दूसरी जगह अलग चलन है।
@@ -229,6 +230,13 @@ class Mantra {
   /// पंडित जी बता सकें कि आपके घर में कौन सा चलता है।
   final String vikalp;
 
+  /// इस पाठ को बोलते समय कोई ज़रूरी सीमा या सावधानी।
+  ///
+  /// यह [vikalp] से अलग है: विकल्प दो मान्य पाठ/चलन बताता है, जबकि
+  /// चेतावनी यह साफ़ करती है कि छोटा पाठ किस हद तक उपयोग किया जा सकता है।
+  /// दोनों ⓘ "इस पाठ के बारे में" में दिखते हैं, पूजा के बीच खुले नहीं।
+  final String chetavni;
+
   final MantraSthiti sthiti;
 
   const Mantra({
@@ -239,6 +247,7 @@ class Mantra {
     required this.strot,
     required this.bharosa,
     required this.vikalp,
+    required this.chetavni,
     required this.sthiti,
   });
 
@@ -296,6 +305,7 @@ class Mantra {
         _str(file, j, 'bharosa', required: false, fallback: 'kam'),
       ),
       vikalp: _str(file, j, 'vikalp', required: false),
+      chetavni: _str(file, j, 'chetavni', required: false),
       sthiti: sthiti,
     );
   }
@@ -478,6 +488,9 @@ class Charan {
 
   final CharanVishesh vishesh;
 
+  /// इसे छोड़ा जा सकता है; खिलाड़ी अगले चरण पर सीधे जा सकता है।
+  final bool vaikalpik;
+
   /// इस कदम पर कौन-सा पाठ खुलता है — `app/assets/paath/` की id.
   ///
   /// ## यह क्यों है (→ D-039, और उसका बचा हुआ आधा हिस्सा)
@@ -503,14 +516,25 @@ class Charan {
   /// ख़ाली हो तो ऐप साफ़ कहता है कि कथा अभी जोड़ी नहीं गई।
   final String katha;
 
+  /// इस कदम पर कौन-सा ग्रंथ खुलता है — ग्रंथालय की id, जैसे `gita`
+  /// (→ D-098)।
+  ///
+  /// कृष्ण पूजा के "पाठ" वाले कदम पर गीता का कोई अध्याय पढ़ा जाता है।
+  /// पूरा ग्रंथ पूजा की JSON में नहीं आ सकता और [paath] की तरह एक पाठ
+  /// भी नहीं है — इसलिए कदम सिर्फ़ ग्रंथ का नाम रखता है, और प्लेयर उसका
+  /// पन्ना खोल देता है जहाँ से अध्याय चुना जाता है।
+  final String granth;
+
   const Charan({
     required this.shirshak,
     required this.vivaran,
     required this.mantra,
     required this.samayMinute,
     required this.vishesh,
+    this.vaikalpik = false,
     this.paath = const [],
     this.katha = '',
+    this.granth = '',
   });
 
   factory Charan.fromJson(String file, Map<String, dynamic> j) {
@@ -526,8 +550,11 @@ class Charan {
         file,
         _str(file, j, 'vishesh', required: false, fallback: 'saada'),
       ),
+      vaikalpik:
+          j.containsKey('vaikalpik') ? _bool(file, j, 'vaikalpik') : false,
       paath: _strList(file, j, 'paath'),
       katha: _str(file, j, 'katha', required: false),
+      granth: _str(file, j, 'granth', required: false),
     );
   }
 }
@@ -819,7 +846,8 @@ class Vidhi {
       if (chuni.isEmpty) return;
       lines
         ..add('*$samuh*')
-        ..addAll(chuni.map((s) => '• ${s.line}${s.zaruri ? '' : ' (वैकल्पिक)'}'))
+        ..addAll(
+            chuni.map((s) => '• ${s.line}${s.zaruri ? '' : ' (वैकल्पिक)'}'))
         ..add('');
     });
     lines.add('— विधिवत ऐप से');
@@ -1010,7 +1038,8 @@ class VidhiSuchiEntry {
 
 Map<String, dynamic> _map(String file, dynamic value, String kahan) {
   if (value is! Map) {
-    throw VidhiFormatException(file, '"$kahan" में object चाहिए था, मिला: $value');
+    throw VidhiFormatException(
+        file, '"$kahan" में object चाहिए था, मिला: $value');
   }
   return value.cast<String, dynamic>();
 }
@@ -1077,7 +1106,8 @@ bool _bool(String file, Map<String, dynamic> j, String key) {
   final v = j[key];
   if (v == null) throw VidhiFormatException(file, '"$key" है ही नहीं');
   if (v is! bool) {
-    throw VidhiFormatException(file, '"$key" में true/false चाहिए था, मिला: $v');
+    throw VidhiFormatException(
+        file, '"$key" में true/false चाहिए था, मिला: $v');
   }
   return v;
 }
@@ -1085,7 +1115,8 @@ bool _bool(String file, Map<String, dynamic> j, String key) {
 List<String> _strList(String file, Map<String, dynamic> j, String key) =>
     _list(file, j, key).map((e) {
       if (e is! String) {
-        throw VidhiFormatException(file, '"$key" में लिखावट चाहिए थी, मिला: $e');
+        throw VidhiFormatException(
+            file, '"$key" में लिखावट चाहिए थी, मिला: $e');
       }
       return e;
     }).toList(growable: false);
@@ -1093,7 +1124,8 @@ List<String> _strList(String file, Map<String, dynamic> j, String key) =>
 List<int> _intList(String file, Map<String, dynamic> j, String key) =>
     _list(file, j, key).map((e) {
       if (e is! int) {
-        throw VidhiFormatException(file, '"$key" में पूर्णांक चाहिए था, मिला: $e');
+        throw VidhiFormatException(
+            file, '"$key" में पूर्णांक चाहिए था, मिला: $e');
       }
       return e;
     }).toList(growable: false);

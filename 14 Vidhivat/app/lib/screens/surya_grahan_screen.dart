@@ -27,18 +27,28 @@ class SuryaGrahanScreen extends StatefulWidget {
 }
 
 class _SuryaGrahanScreenState extends State<SuryaGrahanScreen> {
+  static List<SuryaGrahanDarshan>? _cachedSab;
+  static String? _cachedCityKey;
+  static int? _cachedYear;
+
   /// अगले पाँच साल — सूर्यग्रहण साल में दो से पाँच पड़ते हैं, पर किसी एक
   /// शहर से दिखने वाला दस साल में दो-तीन ही होता है।
   late final Future<List<SuryaGrahanDarshan>> _sab = _nikalo();
 
   Future<List<SuryaGrahanDarshan>> _nikalo() async {
     final aaj = DateTime.now();
-    return suryaGrahan(
+    if (_cachedSab != null &&
+        _cachedCityKey == settings.city.cacheKey &&
+        _cachedYear == aaj.year) {
+      return _cachedSab!;
+    }
+    final result = suryaGrahan(
       se: aaj,
       tak: DateTime(aaj.year + 5, aaj.month, aaj.day),
-    )
-        .map((g) => suryaGrahanYahanSe(g, settings.place))
-        .toList(growable: false);
+    ).map((g) => suryaGrahanYahanSe(g, settings.place)).toList(growable: false);
+    _cachedCityKey = settings.city.cacheKey;
+    _cachedYear = aaj.year;
+    return _cachedSab = result;
   }
 
   @override
@@ -113,8 +123,7 @@ class _SuryaGrahanScreenState extends State<SuryaGrahanScreen> {
 ///
 /// ⚠️ इंजन के ग्रहण-समय **असली UTC पल** हैं (यह `muhurta.dart` वाले
 /// घड़ी-वाले नक़ली UTC से अलग बात है — → D-043)।
-DateTime _shaharKiGhadi(DateTime utc) =>
-    utc.add(settings.place.timeZoneOffset);
+DateTime _shaharKiGhadi(DateTime utc) => utc.add(settings.place.timeZoneOffset);
 
 /// सूरज को नंगी आँख से देखने की मनाही — यह सबसे ऊपर रहती है।
 class _AankhKiChetavni extends StatelessWidget {
@@ -144,9 +153,8 @@ class _SuryaGrahanCard extends StatelessWidget {
     final dikhega = darshan.dikhega;
 
     return VidhivatSurfaceCard(
-      variant: dikhega
-          ? VidhivatCardVariant.elevated
-          : VidhivatCardVariant.standard,
+      variant:
+          dikhega ? VidhivatCardVariant.elevated : VidhivatCardVariant.standard,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -208,7 +216,7 @@ class _SuryaGrahanCard extends StatelessWidget {
                     ? 'खग्रास'
                     : 'कंकणाकृति',
                 '${hm(_shaharKiGhadi(darshan.kendriyaShuru!))} – '
-                    '${hm(_shaharKiGhadi(darshan.kendriyaKhatm!))}',
+                '${hm(_shaharKiGhadi(darshan.kendriyaKhatm!))}',
                 note: _avadhi(darshan.kendriyaAvadhi!),
               ),
 
@@ -292,7 +300,7 @@ class _SuryaGrahanKeNiyam extends StatelessWidget {
               'गणना',
               'उस शहर से, उस पल, सूर्य और चंद्रमा के बिंब आसमान में कितनी '
                   'दूर हैं — यही नापा जाता है। समय NASA के ग्रहण-कैटलॉग से '
-                  'और सूतक Drik Panchang से मिलाया हुआ है।'),
+                  'और सूतक प्रचलित पंचांग-पद्धति से मिलाया हुआ है।'),
         ],
         antimBaat: 'ऐप सिर्फ़ समय बताता है। ग्रहण के फल या किसी राशि पर '
             'असर का कोई दावा यहाँ नहीं है। सूतक में क्या करना है, यह अपने '

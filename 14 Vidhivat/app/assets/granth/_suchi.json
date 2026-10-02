@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "_note": "ग्रंथालय की सूची। हर ग्रंथ का पाठ assets/granth/<id>/ में है और tools/banao_granth.py से बनता है। दुर्गा सप्तशती यहाँ नहीं है — उसका पाठ assets/paath/saptashati/ में ही रहा, और वह lib/vidhi/granth.dart में लिखी है।",
+  "granth": [
+    {
+      "id": "gita",
+      "naam": "श्रीमद्भगवद्गीता",
+      "chhotaNaam": "गीता",
+      "ekLine": "अठारह अध्याय, सात सौ श्लोक — हर श्लोक का अर्थ",
+      "ikai": "अध्याय",
+      "khandIkai": "श्लोक"
+    }
+  ]
+}
