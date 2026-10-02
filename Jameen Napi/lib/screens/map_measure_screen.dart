@@ -75,6 +75,7 @@ class _MapMeasureScreenState extends State<MapMeasureScreen>
   GpsFix? _fix;
   bool _followMe = true;
   bool _centeredOnce = false;
+  bool _locating = false;
 
   // ── कोने ──
   List<GpsFix>? _cornerSamples;
@@ -98,6 +99,23 @@ class _MapMeasureScreenState extends State<MapMeasureScreen>
   bool _dirty = false;
 
   int? _draggingIndex;
+  DateTime? _markerReleasedAt;
+
+  // नक्शा शुरू में कहाँ खुले — सिर्फ़ screen खुलते समय के (सहेजे हुए) बिंदुओं
+  // से, एक बार। पहले यह हर build पर मौजूदा बिंदुओं से बनता था, और flutter_map
+  // fit को पहली बार non-null मिलते ही लगा देता है — यानी नए नाप में दूसरा/
+  // तीसरा बिंदु लगाते ही नक्शा उछलकर zoom हो जाता था।
+  late final List<LatLng> _openedWith = _session.points;
+  late final LatLng _initialCenter =
+      _openedWith.isNotEmpty ? _openedWith.first : const LatLng(23.0, 80.0);
+  late final double _initialZoom = _openedWith.isNotEmpty ? 18 : 5;
+  late final CameraFit? _initialFit = _openedWith.length >= 2
+      ? CameraFit.coordinates(
+          coordinates: _openedWith,
+          padding: const EdgeInsets.all(48),
+          maxZoom: 19,
+        )
+      : null;
 
   bool get _usesGps => _method != MeasureMethod.tap;
 
@@ -229,6 +247,14 @@ class _MapMeasureScreenState extends State<MapMeasureScreen>
         if (mounted) setState(() => _fix = null);
       },
     );
+
+    // Stream सिर्फ़ GPS chip से reading माँगती है — कमरे के अंदर या घने पेड़ों
+    // में वो मिनटों तक कुछ नहीं देती (vivo पर 6 मिनट तक नक्शा भारत वाले zoom
+    // पर ही रहा)। इसलिए साथ में एक मोटी reading भी माँग लें, ताकि नक्शा कम से
+    // कम सही इलाक़े में खुले। असली GPS reading आते ही वही इसकी जगह ले लेती है।
+    LocationService.instance.currentFix().then((fix) {
+      if (mounted && _fix == null) _onFix(fix);
+    }).catchError((_) {});
   }
 
   void _onFix(GpsFix fix) {
@@ -252,14 +278,38 @@ class _MapMeasureScreenState extends State<MapMeasureScreen>
     }
   }
 
-  void _goToMyLocation() {
+  Future<void> _goToMyLocation() async {
     if (_access != LocationAccess.granted) {
-      _ensureLocation(prompt: true);
-      return;
+      await _ensureLocation(prompt: true);
     }
-    final fix = _fix;
-    if (fix == null) return;
-    setState(() => _followMe = true);
+    if (!mounted || _access != LocationAccess.granted) return;
+
+    // Stream से fix पहले से मिला हो तो तुरंत उसी पर जाएँ। नहीं मिला तो fresh
+    // one-shot reading लें; पहले यहाँ null देखकर कुछ भी नहीं होता था।
+    var fix = _fix;
+    if (fix == null) {
+      setState(() => _locating = true);
+      try {
+        fix = await LocationService.instance.currentFix();
+        if (!mounted) return;
+        setState(() => _fix = fix);
+      } catch (_) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(AppStrings(LanguageNotifier.instance.value)
+                .mapGpsSearching)),
+          );
+        }
+        return;
+      } finally {
+        if (mounted) setState(() => _locating = false);
+      }
+    }
+    if (!mounted || !_mapReady) return;
+    setState(() {
+      _followMe = true;
+      _centeredOnce = true;
+    });
     _map.move(fix.position, _map.camera.zoom < 16 ? 18 : _map.camera.zoom);
   }
 
@@ -267,6 +317,14 @@ class _MapMeasureScreenState extends State<MapMeasureScreen>
 
   void _onMapTap(TapPosition _, LatLng point) {
     if (_method != MeasureMethod.tap) return;
+    // बिंदु को छूना नक्शे को भी "tap" लगता है (नक्शा double-tap का इंतज़ार
+    // करके ~¼ सेकंड बाद बताता है) — वरना हर बिंदु के ऊपर एक और बिंदु लग जाता।
+    final released = _markerReleasedAt;
+    if (_draggingIndex != null ||
+        (released != null &&
+            DateTime.now().difference(released).inMilliseconds < 600)) {
+      return;
+    }
     HapticFeedback.selectionClick();
     setState(() {
       _session.add(point);
@@ -386,15 +444,20 @@ class _MapMeasureScreenState extends State<MapMeasureScreen>
     });
   }
 
-  void _dragPoint(int index, DragUpdateDetails d) {
+  void _dragPoint(int index, Offset delta) {
+    if (delta == Offset.zero || index >= _session.pointCount) return;
     final cam = _map.camera;
     final pt = _session.points[index];
-    final moved =
-        cam.screenOffsetToLatLng(cam.latLngToScreenOffset(pt) + d.delta);
+    final moved = cam.screenOffsetToLatLng(cam.latLngToScreenOffset(pt) + delta);
     setState(() {
       _session.move(index, moved);
       _dirty = true;
     });
+  }
+
+  void _endDrag() {
+    _markerReleasedAt = DateTime.now();
+    if (mounted) setState(() => _draggingIndex = null);
   }
 
   // ─────────────────────────── सहेजना / share ───────────────────────────
@@ -555,22 +618,14 @@ class _MapMeasureScreenState extends State<MapMeasureScreen>
     final fix = _fix;
     final showNumbered =
         _method != MeasureMethod.track && pts.length <= 60;
-    final initialFit = pts.length >= 2
-        ? CameraFit.coordinates(
-            coordinates: pts,
-            padding: const EdgeInsets.all(48),
-            maxZoom: 19,
-          )
-        : null;
-
     return Stack(
       children: [
         FlutterMap(
           mapController: _map,
           options: MapOptions(
-            initialCenter: pts.isNotEmpty ? pts.first : const LatLng(23.0, 80.0),
-            initialZoom: pts.isNotEmpty ? 18 : 5,
-            initialCameraFit: initialFit,
+            initialCenter: _initialCenter,
+            initialZoom: _initialZoom,
+            initialCameraFit: _initialFit,
             minZoom: 3,
             maxZoom: 20,
             onMapReady: () => _mapReady = true,
@@ -650,12 +705,17 @@ class _MapMeasureScreenState extends State<MapMeasureScreen>
                     point: pts[i],
                     width: 44,
                     height: 44,
-                    child: GestureDetector(
+                    // GestureDetector नहीं, कच्चे pointer events: फ़ोन पर
+                    // GestureDetector का pan नक्शे के अपने gesture से हार जाता
+                    // था — बिंदु की जगह पूरा नक्शा खिसकता था। उंगली रखते ही
+                    // नक्शे का हिलना बंद (_draggingIndex → InteractiveFlag.none)।
+                    child: Listener(
                       behavior: HitTestBehavior.opaque,
-                      onPanStart: (_) => setState(() => _draggingIndex = i),
-                      onPanUpdate: (d) => _dragPoint(i, d),
-                      onPanEnd: (_) => setState(() => _draggingIndex = null),
-                      onPanCancel: () => setState(() => _draggingIndex = null),
+                      onPointerDown: (_) =>
+                          setState(() => _draggingIndex = i),
+                      onPointerMove: (e) => _dragPoint(i, e.delta),
+                      onPointerUp: (_) => _endDrag(),
+                      onPointerCancel: (_) => _endDrag(),
                       child: Center(
                         child: AnimatedContainer(
                           duration: const Duration(milliseconds: 120),
@@ -702,16 +762,32 @@ class _MapMeasureScreenState extends State<MapMeasureScreen>
                   ),
                 ),
             ]),
-            SimpleAttributionWidget(
-              backgroundColor: Colors.white70,
-              source: Text(
-                _satellite
-                    ? 'Powered by Esri · Esri, Maxar, Earthstar Geographics'
-                    : '© OpenStreetMap contributors',
-                style: const TextStyle(fontSize: 10),
+          ],
+        ),
+
+        // Tile provider का required credit रखें, पर flutter_map का बड़ा panel
+        // नहीं। SimpleAttributionWidget हमेशा "flutter_map |" जोड़ता है।
+        Positioned(
+          left: 6,
+          bottom: 6,
+          child: IgnorePointer(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: Colors.black.withValues(alpha: 0.52),
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                child: Text(
+                  _satellite
+                      ? '© Esri, Maxar, Earthstar Geographics'
+                      : '© OpenStreetMap contributors',
+                  style: const TextStyle(color: Colors.white, fontSize: 9),
+                ),
               ),
             ),
-          ],
+          ),
         ),
 
         // ऊपर: रकबा/दूरी या कोने/लगातार या पैदल/गाड़ी
@@ -742,11 +818,18 @@ class _MapMeasureScreenState extends State<MapMeasureScreen>
             heroTag: 'map_measure_locate',
             tooltip: strings.mapMyLocation,
             backgroundColor: Colors.white,
-            foregroundColor: _followMe && _fix != null ? Colors.blue : Colors.black54,
+            foregroundColor:
+                _followMe && _fix != null ? Colors.blue : Colors.black54,
             onPressed: _goToMyLocation,
-            child: Icon(_fix == null
-                ? Icons.location_searching_rounded
-                : Icons.my_location_rounded),
+            child: _locating
+                ? const SizedBox(
+                    width: 20,
+                    height: 20,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                : Icon(_fix == null
+                    ? Icons.location_searching_rounded
+                    : Icons.my_location_rounded),
           ),
         ),
 
@@ -1199,7 +1282,12 @@ class _MapMeasureScreenState extends State<MapMeasureScreen>
           label: Text(busy
               ? strings.mapHoldStill(_cornerSecondsLeft)
               : '${strings.mapAddCorner} (${_session.pointCount + 1})'),
-          onPressed: gpsOk && !busy ? _startCorner : null,
+          // 25 मी से ख़राब reading (कमरे के अंदर वाली मोटी network reading) पर
+          // कोना न जुड़े — वो कोना खेत से बाहर भी पड़ सकता है। ऊपर की chip
+          // तब "खुले में जाएँ" कहती है।
+          onPressed: gpsOk && !busy && _fix!.accuracyMeters <= 25
+              ? _startCorner
+              : null,
         );
       case MeasureMethod.track:
         final label = _recording

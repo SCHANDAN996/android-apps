@@ -23,8 +23,10 @@ enum LocationAccess {
 ///
 /// ⚠️ **सिर्फ़ foreground।** Background location माँगते ही Play अलग declaration
 /// और वीडियो माँगता है, और हमारी privacy policy भी "सिर्फ़ screen खुली रहने
-/// तक" कहती है। इसलिए न `ACCESS_BACKGROUND_LOCATION`, न foreground service —
-/// geolocator की अपनी service भी manifest से हटाई गई है।
+/// तक" कहती है। इसलिए न `ACCESS_BACKGROUND_LOCATION`, न foreground
+/// notification। (geolocator की अपनी service manifest में रहनी ज़रूरी है —
+/// [fixes] वाली stream उसी से bind होकर चलती है; हटाने पर stream चुपचाप
+/// कुछ नहीं देती। वो सिर्फ़ bind होती है, foreground में नहीं जाती।)
 class LocationService {
   LocationService._();
   static final LocationService instance = LocationService._();
@@ -63,6 +65,19 @@ class LocationService {
 
   Future<bool> openLocationSettings() => Geolocator.openLocationSettings();
   Future<bool> openAppSettings() => Geolocator.openAppSettings();
+
+  /// "मेरी जगह" दबाते ही एक ताज़ा reading लें। Stream की पहली reading आने
+  /// तक button को बेकार नहीं दिखाना चाहिए — कई Vivo/Android फ़ोनों में stream
+  /// को पहला fix देने में काफ़ी समय लग जाता है।
+  Future<GpsFix> currentFix() async {
+    final p = await Geolocator.getCurrentPosition(
+      locationSettings: AndroidSettings(
+        accuracy: LocationAccuracy.high,
+        timeLimit: const Duration(seconds: 15),
+      ),
+    );
+    return GpsFix(LatLng(p.latitude, p.longitude), p.accuracy, p.timestamp);
+  }
 
   /// लगातार GPS readings। हर reading को [GpsFix] में बदलकर देता है।
   ///

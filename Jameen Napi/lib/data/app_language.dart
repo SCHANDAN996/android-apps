@@ -130,23 +130,23 @@ class AppStrings {
   String get appSubtitle {
     switch (lang) {
       case AppLang.english:
-        return 'Land Area, 4-Sided Plots, Laggi Scale & Length Converter — 100% Offline';
+        return 'Land Area, 4-Sided Plots, Laggi Scale & Length Converter, plus Map / GPS measuring';
       case AppLang.marathi:
-        return 'बीघा, एकर, गुंठा, ४ बाजूंचे शेत आणि प्लॉट मोजणी — १००% ऑफलाइन.';
+        return 'बीघा, एकर, गुंठा, ४ बाजूंचे शेत आणि प्लॉट मोजणी, आता नकाशा / GPS ने सुद्धा.';
       case AppLang.gujarati:
-        return 'વીઘા, એકર, ગુણઠા, ૪ બાજુનું ખેતર અને પ્લોટ માપણી — 100% ઑફલાઇન.';
+        return 'વીઘા, એકર, ગુણઠા, ૪ બાજુનું ખેતર અને પ્લોટ માપણી, હવે નકશા / GPS થી પણ.';
       case AppLang.punjabi:
-        return 'ਬੀਘਾ, ਏਕੜ, ਕਨਾਲ, ੪-ਭੁਜਾਵੀਂ ਖੇਤ ਅਤੇ ਪਲਾਟ ਮਿਣਤੀ — 100% ਔਫਲਾਈਨ।';
+        return 'ਬੀਘਾ, ਏਕੜ, ਕਨਾਲ, ੪-ਭੁਜਾਵੀਂ ਖੇਤ ਅਤੇ ਪਲਾਟ ਮਿਣਤੀ, ਹੁਣ ਨਕਸ਼ੇ / GPS ਨਾਲ ਵੀ।';
       case AppLang.bengali:
-        return 'বিঘা, একর, কাঠা, ৪-কোণা জমি ও প্লট পরিমাপ — ১০০% অফলাইন।';
+        return 'বিঘা, একর, কাঠা, ৪-কোণা জমি ও প্লট পরিমাপ, এখন ম্যাপ / GPS দিয়েও।';
       case AppLang.telugu:
-        return 'భూమి వైశాల్య, 4 భుజాల పొలం మరియు ప్లాట్ కొలత — 100% ఆఫ్‌లైన్.';
+        return 'భూమి వైశాల్య, 4 భుజాల పొలం మరియు ప్లాట్ కొలత, ఇప్పుడు మ్యాప్ / GPS తో కూడా.';
       case AppLang.tamil:
-        return 'நிலப்பரப்பு, 4 பக்க நிலம் மற்றும் பிளாட் நீள அளவீடு — 100% ஆஃப்லைன்.';
+        return 'நிலப்பரப்பு, 4 பக்க நிலம் மற்றும் பிளாட் நீள அளவீடு, இப்போது வரைபடம் / GPS மூலமும்.';
       case AppLang.kannada:
-        return 'ಜಮೀನು ವಿಸ್ತೀರ್ಣ, 4 ಬದಿ ಜಮೀನು ಮತ್ತು ಪ್ಲಾಟ್ ಉದ್ದ ಅಳತೆ — 100% ಆಫ್‌ಲೈನ್.';
+        return 'ಜಮೀನು ವಿಸ್ತೀರ್ಣ, 4 ಬದಿ ಜಮೀನು ಮತ್ತು ಪ್ಲಾಟ್ ಉದ್ದ ಅಳತೆ, ಈಗ ನಕ್ಷೆ / GPS ನಿಂದಲೂ.';
       default:
-        return 'बीघा, एकड़, कट्ठा, 4-भुजा खेत व प्लाट नापने का कैलकुलेटर — 100% ऑफलाइन।';
+        return 'बीघा, एकड़, कट्ठा, 4-भुजा खेत व प्लाट नापने का कैलकुलेटर, अब नक्शे / GPS से भी।';
     }
   }
 

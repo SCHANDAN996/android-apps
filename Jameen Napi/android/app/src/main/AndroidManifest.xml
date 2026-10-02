@@ -38,13 +38,14 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <!-- geolocator अपनी location वाली foreground service manifest में
-             डाल देता है। हम उसे इस्तेमाल नहीं करते (नाप सिर्फ़ screen खुली
-             रहने तक), और Play ऐसी service देखकर FGS declaration माँग सकता है —
-             इसलिए हटा दी। -->
-        <service
-            android:name="com.baseflow.geolocator.GeolocatorLocationService"
-            tools:node="remove"/>
+        <!-- geolocator की GeolocatorLocationService को यहाँ से हटाना मत।
+             पहले tools:node="remove" से हटाई थी (Play के FGS declaration के डर
+             से) — पर plugin की position stream उसी service से bind होकर चलती
+             है; service न मिले तो stream चुपचाप कुछ नहीं देती। फ़ोन पर नतीजा:
+             "चलकर नापें" और "सड़क की दूरी" में GPS कभी आता ही नहीं था।
+             हम foregroundNotificationConfig नहीं देते, इसलिए service सिर्फ़
+             bind होती है, foreground में कभी नहीं जाती; और manifest में
+             FOREGROUND_SERVICE_LOCATION permission भी नहीं है। -->
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data

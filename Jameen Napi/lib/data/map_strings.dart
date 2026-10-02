@@ -277,15 +277,15 @@ extension MapStrings on AppStrings {
       });
 
   String get mapContinuousMode => pick(const {
-        AppLang.hindi: 'लगातार (टेढ़ा खेत)',
-        AppLang.english: 'Continuous (curved field)',
-        AppLang.marathi: 'सलग (वाकडे शेत)',
-        AppLang.gujarati: 'સતત (વાંકું ખેતર)',
-        AppLang.punjabi: 'ਲਗਾਤਾਰ (ਟੇਢਾ ਖੇਤ)',
-        AppLang.bengali: 'একটানা (বাঁকা জমি)',
-        AppLang.telugu: 'నిరంతరం (వంకర పొలం)',
-        AppLang.tamil: 'தொடர்ச்சி (வளைந்த வயல்)',
-        AppLang.kannada: 'ನಿರಂತರ (ವಕ್ರ ಹೊಲ)',
+        AppLang.hindi: 'लगातार',
+        AppLang.english: 'Continuous',
+        AppLang.marathi: 'सलग',
+        AppLang.gujarati: 'સતત',
+        AppLang.punjabi: 'ਲਗਾਤਾਰ',
+        AppLang.bengali: 'একটানা',
+        AppLang.telugu: 'నిరంతరం',
+        AppLang.tamil: 'தொடர்ச்சி',
+        AppLang.kannada: 'ನಿರಂತರ',
       });
 
   String get mapDivideShort => pick(const {

@@ -60,6 +60,14 @@ void main() {
       await tester.pump(const Duration(milliseconds: 400));
     }
 
+    // बिंदु वहीं रहें जहाँ उंगली रखी थी। फ़ोन पर तीसरा बिंदु लगाते ही नक्शा
+    // उछलकर zoom हो जाता था (initialCameraFit हर build पर दोबारा बनता था)।
+    expect(tester.getCenter(find.text('1')).dx,
+        closeTo(box.center.dx - 120, 2));
+    expect(tester.getCenter(find.text('1')).dy,
+        // रकबा दिखने पर नीचे का पैनल कुछ pixel बढ़ता है, उतना नक्शा खिसकता है
+        closeTo(box.center.dy - 260, 15));
+
     // तीन बिंदु = रकबा दिखने लगे
     expect(find.text(strings.mapNeedThreePoints), findsNothing);
     expect(find.text('3'), findsOneWidget); // तीसरे बिंदु का नंबर
@@ -68,6 +76,40 @@ void main() {
     await tester.tap(find.byTooltip(strings.mapUndo));
     await tester.pump(const Duration(milliseconds: 400));
     expect(find.text(strings.mapNeedThreePoints), findsOneWidget);
+  });
+
+  testWidgets('बिंदु खींचने पर बिंदु सरकता है, नक्शा नहीं', (tester) async {
+    // फ़ोन पर उल्टा होता था: बिंदु अपनी जगह रहता और पूरा नक्शा खिसक जाता।
+    await pumpScreen(tester, MeasureKind.area);
+    final box = tester.getRect(find.byType(MapMeasureScreen));
+    for (final offset in [
+      const Offset(-120, -260),
+      const Offset(120, -260),
+      const Offset(120, -60),
+    ]) {
+      await tester.tapAt(box.center + offset);
+      await tester.pump(const Duration(milliseconds: 400));
+    }
+    final firstBefore = tester.getCenter(find.text('1'));
+    final thirdBefore = tester.getCenter(find.text('3'));
+
+    final gesture = await tester.startGesture(thirdBefore);
+    await tester.pump(const Duration(milliseconds: 50));
+    for (var i = 0; i < 10; i++) {
+      await gesture.moveBy(const Offset(8, 12));
+      await tester.pump(const Duration(milliseconds: 16));
+    }
+    await gesture.up();
+    await tester.pump(const Duration(milliseconds: 800));
+
+    final thirdAfter = tester.getCenter(find.text('3'));
+    expect(thirdAfter.dx, closeTo(thirdBefore.dx + 80, 3));
+    expect(thirdAfter.dy, closeTo(thirdBefore.dy + 120, 3));
+    // नक्शा नहीं हिला — पहला बिंदु वहीं है
+    expect(tester.getCenter(find.text('1')).dx, closeTo(firstBefore.dx, 1));
+    expect(tester.getCenter(find.text('1')).dy, closeTo(firstBefore.dy, 1));
+    // बिंदु छूने से चौथा बिंदु नहीं बना
+    expect(find.text('4'), findsNothing);
   });
 
   testWidgets('दूरी वाले मोड में दो बिंदु काफ़ी हैं', (tester) async {
