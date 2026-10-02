@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:panchang_engine/panchang_engine.dart' show kundaliIsReady;
 
 import '../theme.dart';
 import '../widgets/common.dart';
@@ -9,6 +10,7 @@ import 'muhurta_screen.dart';
 import 'paath_list_screen.dart';
 import 'grahan_screen.dart';
 import 'granthalaya_screen.dart';
+import 'kundali_profiles_screen.dart';
 import 'vrat_screen.dart';
 import 'sankalp_screen.dart';
 import 'settings_screen.dart';
@@ -95,6 +97,25 @@ class MoreScreen extends StatelessWidget {
                   subtitle: 'श्रीमद्भगवद्गीता और दुर्गा सप्तशती — अर्थ सहित',
                   onTap: () => _open(context, const GranthalayaScreen()),
                 ),
+                // ── कुंडली (→ D-098, D-105) ─────────────────────────
+                //
+                // गणित, फल नहीं — और यह बात शीर्षक के नीचे ही लिखी है, ताकि
+                // कोई राशिफल ढूँढ़ता हुआ यहाँ न आए। इंजन का `kundaliIsReady`
+                // `false` हो तो यह हिस्सा दिखता ही नहीं (→ D-019 का सबक़)।
+                if (kundaliIsReady) ...[
+                  const SizedBox(height: VidhivatSpacing.xxl),
+                  const VidhivatSectionHeader(
+                    title: 'कुंडली',
+                    supportingText: 'जन्म के समय का आकाश — गणित, फल नहीं',
+                  ),
+                  const SizedBox(height: VidhivatSpacing.md),
+                  _MoreItem(
+                    icon: Icons.grid_4x4_outlined,
+                    title: 'जन्म कुंडली',
+                    subtitle: 'लग्न, ग्रह, नवमांश और दशा की तारीख़ें',
+                    onTap: () => _open(context, const KundaliProfilesScreen()),
+                  ),
+                ],
                 // ── व्रत और ग्रहण — दोनों तिथि-काल की चीज़ें ─────────
                 //
                 // ये "पढ़ने के लिए" नहीं हैं, न "पूजा के साधन"। ये बताते
