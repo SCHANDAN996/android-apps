@@ -56,6 +56,7 @@ flutter:
     # अलग लिखना पड़ता है (Flutter अंदर वाले फ़ोल्डर नहीं लेता)।
     - assets/granth/
     - assets/granth/gita/
+    - assets/granth/sundarkand/
     - assets/katha/
     - assets/vrat/
     - assets/parv/

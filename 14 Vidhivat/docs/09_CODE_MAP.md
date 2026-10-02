@@ -567,10 +567,13 @@ granth`) और उसी `PaathScreen` से खुलता है; ग्र
 
 ```
 app/assets/granth/
-├── _suchi.json            ग्रंथालय की सूची (अभी: गीता)
-└── gita/
-    ├── _kram.json         18 अध्याय, तीन हिस्सों में
-    └── gita_01.json … 18  700 श्लोक + हर अध्याय का समापन-वाक्य
+├── _suchi.json            ग्रंथालय की सूची (गीता, सुंदरकांड)
+├── gita/
+│   ├── _kram.json         18 अध्याय, तीन हिस्सों में
+│   └── gita_01.json … 18  700 श्लोक + हर अध्याय का समापन-वाक्य
+└── sundarkand/            (→ D-106)
+    ├── _kram.json         12 प्रसंग, चार हिस्सों में
+    └── sundarkand_01 … 12 344 पद — श्लोक, चौपाई, दोहा, सोरठा, छंद, समापन
 app/assets/paath/saptashati/   सप्तशती यहीं रही (उसकी `_kram.json` में अब `id`)
 
 app/lib/vidhi/granth.dart            GranthKram · GranthHissa · GranthPaath · GranthSuchiEntry
@@ -585,21 +588,23 @@ app/lib/screens/paath_screen.dart         GranthNavigation — नीचे क�
 | नाम | क्या |
 |---|---|
 | `GranthKram` | एक ग्रंथ का क्रम — `id`, `naam`, `parichay`, `hisse`; हर पाठ की id `<ग्रंथ>_…` से शुरू होनी ही चाहिए |
-| `GranthSuchiEntry` | सूची की एक पंक्ति — `chhotaNaam`, `ikai` ("अध्याय"/"पाठ"), `khandIkai` ("श्लोक"/"पाठ") |
+| `GranthSuchiEntry` | सूची की एक पंक्ति — `chhotaNaam`, `ikai` ("अध्याय"/"पाठ"/"प्रसंग"), `khandIkai` ("श्लोक"/"पाठ"/"पद"), `gintiNaam` (सूची में "47 श्लोक" या "26 पद"; न लिखा हो तो "श्लोक") |
 | `GranthSuchiEntry.saptashati` | सप्तशती कोड में लिखी है (`_suchi.json` में नहीं) |
 | `GranthBhandar.granthIds` | जिन ग्रंथों के पाठ ऐप में हैं — id से फ़ोल्डर तय होता है |
 | `GranthNavigation` | पट्टी: "गीता · अध्याय 2/18", पिछला/अगला; कुंजी `<ग्रंथ>_aakhri_khand_<पाठ>` |
-| `Charan.granth` | पूजा के कदम पर ग्रंथ का बटन — कृष्ण पूजा का "पाठ" कदम गीता खोलता है |
+| `Charan.granth` | पूजा के कदम पर ग्रंथ का बटन — कृष्ण पूजा का "पाठ" कदम गीता खोलता है; हनुमान और राम पूजा का सुंदरकांड |
 | `PaathPrakar.granth` | "चालीसा और आरती" की छन्नी में नहीं आता |
 
 | औज़ार / जाँच | क्या |
 |---|---|
 | `tools/banao_granth.py <id>` | `tools/granth_paath/<id>/` → ऐप की JSON। दो ढाँचे: गीता वाला (`mool.txt` + `arth/`) और `"dhancha": "khand"` (`paath/<कुंजी>.txt` — सप्तशती, सूक्त…) |
 | `tools/jaancho_granth.py` | ऐप की JSON औज़ार के नतीजे से हूबहू है या नहीं + कंटेंट के नियम |
-| `tools/lipi.py` | रोमन (`roman_sanskrit`), नुक़्ता खोलना (`khula`), देवनागरी अंक, `pancham()` (संकट → सङ्कट) |
+| `tools/lipi.py` | रोमन (`roman_sanskrit`; `roman_hindi` — अवधी/हिंदी, शब्द के अंत का "अ" नहीं), नुक़्ता खोलना (`khula`), देवनागरी अंक, `pancham()` (संकट → सङ्कट) |
 | `tools/milan.py` | मिलान के साझा औज़ार — तुलना की कुंजी (`kunji_dev`, `kunji_iast`), पंक्तियाँ जोड़ना (`jodo`) |
 | `tools/granth_paath/saptashati/milan/` | सप्तशती का मिलान; `sudhar.py` — पाठ के सुधारों की तालिका (→ D-103) |
 | `tools/granth_paath/gita/milan/` | पाँच स्रोतों का मिलान → `mool.txt` |
+| `tools/granth_paath/sundarkand/` | `kram.json` (`"lipi": "hindi"`), `paath/01…12.txt`; `milan/sk_mool.py` — आधार से 108 सुधारों की तालिका (→ D-106) |
+| `app/test/sundarkand_test.dart` | 344 पद, दोहा १–६० बिना छूटे, 526 चौपाई-पंक्तियाँ, विराम, भूलें लौटी नहीं, ५९.३ का नोट, स्क्रीन, हनुमान पूजा से रास्ता |
 | `app/test/granth_test.dart` | गिनती 700, क्रम, हर खंड भरा, नुक़्ता, उवाच 59, समापन |
 | `app/test/granth_screens_test.dart` | ग्रंथालय → अध्याय → अगला; याद रखना; कृष्ण पूजा से गीता |
 

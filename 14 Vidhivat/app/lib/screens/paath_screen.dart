@@ -223,12 +223,22 @@ class _PaathReaderState extends State<PaathReader> {
   /// "पाठ" शीर्षक के नीचे की गिनती। ग्रंथ के अध्याय में श्लोक गिने जाते
   /// हैं — समापन-वाक्य श्लोक नहीं है, इसलिए "48 खंड" नहीं, "47 श्लोक"।
   static String _khandGinti(Paath paath) => switch (paath.prakar) {
-        PaathPrakar.granth =>
-          '${paath.khand.where((k) => k.shirshak.startsWith('श्लोक')).length} '
-              'श्लोक',
+        PaathPrakar.granth => _granthGinti(paath),
         PaathPrakar.stotra => '${paath.khandKul} खंड',
         PaathPrakar.chalisa || PaathPrakar.aarti => '${paath.khandKul} पद',
       };
+
+  /// गीता के अध्याय में सिर्फ़ श्लोक हैं (और एक समापन-वाक्य)। सुंदरकांड के
+  /// प्रसंग में दोहे, चौपाइयाँ और छंद हैं — वहाँ "0 श्लोक" लिखना ग़लत होता,
+  /// इसलिए सब मिलाकर "पद" (→ D-106)।
+  static String _granthGinti(Paath paath) {
+    final shlok =
+        paath.khand.where((k) => k.shirshak.startsWith('श्लोक')).length;
+    final samapan = paath.khand.where((k) => k.shirshak == 'समापन').length;
+    return shlok + samapan == paath.khandKul
+        ? '$shlok श्लोक'
+        : '${paath.khandKul} पद';
+  }
 
   @override
   Widget build(BuildContext context) {

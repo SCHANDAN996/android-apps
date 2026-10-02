@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "id": "sundarkand_02",
+  "naam": "प्रसंग २ — लंका में प्रवेश, विभीषण से भेंट",
+  "upnaam": [
+    "सुंदरकांड दोहा ४ से ८",
+    "प्रबिसि नगर कीजे सब काजा"
+  ],
+  "prakar": "granth",
+  "devta": "श्री राम और हनुमान जी",
+  "rachnakar": "गोस्वामी तुलसीदास — श्रीरामचरितमानस",
+  "bhasha": "अवधी",
+  "parichay": "मच्छर जितना छोटा रूप धरकर हनुमान जी लंका में घुसते हैं। लंकिनी उन्हें रोकती है और एक घूँसे में पहचान जाती है कि राक्षसों का अंत पास है। महल-महल खोजते हुए हनुमान जी को तुलसी के पौधों वाला एक घर दिखता है — विभीषण का। दोनों राम-भक्त मिलते हैं, और विभीषण सीता जी तक पहुँचने का रास्ता बताते हैं।",
+  "kabPadhein": "मंगलवार और शनिवार को ख़ास तौर पर — बहुत घरों में इन्हीं दिनों पूरा सुंदरकांड पढ़ने का चलन है। बाक़ी दिनों में भी, सुबह या शाम, कभी भी पढ़ सकते हैं।",
+  "kaisePadhein": "हाथ-मुँह धोकर साफ़ जगह पर बैठें। हो सके तो श्री राम और हनुमान जी के चित्र के सामने दीपक जलाएँ।\n\nपूरा पाठ एक बैठक में करने का चलन है; पढ़ने की चाल के हिसाब से इसमें एक से दो घंटे लगते हैं। एक बैठक में न हो तो प्रसंग-प्रसंग करके पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है। पाठ से पहले क्या पढ़ें और बाद में कौन-सी आरती हो, यह हर घर में अलग है; अपनी परंपरा देखिए।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर पद के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "चौपाई ४.१",
+      "dev": "मसक समान रूप कपि धरी।\nलंकहि चलेउ सुमिरि नरहरी॥\nनाम लंकिनी एक निसिचरी।\nसो कह चलेसि मोहि निंदरी॥",
+      "roman": "masak samaan roop kapi dharee |\nlankahi chaleu sumiri naraharee ||\nnaam lankinee ek nisicharee |\nso kah chalesi mohi nindaree ||",
+      "arth": "हनुमान जी ने मच्छर जितना छोटा रूप धरा और मनुष्य रूप में आए भगवान को याद करके लंका की ओर चले। लंका के द्वार पर लंकिनी नाम की एक राक्षसी थी। वह बोली — मेरा निरादर करके, बिना पूछे कहाँ चला जा रहा है?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४.२",
+      "dev": "जानेहि नहीं मरमु सठ मोरा।\nमोर अहार जहाँ लगि चोरा॥\nमुठिका एक महा कपि हनी।\nरुधिर बमत धरनीं ढनमनी॥",
+      "roman": "jaanehi nahee maramu sath moraa |\nmor ahaar jahaan lagi choraa ||\nmuthikaa ek mahaa kapi hanee |\nrudhir bamat dharanee dhanamanee ||",
+      "arth": "अरे मूर्ख, तू मेरा भेद नहीं जानता? जितने भी चोर हैं, वे सब मेरा भोजन हैं। महाकपि हनुमान जी ने उसे एक घूँसा मारा, तो वह ख़ून उगलती हुई धरती पर लुढ़क पड़ी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४.३",
+      "dev": "पुनि संभारि उठी सो लंका।\nजोरि पानि कर बिनय ससंका॥\nजब रावनहि ब्रह्म बर दीन्हा।\nचलत बिरंचि कहा मोहि चीन्हा॥",
+      "roman": "puni sambhaari uthee so lankaa |\njori paani kar binay sasankaa ||\njab raavanahi brahma bar deenhaa |\nchalat biranchi kahaa mohi cheenhaa ||",
+      "arth": "फिर वह लंकिनी अपने को सँभालकर उठी और डरते हुए हाथ जोड़कर विनती करने लगी — जब ब्रह्मा जी ने रावण को वर दिया था, तब जाते समय उन्होंने मुझे यह पहचान बताई थी —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४.४",
+      "dev": "बिकल होसि तैं कपि कें मारे।\nतब जानेसु निसिचर संघारे॥\nतात मोर अति पुन्य बहूता।\nदेखेउँ नयन राम कर दूता॥",
+      "roman": "bikal hosi tai kapi ke maare |\ntab jaanesu nisichar sanghaare ||\ntaat mor ati punya bahootaa |\ndekheu nayan raam kar dootaa ||",
+      "arth": "जब तू किसी बंदर की मार से बेहाल हो जाए, तब जान लेना कि राक्षसों का नाश आ गया। हे तात, मेरे बहुत बड़े पुण्य हैं कि मैंने राम जी के दूत को अपनी आँखों से देखा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ४",
+      "dev": "तात स्वर्ग अपबर्ग सुख धरिअ तुला एक अंग।\nतूल न ताहि सकल मिलि जो सुख लव सतसंग॥",
+      "roman": "taat svarga apabarga sukh dharia tulaa ek ang |\ntool na taahi sakal mili jo sukh lav satasang ||",
+      "arth": "हे तात, स्वर्ग और मोक्ष के सारे सुख तराज़ू के एक पलड़े में रखे जाएँ, तो भी वे सब मिलकर उस सुख के बराबर नहीं होते जो पल भर के सत्संग से मिलता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ५.१",
+      "dev": "प्रबिसि नगर कीजे सब काजा।\nहृदयँ राखि कोसलपुर राजा॥\nगरल सुधा रिपु करहिं मिताई।\nगोपद सिंधु अनल सितलाई॥",
+      "roman": "prabisi nagar keeje sab kaajaa |\nhriday raakhi kosalapur raajaa ||\ngaral sudhaa ripu karahi mitaaee |\ngopad sindhu anal sitalaaee ||",
+      "arth": "अयोध्या के राजा श्री राम को हृदय में रखकर नगर में जाइए और सब काम कीजिए। जिस पर राम जी की कृपा हो, उसके लिए विष अमृत हो जाता है, शत्रु मित्रता करने लगते हैं, समुद्र गाय के खुर के गड्ढे जितना हो जाता है, आग ठंडी हो जाती है,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ५.२",
+      "dev": "गरुड़ सुमेरु रेनु सम ताही।\nराम कृपा करि चितवा जाही॥\nअति लघु रूप धरेउ हनुमाना।\nपैठा नगर सुमिरि भगवाना॥",
+      "roman": "garud sumeru renu sam taahee |\nraam kripaa kari chitavaa jaahee ||\nati laghu roop dhareu hanumaanaa |\npaithaa nagar sumiri bhagavaanaa ||",
+      "arth": "और (काकभुशुंडि जी कहते हैं —) हे गरुड़ जी, सुमेरु पर्वत उसके लिए धूल के कण जैसा हो जाता है, जिसे राम जी ने एक बार कृपा की नज़र से देख लिया। तब हनुमान जी ने बहुत छोटा रूप धरा और भगवान को याद करके नगर में घुसे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ५.३",
+      "dev": "मंदिर मंदिर प्रति करि सोधा।\nदेखे जहँ तहँ अगनित जोधा॥\nगयउ दसानन मंदिर माहीं।\nअति बिचित्र कहि जात सो नाहीं॥",
+      "roman": "mandir mandir prati kari sodhaa |\ndekhe jah tah aganit jodhaa ||\ngayau dasaanan mandir maahee |\nati bichitra kahi jaat so naahee ||",
+      "arth": "उन्होंने एक-एक महल में खोज की। जहाँ-तहाँ अनगिनत योद्धा दिखाई दिए। फिर वे रावण के महल में गए; वह इतना विचित्र था कि कहा नहीं जा सकता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ५.४",
+      "dev": "सयन किए देखा कपि तेही।\nमंदिर महुँ न दीखि बैदेही॥\nभवन एक पुनि दीख सुहावा।\nहरि मंदिर तहँ भिन्न बनावा॥",
+      "roman": "sayan kie dekhaa kapi tehee |\nmandir mahu na deekhi baidehee ||\nbhavan ek puni deekh suhaavaa |\nhari mandir tah bhinna banaavaa ||",
+      "arth": "हनुमान जी ने रावण को सोते हुए देखा, पर उस महल में सीता जी नहीं दिखीं। फिर एक और सुंदर भवन दिखाई दिया, जिसमें भगवान का एक मंदिर अलग से बना हुआ था।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ५",
+      "dev": "रामायुध अंकित गृह सोभा बरनि न जाइ।\nनव तुलसिका बृंद तहँ देखि हरष कपिराइ॥",
+      "roman": "raamaayudh ankit grih sobhaa barani na jaai |\nnav tulasikaa brind tah dekhi harash kapiraai ||",
+      "arth": "वह घर राम जी के आयुध, यानी धनुष-बाण के चिह्नों से अंकित था; उसकी शोभा कही नहीं जा सकती। वहाँ तुलसी के नए-नए पौधों के झुंड देखकर कपिराज हनुमान जी प्रसन्न हुए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ६.१",
+      "dev": "लंका निसिचर निकर निवासा।\nइहाँ कहाँ सज्जन कर बासा॥\nमन महुँ तरक करै कपि लागा।\nतेहीं समय बिभीषनु जागा॥",
+      "roman": "lankaa nisichar nikar nivaasaa |\nihaan kahaan sajjan kar baasaa ||\nman mahu tarak karai kapi laagaa |\ntehee samay bibheeshanu jaagaa ||",
+      "arth": "लंका तो राक्षसों के झुंड के रहने की जगह है; यहाँ किसी सज्जन का निवास कहाँ से आया? हनुमान जी मन में इस तरह सोच-विचार करने लगे। उसी समय विभीषण जी जागे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ६.२",
+      "dev": "राम राम तेहिं सुमिरन कीन्हा।\nहृदयँ हरष कपि सज्जन चीन्हा॥\nएहि सन हठि करिहउँ पहिचानी।\nसाधु ते होइ न कारज हानी॥",
+      "roman": "raam raam tehi sumiran keenhaa |\nhriday harash kapi sajjan cheenhaa ||\nehi san hathi karihau pahichaanee |\nsaadhu te hoi na kaaraj haanee ||",
+      "arth": "उन्होंने राम-राम कहकर स्मरण किया। हनुमान जी ने उन्हें सज्जन पहचाना और मन में प्रसन्न हुए। उन्होंने सोचा — इनसे मैं अपनी ओर से ही जान-पहचान करूँगा; सज्जन से काम बिगड़ता नहीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ६.३",
+      "dev": "बिप्र रूप धरि बचन सुनाए।\nसुनत बिभीषन उठि तहँ आए॥\nकरि प्रनाम पूँछी कुसलाई।\nबिप्र कहहु निज कथा बुझाई॥",
+      "roman": "bipra roop dhari bachan sunaae |\nsunat bibheeshan uthi tah aae ||\nkari pranaam poonchhee kusalaaee |\nbipra kahahu nij kathaa bujhaaee ||",
+      "arth": "ब्राह्मण का रूप धरकर हनुमान जी ने उन्हें पुकारा। सुनते ही विभीषण जी उठकर वहाँ आए। प्रणाम करके उन्होंने कुशल पूछी और कहा — हे ब्राह्मण देव, अपनी बात समझाकर कहिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ६.४",
+      "dev": "की तुम्ह हरि दासन्ह महँ कोई।\nमोरें हृदय प्रीति अति होई॥\nकी तुम्ह रामु दीन अनुरागी।\nआयहु मोहि करन बड़भागी॥",
+      "roman": "kee tumh hari daasanh mah koee |\nmore hriday preeti ati hoee ||\nkee tumh raamu deen anuraagee |\naayahu mohi karan badabhaagee ||",
+      "arth": "क्या आप भगवान के भक्तों में से कोई हैं? क्योंकि आपको देखकर मेरे हृदय में बहुत प्रेम उमड़ रहा है। या आप दीनों से प्रेम करने वाले स्वयं राम जी हैं, जो मुझे बड़भागी बनाने आए हैं?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ६",
+      "dev": "तब हनुमंत कही सब राम कथा निज नाम।\nसुनत जुगल तन पुलक मन मगन सुमिरि गुन ग्राम॥",
+      "roman": "tab hanumant kahee sab raam kathaa nij naam |\nsunat jugal tan pulak man magan sumiri gun graam ||",
+      "arth": "तब हनुमान जी ने राम जी की सारी कथा और अपना नाम बताया। सुनते ही दोनों के शरीर पुलकित हो गए और राम जी के गुणों को याद करके दोनों के मन प्रेम में डूब गए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ७.१",
+      "dev": "सुनहु पवनसुत रहनि हमारी।\nजिमि दसनन्हि महुँ जीभ बिचारी॥\nतात कबहुँ मोहि जानि अनाथा।\nकरिहहिं कृपा भानुकुल नाथा॥",
+      "roman": "sunahu pavanasut rahani hamaaree |\njimi dasananhi mahu jeebh bichaaree ||\ntaat kabahu mohi jaani anaathaa |\nkarihahi kripaa bhaanukul naathaa ||",
+      "arth": "(विभीषण जी बोले —) हे पवनपुत्र, मेरा रहन-सहन सुनिए। मैं यहाँ वैसे रहता हूँ जैसे दाँतों के बीच बेचारी जीभ। हे तात, क्या सूर्यकुल के स्वामी श्री राम कभी मुझे अनाथ जानकर मुझ पर कृपा करेंगे?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ७.२",
+      "dev": "तामस तनु कछु साधन नाहीं।\nप्रीति न पद सरोज मन माहीं॥\nअब मोहि भा भरोस हनुमंता।\nबिनु हरिकृपा मिलहिं नहिं संता॥",
+      "roman": "taamas tanu kachhu saadhan naahee |\npreeti na pad saroj man maahee ||\nab mohi bhaa bharos hanumantaa |\nbinu harikripaa milahi nahi santaa ||",
+      "arth": "मेरा शरीर तामसी, यानी राक्षस का है, इसलिए कोई साधन नहीं बनता; और मन में प्रभु के चरण-कमलों के लिए प्रेम भी नहीं है। पर हे हनुमान, अब मुझे भरोसा हो गया, क्योंकि भगवान की कृपा के बिना संत नहीं मिलते।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ७.३",
+      "dev": "जौं रघुबीर अनुग्रह कीन्हा।\nतौ तुम्ह मोहि दरसु हठि दीन्हा॥\nसुनहु बिभीषन प्रभु कै रीती।\nकरहिं सदा सेवक पर प्रीती॥",
+      "roman": "jau raghubeer anugrah keenhaa |\ntau tumh mohi darasu hathi deenhaa ||\nsunahu bibheeshan prabhu kai reetee |\nkarahi sadaa sevak par preetee ||",
+      "arth": "जब रघुवीर ने कृपा की है, तभी तो आपने अपनी ओर से आकर मुझे दर्शन दिए। (हनुमान जी बोले —) हे विभीषण जी, सुनिए, प्रभु की यही रीति है कि वे सेवक पर सदा प्रेम करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ७.४",
+      "dev": "कहहु कवन मैं परम कुलीना।\nकपि चंचल सबहीं बिधि हीना॥\nप्रात लेइ जो नाम हमारा।\nतेहि दिन ताहि न मिलै अहारा॥",
+      "roman": "kahahu kavan mai param kuleenaa |\nkapi chanchal sabahee bidhi heenaa ||\npraat lei jo naam hamaaraa |\ntehi din taahi na milai ahaaraa ||",
+      "arth": "भला बताइए, मैं ही कौन-सा बड़ा कुलीन हूँ? चंचल बंदर हूँ और हर तरह से हीन हूँ। सुबह-सुबह जो हमारा नाम ले ले, उसे उस दिन भोजन तक न मिले।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ७",
+      "dev": "अस मैं अधम सखा सुनु मोहू पर रघुबीर।\nकीन्ही कृपा सुमिरि गुन भरे बिलोचन नीर॥",
+      "roman": "as mai adham sakhaa sunu mohoo par raghubeer |\nkeenhee kripaa sumiri gun bhare bilochan neer ||",
+      "arth": "हे मित्र, सुनिए — मैं ऐसा अधम हूँ, फिर भी रघुवीर ने मुझ पर कृपा की। प्रभु के गुणों को याद करके हनुमान जी की दोनों आँखों में आँसू भर आए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ८.१",
+      "dev": "जानतहूँ अस स्वामि बिसारी।\nफिरहिं ते काहे न होहिं दुखारी॥\nएहि बिधि कहत राम गुन ग्रामा।\nपावा अनिर्बाच्य बिश्रामा॥",
+      "roman": "jaanatahoo as svaami bisaaree |\nphirahi te kaahe na hohi dukhaaree ||\nehi bidhi kahat raam gun graamaa |\npaavaa anirbaachya bishraamaa ||",
+      "arth": "जो लोग जान-बूझकर भी ऐसे स्वामी को भुलाकर भटकते फिरते हैं, वे दुखी क्यों न हों? इस तरह राम जी के गुण कहते-कहते उन्होंने ऐसी शांति पाई जो कही नहीं जा सकती।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ८.२",
+      "dev": "पुनि सब कथा बिभीषन कही।\nजेहि बिधि जनकसुता तहँ रही॥\nतब हनुमंत कहा सुनु भ्राता।\nदेखी चहउँ जानकी माता॥",
+      "roman": "puni sab kathaa bibheeshan kahee |\njehi bidhi janakasutaa tah rahee ||\ntab hanumant kahaa sunu bhraataa |\ndekhee chahau jaanakee maataa ||",
+      "arth": "फिर विभीषण जी ने सारी बात बताई कि जानकी जी वहाँ किस तरह रह रही थीं। तब हनुमान जी ने कहा — भाई, सुनिए, मैं जानकी माता को देखना चाहता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ८.३",
+      "dev": "जुगुति बिभीषन सकल सुनाई।\nचलेउ पवनसुत बिदा कराई॥\nकरि सोइ रूप गयउ पुनि तहवाँ।\nबन असोक सीता रह जहवाँ॥",
+      "roman": "juguti bibheeshan sakal sunaaee |\nchaleu pavanasut bidaa karaaee ||\nkari soi roop gayau puni tahavaan |\nban asok seetaa rah jahavaan ||",
+      "arth": "विभीषण जी ने सीता जी तक पहुँचने की सारी युक्तियाँ बता दीं। तब हनुमान जी विदा लेकर चले। फिर वही छोटा रूप धरकर वे वहाँ गए जहाँ अशोक वन में सीता जी रहती थीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ८.४",
+      "dev": "देखि मनहि महुँ कीन्ह प्रनामा।\nबैठेहिं बीति जात निसि जामा॥\nकृस तनु सीस जटा एक बेनी।\nजपति हृदयँ रघुपति गुन श्रेनी॥",
+      "roman": "dekhi manahi mahu keenh pranaamaa |\nbaithehi beeti jaat nisi jaamaa ||\nkris tanu sees jataa ek benee |\njapati hriday raghupati gun shrenee ||",
+      "arth": "सीता जी को देखकर हनुमान जी ने मन ही मन प्रणाम किया। सीता जी की रात के पहर बैठे-बैठे ही बीत जाते हैं। शरीर दुबला हो गया है, सिर पर जटाओं की एक ही चोटी है, और वे मन में रघुनाथ जी के गुणों को जपती रहती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ८",
+      "dev": "निज पद नयन दिएँ मन राम पद कमल लीन।\nपरम दुखी भा पवनसुत देखि जानकी दीन॥",
+      "roman": "nij pad nayan die man raam pad kamal leen |\nparam dukhee bhaa pavanasut dekhi jaanakee deen ||",
+      "arth": "जानकी जी की आँखें अपने पैरों पर टिकी हैं और मन राम जी के चरण-कमलों में लीन है। उन्हें इस तरह दुखी देखकर पवनपुत्र बहुत दुखी हुए।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "श्रीरामचरितमानस — पंचम सोपान (सुंदरकांड)",
+    "kshetra": "पूरे उत्तर भारत में प्रचलित",
+    "note": "पाठ एक सबके लिए खुले डिजिटल पाठ से लिया गया और पाँच छपी पुस्तकों से पंक्ति-दर-पंक्ति मिलाया गया। जहाँ आधार में छपाई की भूल थी, वहाँ वह रूप है जिस पर कम से कम तीन छपी पुस्तकें एक हैं। छपे मानसों में बिंदी-चंद्रबिंदु और कुछ शब्दों के रूप अलग-अलग मिलते हैं — आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है।\n\nचौपाइयों की गिनती छपी पुस्तकों के चलन पर है: \"चौपाई १२.३\" यानी दोहा १२ से पहले की तीसरी चौपाई।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

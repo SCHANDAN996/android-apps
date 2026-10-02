@@ -174,6 +174,7 @@ class _GranthScreenState extends State<GranthScreen> {
                         paath: p,
                         pichhla: p.id == _pichhla,
                         ekLineDikhao: granth.ekLineDikhao,
+                        gintiNaam: granth.gintiNaam,
                         onTap: () => _kholo(nav, kram, kram.indexOf(p)),
                       ),
                       const SizedBox(height: VidhivatSpacing.sm),
@@ -193,12 +194,14 @@ class _Pankti extends StatelessWidget {
   final GranthPaath paath;
   final bool pichhla;
   final bool ekLineDikhao;
+  final String gintiNaam;
   final VoidCallback onTap;
 
   const _Pankti({
     required this.paath,
     required this.pichhla,
     required this.ekLineDikhao,
+    required this.gintiNaam,
     required this.onTap,
   });
 
@@ -221,7 +224,7 @@ class _Pankti extends StatelessWidget {
                 ],
                 const SizedBox(height: 2),
                 Text(
-                  '${paath.shlok} श्लोक'
+                  '${paath.shlok} $gintiNaam'
                   '${pichhla ? ' · पिछली बार खोला था' : ''}',
                   style: type.bodySmall.copyWith(
                     color: pichhla ? colors.primary : null,

@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "id": "sundarkand_07",
+  "naam": "प्रसंग ७ — लंका दहन",
+  "upnaam": [
+    "सुंदरकांड दोहा २५ से २७",
+    "लंका दहन"
+  ],
+  "prakar": "granth",
+  "devta": "श्री राम और हनुमान जी",
+  "rachnakar": "गोस्वामी तुलसीदास — श्रीरामचरितमानस",
+  "bhasha": "अवधी",
+  "parichay": "पूँछ में कपड़ा लपेटकर आग लगाई जाती है। हनुमान जी छोटा रूप धरकर बंधन से निकल जाते हैं और महल-महल कूदकर सारी लंका जला देते हैं — बस विभीषण का घर छोड़कर। फिर समुद्र में पूँछ बुझाकर वे सीता जी के पास लौटते हैं। सीता जी निशानी में चूड़ामणि देती हैं और अपना संदेश कहती हैं।",
+  "kabPadhein": "मंगलवार और शनिवार को ख़ास तौर पर — बहुत घरों में इन्हीं दिनों पूरा सुंदरकांड पढ़ने का चलन है। बाक़ी दिनों में भी, सुबह या शाम, कभी भी पढ़ सकते हैं।",
+  "kaisePadhein": "हाथ-मुँह धोकर साफ़ जगह पर बैठें। हो सके तो श्री राम और हनुमान जी के चित्र के सामने दीपक जलाएँ।\n\nपूरा पाठ एक बैठक में करने का चलन है; पढ़ने की चाल के हिसाब से इसमें एक से दो घंटे लगते हैं। एक बैठक में न हो तो प्रसंग-प्रसंग करके पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है। पाठ से पहले क्या पढ़ें और बाद में कौन-सी आरती हो, यह हर घर में अलग है; अपनी परंपरा देखिए।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर पद के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "चौपाई २५.१",
+      "dev": "पूँछहीन बानर तहँ जाइहि।\nतब सठ निज नाथहि लइ आइहि॥\nजिन्ह कै कीन्हिसि बहुत बड़ाई।\nदेखउँ मैं तिन्ह कै प्रभुताई॥",
+      "roman": "poonchhaheen baanar tah jaaihi |\ntab sath nij naathahi lai aaihi ||\njinh kai keenhisi bahut badaaee |\ndekhau mai tinh kai prabhutaaee ||",
+      "arth": "जब बिना पूँछ का यह बंदर वहाँ जाएगा, तब यह मूर्ख अपने मालिक को ले आएगा। जिनकी इसने इतनी बड़ाई की है, ज़रा मैं भी तो उनका प्रताप देखूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २५.२",
+      "dev": "बचन सुनत कपि मन मुसुकाना।\nभइ सहाय सारद मैं जाना॥\nजातुधान सुनि रावन बचना।\nलागे रचैं मूढ़ सोइ रचना॥",
+      "roman": "bachan sunat kapi man musukaanaa |\nbhai sahaay saarad mai jaanaa ||\njaatudhaan suni raavan bachanaa |\nlaage rachai moodh soi rachanaa ||",
+      "arth": "यह बात सुनकर हनुमान जी मन ही मन मुसकराए और सोचा — मैं समझ गया, सरस्वती जी सहायक हुई हैं; उन्हीं ने इसे ऐसी बुद्धि दी। रावण की बात सुनकर मूर्ख राक्षस वही तैयारी करने लगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २५.३",
+      "dev": "रहा न नगर बसन घृत तेला।\nबाढ़ी पूँछ कीन्ह कपि खेला॥\nकौतुक कहँ आए पुरबासी।\nमारहिं चरन करहिं बहु हाँसी॥",
+      "roman": "rahaa na nagar basan ghrit telaa |\nbaadhee poonchh keenh kapi khelaa ||\nkautuk kah aae purabaasee |\nmaarahi charan karahi bahu haansee ||",
+      "arth": "पूँछ लपेटने में इतना कपड़ा, घी और तेल लगा कि नगर में कुछ बचा ही नहीं। हनुमान जी ने ऐसा खेल किया कि पूँछ बढ़ती ही गई। नगर के लोग तमाशा देखने आए। वे हनुमान जी को पैरों से ठोकर मारते और उनकी बहुत हँसी उड़ाते।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २५.४",
+      "dev": "बाजहिं ढोल देहिं सब तारी।\nनगर फेरि पुनि पूँछ प्रजारी॥\nपावक जरत देखि हनुमंता।\nभयउ परम लघुरूप तुरंता॥",
+      "roman": "baajahi dhol dehi sab taaree |\nnagar pheri puni poonchh prajaaree ||\npaavak jarat dekhi hanumantaa |\nbhayau param laghuroop turantaa ||",
+      "arth": "ढोल बजते हैं, सब तालियाँ पीटते हैं। हनुमान जी को नगर में घुमाकर फिर उनकी पूँछ में आग लगा दी गई। आग जलती देखकर हनुमान जी तुरंत बहुत छोटे रूप के हो गए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २५.५",
+      "dev": "निबुकि चढ़ेउ कपि कनक अटारीं।\nभई सभीत निसाचर नारीं॥",
+      "roman": "nibuki chadheu kapi kanak ataaree |\nbhaee sabheet nisaachar naaree ||",
+      "arth": "बंधन से निकलकर वे सोने की अटारियों पर जा चढ़े। यह देखकर राक्षसों की स्त्रियाँ डर गईं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा २५",
+      "dev": "हरि प्रेरित तेहि अवसर चले मरुत उनचास।\nअट्टहास करि गर्जा कपि बढ़ि लाग अकास॥",
+      "roman": "hari prerit tehi avasar chale marut unachaas |\nattahaas kari garjaa kapi badhi laag akaas ||",
+      "arth": "उसी समय भगवान की प्रेरणा से उनचासों पवन चलने लगे। हनुमान जी ठठाकर हँसे, गरजे, और बढ़कर आकाश को छूने लगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २६.१",
+      "dev": "देह बिसाल परम हरुआई।\nमंदिर तें मंदिर चढ़ धाई॥\nजरइ नगर भा लोग बिहाला।\nझपट लपट बहु कोटि कराला॥",
+      "roman": "deh bisaal param haruaaee |\nmandir te mandir chadh dhaaee ||\njarai nagar bhaa log bihaalaa |\njhapat lapat bahu koti karaalaa ||",
+      "arth": "उनकी देह बहुत विशाल थी, फिर भी बहुत हलकी और फुर्तीली थी। वे दौड़कर एक महल से दूसरे महल पर चढ़ जाते। नगर जलने लगा और लोग बेहाल हो गए। आग की करोड़ों भयानक लपटें झपट रही थीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २६.२",
+      "dev": "तात मातु हा सुनिअ पुकारा।\nएहिं अवसर को हमहि उबारा॥\nहम जो कहा यह कपि नहिं होई।\nबानर रूप धरें सुर कोई॥",
+      "roman": "taat maatu haa sunia pukaaraa |\nehi avasar ko hamahi ubaaraa ||\nham jo kahaa yah kapi nahi hoee |\nbaanar roop dhare sur koee ||",
+      "arth": "हाय बाप, हाय माँ — यही पुकार सुनाई दे रही थी — इस समय हमें कौन बचाएगा? हमने तो पहले ही कहा था कि यह बंदर नहीं है; बंदर का रूप धरे कोई देवता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २६.३",
+      "dev": "साधु अवग्या कर फलु ऐसा।\nजरइ नगर अनाथ कर जैसा॥\nजारा नगरु निमिष एक माहीं।\nएक बिभीषन कर गृह नाहीं॥",
+      "roman": "saadhu avagyaa kar phalu aisaa |\njarai nagar anaath kar jaisaa ||\njaaraa nagaru nimish ek maahee |\nek bibheeshan kar grih naahee ||",
+      "arth": "साधु के अपमान का फल ऐसा ही होता है कि नगर अनाथ के नगर की तरह जल रहा है। हनुमान जी ने पल भर में सारा नगर जला दिया; बस एक विभीषण का घर नहीं जलाया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २६.४",
+      "dev": "ता कर दूत अनल जेहिं सिरिजा।\nजरा न सो तेहि कारन गिरिजा॥\nउलटि पलटि लंका सब जारी।\nकूदि परा पुनि सिंधु मझारी॥",
+      "roman": "taa kar doot anal jehi sirijaa |\njaraa na so tehi kaaran girijaa ||\nulati palati lankaa sab jaaree |\nkoodi paraa puni sindhu majhaaree ||",
+      "arth": "(शिव जी कहते हैं —) हे पार्वती, जिन्होंने आग को बनाया, हनुमान जी उन्हीं के दूत हैं; इसी कारण वे आग से नहीं जले। उन्होंने उलट-पलटकर सारी लंका जला दी और फिर समुद्र में कूद पड़े।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा २६",
+      "dev": "पूँछ बुझाइ खोइ श्रम धरि लघु रूप बहोरि।\nजनकसुता कें आगें ठाढ़ भयउ कर जोरि॥",
+      "roman": "poonchh bujhaai khoi shram dhari laghu roop bahori |\njanakasutaa ke aage thaadh bhayau kar jori ||",
+      "arth": "पूँछ बुझाकर, थकान मिटाकर और फिर छोटा रूप धरकर हनुमान जी जानकी जी के सामने हाथ जोड़कर जा खड़े हुए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २७.१",
+      "dev": "मातु मोहि दीजे कछु चीन्हा।\nजैसें रघुनायक मोहि दीन्हा॥\nचूड़ामनि उतारि तब दयऊ।\nहरष समेत पवनसुत लयऊ॥",
+      "roman": "maatu mohi deeje kachhu cheenhaa |\njaise raghunaayak mohi deenhaa ||\nchoodaamani utaari tab dayau |\nharash samet pavanasut layau ||",
+      "arth": "उन्होंने कहा — हे माता, मुझे कोई निशानी दीजिए, जैसे रघुनाथ जी ने मुझे दी थी। तब सीता जी ने चूड़ामणि उतारकर दी। हनुमान जी ने उसे ख़ुशी से ले लिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २७.२",
+      "dev": "कहेहु तात अस मोर प्रनामा।\nसब प्रकार प्रभु पूरनकामा॥\nदीन दयाल बिरिदु संभारी।\nहरहु नाथ मम संकट भारी॥",
+      "roman": "kahehu taat as mor pranaamaa |\nsab prakaar prabhu pooranakaamaa ||\ndeen dayaal biridu sambhaaree |\nharahu naath mam sankat bhaaree ||",
+      "arth": "(सीता जी ने कहा —) हे तात, मेरा प्रणाम कहना और इस तरह कहना — हे प्रभु, आप हर तरह से पूर्णकाम हैं, आपको किसी चीज़ की चाह नहीं; फिर भी दीनों पर दया करना आपका बाना है। उसे याद करके, हे नाथ, मेरा भारी संकट दूर कीजिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २७.३",
+      "dev": "तात सक्रसुत कथा सुनाएहु।\nबान प्रताप प्रभुहि समुझाएहु॥\nमास दिवस महुँ नाथु न आवा।\nतौ पुनि मोहि जिअत नहिं पावा॥",
+      "roman": "taat sakrasut kathaa sunaaehu |\nbaan prataap prabhuhi samujhaaehu ||\nmaas divas mahu naathu na aavaa |\ntau puni mohi jiat nahi paavaa ||",
+      "arth": "हे तात, इंद्र के बेटे जयंत की कथा सुनाना और प्रभु को उनके बाण का प्रताप याद दिलाना। अगर महीने भर में नाथ न आए, तो फिर मुझे जीती नहीं पाएँगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २७.४",
+      "dev": "कहु कपि केहि बिधि राखौं प्राना।\nतुम्हहू तात कहत अब जाना॥\nतोहि देखि सीतलि भइ छाती।\nपुनि मो कहुँ सोइ दिनु सो राती॥",
+      "roman": "kahu kapi kehi bidhi raakhau praanaa |\ntumhahoo taat kahat ab jaanaa ||\ntohi dekhi seetali bhai chhaatee |\npuni mo kahu soi dinu so raatee ||",
+      "arth": "हे हनुमान, बताओ, मैं किस तरह प्राण रखूँ? हे तात, तुम भी अब जाने को कह रहे हो। तुम्हें देखकर छाती ठंडी हुई थी; अब मेरे लिए फिर वही दिन और वही रात।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा २७",
+      "dev": "जनकसुतहि समुझाइ करि बहु बिधि धीरजु दीन्ह।\nचरन कमल सिरु नाइ कपि गवनु राम पहिं कीन्ह॥",
+      "roman": "janakasutahi samujhaai kari bahu bidhi dheeraju deenh |\ncharan kamal siru naai kapi gavanu raam pahi keenh ||",
+      "arth": "हनुमान जी ने जानकी जी को समझाकर कई तरह से धीरज बँधाया, और उनके चरण-कमलों में सिर नवाकर राम जी के पास चल दिए।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "श्रीरामचरितमानस — पंचम सोपान (सुंदरकांड)",
+    "kshetra": "पूरे उत्तर भारत में प्रचलित",
+    "note": "पाठ एक सबके लिए खुले डिजिटल पाठ से लिया गया और पाँच छपी पुस्तकों से पंक्ति-दर-पंक्ति मिलाया गया। जहाँ आधार में छपाई की भूल थी, वहाँ वह रूप है जिस पर कम से कम तीन छपी पुस्तकें एक हैं। छपे मानसों में बिंदी-चंद्रबिंदु और कुछ शब्दों के रूप अलग-अलग मिलते हैं — आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है।\n\nचौपाइयों की गिनती छपी पुस्तकों के चलन पर है: \"चौपाई १२.३\" यानी दोहा १२ से पहले की तीसरी चौपाई।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

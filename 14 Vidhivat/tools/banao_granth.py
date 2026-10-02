@@ -32,6 +32,12 @@
                            = अर्थ (एक पंक्ति)
 
 `kram.json` का `assetDir` बताता है कि JSON `app/assets/` के भीतर कहाँ जाएगी।
+
+हिंदी/अवधी का ग्रंथ हो (सुंदरकांड) तो `saanjha` में `"lipi": "hindi"` — रोमन
+`roman_hindi` से बनेगा। उसी में जो खंड संस्कृत के हों (मंगलाचरण के श्लोक,
+समापन-वाक्य), उनके शीर्षक की शुरुआत `sanskritShirshak` में लिखो।
+`"ginoShirshak": ""` — सूची में गिनती सारे खंडों की।
+`"yatiPar": ["चौपाई"]` — इन खंडों की हर पंक्ति «अ। ब॥» ऐप में दो पंक्तियों में।
 """
 import io
 import json
@@ -39,7 +45,7 @@ import os
 import re
 import sys
 
-from lipi import dev_ank, khula, roman_sanskrit
+from lipi import dev_ank, khula, roman_hindi, roman_sanskrit
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 KRAMVACHAK = ['पहला', 'दूसरा', 'तीसरा', 'चौथा', 'पाँचवाँ', 'छठा', 'सातवाँ',
@@ -148,12 +154,26 @@ def banao_khand(gid, kram, src, dst):
         note = khula(strot['note'])
         if len(note) > kram.get('noteHadd', 600):
             ruko('%s: ⓘ का नोट %d अक्षर — हद पार' % (key, len(note)))
+        hindi = f.get('lipi') == 'hindi'
+        sanskrit_wale = tuple(f.get('sanskritShirshak', []))
+        yati_wale = tuple(f.get('yatiPar', []))
         khand = []
         dekhe = set()
         for shirshak, mool, arth in khand_padho(os.path.join(src, 'paath', key + '.txt')):
             if shirshak in dekhe:
                 ruko('%s: शीर्षक "%s" दो बार' % (key, shirshak))
             dekhe.add(shirshak)
+            # चौपाई की पंक्ति पुस्तक में «अ। ब॥» एक साथ छपती है; फ़ोन की चौड़ाई
+            # में वह बीच से टूटती है। `yatiPar` वाले खंडों में हर पंक्ति «।» पर
+            # दो पंक्तियों में जाती है — `paath/*.txt` में पुस्तक वाला रूप ही रहता है।
+            if yati_wale and shirshak.startswith(yati_wale):
+                tode = []
+                for x in mool:
+                    aadhe = x.split('। ')
+                    if len(aadhe) != 2 or not aadhe[1].endswith('॥'):
+                        ruko('%s %s: पंक्ति «अ। ब॥» के रूप में नहीं: %s' % (key, shirshak, x))
+                    tode += [aadhe[0] + '।', aadhe[1]]
+                mool = tode
             dev = '\n'.join(mool).replace(' ।', NBSP + '।')
             if re.search(r'[A-Za-z0-9]', dev):
                 ruko('%s %s: पाठ में अंग्रेज़ी अक्षर/अंक' % (key, shirshak))
@@ -162,7 +182,9 @@ def banao_khand(gid, kram, src, dst):
             khand.append({
                 'shirshak': shirshak,
                 'dev': dev,
-                'roman': roman_sanskrit(dev),
+                'roman': (roman_hindi(dev)
+                          if hindi and not (sanskrit_wale and shirshak.startswith(sanskrit_wale))
+                          else roman_sanskrit(dev)),
                 'arth': khula(arth),
                 'audio': '',
                 'sthiti': 'draft',

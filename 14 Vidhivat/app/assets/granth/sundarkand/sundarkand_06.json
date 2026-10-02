@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "id": "sundarkand_06",
+  "naam": "प्रसंग ६ — रावण की सभा में",
+  "upnaam": [
+    "सुंदरकांड दोहा २१ से २४",
+    "हनुमान रावण संवाद"
+  ],
+  "prakar": "granth",
+  "devta": "श्री राम और हनुमान जी",
+  "rachnakar": "गोस्वामी तुलसीदास — श्रीरामचरितमानस",
+  "bhasha": "अवधी",
+  "parichay": "रावण के पूछने पर हनुमान जी बताते हैं कि वे किसके दूत हैं, और हाथ जोड़कर उसे समझाते हैं — घमंड छोड़ो, जानकी जी को लौटा दो, श्री राम की शरण लो। रावण उन्हें मारने का हुक्म देता है; विभीषण याद दिलाते हैं कि दूत को मारना नीति के विरुद्ध है। तब पूँछ में आग लगाने की आज्ञा होती है।",
+  "kabPadhein": "मंगलवार और शनिवार को ख़ास तौर पर — बहुत घरों में इन्हीं दिनों पूरा सुंदरकांड पढ़ने का चलन है। बाक़ी दिनों में भी, सुबह या शाम, कभी भी पढ़ सकते हैं।",
+  "kaisePadhein": "हाथ-मुँह धोकर साफ़ जगह पर बैठें। हो सके तो श्री राम और हनुमान जी के चित्र के सामने दीपक जलाएँ।\n\nपूरा पाठ एक बैठक में करने का चलन है; पढ़ने की चाल के हिसाब से इसमें एक से दो घंटे लगते हैं। एक बैठक में न हो तो प्रसंग-प्रसंग करके पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है। पाठ से पहले क्या पढ़ें और बाद में कौन-सी आरती हो, यह हर घर में अलग है; अपनी परंपरा देखिए।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर पद के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "चौपाई २१.१",
+      "dev": "कह लंकेस कवन तैं कीसा।\nकेहि कें बल घालेहि बन खीसा॥\nकी धौं श्रवन सुनेहि नहिं मोही।\nदेखउँ अति असंक सठ तोही॥",
+      "roman": "kah lankes kavan tai keesaa |\nkehi ke bal ghaalehi ban kheesaa ||\nkee dhau shravan sunehi nahi mohee |\ndekhau ati asank sath tohee ||",
+      "arth": "लंकापति रावण बोला — अरे बंदर, तू कौन है? किसके बल पर तूने वन उजाड़कर नष्ट कर दिया? क्या तूने कभी मेरा नाम कानों से नहीं सुना? अरे मूर्ख, मैं तुझे बहुत ही निडर देख रहा हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २१.२",
+      "dev": "मारे निसिचर केहिं अपराधा।\nकहु सठ तोहि न प्रान कइ बाधा॥\nसुनु रावन ब्रह्मांड निकाया।\nपाइ जासु बल बिरचति माया॥",
+      "roman": "maare nisichar kehi aparaadhaa |\nkahu sath tohi na praan kai baadhaa ||\nsunu raavan brahmaand nikaayaa |\npaai jaasu bal birachati maayaa ||",
+      "arth": "तूने किस अपराध पर राक्षसों को मारा? बोल मूर्ख, क्या तुझे प्राण जाने का डर नहीं? (हनुमान जी बोले —) हे रावण, सुन। जिनका बल पाकर माया सारे ब्रह्मांडों के समूह रचती है,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २१.३",
+      "dev": "जाकें बल बिरंचि हरि ईसा।\nपालत सृजत हरत दससीसा॥\nजा बल सीस धरत सहसानन।\nअंडकोस समेत गिरि कानन॥",
+      "roman": "jaake bal biranchi hari eesaa |\npaalat srijat harat dasaseesaa ||\njaa bal sees dharat sahasaanan |\nandakos samet giri kaanan ||",
+      "arth": "जिनके बल से, हे दशशीश, ब्रह्मा सृष्टि को रचते, विष्णु पालते और शिव समेटते हैं; जिनके बल से हज़ार मुखों वाले शेष जी पर्वतों और वनों समेत सारे ब्रह्मांड को सिर पर धारण करते हैं;",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २१.४",
+      "dev": "धरइ जो बिबिध देह सुरत्राता।\nतुम्ह से सठन्ह सिखावनु दाता॥\nहर कोदंड कठिन जेहिं भंजा।\nतेहि समेत नृप दल मद गंजा॥",
+      "roman": "dharai jo bibidh deh suratraataa |\ntumh se sathanh sikhaavanu daataa ||\nhar kodand kathin jehi bhanjaa |\ntehi samet nrip dal mad ganjaa ||",
+      "arth": "जो देवताओं की रक्षा के लिए तरह-तरह के शरीर धरते हैं और तुम जैसे मूर्खों को सीख देने वाले हैं; जिन्होंने शिव जी का कठोर धनुष तोड़ डाला और उसी के साथ राजाओं के समूह का घमंड चूर कर दिया;",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २१.५",
+      "dev": "खर दूषन त्रिसिरा अरु बाली।\nबधे सकल अतुलित बलसाली॥",
+      "roman": "khar dooshan trisiraa aru baalee |\nbadhe sakal atulit balasaalee ||",
+      "arth": "जिन्होंने खर, दूषण, त्रिशिरा और बालि को मार डाला, जो सब अतुलनीय बलवान थे;",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा २१",
+      "dev": "जाके बल लवलेस तें जितेहु चराचर झारि।\nतासु दूत मैं जा करि हरि आनेहु प्रिय नारि॥",
+      "roman": "jaake bal lavales te jitehu charaachar jhaari |\ntaasu doot mai jaa kari hari aanehu priya naari ||",
+      "arth": "जिनके ज़रा-से बल से तुमने सारे चर-अचर जगत को जीत लिया, और जिनकी प्रिय पत्नी को तुम हर लाए हो — मैं उन्हीं का दूत हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २२.१",
+      "dev": "जानउँ मैं तुम्हारि प्रभुताई।\nसहसबाहु सन परी लराई॥\nसमर बालि सन करि जसु पावा।\nसुनि कपि बचन बिहसि बिहरावा॥",
+      "roman": "jaanau mai tumhaari prabhutaaee |\nsahasabaahu san paree laraaee ||\nsamar baali san kari jasu paavaa |\nsuni kapi bachan bihasi biharaavaa ||",
+      "arth": "मैं तुम्हारा प्रताप ख़ूब जानता हूँ — सहस्रबाहु से तुम्हारी लड़ाई हुई थी, और बालि से युद्ध करके तुमने यश पाया था। हनुमान जी की यह चुभती हुई बात सुनकर रावण ने हँसकर टाल दी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २२.२",
+      "dev": "खायउँ फल प्रभु लागी भूँखा।\nकपि सुभाव तें तोरेउँ रूखा॥\nसब कें देह परम प्रिय स्वामी।\nमारहिं मोहि कुमारग गामी॥",
+      "roman": "khaayau phal prabhu laagee bhoonkhaa |\nkapi subhaav te toreu rookhaa ||\nsab ke deh param priya svaamee |\nmaarahi mohi kumaarag gaamee ||",
+      "arth": "हे स्वामी, मुझे भूख लगी थी, इसलिए मैंने फल खाए; और बंदर के स्वभाव से पेड़ तोड़ दिए। हे स्वामी, अपनी देह सबको बहुत प्यारी होती है। जब कुमार्ग पर चलने वाले राक्षस मुझे मारने लगे,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २२.३",
+      "dev": "जिन्ह मोहि मारा ते मैं मारे।\nतेहि पर बाँधेउ तनयँ तुम्हारे॥\nमोहि न कछु बाँधे कइ लाजा।\nकीन्ह चहउँ निज प्रभु कर काजा॥",
+      "roman": "jinh mohi maaraa te mai maare |\ntehi par baandheu tanay tumhaare ||\nmohi na kachhu baandhe kai laajaa |\nkeenh chahau nij prabhu kar kaajaa ||",
+      "arth": "तो जिन्होंने मुझे मारा, उन्हें मैंने भी मारा। इस पर तुम्हारे बेटे ने मुझे बाँध लिया। मुझे बाँधे जाने की कोई लाज नहीं है; मैं तो अपने प्रभु का काम करना चाहता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २२.४",
+      "dev": "बिनती करउँ जोरि कर रावन।\nसुनहु मान तजि मोर सिखावन॥\nदेखहु तुम्ह निज कुलहि बिचारी।\nभ्रम तजि भजहु भगत भय हारी॥",
+      "roman": "binatee karau jori kar raavan |\nsunahu maan taji mor sikhaavan ||\ndekhahu tumh nij kulahi bichaaree |\nbhram taji bhajahu bhagat bhay haaree ||",
+      "arth": "हे रावण, मैं हाथ जोड़कर विनती करता हूँ — घमंड छोड़कर मेरी सीख सुनो। अपने कुल का विचार करके देखो, और भ्रम छोड़कर भक्तों का भय हरने वाले भगवान को भजो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २२.५",
+      "dev": "जाकें डर अति काल डेराई।\nजो सुर असुर चराचर खाई॥\nतासों बयरु कबहुँ नहिं कीजै।\nमोरे कहें जानकी दीजै॥",
+      "roman": "jaake dar ati kaal deraaee |\njo sur asur charaachar khaaee ||\ntaason bayaru kabahu nahi keejai |\nmore kahe jaanakee deejai ||",
+      "arth": "जो काल देवता, असुर और चर-अचर सबको खा जाता है, वह काल भी जिनके डर से बहुत डरता है — उनसे कभी बैर मत करो। मेरे कहने से जानकी जी को लौटा दो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा २२",
+      "dev": "प्रनतपाल रघुनायक करुना सिंधु खरारि।\nगएँ सरन प्रभु राखिहैं तव अपराध बिसारि॥",
+      "roman": "pranatapaal raghunaayak karunaa sindhu kharaari |\ngae saran prabhu raakhihai tav aparaadh bisaari ||",
+      "arth": "खर के शत्रु रघुनाथ जी शरण में आए हुए की रक्षा करने वाले और दया के सागर हैं। शरण में जाने पर प्रभु तुम्हारा अपराध भुलाकर तुम्हें रख लेंगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २३.१",
+      "dev": "राम चरन पंकज उर धरहू।\nलंका अचल राजु तुम्ह करहू॥\nरिषि पुलस्ति जसु बिमल मयंका।\nतेहि ससि महुँ जनि होहु कलंका॥",
+      "roman": "raam charan pankaj ur dharahoo |\nlankaa achal raaju tumh karahoo ||\nrishi pulasti jasu bimal mayankaa |\ntehi sasi mahu jani hohu kalankaa ||",
+      "arth": "राम जी के चरण-कमलों को हृदय में धारण करो और लंका का अचल राज्य करो। पुलस्त्य ऋषि का यश निर्मल चंद्रमा जैसा है; उस चंद्रमा में तुम कलंक मत बनो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २३.२",
+      "dev": "राम नाम बिनु गिरा न सोहा।\nदेखु बिचारि त्यागि मद मोहा॥\nबसन हीन नहिं सोह सुरारी।\nसब भूषन भूषित बर नारी॥",
+      "roman": "raam naam binu giraa na sohaa |\ndekhu bichaari tyaagi mad mohaa ||\nbasan heen nahi soh suraaree |\nsab bhooshan bhooshit bar naaree ||",
+      "arth": "राम नाम के बिना वाणी शोभा नहीं पाती। मद और मोह छोड़कर विचार करके देखो। हे देवताओं के शत्रु, सारे गहनों से सजी सुंदर स्त्री भी कपड़ों के बिना शोभा नहीं पाती।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २३.३",
+      "dev": "राम बिमुख संपति प्रभुताई।\nजाइ रही पाई बिनु पाई॥\nसजल मूल जिन्ह सरितन्ह नाहीं।\nबरषि गएँ पुनि तबहिं सुखाहीं॥",
+      "roman": "raam bimukh sampati prabhutaaee |\njaai rahee paaee binu paaee ||\nsajal mool jinh saritanh naahee |\nbarashi gae puni tabahi sukhaahee ||",
+      "arth": "राम जी से विमुख आदमी की संपत्ति और प्रभुता रहते हुए भी चली जाती है, और उसका पाना न पाने के बराबर है। जिन नदियों के मूल में पानी का सोता नहीं होता, वे बरसात बीतते ही फिर सूख जाती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २३.४",
+      "dev": "सुनु दसकंठ कहउँ पन रोपी।\nबिमुख राम त्राता नहिं कोपी॥\nसंकर सहस बिष्नु अज तोही।\nसकहिं न राखि राम कर द्रोही॥",
+      "roman": "sunu dasakanth kahau pan ropee |\nbimukh raam traataa nahi kopee ||\nsankar sahas bishnu aj tohee |\nsakahi na raakhi raam kar drohee ||",
+      "arth": "हे दशकंठ, सुनो, मैं प्रण करके कहता हूँ — राम जी से विमुख की रक्षा करने वाला कोई भी नहीं है। हज़ारों शंकर, विष्णु और ब्रह्मा भी राम जी के द्रोही होने पर तुम्हें नहीं बचा सकते।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा २३",
+      "dev": "मोहमूल बहु सूल प्रद त्यागहु तम अभिमान।\nभजहु राम रघुनायक कृपा सिंधु भगवान॥",
+      "roman": "mohamool bahu sool prad tyaagahu tam abhimaan |\nbhajahu raam raghunaayak kripaa sindhu bhagavaan ||",
+      "arth": "मोह जिसकी जड़ है और जो बहुत पीड़ा देने वाला है, उस अँधेरे जैसे अभिमान को छोड़ दो; और रघुकुल के स्वामी, कृपा के सागर भगवान श्री राम को भजो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २४.१",
+      "dev": "जदपि कही कपि अति हित बानी।\nभगति बिबेक बिरति नय सानी॥\nबोला बिहसि महा अभिमानी।\nमिला हमहि कपि गुर बड़ ग्यानी॥",
+      "roman": "jadapi kahee kapi ati hit baanee |\nbhagati bibek birati nay saanee ||\nbolaa bihasi mahaa abhimaanee |\nmilaa hamahi kapi gur bad gyaanee ||",
+      "arth": "हनुमान जी ने भक्ति, ज्ञान, वैराग्य और नीति से भरी, बहुत हित की बात कही; फिर भी वह महा अभिमानी रावण हँसकर बोला — हमें यह बंदर बड़ा ज्ञानी गुरु मिला है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २४.२",
+      "dev": "मृत्यु निकट आई खल तोही।\nलागेसि अधम सिखावन मोही॥\nउलटा होइहि कह हनुमाना।\nमतिभ्रम तोर प्रगट मैं जाना॥",
+      "roman": "mrityu nikat aaee khal tohee |\nlaagesi adham sikhaavan mohee ||\nulataa hoihi kah hanumaanaa |\nmatibhram tor pragat mai jaanaa ||",
+      "arth": "अरे दुष्ट, तेरी मौत पास आ गई है। हे अधम, तू मुझे सिखाने चला है? हनुमान जी ने कहा — इसका उलटा ही होगा। मैंने साफ़ जान लिया कि तेरी बुद्धि फिर गई है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २४.३",
+      "dev": "सुनि कपि बचन बहुत खिसिआना।\nबेगि न हरहु मूढ़ कर प्राना॥\nसुनत निसाचर मारन धाए।\nसचिवन्ह सहित बिभीषनु आए॥",
+      "roman": "suni kapi bachan bahut khisiaanaa |\nbegi na harahu moodh kar praanaa ||\nsunat nisaachar maaran dhaae |\nsachivanh sahit bibheeshanu aae ||",
+      "arth": "हनुमान जी की बात सुनकर रावण बहुत खिसिया गया और बोला — अरे, इस मूर्ख के प्राण जल्दी क्यों नहीं ले लेते? सुनते ही राक्षस मारने दौड़े। उसी समय मंत्रियों के साथ विभीषण जी वहाँ आए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २४.४",
+      "dev": "नाइ सीस करि बिनय बहूता।\nनीति बिरोध न मारिअ दूता॥\nआन दंड कछु करिअ गोसाँई।\nसबहीं कहा मंत्र भल भाई॥",
+      "roman": "naai sees kari binay bahootaa |\nneeti birodh na maaria dootaa ||\naan dand kachhu karia gosaaee |\nsabahee kahaa mantra bhal bhaaee ||",
+      "arth": "उन्होंने सिर नवाकर बहुत विनती की — दूत को मारना नहीं चाहिए; यह नीति के विरुद्ध है। हे स्वामी, कोई दूसरा दंड दीजिए। सबने कहा — भाई, यह सलाह अच्छी है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २४.५",
+      "dev": "सुनत बिहसि बोला दसकंधर।\nअंग भंग करि पठइअ बंदर॥",
+      "roman": "sunat bihasi bolaa dasakandhar |\nang bhang kari pathaia bandar ||",
+      "arth": "यह सुनकर रावण हँसकर बोला — अच्छा, तो इस बंदर का अंग-भंग करके इसे वापस भेज दिया जाए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा २४",
+      "dev": "कपि कें ममता पूँछ पर सबहि कहउँ समुझाइ।\nतेल बोरि पट बाँधि पुनि पावक देहु लगाइ॥",
+      "roman": "kapi ke mamataa poonchh par sabahi kahau samujhaai |\ntel bori pat baandhi puni paavak dehu lagaai ||",
+      "arth": "मैं सबको समझाकर कहता हूँ — बंदर की ममता उसकी पूँछ पर होती है। इसलिए तेल में कपड़ा डुबोकर इसकी पूँछ में बाँधो और फिर आग लगा दो।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "श्रीरामचरितमानस — पंचम सोपान (सुंदरकांड)",
+    "kshetra": "पूरे उत्तर भारत में प्रचलित",
+    "note": "पाठ एक सबके लिए खुले डिजिटल पाठ से लिया गया और पाँच छपी पुस्तकों से पंक्ति-दर-पंक्ति मिलाया गया। जहाँ आधार में छपाई की भूल थी, वहाँ वह रूप है जिस पर कम से कम तीन छपी पुस्तकें एक हैं। छपे मानसों में बिंदी-चंद्रबिंदु और कुछ शब्दों के रूप अलग-अलग मिलते हैं — आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है।\n\nचौपाइयों की गिनती छपी पुस्तकों के चलन पर है: \"चौपाई १२.३\" यानी दोहा १२ से पहले की तीसरी चौपाई।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

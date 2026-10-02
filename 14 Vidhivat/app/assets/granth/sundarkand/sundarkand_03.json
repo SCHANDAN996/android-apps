@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "id": "sundarkand_03",
+  "naam": "प्रसंग ३ — अशोक वन में सीता जी",
+  "upnaam": [
+    "सुंदरकांड दोहा ९ से १२",
+    "त्रिजटा का सपना"
+  ],
+  "prakar": "granth",
+  "devta": "श्री राम और हनुमान जी",
+  "rachnakar": "गोस्वामी तुलसीदास — श्रीरामचरितमानस",
+  "bhasha": "अवधी",
+  "parichay": "हनुमान जी पत्तों में छिपकर देखते हैं: रावण आकर सीता जी को लुभाता और धमकाता है, और सीता जी तिनके की ओट से उसे उत्तर देती हैं। रावण महीने भर की मोहलत देकर जाता है। त्रिजटा अपना सपना सुनाकर राक्षसियों को रोकती है। विरह से व्याकुल सीता जी अशोक से आग माँगती हैं — तभी हनुमान जी श्री राम की अँगूठी नीचे डाल देते हैं।",
+  "kabPadhein": "मंगलवार और शनिवार को ख़ास तौर पर — बहुत घरों में इन्हीं दिनों पूरा सुंदरकांड पढ़ने का चलन है। बाक़ी दिनों में भी, सुबह या शाम, कभी भी पढ़ सकते हैं।",
+  "kaisePadhein": "हाथ-मुँह धोकर साफ़ जगह पर बैठें। हो सके तो श्री राम और हनुमान जी के चित्र के सामने दीपक जलाएँ।\n\nपूरा पाठ एक बैठक में करने का चलन है; पढ़ने की चाल के हिसाब से इसमें एक से दो घंटे लगते हैं। एक बैठक में न हो तो प्रसंग-प्रसंग करके पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है। पाठ से पहले क्या पढ़ें और बाद में कौन-सी आरती हो, यह हर घर में अलग है; अपनी परंपरा देखिए।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर पद के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "चौपाई ९.१",
+      "dev": "तरु पल्लव महुँ रहा लुकाई।\nकरइ बिचार करौं का भाई॥\nतेहि अवसर रावनु तहँ आवा।\nसंग नारि बहु किएँ बनावा॥",
+      "roman": "taru pallav mahu rahaa lukaaee |\nkarai bichaar karau kaa bhaaee ||\ntehi avasar raavanu tah aavaa |\nsang naari bahu kie banaavaa ||",
+      "arth": "हनुमान जी पेड़ के पत्तों में छिप गए और सोचने लगे — अब क्या करूँ? उसी समय रावण वहाँ आया; उसके साथ सजी-धजी बहुत-सी स्त्रियाँ थीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ९.२",
+      "dev": "बहु बिधि खल सीतहि समुझावा।\nसाम दान भय भेद देखावा॥\nकह रावनु सुनु सुमुखि सयानी।\nमंदोदरी आदि सब रानी॥",
+      "roman": "bahu bidhi khal seetahi samujhaavaa |\nsaam daan bhay bhed dekhaavaa ||\nkah raavanu sunu sumukhi sayaanee |\nmandodaree aadi sab raanee ||",
+      "arth": "उस दुष्ट ने सीता जी को कई तरह से समझाया — साम, दान, भय और भेद, सब दिखाए। रावण बोला — हे सुमुखी, हे सयानी, सुनो। मंदोदरी आदि सब रानियों को",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ९.३",
+      "dev": "तव अनुचरीं करउँ पन मोरा।\nएक बार बिलोकु मम ओरा॥\nतृन धरि ओट कहति बैदेही।\nसुमिरि अवधपति परम सनेही॥",
+      "roman": "tav anucharee karau pan moraa |\nek baar biloku mam oraa ||\ntrin dhari ot kahati baidehee |\nsumiri avadhapati param sanehee ||",
+      "arth": "मैं तुम्हारी दासी बना दूँगा, यह मेरा प्रण है — बस एक बार मेरी ओर देख लो। अपने परम प्रिय अवधपति को याद करके, और बीच में तिनके की ओट करके जानकी जी बोलीं —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ९.४",
+      "dev": "सुनु दसमुख खद्योत प्रकासा।\nकबहुँ कि नलिनी करइ बिकासा॥\nअस मन समुझु कहति जानकी।\nखल सुधि नहिं रघुबीर बान की॥",
+      "roman": "sunu dasamukh khadyot prakaasaa |\nkabahu ki nalinee karai bikaasaa ||\nas man samujhu kahati jaanakee |\nkhal sudhi nahi raghubeer baan kee ||",
+      "arth": "हे दशमुख, सुन। क्या जुगनू की चमक से कभी कमलिनी खिलती है? जानकी जी कहती हैं — तू अपने बारे में यही समझ ले। अरे दुष्ट, तुझे रघुवीर के बाण की ख़बर नहीं है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ९.५",
+      "dev": "सठ सूने हरि आनेहि मोही।\nअधम निलज्ज लाज नहिं तोही॥",
+      "roman": "sath soone hari aanehi mohee |\nadham nilajja laaj nahi tohee ||",
+      "arth": "अरे पापी, तू मुझे सूने में हर लाया। हे अधम, निर्लज्ज, तुझे लाज नहीं आती?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ९",
+      "dev": "आपुहि सुनि खद्योत सम रामहि भानु समान।\nपरुष बचन सुनि काढ़ि असि बोला अति खिसिआन॥",
+      "roman": "aapuhi suni khadyot sam raamahi bhaanu samaan |\nparush bachan suni kaadhi asi bolaa ati khisiaan ||",
+      "arth": "अपने को जुगनू जैसा और राम जी को सूर्य जैसा सुनकर, और ये कठोर वचन सुनकर, रावण तलवार निकालकर बहुत खिसियाकर बोला —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १०.१",
+      "dev": "सीता तैं मम कृत अपमाना।\nकटिहउँ तव सिर कठिन कृपाना॥\nनाहिं त सपदि मानु मम बानी।\nसुमुखि होति न त जीवन हानी॥",
+      "roman": "seetaa tai mam krit apamaanaa |\nkatihau tav sir kathin kripaanaa ||\nnaahi ta sapadi maanu mam baanee |\nsumukhi hoti na ta jeevan haanee ||",
+      "arth": "सीता, तूने मेरा अपमान किया है। मैं इस कठोर तलवार से तेरा सिर काट डालूँगा। नहीं तो अभी मेरी बात मान ले; हे सुमुखी, नहीं मानेगी तो प्राणों से हाथ धोएगी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १०.२",
+      "dev": "स्याम सरोज दाम सम सुंदर।\nप्रभु भुज करि कर सम दसकंधर॥\nसो भुज कंठ कि तव असि घोरा।\nसुनु सठ अस प्रवान पन मोरा॥",
+      "roman": "syaam saroj daam sam sundar |\nprabhu bhuj kari kar sam dasakandhar ||\nso bhuj kanth ki tav asi ghoraa |\nsunu sath as pravaan pan moraa ||",
+      "arth": "(सीता जी बोलीं —) हे दशकंधर, मेरे प्रभु की भुजा नीले कमल की माला जैसी सुंदर और हाथी की सूँड़ जैसी बलवान है। मेरे गले में या तो वही भुजा पड़ेगी, या तेरी भयानक तलवार। अरे दुष्ट, सुन — यह मेरा पक्का प्रण है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १०.३",
+      "dev": "चंद्रहास हरु मम परितापं।\nरघुपति बिरह अनल संजातं॥\nसीतल निसित बहसि बर धारा।\nकह सीता हरु मम दुख भारा॥",
+      "roman": "chandrahaas haru mam paritaap |\nraghupati birah anal sanjaat ||\nseetal nisit bahasi bar dhaaraa |\nkah seetaa haru mam dukh bhaaraa ||",
+      "arth": "हे चंद्रहास तलवार, रघुनाथ जी के विरह की आग से पैदा हुई मेरी जलन को हर ले। तेरी धार ठंडी, तेज़ और श्रेष्ठ है। सीता जी कहती हैं — तू मेरे दुख का बोझ हर ले।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १०.४",
+      "dev": "सुनत बचन पुनि मारन धावा।\nमयतनयाँ कहि नीति बुझावा॥\nकहेसि सकल निसिचरिन्ह बोलाई।\nसीतहि बहु बिधि त्रासहु जाई॥",
+      "roman": "sunat bachan puni maaran dhaavaa |\nmayatanayaan kahi neeti bujhaavaa ||\nkahesi sakal nisicharinh bolaaee |\nseetahi bahu bidhi traasahu jaaee ||",
+      "arth": "ये वचन सुनते ही रावण फिर मारने दौड़ा। तब मय दानव की बेटी मंदोदरी ने नीति की बात कहकर उसे समझाया। फिर रावण ने सब राक्षसियों को बुलाकर कहा — जाकर सीता को कई तरह से डराओ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १०.५",
+      "dev": "मास दिवस महुँ कहा न माना।\nतौ मैं मारबि काढ़ि कृपाना॥",
+      "roman": "maas divas mahu kahaa na maanaa |\ntau mai maarabi kaadhi kripaanaa ||",
+      "arth": "अगर महीने भर में इसने मेरा कहा न माना, तो मैं तलवार निकालकर इसे मार डालूँगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा १०",
+      "dev": "भवन गयउ दसकंधर इहाँ पिसाचिनि बृंद।\nसीतहि त्रास देखावहिं धरहिं रूप बहु मंद॥",
+      "roman": "bhavan gayau dasakandhar ihaan pisaachini brind |\nseetahi traas dekhaavahi dharahi roop bahu mand ||",
+      "arth": "रावण अपने महल को चला गया। इधर राक्षसियों के झुंड बहुत-से बुरे रूप धरकर सीता जी को डराने लगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ११.१",
+      "dev": "त्रिजटा नाम राच्छसी एका।\nराम चरन रति निपुन बिबेका॥\nसबन्हौ बोलि सुनाएसि सपना।\nसीतहि सेइ करहु हित अपना॥",
+      "roman": "trijataa naam raachchhasee ekaa |\nraam charan rati nipun bibekaa ||\nsabanhau boli sunaaesi sapanaa |\nseetahi sei karahu hit apanaa ||",
+      "arth": "उनमें त्रिजटा नाम की एक राक्षसी थी। उसका राम जी के चरणों में प्रेम था और वह विवेक में निपुण थी। उसने सबको बुलाकर अपना सपना सुनाया और कहा — सीता जी की सेवा करके अपना भला कर लो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ११.२",
+      "dev": "सपनें बानर लंका जारी।\nजातुधान सेना सब मारी॥\nखर आरूढ़ नगन दससीसा।\nमुंडित सिर खंडित भुज बीसा॥",
+      "roman": "sapane baanar lankaa jaaree |\njaatudhaan senaa sab maaree ||\nkhar aaroodh nagan dasaseesaa |\nmundit sir khandit bhuj beesaa ||",
+      "arth": "सपने में मैंने देखा कि एक बंदर ने लंका जला दी और राक्षसों की सारी सेना मार डाली गई। रावण नंगा होकर गधे पर बैठा है; उसके सिर मुँडे हुए हैं और बीसों भुजाएँ कटी हुई हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ११.३",
+      "dev": "एहि बिधि सो दच्छिन दिसि जाई।\nलंका मनहुँ बिभीषन पाई॥\nनगर फिरी रघुबीर दोहाई।\nतब प्रभु सीता बोलि पठाई॥",
+      "roman": "ehi bidhi so dachchhin disi jaaee |\nlankaa manahu bibheeshan paaee ||\nnagar phiree raghubeer dohaaee |\ntab prabhu seetaa boli pathaaee ||",
+      "arth": "इस तरह वह दक्षिण दिशा को जा रहा है, और मानो लंका विभीषण को मिल गई है। नगर में रघुवीर की दुहाई फिर गई है। तब प्रभु ने सीता जी को बुलवा भेजा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ११.४",
+      "dev": "यह सपना मैं कहउँ पुकारी।\nहोइहि सत्य गएँ दिन चारी॥\nतासु बचन सुनि ते सब डरीं।\nजनकसुता के चरनन्हि परीं॥",
+      "roman": "yah sapanaa mai kahau pukaaree |\nhoihi satya gae din chaaree ||\ntaasu bachan suni te sab daree |\njanakasutaa ke charananhi paree ||",
+      "arth": "मैं पुकारकर कहती हूँ, यह सपना चार दिन बीतने पर सच होकर रहेगा। उसकी बात सुनकर वे सब डर गईं और जानकी जी के चरणों में गिर पड़ीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ११",
+      "dev": "जहँ तहँ गईं सकल तब सीता कर मन सोच।\nमास दिवस बीतें मोहि मारिहि निसिचर पोच॥",
+      "roman": "jah tah gaee sakal tab seetaa kar man soch |\nmaas divas beete mohi maarihi nisichar poch ||",
+      "arth": "फिर वे सब जहाँ-तहाँ चली गईं। सीता जी मन में सोचने लगीं — महीना बीतते ही यह नीच राक्षस मुझे मार डालेगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १२.१",
+      "dev": "त्रिजटा सन बोलीं कर जोरी।\nमातु बिपति संगिनि तैं मोरी॥\nतजौं देह करु बेगि उपाई।\nदुसह बिरहु अब नहिं सहि जाई॥",
+      "roman": "trijataa san bolee kar joree |\nmaatu bipati sangini tai moree ||\ntajau deh karu begi upaaee |\ndusah birahu ab nahi sahi jaaee ||",
+      "arth": "सीता जी हाथ जोड़कर त्रिजटा से बोलीं — माता, तू मेरी विपत्ति की साथी है। जल्दी कोई उपाय कर जिससे मैं यह देह छोड़ सकूँ। यह विरह अब असह्य है, सहा नहीं जाता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १२.२",
+      "dev": "आनि काठ रचु चिता बनाई।\nमातु अनल पुनि देहि लगाई॥\nसत्य करहि मम प्रीति सयानी।\nसुनै को श्रवन सूल सम बानी॥",
+      "roman": "aani kaath rachu chitaa banaaee |\nmaatu anal puni dehi lagaaee ||\nsatya karahi mam preeti sayaanee |\nsunai ko shravan sool sam baanee ||",
+      "arth": "लकड़ी लाकर चिता सजा दे, और फिर हे माता, उसमें आग लगा दे। हे सयानी, मेरे प्रेम को सच्चा कर दे। रावण की शूल जैसी चुभने वाली बातें कानों से कौन सुने?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १२.३",
+      "dev": "सुनत बचन पद गहि समुझाएसि।\nप्रभु प्रताप बल सुजसु सुनाएसि॥\nनिसि न अनल मिल सुनु सुकुमारी।\nअस कहि सो निज भवन सिधारी॥",
+      "roman": "sunat bachan pad gahi samujhaaesi |\nprabhu prataap bal sujasu sunaaesi ||\nnisi na anal mil sunu sukumaaree |\nas kahi so nij bhavan sidhaaree ||",
+      "arth": "यह सुनकर त्रिजटा ने उनके पैर पकड़कर उन्हें समझाया, और प्रभु का प्रताप, बल और सुयश सुनाया। फिर बोली — हे सुकुमारी, सुनो, रात में आग नहीं मिलेगी। ऐसा कहकर वह अपने घर चली गई।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १२.४",
+      "dev": "कह सीता बिधि भा प्रतिकूला।\nमिलिहि न पावक मिटिहि न सूला॥\nदेखिअत प्रगट गगन अंगारा।\nअवनि न आवत एकउ तारा॥",
+      "roman": "kah seetaa bidhi bhaa pratikoolaa |\nmilihi na paavak mitihi na soolaa ||\ndekhiat pragat gagan angaaraa |\navani na aavat ekau taaraa ||",
+      "arth": "सीता जी कहने लगीं — विधाता ही मेरे उलटे हो गए हैं। न आग मिलेगी, न यह पीड़ा मिटेगी। आकाश में अंगारे जैसे तारे साफ़ दिख रहे हैं, पर एक भी तारा धरती पर नहीं आता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १२.५",
+      "dev": "पावकमय ससि स्रवत न आगी।\nमानहुँ मोहि जानि हतभागी॥\nसुनहि बिनय मम बिटप असोका।\nसत्य नाम करु हरु मम सोका॥",
+      "roman": "paavakamay sasi sravat na aagee |\nmaanahu mohi jaani hatabhaagee ||\nsunahi binay mam bitap asokaa |\nsatya naam karu haru mam sokaa ||",
+      "arth": "चंद्रमा आग से भरा है, पर वह भी मुझे अभागिन जानकर मानो आग नहीं बरसाता। हे अशोक वृक्ष, मेरी विनती सुन। अपना नाम सच कर — अशोक, यानी शोक हरने वाला — और मेरा शोक हर ले।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १२.६",
+      "dev": "नूतन किसलय अनल समाना।\nदेहि अगिनि जनि करहि निदाना॥\nदेखि परम बिरहाकुल सीता।\nसो छन कपिहि कलप सम बीता॥",
+      "roman": "nootan kisalay anal samaanaa |\ndehi agini jani karahi nidaanaa ||\ndekhi param birahaakul seetaa |\nso chhan kapihi kalap sam beetaa ||",
+      "arth": "तेरे नए-नए कोमल पत्ते आग जैसे लाल हैं। मुझे आग दे; मेरे विरह के रोग को हद तक मत पहुँचा। सीता जी को विरह से इतना व्याकुल देखकर हनुमान जी को वह एक क्षण कल्प के बराबर बीता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "सोरठा १२",
+      "dev": "कपि करि हृदयँ बिचार दीन्हि मुद्रिका डारि तब।\nजनु असोक अंगार दीन्ह हरषि उठि कर गहेउ॥",
+      "roman": "kapi kari hriday bichaar deenhi mudrikaa daari tab |\njanu asok angaar deenh harashi uthi kar gaheu ||",
+      "arth": "तब हनुमान जी ने मन में विचार करके अँगूठी नीचे डाल दी। सीता जी ने समझा मानो अशोक ने अंगारा दे दिया, और प्रसन्न होकर उठकर उसे हाथ में ले लिया।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "श्रीरामचरितमानस — पंचम सोपान (सुंदरकांड)",
+    "kshetra": "पूरे उत्तर भारत में प्रचलित",
+    "note": "पाठ एक सबके लिए खुले डिजिटल पाठ से लिया गया और पाँच छपी पुस्तकों से पंक्ति-दर-पंक्ति मिलाया गया। जहाँ आधार में छपाई की भूल थी, वहाँ वह रूप है जिस पर कम से कम तीन छपी पुस्तकें एक हैं। छपे मानसों में बिंदी-चंद्रबिंदु और कुछ शब्दों के रूप अलग-अलग मिलते हैं — आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है।\n\nचौपाइयों की गिनती छपी पुस्तकों के चलन पर है: \"चौपाई १२.३\" यानी दोहा १२ से पहले की तीसरी चौपाई।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

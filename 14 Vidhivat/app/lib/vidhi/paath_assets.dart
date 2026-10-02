@@ -82,6 +82,7 @@ abstract final class PaathAssets {
   static const Map<String, DevotionalArtwork> _byGranthId = {
     'gita': krishna,
     'saptashati': durga,
+    'sundarkand': hanuman,
   };
 
   static DevotionalArtwork forGranthId(String id) =>

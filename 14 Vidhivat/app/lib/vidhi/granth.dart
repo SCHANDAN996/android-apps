@@ -1,5 +1,5 @@
-/// कई अध्यायों वाले ग्रंथ का क्रम — श्रीमद्भगवद्गीता, दुर्गा सप्तशती
-/// (→ D-084, D-098)।
+/// कई अध्यायों वाले ग्रंथ का क्रम — श्रीमद्भगवद्गीता, दुर्गा सप्तशती,
+/// सुंदरकांड (→ D-084, D-098, D-106)।
 ///
 /// हर अध्याय अपने आप में एक साधारण [Paath] है और उसी पढ़ने वाले पन्ने से
 /// खुलता है। यह फ़ाइल सिर्फ़ **क्रम** बताती है — किस हिस्से में कौन से
@@ -148,6 +148,11 @@ class GranthSuchiEntry {
   /// पाठ के भीतर एक खंड क्या कहलाता है — "श्लोक" या "पाठ"।
   final String khandIkai;
 
+  /// क्रम की सूची में हर पाठ के नीचे "४७ श्लोक" लिखा आता है; वहाँ गिनती
+  /// किस चीज़ की है। सुंदरकांड में दोहा, चौपाई, छंद सब गिने जाते हैं,
+  /// इसलिए वहाँ "पद" (→ D-106)।
+  final String gintiNaam;
+
   /// क्रम की सूची में हर पाठ के नीचे उसकी एक लाइन दिखे या नहीं। सप्तशती
   /// में वह संस्कृत का अध्याय-नाम है, जो ऊपर हिंदी में पहले से लिखा है।
   final bool ekLineDikhao;
@@ -159,6 +164,7 @@ class GranthSuchiEntry {
     required this.ekLine,
     required this.ikai,
     required this.khandIkai,
+    this.gintiNaam = 'श्लोक',
     this.ekLineDikhao = true,
   });
 
@@ -182,6 +188,9 @@ class GranthSuchiEntry {
         ekLine: _str(file, j, 'ekLine'),
         ikai: _str(file, j, 'ikai'),
         khandIkai: _str(file, j, 'khandIkai'),
+        gintiNaam: j.containsKey('gintiNaam')
+            ? _str(file, j, 'gintiNaam')
+            : 'श्लोक',
       );
 
   static List<GranthSuchiEntry> parseAll(String file, String source) {

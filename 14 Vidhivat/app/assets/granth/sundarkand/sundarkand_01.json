@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "id": "sundarkand_01",
+  "naam": "प्रसंग १ — समुद्र लाँघना",
+  "upnaam": [
+    "सुंदरकांड दोहा १ से ३",
+    "मंगलाचरण",
+    "जामवंत के बचन सुहाए"
+  ],
+  "prakar": "granth",
+  "devta": "श्री राम और हनुमान जी",
+  "rachnakar": "गोस्वामी तुलसीदास — श्रीरामचरितमानस",
+  "bhasha": "अवधी",
+  "parichay": "तीन श्लोकों के मंगलाचरण से कांड शुरू होता है — श्री राम की वंदना, भक्ति की याचना और हनुमान जी को प्रणाम। फिर हनुमान जी समुद्र लाँघते हैं: मैनाक पर्वत का विश्राम का न्योता, सुरसा की परीक्षा, और परछाईं पकड़ने वाली राक्षसी का वध। उस पार पहाड़ पर चढ़कर वे लंका को देखते हैं।",
+  "kabPadhein": "मंगलवार और शनिवार को ख़ास तौर पर — बहुत घरों में इन्हीं दिनों पूरा सुंदरकांड पढ़ने का चलन है। बाक़ी दिनों में भी, सुबह या शाम, कभी भी पढ़ सकते हैं।",
+  "kaisePadhein": "हाथ-मुँह धोकर साफ़ जगह पर बैठें। हो सके तो श्री राम और हनुमान जी के चित्र के सामने दीपक जलाएँ।\n\nपूरा पाठ एक बैठक में करने का चलन है; पढ़ने की चाल के हिसाब से इसमें एक से दो घंटे लगते हैं। एक बैठक में न हो तो प्रसंग-प्रसंग करके पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है। पाठ से पहले क्या पढ़ें और बाद में कौन-सी आरती हो, यह हर घर में अलग है; अपनी परंपरा देखिए।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर पद के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "श्लोक १",
+      "dev": "शान्तं शाश्वतमप्रमेयमनघं निर्वाणशान्तिप्रदं\nब्रह्माशम्भुफणीन्द्रसेव्यमनिशं वेदान्तवेद्यं विभुम्।\nरामाख्यं जगदीश्वरं सुरगुरुं मायामनुष्यं हरिं\nवन्देऽहं करुणाकरं रघुवरं भूपालचूडामणिम्॥",
+      "roman": "shaantam shaashvatamaprameyamanagham nirvaanashaantipradam\nbrahmaashambhuphaneendrasevyamanisham vedaantavedyam vibhum |\nraamaakhyam jagadeeshvaram suragurum maayaamanushyam harim\nvande'ham karunaakaram raghuvaram bhoopaalachoodaamanim ||",
+      "arth": "जो शांत हैं, सदा रहने वाले हैं, जिन्हें किसी नाप से जाना नहीं जा सकता, जो निष्पाप हैं और मोक्ष की परम शांति देने वाले हैं; ब्रह्मा, शिव और शेषनाग जिनकी सदा सेवा करते हैं; जो वेदांत से जाने जाते हैं और सब जगह व्याप्त हैं; जो देवताओं में सबसे बड़े हैं और माया से मनुष्य रूप में दिखते हैं — उन राम नाम वाले जगत के ईश्वर, करुणा की खान, रघुकुल में श्रेष्ठ और राजाओं के शिरोमणि श्रीहरि की मैं वंदना करता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "नान्या स्पृहा रघुपते हृदयेऽस्मदीये\nसत्यं वदामि च भवानखिलान्तरात्मा।\nभक्तिं प्रयच्छ रघुपुङ्गव निर्भरां मे\nकामादिदोषरहितं कुरु मानसं च॥",
+      "roman": "naanyaa sprihaa raghupate hridaye'smadeeye\nsatyam vadaami cha bhavaanakhilaantaraatmaa |\nbhaktim prayachchha raghupungava nirbharaam me\nkaamaadidosharahitam kuru maanasam cha ||",
+      "arth": "हे रघुनाथ जी, मैं सच कहता हूँ — और आप तो सबके भीतर बसने वाले हैं, सब जानते ही हैं — मेरे हृदय में कोई दूसरी चाह नहीं है। हे रघुकुल में श्रेष्ठ, मुझे अपनी भरपूर भक्ति दीजिए और मेरे मन को काम आदि दोषों से रहित कर दीजिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "अतुलितबलधामं हेमशैलाभदेहं\nदनुजवनकृशानुं ज्ञानिनामग्रगण्यम्।\nसकलगुणनिधानं वानराणामधीशं\nरघुपतिप्रियभक्तं वातजातं नमामि॥",
+      "roman": "atulitabaladhaamam hemashailaabhadeham\ndanujavanakrishaanum jnaaninaamagraganyam |\nsakalagunanidhaanam vaanaraanaamadheesham\nraghupatipriyabhaktam vaatajaatam namaami ||",
+      "arth": "अतुल बल के धाम, सोने के पहाड़ जैसी चमकती देह वाले, राक्षस रूपी वन के लिए आग के समान, ज्ञानियों में सबसे आगे गिने जाने वाले, सारे गुणों के भंडार, वानरों के स्वामी, रघुनाथ जी के प्यारे भक्त — पवनपुत्र हनुमान जी को मैं प्रणाम करता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १.१",
+      "dev": "जामवंत के बचन सुहाए।\nसुनि हनुमंत हृदय अति भाए॥\nतब लगि मोहि परिखेहु तुम्ह भाई।\nसहि दुख कंद मूल फल खाई॥",
+      "roman": "jaamavant ke bachan suhaae |\nsuni hanumant hriday ati bhaae ||\ntab lagi mohi parikhehu tumh bhaaee |\nsahi dukh kand mool phal khaaee ||",
+      "arth": "जाम्बवान के सुंदर वचन सुनकर हनुमान जी के मन को बहुत अच्छे लगे। वे बोले — भाइयो, दुख सहकर और कंद, मूल, फल खाकर तब तक मेरी राह देखना,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १.२",
+      "dev": "जब लगि आवौं सीतहि देखी।\nहोइहि काजु मोहि हरष बिसेषी॥\nयह कहि नाइ सबन्हि कहुँ माथा।\nचलेउ हरषि हियँ धरि रघुनाथा॥",
+      "roman": "jab lagi aavau seetahi dekhee |\nhoihi kaaju mohi harash biseshee ||\nyah kahi naai sabanhi kahu maathaa |\nchaleu harashi hiya dhari raghunaathaa ||",
+      "arth": "जब तक मैं सीता जी को देखकर लौट न आऊँ। काम ज़रूर होगा, क्योंकि मेरे मन में बहुत हर्ष हो रहा है। यह कहकर और सबको सिर नवाकर हनुमान जी हृदय में रघुनाथ जी को धारण करके प्रसन्न होकर चले।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १.३",
+      "dev": "सिंधु तीर एक भूधर सुंदर।\nकौतुक कूदि चढ़ेउ ता ऊपर॥\nबार बार रघुबीर सँभारी।\nतरकेउ पवनतनय बल भारी॥",
+      "roman": "sindhu teer ek bhoodhar sundar |\nkautuk koodi chadheu taa oopar ||\nbaar baar raghubeer sanbhaaree |\ntarakeu pavanatanay bal bhaaree ||",
+      "arth": "समुद्र के किनारे एक सुंदर पहाड़ था। हनुमान जी खेल-खेल में कूदकर उसके ऊपर जा चढ़े। फिर बार-बार रघुवीर को याद करके अत्यंत बलवान पवनपुत्र ने ज़ोर से छलाँग लगाई।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १.४",
+      "dev": "जेहिं गिरि चरन देइ हनुमंता।\nचलेउ सो गा पाताल तुरंता॥\nजिमि अमोघ रघुपति कर बाना।\nएही भाँति चलेउ हनुमाना॥",
+      "roman": "jehi giri charan dei hanumantaa |\nchaleu so gaa paataal turantaa ||\njimi amogh raghupati kar baanaa |\nehee bhaanti chaleu hanumaanaa ||",
+      "arth": "जिस पहाड़ पर पैर रखकर हनुमान जी उछले, वह तुरंत पाताल में धँस गया। जैसे रघुनाथ जी का अचूक बाण चलता है, वैसे ही हनुमान जी चले।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १.५",
+      "dev": "जलनिधि रघुपति दूत बिचारी।\nतैं मैनाक होहि श्रमहारी॥",
+      "roman": "jalanidhi raghupati doot bichaaree |\ntai mainaak hohi shramahaaree ||",
+      "arth": "समुद्र ने उन्हें रघुनाथ जी का दूत समझकर मैनाक पर्वत से कहा — हे मैनाक, तू इनकी थकान मिटाने वाला बन, इन्हें अपने ऊपर विश्राम दे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा १",
+      "dev": "हनूमान तेहि परसा कर पुनि कीन्ह प्रनाम।\nराम काजु कीन्हें बिनु मोहि कहाँ बिश्राम॥",
+      "roman": "hanoomaan tehi parasaa kar puni keenh pranaam |\nraam kaaju keenhe binu mohi kahaan bishraam ||",
+      "arth": "हनुमान जी ने मैनाक को हाथ से छुआ, फिर प्रणाम करके कहा — राम जी का काम किए बिना मुझे विश्राम कहाँ?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २.१",
+      "dev": "जात पवनसुत देवन्ह देखा।\nजानैं कहुँ बल बुद्धि बिसेषा॥\nसुरसा नाम अहिन्ह कै माता।\nपठइन्हि आइ कही तेहिं बाता॥",
+      "roman": "jaat pavanasut devanh dekhaa |\njaanai kahu bal buddhi biseshaa ||\nsurasaa naam ahinh kai maataa |\npathainhi aai kahee tehi baataa ||",
+      "arth": "देवताओं ने पवनपुत्र को जाते देखा। उनके बल और बुद्धि की विशेष परख करने के लिए उन्होंने सुरसा नाम की, साँपों की माता को भेजा। उसने आकर यह बात कही —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २.२",
+      "dev": "आजु सुरन्ह मोहि दीन्ह अहारा।\nसुनत बचन कह पवनकुमारा॥\nराम काजु करि फिरि मैं आवौं।\nसीता कइ सुधि प्रभुहि सुनावौं॥",
+      "roman": "aaju suranh mohi deenh ahaaraa |\nsunat bachan kah pavanakumaaraa ||\nraam kaaju kari phiri mai aavau |\nseetaa kai sudhi prabhuhi sunaavau ||",
+      "arth": "आज देवताओं ने मुझे भोजन दिया है। यह सुनकर पवनकुमार ने कहा — राम जी का काम करके मैं लौट आऊँ और सीता जी की ख़बर प्रभु को सुना दूँ,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २.३",
+      "dev": "तब तव बदन पैठिहउँ आई।\nसत्य कहउँ मोहि जान दे माई॥\nकवनेहुँ जतन देइ नहिं जाना।\nग्रससि न मोहि कहेउ हनुमाना॥",
+      "roman": "tab tav badan paithihau aaee |\nsatya kahau mohi jaan de maaee ||\nkavanehu jatan dei nahi jaanaa |\ngrasasi na mohi kaheu hanumaanaa ||",
+      "arth": "तब मैं आकर तुम्हारे मुँह में घुस जाऊँगा। माता, सच कहता हूँ, अभी मुझे जाने दो। जब उसने किसी भी उपाय से जाने नहीं दिया, तो हनुमान जी ने कहा — तो फिर मुझे निगल क्यों नहीं लेतीं?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २.४",
+      "dev": "जोजन भरि तेहिं बदनु पसारा।\nकपि तनु कीन्ह दुगुन बिस्तारा॥\nसोरह जोजन मुख तेहिं ठयऊ।\nतुरत पवनसुत बत्तिस भयऊ॥",
+      "roman": "jojan bhari tehi badanu pasaaraa |\nkapi tanu keenh dugun bistaaraa ||\nsorah jojan mukh tehi thayau |\nturat pavanasut battis bhayau ||",
+      "arth": "उसने एक योजन भर मुँह फैलाया, तो हनुमान जी ने अपना शरीर उससे दुगुना कर लिया। उसने सोलह योजन का मुँह किया, तो पवनपुत्र तुरंत बत्तीस योजन के हो गए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २.५",
+      "dev": "जस जस सुरसा बदनु बढ़ावा।\nतासु दून कपि रूप देखावा॥\nसत जोजन तेहिं आनन कीन्हा।\nअति लघु रूप पवनसुत लीन्हा॥",
+      "roman": "jas jas surasaa badanu badhaavaa |\ntaasu doon kapi roop dekhaavaa ||\nsat jojan tehi aanan keenhaa |\nati laghu roop pavanasut leenhaa ||",
+      "arth": "सुरसा जैसे-जैसे मुँह बढ़ाती गई, हनुमान जी उससे दुगुना रूप दिखाते गए। जब उसने सौ योजन का मुँह किया, तो पवनपुत्र ने बहुत छोटा रूप धर लिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २.६",
+      "dev": "बदन पइठि पुनि बाहेर आवा।\nमागा बिदा ताहि सिरु नावा॥\nमोहि सुरन्ह जेहि लागि पठावा।\nबुधि बल मरमु तोर मैं पावा॥",
+      "roman": "badan paithi puni baaher aavaa |\nmaagaa bidaa taahi siru naavaa ||\nmohi suranh jehi laagi pathaavaa |\nbudhi bal maramu tor mai paavaa ||",
+      "arth": "वे उसके मुँह में घुसकर फिर बाहर निकल आए, और सिर नवाकर उससे विदा माँगी। सुरसा बोली — देवताओं ने मुझे जिस काम के लिए भेजा था, वह हो गया; मैंने तुम्हारी बुद्धि और बल का भेद पा लिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा २",
+      "dev": "राम काजु सबु करिहहु तुम्ह बल बुद्धि निधान।\nआसिष देइ गई सो हरषि चलेउ हनुमान॥",
+      "roman": "raam kaaju sabu karihahu tumh bal buddhi nidhaan |\naasish dei gaee so harashi chaleu hanumaan ||",
+      "arth": "तुम बल और बुद्धि के भंडार हो, राम जी के सारे काम करोगे। यह आशीर्वाद देकर वह चली गई और हनुमान जी प्रसन्न होकर आगे चले।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३.१",
+      "dev": "निसिचरि एक सिंधु महुँ रहई।\nकरि माया नभु के खग गहई॥\nजीव जंतु जे गगन उड़ाहीं।\nजल बिलोकि तिन्ह कै परिछाहीं॥",
+      "roman": "nisichari ek sindhu mahu rahaee |\nkari maayaa nabhu ke khag gahaee ||\njeev jantu je gagan udaahee |\njal biloki tinh kai parichhaahee ||",
+      "arth": "समुद्र में एक राक्षसी रहती थी। वह माया करके आकाश में उड़ते पक्षियों को पकड़ लेती थी। जो भी जीव-जंतु आकाश में उड़ते, पानी में उनकी परछाईं देखकर",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३.२",
+      "dev": "गहइ छाहँ सक सो न उड़ाई।\nएहि बिधि सदा गगनचर खाई॥\nसोइ छल हनूमान कहँ कीन्हा।\nतासु कपटु कपि तुरतहिं चीन्हा॥",
+      "roman": "gahai chhaah sak so na udaaee |\nehi bidhi sadaa gaganachar khaaee ||\nsoi chhal hanoomaan kah keenhaa |\ntaasu kapatu kapi turatahi cheenhaa ||",
+      "arth": "वह उस परछाईं को पकड़ लेती, जिससे वे उड़ नहीं पाते थे। इस तरह वह सदा आकाश में उड़ने वालों को खाया करती थी। वही छल उसने हनुमान जी से किया, पर हनुमान जी ने उसका कपट तुरंत पहचान लिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३.३",
+      "dev": "ताहि मारि मारुतसुत बीरा।\nबारिधि पार गयउ मतिधीरा॥\nतहाँ जाइ देखी बन सोभा।\nगुंजत चंचरीक मधु लोभा॥",
+      "roman": "taahi maari maarutasut beeraa |\nbaaridhi paar gayau matidheeraa ||\ntahaan jaai dekhee ban sobhaa |\ngunjat chanchareek madhu lobhaa ||",
+      "arth": "धीर बुद्धि वाले वीर पवनपुत्र उसे मारकर समुद्र के पार पहुँच गए। वहाँ जाकर उन्होंने वन की शोभा देखी — शहद के लोभ में भौंरे गुंजार कर रहे थे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३.४",
+      "dev": "नाना तरु फल फूल सुहाए।\nखग मृग बृंद देखि मन भाए॥\nसैल बिसाल देखि एक आगें।\nता पर धाइ चढ़ेउ भय त्यागें॥",
+      "roman": "naanaa taru phal phool suhaae |\nkhag mrig brind dekhi man bhaae ||\nsail bisaal dekhi ek aage |\ntaa par dhaai chadheu bhay tyaage ||",
+      "arth": "तरह-तरह के पेड़ फल-फूलों से सुहावने लग रहे थे। पक्षियों और पशुओं के झुंड देखकर उनका मन प्रसन्न हुआ। सामने एक बड़ा पहाड़ देखकर हनुमान जी निडर होकर दौड़कर उस पर चढ़ गए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३.५",
+      "dev": "उमा न कछु कपि कै अधिकाई।\nप्रभु प्रताप जो कालहि खाई॥\nगिरि पर चढ़ि लंका तेहिं देखी।\nकहि न जाइ अति दुर्ग बिसेषी॥",
+      "roman": "umaa na kachhu kapi kai adhikaaee |\nprabhu prataap jo kaalahi khaaee ||\ngiri par chadhi lankaa tehi dekhee |\nkahi na jaai ati durga biseshee ||",
+      "arth": "(शिव जी कहते हैं —) हे उमा, इसमें हनुमान जी की कोई बड़ाई नहीं; यह तो प्रभु का प्रताप है, जो काल को भी खा जाता है। पहाड़ पर चढ़कर उन्होंने लंका देखी — वह इतना बड़ा क़िला था कि कहा नहीं जा सकता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३.६",
+      "dev": "अति उतंग जलनिधि चहु पासा।\nकनक कोट कर परम प्रकासा॥",
+      "roman": "ati utang jalanidhi chahu paasaa |\nkanak kot kar param prakaasaa ||",
+      "arth": "वह बहुत ऊँचा था और उसके चारों ओर समुद्र था। सोने के परकोटे की चमक चारों ओर फैल रही थी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "छंद ३.१",
+      "dev": "कनक कोट बिचित्र मनि कृत सुंदरायतना घना।\nचउहट्ट हट्ट सुबट्ट बीथीं चारु पुर बहु बिधि बना॥\nगज बाजि खच्चर निकर पदचर रथ बरूथन्हि को गनै।\nबहुरूप निसिचर जूथ अतिबल सेन बरनत नहिं बनै॥",
+      "roman": "kanak kot bichitra mani krit sundaraayatanaa ghanaa |\nchauhatta hatta subatta beethee chaaru pur bahu bidhi banaa ||\ngaj baaji khachchar nikar padachar rath baroothanhi ko ganai |\nbahuroop nisichar jooth atibal sen baranat nahi banai ||",
+      "arth": "रंग-बिरंगी मणियों से जड़ा सोने का परकोटा है, और उसके भीतर बहुत-से सुंदर घर हैं। चौराहे, बाज़ार, अच्छे रास्ते और गलियाँ हैं; सुंदर नगर कई तरह से सजा है। हाथी, घोड़े, खच्चरों के झुंड, पैदल सैनिक और रथों के समूह कौन गिन सकता है? अनेक रूपों वाले राक्षसों के दल हैं; उनकी बहुत बलवान सेना का वर्णन करते नहीं बनता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "छंद ३.२",
+      "dev": "बन बाग उपबन बाटिका सर कूप बापीं सोहहीं।\nनर नाग सुर गंधर्ब कन्या रूप मुनि मन मोहहीं॥\nकहुँ माल देह बिसाल सैल समान अतिबल गर्जहीं।\nनाना अखारेन्ह भिरहिं बहु बिधि एक एकन्ह तर्जहीं॥",
+      "roman": "ban baag upaban baatikaa sar koop baapee sohahee |\nnar naag sur gandharba kanyaa roop muni man mohahee ||\nkahu maal deh bisaal sail samaan atibal garjahee |\nnaanaa akhaarenh bhirahi bahu bidhi ek ekanh tarjahee ||",
+      "arth": "वन, बाग़, उपवन, फुलवारियाँ, तालाब, कुएँ और बावड़ियाँ शोभा दे रही हैं। मनुष्यों, नागों, देवताओं और गंधर्वों की कन्याएँ अपने रूप से मुनियों का मन भी मोह लेती हैं। कहीं पहाड़ जैसी विशाल देह वाले बहुत बलवान पहलवान गरज रहे हैं। वे अनेक अखाड़ों में कई तरह से भिड़ते और एक-दूसरे को ललकारते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "छंद ३.३",
+      "dev": "करि जतन भट कोटिन्ह बिकट तन नगर चहुँ दिसि रच्छहीं।\nकहुँ महिष मानुष धेनु खर अज खल निसाचर भच्छहीं॥\nएहि लागि तुलसीदास इन्ह की कथा कछु एक है कही।\nरघुबीर सर तीरथ सरीरन्हि त्यागि गति पैहहिं सही॥",
+      "roman": "kari jatan bhat kotinh bikat tan nagar chahu disi rachchhahee |\nkahu mahish maanush dhenu khar aj khal nisaachar bhachchhahee ||\nehi laagi tulaseedaas inh kee kathaa kachhu ek hai kahee |\nraghubeer sar teerath sareeranhi tyaagi gati paihahi sahee ||",
+      "arth": "भयानक शरीर वाले करोड़ों योद्धा बड़े जतन से नगर की चारों ओर से रखवाली करते हैं। कहीं दुष्ट राक्षस भैंसों, मनुष्यों, गायों, गधों और बकरों को खा रहे हैं। तुलसीदास ने इनकी कथा इसीलिए थोड़ी-सी कही है कि ये निश्चय ही रघुवीर के बाण रूपी तीर्थ में अपना शरीर छोड़कर परम गति पाएँगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ३",
+      "dev": "पुर रखवारे देखि बहु कपि मन कीन्ह बिचार।\nअति लघु रूप धरौं निसि नगर करौं पइसार॥",
+      "roman": "pur rakhavaare dekhi bahu kapi man keenh bichaar |\nati laghu roop dharau nisi nagar karau paisaar ||",
+      "arth": "नगर के बहुत-से रखवालों को देखकर हनुमान जी ने मन में सोचा — मैं बहुत छोटा रूप धर लूँ और रात में नगर में घुसूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "श्रीरामचरितमानस — पंचम सोपान (सुंदरकांड)",
+    "kshetra": "पूरे उत्तर भारत में प्रचलित",
+    "note": "पाठ एक सबके लिए खुले डिजिटल पाठ से लिया गया और पाँच छपी पुस्तकों से पंक्ति-दर-पंक्ति मिलाया गया। जहाँ आधार में छपाई की भूल थी, वहाँ वह रूप है जिस पर कम से कम तीन छपी पुस्तकें एक हैं। छपे मानसों में बिंदी-चंद्रबिंदु और कुछ शब्दों के रूप अलग-अलग मिलते हैं — आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है।\n\nचौपाइयों की गिनती छपी पुस्तकों के चलन पर है: \"चौपाई १२.३\" यानी दोहा १२ से पहले की तीसरी चौपाई।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

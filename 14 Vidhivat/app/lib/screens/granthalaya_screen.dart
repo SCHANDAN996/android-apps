@@ -67,8 +67,8 @@ class _GranthalayaScreenState extends State<GranthalayaScreen> {
                 ),
                 children: [
                   Text(
-                    'पूरे ग्रंथ, अध्याय-दर-अध्याय — हर श्लोक के साथ सरल हिंदी '
-                    'अर्थ। आप जहाँ तक पढ़ें, वह इसी फ़ोन में याद रहता है।',
+                    'पूरे ग्रंथ, अध्याय-दर-अध्याय — हर श्लोक और हर चौपाई के साथ '
+                    'सरल हिंदी अर्थ। आप जहाँ तक पढ़ें, वह इसी फ़ोन में याद रहता है।',
                     textAlign: TextAlign.justify,
                     style: type.bodyMedium,
                   ),

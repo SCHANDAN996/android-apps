@@ -1,0 +1,413 @@
+{
+  "schemaVersion": 1,
+  "id": "sundarkand_10",
+  "naam": "प्रसंग १० — विभीषण की शरणागति",
+  "upnaam": [
+    "सुंदरकांड दोहा ४२ से ५०",
+    "विभीषण शरणागति"
+  ],
+  "prakar": "granth",
+  "devta": "श्री राम और हनुमान जी",
+  "rachnakar": "गोस्वामी तुलसीदास — श्रीरामचरितमानस",
+  "bhasha": "अवधी",
+  "parichay": "विभीषण श्री राम के चरणों के दर्शन की आस लिए आते हैं। सुग्रीव को संदेह है, पर श्री राम कहते हैं — शरण में आए हुए को मैं नहीं त्यागता। वे विभीषण को गले लगाते हैं, अपना स्वभाव बताते हैं, और समुद्र के जल से उनका राजतिलक कर देते हैं। फिर प्रश्न उठता है कि समुद्र कैसे पार हो; विभीषण पहले विनती करने की सलाह देते हैं।",
+  "kabPadhein": "मंगलवार और शनिवार को ख़ास तौर पर — बहुत घरों में इन्हीं दिनों पूरा सुंदरकांड पढ़ने का चलन है। बाक़ी दिनों में भी, सुबह या शाम, कभी भी पढ़ सकते हैं।",
+  "kaisePadhein": "हाथ-मुँह धोकर साफ़ जगह पर बैठें। हो सके तो श्री राम और हनुमान जी के चित्र के सामने दीपक जलाएँ।\n\nपूरा पाठ एक बैठक में करने का चलन है; पढ़ने की चाल के हिसाब से इसमें एक से दो घंटे लगते हैं। एक बैठक में न हो तो प्रसंग-प्रसंग करके पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है। पाठ से पहले क्या पढ़ें और बाद में कौन-सी आरती हो, यह हर घर में अलग है; अपनी परंपरा देखिए।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर पद के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "चौपाई ४२.१",
+      "dev": "अस कहि चला बिभीषनु जबहीं।\nआयूहीन भए सब तबहीं॥\nसाधु अवग्या तुरत भवानी।\nकर कल्यान अखिल कै हानी॥",
+      "roman": "as kahi chalaa bibheeshanu jabahee |\naayooheen bhae sab tabahee ||\nsaadhu avagyaa turat bhavaanee |\nkar kalyaan akhil kai haanee ||",
+      "arth": "ऐसा कहकर विभीषण जी ज्यों ही चले, त्यों ही सब राक्षस आयुहीन हो गए, यानी उनकी मृत्यु निश्चित हो गई। (शिव जी कहते हैं —) हे भवानी, साधु का अपमान तुरंत ही सारे कल्याण का नाश कर देता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४२.२",
+      "dev": "रावन जबहिं बिभीषन त्यागा।\nभयउ बिभव बिनु तबहिं अभागा॥\nचलेउ हरषि रघुनायक पाहीं।\nकरत मनोरथ बहु मन माहीं॥",
+      "roman": "raavan jabahi bibheeshan tyaagaa |\nbhayau bibhav binu tabahi abhaagaa ||\nchaleu harashi raghunaayak paahee |\nkarat manorath bahu man maahee ||",
+      "arth": "रावण ने जिस क्षण विभीषण को त्यागा, उसी क्षण वह अभागा वैभव से हीन हो गया। विभीषण जी मन में बहुत-से मनोरथ करते हुए प्रसन्न होकर रघुनाथ जी के पास चले।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४२.३",
+      "dev": "देखिहउँ जाइ चरन जलजाता।\nअरुन मृदुल सेवक सुखदाता॥\nजे पद परसि तरी रिषिनारी।\nदंडक कानन पावनकारी॥",
+      "roman": "dekhihau jaai charan jalajaataa |\narun mridul sevak sukhadaataa ||\nje pad parasi taree rishinaaree |\ndandak kaanan paavanakaaree ||",
+      "arth": "वे सोचते जाते थे — मैं जाकर उन कोमल, लाल चरण-कमलों के दर्शन करूँगा जो सेवकों को सुख देने वाले हैं; जिन चरणों को छूकर ऋषि की पत्नी अहल्या तर गईं; जो दंडक वन को पवित्र करने वाले हैं;",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४२.४",
+      "dev": "जे पद जनकसुताँ उर लाए।\nकपट कुरंग संग धर धाए॥\nहर उर सर सरोज पद जेई।\nअहोभाग्य मैं देखिहउँ तेई॥",
+      "roman": "je pad janakasutaan ur laae |\nkapat kurang sang dhar dhaae ||\nhar ur sar saroj pad jei |\nahobhaagya mai dekhihau tei ||",
+      "arth": "जिन चरणों को जानकी जी ने हृदय में धारण कर रखा है; जो कपट के हिरन के साथ धरती पर दौड़े थे; जो चरण-कमल शिव जी के हृदय रूपी सरोवर में विराजते हैं — मेरा अहोभाग्य है कि मैं आज उन्हीं को देखूँगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ४२",
+      "dev": "जिन्ह पायन्ह के पादुकन्हि भरतु रहे मन लाइ।\nते पद आजु बिलोकिहउँ इन्ह नयनन्हि अब जाइ॥",
+      "roman": "jinh paayanh ke paadukanhi bharatu rahe man laai |\nte pad aaju bilokihau inh nayananhi ab jaai ||",
+      "arth": "जिन चरणों की पादुकाओं में भरत जी ने अपना मन लगा रखा है, अहा, आज मैं जाकर उन्हीं चरणों को इन आँखों से देखूँगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४३.१",
+      "dev": "एहि बिधि करत सप्रेम बिचारा।\nआयउ सपदि सिंधु एहिं पारा॥\nकपिन्ह बिभीषनु आवत देखा।\nजाना कोउ रिपु दूत बिसेषा॥",
+      "roman": "ehi bidhi karat saprem bichaaraa |\naayau sapadi sindhu ehi paaraa ||\nkapinh bibheeshanu aavat dekhaa |\njaanaa kou ripu doot biseshaa ||",
+      "arth": "इस तरह प्रेम से विचार करते हुए वे जल्दी ही समुद्र के इस पार आ गए। वानरों ने विभीषण जी को आते देखा, तो समझा कि यह शत्रु का कोई ख़ास दूत है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४३.२",
+      "dev": "ताहि राखि कपीस पहिं आए।\nसमाचार सब ताहि सुनाए॥\nकह सुग्रीव सुनहु रघुराई।\nआवा मिलन दसानन भाई॥",
+      "roman": "taahi raakhi kapees pahi aae |\nsamaachaar sab taahi sunaae ||\nkah sugreev sunahu raghuraaee |\naavaa milan dasaanan bhaaee ||",
+      "arth": "उन्हें वहीं ठहराकर वे सुग्रीव के पास आए और सारा हाल सुनाया। सुग्रीव ने कहा — हे रघुनाथ जी, सुनिए, रावण का भाई आपसे मिलने आया है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४३.३",
+      "dev": "कह प्रभु सखा बूझिऐ काहा।\nकहइ कपीस सुनहु नरनाहा॥\nजानि न जाइ निसाचर माया।\nकामरूप केहि कारन आया॥",
+      "roman": "kah prabhu sakhaa boojhiai kaahaa |\nkahai kapees sunahu naranaahaa ||\njaani na jaai nisaachar maayaa |\nkaamaroop kehi kaaran aayaa ||",
+      "arth": "प्रभु ने कहा — मित्र, तुम क्या समझते हो? वानरराज सुग्रीव ने कहा — हे महाराज, सुनिए। राक्षसों की माया जानी नहीं जाती। यह इच्छानुसार रूप बदलने वाला न जाने किस कारण आया है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४३.४",
+      "dev": "भेद हमार लेन सठ आवा।\nराखिअ बाँधि मोहि अस भावा॥\nसखा नीति तुम्ह नीकि बिचारी।\nमम पन सरनागत भयहारी॥",
+      "roman": "bhed hamaar len sath aavaa |\nraakhia baandhi mohi as bhaavaa ||\nsakhaa neeti tumh neeki bichaaree |\nmam pan saranaagat bhayahaaree ||",
+      "arth": "लगता है यह मूर्ख हमारा भेद लेने आया है। मुझे तो यही ठीक लगता है कि इसे बाँधकर रखा जाए। राम जी ने कहा — मित्र, तुमने नीति तो अच्छी विचारी, पर मेरा प्रण है शरण में आए हुए का भय हर लेना।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४३.५",
+      "dev": "सुनि प्रभु बचन हरष हनुमाना।\nसरनागत बच्छल भगवाना॥",
+      "roman": "suni prabhu bachan harash hanumaanaa |\nsaranaagat bachchhal bhagavaanaa ||",
+      "arth": "प्रभु के वचन सुनकर हनुमान जी हर्षित हुए कि भगवान शरण में आए हुए से कितना प्रेम करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ४३",
+      "dev": "सरनागत कहुँ जे तजहिं निज अनहित अनुमानि।\nते नर पावँर पापमय तिन्हहि बिलोकत हानि॥",
+      "roman": "saranaagat kahu je tajahi nij anahit anumaani |\nte nar paavanr paapamay tinhahi bilokat haani ||",
+      "arth": "जो लोग अपने नुक़सान का अंदाज़ा करके शरण में आए हुए को त्याग देते हैं, वे नीच और पापी हैं; उन्हें देखने से भी हानि होती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४४.१",
+      "dev": "कोटि बिप्र बध लागहिं जाहू।\nआएँ सरन तजउँ नहिं ताहू॥\nसनमुख होइ जीव मोहि जबहीं।\nजन्म कोटि अघ नासहिं तबहीं॥",
+      "roman": "koti bipra badh laagahi jaahoo |\naae saran tajau nahi taahoo ||\nsanamukh hoi jeev mohi jabahee |\njanma koti agh naasahi tabahee ||",
+      "arth": "जिसे करोड़ों ब्राह्मणों की हत्या का पाप लगा हो, शरण में आने पर मैं उसे भी नहीं त्यागता। जीव ज्यों ही मेरे सामने आता है, त्यों ही उसके करोड़ों जन्मों के पाप नष्ट हो जाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४४.२",
+      "dev": "पापवंत कर सहज सुभाऊ।\nभजनु मोर तेहि भाव न काऊ॥\nजौं पै दुष्ट हृदय सोइ होई।\nमोरें सनमुख आव कि सोई॥",
+      "roman": "paapavant kar sahaj subhaau |\nbhajanu mor tehi bhaav na kaau ||\njau pai dushta hriday soi hoee |\nmore sanamukh aav ki soee ||",
+      "arth": "पापी का यह सहज स्वभाव होता है कि उसे मेरा भजन कभी अच्छा नहीं लगता। अगर विभीषण सचमुच दुष्ट हृदय का होता, तो क्या वह मेरे सामने आ सकता था?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४४.३",
+      "dev": "निर्मल मन जन सो मोहि पावा।\nमोहि कपट छल छिद्र न भावा॥\nभेद लेन पठवा दससीसा।\nतबहुँ न कछु भय हानि कपीसा॥",
+      "roman": "nirmal man jan so mohi paavaa |\nmohi kapat chhal chhidra na bhaavaa ||\nbhed len pathavaa dasaseesaa |\ntabahu na kachhu bhay haani kapeesaa ||",
+      "arth": "जो मनुष्य निर्मल मन का होता है, वही मुझे पाता है। मुझे कपट, छल और दोष ढूँढ़ना अच्छा नहीं लगता। अगर रावण ने उसे भेद लेने भेजा हो, तब भी हे सुग्रीव, हमें न कोई डर है न हानि।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४४.४",
+      "dev": "जग महुँ सखा निसाचर जेते।\nलछिमनु हनइ निमिष महुँ तेते॥\nजौं सभीत आवा सरनाई।\nरखिहउँ ताहि प्रान की नाई॥",
+      "roman": "jag mahu sakhaa nisaachar jete |\nlachhimanu hanai nimish mahu tete ||\njau sabheet aavaa saranaaee |\nrakhihau taahi praan kee naaee ||",
+      "arth": "क्योंकि हे मित्र, जगत में जितने भी राक्षस हैं, लक्ष्मण उन सबको पल भर में मार सकते हैं। और अगर वह डरा हुआ शरण में आया है, तो मैं उसे प्राणों की तरह रखूँगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ४४",
+      "dev": "उभय भाँति तेहि आनहु हँसि कह कृपानिकेत।\nजय कृपाल कहि कपि चले अंगद हनू समेत॥",
+      "roman": "ubhay bhaanti tehi aanahu hansi kah kripaaniket |\njai kripaal kahi kapi chale angad hanoo samet ||",
+      "arth": "कृपा के धाम श्री राम ने हँसकर कहा — दोनों ही दशाओं में उसे ले आओ। तब अंगद और हनुमान के साथ वानर कृपालु श्री राम की जय बोलते हुए चले।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४५.१",
+      "dev": "सादर तेहि आगें करि बानर।\nचले जहाँ रघुपति करुनाकर॥\nदूरिहि ते देखे द्वौ भ्राता।\nनयनानंद दान के दाता॥",
+      "roman": "saadar tehi aage kari baanar |\nchale jahaan raghupati karunaakar ||\ndoorihi te dekhe dvau bhraataa |\nnayanaanand daan ke daataa ||",
+      "arth": "वानर विभीषण जी को आदर से आगे करके वहाँ चले जहाँ करुणा की खान रघुनाथ जी थे। विभीषण जी ने आँखों को आनंद देने वाले दोनों भाइयों को दूर से ही देखा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४५.२",
+      "dev": "बहुरि राम छबिधाम बिलोकी।\nरहेउ ठटुकि एकटक पल रोकी॥\nभुज प्रलंब कंजारुन लोचन।\nस्यामल गात प्रनत भय मोचन॥",
+      "roman": "bahuri raam chhabidhaam bilokee |\nraheu thatuki ekatak pal rokee ||\nbhuj pralamb kanjaarun lochan |\nsyaamal gaat pranat bhay mochan ||",
+      "arth": "फिर शोभा के धाम श्री राम को देखकर वे पलकें झपकाना भूलकर ठिठककर एकटक देखते रह गए। प्रभु की भुजाएँ लंबी हैं, आँखें लाल कमल जैसी हैं, और साँवला शरीर शरण में आए हुए का भय मिटाने वाला है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४५.३",
+      "dev": "सिंघ कंध आयत उर सोहा।\nआनन अमित मदन मन मोहा॥\nनयन नीर पुलकित अति गाता।\nमन धरि धीर कही मृदु बाता॥",
+      "roman": "singh kandh aayat ur sohaa |\naanan amit madan man mohaa ||\nnayan neer pulakit ati gaataa |\nman dhari dheer kahee mridu baataa ||",
+      "arth": "कंधे सिंह जैसे हैं, चौड़ी छाती शोभा दे रही है, और मुख ऐसा है जो अनगिनत कामदेवों के मन को मोह ले। विभीषण जी की आँखों में आँसू भर आए और शरीर बहुत पुलकित हो गया। फिर मन में धीरज धरकर उन्होंने कोमल वचन कहे —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४५.४",
+      "dev": "नाथ दसानन कर मैं भ्राता।\nनिसिचर बंस जनम सुरत्राता॥\nसहज पापप्रिय तामस देहा।\nजथा उलूकहि तम पर नेहा॥",
+      "roman": "naath dasaanan kar mai bhraataa |\nnisichar bans janam suratraataa ||\nsahaj paapapriya taamas dehaa |\njathaa ulookahi tam par nehaa ||",
+      "arth": "हे नाथ, मैं रावण का भाई हूँ। हे देवताओं के रक्षक, मेरा जन्म राक्षस कुल में हुआ है। मेरा शरीर तामसी है और स्वभाव से ही मुझे पाप प्रिय है, जैसे उल्लू को अँधेरे से प्रेम होता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ४५",
+      "dev": "श्रवन सुजसु सुनि आयउँ प्रभु भंजन भव भीर।\nत्राहि त्राहि आरति हरन सरन सुखद रघुबीर॥",
+      "roman": "shravan sujasu suni aayau prabhu bhanjan bhav bheer |\ntraahi traahi aarati haran saran sukhad raghubeer ||",
+      "arth": "मैं कानों से आपका सुयश सुनकर आया हूँ कि प्रभु जन्म-मरण के भय का नाश करने वाले हैं। हे दुखियों का दुख हरने वाले, शरण में आए को सुख देने वाले रघुवीर, मेरी रक्षा कीजिए, रक्षा कीजिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४६.१",
+      "dev": "अस कहि करत दंडवत देखा।\nतुरत उठे प्रभु हरष बिसेषा॥\nदीन बचन सुनि प्रभु मन भावा।\nभुज बिसाल गहि हृदयँ लगावा॥",
+      "roman": "as kahi karat dandavat dekhaa |\nturat uthe prabhu harash biseshaa ||\ndeen bachan suni prabhu man bhaavaa |\nbhuj bisaal gahi hriday lagaavaa ||",
+      "arth": "ऐसा कहकर उन्हें दंडवत करते देख प्रभु बड़े हर्ष से तुरंत उठे। विभीषण जी के दीन वचन प्रभु के मन को बहुत अच्छे लगे। उन्होंने अपनी विशाल भुजाओं से पकड़कर उन्हें हृदय से लगा लिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४६.२",
+      "dev": "अनुज सहित मिलि ढिग बैठारी।\nबोले बचन भगत भयहारी॥\nकहु लंकेस सहित परिवारा।\nकुसल कुठाहर बास तुम्हारा॥",
+      "roman": "anuj sahit mili dhig baithaaree |\nbole bachan bhagat bhayahaaree ||\nkahu lankes sahit parivaaraa |\nkusal kuthaahar baas tumhaaraa ||",
+      "arth": "छोटे भाई लक्ष्मण के साथ उनसे गले मिलकर प्रभु ने उन्हें अपने पास बैठाया, और भक्तों का भय हरने वाले श्री राम बोले — हे लंकेश, परिवार के साथ अपनी कुशल कहो। तुम्हारा रहना तो बुरी जगह पर है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४६.३",
+      "dev": "खल मंडलीं बसहु दिनु राती।\nसखा धरम निबहइ केहि भाँती॥\nमैं जानउँ तुम्हारि सब रीती।\nअति नय निपुन न भाव अनीती॥",
+      "roman": "khal mandalee basahu dinu raatee |\nsakhaa dharam nibahai kehi bhaantee ||\nmai jaanau tumhaari sab reetee |\nati nay nipun na bhaav aneetee ||",
+      "arth": "तुम दिन-रात दुष्टों की मंडली में रहते हो; फिर हे मित्र, तुम्हारा धर्म किस तरह निभता है? मैं तुम्हारी सारी रीति जानता हूँ — तुम नीति में बहुत निपुण हो और तुम्हें अनीति अच्छी नहीं लगती।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४६.४",
+      "dev": "बरु भल बास नरक कर ताता।\nदुष्ट संग जनि देइ बिधाता॥\nअब पद देखि कुसल रघुराया।\nजौं तुम्ह कीन्हि जानि जन दाया॥",
+      "roman": "baru bhal baas narak kar taataa |\ndushta sang jani dei bidhaataa ||\nab pad dekhi kusal raghuraayaa |\njau tumh keenhi jaani jan daayaa ||",
+      "arth": "हे तात, नरक में रहना भले अच्छा हो, पर विधाता दुष्ट का साथ न दे। (विभीषण जी बोले —) हे रघुनाथ जी, अब आपके चरण देखकर कुशल है, जब आपने अपना सेवक जानकर मुझ पर दया की है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ४६",
+      "dev": "तब लगि कुसल न जीव कहुँ सपनेहुँ मन बिश्राम।\nजब लगि भजत न राम कहुँ सोक धाम तजि काम॥",
+      "roman": "tab lagi kusal na jeev kahu sapanehu man bishraam |\njab lagi bhajat na raam kahu sok dhaam taji kaam ||",
+      "arth": "जीव की तब तक कुशल नहीं और सपने में भी उसके मन को चैन नहीं, जब तक वह शोक के घर काम, यानी विषयों की चाह को छोड़कर राम जी को नहीं भजता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४७.१",
+      "dev": "तब लगि हृदयँ बसत खल नाना।\nलोभ मोह मच्छर मद माना॥\nजब लगि उर न बसत रघुनाथा।\nधरें चाप सायक कटि भाथा॥",
+      "roman": "tab lagi hriday basat khal naanaa |\nlobh moh machchhar mad maanaa ||\njab lagi ur na basat raghunaathaa |\ndhare chaap saayak kati bhaathaa ||",
+      "arth": "लोभ, मोह, डाह, मद और मान — ये तरह-तरह के दुष्ट हृदय में तभी तक बसते हैं, जब तक धनुष-बाण और कमर में तरकस धारण किए रघुनाथ जी हृदय में नहीं बसते।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४७.२",
+      "dev": "ममता तरुन तमी अँधिआरी।\nराग द्वेष उलूक सुखकारी॥\nतब लगि बसति जीव मन माहीं।\nजब लगि प्रभु प्रताप रबि नाहीं॥",
+      "roman": "mamataa tarun tamee andhiaaree |\nraag dvesh ulook sukhakaaree ||\ntab lagi basati jeev man maahee |\njab lagi prabhu prataap rabi naahee ||",
+      "arth": "ममता घनी अँधेरी रात है, जो राग और द्वेष रूपी उल्लुओं को सुख देती है। वह जीव के मन में तभी तक बसती है, जब तक प्रभु के प्रताप का सूर्य नहीं उगता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४७.३",
+      "dev": "अब मैं कुसल मिटे भय भारे।\nदेखि राम पद कमल तुम्हारे॥\nतुम्ह कृपाल जा पर अनुकूला।\nताहि न ब्याप त्रिबिध भव सूला॥",
+      "roman": "ab mai kusal mite bhay bhaare |\ndekhi raam pad kamal tumhaare ||\ntumh kripaal jaa par anukoolaa |\ntaahi na byaap tribidh bhav soolaa ||",
+      "arth": "हे राम जी, आपके चरण-कमल देखकर अब मैं कुशल से हूँ; मेरे भारी भय मिट गए। हे कृपालु, जिस पर आप प्रसन्न होते हैं, उसे संसार के तीनों तरह के दुख नहीं सताते।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४७.४",
+      "dev": "मैं निसिचर अति अधम सुभाऊ।\nसुभ आचरनु कीन्ह नहिं काऊ॥\nजासु रूप मुनि ध्यान न आवा।\nतेहिं प्रभु हरषि हृदयँ मोहि लावा॥",
+      "roman": "mai nisichar ati adham subhaau |\nsubh aacharanu keenh nahi kaau ||\njaasu roop muni dhyaan na aavaa |\ntehi prabhu harashi hriday mohi laavaa ||",
+      "arth": "मैं बहुत ही नीच स्वभाव का राक्षस हूँ। मैंने कभी कोई अच्छा आचरण नहीं किया। जिनका रूप मुनियों के ध्यान में भी नहीं आता, उन प्रभु ने प्रसन्न होकर मुझे हृदय से लगा लिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ४७",
+      "dev": "अहोभाग्य मम अमित अति राम कृपा सुख पुंज।\nदेखेउँ नयन बिरंचि सिव सेब्य जुगल पद कंज॥",
+      "roman": "ahobhaagya mam amit ati raam kripaa sukh punj |\ndekheu nayan biranchi siv sebya jugal pad kanj ||",
+      "arth": "हे कृपा और सुख के पुंज राम जी, मेरा अहोभाग्य अत्यंत अपार है कि मैंने उन युगल चरण-कमलों को अपनी आँखों से देखा, जिनकी सेवा ब्रह्मा और शिव करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४८.१",
+      "dev": "सुनहु सखा निज कहउँ सुभाऊ।\nजान भुसुंडि संभु गिरिजाऊ॥\nजौं नर होइ चराचर द्रोही।\nआवै सभय सरन तकि मोही॥",
+      "roman": "sunahu sakhaa nij kahau subhaau |\njaan bhusundi sambhu girijaau ||\njau nar hoi charaachar drohee |\naavai sabhay saran taki mohee ||",
+      "arth": "(राम जी ने कहा —) हे मित्र, सुनो, मैं तुम्हें अपना स्वभाव बताता हूँ, जिसे काकभुशुंडि, शिव जी और पार्वती जी भी जानते हैं। अगर कोई मनुष्य सारे चर-अचर जगत का द्रोही हो, और वह भी डरकर मेरी शरण ताककर आ जाए,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४८.२",
+      "dev": "तजि मद मोह कपट छल नाना।\nकरउँ सद्य तेहि साधु समाना॥\nजननी जनक बंधु सुत दारा।\nतनु धनु भवन सुहृद परिवारा॥",
+      "roman": "taji mad moh kapat chhal naanaa |\nkarau sadya tehi saadhu samaanaa ||\njananee janak bandhu sut daaraa |\ntanu dhanu bhavan suhrid parivaaraa ||",
+      "arth": "और मद, मोह तथा तरह-तरह के छल-कपट छोड़ दे, तो मैं उसे बहुत जल्दी साधु के समान कर देता हूँ। माता, पिता, भाई, पुत्र, पत्नी, शरीर, धन, घर, मित्र और परिवार —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४८.३",
+      "dev": "सब कै ममता ताग बटोरी।\nमम पद मनहि बाँध बरि डोरी॥\nसमदरसी इच्छा कछु नाहीं।\nहरष सोक भय नहिं मन माहीं॥",
+      "roman": "sab kai mamataa taag batoree |\nmam pad manahi baandh bari doree ||\nsamadarasee ichchhaa kachhu naahee |\nharash sok bhay nahi man maahee ||",
+      "arth": "इन सबकी ममता के धागों को बटोरकर, उन सबकी एक डोरी बटकर जो अपने मन को मेरे चरणों में बाँध देता है; जो सबको एक नज़र से देखता है, जिसे कोई इच्छा नहीं, और जिसके मन में हर्ष, शोक और भय नहीं है —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४८.४",
+      "dev": "अस सज्जन मम उर बस कैसें।\nलोभी हृदयँ बसइ धनु जैसें॥\nतुम्ह सारिखे संत प्रिय मोरें।\nधरउँ देह नहिं आन निहोरें॥",
+      "roman": "as sajjan mam ur bas kaise |\nlobhee hriday basai dhanu jaise ||\ntumh saarikhe sant priya more |\ndharau deh nahi aan nihore ||",
+      "arth": "ऐसा सज्जन मेरे हृदय में वैसे बसता है जैसे लोभी के हृदय में धन बसता है। तुम जैसे संत ही मुझे प्रिय हैं। मैं तुम जैसों के लिए ही देह धारण करता हूँ, और किसी कारण से नहीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ४८",
+      "dev": "सगुन उपासक परहित निरत नीति दृढ़ नेम।\nते नर प्रान समान मम जिन्ह कें द्विज पद प्रेम॥",
+      "roman": "sagun upaasak parahit nirat neeti dridh nem |\nte nar praan samaan mam jinh ke dvij pad prem ||",
+      "arth": "जो सगुण भगवान के उपासक हैं, दूसरों के हित में लगे रहते हैं, नीति और नियमों में पक्के हैं, और जिनका ब्राह्मणों के चरणों में प्रेम है — वे मनुष्य मुझे प्राणों के समान प्रिय हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४९.१",
+      "dev": "सुनु लंकेस सकल गुन तोरें।\nतातें तुम्ह अतिसय प्रिय मोरें॥\nराम बचन सुनि बानर जूथा।\nसकल कहहिं जय कृपा बरूथा॥",
+      "roman": "sunu lankes sakal gun tore |\ntaate tumh atisay priya more ||\nraam bachan suni baanar joothaa |\nsakal kahahi jai kripaa baroothaa ||",
+      "arth": "हे लंकेश, सुनो, तुममें ये सारे गुण हैं; इसी से तुम मुझे अत्यंत प्रिय हो। राम जी के वचन सुनकर वानरों के सब झुंड कहने लगे — कृपा के समूह श्री राम की जय हो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४९.२",
+      "dev": "सुनत बिभीषनु प्रभु कै बानी।\nनहिं अघात श्रवनामृत जानी॥\nपद अंबुज गहि बारहिं बारा।\nहृदयँ समात न प्रेमु अपारा॥",
+      "roman": "sunat bibheeshanu prabhu kai baanee |\nnahi aghaat shravanaamrit jaanee ||\npad ambuj gahi baarahi baaraa |\nhriday samaat na premu apaaraa ||",
+      "arth": "प्रभु की वाणी सुनते हुए और उसे कानों के लिए अमृत जानकर विभीषण जी का मन भरता ही नहीं। वे बार-बार प्रभु के चरण-कमल पकड़ते हैं; अपार प्रेम हृदय में समाता नहीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४९.३",
+      "dev": "सुनहु देव सचराचर स्वामी।\nप्रनतपाल उर अंतरजामी॥\nउर कछु प्रथम बासना रही।\nप्रभु पद प्रीति सरित सो बही॥",
+      "roman": "sunahu dev sacharaachar svaamee |\npranatapaal ur antarajaamee ||\nur kachhu pratham baasanaa rahee |\nprabhu pad preeti sarit so bahee ||",
+      "arth": "(विभीषण जी ने कहा —) हे देव, हे चर-अचर जगत के स्वामी, हे शरण में आए हुए के रक्षक, हे सबके हृदय की जानने वाले, सुनिए। मेरे हृदय में पहले कुछ वासना थी; वह प्रभु के चरणों की प्रीति रूपी नदी में बह गई।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४९.४",
+      "dev": "अब कृपाल निज भगति पावनी।\nदेहु सदा सिव मन भावनी॥\nएवमस्तु कहि प्रभु रनधीरा।\nमागा तुरत सिंधु कर नीरा॥",
+      "roman": "ab kripaal nij bhagati paavanee |\ndehu sadaa siv man bhaavanee ||\nevamastu kahi prabhu ranadheeraa |\nmaagaa turat sindhu kar neeraa ||",
+      "arth": "अब हे कृपालु, मुझे अपनी वह पवित्र भक्ति दीजिए जो शिव जी के मन को सदा प्रिय लगती है। ऐसा ही हो — यह कहकर रणधीर प्रभु ने तुरंत समुद्र का जल मँगवाया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ४९.५",
+      "dev": "जदपि सखा तव इच्छा नाहीं।\nमोर दरसु अमोघ जग माहीं॥\nअस कहि राम तिलक तेहि सारा।\nसुमन बृष्टि नभ भई अपारा॥",
+      "roman": "jadapi sakhaa tav ichchhaa naahee |\nmor darasu amogh jag maahee ||\nas kahi raam tilak tehi saaraa |\nsuman brishti nabh bhaee apaaraa ||",
+      "arth": "और कहा — हे मित्र, तुम्हारी इच्छा तो नहीं है, पर जगत में मेरा दर्शन निष्फल नहीं जाता। ऐसा कहकर राम जी ने उन्हें राजतिलक कर दिया। आकाश से फूलों की अपार वर्षा हुई।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ४९ (क)",
+      "dev": "रावन क्रोध अनल निज स्वास समीर प्रचंड।\nजरत बिभीषनु राखेउ दीन्हेउ राजु अखंड॥",
+      "roman": "raavan krodh anal nij svaas sameer prachand |\njarat bibheeshanu raakheu deenheu raaju akhand ||",
+      "arth": "रावण का क्रोध आग था, और विभीषण की अपनी साँस, यानी उनके वचन, उसे भड़काने वाली तेज़ हवा। उस आग में जलते हुए विभीषण को श्री राम ने बचा लिया और उन्हें अखंड राज्य दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ४९ (ख)",
+      "dev": "जो संपति सिव रावनहि दीन्हि दिएँ दस माथ।\nसोइ संपदा बिभीषनहि सकुचि दीन्हि रघुनाथ॥",
+      "roman": "jo sampati siv raavanahi deenhi die das maath |\nsoi sampadaa bibheeshanahi sakuchi deenhi raghunaath ||",
+      "arth": "शिव जी ने जो संपत्ति रावण को उसके दस सिरों की बलि देने पर दी थी, वही संपत्ति रघुनाथ जी ने विभीषण को सकुचाते हुए दे दी — मानो यह बहुत थोड़ी हो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ५०.१",
+      "dev": "अस प्रभु छाड़ि भजहिं जे आना।\nते नर पसु बिनु पूँछ बिषाना॥\nनिज जन जानि ताहि अपनावा।\nप्रभु सुभाव कपि कुल मन भावा॥",
+      "roman": "as prabhu chhaadi bhajahi je aanaa |\nte nar pasu binu poonchh bishaanaa ||\nnij jan jaani taahi apanaavaa |\nprabhu subhaav kapi kul man bhaavaa ||",
+      "arth": "ऐसे परम कृपालु प्रभु को छोड़कर जो किसी और को भजते हैं, वे मनुष्य बिना सींग-पूँछ के पशु हैं। प्रभु ने विभीषण को अपना सेवक जानकर अपना लिया; प्रभु का यह स्वभाव वानर कुल के मन को बहुत अच्छा लगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ५०.२",
+      "dev": "पुनि सर्बग्य सर्ब उर बासी।\nसर्बरूप सब रहित उदासी॥\nबोले बचन नीति प्रतिपालक।\nकारन मनुज दनुज कुल घालक॥",
+      "roman": "puni sarbagya sarba ur baasee |\nsarbaroop sab rahit udaasee ||\nbole bachan neeti pratipaalak |\nkaaran manuj danuj kul ghaalak ||",
+      "arth": "फिर सब कुछ जानने वाले, सबके हृदय में बसने वाले, सब रूपों में प्रकट, सबसे रहित और उदासीन; भक्तों के लिए मनुष्य बने और राक्षस कुल का नाश करने वाले श्री राम नीति की रक्षा करने वाले वचन बोले —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ५०.३",
+      "dev": "सुनु कपीस लंकापति बीरा।\nकेहि बिधि तरिअ जलधि गंभीरा॥\nसंकुल मकर उरग झष जाती।\nअति अगाध दुस्तर सब भाँती॥",
+      "roman": "sunu kapees lankaapati beeraa |\nkehi bidhi taria jaladhi gambheeraa ||\nsankul makar urag jhash jaatee |\nati agaadh dustar sab bhaantee ||",
+      "arth": "हे वानरराज सुग्रीव और वीर लंकापति विभीषण, सुनो — इस गहरे समुद्र को किस तरह पार किया जाए? यह मगरों, साँपों और तरह-तरह की मछलियों से भरा है, बहुत अथाह है और हर तरह से पार करने में कठिन है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ५०.४",
+      "dev": "कह लंकेस सुनहु रघुनायक।\nकोटि सिंधु सोषक तव सायक॥\nजद्यपि तदपि नीति असि गाई।\nबिनय करिअ सागर सन जाई॥",
+      "roman": "kah lankes sunahu raghunaayak |\nkoti sindhu soshak tav saayak ||\njadyapi tadapi neeti asi gaaee |\nbinay karia saagar san jaaee ||",
+      "arth": "विभीषण जी ने कहा — हे रघुनाथ जी, सुनिए। यों तो आपका एक बाण ही करोड़ों समुद्रों को सुखा सकता है, फिर भी नीति यही कहती है कि पहले जाकर समुद्र से विनती की जाए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ५०",
+      "dev": "प्रभु तुम्हार कुलगुर जलधि कहिहि उपाय बिचारि।\nबिनु प्रयास सागर तरिहि सकल भालु कपि धारि॥",
+      "roman": "prabhu tumhaar kulagur jaladhi kahihi upaay bichaari |\nbinu prayaas saagar tarihi sakal bhaalu kapi dhaari ||",
+      "arth": "हे प्रभु, समुद्र आपके कुल में बड़े हैं; वे सोचकर उपाय बता देंगे। तब भालुओं और वानरों की सारी सेना बिना मेहनत के समुद्र पार कर जाएगी।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "श्रीरामचरितमानस — पंचम सोपान (सुंदरकांड)",
+    "kshetra": "पूरे उत्तर भारत में प्रचलित",
+    "note": "पाठ एक सबके लिए खुले डिजिटल पाठ से लिया गया और पाँच छपी पुस्तकों से पंक्ति-दर-पंक्ति मिलाया गया। जहाँ आधार में छपाई की भूल थी, वहाँ वह रूप है जिस पर कम से कम तीन छपी पुस्तकें एक हैं। छपे मानसों में बिंदी-चंद्रबिंदु और कुछ शब्दों के रूप अलग-अलग मिलते हैं — आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है।\n\nचौपाइयों की गिनती छपी पुस्तकों के चलन पर है: \"चौपाई १२.३\" यानी दोहा १२ से पहले की तीसरी चौपाई।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

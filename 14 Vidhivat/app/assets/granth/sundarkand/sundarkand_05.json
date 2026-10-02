@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "id": "sundarkand_05",
+  "naam": "प्रसंग ५ — अशोक वाटिका और मेघनाद",
+  "upnaam": [
+    "सुंदरकांड दोहा १८ से २०",
+    "अक्षकुमार वध"
+  ],
+  "prakar": "granth",
+  "devta": "श्री राम और हनुमान जी",
+  "rachnakar": "गोस्वामी तुलसीदास — श्रीरामचरितमानस",
+  "bhasha": "अवधी",
+  "parichay": "सीता जी की आज्ञा लेकर हनुमान जी फल खाते और वाटिका उजाड़ते हैं। रखवाले और फिर अक्षकुमार मारे जाते हैं। रावण मेघनाद को भेजता है। ब्रह्मास्त्र की मर्यादा रखने के लिए हनुमान जी अपने को बँधवा लेते हैं और रावण की सभा में लाए जाते हैं।",
+  "kabPadhein": "मंगलवार और शनिवार को ख़ास तौर पर — बहुत घरों में इन्हीं दिनों पूरा सुंदरकांड पढ़ने का चलन है। बाक़ी दिनों में भी, सुबह या शाम, कभी भी पढ़ सकते हैं।",
+  "kaisePadhein": "हाथ-मुँह धोकर साफ़ जगह पर बैठें। हो सके तो श्री राम और हनुमान जी के चित्र के सामने दीपक जलाएँ।\n\nपूरा पाठ एक बैठक में करने का चलन है; पढ़ने की चाल के हिसाब से इसमें एक से दो घंटे लगते हैं। एक बैठक में न हो तो प्रसंग-प्रसंग करके पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है। पाठ से पहले क्या पढ़ें और बाद में कौन-सी आरती हो, यह हर घर में अलग है; अपनी परंपरा देखिए।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर पद के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "चौपाई १८.१",
+      "dev": "चलेउ नाइ सिरु पैठेउ बागा।\nफल खाएसि तरु तोरैं लागा॥\nरहे तहाँ बहु भट रखवारे।\nकछु मारेसि कछु जाइ पुकारे॥",
+      "roman": "chaleu naai siru paitheu baagaa |\nphal khaaesi taru torai laagaa ||\nrahe tahaan bahu bhat rakhavaare |\nkachhu maaresi kachhu jaai pukaare ||",
+      "arth": "वे सिर नवाकर चले और बाग़ में घुस गए। फल खाए और पेड़ तोड़ने लगे। वहाँ बहुत-से योद्धा रखवाले थे। कुछ को हनुमान जी ने मार डाला और कुछ ने जाकर रावण से पुकार की —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १८.२",
+      "dev": "नाथ एक आवा कपि भारी।\nतेहिं असोक बाटिका उजारी॥\nखाएसि फल अरु बिटप उपारे।\nरच्छक मर्दि मर्दि महि डारे॥",
+      "roman": "naath ek aavaa kapi bhaaree |\ntehi asok baatikaa ujaaree ||\nkhaaesi phal aru bitap upaare |\nrachchhak mardi mardi mahi daare ||",
+      "arth": "हे नाथ, एक बहुत बड़ा बंदर आया है। उसने अशोक वाटिका उजाड़ दी। फल खाए, पेड़ उखाड़ डाले, और रखवालों को मसल-मसलकर ज़मीन पर डाल दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १८.३",
+      "dev": "सुनि रावन पठए भट नाना।\nतिन्हहि देखि गर्जेउ हनुमाना॥\nसब रजनीचर कपि संघारे।\nगए पुकारत कछु अधमारे॥",
+      "roman": "suni raavan pathae bhat naanaa |\ntinhahi dekhi garjeu hanumaanaa ||\nsab rajaneechar kapi sanghaare |\ngae pukaarat kachhu adhamaare ||",
+      "arth": "यह सुनकर रावण ने बहुत-से योद्धा भेजे। उन्हें देखकर हनुमान जी गरजे। हनुमान जी ने सब राक्षसों को मार डाला; कुछ अधमरे चिल्लाते हुए भाग गए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १८.४",
+      "dev": "पुनि पठयउ तेहिं अच्छकुमारा।\nचला संग लै सुभट अपारा॥\nआवत देखि बिटप गहि तर्जा।\nताहि निपाति महाधुनि गर्जा॥",
+      "roman": "puni pathayau tehi achchhakumaaraa |\nchalaa sang lai subhat apaaraa ||\naavat dekhi bitap gahi tarjaa |\ntaahi nipaati mahaadhuni garjaa ||",
+      "arth": "फिर रावण ने अक्षकुमार को भेजा। वह अनगिनत अच्छे योद्धाओं को साथ लेकर चला। उसे आते देखकर हनुमान जी ने एक पेड़ हाथ में लेकर ललकारा, और उसे मारकर बड़े ज़ोर से गरजे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा १८",
+      "dev": "कछु मारेसि कछु मर्देसि कछु मिलएसि धरि धूरि।\nकछु पुनि जाइ पुकारे प्रभु मर्कट बल भूरि॥",
+      "roman": "kachhu maaresi kachhu mardesi kachhu milaesi dhari dhoori |\nkachhu puni jaai pukaare prabhu markat bal bhoori ||",
+      "arth": "उन्होंने सेना में से कुछ को मार डाला, कुछ को मसल डाला और कुछ को पकड़-पकड़कर धूल में मिला दिया। कुछ ने फिर जाकर पुकार की — हे प्रभु, बंदर बहुत ही बलवान है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १९.१",
+      "dev": "सुनि सुत बध लंकेस रिसाना।\nपठएसि मेघनाद बलवाना॥\nमारसि जनि सुत बाँधेसु ताही।\nदेखिअ कपिहि कहाँ कर आही॥",
+      "roman": "suni sut badh lankes risaanaa |\npathaesi meghanaad balavaanaa ||\nmaarasi jani sut baandhesu taahee |\ndekhia kapihi kahaan kar aahee ||",
+      "arth": "बेटे का वध सुनकर लंकापति रावण क्रोध से भर उठा और उसने बलवान मेघनाद को भेजा। कहा — बेटा, उसे मारना मत, बाँध लाना। उस बंदर को देखा जाए कि वह कहाँ का है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १९.२",
+      "dev": "चला इंद्रजित अतुलित जोधा।\nबंधु निधन सुनि उपजा क्रोधा॥\nकपि देखा दारुन भट आवा।\nकटकटाइ गर्जा अरु धावा॥",
+      "roman": "chalaa indrajit atulit jodhaa |\nbandhu nidhan suni upajaa krodhaa ||\nkapi dekhaa daarun bhat aavaa |\nkatakataai garjaa aru dhaavaa ||",
+      "arth": "इंद्र को जीतने वाला अतुलनीय योद्धा मेघनाद चला। भाई का मारा जाना सुनकर उसे क्रोध हो आया था। हनुमान जी ने देखा कि इस बार भयानक योद्धा आया है; वे दाँत कटकटाकर गरजे और दौड़े।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १९.३",
+      "dev": "अति बिसाल तरु एक उपारा।\nबिरथ कीन्ह लंकेस कुमारा॥\nरहे महाभट ताके संगा।\nगहि गहि कपि मर्दइ निज अंगा॥",
+      "roman": "ati bisaal taru ek upaaraa |\nbirath keenh lankes kumaaraa ||\nrahe mahaabhat taake sangaa |\ngahi gahi kapi mardai nij angaa ||",
+      "arth": "उन्होंने एक बहुत बड़ा पेड़ उखाड़ लिया और लंकापति के बेटे का रथ तोड़कर उसे बिना रथ का कर दिया। उसके साथ जो बड़े-बड़े योद्धा थे, उन्हें पकड़-पकड़कर हनुमान जी अपने शरीर से मसलने लगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १९.४",
+      "dev": "तिन्हहि निपाति ताहि सन बाजा।\nभिरे जुगल मानहुँ गजराजा॥\nमुठिका मारि चढ़ा तरु जाई।\nताहि एक छन मुरुछा आई॥",
+      "roman": "tinhahi nipaati taahi san baajaa |\nbhire jugal maanahu gajaraajaa ||\nmuthikaa maari chadhaa taru jaaee |\ntaahi ek chhan muruchhaa aaee ||",
+      "arth": "उन सबको मारकर वे मेघनाद से भिड़ गए। दोनों ऐसे भिड़े मानो दो गजराज भिड़ गए हों। हनुमान जी उसे एक घूँसा मारकर पेड़ पर जा चढ़े। मेघनाद को पल भर के लिए मूर्छा आ गई।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई १९.५",
+      "dev": "उठि बहोरि कीन्हिसि बहु माया।\nजीति न जाइ प्रभंजन जाया॥",
+      "roman": "uthi bahori keenhisi bahu maayaa |\njeeti na jaai prabhanjan jaayaa ||",
+      "arth": "फिर उठकर उसने बहुत माया रची, पर पवनपुत्र उससे जीते नहीं जाते थे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा १९",
+      "dev": "ब्रह्म अस्त्र तेहि साँधा कपि मन कीन्ह बिचार।\nजौं न ब्रह्मसर मानउँ महिमा मिटइ अपार॥",
+      "roman": "brahma astra tehi saandhaa kapi man keenh bichaar |\njau na brahmasar maanau mahimaa mitai apaar ||",
+      "arth": "तब उसने ब्रह्मास्त्र साधा। हनुमान जी ने मन में सोचा — अगर मैं ब्रह्मास्त्र को न मानूँ, तो उसकी अपार महिमा मिट जाएगी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २०.१",
+      "dev": "ब्रह्मबान कपि कहुँ तेहिं मारा।\nपरतिहुँ बार कटकु संघारा॥\nतेहि देखा कपि मुरुछित भयऊ।\nनागपास बाँधेसि लै गयऊ॥",
+      "roman": "brahmabaan kapi kahu tehi maaraa |\nparatihu baar kataku sanghaaraa ||\ntehi dekhaa kapi muruchhit bhayau |\nnaagapaas baandhesi lai gayau ||",
+      "arth": "उसने हनुमान जी को ब्रह्मबाण मारा। गिरते-गिरते भी उन्होंने बहुत-सी सेना मार डाली। जब मेघनाद ने देखा कि हनुमान जी मूर्छित हो गए हैं, तो वह उन्हें नागपाश से बाँधकर ले गया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २०.२",
+      "dev": "जासु नाम जपि सुनहु भवानी।\nभव बंधन काटहिं नर ग्यानी॥\nतासु दूत कि बंध तरु आवा।\nप्रभु कारज लगि कपिहिं बँधावा॥",
+      "roman": "jaasu naam japi sunahu bhavaanee |\nbhav bandhan kaatahi nar gyaanee ||\ntaasu doot ki bandh taru aavaa |\nprabhu kaaraj lagi kapihi bandhaavaa ||",
+      "arth": "(शिव जी कहते हैं —) हे भवानी, सुनो, जिनका नाम जपकर ज्ञानी मनुष्य संसार के बंधन काट डालते हैं, उनका दूत क्या कभी बंधन में आ सकता है? प्रभु के काम के लिए हनुमान जी ने अपने को स्वयं बँधवा लिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २०.३",
+      "dev": "कपि बंधन सुनि निसिचर धाए।\nकौतुक लागि सभाँ सब आए॥\nदसमुख सभा दीखि कपि जाई।\nकहि न जाइ कछु अति प्रभुताई॥",
+      "roman": "kapi bandhan suni nisichar dhaae |\nkautuk laagi sabhaan sab aae ||\ndasamukh sabhaa deekhi kapi jaaee |\nkahi na jaai kachhu ati prabhutaaee ||",
+      "arth": "हनुमान जी के बाँधे जाने की ख़बर सुनकर राक्षस दौड़े, और तमाशा देखने के लिए सब सभा में आ गए। हनुमान जी ने जाकर रावण की सभा देखी; उसका ऐश्वर्य इतना बड़ा था कि कुछ कहा नहीं जाता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २०.४",
+      "dev": "कर जोरें सुर दिसिप बिनीता।\nभृकुटि बिलोकत सकल सभीता॥\nदेखि प्रताप न कपि मन संका।\nजिमि अहिगन महुँ गरुड़ असंका॥",
+      "roman": "kar jore sur disip bineetaa |\nbhrikuti bilokat sakal sabheetaa ||\ndekhi prataap na kapi man sankaa |\njimi ahigan mahu garud asankaa ||",
+      "arth": "देवता और दिक्पाल हाथ जोड़े, बड़ी नम्रता से, डरे हुए सब रावण की भौंहों की ओर देख रहे थे। उसका ऐसा प्रताप देखकर भी हनुमान जी के मन में ज़रा भी डर नहीं हुआ; वे ऐसे निडर रहे जैसे साँपों के झुंड में गरुड़।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा २०",
+      "dev": "कपिहि बिलोकि दसानन बिहसा कहि दुर्बाद।\nसुत बध सुरति कीन्हि पुनि उपजा हृदयँ बिषाद॥",
+      "roman": "kapihi biloki dasaanan bihasaa kahi durbaad |\nsut badh surati keenhi puni upajaa hriday bishaad ||",
+      "arth": "हनुमान जी को देखकर रावण बुरे वचन कहता हुआ ठठाकर हँसा। फिर उसे बेटे के वध की याद आ गई, तो उसके मन में दुख हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "श्रीरामचरितमानस — पंचम सोपान (सुंदरकांड)",
+    "kshetra": "पूरे उत्तर भारत में प्रचलित",
+    "note": "पाठ एक सबके लिए खुले डिजिटल पाठ से लिया गया और पाँच छपी पुस्तकों से पंक्ति-दर-पंक्ति मिलाया गया। जहाँ आधार में छपाई की भूल थी, वहाँ वह रूप है जिस पर कम से कम तीन छपी पुस्तकें एक हैं। छपे मानसों में बिंदी-चंद्रबिंदु और कुछ शब्दों के रूप अलग-अलग मिलते हैं — आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है।\n\nचौपाइयों की गिनती छपी पुस्तकों के चलन पर है: \"चौपाई १२.३\" यानी दोहा १२ से पहले की तीसरी चौपाई।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

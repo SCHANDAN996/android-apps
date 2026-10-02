@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 1,
+  "id": "sundarkand_08",
+  "naam": "प्रसंग ८ — लौटकर श्री राम को समाचार",
+  "upnaam": [
+    "सुंदरकांड दोहा २८ से ३४",
+    "सुनु कपि तोहि समान उपकारी"
+  ],
+  "prakar": "granth",
+  "devta": "श्री राम और हनुमान जी",
+  "rachnakar": "गोस्वामी तुलसीदास — श्रीरामचरितमानस",
+  "bhasha": "अवधी",
+  "parichay": "हनुमान जी समुद्र लाँघकर साथियों के पास लौटते हैं; सब मधुवन में फल खाते हुए सुग्रीव और फिर श्री राम के पास पहुँचते हैं। हनुमान जी सीता जी का हाल और संदेश सुनाते हैं। श्री राम कहते हैं — \"मैं तुमसे उऋण नहीं हो सकता।\" हनुमान जी सारा श्रेय प्रभु के प्रताप को देते हैं और केवल अचल भक्ति माँगते हैं। सेना को चलने की आज्ञा होती है।",
+  "kabPadhein": "मंगलवार और शनिवार को ख़ास तौर पर — बहुत घरों में इन्हीं दिनों पूरा सुंदरकांड पढ़ने का चलन है। बाक़ी दिनों में भी, सुबह या शाम, कभी भी पढ़ सकते हैं।",
+  "kaisePadhein": "हाथ-मुँह धोकर साफ़ जगह पर बैठें। हो सके तो श्री राम और हनुमान जी के चित्र के सामने दीपक जलाएँ।\n\nपूरा पाठ एक बैठक में करने का चलन है; पढ़ने की चाल के हिसाब से इसमें एक से दो घंटे लगते हैं। एक बैठक में न हो तो प्रसंग-प्रसंग करके पढ़ सकते हैं — आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है। पाठ से पहले क्या पढ़ें और बाद में कौन-सी आरती हो, यह हर घर में अलग है; अपनी परंपरा देखिए।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर पद के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "चौपाई २८.१",
+      "dev": "चलत महाधुनि गर्जसि भारी।\nगर्भ स्रवहिं सुनि निसिचर नारी॥\nनाघि सिंधु एहि पारहि आवा।\nसबद किलिकिला कपिन्ह सुनावा॥",
+      "roman": "chalat mahaadhuni garjasi bhaaree |\ngarbha sravahi suni nisichar naaree ||\nnaaghi sindhu ehi paarahi aavaa |\nsabad kilikilaa kapinh sunaavaa ||",
+      "arth": "चलते समय हनुमान जी ने बड़े ज़ोर की भारी गर्जना की, जिसे सुनकर राक्षसों की स्त्रियों के गर्भ गिरने लगे। समुद्र लाँघकर वे इस पार आए और वानरों को हर्ष की किलकारी सुनाई।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २८.२",
+      "dev": "हरषे सब बिलोकि हनुमाना।\nनूतन जन्म कपिन्ह तब जाना॥\nमुख प्रसन्न तन तेज बिराजा।\nकीन्हेसि रामचन्द्र कर काजा॥",
+      "roman": "harashe sab biloki hanumaanaa |\nnootan janma kapinh tab jaanaa ||\nmukh prasanna tan tej biraajaa |\nkeenhesi raamachandra kar kaajaa ||",
+      "arth": "हनुमान जी को देखकर सब प्रसन्न हो गए। वानरों ने समझा कि उन्हें नया जन्म मिला है। हनुमान जी का मुख प्रसन्न था और शरीर पर तेज विराज रहा था — इसी से सबने जान लिया कि वे श्री रामचंद्र जी का काम कर आए हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २८.३",
+      "dev": "मिले सकल अति भए सुखारी।\nतलफत मीन पाव जिमि बारी॥\nचले हरषि रघुनायक पासा।\nपूँछत कहत नवल इतिहासा॥",
+      "roman": "mile sakal ati bhae sukhaaree |\ntalaphat meen paav jimi baaree ||\nchale harashi raghunaayak paasaa |\npoonchhat kahat naval itihaasaa ||",
+      "arth": "सब उनसे मिले और बहुत सुखी हुए, जैसे तड़पती मछली को पानी मिल गया हो। फिर सब प्रसन्न होकर, नया हाल पूछते-बताते रघुनाथ जी के पास चले।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २८.४",
+      "dev": "तब मधुबन भीतर सब आए।\nअंगद संमत मधु फल खाए॥\nरखवारे जब बरजन लागे।\nमुष्टि प्रहार हनत सब भागे॥",
+      "roman": "tab madhuban bheetar sab aae |\nangad sammat madhu phal khaae ||\nrakhavaare jab barajan laage |\nmushti prahaar hanat sab bhaage ||",
+      "arth": "तब सब मधुवन के भीतर आए और अंगद की सहमति से शहद और फल खाए। जब रखवाले रोकने लगे, तो घूँसों की मार खाकर सब भाग गए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा २८",
+      "dev": "जाइ पुकारे ते सब बन उजार जुबराज।\nसुनि सुग्रीव हरष कपि करि आए प्रभु काज॥",
+      "roman": "jaai pukaare te sab ban ujaar jubaraaj |\nsuni sugreev harash kapi kari aae prabhu kaaj ||",
+      "arth": "उन सबने जाकर पुकार की कि युवराज अंगद वन उजाड़ रहे हैं। यह सुनकर सुग्रीव प्रसन्न हुए कि वानर प्रभु का काम कर आए हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २९.१",
+      "dev": "जौं न होति सीता सुधि पाई।\nमधुबन के फल सकहिं कि खाई॥\nएहि बिधि मन बिचार कर राजा।\nआइ गए कपि सहित समाजा॥",
+      "roman": "jau na hoti seetaa sudhi paaee |\nmadhuban ke phal sakahi ki khaaee ||\nehi bidhi man bichaar kar raajaa |\naai gae kapi sahit samaajaa ||",
+      "arth": "अगर सीता जी की ख़बर न मिली होती, तो क्या वे मधुवन के फल खा सकते थे? राजा सुग्रीव मन में इस तरह सोच ही रहे थे कि वानर अपने दल के साथ आ पहुँचे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २९.२",
+      "dev": "आइ सबन्हि नावा पद सीसा।\nमिलेउ सबन्हि अति प्रेम कपीसा॥\nपूँछी कुसल कुसल पद देखी।\nराम कृपाँ भा काजु बिसेषी॥",
+      "roman": "aai sabanhi naavaa pad seesaa |\nmileu sabanhi ati prem kapeesaa ||\npoonchhee kusal kusal pad dekhee |\nraam kripaan bhaa kaaju biseshee ||",
+      "arth": "सबने आकर सुग्रीव के चरणों में सिर नवाया। वानरराज सुग्रीव सबसे बड़े प्रेम से मिले और कुशल पूछी। वानरों ने कहा — आपके चरण देखकर सब कुशल है। राम जी की कृपा से काम बहुत अच्छी तरह हो गया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २९.३",
+      "dev": "नाथ काजु कीन्हेउ हनुमाना।\nराखे सकल कपिन्ह के प्राना॥\nसुनि सुग्रीव बहुरि तेहि मिलेऊ।\nकपिन्ह सहित रघुपति पहिं चलेऊ॥",
+      "roman": "naath kaaju keenheu hanumaanaa |\nraakhe sakal kapinh ke praanaa ||\nsuni sugreev bahuri tehi mileu |\nkapinh sahit raghupati pahi chaleu ||",
+      "arth": "हे नाथ, यह काम हनुमान ने किया और सब वानरों के प्राण बचा लिए। यह सुनकर सुग्रीव हनुमान जी से फिर गले मिले और वानरों के साथ रघुनाथ जी के पास चले।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई २९.४",
+      "dev": "राम कपिन्ह जब आवत देखा।\nकिएँ काजु मन हरष बिसेषा॥\nफटिक सिला बैठे द्वौ भाई।\nपरे सकल कपि चरनन्हि जाई॥",
+      "roman": "raam kapinh jab aavat dekhaa |\nkie kaaju man harash biseshaa ||\nphatik silaa baithe dvau bhaaee |\npare sakal kapi charananhi jaaee ||",
+      "arth": "राम जी ने जब वानरों को काम करके आते देखा, तो उनके मन में विशेष हर्ष हुआ। दोनों भाई स्फटिक की शिला पर बैठे थे। सब वानर जाकर उनके चरणों में गिर पड़े।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा २९",
+      "dev": "प्रीति सहित सब भेटे रघुपति करुना पुंज।\nपूँछी कुसल नाथ अब कुसल देखि पद कंज॥",
+      "roman": "preeti sahit sab bhete raghupati karunaa punj |\npoonchhee kusal naath ab kusal dekhi pad kanj ||",
+      "arth": "करुणा की खान रघुनाथ जी सबसे प्रेम से गले मिले और कुशल पूछी। वानरों ने कहा — हे नाथ, आपके चरण-कमल देखकर अब कुशल है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३०.१",
+      "dev": "जामवंत कह सुनु रघुराया।\nजा पर नाथ करहु तुम्ह दाया॥\nताहि सदा सुभ कुसल निरंतर।\nसुर नर मुनि प्रसन्न ता ऊपर॥",
+      "roman": "jaamavant kah sunu raghuraayaa |\njaa par naath karahu tumh daayaa ||\ntaahi sadaa subh kusal nirantar |\nsur nar muni prasanna taa oopar ||",
+      "arth": "जाम्बवान ने कहा — हे रघुनाथ जी, सुनिए। हे नाथ, जिस पर आप दया करते हैं, उसका सदा शुभ होता है और वह सदा कुशल से रहता है। देवता, मनुष्य और मुनि सब उस पर प्रसन्न रहते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३०.२",
+      "dev": "सोइ बिजई बिनई गुन सागर।\nतासु सुजसु त्रैलोक उजागर॥\nप्रभु कीं कृपा भयउ सबु काजू।\nजन्म हमार सुफल भा आजू॥",
+      "roman": "soi bijaee binaee gun saagar |\ntaasu sujasu trailok ujaagar ||\nprabhu kee kripaa bhayau sabu kaajoo |\njanma hamaar suphal bhaa aajoo ||",
+      "arth": "वही विजयी है, वही विनम्र है, वही गुणों का सागर है। उसका सुयश तीनों लोकों में फैलता है। प्रभु की कृपा से सब काम हो गया। आज हमारा जन्म सफल हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३०.३",
+      "dev": "नाथ पवनसुत कीन्हि जो करनी।\nसहसहुँ मुख न जाइ सो बरनी॥\nपवनतनय के चरित सुहाए।\nजामवंत रघुपतिहि सुनाए॥",
+      "roman": "naath pavanasut keenhi jo karanee |\nsahasahu mukh na jaai so baranee ||\npavanatanay ke charit suhaae |\njaamavant raghupatihi sunaae ||",
+      "arth": "हे नाथ, पवनपुत्र हनुमान ने जो करनी की, उसका वर्णन हज़ार मुखों से भी नहीं हो सकता। तब जाम्बवान ने हनुमान जी के सुंदर चरित्र रघुनाथ जी को सुनाए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३०.४",
+      "dev": "सुनत कृपानिधि मन अति भाए।\nपुनि हनुमान हरषि हियँ लाए॥\nकहहु तात केहि भाँति जानकी।\nरहति करति रच्छा स्वप्रान की॥",
+      "roman": "sunat kripaanidhi man ati bhaae |\npuni hanumaan harashi hiya laae ||\nkahahu taat kehi bhaanti jaanakee |\nrahati karati rachchhaa svapraan kee ||",
+      "arth": "सुनकर कृपा के भंडार श्री राम के मन को वे बहुत अच्छे लगे। उन्होंने प्रसन्न होकर हनुमान जी को फिर हृदय से लगा लिया और कहा — हे तात, बताओ, जानकी किस तरह रहती हैं और अपने प्राणों की रक्षा कैसे करती हैं?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ३०",
+      "dev": "नाम पाहरू दिवस निसि ध्यान तुम्हार कपाट।\nलोचन निज पद जंत्रित जाहिं प्रान केहिं बाट॥",
+      "roman": "naam paaharoo divas nisi dhyaan tumhaar kapaat |\nlochan nij pad jantrit jaahi praan kehi baat ||",
+      "arth": "(हनुमान जी बोले —) आपका नाम दिन-रात पहरा देता है, आपका ध्यान ही किवाड़ है, और आँखें अपने ही चरणों में लगी हैं — यही ताला है। फिर प्राण किस रास्ते से निकलें?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३१.१",
+      "dev": "चलत मोहि चूड़ामनि दीन्ही।\nरघुपति हृदयँ लाइ सोइ लीन्ही॥\nनाथ जुगल लोचन भरि बारी।\nबचन कहे कछु जनककुमारी॥",
+      "roman": "chalat mohi choodaamani deenhee |\nraghupati hriday laai soi leenhee ||\nnaath jugal lochan bhari baaree |\nbachan kahe kachhu janakakumaaree ||",
+      "arth": "चलते समय उन्होंने मुझे यह चूड़ामणि दी। रघुनाथ जी ने उसे लेकर हृदय से लगा लिया। हनुमान जी ने कहा — हे नाथ, दोनों आँखों में आँसू भरकर जानकी जी ने कुछ वचन कहे —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३१.२",
+      "dev": "अनुज समेत गहेहु प्रभु चरना।\nदीन बंधु प्रनतारति हरना॥\nमन क्रम बचन चरन अनुरागी।\nकेहि अपराध नाथ हौं त्यागी॥",
+      "roman": "anuj samet gahehu prabhu charanaa |\ndeen bandhu pranataarati haranaa ||\nman kram bachan charan anuraagee |\nkehi aparaadh naath hau tyaagee ||",
+      "arth": "छोटे भाई के साथ प्रभु के चरण पकड़ना और कहना — आप दीनों के बंधु हैं, शरण में आए हुए का दुख हरने वाले हैं। मैं मन, वचन और कर्म से आपके चरणों से प्रेम करती हूँ; फिर हे नाथ, आपने किस अपराध से मुझे त्याग दिया?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३१.३",
+      "dev": "अवगुन एक मोर मैं माना।\nबिछुरत प्रान न कीन्ह पयाना॥\nनाथ सो नयनन्हि को अपराधा।\nनिसरत प्रान करहिं हठि बाधा॥",
+      "roman": "avagun ek mor mai maanaa |\nbichhurat praan na keenh payaanaa ||\nnaath so nayananhi ko aparaadhaa |\nnisarat praan karahi hathi baadhaa ||",
+      "arth": "हाँ, अपना एक दोष मैं मानती हूँ — आपसे बिछुड़ते ही मेरे प्राण नहीं निकल गए। पर हे नाथ, यह तो आँखों का अपराध है, जो प्राणों के निकलने में हठ करके रुकावट डालती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३१.४",
+      "dev": "बिरह अगिनि तनु तूल समीरा।\nस्वास जरइ छन माहिं सरीरा॥\nनयन स्रवहिं जलु निज हित लागी।\nजरैं न पाव देह बिरहागी॥",
+      "roman": "birah agini tanu tool sameeraa |\nsvaas jarai chhan maahi sareeraa ||\nnayan sravahi jalu nij hit laagee |\njarai na paav deh birahaagee ||",
+      "arth": "विरह आग है, शरीर रुई है और साँस हवा है; ऐसे में शरीर पल भर में जल जाए। पर आँखें अपने हित के लिए, प्रभु को देखने की आस में, आँसू बरसाती हैं, जिससे विरह की आग में भी देह जल नहीं पाती।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३१.५",
+      "dev": "सीता कै अति बिपति बिसाला।\nबिनहिं कहें भलि दीनदयाला॥",
+      "roman": "seetaa kai ati bipati bisaalaa |\nbinahi kahe bhali deenadayaalaa ||",
+      "arth": "सीता जी की विपत्ति बहुत बड़ी है। हे दीनदयाल, उसे बिना कहे ही रहने देना अच्छा है; कहने से आपको बड़ा दुख होगा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ३१",
+      "dev": "निमिष निमिष करुनानिधि जाहिं कलप सम बीति।\nबेगि चलिअ प्रभु आनिअ भुज बल खल दल जीति॥",
+      "roman": "nimish nimish karunaanidhi jaahi kalap sam beeti |\nbegi chalia prabhu aania bhuj bal khal dal jeeti ||",
+      "arth": "हे करुणा के भंडार, उनका एक-एक पल कल्प की तरह बीतता है। इसलिए हे प्रभु, जल्दी चलिए और अपनी भुजाओं के बल से दुष्टों के दल को जीतकर सीता जी को ले आइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३२.१",
+      "dev": "सुनि सीता दुख प्रभु सुख अयना।\nभरि आए जल राजिव नयना॥\nबचन कायँ मन मम गति जाही।\nसपनेहुँ बूझिअ बिपति कि ताही॥",
+      "roman": "suni seetaa dukh prabhu sukh ayanaa |\nbhari aae jal raajiv nayanaa ||\nbachan kaay man mam gati jaahee |\nsapanehu boojhia bipati ki taahee ||",
+      "arth": "सीता जी का दुख सुनकर सुख के धाम प्रभु की कमल जैसी आँखों में आँसू भर आए। वे बोले — जो मन, वचन और शरीर से मेरे ही आसरे है, उसे क्या सपने में भी विपत्ति हो सकती है?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३२.२",
+      "dev": "कह हनुमंत बिपति प्रभु सोई।\nजब तव सुमिरन भजन न होई॥\nकेतिक बात प्रभु जातुधान की।\nरिपुहि जीति आनिबी जानकी॥",
+      "roman": "kah hanumant bipati prabhu soee |\njab tav sumiran bhajan na hoee ||\nketik baat prabhu jaatudhaan kee |\nripuhi jeeti aanibee jaanakee ||",
+      "arth": "हनुमान जी ने कहा — हे प्रभु, विपत्ति तो वही है जब आपका स्मरण और भजन न हो। हे प्रभु, राक्षसों की बात ही कितनी है? आप शत्रु को जीतकर जानकी जी को ले आएँगे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३२.३",
+      "dev": "सुनु कपि तोहि समान उपकारी।\nनहिं कोउ सुर नर मुनि तनुधारी॥\nप्रति उपकार करौं का तोरा।\nसनमुख होइ न सकत मन मोरा॥",
+      "roman": "sunu kapi tohi samaan upakaaree |\nnahi kou sur nar muni tanudhaaree ||\nprati upakaar karau kaa toraa |\nsanamukh hoi na sakat man moraa ||",
+      "arth": "(भगवान बोले —) हे हनुमान, सुनो। देवता, मनुष्य, मुनि — कोई भी शरीर धारी तुम्हारे जैसा मेरा उपकारी नहीं है। मैं तुम्हारा बदला क्या चुकाऊँ? मेरा मन तो तुम्हारे सामने भी नहीं हो पाता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३२.४",
+      "dev": "सुनु सुत तोहि उरिन मैं नाहीं।\nदेखेउँ करि बिचार मन माहीं॥\nपुनि पुनि कपिहि चितव सुरत्राता।\nलोचन नीर पुलक अति गाता॥",
+      "roman": "sunu sut tohi urin mai naahee |\ndekheu kari bichaar man maahee ||\npuni puni kapihi chitav suratraataa |\nlochan neer pulak ati gaataa ||",
+      "arth": "हे पुत्र, सुनो, मैंने मन में ख़ूब सोचकर देख लिया — मैं तुमसे उऋण नहीं हो सकता। देवताओं के रक्षक प्रभु बार-बार हनुमान जी को देख रहे हैं; उनकी आँखों में प्रेम के आँसू भरे हैं और शरीर बहुत पुलकित है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ३२",
+      "dev": "सुनि प्रभु बचन बिलोकि मुख गात हरषि हनुमंत।\nचरन परेउ प्रेमाकुल त्राहि त्राहि भगवंत॥",
+      "roman": "suni prabhu bachan biloki mukh gaat harashi hanumant |\ncharan pareu premaakul traahi traahi bhagavant ||",
+      "arth": "प्रभु के वचन सुनकर और उनका मुख तथा पुलकित शरीर देखकर हनुमान जी हर्षित हो गए। प्रेम से व्याकुल होकर वे चरणों में गिर पड़े और बोले — हे भगवान, मेरी रक्षा कीजिए, रक्षा कीजिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३३.१",
+      "dev": "बार बार प्रभु चहइ उठावा।\nप्रेम मगन तेहि उठब न भावा॥\nप्रभु कर पंकज कपि कें सीसा।\nसुमिरि सो दसा मगन गौरीसा॥",
+      "roman": "baar baar prabhu chahai uthaavaa |\nprem magan tehi uthab na bhaavaa ||\nprabhu kar pankaj kapi ke seesaa |\nsumiri so dasaa magan gaureesaa ||",
+      "arth": "प्रभु उन्हें बार-बार उठाना चाहते हैं, पर प्रेम में डूबे हनुमान जी को चरणों से उठना अच्छा नहीं लगता। प्रभु का कर-कमल हनुमान जी के सिर पर है। उस दशा को याद करके शिव जी भी प्रेम में मग्न हो गए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३३.२",
+      "dev": "सावधान मन करि पुनि संकर।\nलागे कहन कथा अति सुंदर॥\nकपि उठाइ प्रभु हृदयँ लगावा।\nकर गहि परम निकट बैठावा॥",
+      "roman": "saavadhaan man kari puni sankar |\nlaage kahan kathaa ati sundar ||\nkapi uthaai prabhu hriday lagaavaa |\nkar gahi param nikat baithaavaa ||",
+      "arth": "फिर मन को सँभालकर शंकर जी अत्यंत सुंदर कथा कहने लगे — प्रभु ने हनुमान जी को उठाकर हृदय से लगाया और हाथ पकड़कर अपने बहुत पास बैठा लिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३३.३",
+      "dev": "कहु कपि रावन पालित लंका।\nकेहि बिधि दहेउ दुर्ग अति बंका॥\nप्रभु प्रसन्न जाना हनुमाना।\nबोला बचन बिगत अभिमाना॥",
+      "roman": "kahu kapi raavan paalit lankaa |\nkehi bidhi daheu durga ati bankaa ||\nprabhu prasanna jaanaa hanumaanaa |\nbolaa bachan bigat abhimaanaa ||",
+      "arth": "फिर पूछा — हे हनुमान, बताओ, रावण की रखवाली वाली लंका और उसके बड़े बाँके क़िले को तुमने किस तरह जलाया? हनुमान जी ने प्रभु को प्रसन्न जाना और अभिमान से रहित वचन बोले —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३३.४",
+      "dev": "साखामृग कै बड़ि मनुसाई।\nसाखा तें साखा पर जाई॥\nनाघि सिंधु हाटकपुर जारा।\nनिसिचर गन बधि बिपिन उजारा॥",
+      "roman": "saakhaamrig kai badi manusaaee |\nsaakhaa te saakhaa par jaaee ||\nnaaghi sindhu haatakapur jaaraa |\nnisichar gan badhi bipin ujaaraa ||",
+      "arth": "बंदर का बड़ा पुरुषार्थ बस यही है कि वह एक डाल से दूसरी डाल पर चला जाता है। मैंने जो समुद्र लाँघकर सोने की लंका जलाई, राक्षसों को मारकर अशोक वन उजाड़ा,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३३.५",
+      "dev": "सो सब तव प्रताप रघुराई।\nनाथ न कछू मोरि प्रभुताई॥",
+      "roman": "so sab tav prataap raghuraaee |\nnaath na kachhoo mori prabhutaaee ||",
+      "arth": "वह सब, हे रघुनाथ जी, आपका ही प्रताप है। हे नाथ, इसमें मेरी कोई बड़ाई नहीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ३३",
+      "dev": "ता कहुँ प्रभु कछु अगम नहिं जा पर तुम्ह अनुकूल।\nतव प्रभावँ बड़वानलहि जारि सकइ खलु तूल॥",
+      "roman": "taa kahu prabhu kachhu agam nahi jaa par tumh anukool |\ntav prabhaav badavaanalahi jaari sakai khalu tool ||",
+      "arth": "हे प्रभु, जिस पर आप प्रसन्न हों, उसके लिए कुछ भी कठिन नहीं। आपके प्रभाव से रुई भी समुद्र की आग, बड़वानल को निश्चय ही जला सकती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३४.१",
+      "dev": "नाथ भगति अति सुखदायनी।\nदेहु कृपा करि अनपायनी॥\nसुनि प्रभु परम सरल कपि बानी।\nएवमस्तु तब कहेउ भवानी॥",
+      "roman": "naath bhagati ati sukhadaayanee |\ndehu kripaa kari anapaayanee ||\nsuni prabhu param saral kapi baanee |\nevamastu tab kaheu bhavaanee ||",
+      "arth": "हे नाथ, कृपा करके मुझे अपनी वह अचल भक्ति दीजिए जो अत्यंत सुख देने वाली है। (शिव जी कहते हैं —) हे भवानी, हनुमान जी की बहुत सीधी-सरल वाणी सुनकर प्रभु ने कहा — ऐसा ही हो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३४.२",
+      "dev": "उमा राम सुभाउ जेहिं जाना।\nताहि भजनु तजि भाव न आना॥\nयह संबाद जासु उर आवा।\nरघुपति चरन भगति सोइ पावा॥",
+      "roman": "umaa raam subhaau jehi jaanaa |\ntaahi bhajanu taji bhaav na aanaa ||\nyah sambaad jaasu ur aavaa |\nraghupati charan bhagati soi paavaa ||",
+      "arth": "हे उमा, जिसने राम जी का स्वभाव जान लिया, उसे भजन छोड़कर दूसरी कोई बात अच्छी नहीं लगती। यह संवाद जिसके हृदय में बैठ गया, वही रघुनाथ जी के चरणों की भक्ति पा गया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३४.३",
+      "dev": "सुनि प्रभु बचन कहहिं कपिबृंदा।\nजय जय जय कृपाल सुखकंदा॥\nतब रघुपति कपिपतिहि बोलावा।\nकहा चलैं कर करहु बनावा॥",
+      "roman": "suni prabhu bachan kahahi kapibrindaa |\njai jai jai kripaal sukhakandaa ||\ntab raghupati kapipatihi bolaavaa |\nkahaa chalai kar karahu banaavaa ||",
+      "arth": "प्रभु के वचन सुनकर वानरों के झुंड कहने लगे — कृपालु, सुख के मूल श्री राम की जय हो, जय हो, जय हो। तब रघुनाथ जी ने वानरराज सुग्रीव को बुलाया और कहा — चलने की तैयारी करो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चौपाई ३४.४",
+      "dev": "अब बिलंबु केहि कारन कीजे।\nतुरत कपिन्ह कहुँ आयसु दीजे॥\nकौतुक देखि सुमन बहु बरषी।\nनभ तें भवन चले सुर हरषी॥",
+      "roman": "ab bilambu kehi kaaran keeje |\nturat kapinh kahu aayasu deeje ||\nkautuk dekhi suman bahu barashee |\nnabh te bhavan chale sur harashee ||",
+      "arth": "अब देर किस कारण की जाए? वानरों को तुरंत आज्ञा दो। यह लीला देखकर देवता बहुत-से फूल बरसाकर प्रसन्न होते हुए आकाश से अपने-अपने लोक को चले।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दोहा ३४",
+      "dev": "कपिपति बेगि बोलाए आए जूथप जूथ।\nनाना बरन अतुल बल बानर भालु बरूथ॥",
+      "roman": "kapipati begi bolaae aae joothap jooth |\nnaanaa baran atul bal baanar bhaalu barooth ||",
+      "arth": "वानरराज सुग्रीव ने तुरंत बुलावा भेजा और सेनापतियों के झुंड आ गए। वानरों और भालुओं के दल अनेक रंगों के थे और उनमें अतुल बल था।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "श्रीरामचरितमानस — पंचम सोपान (सुंदरकांड)",
+    "kshetra": "पूरे उत्तर भारत में प्रचलित",
+    "note": "पाठ एक सबके लिए खुले डिजिटल पाठ से लिया गया और पाँच छपी पुस्तकों से पंक्ति-दर-पंक्ति मिलाया गया। जहाँ आधार में छपाई की भूल थी, वहाँ वह रूप है जिस पर कम से कम तीन छपी पुस्तकें एक हैं। छपे मानसों में बिंदी-चंद्रबिंदु और कुछ शब्दों के रूप अलग-अलग मिलते हैं — आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है।\n\nचौपाइयों की गिनती छपी पुस्तकों के चलन पर है: \"चौपाई १२.३\" यानी दोहा १२ से पहले की तीसरी चौपाई।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}
