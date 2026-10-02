@@ -1,14 +1,58 @@
+import 'dart:math' as math;
+
 import 'angles.dart';
 import 'julian.dart';
+import 'nutation.dart';
+import 'vsop_data.dart';
 
-/// सूर्य की स्थिति। Meeus अध्याय 25 (कम-सटीकता वाला तरीक़ा,
-/// ~0.01° यानी 36 विकला तक सही)।
+/// सूर्य की स्थिति।
 ///
-/// तिथि 12° चौड़ी होती है, इसलिए 0.01° की ग़लती का मतलब है
-/// समय में लगभग 20 सेकंड — पंचांग के लिए ज़रूरत से कहीं ज़्यादा सटीक।
+/// ## दो सूत्र, दो काम (→ D-104, 2 अक्टूबर 2026)
+///
+/// | | किससे | कितना सही | कहाँ लगता है |
+/// |---|---|---|---|
+/// | [sunApparentLongitude] | VSOP87 — पृथ्वी की L शृंखला (Meeus 25, ऊँची सटीकता वाला तरीक़ा) | NASA JPL Horizons से **0.3 विकला** | तिथि, योग, करण, संक्रांति, राशि, कुंडली, ग्रहण |
+/// | [sunApparentLongitudeLaghu] | Meeus 25 का छोटा सूत्र | 21.5 विकला तक (वादा 36) | सिर्फ़ सूर्योदय-सूर्यास्त — वहाँ 21 विकला का मतलब डेढ़ सेकंड है, और यह दस गुना तेज़ है |
+///
+/// 2 अक्टूबर 2026 तक पूरा पंचांग छोटे सूत्र पर था। नाप (`tool/surya_milan.dart`,
+/// `tool/sandarbh_farq.dart`, `docs/08` §17): संक्रांति का क्षण संदर्भ-पंचांग से
+/// ±5 मिनट इधर-उधर था, अब एक ही तरफ़ 30–90 सेकंड (जो संदर्भ की अपनी गोलाई
+/// है); और तिथि का अंत NASA से ±34 सेकंड था, अब ±10।
+///
+/// ⚠️ इस फ़ाइल को **नापे बिना** कोई न बदले — पूरा पंचांग इसी पर टिका है
+/// (→ D-014: मिलाने के लिए गणित नहीं बिगाड़ना; सुधारना हो तो पहले नापना)।
 
 /// सूर्य का सायन (tropical) आभासी देशांतर, डिग्री में। JDE (TT) चाहिए।
+///
+/// पृथ्वी का सूर्य-केंद्रित देशांतर (VSOP87D) + 180° = सूर्य का भू-केंद्रित
+/// देशांतर; फिर FK5 का सुधार, aberration और नतांश। पृथ्वी का अक्षांश (B) यहाँ
+/// नहीं चाहिए — सूर्य क्रांतिवृत्त से 1.2 विकला से ज़्यादा कभी नहीं हटता, और
+/// देशांतर पर उसका असर 10⁻⁶ विकला है। पूरा रास्ता (B और R सहित) `graha.dart`
+/// के `sunLongitudeVsop` में है; दोनों का आपस में मिलना `graha_test` देखता है।
 double sunApparentLongitude(double jde) {
+  // VSOP का समय सहस्राब्दी में चलता है, शताब्दी में नहीं।
+  final tau = (jde - j2000) / 365250.0;
+  var kul = 0.0;
+  var ghaat = 1.0; // τ^α
+  for (final pad in prithviL) {
+    var s = 0.0;
+    for (var i = 0; i < pad.length; i += 3) {
+      s += pad[i] * math.cos(pad[i + 1] + pad[i + 2] * tau);
+    }
+    kul += s * ghaat;
+    ghaat *= tau;
+  }
+  final lambda = kul * radToDeg +
+      180.0 -
+      0.09033 / 3600.0 - // FK5
+      20.4898 / (sunDistance(jde) / _khagoliyaIkai) / 3600.0 + // aberration
+      nutationInLongitude(jde);
+  return norm360(lambda);
+}
+
+/// सूर्य का आभासी देशांतर — **छोटा सूत्र** (Meeus अध्याय 25, कम-सटीकता वाला
+/// तरीक़ा, ~0.01° यानी 36 विकला तक सही)। सिर्फ़ सूर्योदय-सूर्यास्त के लिए।
+double sunApparentLongitudeLaghu(double jde) {
   final t = julianCenturies(jde);
 
   // ज्यामितीय माध्य देशांतर
@@ -54,10 +98,20 @@ double trueObliquity(double jde) =>
     meanObliquity(jde) +
     0.00256 * cosD(125.04 - 1934.136 * julianCenturies(jde));
 
-/// सूर्य का आभासी दाहिना आरोहण (RA) और क्रांति (declination), डिग्री।
-/// सूर्योदय-सूर्यास्त निकालने के लिए चाहिए।
-({double rightAscension, double declination}) sunEquatorial(double jde) {
-  final lambda = sunApparentLongitude(jde);
+/// सूर्य का आभासी दाहिना आरोहण (RA) और क्रांति (declination), डिग्री —
+/// पूरी सटीकता से ([sunApparentLongitude])। सूर्यग्रहण में यही लगता है।
+({double rightAscension, double declination}) sunEquatorial(double jde) =>
+    _vishuvatiya(sunApparentLongitude(jde), jde);
+
+/// वही, छोटे सूत्र से ([sunApparentLongitudeLaghu]) — **सूर्योदय-सूर्यास्त
+/// के लिए**। वहाँ सूर्य हर दिन दर्जनों बार निकाला जाता है (कैलेंडर के 42
+/// खाने, साल भर के त्योहार → D-097), और 21 विकला की ग़लती उगने के समय में
+/// डेढ़ सेकंड से कम है।
+({double rightAscension, double declination}) sunEquatorialLaghu(double jde) =>
+    _vishuvatiya(sunApparentLongitudeLaghu(jde), jde);
+
+({double rightAscension, double declination}) _vishuvatiya(
+    double lambda, double jde) {
   final epsilon = trueObliquity(jde);
 
   final ra = norm360(atan2D(cosD(epsilon) * sinD(lambda), cosD(lambda)));

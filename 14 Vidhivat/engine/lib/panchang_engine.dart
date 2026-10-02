@@ -46,6 +46,7 @@ export 'src/place.dart' show Place;
 export 'src/sun.dart'
     show
         sunApparentLongitude,
+        sunApparentLongitudeLaghu,
         sunDistance,
         sunEquatorial,
         meanObliquity,

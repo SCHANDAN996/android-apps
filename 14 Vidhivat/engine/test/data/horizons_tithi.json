@@ -1,0 +1,90 @@
+{
+ "_srot": "NASA JPL Horizons API — चंद्र (301) और सूर्य (10), observer table, geocentric (500@399), quantity 31 (ObsEcLon), TIME_TYPE=UT, हर मिनट; अंतर 12° के गुणज को जहाँ पार करे (दो मिनटों के बीच सीधी रेखा से)।",
+ "_note": "जाँच का डेटा। tools/horizons_tithi.py से बना; हाथ से मत बदलना। tithiAntIst — तिथि का अंत, भारतीय समय में, सेकंड तक। sandarbh — संदर्भ-पंचांग का छपा समय (मिनट तक), तुलना के लिए।",
+ "entries": [
+  {
+   "date": "2026-01-14",
+   "city": "delhi",
+   "tithiAntIst": "2026-01-14T17:53:15",
+   "sandarbh": "17:52",
+   "sandarbhSeFarqSec": 76
+  },
+  {
+   "date": "2026-04-01",
+   "city": "patna",
+   "tithiAntIst": "2026-04-01T07:06:44",
+   "sandarbh": "07:06",
+   "sandarbhSeFarqSec": 44
+  },
+  {
+   "date": "2026-05-15",
+   "city": "jaipur",
+   "tithiAntIst": "2026-05-15T08:31:46",
+   "sandarbh": "08:31",
+   "sandarbhSeFarqSec": 46
+  },
+  {
+   "date": "2026-06-01",
+   "city": "delhi",
+   "tithiAntIst": "2026-06-01T16:37:39",
+   "sandarbh": "16:37",
+   "sandarbhSeFarqSec": 40
+  },
+  {
+   "date": "2026-06-21",
+   "city": "delhi",
+   "tithiAntIst": "2026-06-21T15:21:09",
+   "sandarbh": "15:20",
+   "sandarbhSeFarqSec": 70
+  },
+  {
+   "date": "2026-07-10",
+   "city": "nagpur",
+   "tithiAntIst": "2026-07-10T08:16:51",
+   "sandarbh": "08:16",
+   "sandarbhSeFarqSec": 52
+  },
+  {
+   "date": "2026-08-20",
+   "city": "delhi",
+   "tithiAntIst": "2026-08-20T21:18:54",
+   "sandarbh": "21:18",
+   "sandarbhSeFarqSec": 54
+  },
+  {
+   "date": "2026-09-15",
+   "city": "chennai",
+   "tithiAntIst": "2026-09-15T07:44:43",
+   "sandarbh": "07:44",
+   "sandarbhSeFarqSec": 44
+  },
+  {
+   "date": "2026-10-10",
+   "city": "delhi",
+   "tithiAntIst": "2026-10-10T21:20:05",
+   "sandarbh": "21:19",
+   "sandarbhSeFarqSec": 65
+  },
+  {
+   "date": "2026-11-05",
+   "city": "patna",
+   "tithiAntIst": "2026-11-05T10:36:09",
+   "sandarbh": "10:35",
+   "sandarbhSeFarqSec": 69
+  },
+  {
+   "date": "2026-12-21",
+   "city": "delhi",
+   "tithiAntIst": "2026-12-21T17:36:52",
+   "sandarbh": "17:36",
+   "sandarbhSeFarqSec": 52
+  },
+  {
+   "date": "2036-01-14",
+   "city": "delhi",
+   "tithiAntIst": "2036-01-14T12:59:10",
+   "sandarbh": "12:58",
+   "sandarbhSeFarqSec": 71
+  }
+ ]
+}

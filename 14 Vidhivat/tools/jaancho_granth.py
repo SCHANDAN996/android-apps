@@ -37,8 +37,9 @@ WEB = re.compile(r'https?://|www\.|\.com\b|\.org\b|\.in\b', re.I)
 
 
 def padho(path):
+    # git का autocrlf checkout पर CRLF कर देता है — मिलान पंक्ति-अंत से स्वतंत्र
     with io.open(path, encoding='utf-8', newline='') as f:
-        return f.read()
+        return f.read().replace('\r\n', '\n')
 
 
 def jaancho(gid):

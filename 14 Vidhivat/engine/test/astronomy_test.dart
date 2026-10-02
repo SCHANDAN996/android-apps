@@ -478,9 +478,21 @@ void main() {
       expect(p2.karanas.length, greaterThanOrEqualTo(2),
           reason: 'दिन में कम से कम दो करण चलते हैं');
       expect(p2.karanas[0].name, contains('विष्टि'));
-      expect(_hhmm(p2.karanas[0].endsAt!), '08:15');
       expect(p2.karanas[1].name, 'बव');
-      expect(_hhmm(p2.karanas[1].endsAt!), '21:18');
+
+      // ⚠️ मिनट का हूबहू मिलान नहीं, दो मिनट की छूट — वही जो `reference_test`
+      // में है। 2 अक्टूबर 2026 को NASA JPL Horizons से नापा गया कि Drik के
+      // छपे समय असली क्षण से 50–75 सेकंड **पहले** होते हैं (→ docs/08 §17);
+      // हमारा समय NASA के पास है, इसलिए Drik के मिनट से कभी-कभी एक आगे।
+      void paas(DateTime mila, int ghanta, int minute) {
+        final chahiye =
+            DateTime.utc(mila.year, mila.month, mila.day, ghanta, minute);
+        expect(mila.difference(chahiye).inSeconds.abs(), lessThanOrEqualTo(120),
+            reason: 'मिला ${_hhmm(mila)}, Drik $ghanta:$minute');
+      }
+
+      paas(p2.karanas[0].endsAt!, 8, 15);
+      paas(p2.karanas[1].endsAt!, 21, 18);
     });
 
     test('ज़्यादातर दिनों में एक से ज़्यादा करण होते हैं', () {

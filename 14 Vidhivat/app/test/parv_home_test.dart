@@ -70,7 +70,11 @@ void main() {
       final saath = avsar(2026, 10, 19)!;
       expect(saath.naam, 'अष्टमी और नवमी');
       expect(saath.vidhiId, isNull);
-      expect(saath.neeche, 'संधि पूजा 10:27–11:15');
+      // 2 अक्टूबर 2026 तक यह 10:27–11:15 था। पंचांग का सूर्य VSOP पर आने से
+      // (→ D-104) अष्टमी का अंत 23 सेकंड आगे खिसका और मिनट बदल गया। नया समय
+      // NASA के क्षण के पास है; संदर्भ-पंचांग के छपे समय असली क्षण से लगभग
+      // एक मिनट पहले होते हैं।
+      expect(saath.neeche, 'संधि पूजा 10:28–11:16');
       expect(saath.artworkAsset, contains('mahagauri'));
     });
 

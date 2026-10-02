@@ -64,7 +64,9 @@ sunrise moonrise ayanamsa  moon      │
 ### `lib/src/sun.dart`
 | फलन | क्या करता है |
 |---|---|
-| `sunApparentLongitude(jde)` | सूर्य का सायन आभासी देशांतर (नतांश शामिल) |
+| `sunApparentLongitude(jde)` | सूर्य का सायन आभासी देशांतर (नतांश शामिल) — **VSOP87**, NASA से 0.3″ (→ D-104) |
+| `sunApparentLongitudeLaghu(jde)` | छोटा सूत्र (21″ तक) — सिर्फ़ सूर्योदय-सूर्यास्त के लिए, दस गुना तेज़ |
+| `sunEquatorialLaghu(jde)` | RA और क्रांति, छोटे सूत्र से — सूर्योदय के लिए |
 | `sunEquatorial(jde)` | RA और क्रांति — सूर्योदय के लिए |
 | `meanObliquity(jde)` | क्रांतिवृत्त की तिरछाहट |
 

@@ -34,7 +34,7 @@ double greenwichMeanSiderealTime(double jdUt) {
 /// दिए गए क्षण पर सूर्य की ऊँचाई (altitude), डिग्री। JD (UT) चाहिए।
 double sunAltitude(double jdUt, Place place) {
   final jde = toEphemerisTime(jdUt);
-  final eq = sunEquatorial(jde);
+  final eq = sunEquatorialLaghu(jde);
 
   final lst = greenwichMeanSiderealTime(jdUt) + place.longitude;
   final hourAngle = norm180(lst - eq.rightAscension);
