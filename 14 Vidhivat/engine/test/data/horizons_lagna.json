@@ -1,0 +1,774 @@
+{
+ "_srot": "NASA JPL Horizons API — सूर्य (10), observer table, शहर की सतह से (coord@399, geodetic), quantities 4 (airless elevation) और 31 (ObsEcLon), TIME_TYPE=UT, हर मिनट; ऊँचाई जहाँ शून्य पार करे (दो मिनटों के बीच सीधी रेखा)।",
+ "_note": "जाँच का डेटा। tools/horizons_lagna.py से बना; हाथ से मत बदलना। lagnaSayan — उस क्षण लग्न का सायन देशांतर: उगते समय सूर्य का देशांतर, डूबते समय +180°।",
+ "entries": [
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "uday",
+   "ut": "1975-01-15T01:11:33.056",
+   "lagnaSayan": 294.25633
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "ast",
+   "ut": "1975-01-15T11:45:54.651",
+   "lagnaSayan": 114.70082
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "uday",
+   "ut": "1988-03-21T00:26:15.239",
+   "lagnaSayan": 0.61405
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "ast",
+   "ut": "1988-03-21T12:27:23.795",
+   "lagnaSayan": 181.10738
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "uday",
+   "ut": "1996-05-09T23:40:48.783",
+   "lagnaSayan": 49.60622
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "ast",
+   "ut": "1996-05-10T12:51:08.098",
+   "lagnaSayan": 230.1324
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "uday",
+   "ut": "2003-07-03T23:36:56.441",
+   "lagnaSayan": 101.62619
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "ast",
+   "ut": "2003-07-04T13:10:26.624",
+   "lagnaSayan": 282.16067
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "uday",
+   "ut": "2011-08-28T00:01:44.171",
+   "lagnaSayan": 154.37163
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "ast",
+   "ut": "2011-08-28T12:39:35.113",
+   "lagnaSayan": 334.87595
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "uday",
+   "ut": "2019-10-17T00:22:28.880",
+   "lagnaSayan": 203.3387
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "ast",
+   "ut": "2019-10-17T11:46:57.215",
+   "lagnaSayan": 23.80597
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "uday",
+   "ut": "2026-11-30T00:51:41.290",
+   "lagnaSayan": 247.81742
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "ast",
+   "ut": "2026-11-30T11:24:09.214",
+   "lagnaSayan": 68.25799
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "uday",
+   "ut": "1964-02-09T01:03:15.624",
+   "lagnaSayan": 319.30761
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "ast",
+   "ut": "1964-02-09T12:04:25.295",
+   "lagnaSayan": 139.7684
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "uday",
+   "ut": "1952-06-20T23:33:01.511",
+   "lagnaSayan": 89.53845
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "ast",
+   "ut": "1952-06-21T13:09:02.854",
+   "lagnaSayan": 270.07508
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "uday",
+   "ut": "2034-12-22T01:05:43.584",
+   "lagnaSayan": 270.23671
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "ast",
+   "ut": "2034-12-22T11:30:04.116",
+   "lagnaSayan": 90.67373
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "uday",
+   "ut": "1947-04-13T00:03:35.162",
+   "lagnaSayan": 22.23275
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "ast",
+   "ut": "1947-04-13T12:37:15.976",
+   "lagnaSayan": 202.74165
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "uday",
+   "ut": "2000-09-23T00:12:03.571",
+   "lagnaSayan": 180.27738
+  },
+  {
+   "sthan": "patna",
+   "longitude": 85.1376,
+   "latitude": 25.5941,
+   "kism": "ast",
+   "ut": "2000-09-23T12:11:04.332",
+   "lagnaSayan": 0.76227
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "uday",
+   "ut": "1975-01-15T01:49:19.207",
+   "lagnaSayan": 294.28297
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "ast",
+   "ut": "1975-01-15T12:11:36.502",
+   "lagnaSayan": 114.71905
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "uday",
+   "ut": "1988-03-21T00:57:52.697",
+   "lagnaSayan": 0.63576
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "ast",
+   "ut": "1988-03-21T12:59:14.440",
+   "lagnaSayan": 181.12935
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "uday",
+   "ut": "1996-05-10T00:07:36.138",
+   "lagnaSayan": 49.62411
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "ast",
+   "ut": "1996-05-10T13:27:49.243",
+   "lagnaSayan": 230.15704
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "uday",
+   "ut": "2003-07-04T00:02:03.207",
+   "lagnaSayan": 101.64276
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "ast",
+   "ut": "2003-07-04T13:48:44.952",
+   "lagnaSayan": 282.18611
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "uday",
+   "ut": "2011-08-28T00:30:47.211",
+   "lagnaSayan": 154.3911
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "ast",
+   "ut": "2011-08-28T13:13:53.762",
+   "lagnaSayan": 334.89907
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "uday",
+   "ut": "2019-10-17T00:56:39.105",
+   "lagnaSayan": 203.36221
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "ast",
+   "ut": "2019-10-17T12:16:09.452",
+   "lagnaSayan": 23.82618
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "uday",
+   "ut": "2026-11-30T01:29:35.599",
+   "lagnaSayan": 247.84404
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "ast",
+   "ut": "2026-11-30T11:49:40.402",
+   "lagnaSayan": 68.27604
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "uday",
+   "ut": "1964-02-09T01:39:05.577",
+   "lagnaSayan": 319.33272
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "ast",
+   "ut": "1964-02-09T12:32:03.489",
+   "lagnaSayan": 139.78786
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "uday",
+   "ut": "1952-06-20T23:57:57.595",
+   "lagnaSayan": 89.5549
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "ast",
+   "ut": "1952-06-21T13:47:33.084",
+   "lagnaSayan": 270.10067
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "uday",
+   "ut": "2034-12-22T01:44:13.977",
+   "lagnaSayan": 270.26387
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "ast",
+   "ut": "2034-12-22T11:55:00.796",
+   "lagnaSayan": 90.69144
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "uday",
+   "ut": "1947-04-13T00:32:56.964",
+   "lagnaSayan": 22.25264
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "ast",
+   "ut": "1947-04-13T13:11:22.520",
+   "lagnaSayan": 202.76488
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "uday",
+   "ut": "2000-09-23T00:43:48.859",
+   "lagnaSayan": 180.29896
+  },
+  {
+   "sthan": "delhi",
+   "longitude": 77.209,
+   "latitude": 28.6139,
+   "kism": "ast",
+   "ut": "2000-09-23T12:42:40.747",
+   "lagnaSayan": 0.78386
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "uday",
+   "ut": "1975-01-15T01:08:47.853",
+   "lagnaSayan": 294.25468
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "ast",
+   "ut": "1975-01-15T12:27:31.328",
+   "lagnaSayan": 114.73015
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "uday",
+   "ut": "1988-03-21T00:45:57.133",
+   "lagnaSayan": 0.628
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "ast",
+   "ut": "1988-03-21T12:46:25.815",
+   "lagnaSayan": 181.12054
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "uday",
+   "ut": "1996-05-10T00:18:21.416",
+   "lagnaSayan": 49.63175
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "ast",
+   "ut": "1996-05-10T12:52:21.614",
+   "lagnaSayan": 230.13318
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "uday",
+   "ut": "2003-07-04T00:20:36.828",
+   "lagnaSayan": 101.65528
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "ast",
+   "ut": "2003-07-04T13:05:46.298",
+   "lagnaSayan": 282.15733
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "uday",
+   "ut": "2011-08-28T00:31:05.698",
+   "lagnaSayan": 154.39131
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "ast",
+   "ut": "2011-08-28T12:49:20.874",
+   "lagnaSayan": 334.88215
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "uday",
+   "ut": "2019-10-17T00:32:55.008",
+   "lagnaSayan": 203.34586
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "ast",
+   "ut": "2019-10-17T12:15:37.221",
+   "lagnaSayan": 23.82535
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "uday",
+   "ut": "2026-11-30T00:48:31.713",
+   "lagnaSayan": 247.81531
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "ast",
+   "ut": "2026-11-30T12:06:20.203",
+   "lagnaSayan": 68.28737
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "uday",
+   "ut": "1964-02-09T01:07:28.388",
+   "lagnaSayan": 319.31092
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "ast",
+   "ut": "1964-02-09T12:38:59.729",
+   "lagnaSayan": 139.79269
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "uday",
+   "ut": "1952-06-21T00:17:19.213",
+   "lagnaSayan": 89.56803
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "ast",
+   "ut": "1952-06-21T13:03:41.554",
+   "lagnaSayan": 270.07133
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "uday",
+   "ut": "2034-12-22T01:00:23.228",
+   "lagnaSayan": 270.23315
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "ast",
+   "ut": "2034-12-22T12:14:21.288",
+   "lagnaSayan": 90.70482
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "uday",
+   "ut": "1947-04-13T00:31:39.632",
+   "lagnaSayan": 22.25222
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "ast",
+   "ut": "1947-04-13T12:47:55.327",
+   "lagnaSayan": 202.74893
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "uday",
+   "ut": "2000-09-23T00:31:25.119",
+   "lagnaSayan": 180.29051
+  },
+  {
+   "sthan": "chennai",
+   "longitude": 80.2707,
+   "latitude": 13.0827,
+   "kism": "ast",
+   "ut": "2000-09-23T12:30:49.830",
+   "lagnaSayan": 0.77535
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "uday",
+   "ut": "1975-01-15T02:11:00.156",
+   "lagnaSayan": 294.29813
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "ast",
+   "ut": "1975-01-15T12:09:15.954",
+   "lagnaSayan": 114.7175
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "uday",
+   "ut": "1988-03-21T01:07:23.057",
+   "lagnaSayan": 0.64213
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "ast",
+   "ut": "1988-03-21T13:09:07.696",
+   "lagnaSayan": 181.1362
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "uday",
+   "ut": "1996-05-10T00:07:30.610",
+   "lagnaSayan": 49.62386
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "ast",
+   "ut": "1996-05-10T13:47:18.312",
+   "lagnaSayan": 230.17019
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "uday",
+   "ut": "2003-07-03T23:58:32.368",
+   "lagnaSayan": 101.6403
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "ast",
+   "ut": "2003-07-04T14:11:31.218",
+   "lagnaSayan": 282.20135
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "uday",
+   "ut": "2011-08-28T00:35:09.734",
+   "lagnaSayan": 154.39399
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "ast",
+   "ut": "2011-08-28T13:28:42.034",
+   "lagnaSayan": 334.90919
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "uday",
+   "ut": "2019-10-17T01:11:07.740",
+   "lagnaSayan": 203.37214
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "ast",
+   "ut": "2019-10-17T12:20:53.016",
+   "lagnaSayan": 23.82963
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "uday",
+   "ut": "2026-11-30T01:51:31.632",
+   "lagnaSayan": 247.85936
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "ast",
+   "ut": "2026-11-30T11:47:00.035",
+   "lagnaSayan": 68.27434
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "uday",
+   "ut": "1964-02-09T01:56:54.408",
+   "lagnaSayan": 319.34506
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "ast",
+   "ut": "1964-02-09T12:33:36.727",
+   "lagnaSayan": 139.78901
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "uday",
+   "ut": "1952-06-20T23:54:05.394",
+   "lagnaSayan": 89.55219
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "ast",
+   "ut": "1952-06-21T14:10:43.101",
+   "lagnaSayan": 270.11617
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "uday",
+   "ut": "2034-12-22T02:07:23.725",
+   "lagnaSayan": 270.28009
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "ast",
+   "ut": "2034-12-22T11:51:09.114",
+   "lagnaSayan": 90.68886
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "uday",
+   "ut": "1947-04-13T00:37:59.571",
+   "lagnaSayan": 22.25588
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "ast",
+   "ut": "1947-04-13T13:25:43.979",
+   "lagnaSayan": 202.77469
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "uday",
+   "ut": "2000-09-23T00:53:31.701",
+   "lagnaSayan": 180.30554
+  },
+  {
+   "sthan": "srinagar",
+   "longitude": 74.7973,
+   "latitude": 34.0837,
+   "kism": "ast",
+   "ut": "2000-09-23T12:52:09.134",
+   "lagnaSayan": 0.79049
+  }
+ ]
+}

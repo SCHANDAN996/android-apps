@@ -10,8 +10,9 @@ import 'package:test/test.dart';
 /// ⚠️ **ये जाँचें गणित की हैं, परंपरा की नहीं।** इनमें कोई असली जन्मपत्री
 /// नहीं है। लग्न की जाँच खगोल से है (जो बिंदु "उग रहा" कहा गया, वह सचमुच
 /// क्षितिज पर है या नहीं); ग्रह `graha_test.dart` में JPL Horizons से मिले
-/// हैं; दशा अंकगणित है। किसी छपी जन्मपत्री और संदर्भ-पंचांग की कुंडली से
-/// मिलान **अभी बाक़ी** है — इसीलिए `kundaliIsReady` `false` है।
+/// हैं; दशा अंकगणित है। लग्न का NASA से मिलान `lagna_nasa_test.dart` में है
+/// (96 क्षण, 15 विकला) — उसी के बाद `kundaliIsReady` `true` हुआ (→ D-105)।
+/// किसी छपी जन्मपत्री से मिलान अब भी बाक़ी है; वह परंपरा की जाँच होगी।
 void main() {
   double jdOf(DateTime utc) => julianDayFromUtc(utc);
 
@@ -201,8 +202,8 @@ void main() {
     final janm = DateTime.utc(2026, 10, 2, 1, 0);
     final k = computeKundali(janm, Place.patna);
 
-    test('अभी ऐप के लिए तैयार नहीं — संदर्भ से मिलान बाक़ी', () {
-      expect(kundaliIsReady, isFalse);
+    test('ऐप के लिए तैयार — लग्न NASA से मिल चुका (→ lagna_nasa_test)', () {
+      expect(kundaliIsReady, isTrue);
     });
 
     test('नौ ग्रह, अपने क्रम में', () {

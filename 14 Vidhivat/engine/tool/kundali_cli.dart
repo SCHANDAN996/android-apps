@@ -106,6 +106,6 @@ void main(List<String> args) {
     ..writeln('  स्पष्ट  ${spasht.rashiNaam.padRight(8)} ${_ansh(spasht.ansh)}   '
         '${spasht.nakshatraNaam} चरण ${spasht.charan}   (सन्निकट — 0.2° तक इधर-उधर)')
     ..writeln('')
-    ..writeln('⚠ kundaliIsReady = $kundaliIsReady — छपी जन्मपत्री से मिलाकर '
-        'docs/08 §16 में दर्ज कीजिए।');
+    ..writeln('गणित NASA से मिला हुआ है (docs/08 §18)। छपी जन्मपत्री से मिलाएँ तो '
+        'राहु और दशा के साल का चलन देखिए, और docs/08 §16 में दर्ज कीजिए।');
 }

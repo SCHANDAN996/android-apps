@@ -30,6 +30,8 @@ export 'src/nutation.dart' show nutationInLongitude;
 export 'src/dasha.dart';
 export 'src/graha.dart';
 export 'src/kundali.dart';
+export 'src/bharat_samay.dart';
+export 'src/janm_panchang.dart';
 export 'src/festival.dart';
 export 'src/grahan.dart';
 export 'src/muhurta.dart';
