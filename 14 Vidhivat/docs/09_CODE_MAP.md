@@ -592,9 +592,11 @@ app/lib/screens/paath_screen.dart         GranthNavigation — नीचे क�
 
 | औज़ार / जाँच | क्या |
 |---|---|
-| `tools/banao_granth.py <id>` | `tools/granth_paath/<id>/` → ऐप की JSON |
+| `tools/banao_granth.py <id>` | `tools/granth_paath/<id>/` → ऐप की JSON। दो ढाँचे: गीता वाला (`mool.txt` + `arth/`) और `"dhancha": "khand"` (`paath/<कुंजी>.txt` — सप्तशती, सूक्त…) |
 | `tools/jaancho_granth.py` | ऐप की JSON औज़ार के नतीजे से हूबहू है या नहीं + कंटेंट के नियम |
-| `tools/lipi.py` | रोमन (`roman_sanskrit`), नुक़्ता खोलना (`khula`), देवनागरी अंक |
+| `tools/lipi.py` | रोमन (`roman_sanskrit`), नुक़्ता खोलना (`khula`), देवनागरी अंक, `pancham()` (संकट → सङ्कट) |
+| `tools/milan.py` | मिलान के साझा औज़ार — तुलना की कुंजी (`kunji_dev`, `kunji_iast`), पंक्तियाँ जोड़ना (`jodo`) |
+| `tools/granth_paath/saptashati/milan/` | सप्तशती का मिलान; `sudhar.py` — पाठ के सुधारों की तालिका (→ D-103) |
 | `tools/granth_paath/gita/milan/` | पाँच स्रोतों का मिलान → `mool.txt` |
 | `app/test/granth_test.dart` | गिनती 700, क्रम, हर खंड भरा, नुक़्ता, उवाच 59, समापन |
 | `app/test/granth_screens_test.dart` | ग्रंथालय → अध्याय → अगला; याद रखना; कृष्ण पूजा से गीता |

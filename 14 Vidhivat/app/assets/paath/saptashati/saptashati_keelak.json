@@ -11,75 +11,75 @@
   "bhasha": "संस्कृत",
   "parichay": "अर्गला के बाद तीसरा अंग, जिसके बाद तेरह अध्याय शुरू होते हैं। इसमें शिव जी द्वारा सप्तशती को \"कीलित\" करने और उसे खोलकर पढ़ने की बात है।",
   "kabPadhein": "सप्तशती के पाठ से पहले, इसी क्रम में — कवच, अर्गला, कीलक।",
-  "kaisePadhein": "सप्तशती का क्रम है: कवच, अर्गला और कीलक — फिर तेरह अध्याय। पूरा पाठ एक बैठक में न हो तो नौ दिन में बाँटकर कर सकते हैं; बहुत घरों में एक दिन में एक या कुछ अध्याय पढ़े जाते हैं।\n\nअध्याय के बीच में न रुकें — जहाँ तक पढ़ें, अध्याय पूरा करके रुकें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "kaisePadhein": "सप्तशती का क्रम है: कवच, अर्गला, कीलक और रात्रि सूक्त — फिर तेरह अध्याय — फिर देवी सूक्त, तीन रहस्य और क्षमा प्रार्थना। आगे-पीछे के ये अंग हर घर में पूरे नहीं पढ़े जाते; अपनी परंपरा देखिए। पूरा पाठ एक बैठक में न हो तो नौ दिन में बाँटकर कर सकते हैं; बहुत घरों में एक दिन में एक या कुछ अध्याय पढ़े जाते हैं।\n\nअध्याय के बीच में न रुकें — जहाँ तक पढ़ें, अध्याय पूरा करके रुकें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
   "khand": [
     {
       "shirshak": "विनियोग",
-      "dev": "ॐ अस्य श्रीकीलकमन्त्रस्य शिवऋषिः, अनुष्टुप् छन्दः,\nश्रीमहासरस्वती देवता, श्रीजगदम्बाप्रीत्यर्थं\nसप्तशतीपाठाङ्गत्वेन जपे विनियोगः ।",
-      "roman": "om asya shreekeelakamantrasya shivarishih anushtup chhandah\nshreemahaasarasvatee devataa shreejagadambaapreetyartham\nsaptashateepaathaangatvena jape viniyogah |",
+      "dev": "ॐ अस्य श्रीकीलकमन्त्रस्य शिव ऋषिः, अनुष्टुप् छन्दः,\nश्रीमहासरस्वती देवता, श्रीजगदम्बाप्रीत्यर्थं\nसप्तशतीपाठाङ्गत्वेन जपे विनियोगः ।",
+      "roman": "om asya shreekeelakamantrasya shiva rishih anushtup chhandah\nshreemahaasarasvatee devataa shreejagadambaapreetyartham\nsaptashateepaathaangatvena jape viniyogah |",
       "arth": "इस श्री कीलक-मंत्र के ऋषि शिव हैं, छंद अनुष्टुप् है, देवता श्री महासरस्वती हैं। श्री जगदम्बा की प्रसन्नता के लिए, सप्तशती पाठ के अंग के रूप में, इसके जप में इसका विनियोग है।",
       "audio": "",
       "sthiti": "draft"
     },
     {
       "shirshak": "श्लोक १",
-      "dev": "ॐ नमश्चण्डिकायै ।\nमार्कण्डेय उवाच ।\nॐ विशुद्धज्ञानदेहाय त्रिवेदीदिव्यचक्षुषे ।\nश्रेयःप्राप्तिनिमित्ताय नमः सोमार्धधारिणे॥",
-      "roman": "om namashchandikaayai |\nmaarkandeya uvaacha |\nom vishuddhajnaanadehaaya trivedeedivyachakshushe |\nshreyahpraaptinimittaaya namah somaardhadhaarine ||",
+      "dev": "ॐ नमश्चण्डिकायै ।\nमार्कण्डेय उवाच ।\nॐ विशुद्धज्ञानदेहाय त्रिवेदीदिव्यचक्षुषे ।\nश्रेयःप्राप्तिनिमित्ताय नमः सोमार्द्धधारिणे॥",
+      "roman": "om namashchandikaayai |\nmaarkandeya uvaacha |\nom vishuddhajnaanadehaaya trivedeedivyachakshushe |\nshreyahpraaptinimittaaya namah somaarddhadhaarine ||",
       "arth": "चण्डिका देवी को नमस्कार। मार्कण्डेय ऋषि बोले — जिनका शरीर विशुद्ध ज्ञान है, तीनों वेद जिनके दिव्य नेत्र हैं, जो कल्याण की प्राप्ति के कारण हैं, उन अर्धचन्द्रधारी भगवान शिव को नमस्कार है।",
       "audio": "",
       "sthiti": "draft"
     },
     {
       "shirshak": "श्लोक २",
-      "dev": "सर्वमेतद्विजानीयान्मन्त्राणामपि कीलकम् ।\nसोऽपि क्षेममवाप्नोति सततं जप्यतत्परः॥",
-      "roman": "sarvametadvijaaneeyaanmantraanaamapi keelakam |\nso'pi kshemamavaapnoti satatam japyatatparah ||",
-      "arth": "मंत्रों का कीलक (उन्हें खोलने वाली कुंजी) इसी को जानना चाहिए। जो निरंतर इसके जप में लगा रहता है, वह भी कल्याण पाता है।",
+      "dev": "सर्वमेतद्विजानीयान्मन्त्राणामभिकीलकम् ।\nसोऽपि क्षेममवाप्नोति सततं जाप्यतत्परः॥",
+      "roman": "sarvametadvijaaneeyaanmantraanaamabhikeelakam |\nso'pi kshemamavaapnoti satatam jaapyatatparah ||",
+      "arth": "मंत्रों का अभिकीलक (उन पर लगी कील, और उसे खोलने का ढंग) — यह सब जान लेना चाहिए। जो निरंतर जप में लगा रहता है, वह भी कल्याण पाता है।",
       "audio": "",
       "sthiti": "draft"
     },
     {
       "shirshak": "श्लोक ३",
-      "dev": "सिद्ध्यन्त्युच्चाटनादीनि कर्माणि सकलान्यपि ।\nएतेन स्तुवतां देवीं स्तोत्रवृन्देन भक्तितः॥",
-      "roman": "siddhyantyuchchaatanaadeeni karmaani sakalaanyapi |\netena stuvataam deveem stotravrindena bhaktitah ||",
-      "arth": "जो भक्ति से इस स्तोत्र-समूह द्वारा देवी की स्तुति करते हैं, उनके उच्चाटन आदि सारे कर्म सिद्ध हो जाते हैं।",
+      "dev": "सिद्ध्यन्त्युच्चाटनादीनि वस्तूनि सकलान्यपि ।\nएतेन स्तुवतां देवीं स्तोत्रमात्रेण सिद्ध्यति॥",
+      "roman": "siddhyantyuchchaatanaadeeni vastooni sakalaanyapi |\netena stuvataam deveem stotramaatrena siddhyati ||",
+      "arth": "उसके उच्चाटन आदि सारे काम सिद्ध हो जाते हैं। इस (सप्तशती) से देवी की स्तुति करने वालों को केवल स्तोत्र से ही सिद्धि मिल जाती है।",
       "audio": "",
       "sthiti": "draft"
     },
     {
       "shirshak": "श्लोक ४",
-      "dev": "न मन्त्रो नौषधं तस्य न किञ्चिदपि विद्यते ।\nविना जप्येन सिद्ध्येत्तु सर्वमुच्चाटनादिकम्॥",
-      "roman": "na mantro naushadham tasya na kinchidapi vidyate |\nvinaa japyena siddhyettu sarvamuchchaatanaadikam ||",
-      "arth": "उसके लिए किसी और मंत्र या औषधि की आवश्यकता नहीं रहती; बिना (दूसरे) जप के ही उच्चाटन आदि सब सिद्ध हो जाते हैं।",
+      "dev": "न मन्त्रो नौषधं तत्र न किञ्चिदपि विद्यते ।\nविना जाप्येन सिद्ध्येत सर्वमुच्चाटनादिकम्॥",
+      "roman": "na mantro naushadham tatra na kinchidapi vidyate |\nvinaa jaapyena siddhyeta sarvamuchchaatanaadikam ||",
+      "arth": "वहाँ न किसी और मंत्र की ज़रूरत है, न औषधि की, न किसी और चीज़ की; बिना (दूसरे) जप के ही उच्चाटन आदि सब सिद्ध हो जाता है।",
       "audio": "",
       "sthiti": "draft"
     },
     {
       "shirshak": "श्लोक ५",
-      "dev": "समग्राण्यपि सेत्स्यन्ति लोकशङ्कामिमां हरः ।\nकृत्वा निमन्त्रयामास सर्वमेवमिदं शुभम्॥",
-      "roman": "samagraanyapi setsyanti lokashankaamimaam harah |\nkritvaa nimantrayaamaasa sarvamevamidam shubham ||",
-      "arth": "\"सब (साधन) पूरी तरह सिद्ध हो जाएँगे\" — लोगों की इस शंका को देखकर भगवान शिव ने इस सारे शुभ (स्तोत्र) को नियंत्रित (कीलित) कर दिया।",
+      "dev": "समग्राण्यपि सिद्ध्यन्ति लोकशङ्कामिमां हरः ।\nकृत्वा निमन्त्रयामास सर्वमेवमिदं शुभम्॥",
+      "roman": "samagraanyapi siddhyanti lokashankaamimaam harah |\nkritvaa nimantrayaamaasa sarvamevamidam shubham ||",
+      "arth": "\"(इससे तो) सब कुछ सिद्ध हो जाता है\" — लोगों की इस शंका को लेकर भगवान शिव ने (उन्हें बुलाकर) बताया कि यह सारा (स्तोत्र) ही कल्याणकारी है।",
       "audio": "",
       "sthiti": "draft"
     },
     {
       "shirshak": "श्लोक ६",
-      "dev": "स्तोत्रं वै चण्डिकायास्तु तच्च गुह्यं चकार सः ।\nसमाप्नोति स पुण्येन तां यथावन्निमन्त्रणाम्॥",
-      "roman": "stotram vai chandikaayaastu tachcha guhyam chakaara sah |\nsamaapnoti sa punyena taam yathaavannimantranaam ||",
-      "arth": "उन्होंने चण्डिका के स्तोत्र को गुप्त कर दिया। जो पुण्य से उस नियंत्रण को विधि से खोलता है, वही उसका (पूरा फल) पाता है।",
+      "dev": "स्तोत्रं वै चण्डिकायास्तु तच्च गुप्तं चकार सः ।\nसमाप्तिर्न च पुण्यस्य तां यथावन्नियन्त्रणाम्॥",
+      "roman": "stotram vai chandikaayaastu tachcha guptam chakaara sah |\nsamaaptirna cha punyasya taam yathaavanniyantranaam ||",
+      "arth": "फिर उन्होंने चण्डिका के उस स्तोत्र को गुप्त कर दिया। (इसके पाठ से मिलने वाले) पुण्य का अंत नहीं होता — उस नियम को ठीक-ठीक (जानना चाहिए)।",
       "audio": "",
       "sthiti": "draft"
     },
     {
       "shirshak": "श्लोक ७",
-      "dev": "सोऽपि क्षेममवाप्नोति सर्वमेव न संशयः ।\nकृष्णायां वा चतुर्दश्यामष्टम्यां वा समाहितः॥",
+      "dev": "सोऽपि क्षेममवाप्नोति सर्वमेव न संशयः ।\nकृष्णायां वा चतुर्दश्यामष्टम्यां वा समाहितः॥",
       "roman": "so'pi kshemamavaapnoti sarvameva na samshayah |\nkrishnaayaam vaa chaturdashyaamashtamyaam vaa samaahitah ||",
-      "arth": "वह भी निःसंदेह सब प्रकार का कल्याण पाता है। जो कृष्ण पक्ष की चतुर्दशी या अष्टमी को एकाग्र होकर —",
+      "arth": "वह भी निःसंदेह सब प्रकार का कल्याण पाता है — जो कृष्ण पक्ष की चतुर्दशी या अष्टमी को एकाग्र होकर —",
       "audio": "",
       "sthiti": "draft"
     },
     {
       "shirshak": "श्लोक ८",
-      "dev": "ददाति प्रतिगृह्णाति नान्यथैषा प्रसीदति ।\nइत्थं रूपेण कीलेन महादेवेन कीलितम्॥",
+      "dev": "ददाति प्रतिगृह्णाति नान्यथैषा प्रसीदति ।\nइत्थं रूपेण कीलेन महादेवेन कीलितम्॥",
       "roman": "dadaati pratigrihnaati naanyathaishaa praseedati |\nittham roopena keelena mahaadevena keelitam ||",
       "arth": "(अपना सब कुछ देवी को) अर्पित करता है और (उसे प्रसाद रूप में) फिर ग्रहण करता है — उसी पर देवी प्रसन्न होती हैं, और किसी तरह नहीं। इस रूप वाले कीलक से महादेव ने इसे कीलित किया है।",
       "audio": "",
@@ -87,39 +87,39 @@
     },
     {
       "shirshak": "श्लोक ९",
-      "dev": "यो निष्कीलां विधायैनां चण्डीं जपति नित्यशः ।\nस सिद्धः स गणः सोऽथ गन्धर्वो जायते ध्रुवम्॥",
-      "roman": "yo nishkeelaam vidhaayainaam chandeem japati nityashah |\nsa siddhah sa ganah so'tha gandharvo jaayate dhruvam ||",
-      "arth": "जो इस (कीलन) को खोलकर नित्य इस चण्डी का जप करता है, वह निश्चय ही सिद्ध, (देवी का) गण और गन्धर्व बन जाता है।",
+      "dev": "यो निष्कीलां विधायैनां नित्यं जपति संस्फुटम् ।\nस सिद्धः स गणः सोऽपि गन्धर्वो जायते नरः॥",
+      "roman": "yo nishkeelaam vidhaayainaam nityam japati samsphutam |\nsa siddhah sa ganah so'pi gandharvo jaayate narah ||",
+      "arth": "जो इस (सप्तशती) को कील से मुक्त करके रोज़ साफ़ उच्चारण के साथ इसका जप करता है, वह मनुष्य सिद्ध हो जाता है, (देवी का) गण हो जाता है, गन्धर्व हो जाता है।",
       "audio": "",
       "sthiti": "draft"
     },
     {
       "shirshak": "श्लोक १०",
-      "dev": "न चैवापाटवं तस्य भयं क्वापि न जायते ।\nनापमृत्युवशं याति मृते च मोक्षमाप्नुयात्॥",
-      "roman": "na chaivaapaatavam tasya bhayam kvaapi na jaayate |\nnaapamrityuvasham yaati mrite cha mokshamaapnuyaat ||",
-      "arth": "उसे कहीं भी कोई असमर्थता या भय नहीं होता, वह अकाल मृत्यु के वश में नहीं जाता, और मृत्यु के बाद मोक्ष पाता है।",
+      "dev": "न चैवाप्यटतस्तस्य भयं क्वापीह जायते ।\nनापमृत्युवशं याति मृतो मोक्षमवाप्नुयात्॥",
+      "roman": "na chaivaapyatatastasya bhayam kvaapeeha jaayate |\nnaapamrityuvasham yaati mrito mokshamavaapnuyaat ||",
+      "arth": "वह कहीं भी घूमे, उसे यहाँ कहीं भय नहीं होता; वह अकाल मृत्यु के वश में नहीं जाता, और मरने पर मोक्ष पाता है।",
       "audio": "",
       "sthiti": "draft"
     },
     {
       "shirshak": "श्लोक ११",
-      "dev": "ज्ञात्वा प्रारभ्य कुर्वीत ह्यकुर्वाणो विनश्यति ।\nततो ज्ञात्वैव सम्पूर्णमिदं प्रारभ्यते बुधैः॥",
-      "roman": "jnaatvaa praarabhya kurveeta hyakurvaano vinashyati |\ntato jnaatvaiva sampoornamidam praarabhyate budhaih ||",
-      "arth": "(कीलन को) जानकर ही पाठ आरंभ करना चाहिए; बिना जाने करने वाला (फल से) वंचित रहता है। इसलिए बुद्धिमान लोग इसे पूरा जानकर ही आरंभ करते हैं।",
+      "dev": "ज्ञात्वा प्रारभ्य कुर्वीत न कुर्वाणो विनश्यति ।\nततो ज्ञात्वैव सम्पन्नमिदं प्रारभ्यते बुधैः॥",
+      "roman": "jnaatvaa praarabhya kurveeta na kurvaano vinashyati |\ntato jnaatvaiva sampannamidam praarabhyate budhaih ||",
+      "arth": "(कीलक को) जानकर ही पाठ आरंभ करना चाहिए; जो ऐसा नहीं करता, वह (फल से) वंचित रह जाता है। इसलिए बुद्धिमान लोग इसे जानकर ही यह पूरा पाठ आरंभ करते हैं।",
       "audio": "",
       "sthiti": "draft"
     },
     {
       "shirshak": "श्लोक १२",
-      "dev": "सौभाग्यादि च यत्किञ्चिद् दृश्यते ललनाजने ।\nतत्सर्वं तत्प्रसादेन तेन जप्यमिदम् शुभम्॥",
-      "roman": "saubhaagyaadi cha yatkinchid drishyate lalanaajane |\ntatsarvam tatprasaadena tena japyamidam shubham ||",
+      "dev": "सौभाग्यादि च यत्किञ्चिद् दृश्यते ललनाजने ।\nतत्सर्वं तत्प्रसादेन तेन जाप्यमिदं शुभम्॥",
+      "roman": "saubhaagyaadi cha yatkinchid drishyate lalanaajane |\ntatsarvam tatprasaadena tena jaapyamidam shubham ||",
       "arth": "स्त्रियों में जो भी सौभाग्य आदि दिखाई देता है, वह सब उन्हीं देवी की कृपा से है; इसलिए इस शुभ (स्तोत्र) का जप करना चाहिए।",
       "audio": "",
       "sthiti": "draft"
     },
     {
       "shirshak": "श्लोक १३",
-      "dev": "शनैस्तु जप्यमानेऽस्मिन् स्तोत्रे सम्पत्तिरुच्चकैः ।\nभवत्येव समग्रापि ततः प्रारभ्यमेव तत्॥",
+      "dev": "शनैस्तु जप्यमानेऽस्मिन् स्तोत्रे सम्पत्तिरुच्चकैः ।\nभवत्येव समग्रापि ततः प्रारभ्यमेव तत्॥",
       "roman": "shanaistu japyamaane'smin stotre sampattiruchchakaih |\nbhavatyeva samagraapi tatah praarabhyameva tat ||",
       "arth": "इस स्तोत्र का धीरे-धीरे (शांत मन से) जप करने पर ऊँची और पूरी संपत्ति मिलती है; इसलिए इसे आरंभ करना ही चाहिए।",
       "audio": "",
@@ -127,25 +127,9 @@
     },
     {
       "shirshak": "श्लोक १४",
-      "dev": "ऐश्वर्यं तत्प्रसादेन सौभाग्यारोग्यमेव च ।\nशत्रुहानिः परो मोक्षः स्तूयते सा न किं जनैः॥",
-      "roman": "aishvaryam tatprasaadena saubhaagyaarogyameva cha |\nshatruhaanih paro mokshah stooyate saa na kim janaih ||",
-      "arth": "जिनकी कृपा से ऐश्वर्य, सौभाग्य, आरोग्य, शत्रुओं का नाश और परम मोक्ष मिलता है — लोग उन देवी की स्तुति क्यों न करें?",
-      "audio": "",
-      "sthiti": "draft"
-    },
-    {
-      "shirshak": "श्लोक १५",
-      "dev": "चण्डिकां हृदयेनापि यः स्मरेत् सततं नरः ।\nहृद्यं काममवाप्नोति हृदि देवी सदा वसेत्॥",
-      "roman": "chandikaam hridayenaapi yah smaret satatam narah |\nhridyam kaamamavaapnoti hridi devee sadaa vaset ||",
-      "arth": "जो मनुष्य मन में भी सदा चण्डिका का स्मरण करता है, उसे मनचाही वस्तु मिलती है और देवी सदा उसके हृदय में निवास करती हैं।",
-      "audio": "",
-      "sthiti": "draft"
-    },
-    {
-      "shirshak": "श्लोक १६",
-      "dev": "अग्रतोऽमुं महादेवकृतं कीलकवारणम् ।\nनिष्कीलञ्च तथा कृत्वा पठितव्यं समाहितैः॥",
-      "roman": "agrato'mum mahaadevakritam keelakavaaranam |\nnishkeelancha tathaa kritvaa pathitavyam samaahitaih ||",
-      "arth": "इसलिए पहले महादेव के बनाए इस कीलक का पाठ करके, और इस तरह कीलन खोलकर, एकाग्र मन से (सप्तशती) पढ़नी चाहिए।",
+      "dev": "ऐश्वर्यं यत्प्रसादेन सौभाग्यारोग्यसम्पदः ।\nशत्रुहानिः परो मोक्षः स्तूयते सा न किं जनैः॥",
+      "roman": "aishvaryam yatprasaadena saubhaagyaarogyasampadah |\nshatruhaanih paro mokshah stooyate saa na kim janaih ||",
+      "arth": "जिनकी कृपा से ऐश्वर्य, सौभाग्य, आरोग्य, संपत्ति, शत्रुओं का नाश और परम मोक्ष मिलता है — लोग उन देवी की स्तुति क्यों न करें?",
       "audio": "",
       "sthiti": "draft"
     }
@@ -154,7 +138,7 @@
   "strot": {
     "paddhati": "दुर्गा सप्तशती के अंग",
     "kshetra": "सर्वत्र",
-    "note": "पाठ एक जाँचे हुए छपे संस्करण से है। ⚠️ सप्तशती के अंगों के छपे रूप आपस में पूरे नहीं मिलते — ख़ास तौर पर कीलक के दो अलग पाठ चलते हैं, जिनमें कई श्लोक अलग हैं। आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है।\n\nहर श्लोक का अर्थ सरल हिंदी में, अपने शब्दों में लिखा है — शब्दशः अनुवाद नहीं। कीलक की भाषा गूढ़ है और टीकाकार इसके कई श्लोकों का अर्थ अलग-अलग करते हैं; यहाँ सबसे प्रचलित भाव दिया है।"
+    "note": "पाठ तीन रूपों को पंक्ति-दर-पंक्ति मिलाकर लिया गया है — दो अलग संग्रह और एक छपी पुस्तक। कीलक के दो अलग पाठ चलते हैं: चौदह श्लोक वाला और सोलह श्लोक वाला। यहाँ चौदह वाला है, जो तीनों में मिला। आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है।\n\nहर श्लोक का अर्थ सरल हिंदी में, अपने शब्दों में लिखा है — शब्दशः अनुवाद नहीं। कीलक की भाषा गूढ़ है और टीकाकार इसके कई श्लोकों का अर्थ अलग-अलग करते हैं; यहाँ सबसे प्रचलित भाव दिया है।"
   },
   "jaanch": {
     "panditNaam": "",

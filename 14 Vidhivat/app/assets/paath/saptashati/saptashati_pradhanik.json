@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "id": "saptashati_pradhanik",
+  "naam": "प्राधानिक रहस्य",
+  "upnaam": [
+    "दुर्गा सप्तशती — प्राधानिक रहस्य",
+    "रहस्य त्रय"
+  ],
+  "prakar": "stotra",
+  "devta": "दुर्गा माँ",
+  "rachnakar": "पारंपरिक — सप्तशती के अंग",
+  "bhasha": "संस्कृत",
+  "parichay": "तेरह अध्यायों के बाद तीन \"रहस्य\" पढ़े जाते हैं; यह पहला है। राजा सुरथ पूछते हैं कि देवी के अवतारों का मूल रूप क्या है। ऋषि बताते हैं: सबकी आदि महालक्ष्मी हैं; उन्हीं से महाकाली और महासरस्वती प्रकट हुईं, और फिर तीनों से ब्रह्मा और लक्ष्मी, रुद्र और सरस्वती, विष्णु और गौरी के जोड़े।",
+  "kabPadhein": "सप्तशती के तेरह अध्याय पूरे होने के बाद, इसी क्रम में — प्राधानिक, वैकृतिक, मूर्ति रहस्य।",
+  "kaisePadhein": "सप्तशती का क्रम है: कवच, अर्गला, कीलक और रात्रि सूक्त — फिर तेरह अध्याय — फिर देवी सूक्त, तीन रहस्य और क्षमा प्रार्थना। आगे-पीछे के ये अंग हर घर में पूरे नहीं पढ़े जाते; अपनी परंपरा देखिए। पूरा पाठ एक बैठक में न हो तो नौ दिन में बाँटकर कर सकते हैं; बहुत घरों में एक दिन में एक या कुछ अध्याय पढ़े जाते हैं।\n\nअध्याय के बीच में न रुकें — जहाँ तक पढ़ें, अध्याय पूरा करके रुकें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "श्लोक १",
+      "dev": "राजोवाच ।\nभगवन्नवतारा मे चण्डिकायास्त्वयोदिताः ।\nएतेषां प्रकृतिं ब्रह्मन् प्रधानं वक्तुमर्हसि॥",
+      "roman": "raajovaacha |\nbhagavannavataaraa me chandikaayaastvayoditaah |\neteshaam prakritim brahman pradhaanam vaktumarhasi ||",
+      "arth": "राजा बोले — हे भगवन्, आपने मुझे चण्डिका के अवतार बताए। हे ब्रह्मन्, अब इन अवतारों की जो मूल प्रकृति है — प्रधान रूप — वह बताइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "आराध्यं यन्मया देव्याः स्वरूपं येन च द्विज ।\nविधिना ब्रूहि सकलं यथावत्प्रणतस्य मे॥",
+      "roman": "aaraadhyam yanmayaa devyaah svaroopam yena cha dvija |\nvidhinaa broohi sakalam yathaavatpranatasya me ||",
+      "arth": "हे द्विज, देवी का जो स्वरूप मुझे पूजना है और जिस विधि से पूजना है, वह सब मुझ शरण में आए हुए को ठीक-ठीक बताइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "ऋषिरुवाच ।\nइदं रहस्यं परममनाख्येयं प्रचक्षते ।\nभक्तोऽसीति न मे किञ्चित्तवावाच्यं नराधिप॥",
+      "roman": "rishiruvaacha |\nidam rahasyam paramamanaakhyeyam prachakshate |\nbhakto'seeti na me kinchittavaavaachyam naraadhipa ||",
+      "arth": "ऋषि बोले — यह परम रहस्य है; कहा जाता है कि यह किसी को बताने की बात नहीं। पर हे राजन्, तुम भक्त हो, इसलिए तुमसे छिपाने लायक़ मेरे पास कुछ नहीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "सर्वस्याद्या महालक्ष्मीस्त्रिगुणा परमेश्वरी ।\nलक्ष्यालक्ष्यस्वरूपा सा व्याप्य कृत्स्नं व्यवस्थिता॥",
+      "roman": "sarvasyaadyaa mahaalakshmeestrigunaa parameshvaree |\nlakshyaalakshyasvaroopaa saa vyaapya kritsnam vyavasthitaa ||",
+      "arth": "सबकी आदि, तीनों गुणों वाली परमेश्वरी महालक्ष्मी हैं। उनका स्वरूप दिखता भी है और नहीं भी दिखता; वे सारे जगत् में फैलकर स्थित हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "मातुलुङ्गं गदां खेटं पानपात्रं च बिभ्रती ।\nनागं लिङ्गं च योनिं च बिभ्रती नृप मूर्धनि॥",
+      "roman": "maatulungam gadaam khetam paanapaatram cha bibhratee |\nnaagam lingam cha yonim cha bibhratee nripa moordhani ||",
+      "arth": "हे राजन्, वे हाथों में मातुलुंग (बिजौरा नींबू), गदा, ढाल और पान-पात्र धारण करती हैं, और मस्तक पर नाग, लिंग और योनि।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "तप्तकाञ्चनवर्णाभा तप्तकाञ्चनभूषणा ।\nशून्यं तदखिलं स्वेन पूरयामास तेजसा॥",
+      "roman": "taptakaanchanavarnaabhaa taptakaanchanabhooshanaa |\nshoonyam tadakhilam svena poorayaamaasa tejasaa ||",
+      "arth": "उनका रंग तपे हुए सोने जैसा है और गहने भी तपे हुए सोने के हैं। उन्होंने उस सारे सूने (जगत्) को अपने तेज से भर दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "शून्यं तदखिलं लोकं विलोक्य परमेश्वरी ।\nबभार रूपमपरं तमसा केवलेन हि॥",
+      "roman": "shoonyam tadakhilam lokam vilokya parameshvaree |\nbabhaara roopamaparam tamasaa kevalena hi ||",
+      "arth": "उस सारे लोक को सूना देखकर परमेश्वरी ने केवल तमोगुण से एक दूसरा रूप धारण किया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "सा भिन्नाञ्जनसङ्काशा दंष्ट्राङ्कितवरानना ।\nविशाललोचना नारी बभूव तनुमध्यमा॥",
+      "roman": "saa bhinnaanjanasankaashaa damshtraankitavaraananaa |\nvishaalalochanaa naaree babhoova tanumadhyamaa ||",
+      "arth": "वह रूप पिसे हुए काजल जैसी काली, दाढ़ों से सजे सुंदर मुख वाली, बड़ी आँखों और पतली कमर वाली स्त्री बन गया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "खड्गपात्रशिरःखेटैरलङ्कृतचतुर्भुजा ।\nकबन्धहारं शिरसा बिभ्राणा हि शिरःस्रजम्॥",
+      "roman": "khadgapaatrashirahkhetairalankritachaturbhujaa |\nkabandhahaaram shirasaa bibhraanaa hi shirahsrajam ||",
+      "arth": "उसकी चार भुजाएँ तलवार, पात्र, कटे सिर और ढाल से सजी थीं; वह धड़ों का हार और सिर पर मुंडों की माला धारण किए थी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "तां प्रोवाच महालक्ष्मीस्तामसीं प्रमदोत्तमाम् ।\nददामि तव नामानि यानि कर्माणि तानि ते॥",
+      "roman": "taam provaacha mahaalakshmeestaamaseem pramadottamaam |\ndadaami tava naamaani yaani karmaani taani te ||",
+      "arth": "उस तामसी श्रेष्ठ स्त्री से महालक्ष्मी ने कहा — मैं तुम्हें नाम देती हूँ, और जो तुम्हारे काम हैं वे भी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "महामाया महाकाली महामारी क्षुधा तृषा ।\nनिद्रा तृष्णा चैकवीरा कालरात्रिर्दुरत्यया॥",
+      "roman": "mahaamaayaa mahaakaalee mahaamaaree kshudhaa trishaa |\nnidraa trishnaa chaikaveeraa kaalaraatrirduratyayaa ||",
+      "arth": "महामाया, महाकाली, महामारी, क्षुधा (भूख), तृषा (प्यास), निद्रा, तृष्णा, एकवीरा, कालरात्रि और दुरत्यया —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "इमानि तव नामानि प्रतिपाद्यानि कर्मभिः ।\nएभिः कर्माणि ते ज्ञात्वा योऽधीते सोऽश्नुते सुखम्॥",
+      "roman": "imaani tava naamaani pratipaadyaani karmabhih |\nebhih karmaani te jnaatvaa yo'dheete so'shnute sukham ||",
+      "arth": "— ये तुम्हारे नाम हैं, जो तुम्हारे कामों से समझे जाते हैं। इन नामों से तुम्हारे कामों को जानकर जो इनका पाठ करता है, वह सुख पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "तामित्युक्त्वा महालक्ष्मीः स्वरूपमपरं नृप ।\nसत्त्वाख्येनातिशुद्धेन गुणेनेन्दुप्रभं दधौ॥",
+      "roman": "taamityuktvaa mahaalakshmeeh svaroopamaparam nripa |\nsattvaakhyenaatishuddhena gunenenduprabham dadhau ||",
+      "arth": "हे राजन्, उससे ऐसा कहकर महालक्ष्मी ने अत्यंत शुद्ध सत्त्वगुण से चंद्रमा जैसी कांति वाला एक और रूप धारण किया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "अक्षमालाङ्कुशधरा वीणापुस्तकधारिणी ।\nसा बभूव वरा नारी नामान्यस्यै च सा ददौ॥",
+      "roman": "akshamaalaankushadharaa veenaapustakadhaarinee |\nsaa babhoova varaa naaree naamaanyasyai cha saa dadau ||",
+      "arth": "वह अक्षमाला और अंकुश धारण करने वाली, वीणा और पुस्तक लिए हुए श्रेष्ठ स्त्री बनी; और महालक्ष्मी ने उसे भी नाम दिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "महाविद्या महावाणी भारती वाक् सरस्वती ।\nआर्या ब्राह्मी कामधेनुर्वेदगर्भा सुरेश्वरी॥",
+      "roman": "mahaavidyaa mahaavaanee bhaaratee vaak sarasvatee |\naaryaa braahmee kaamadhenurvedagarbhaa sureshvaree ||",
+      "arth": "महाविद्या, महावाणी, भारती, वाक्, सरस्वती, आर्या, ब्राह्मी, कामधेनु, वेदगर्भा और सुरेश्वरी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "अथोवाच महालक्ष्मीर्महाकालीं सरस्वतीम् ।\nयुवां जनयतां देव्यौ मिथुने स्वानुरूपतः॥",
+      "roman": "athovaacha mahaalakshmeermahaakaaleem sarasvateem |\nyuvaam janayataam devyau mithune svaanuroopatah ||",
+      "arth": "फिर महालक्ष्मी ने महाकाली और सरस्वती से कहा — हे देवियो, तुम दोनों अपने-अपने अनुरूप जोड़े (स्त्री-पुरुष) उत्पन्न करो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "इत्युक्त्वा ते महालक्ष्मीः ससर्ज मिथुनं स्वयम् ।\nहिरण्यगर्भौ रुचिरौ स्त्रीपुंसौ कमलासनौ॥",
+      "roman": "ityuktvaa te mahaalakshmeeh sasarja mithunam svayam |\nhiranyagarbhau ruchirau streepumsau kamalaasanau ||",
+      "arth": "उनसे ऐसा कहकर महालक्ष्मी ने स्वयं एक जोड़ा रचा — हिरण्यगर्भ, सुंदर, कमल के आसन पर बैठे स्त्री और पुरुष।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "ब्रह्मन् विधे विरिञ्चेति धातरित्याह तं नरम् ।\nश्रीः पद्मे कमले लक्ष्मीत्याह माता स्त्रियं च ताम्॥",
+      "roman": "brahman vidhe virincheti dhaatarityaaha tam naram |\nshreeh padme kamale lakshmeetyaaha maataa striyam cha taam ||",
+      "arth": "माता ने उस पुरुष को ब्रह्मा, विधि, विरिंचि और धाता कहा, और उस स्त्री को श्री, पद्मा, कमला और लक्ष्मी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "महाकाली भारती च मिथुने सृजतः सह ।\nएतयोरपि रूपाणि नामानि च वदामि ते॥",
+      "roman": "mahaakaalee bhaaratee cha mithune srijatah saha |\netayorapi roopaani naamaani cha vadaami te ||",
+      "arth": "महाकाली और भारती (सरस्वती) ने भी एक-एक जोड़ा रचा। इन दोनों के रूप और नाम भी तुम्हें बताता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "नीलकण्ठं रक्तबाहुं श्वेताङ्गं चन्द्रशेखरम् ।\nजनयामास पुरुषं महाकाली सितां स्त्रियम्॥",
+      "roman": "neelakantham raktabaahum shvetaangam chandrashekharam |\njanayaamaasa purusham mahaakaalee sitaam striyam ||",
+      "arth": "महाकाली ने नीले कंठ, लाल भुजाओं, गोरे अंगों वाले, मस्तक पर चंद्रमा धारण किए एक पुरुष को, और एक गोरी स्त्री को जन्म दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "स रुद्रः शङ्करः स्थाणुः कपर्दी च त्रिलोचनः ।\nत्रयी विद्या कामधेनुः सा स्त्री भाषा स्वराक्षरा॥",
+      "roman": "sa rudrah shankarah sthaanuh kapardee cha trilochanah |\ntrayee vidyaa kaamadhenuh saa stree bhaashaa svaraaksharaa ||",
+      "arth": "वह पुरुष रुद्र, शंकर, स्थाणु, कपर्दी और त्रिलोचन कहलाया; और वह स्त्री त्रयी, विद्या, कामधेनु, भाषा, स्वरा और अक्षरा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "सरस्वती स्त्रियं गौरीं कृष्णं च पुरुषं नृप ।\nजनयामास नामानि तयोरपि वदामि ते॥",
+      "roman": "sarasvatee striyam gaureem krishnam cha purusham nripa |\njanayaamaasa naamaani tayorapi vadaami te ||",
+      "arth": "हे राजन्, सरस्वती ने एक गोरी स्त्री और एक साँवले पुरुष को जन्म दिया। उन दोनों के नाम भी तुम्हें बताता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "विष्णुः कृष्णो हृषीकेशो वासुदेवो जनार्दनः ।\nउमा गौरी सती चण्डी सुन्दरी सुभगा शिवा॥",
+      "roman": "vishnuh krishno hrisheekesho vaasudevo janaardanah |\numaa gauree satee chandee sundaree subhagaa shivaa ||",
+      "arth": "(पुरुष के नाम —) विष्णु, कृष्ण, हृषीकेश, वासुदेव और जनार्दन; (स्त्री के नाम —) उमा, गौरी, सती, चण्डी, सुंदरी, सुभगा और शिवा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "एवं युवतयः सद्यः पुरुषत्वं प्रपेदिरे ।\nचक्षुष्मन्तोऽनुपश्यन्ति नेतरेऽतद्विदो जनाः॥",
+      "roman": "evam yuvatayah sadyah purushatvam prapedire |\nchakshushmanto'nupashyanti netare'tadvido janaah ||",
+      "arth": "इस तरह (तीनों) युवतियाँ तुरंत पुरुष-रूप को प्राप्त हुईं। यह बात ज्ञान की आँख वाले ही देख पाते हैं; जो इसे नहीं जानते, वे दूसरे लोग नहीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २५",
+      "dev": "ब्रह्मणे प्रददौ पत्नीं महालक्ष्मीर्नृप त्रयीम् ।\nरुद्राय गौरीं वरदां वासुदेवाय च श्रियम्॥",
+      "roman": "brahmane pradadau patneem mahaalakshmeernripa trayeem |\nrudraaya gaureem varadaam vaasudevaaya cha shriyam ||",
+      "arth": "हे राजन्, महालक्ष्मी ने ब्रह्मा को पत्नी के रूप में त्रयी (सरस्वती) दी, रुद्र को वर देने वाली गौरी, और वासुदेव को श्री (लक्ष्मी)।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २६",
+      "dev": "स्वरया सह सम्भूय विरिञ्चोऽण्डमजीजनत् ।\nबिभेद भगवान् रुद्रस्तद्गौर्या सह वीर्यवान्॥",
+      "roman": "svarayaa saha sambhooya virincho'ndamajeejanat |\nbibheda bhagavaan rudrastadgauryaa saha veeryavaan ||",
+      "arth": "ब्रह्मा ने स्वरा (सरस्वती) के साथ मिलकर ब्रह्मांड को उत्पन्न किया; और पराक्रमी भगवान रुद्र ने गौरी के साथ मिलकर उसे फोड़ा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २७",
+      "dev": "अण्डमध्ये प्रधानादि कार्यजातमभून्नृप ।\nमहाभूतात्मकं सर्वं जगत् स्थावरजङ्गमम्॥",
+      "roman": "andamadhye pradhaanaadi kaaryajaatamabhoonnripa |\nmahaabhootaatmakam sarvam jagat sthaavarajangamam ||",
+      "arth": "हे राजन्, उस अंड के भीतर प्रधान (प्रकृति) आदि सारे कार्य प्रकट हुए — पाँच महाभूतों से बना यह सारा चर-अचर जगत्।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २८",
+      "dev": "पुपोष पालयामास तल्लक्ष्म्या सह केशवः ।\nमहालक्ष्मीरेवमजा राजन् सर्वेश्वरेश्वरी॥",
+      "roman": "puposha paalayaamaasa tallakshmyaa saha keshavah |\nmahaalakshmeerevamajaa raajan sarveshvareshvaree ||",
+      "arth": "लक्ष्मी के साथ केशव ने उस जगत् का पोषण और पालन किया। हे राजन्, इस तरह अजन्मा महालक्ष्मी ही सब ईश्वरों की ईश्वरी हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २९",
+      "dev": "निराकारा च साकारा सैव नानाभिधानभृत् ।\nनामान्तरैर्निरूप्यैषा नाम्ना नान्येन केनचित्॥",
+      "roman": "niraakaaraa cha saakaaraa saiva naanaabhidhaanabhrit |\nnaamaantarairniroopyaishaa naamnaa naanyena kenachit ||",
+      "arth": "वही निराकार हैं और वही साकार; वही अनेक नाम धारण करती हैं। अलग-अलग नामों से ही उनका वर्णन होता है — किसी एक नाम से नहीं।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "madhyam",
+  "strot": {
+    "paddhati": "दुर्गा सप्तशती — रहस्य त्रय",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ दो अलग संग्रहों और दो छपी पुस्तकों को पंक्ति-दर-पंक्ति मिलाकर लिया गया है। रहस्यों के छपे रूप आपस में पूरे नहीं मिलते — कुछ पुस्तकों में श्लोक कम या ज़्यादा हैं, और शुरू का विनियोग भी अलग-अलग मिलता है (इसलिए यहाँ नहीं है)। आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है।\n\nहर श्लोक का अर्थ सरल हिंदी में, अपने शब्दों में लिखा है — शब्दशः अनुवाद नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

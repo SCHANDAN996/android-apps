@@ -49,7 +49,7 @@ void main() {
     await tester.tap(find.text('अध्याय ३ — महिषासुर वध'));
     await tester.pumpAndSettle();
     expect(find.byType(PaathScreen), findsOneWidget);
-    expect(find.text('सप्तशती · पाठ 6/16'), findsOneWidget);
+    expect(find.text('सप्तशती · पाठ 7/22'), findsOneWidget);
     expect(find.textContaining('पाठ 1/'), findsOneWidget);
     expect(find.text('पिछला'), findsOneWidget);
     expect(find.text('अगला'), findsOneWidget);
@@ -66,7 +66,7 @@ void main() {
     await tester.tap(find.text('अगला'));
     await tester.pumpAndSettle();
     expect(find.text('अध्याय ४ — इन्द्र आदि देवताओं की स्तुति'), findsWidgets);
-    expect(find.text('सप्तशती · पाठ 7/16'), findsOneWidget);
+    expect(find.text('सप्तशती · पाठ 8/22'), findsOneWidget);
 
     await tester.tap(find.text('पिछला'));
     await tester.pumpAndSettle();
@@ -97,12 +97,16 @@ void main() {
     expect(find.text('देवी कवच · श्लोक ३–५'), findsOneWidget);
   });
 
-  testWidgets('आख़िरी अध्याय पर अगला button disabled है', (tester) async {
+  testWidgets('आख़िरी पाठ (क्षमा प्रार्थना) पर अगला button disabled है',
+      (tester) async {
     phone(tester);
     await tester.pumpWidget(app(const SaptashatiScreen()));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('अध्याय १३ — सुरथ और वैश्य को वरदान'));
+    await tester.scrollUntilVisible(find.text('क्षमा प्रार्थना'), 400,
+        scrollable: find.byType(Scrollable).first);
+    await tester.tap(find.text('क्षमा प्रार्थना'));
     await tester.pumpAndSettle();
+    expect(find.text('सप्तशती · पाठ 22/22'), findsOneWidget);
     final agla = tester.widget<VidhivatButton>(
       find.widgetWithText(VidhivatButton, 'अगला'),
     );

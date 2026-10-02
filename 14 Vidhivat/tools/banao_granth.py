@@ -18,6 +18,20 @@
 
 यह औज़ार चुपचाप कुछ नहीं भरता: गिनती न मिले, कोई अर्थ छूटे, या अर्थ में
 अंग्रेज़ी अक्षर/अंक हों — तो रुक जाता है।
+
+## दूसरा ढाँचा — `"dhancha": "khand"` (सप्तशती, सूक्त, उपनिषद …)
+
+गीता में हर अध्याय सिर्फ़ गिने हुए श्लोक हैं। बाक़ी ग्रंथों में ध्यान, विनियोग,
+शांति-पाठ जैसे बिना-अंक वाले खंड भी आते हैं, और हर पाठ का अपना परिचय होता है।
+उनके लिए:
+
+    kram.json          "dhancha": "khand", "paath": {कुंजी: {...}}, "hisse": [...]
+    paath/<कुंजी>.txt  खंड-दर-खंड:
+                           # श्लोक १
+                           मूल की पंक्तियाँ
+                           = अर्थ (एक पंक्ति)
+
+`kram.json` का `assetDir` बताता है कि JSON `app/assets/` के भीतर कहाँ जाएगी।
 """
 import io
 import json
@@ -84,8 +98,118 @@ def naam_se(pushpika_naam):
     return m.group(1)
 
 
+def kram_padho(gid):
+    return json.loads(padho(os.path.join(HERE, 'granth_paath', gid, 'kram.json')))
+
+
 def asset_dir(gid):
-    return os.path.join(HERE, '..', 'app', 'assets', 'granth', gid)
+    """ऐप में इस ग्रंथ का फ़ोल्डर। `kram.json` में `assetDir` हो तो वही
+    (सप्तशती `paath/saptashati` में है — फ़ोन पर बची कुंजियाँ उसी से बँधी हैं)।"""
+    rel = kram_padho(gid).get('assetDir', 'granth/' + gid)
+    return os.path.join(HERE, '..', 'app', 'assets', *rel.split('/'))
+
+
+NBSP = chr(0xA0)
+
+
+def khand_padho(path):
+    """`paath/<कुंजी>.txt` → [(शीर्षक, [मूल की पंक्तियाँ], अर्थ)]"""
+    out = []
+    for blk in re.split(r'\n\s*\n', padho(path).strip()):
+        lines = [x.rstrip() for x in blk.split('\n')]
+        if not lines[0].startswith('# '):
+            ruko('%s: खंड "# शीर्षक" से शुरू नहीं होता: %r' % (path, lines[0]))
+        mool = [x.strip() for x in lines[1:] if not x.startswith('= ')]
+        arth = [x[2:].strip() for x in lines[1:] if x.startswith('= ')]
+        if not mool:
+            ruko('%s: "%s" में मूल पाठ नहीं' % (path, lines[0]))
+        if len(arth) != 1:
+            ruko('%s: "%s" में अर्थ की %d पंक्तियाँ — ठीक एक चाहिए'
+                 % (path, lines[0], len(arth)))
+        out.append((lines[0][2:].strip(), mool, arth[0]))
+    return out
+
+
+def banao_khand(gid, kram, src, dst):
+    """`"dhancha": "khand"` वाले ग्रंथ — हर पाठ की अपनी फ़ाइल, खंड-दर-खंड।"""
+    os.makedirs(dst, exist_ok=True)
+    saanjha = kram.get('saanjha', {})
+    suchi = {}
+    kul_khand = kul_akshar = 0
+    for key, p in kram['paath'].items():
+        pid = '%s_%s' % (gid, key)
+        f = dict(saanjha)
+        f.update(p)
+        strot = f['strot']
+        if isinstance(strot, str):
+            if strot not in kram['strot']:
+                ruko('%s: strot "%s" kram.json के `strot` में नहीं' % (key, strot))
+            strot = kram['strot'][strot]
+        note = khula(strot['note'])
+        if len(note) > kram.get('noteHadd', 600):
+            ruko('%s: ⓘ का नोट %d अक्षर — हद पार' % (key, len(note)))
+        khand = []
+        dekhe = set()
+        for shirshak, mool, arth in khand_padho(os.path.join(src, 'paath', key + '.txt')):
+            if shirshak in dekhe:
+                ruko('%s: शीर्षक "%s" दो बार' % (key, shirshak))
+            dekhe.add(shirshak)
+            dev = '\n'.join(mool).replace(' ।', NBSP + '।')
+            if re.search(r'[A-Za-z0-9]', dev):
+                ruko('%s %s: पाठ में अंग्रेज़ी अक्षर/अंक' % (key, shirshak))
+            if re.search(r'[A-Za-z0-9]', arth):
+                ruko('%s %s: अर्थ में अंग्रेज़ी अक्षर/अंक: %s' % (key, shirshak, arth))
+            khand.append({
+                'shirshak': shirshak,
+                'dev': dev,
+                'roman': roman_sanskrit(dev),
+                'arth': khula(arth),
+                'audio': '',
+                'sthiti': 'draft',
+            })
+            kul_akshar += len(dev)
+        ginti = sum(1 for k in khand if k['shirshak'].startswith(f.get('ginoShirshak', 'श्लोक')))
+        if 'shlok' in p and p['shlok'] != ginti:
+            ruko('%s: kram.json में %d, पाठ में %d' % (key, p['shlok'], ginti))
+        likho(os.path.join(dst, pid + '.json'), {
+            'schemaVersion': 1,
+            'id': pid,
+            'naam': f['naam'],
+            'upnaam': f['upnaam'],
+            'prakar': f['prakar'],
+            'devta': f['devta'],
+            'rachnakar': f['rachnakar'],
+            'bhasha': f['bhasha'],
+            'parichay': khula(f['parichay']),
+            'kabPadhein': khula(f['kabPadhein']),
+            'kaisePadhein': khula(f['kaisePadhein']),
+            'khand': khand,
+            'bharosa': f['bharosa'],
+            'strot': {
+                'paddhati': strot['paddhati'],
+                'kshetra': strot['kshetra'],
+                'note': note,
+            },
+            'jaanch': {'panditNaam': '', 'tarikh': '', 'paas': False},
+        })
+        suchi[key] = {'id': pid, 'naam': f['naam'], 'ekLine': khula(f['ekLine']),
+                      'shlok': ginti}
+        kul_khand += len(khand)
+
+    baaki = set(kram['paath']) - {k for h in kram['hisse'] for k in h['paath']}
+    if baaki:
+        ruko('ये पाठ किसी हिस्से में नहीं: %s' % sorted(baaki))
+    likho(os.path.join(dst, '_kram.json'), {
+        'schemaVersion': 1,
+        'id': gid,
+        'naam': kram['naam'],
+        'parichay': khula(kram['parichay']),
+        'khand': [{'shirshak': h['shirshak'],
+                   'paath': [suchi[k] for k in h['paath']]}
+                  for h in kram['hisse']],
+    })
+    print('✓ %s: %d पाठ, %d खंड, मूल %d अक्षर → %s'
+          % (gid, len(suchi), kul_khand, kul_akshar, os.path.normpath(dst)))
 
 
 def banao(gid, dst=None):
@@ -96,6 +220,8 @@ def banao(gid, dst=None):
     kram = json.loads(padho(os.path.join(src, 'kram.json')))
     if kram['id'] != gid:
         ruko('kram.json की id "%s" है, फ़ोल्डर "%s"' % (kram['id'], gid))
+    if kram.get('dhancha') == 'khand':
+        return banao_khand(gid, kram, src, dst)
     mool = mool_padho(os.path.join(src, 'mool.txt'))
 
     pushpika = {}

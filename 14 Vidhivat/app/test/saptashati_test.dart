@@ -28,19 +28,62 @@ void main() {
     };
   });
 
-  test('क्रम: कवच, अर्गला, कीलक, फिर तेरह अध्याय', () {
+  test('क्रम: कवच, अर्गला, कीलक, रात्रि सूक्त — तेरह अध्याय — देवी सूक्त, रहस्य, क्षमा', () {
     expect(kram.kram.map((p) => p.id).toList(), [
       'saptashati_kavach',
       'saptashati_argala',
       'saptashati_keelak',
+      'saptashati_ratri_sukta',
       for (var n = 1; n <= 13; n++) 'saptashati_${n.toString().padLeft(2, '0')}',
+      'saptashati_devi_sukta',
+      'saptashati_pradhanik',
+      'saptashati_vaikritik',
+      'saptashati_murti',
+      'saptashati_kshama',
     ]);
     expect(kram.hisse.map((h) => h.shirshak), [
       'पाठ से पहले',
       'प्रथम चरित्र — महाकाली',
       'मध्यम चरित्र — महालक्ष्मी',
       'उत्तम चरित्र — महासरस्वती',
+      'पाठ के बाद',
     ]);
+  });
+
+  /// D-084 का "बाक़ी" — रात्रि/देवी सूक्त, तीन रहस्य, क्षमा प्रार्थना (→ D-102)।
+  test('बचे हुए अंग: गिनती, और हर एक की पहली पंक्ति', () {
+    const ginti = {
+      'saptashati_ratri_sukta': 8,
+      'saptashati_devi_sukta': 8,
+      'saptashati_pradhanik': 29,
+      'saptashati_vaikritik': 39,
+      'saptashati_murti': 25,
+      'saptashati_kshama': 8,
+      'saptashati_kavach': 56,
+      'saptashati_keelak': 14,
+    };
+    for (final e in ginti.entries) {
+      expect(kram.kram.firstWhere((p) => p.id == e.key).shlok, e.value,
+          reason: e.key);
+    }
+    expect(paath['saptashati_ratri_sukta']!.khand.first.dev,
+        startsWith('रात्री व्यख्यदायती'));
+    expect(paath['saptashati_devi_sukta']!.khand.first.dev,
+        startsWith('अहं रुद्रेभिर्वसुभिश्चराम्यहम्'.substring(0, 20)));
+    expect(paath['saptashati_kshama']!.khand.first.dev,
+        startsWith('अपराधसहस्राणि'));
+    expect(paath['saptashati_murti']!.khand.first.dev, contains('नन्दा भगवती नाम'));
+  });
+
+  /// 2 अक्टूबर 2026 तक कवच की दो पंक्तियों में स्रोत की टिप्पणी ("॥ २७॥
+  /// खड्गधारिण्युभौ स्कन्धौ") पाठ के भीतर छपी हुई थी। मूल में अंक कभी न आएँ।
+  test('मूल पाठ में कहीं अंक नहीं — स्रोत की टिप्पणी पाठ में नहीं घुसी', () {
+    for (final p in paath.values) {
+      for (final k in p.khand) {
+        expect(k.dev, isNot(matches(RegExp('[०-९0-9]'))),
+            reason: '${p.id} ${k.shirshak}');
+      }
+    }
   });
 
   test('फ़ोल्डर की हर फ़ाइल क्रम में है, और क्रम का हर पाठ फ़ोल्डर में', () {
@@ -63,7 +106,11 @@ void main() {
     for (final k in kram.kram) {
       final p = paath[k.id]!;
       expect(p.naam, k.naam, reason: k.id);
-      expect(p.khand.where((x) => x.shirshak.startsWith('श्लोक')).length,
+      expect(
+          p.khand
+              .where((x) =>
+                  x.shirshak.startsWith('श्लोक') || x.shirshak.startsWith('मंत्र'))
+              .length,
           k.shlok,
           reason: k.id);
     }
@@ -142,7 +189,7 @@ void main() {
         .map((k) => k.dev)
         .join(' ');
     for (final naam in ['शैलपुत्री', 'ब्रह्मचारिणी', 'चन्द्रघण्ट',
-        'कूष्माण्ड', 'स्कन्दमात', 'कात्यायनी', 'कालरात्रि', 'महागौरी',
+        'कूष्माण्ड', 'स्कन्दमात', 'कात्यायनी', 'कालरात्र', 'महागौरी',
         'सिद्धिदात्री']) {
       expect(teen, contains(naam), reason: naam);
     }

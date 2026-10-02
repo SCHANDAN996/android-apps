@@ -91,3 +91,22 @@ _ANK = str.maketrans('0123456789', '०१२३४५६७८९')
 def dev_ank(n):
     """12 → '१२'"""
     return str(n).translate(_ANK)
+
+
+_VARG = {'ङ': 'कखगघ', 'ञ': 'चछजझ', 'ण': 'टठडढ', 'न': 'तथदध', 'म': 'पफबभ'}
+_PANCHAM = {v: n for n, vs in _VARG.items() for v in vs}
+
+
+def pancham(s):
+    """शब्द के भीतर का अनुस्वार → उसी वर्ग का पंचम वर्ण (संकट → सङ्कट)।
+
+    ऐप की संस्कृत इसी चलन में है (→ docs/18 §१८.३)। य र ल व श ष स ह से पहले
+    का अनुस्वार और शब्द के अंत का अनुस्वार जस का तस रहता है।"""
+    out = []
+    for i, c in enumerate(s):
+        nxt = s[i + 1] if i + 1 < len(s) else ''
+        if c == 'ं' and nxt in _PANCHAM:
+            out.append(_PANCHAM[nxt] + '्')
+        else:
+            out.append(c)
+    return ''.join(out)

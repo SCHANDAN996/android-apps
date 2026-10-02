@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 1,
+  "id": "saptashati_vaikritik",
+  "naam": "वैकृतिक रहस्य",
+  "upnaam": [
+    "दुर्गा सप्तशती — वैकृतिक रहस्य",
+    "रहस्य त्रय"
+  ],
+  "prakar": "stotra",
+  "devta": "दुर्गा माँ",
+  "rachnakar": "पारंपरिक — सप्तशती के अंग",
+  "bhasha": "संस्कृत",
+  "parichay": "तीन रहस्यों में दूसरा। इसमें महाकाली (दस मुख), महालक्ष्मी (अठारह भुजाएँ) और महासरस्वती (आठ भुजाएँ) के रूप और आयुध बताए गए हैं; फिर यह कि किसकी पूजा में कौन कहाँ रखा जाए, और पाठ किस चरित्र से किया जाए।\n\nइसमें पूजा की पुरानी विधि का वर्णन है, जिसमें बलि का भी ज़िक्र आता है (श्लोक २८)। ऐप इसे पाठ के अंग की तरह देता है — पूजा की विधि बताने के लिए नहीं। घर की पूजा अपनी कुल-परंपरा से कीजिए।",
+  "kabPadhein": "सप्तशती के तेरह अध्याय पूरे होने के बाद, इसी क्रम में — प्राधानिक, वैकृतिक, मूर्ति रहस्य।",
+  "kaisePadhein": "सप्तशती का क्रम है: कवच, अर्गला, कीलक और रात्रि सूक्त — फिर तेरह अध्याय — फिर देवी सूक्त, तीन रहस्य और क्षमा प्रार्थना। आगे-पीछे के ये अंग हर घर में पूरे नहीं पढ़े जाते; अपनी परंपरा देखिए। पूरा पाठ एक बैठक में न हो तो नौ दिन में बाँटकर कर सकते हैं; बहुत घरों में एक दिन में एक या कुछ अध्याय पढ़े जाते हैं।\n\nअध्याय के बीच में न रुकें — जहाँ तक पढ़ें, अध्याय पूरा करके रुकें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। अर्थ समझकर पढ़ना सबसे अच्छा है। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "श्लोक १",
+      "dev": "ऋषिरुवाच ।\nत्रिगुणा तामसी देवी सात्त्विकी या त्रिधोदिता ।\nसा शर्वा चण्डिका दुर्गा भद्रा भगवतीर्यते॥",
+      "roman": "rishiruvaacha |\ntrigunaa taamasee devee saattvikee yaa tridhoditaa |\nsaa sharvaa chandikaa durgaa bhadraa bhagavateeryate ||",
+      "arth": "ऋषि बोले — तीनों गुणों वाली जो देवी तामसी और सात्त्विकी आदि तीन रूपों में बताई गई हैं, वही शर्वा, चण्डिका, दुर्गा, भद्रा और भगवती कहलाती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "योगनिद्रा हरेरुक्ता महाकाली तमोगुणा ।\nमधुकैटभनाशार्थं यां तुष्टावाम्बुजासनः॥",
+      "roman": "yoganidraa hareruktaa mahaakaalee tamogunaa |\nmadhukaitabhanaashaartham yaam tushtaavaambujaasanah ||",
+      "arth": "हरि की योगनिद्रा कही गई महाकाली तमोगुण वाली हैं; मधु और कैटभ के नाश के लिए कमल पर बैठे ब्रह्मा जी ने उन्हीं की स्तुति की थी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "दशवक्त्रा दशभुजा दशपादाञ्जनप्रभा ।\nविशालया राजमाना त्रिंशल्लोचनमालया॥",
+      "roman": "dashavaktraa dashabhujaa dashapaadaanjanaprabhaa |\nvishaalayaa raajamaanaa trimshallochanamaalayaa ||",
+      "arth": "उनके दस मुख, दस भुजाएँ और दस पैर हैं, रंग काजल जैसा है; वे तीस बड़ी-बड़ी आँखों की माला से शोभा पाती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "स्फुरद्दशनदंष्ट्रा सा भीमरूपापि भूमिप ।\nरूपसौभाग्यकान्तीनां सा प्रतिष्ठा महाश्रियाम्॥",
+      "roman": "sphuraddashanadamshtraa saa bheemaroopaapi bhoomipa |\nroopasaubhaagyakaanteenaam saa pratishthaa mahaashriyaam ||",
+      "arth": "हे राजन्, उनके दाँत और दाढ़ें चमकती हैं; रूप भयंकर होने पर भी वे रूप, सौभाग्य, कांति और महान शोभा का आधार हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "खड्गबाणगदाशूलशङ्खचक्रभुशुण्डिभृत् ।\nपरिघं कार्मुकं शीर्षं निश्चोतद्रुधिरं दधौ॥",
+      "roman": "khadgabaanagadaashoolashankhachakrabhushundibhrit |\nparigham kaarmukam sheersham nishchotadrudhiram dadhau ||",
+      "arth": "वे तलवार, बाण, गदा, शूल, शंख, चक्र और भुशुण्डी धारण करती हैं; और परिघ, धनुष तथा रक्त टपकाता हुआ कटा सिर लिए हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "एषा सा वैष्णवी माया महाकाली दुरत्यया ।\nआराधिता वशीकुर्यात् पूजाकर्तुश्चराचरम्॥",
+      "roman": "eshaa saa vaishnavee maayaa mahaakaalee duratyayaa |\naaraadhitaa vasheekuryaat poojaakartushcharaacharam ||",
+      "arth": "यही वह विष्णु की माया, महाकाली हैं, जिन्हें पार करना कठिन है। आराधना करने पर वे पूजा करने वाले के वश में सारा चर-अचर कर देती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "सर्वदेवशरीरेभ्यो याऽऽविर्भूताऽमितप्रभा ।\nत्रिगुणा सा महालक्ष्मीः साक्षान्महिषमर्दिनी॥",
+      "roman": "sarvadevashareerebhyo yaa''virbhootaa'mitaprabhaa |\ntrigunaa saa mahaalakshmeeh saakshaanmahishamardinee ||",
+      "arth": "जो सब देवताओं के शरीरों से प्रकट हुईं, जिनकी कांति की कोई सीमा नहीं — वे तीनों गुणों वाली महालक्ष्मी साक्षात् महिषासुर-मर्दिनी हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "श्वेतानना नीलभुजा सुश्वेतस्तनमण्डला ।\nरक्तमध्या रक्तपादा नीलजङ्घोरुरुन्मदा॥",
+      "roman": "shvetaananaa neelabhujaa sushvetastanamandalaa |\nraktamadhyaa raktapaadaa neelajanghorurunmadaa ||",
+      "arth": "उनका मुख गोरा, भुजाएँ नीली, स्तन-मंडल अत्यंत उजला, कमर और पैर लाल, पिंडलियाँ और जाँघें नीली हैं; वे (युद्ध के) मद में भरी हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "सुचित्रजघना चित्रमाल्याम्बरविभूषणा ।\nचित्रानुलेपना कान्तिरूपसौभाग्यशालिनी॥",
+      "roman": "suchitrajaghanaa chitramaalyaambaravibhooshanaa |\nchitraanulepanaa kaantiroopasaubhaagyashaalinee ||",
+      "arth": "उनका कटि-भाग सुंदर रंग-बिरंगा है; वे रंग-बिरंगी माला, वस्त्र और गहनों से सजी हैं; अंगों पर तरह-तरह का लेप है; वे कांति, रूप और सौभाग्य से भरी हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "अष्टादशभुजा पूज्या सा सहस्रभुजा सती ।\nआयुधान्यत्र वक्ष्यन्ते दक्षिणाधःकरक्रमात्॥",
+      "roman": "ashtaadashabhujaa poojyaa saa sahasrabhujaa satee |\naayudhaanyatra vakshyante dakshinaadhahkarakramaat ||",
+      "arth": "उनकी हज़ार भुजाएँ हैं, फिर भी उन्हें अठारह भुजाओं वाली मानकर पूजना चाहिए। अब उनके आयुध बताए जाते हैं — दाहिनी ओर के नीचे वाले हाथ से क्रम से।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "अक्षमाला च कमलं बाणोऽसिः कुलिशं गदा ।\nचक्रं त्रिशूलं परशुः शङ्खो घण्टा च पाशकः॥",
+      "roman": "akshamaalaa cha kamalam baano'sih kulisham gadaa |\nchakram trishoolam parashuh shankho ghantaa cha paashakah ||",
+      "arth": "अक्षमाला, कमल, बाण, तलवार, वज्र, गदा, चक्र, त्रिशूल, फरसा, शंख, घंटा और पाश,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "शक्तिर्दण्डश्चर्म चापं पानपात्रं कमण्डलुः ।\nअलङ्कृतभुजामेभिरायुधैः कमलासनाम्॥",
+      "roman": "shaktirdandashcharma chaapam paanapaatram kamandaluh |\nalankritabhujaamebhiraayudhaih kamalaasanaam ||",
+      "arth": "शक्ति, दंड, ढाल, धनुष, पान-पात्र और कमंडलु — इन आयुधों से सजी भुजाओं वाली, कमल के आसन पर बैठी,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "सर्वदेवमयीमीशां महालक्ष्मीमिमां नृप ।\nपूजयेत् सर्वलोकानां स देवानां प्रभुर्भवेत्॥",
+      "roman": "sarvadevamayeemeeshaam mahaalakshmeemimaam nripa |\npoojayet sarvalokaanaam sa devaanaam prabhurbhavet ||",
+      "arth": "सब देवताओं के रूप वाली, सबकी स्वामिनी इन महालक्ष्मी की, हे राजन्, जो पूजा करे — वह सब लोकों और देवताओं का स्वामी हो जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "गौरीदेहात्समुद्भूता या सत्त्वैकगुणाश्रया ।\nसाक्षात्सरस्वती प्रोक्ता शुम्भासुरनिबर्हिणी॥",
+      "roman": "gaureedehaatsamudbhootaa yaa sattvaikagunaashrayaa |\nsaakshaatsarasvatee proktaa shumbhaasuranibarhinee ||",
+      "arth": "जो गौरी के शरीर से प्रकट हुईं और केवल सत्त्वगुण के आधार पर हैं, वे साक्षात् सरस्वती कही गई हैं — शुम्भ नाम के असुर का नाश करने वाली।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "दधौ चाष्टभुजा बाणान्मुसलं शूलचक्रभृत् ।\nशङ्खं घण्टां लाङ्गलं च कार्मुकं वसुधाधिप॥",
+      "roman": "dadhau chaashtabhujaa baanaanmusalam shoolachakrabhrit |\nshankham ghantaam laangalam cha kaarmukam vasudhaadhipa ||",
+      "arth": "हे राजन्, वे आठ भुजाओं वाली हैं और बाण, मूसल, शूल, चक्र, शंख, घंटा, हल और धनुष धारण करती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "एषा सम्पूजिता भक्त्या सर्वज्ञत्वं प्रयच्छति ।\nनिशुम्भमथिनी देवी शुम्भासुरनिबर्हिणी॥",
+      "roman": "eshaa sampoojitaa bhaktyaa sarvajnatvam prayachchhati |\nnishumbhamathinee devee shumbhaasuranibarhinee ||",
+      "arth": "भक्ति से पूजने पर ये सब कुछ जान लेने की शक्ति देती हैं — निशुम्भ को मथने वाली और शुम्भ असुर का नाश करने वाली यही देवी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "इत्युक्तानि स्वरूपाणि मूर्तीनां तव पार्थिव ।\nउपासनं जगन्मातुः पृथगासां निशामय॥",
+      "roman": "ityuktaani svaroopaani moorteenaam tava paarthiva |\nupaasanam jaganmaatuh prithagaasaam nishaamaya ||",
+      "arth": "हे राजन्, इस तरह मैंने तुम्हें इन मूर्तियों के स्वरूप बताए। अब जगन्माता के इन रूपों की अलग-अलग उपासना सुनो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "महालक्ष्मीर्यदा पूज्या महाकाली सरस्वती ।\nदक्षिणोत्तरयोः पूज्ये पृष्ठतो मिथुनत्रयम्॥",
+      "roman": "mahaalakshmeeryadaa poojyaa mahaakaalee sarasvatee |\ndakshinottarayoh poojye prishthato mithunatrayam ||",
+      "arth": "जब महालक्ष्मी की पूजा करनी हो, तब महाकाली और महासरस्वती को उनके दाहिनी और बाईं ओर पूजें, और पीछे तीनों जोड़ों को।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "विरञ्चिः स्वरया मध्ये रुद्रो गौर्या च दक्षिणे ।\nवामे लक्ष्म्या हृषीकेशः पुरतो देवतात्रयम्॥",
+      "roman": "viranchih svarayaa madhye rudro gauryaa cha dakshine |\nvaame lakshmyaa hrisheekeshah purato devataatrayam ||",
+      "arth": "बीच में स्वरा (सरस्वती) के साथ ब्रह्मा, दाहिनी ओर गौरी के साथ रुद्र, और बाईं ओर लक्ष्मी के साथ हृषीकेश (विष्णु)। आगे की ओर तीनों देवियाँ —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "अष्टादशभुजा मध्ये वामे चास्या दशानना ।\nदक्षिणेऽष्टभुजा लक्ष्मीर्महतीति समर्चयेत्॥",
+      "roman": "ashtaadashabhujaa madhye vaame chaasyaa dashaananaa |\ndakshine'shtabhujaa lakshmeermahateeti samarchayet ||",
+      "arth": "— बीच में अठारह भुजाओं वाली, उनकी बाईं ओर दस मुखों वाली, और दाहिनी ओर आठ भुजाओं वाली। इस तरह, लक्ष्मी को प्रधान मानकर, पूजा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "अष्टादशभुजा चैषा यदा पूज्या नराधिप ।\nदशानना चाष्टभुजा दक्षिणोत्तरयोस्तदा॥",
+      "roman": "ashtaadashabhujaa chaishaa yadaa poojyaa naraadhipa |\ndashaananaa chaashtabhujaa dakshinottarayostadaa ||",
+      "arth": "हे राजन्, जब इन अठारह भुजाओं वाली की, या दस मुखों वाली की, या आठ भुजाओं वाली की (अकेले) पूजा करनी हो, तब उनके दाहिनी और बाईं ओर —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "कालमृत्यू च सम्पूज्यौ सर्वारिष्टप्रशान्तये ।\nयदा चाष्टभुजा पूज्या शुम्भासुरनिबर्हिणी॥",
+      "roman": "kaalamrityoo cha sampoojyau sarvaarishtaprashaantaye |\nyadaa chaashtabhujaa poojyaa shumbhaasuranibarhinee ||",
+      "arth": "— सब अनिष्टों की शांति के लिए काल और मृत्यु की भी पूजा करें। और जब शुम्भ असुर का नाश करने वाली आठ भुजाओं वाली की पूजा करनी हो, —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २३",
+      "dev": "नवास्याः शक्तयः पूज्यास्तदा रुद्रविनायकौ ।\nनमो देव्या इति स्तोत्रैर्महालक्ष्मीं समर्चयेत्॥",
+      "roman": "navaasyaah shaktayah poojyaastadaa rudravinaayakau |\nnamo devyaa iti stotrairmahaalakshmeem samarchayet ||",
+      "arth": "— तब उनकी नौ शक्तियों की, और रुद्र तथा विनायक (गणेश) की भी पूजा करें। 'नमो देव्यै' वाले स्तोत्र से महालक्ष्मी की पूजा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २४",
+      "dev": "अवतारत्रयार्चायां स्तोत्रमन्त्रास्तदाश्रयाः ।\nअष्टादशभुजा चैषा पूज्या महिषमर्दिनी॥",
+      "roman": "avataaratrayaarchaayaam stotramantraastadaashrayaah |\nashtaadashabhujaa chaishaa poojyaa mahishamardinee ||",
+      "arth": "तीनों अवतारों की पूजा में उन्हीं से जुड़े स्तोत्र और मंत्र बरतने चाहिए। और ये अठारह भुजाओं वाली महिषमर्दिनी ही पूजने योग्य हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २५",
+      "dev": "महालक्ष्मीर्महाकाली सैव प्रोक्ता सरस्वती ।\nईश्वरी पुण्यपापानां सर्वलोकमहेश्वरी॥",
+      "roman": "mahaalakshmeermahaakaalee saiva proktaa sarasvatee |\neeshvaree punyapaapaanaam sarvalokamaheshvaree ||",
+      "arth": "वही महालक्ष्मी, वही महाकाली और वही सरस्वती कही गई हैं; वे पुण्य और पाप की स्वामिनी और सब लोकों की महेश्वरी हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २६",
+      "dev": "महिषान्तकरी येन पूजिता स जगत्प्रभुः ।\nपूजयेज्जगतां धात्रीं चण्डिकां भक्तवत्सलाम्॥",
+      "roman": "mahishaantakaree yena poojitaa sa jagatprabhuh |\npoojayejjagataam dhaatreem chandikaam bhaktavatsalaam ||",
+      "arth": "जिसने महिषासुर का अंत करने वाली की पूजा की, वह जगत् का स्वामी होता है। जगत् को धारण करने वाली, भक्तों पर स्नेह रखने वाली चण्डिका की पूजा करें —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २७",
+      "dev": "अर्घ्यादिभिरलङ्कारैर्गन्धपुष्पैस्तथाक्षतैः ।\nधूपैर्दीपैश्च नैवेद्यैर्नानाभक्ष्यसमन्वितैः॥",
+      "roman": "arghyaadibhiralankaarairgandhapushpaistathaakshataih |\ndhoopairdeepaishcha naivedyairnaanaabhakshyasamanvitaih ||",
+      "arth": "— अर्घ्य आदि से, गहनों से, चंदन, फूल और अक्षत से, धूप, दीप और तरह-तरह के खाने की चीज़ों वाले नैवेद्य से,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २८",
+      "dev": "रुधिराक्तेन बलिना मांसेन सुरया नृप ।\nप्रणामाचमनीयेन चन्दनेन सुगन्धिना॥",
+      "roman": "rudhiraaktena balinaa maamsena surayaa nripa |\npranaamaachamaneeyena chandanena sugandhinaa ||",
+      "arth": "— हे राजन्, रक्त से सनी बलि, मांस और मदिरा से, प्रणाम और आचमन से, सुगंधित चंदन से,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २९",
+      "dev": "सकर्पूरैश्च ताम्बूलैर्भक्तिभावसमन्वितैः ।\nवामभागेऽग्रतो देव्याश्छिन्नशीर्षं महासुरम्॥",
+      "roman": "sakarpooraishcha taamboolairbhaktibhaavasamanvitaih |\nvaamabhaage'grato devyaashchhinnasheersham mahaasuram ||",
+      "arth": "— और कपूर वाले पान से, भक्ति-भाव के साथ। देवी के सामने बाईं ओर कटे सिर वाले महान असुर —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३०",
+      "dev": "पूजयेन्महिषं येन प्राप्तं सायुज्यमीशया ।\nदक्षिणे पुरतः सिंहं समग्रं धर्ममीश्वरम्॥",
+      "roman": "poojayenmahisham yena praaptam saayujyameeshayaa |\ndakshine puratah simham samagram dharmameeshvaram ||",
+      "arth": "— महिष की पूजा करें, जिसने देवी के साथ सायुज्य (एक हो जाना) पाया। और सामने दाहिनी ओर सिंह की — जो संपूर्ण धर्म और ईश्वर-रूप है —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३१",
+      "dev": "वाहनं पूजयेद्देव्या धृतं येन चराचरम् ।\nततः कृताञ्जलिर्भूत्वा स्तुवीत चरितैरिमैः॥",
+      "roman": "vaahanam poojayeddevyaa dhritam yena charaacharam |\ntatah kritaanjalirbhootvaa stuveeta charitairimaih ||",
+      "arth": "— देवी के उस वाहन की पूजा करें, जिसने चर-अचर को धारण किया है। फिर हाथ जोड़कर इन चरित्रों से स्तुति करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३२",
+      "dev": "एकेन वा मध्यमेन नैकेनेतरयोरिह ।\nचरितार्धं तु न जपेज्जपञ्छिद्रमवाप्नुयात्॥",
+      "roman": "ekena vaa madhyamena naikenetarayoriha |\ncharitaardham tu na japejjapanchhidramavaapnuyaat ||",
+      "arth": "पाठ एक ही चरित्र से करना हो तो मध्यम चरित्र से करें; बाक़ी दो में से अकेले किसी एक से नहीं। आधे चरित्र का पाठ न करें — ऐसा करने वाले के पाठ में कमी रह जाती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३३",
+      "dev": "स्तोत्रमन्त्रैः स्तुवीतेमां यदि वा जगदम्बिकाम् ।\nप्रदक्षिणानमस्कारान् कृत्वा मूर्ध्नि कृताञ्जलिः॥",
+      "roman": "stotramantraih stuveetemaam yadi vaa jagadambikaam |\npradakshinaanamaskaaraan kritvaa moordhni kritaanjalih ||",
+      "arth": "अथवा स्तोत्र के मंत्रों से इन जगदम्बा की स्तुति करें; फिर प्रदक्षिणा और नमस्कार करके, सिर पर हाथ जोड़कर, —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३४",
+      "dev": "क्षमापयेज्जगद्धात्रीं मुहुर्मुहुरतन्द्रितः ।\nप्रतिश्लोकं च जुहुयात् पायसं तिलसर्पिषा॥",
+      "roman": "kshamaapayejjagaddhaatreem muhurmuhuratandritah |\npratishlokam cha juhuyaat paayasam tilasarpishaa ||",
+      "arth": "— आलस छोड़कर बार-बार जगत् को धारण करने वाली देवी से क्षमा माँगें। और हर श्लोक पर तिल और घी मिली खीर से आहुति दें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३५",
+      "dev": "जुहुयात् स्तोत्रमन्त्रैर्वा चण्डिकायै शुभं हविः ।\nनमो नमः पदैर्देवीं पूजयेत् सुसमाहितः॥",
+      "roman": "juhuyaat stotramantrairvaa chandikaayai shubham havih |\nnamo namah padairdeveem poojayet susamaahitah ||",
+      "arth": "अथवा स्तोत्र के मंत्रों से चण्डिका के लिए पवित्र हवि की आहुति दें; और एकाग्र मन से 'नमो नमः' वाले पदों से देवी की पूजा करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३६",
+      "dev": "प्रयतः प्राञ्जलिः प्रह्वः प्राणानारोप्य चात्मनि ।\nसुचिरं भावयेद्देवीं चण्डिकां तन्मयो भवेत्॥",
+      "roman": "prayatah praanjalih prahvah praanaanaaropya chaatmani |\nsuchiram bhaavayeddeveem chandikaam tanmayo bhavet ||",
+      "arth": "संयम से, हाथ जोड़कर, झुककर, प्राणों को अपने भीतर स्थिर करके देर तक देवी चण्डिका का ध्यान करें — और उन्हीं में लीन हो जाएँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३७",
+      "dev": "एवं यः पूजयेद्भक्त्या प्रत्यहं परमेश्वरीम् ।\nभुक्त्वा भोगान् यथाकामं देवीसायुज्यमाप्नुयात्॥",
+      "roman": "evam yah poojayedbhaktyaa pratyaham parameshvareem |\nbhuktvaa bhogaan yathaakaamam deveesaayujyamaapnuyaat ||",
+      "arth": "जो इस तरह रोज़ भक्ति से परमेश्वरी की पूजा करता है, वह इच्छा के अनुसार भोग भोगकर देवी का सायुज्य पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३८",
+      "dev": "यो न पूजयते नित्यं चण्डिकां भक्तवत्सलाम् ।\nभस्मीकृत्यास्य पुण्यानि निर्दहेत् परमेश्वरी॥",
+      "roman": "yo na poojayate nityam chandikaam bhaktavatsalaam |\nbhasmeekrityaasya punyaani nirdahet parameshvaree ||",
+      "arth": "जो भक्तों पर स्नेह रखने वाली चण्डिका की नित्य पूजा नहीं करता, उसके पुण्यों को परमेश्वरी जलाकर भस्म कर देती हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३९",
+      "dev": "तस्मात् पूजय भूपाल सर्वलोकमहेश्वरीम् ।\nयथोक्तेन विधानेन चण्डिकां सुखमाप्स्यसि॥",
+      "roman": "tasmaat poojaya bhoopaala sarvalokamaheshvareem |\nyathoktena vidhaanena chandikaam sukhamaapsyasi ||",
+      "arth": "इसलिए हे राजन्, बताई हुई विधि से सब लोकों की महेश्वरी चण्डिका की पूजा करो — तुम सुख पाओगे।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "madhyam",
+  "strot": {
+    "paddhati": "दुर्गा सप्तशती — रहस्य त्रय",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ दो अलग संग्रहों और दो छपी पुस्तकों को पंक्ति-दर-पंक्ति मिलाकर लिया गया है। रहस्यों के छपे रूप आपस में पूरे नहीं मिलते — कुछ पुस्तकों में श्लोक कम या ज़्यादा हैं, और शुरू का विनियोग भी अलग-अलग मिलता है (इसलिए यहाँ नहीं है)। आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है।\n\nहर श्लोक का अर्थ सरल हिंदी में, अपने शब्दों में लिखा है — शब्दशः अनुवाद नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}
