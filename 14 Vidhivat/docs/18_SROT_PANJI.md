@@ -1592,3 +1592,46 @@ N (स्वर सहित) से भी — जो फ़र्क़ दि
 `tools/granth_paath/saptashati/00_PADHIYE.md`। सप्तशती की JSON अब
 `tools/banao_granth.py saptashati` से बनती है (`"dhancha": "khand"`), और
 `tools/jaancho_granth.py` पहरा देता है कि कोई उसे हाथ से न छुए।
+
+
+---
+
+# अध्याय २१ — कुंडली: घड़ी का इतिहास, और परंपरा के चुनाव (2 अक्टूबर 2026)
+
+**हालत:** 🟢 ऐप में (→ D-105)।
+
+## २१.१ भारत की घड़ी
+
+| स्रोत | क्या |
+|---|---|
+| IANA tz database — `https://raw.githubusercontent.com/eggert/tz/main/asia`, `Zone Asia/Kolkata` | 1906 से +5:30; 1941 Oct – 1942 May 15 और 1942 Sep – 1945 Oct 15 में +6:30 |
+
+उसी फ़ाइल की टिप्पणी: 1941–45 की तारीख़ों का इकलौता स्रोत Shanks है, और वह
+*"dubious"*; 1906 से पहले रेल मद्रास के समय (+5:21:10) पर चलती थी, और कलकत्ता
+में सरकारी दफ़्तरों का समय रेल के समय से अलग था। इसीलिए ऐप इन दौरों पर चेतावनी
+देता है और 1906 से पहले की तारीख़ नहीं लेता। (कलकत्ता का समय 1948 तक और बम्बई
+का 1955 तक चलने की बात इस फ़ाइल में नहीं है — वह आम जानकारी से लिखी गई है; ऐप
+का वाक्य इसीलिए सिर्फ़ इतना कहता है कि *"उन दिनों शहर की अपनी घड़ी भी चलती थी"*।)
+
+## २१.२ राहु — औसत या स्पष्ट; दशा का साल
+
+वेब-खोज (2 अक्टूबर 2026) से जो मिला — **ये दूसरे दर्जे के स्रोत हैं**, किसी
+सॉफ़्टवेयर का अपना दस्तावेज़ नहीं पढ़ा गया:
+
+- पारंपरिक ग्रंथ औसत पात मानते हैं; सॉफ़्टवेयर दोनों देते हैं, और किसका default
+  क्या है इस पर स्रोत आपस में सहमत नहीं:
+  `https://vedintelastroapi.com/blog/rahu-true-node-vs-mean-node` ·
+  `https://www.anahitarao.com/rahu-ketu-using-mean-node-vs-true-node/` ·
+  `https://www.indiadivine.org/content/topic/1411532-mean-nodes-or-true-nodes/`
+- दशा का साल: ज़्यादातर सॉफ़्टवेयर सौर वर्ष (365.25 या 365.2425) लेते हैं; 360
+  दिन का सावन वर्ष एक अलग मत है:
+  `https://shyamasundaradasa.com/jyotish/resources/articles/how_long_year/how_long_year_1.html` ·
+  `https://www.indiadivine.org/content/topic/1486307-vimshottari-dasa-360-or-365-days/`
+
+इसीलिए ऐप एक रूप दिखाता है और ⓘ में दूसरा रूप बता देता है — "यही सही है" का
+दावा नहीं करता।
+
+## २१.३ लग्न की जाँच का डेटा
+
+NASA JPL Horizons API — सूर्य, शहर की सतह से (`coord@399`), मात्राएँ 4 (airless
+ऊँचाई) और 31; `tools/horizons_lagna.py`। तिथि वाला: `tools/horizons_tithi.py`।

@@ -607,9 +607,9 @@ app/lib/screens/paath_screen.dart         GranthNavigation — नीचे क�
 `tools/granth_paath/gita/00_PADHIYE.md` के आख़िरी खंड में पाँचों कदम हैं।
 🔑 `app/assets/granth/<id>/*.json` **हाथ से कभी नहीं** — औज़ार से।
 
-### कुंडली — `engine/lib/src/kundali.dart` + `dasha.dart` (→ D-101)
+### कुंडली — `engine/lib/src/kundali.dart` + `dasha.dart` (→ D-101, D-105)
 
-🚧 **अधूरा — ऐप में मत दिखाना।** `kundaliIsReady = false`
+✅ `kundaliIsReady = true` (2 अक्टूबर 2026 — लग्न NASA से 15″)। ऐप की स्क्रीनें इसी पर टिकी हैं।
 
 `graha.dart`, `sun.dart`, `moon.dart`, `sunrise.dart` (नाक्षत्र काल) के ऊपर
 बैठती है; `panchang.dart` को छूती नहीं।
@@ -626,7 +626,20 @@ app/lib/screens/paath_screen.dart         GranthNavigation — नीचे क�
 | `vimshottariAntardasha(maha)` | नौ अंतर्दशाएँ |
 | `nakshatraSwami` · `janmParDashaShesh` · `vimshottariKram` · `vimshottariVarsh` | तालिकाएँ |
 
-`test/kundali_test.dart` (28 जाँचें) · `tool/kundali_cli.dart` — छपी जन्मपत्री
-से मिलाने के लिए।
+| `janmPanchang(janmUtc, place, {masaSystem})` → `JanmPanchang` | `janm_panchang.dart` — जन्म के **क्षण** की तिथि, नक्षत्र-चरण, योग, करण; वार सूर्योदय से; मास-संवत् जन्म की तिथि के |
+| `bharatSamayAntar(घड़ी)` · `yuddhKalKiGhadi` · `bharatSamayPehlaSaal` | `bharat_samay.dart` — भारत की घड़ी का इतिहास (1941–45 में +6:30) |
+
+`test/kundali_test.dart` · `test/lagna_nasa_test.dart` (NASA से 96 क्षण) ·
+`test/janm_test.dart` · `tool/kundali_cli.dart` — छपी जन्मपत्री से मिलाने के लिए।
+
+**ऐप में (→ D-105):**
+
+| फ़ाइल | क्या |
+|---|---|
+| `app/lib/state/kundali_profiles.dart` | `KundaliProfile` (नाम, जन्म की घड़ी, जगह) — सिर्फ़ फ़ोन में; `place` में घड़ी का अंतर अपने आप |
+| `app/lib/screens/kundali_profiles_screen.dart` | सूची + `KundaliForm` (ब्यौरा भरना, घड़ी वाली चेतावनियाँ) |
+| `app/lib/screens/kundali_screen.dart` | चार पट्टियाँ: कुंडली · ग्रह · दशा · पंचांग; चित्र PNG बनकर भेजना; ⓘ "यह गणना कैसे हुई" |
+| `app/lib/widgets/kundali_chitra.dart` | उत्तर भारतीय चित्र (`CustomPainter`); `bhavVibhag()` — लग्न / चंद्र / नवमांश का बँटवारा |
+| `app/test/kundali_screens_test.dart` | 17 जाँचें — छोटे फ़ोन, बड़े अक्षर, और वर्जित शब्द |
 
 ⛔ फलादेश, राशिफल, उपाय — इन फ़ाइलों में नहीं हैं और नहीं आएँगे।
