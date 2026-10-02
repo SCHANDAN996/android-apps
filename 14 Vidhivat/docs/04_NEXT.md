@@ -59,7 +59,11 @@ widget जाँचें पास हैं और स्क्रीनों
 ### 🟠 आपके करने के काम (बाहर जाने वाले — AI नहीं करता)
 
 - **Play पर नई build चढ़ाना** — नवरात्रि 11 अक्टूबर को है; सप्तशती के बचे अंग
-  इसी build में हैं। विधि → `docs/22`।
+  इसी build में हैं। **build बनी रखी है** (2 अक्टू शाम, `1.2.0+6`, signed):
+  `app/build/app/outputs/bundle/release/app-release.aab`। ⚠ उसके बाद कोड बदला हो तो
+  `app/` में `flutter build appbundle --release` से दोबारा बनाइए। विधि → `docs/22`।
+- **listing** — `app/play_store_assets/listing_v1_2.md` से छोटा विवरण, "नया क्या" और
+  पूरा विवरण Console में चिपकाइए। नई स्क्रीनों की तस्वीरें फ़ोन से बनेंगी।
 - **नीति Blogger पर दोबारा चिपकाना** — `privacy_policy_blogger.html` में कुंडली
   के जन्म-ब्यौरे वाली पंक्ति जुड़ी है (तारीख़ 2 अक्टूबर)।
 - **Play की listing** में अब `कुंडली` शब्द सच है (`docs/19` में उसे जान-बूझकर
@@ -203,7 +207,7 @@ APK **23.5 MB** (सिर्फ़ arm64), फ़ोन (vivo V2553) पर ल
 |---|---|
 | v1.1.0 (versionCode 3) | 22 सित — production में चढ़ा, Save हुआ; review के लिए भेजा या नहीं, यह repo में दर्ज नहीं |
 | दक्षिणा | 23 सित से **PayU** का बाहरी link (→ D-090 वाली दूसरी entry); Play Billing हटी |
-| versionCode | `pubspec.yaml` में `1.1.0+5` |
+| versionCode | `pubspec.yaml` में `1.2.0+6` (2 अक्टू; 4 और 5 चढ़े या नहीं — दर्ज नहीं) |
 | चार नए screenshot (`screenshots/play/09–12`) | चढ़ाना डेवलपर का काम |
 
 ⚠ **Play Console की आज की हालत सिर्फ़ डेवलपर जानते हैं** — ऊपर वही है जो काग़ज़ों

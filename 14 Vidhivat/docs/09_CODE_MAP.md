@@ -599,6 +599,7 @@ app/lib/screens/paath_screen.dart         GranthNavigation — नीचे क�
 |---|---|
 | `tools/banao_granth.py <id>` | `tools/granth_paath/<id>/` → ऐप की JSON। दो ढाँचे: गीता वाला (`mool.txt` + `arth/`) और `"dhancha": "khand"` (`paath/<कुंजी>.txt` — सप्तशती, सूक्त…) |
 | `tools/jaancho_granth.py` | ऐप की JSON औज़ार के नतीजे से हूबहू है या नहीं + कंटेंट के नियम |
+| `tools/banao_pandit_folder.py` | `docs/pandit_jaanch/` — अब अपनी पुरानी, बची हुई `.md` फ़ाइलें भी हटाता है (क्रम-अंक खिसकने पर) |
 | `tools/lipi.py` | रोमन (`roman_sanskrit`; `roman_hindi` — अवधी/हिंदी, शब्द के अंत का "अ" नहीं), नुक़्ता खोलना (`khula`), देवनागरी अंक, `pancham()` (संकट → सङ्कट) |
 | `tools/milan.py` | मिलान के साझा औज़ार — तुलना की कुंजी (`kunji_dev`, `kunji_iast`), पंक्तियाँ जोड़ना (`jodo`) |
 | `tools/granth_paath/saptashati/milan/` | सप्तशती का मिलान; `sudhar.py` — पाठ के सुधारों की तालिका (→ D-103) |

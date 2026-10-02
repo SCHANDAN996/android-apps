@@ -94,7 +94,7 @@ class MoreScreen extends StatelessWidget {
                 _MoreItem(
                   icon: Icons.auto_stories_outlined,
                   title: 'ग्रंथालय',
-                  subtitle: 'श्रीमद्भगवद्गीता और दुर्गा सप्तशती — अर्थ सहित',
+                  subtitle: 'गीता, सुंदरकांड और दुर्गा सप्तशती — अर्थ सहित',
                   onTap: () => _open(context, const GranthalayaScreen()),
                 ),
                 // ── कुंडली (→ D-098, D-105) ─────────────────────────

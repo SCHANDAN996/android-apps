@@ -372,5 +372,23 @@ w(readme, f"""# पंडित जी की जाँच — फ़ाइल �
 """)
 files_written.append(readme)
 
+# ── पुरानी फ़ाइलें हटाओ ──
+# फ़ाइलों के नाम क्रम-अंक से शुरू होते हैं (`03_….md`), और कंटेंट बदलने पर
+# अंक खिसक जाते हैं। पुरानी फ़ाइलें अपने पुराने अंक के साथ पड़ी रह जाती थीं —
+# 2 अक्टू 2026 को `मंत्र/` में 63 की जगह 156 फ़ाइलें मिलीं, एक ही अंक पर
+# तीन-तीन। सिर्फ़ इन्हीं तीन फ़ोल्डरों की `.md` फ़ाइलें हटती हैं; बाक़ी
+# फ़ोल्डर (दूसरों की जाँच वाले) इस औज़ार के नहीं हैं और छुए नहीं जाते।
+likhi = {os.path.normcase(os.path.abspath(f)) for f in files_written}
+hati = 0
+for sub in ("मंत्र", "खाली-मंत्र", "पूजा"):
+    d = os.path.join(OUT, sub)
+    for f in os.listdir(d):
+        full = os.path.join(d, f)
+        if f.endswith(".md") and os.path.normcase(os.path.abspath(full)) not in likhi:
+            os.remove(full)
+            hati += 1
+if hati:
+    print("हटी: %d पुरानी फ़ाइलें (जिन्हें इस बार नहीं लिखा गया)" % hati)
+
 print("बना: %d फ़ाइलें (मंत्र %d, ख़ाली %d, पूजा %d, संकल्प+README 2)"
       % (len(files_written), len(bhare), len(khaali), len(pujas)))

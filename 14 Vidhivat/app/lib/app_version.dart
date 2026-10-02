@@ -6,4 +6,4 @@
 /// `test/app_version_test.dart` दोनों को मिलाकर देखता है।
 library;
 
-const String appVersion = '1.1.0';
+const String appVersion = '1.2.0';
