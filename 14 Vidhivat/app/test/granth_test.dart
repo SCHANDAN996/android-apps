@@ -233,9 +233,12 @@ void main() {
       expect(kadam, hasLength(1));
       expect(kadam.single.shirshak, 'पाठ');
       expect(kadam.single.granth, 'gita');
-      // अब यह कहना झूठ होता कि गीता ऐप में नहीं है
-      expect(kadam.single.vivaran, contains('अध्याय ऐप में हैं'));
+      // उसी कदम पर विष्णु सहस्रनाम भी (→ D-107)
+      expect(kadam.single.granthSuchi, ['gita', 'vishnusahasranama']);
+      // अब यह कहना झूठ होता कि गीता या सहस्रनाम ऐप में नहीं है
+      expect(kadam.single.vivaran, contains('दोनों ऐप में हैं'));
       expect(kadam.single.vivaran, isNot(contains('इनका पूरा पाठ अभी ऐप में नहीं')));
+      expect(kadam.single.vivaran, isNot(contains('सहस्रनाम अभी ऐप में नहीं')));
     });
 
     test('किसी भी पूजा में लिखा ग्रंथ ग्रंथालय में है', () {
@@ -245,9 +248,11 @@ void main() {
           .where((f) =>
               f.path.endsWith('.json') && !f.path.endsWith('_suchi.json'))) {
         final v = Vidhi.parse(f.path, f.readAsStringSync());
-        for (final c in v.charan.where((c) => c.granth.isNotEmpty)) {
-          expect(GranthBhandar.granthIds, contains(c.granth),
-              reason: '${f.path} — ${c.shirshak}');
+        for (final c in v.charan) {
+          for (final g in c.granthSuchi) {
+            expect(GranthBhandar.granthIds, contains(g),
+                reason: '${f.path} — ${c.shirshak}');
+          }
         }
       }
     });

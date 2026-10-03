@@ -357,7 +357,7 @@ class _CharanPanna extends StatelessWidget {
         // ग्रंथ वाले कदम पर सीधे ग्रंथ खोलने का रास्ता (→ D-098)।
         if (charan.granth.isNotEmpty) ...[
           const SizedBox(height: VidhivatSpacing.xxl),
-          _GranthKholo(id: charan.granth),
+          _GranthKholo(ids: charan.granthSuchi),
         ],
         // आरती वाले कदम पर सीधे आरती खोलने का रास्ता (→ D-039)।
         // पाठ यहाँ दोहराया नहीं जाता — वो एक ही जगह रहता है।
@@ -781,9 +781,10 @@ class _PaathKholoState extends State<_PaathKholo> {
 /// खोलता है — वहाँ से जो अध्याय पढ़ना हो वह चुना जाता है, और ग्रंथ याद
 /// रखता है कि पिछली बार कहाँ तक पहुँचे थे।
 class _GranthKholo extends StatefulWidget {
-  final String id;
+  /// एक या ज़्यादा ग्रंथ — शीर्षक एक बार, हर ग्रंथ का अपना बटन (→ D-107)।
+  final List<String> ids;
 
-  const _GranthKholo({required this.id});
+  const _GranthKholo({required this.ids});
 
   @override
   State<_GranthKholo> createState() => _GranthKholoState();
@@ -797,28 +798,31 @@ class _GranthKholoState extends State<_GranthKholo> {
     return FutureBuilder<List<GranthSuchiEntry>>(
       future: _suchi,
       builder: (context, snap) {
-        final mila = [
-          ...?snap.data,
-          GranthSuchiEntry.saptashati,
-        ].where((g) => g.id == widget.id).firstOrNull;
-        if (snap.data == null || mila == null) return const SizedBox.shrink();
+        final sab = [...?snap.data, GranthSuchiEntry.saptashati];
+        final mile = [
+          for (final id in widget.ids) ...sab.where((g) => g.id == id),
+        ];
+        if (snap.data == null || mile.isEmpty) return const SizedBox.shrink();
 
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const VidhivatSectionHeader(title: 'पाठ'),
             const SizedBox(height: VidhivatSpacing.sm),
-            VidhivatButton(
-              label: mila.naam,
-              semanticLabel: '${mila.naam} खोलें',
-              icon: Icons.auto_stories_outlined,
-              variant: VidhivatButtonVariant.secondary,
-              fullWidth: true,
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute<void>(
-                    builder: (_) => GranthScreen(granth: mila)),
+            for (final mila in mile) ...[
+              VidhivatButton(
+                label: mila.naam,
+                semanticLabel: '${mila.naam} खोलें',
+                icon: Icons.auto_stories_outlined,
+                variant: VidhivatButtonVariant.secondary,
+                fullWidth: true,
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                      builder: (_) => GranthScreen(granth: mila)),
+                ),
               ),
-            ),
+              const SizedBox(height: VidhivatSpacing.sm),
+            ],
           ],
         );
       },

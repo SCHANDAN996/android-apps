@@ -83,6 +83,7 @@ abstract final class PaathAssets {
     'gita': krishna,
     'saptashati': durga,
     'sundarkand': hanuman,
+    'vishnusahasranama': vishnu,
   };
 
   static DevotionalArtwork forGranthId(String id) =>

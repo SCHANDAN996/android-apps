@@ -523,7 +523,14 @@ class Charan {
   /// पूरा ग्रंथ पूजा की JSON में नहीं आ सकता और [paath] की तरह एक पाठ
   /// भी नहीं है — इसलिए कदम सिर्फ़ ग्रंथ का नाम रखता है, और प्लेयर उसका
   /// पन्ना खोल देता है जहाँ से अध्याय चुना जाता है।
-  final String granth;
+  ///
+  /// एक कदम पर एक से ज़्यादा ग्रंथ भी हो सकते हैं — कृष्ण पूजा के "पाठ" पर
+  /// गीता और विष्णु सहस्रनाम दोनों (→ D-107)। JSON में `"granth"` एक नाम
+  /// भी हो सकता है और नामों की सूची भी।
+  final List<String> granthSuchi;
+
+  /// पहला ग्रंथ — जिस कदम पर एक ही हो, वहाँ वही; न हो तो ख़ाली।
+  String get granth => granthSuchi.isEmpty ? '' : granthSuchi.first;
 
   const Charan({
     required this.shirshak,
@@ -534,7 +541,7 @@ class Charan {
     this.vaikalpik = false,
     this.paath = const [],
     this.katha = '',
-    this.granth = '',
+    this.granthSuchi = const [],
   });
 
   factory Charan.fromJson(String file, Map<String, dynamic> j) {
@@ -554,7 +561,12 @@ class Charan {
           j.containsKey('vaikalpik') ? _bool(file, j, 'vaikalpik') : false,
       paath: _strList(file, j, 'paath'),
       katha: _str(file, j, 'katha', required: false),
-      granth: _str(file, j, 'granth', required: false),
+      granthSuchi: j['granth'] is List
+          ? _strList(file, j, 'granth')
+          : [
+              if (_str(file, j, 'granth', required: false).isNotEmpty)
+                _str(file, j, 'granth', required: false),
+            ],
     );
   }
 }

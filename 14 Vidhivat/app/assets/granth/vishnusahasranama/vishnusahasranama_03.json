@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "id": "vishnusahasranama_03",
+  "naam": "फलश्रुति",
+  "upnaam": [
+    "विष्णु सहस्रनाम उत्तर भाग",
+    "उत्तरपीठिका"
+  ],
+  "prakar": "granth",
+  "devta": "भगवान विष्णु",
+  "rachnakar": "महर्षि वेदव्यास — महाभारत, अनुशासन पर्व",
+  "bhasha": "संस्कृत",
+  "parichay": "नाम पूरे होने पर भीष्म जी बताते हैं कि इस स्तोत्र का पाठ और श्रवण क्या देता है, और यह कि सारा जगत वासुदेव से ही है। अंत में महाभारत का समापन-वाक्य।",
+  "kabPadhein": "किसी भी दिन — एकादशी, गुरुवार और विष्णु-पूजा के दिन ख़ास तौर पर। बहुत घरों में रोज़ सवेरे पढ़ा जाता है।",
+  "kaisePadhein": "पूरा पाठ क्रम से होता है: आरंभ (मंगलाचरण, ध्यान और भीष्म-युधिष्ठिर संवाद), फिर एक सौ सात श्लोकों में हज़ार नाम, और अंत में फलश्रुति। समय कम हो तो सिर्फ़ बीच का सहस्रनाम भी पढ़ा जाता है। आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और उसमें आए नामों के अर्थ दिखेंगे। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "श्लोक १",
+      "dev": "इतीदं कीर्तनीयस्य केशवस्य महात्मनः ।\nनाम्नां सहस्रं दिव्यानामशेषेण प्रकीर्तितम्॥",
+      "roman": "iteedam keertaneeyasya keshavasya mahaatmanah |\nnaamnaam sahasram divyaanaamasheshena prakeertitam ||",
+      "arth": "(भीष्म जी कहते हैं —) इस तरह कीर्तन के योग्य महात्मा केशव के दिव्य हज़ार नाम पूरे-पूरे कह दिए गए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "य इदं शृणुयान्नित्यं यश्चापि परिकीर्तयेत् ।\nनाशुभं प्राप्नुयात्किञ्चित्सोऽमुत्रेह च मानवः॥",
+      "roman": "ya idam shrinuyaannityam yashchaapi parikeertayet |\nnaashubham praapnuyaatkinchitso'mutreha cha maanavah ||",
+      "arth": "जो मनुष्य इन्हें नित्य सुनता है या इनका कीर्तन करता है, उसका न इस लोक में कुछ अशुभ होता है, न परलोक में।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "वेदान्तगो ब्राह्मणः स्यात्क्षत्रियो विजयी भवेत् ।\nवैश्यो धनसमृद्धः स्याच्छूद्रः सुखमवाप्नुयात्॥",
+      "roman": "vedaantago braahmanah syaatkshatriyo vijayee bhavet |\nvaishyo dhanasamriddhah syaachchhoodrah sukhamavaapnuyaat ||",
+      "arth": "इसका पाठ करने से ब्राह्मण वेदांत का ज्ञाता होता है, क्षत्रिय विजयी होता है, वैश्य धन से संपन्न होता है और शूद्र सुख पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "धर्मार्थी प्राप्नुयाद्धर्ममर्थार्थी चार्थमाप्नुयात् ।\nकामानवाप्नुयात्कामी प्रजार्थी प्राप्नुयात्प्रजाम्॥",
+      "roman": "dharmaarthee praapnuyaaddharmamarthaarthee chaarthamaapnuyaat |\nkaamaanavaapnuyaatkaamee prajaarthee praapnuyaatprajaam ||",
+      "arth": "धर्म चाहने वाला धर्म पाता है, धन चाहने वाला धन पाता है, कामना वाला कामनाएँ पाता है और संतान चाहने वाला संतान पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "भक्तिमान् यः सदोत्थाय शुचिस्तद्गतमानसः ।\nसहस्रं वासुदेवस्य नाम्नामेतत्प्रकीर्तयेत्॥",
+      "roman": "bhaktimaan yah sadotthaaya shuchistadgatamaanasah |\nsahasram vaasudevasya naamnaametatprakeertayet ||",
+      "arth": "जो भक्त सदा सवेरे उठकर, पवित्र होकर, मन को भगवान में लगाकर वासुदेव के इन हज़ार नामों का कीर्तन करता है —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "यशः प्राप्नोति विपुलं ज्ञातिप्राधान्यमेव च ।\nअचलां श्रियमाप्नोति श्रेयः प्राप्नोत्यनुत्तमम्॥",
+      "roman": "yashah praapnoti vipulam jnaatipraadhaanyameva cha |\nachalaam shriyamaapnoti shreyah praapnotyanuttamam ||",
+      "arth": "वह बड़ा यश पाता है, अपने कुटुंब में प्रधान होता है, अचल लक्ष्मी पाता है और सबसे उत्तम कल्याण पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "न भयं क्वचिदाप्नोति वीर्यं तेजश्च विन्दति ।\nभवत्यरोगो द्युतिमान्बलरूपगुणान्वितः॥",
+      "roman": "na bhayam kvachidaapnoti veeryam tejashcha vindati |\nbhavatyarogo dyutimaanbalaroopagunaanvitah ||",
+      "arth": "उसे कहीं भय नहीं होता; वह बल और तेज पाता है, निरोग, कांतिमान और बल, रूप तथा गुणों से युक्त होता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "रोगार्तो मुच्यते रोगाद्बद्धो मुच्येत बन्धनात् ।\nभयान्मुच्येत भीतस्तु मुच्येतापन्न आपदः॥",
+      "roman": "rogaarto muchyate rogaadbaddho muchyeta bandhanaat |\nbhayaanmuchyeta bheetastu muchyetaapanna aapadah ||",
+      "arth": "रोगी रोग से छूटता है, बँधा हुआ बंधन से छूटता है, डरा हुआ भय से छूटता है और विपत्ति में पड़ा विपत्ति से छूटता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "दुर्गाण्यतितरत्याशु पुरुषः पुरुषोत्तमम् ।\nस्तुवन्नामसहस्रेण नित्यं भक्तिसमन्वितः॥",
+      "roman": "durgaanyatitaratyaashu purushah purushottamam |\nstuvannaamasahasrena nityam bhaktisamanvitah ||",
+      "arth": "जो पुरुष भक्ति के साथ नित्य हज़ार नामों से पुरुषोत्तम की स्तुति करता है, वह कठिनाइयों को जल्दी पार कर जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "वासुदेवाश्रयो मर्त्यो वासुदेवपरायणः ।\nसर्वपापविशुद्धात्मा याति ब्रह्म सनातनम्॥",
+      "roman": "vaasudevaashrayo martyo vaasudevaparaayanah |\nsarvapaapavishuddhaatmaa yaati brahma sanaatanam ||",
+      "arth": "जो मनुष्य वासुदेव के आश्रित है और वासुदेव में ही लगा है, वह सब पापों से शुद्ध होकर सनातन ब्रह्म को पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "न वासुदेवभक्तानामशुभं विद्यते क्वचित् ।\nजन्ममृत्युजराव्याधिभयं नैवोपजायते॥",
+      "roman": "na vaasudevabhaktaanaamashubham vidyate kvachit |\njanmamrityujaraavyaadhibhayam naivopajaayate ||",
+      "arth": "वासुदेव के भक्तों का कहीं अशुभ नहीं होता; उन्हें जन्म, मृत्यु, बुढ़ापे और रोग का भय भी नहीं होता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "इमं स्तवमधीयानः श्रद्धाभक्तिसमन्वितः ।\nयुज्येतात्मसुखक्षान्तिश्रीधृतिस्मृतिकीर्तिभिः॥",
+      "roman": "imam stavamadheeyaanah shraddhaabhaktisamanvitah |\nyujyetaatmasukhakshaantishreedhritismritikeertibhih ||",
+      "arth": "जो श्रद्धा और भक्ति से इस स्तोत्र का पाठ करता है, वह आत्मा के सुख, क्षमा, लक्ष्मी, धैर्य, स्मृति और कीर्ति से युक्त होता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "न क्रोधो न च मात्सर्यं न लोभो नाशुभा मतिः ।\nभवन्ति कृतपुण्यानां भक्तानां पुरुषोत्तमे॥",
+      "roman": "na krodho na cha maatsaryam na lobho naashubhaa matih |\nbhavanti kritapunyaanaam bhaktaanaam purushottame ||",
+      "arth": "पुण्य करने वाले, पुरुषोत्तम के भक्तों के मन में न क्रोध होता है, न ईर्ष्या, न लोभ और न बुरी बुद्धि।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १४",
+      "dev": "द्यौः सचन्द्रार्कनक्षत्रा खं दिशो भूर्महोदधिः ।\nवासुदेवस्य वीर्येण विधृतानि महात्मनः॥",
+      "roman": "dyauh sachandraarkanakshatraa kham disho bhoormahodadhih |\nvaasudevasya veeryena vidhritaani mahaatmanah ||",
+      "arth": "चंद्रमा, सूर्य और तारों समेत स्वर्ग, आकाश, दिशाएँ, पृथ्वी और महासागर — सब महात्मा वासुदेव के पराक्रम से ही टिके हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १५",
+      "dev": "ससुरासुरगन्धर्वं सयक्षोरगराक्षसम् ।\nजगद्वशे वर्ततेदं कृष्णस्य सचराचरम्॥",
+      "roman": "sasuraasuragandharvam sayakshoragaraakshasam |\njagadvashe vartatedam krishnasya sacharaacharam ||",
+      "arth": "देवता, असुर, गंधर्व, यक्ष, नाग और राक्षसों समेत यह सारा चर-अचर जगत श्रीकृष्ण के वश में है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १६",
+      "dev": "इन्द्रियाणि मनो बुद्धिः सत्त्वं तेजो बलं धृतिः ।\nवासुदेवात्मकान्याहुः क्षेत्रं क्षेत्रज्ञ एव च॥",
+      "roman": "indriyaani mano buddhih sattvam tejo balam dhritih |\nvaasudevaatmakaanyaahuh kshetram kshetrajna eva cha ||",
+      "arth": "इंद्रियाँ, मन, बुद्धि, सत्त्व, तेज, बल, धैर्य, शरीर और शरीर को जानने वाला आत्मा — इन सबको वासुदेव का ही रूप कहा गया है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १७",
+      "dev": "सर्वागमानामाचारः प्रथमं परिकल्प्यते ।\nआचारप्रभवो धर्मो धर्मस्य प्रभुरच्युतः॥",
+      "roman": "sarvaagamaanaamaachaarah prathamam parikalpyate |\naachaaraprabhavo dharmo dharmasya prabhurachyutah ||",
+      "arth": "सब शास्त्रों में पहले आचार की ही बात आती है; आचार से धर्म पैदा होता है, और धर्म के स्वामी अच्युत हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १८",
+      "dev": "ऋषयः पितरो देवा महाभूतानि धातवः ।\nजङ्गमाजङ्गमं चेदं जगन्नारायणोद्भवम्॥",
+      "roman": "rishayah pitaro devaa mahaabhootaani dhaatavah |\njangamaajangamam chedam jagannaaraayanodbhavam ||",
+      "arth": "ऋषि, पितर, देवता, पंच महाभूत, धातुएँ और यह सारा चर-अचर जगत नारायण से ही उत्पन्न है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १९",
+      "dev": "योगो ज्ञानं तथा साङ्ख्यं विद्याः शिल्पादिकर्म च ।\nवेदाः शास्त्राणि विज्ञानमेतत्सर्वं जनार्दनात्॥",
+      "roman": "yogo jnaanam tathaa saankhyam vidyaah shilpaadikarma cha |\nvedaah shaastraani vijnaanametatsarvam janaardanaat ||",
+      "arth": "योग, ज्ञान, सांख्य, विद्याएँ, शिल्प आदि कर्म, वेद, शास्त्र और विज्ञान — यह सब जनार्दन से ही है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २०",
+      "dev": "एको विष्णुर्महद्भूतं पृथग्भूतान्यनेकशः ।\nत्रींल्लोकान्व्याप्य भूतात्मा भुङ्क्ते विश्वभुगव्ययः॥",
+      "roman": "eko vishnurmahadbhootam prithagbhootaanyanekashah |\ntreemllokaanvyaapya bhootaatmaa bhunkte vishvabhugavyayah ||",
+      "arth": "एक ही विष्णु महान सत्ता हैं, जो अलग-अलग अनेक प्राणियों के रूप में हैं; सब प्राणियों की आत्मा वे अविनाशी, तीनों लोकों में व्याप्त होकर सबका पालन करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २१",
+      "dev": "इमं स्तवं भगवतो विष्णोर्व्यासेन कीर्तितम् ।\nपठेद्य इच्छेत्पुरुषः श्रेयः प्राप्तुं सुखानि च॥",
+      "roman": "imam stavam bhagavato vishnorvyaasena keertitam |\npathedya ichchhetpurushah shreyah praaptum sukhaani cha ||",
+      "arth": "व्यास जी के कहे भगवान विष्णु के इस स्तोत्र का पाठ वह पुरुष करे जो कल्याण और सुख पाना चाहता हो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २२",
+      "dev": "विश्वेश्वरमजं देवं जगतः प्रभवाप्ययम् ।\nभजन्ति ये पुष्कराक्षं न ते यान्ति पराभवम्॥",
+      "roman": "vishveshvaramajam devam jagatah prabhavaapyayam |\nbhajanti ye pushkaraaksham na te yaanti paraabhavam ||",
+      "arth": "जो विश्व के ईश्वर, अजन्मा, जगत की उत्पत्ति और प्रलय के कारण, कमल नयन देव को भजते हैं, उनकी कभी हार नहीं होती।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "समापन",
+      "dev": "ॐ तत्सदिति श्रीमहाभारते शतसाहस्र्यां संहितायां\nवैयासिक्यामानुशासनिके पर्वणि भीष्मयुधिष्ठिरसंवादे\nश्रीविष्णोर्दिव्यसहस्रनामस्तोत्रम्॥",
+      "roman": "om tatsaditi shreemahaabhaarate shatasaahasryaam samhitaayaam\nvaiyaasikyaamaanushaasanike parvani bheeshmayudhishthirasamvaade\nshreevishnordivyasahasranaamastotram ||",
+      "arth": "इस तरह श्रीमहाभारत के अनुशासन पर्व में, भीष्म और युधिष्ठिर के संवाद में, श्री विष्णु का दिव्य सहस्रनाम स्तोत्र पूरा हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, अनुशासन पर्व — श्री विष्णु सहस्रनाम",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ महाभारत के शोध-संस्करण, दो अलग संग्रहों और छपी पुस्तकों से श्लोक-दर-श्लोक मिलाया गया। आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है। अर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं।\n\n📿 **फलश्रुति में रोग, बंधन और भय से छूटने की बात है।** यह ग्रंथ का अपना कथन है — ऐप इसे वैसा ही रख रहा है, कोई चिकित्सकीय वादा नहीं कर रहा। बीमारी में इलाज ज़रूर कराइए।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

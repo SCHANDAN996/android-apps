@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "id": "vishnusahasranama_01",
+  "naam": "आरंभ — युधिष्ठिर के प्रश्न",
+  "upnaam": [
+    "विष्णु सहस्रनाम पूर्व भाग",
+    "पूर्वपीठिका"
+  ],
+  "prakar": "granth",
+  "devta": "भगवान विष्णु",
+  "rachnakar": "महर्षि वेदव्यास — महाभारत, अनुशासन पर्व",
+  "bhasha": "संस्कृत",
+  "parichay": "महाभारत के युद्ध के बाद युधिष्ठिर बाणों की शय्या पर लेटे भीष्म जी से पूछते हैं — एक देवता कौन है, परम आसरा क्या है, किसके जप से जीव संसार से छूटता है? उत्तर में भीष्म जी भगवान विष्णु के हज़ार नाम सुनाने को कहते हैं। आरंभ में दो मंगलाचरण और ध्यान का श्लोक है।",
+  "kabPadhein": "किसी भी दिन — एकादशी, गुरुवार और विष्णु-पूजा के दिन ख़ास तौर पर। बहुत घरों में रोज़ सवेरे पढ़ा जाता है।",
+  "kaisePadhein": "पूरा पाठ क्रम से होता है: आरंभ (मंगलाचरण, ध्यान और भीष्म-युधिष्ठिर संवाद), फिर एक सौ सात श्लोकों में हज़ार नाम, और अंत में फलश्रुति। समय कम हो तो सिर्फ़ बीच का सहस्रनाम भी पढ़ा जाता है। आप जहाँ तक पहुँचे, वह इसी फ़ोन में याद रहता है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर श्लोक के नीचे उसका रोमन और उसमें आए नामों के अर्थ दिखेंगे। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "मंगलाचरण १",
+      "dev": "यस्य स्मरणमात्रेण जन्मसंसारबन्धनात् ।\nविमुच्यते नमस्तस्मै विष्णवे प्रभविष्णवे॥",
+      "roman": "yasya smaranamaatrena janmasamsaarabandhanaat |\nvimuchyate namastasmai vishnave prabhavishnave ||",
+      "arth": "जिनका स्मरण करने भर से मनुष्य जन्म-मृत्यु के संसार रूपी बंधन से छूट जाता है, सबको प्रकट करने में समर्थ उन भगवान विष्णु को नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंगलाचरण २",
+      "dev": "नमः समस्तभूतानामादिभूताय भूभृते ।\nअनेकरूपरूपाय विष्णवे प्रभविष्णवे॥",
+      "roman": "namah samastabhootaanaamaadibhootaaya bhoobhrite |\nanekarooparoopaaya vishnave prabhavishnave ||",
+      "arth": "सब प्राणियों के आदि कारण, पृथ्वी को धारण करने वाले, अनेक रूपों वाले और सर्वसमर्थ भगवान विष्णु को नमस्कार है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "ध्यान",
+      "dev": "शान्ताकारं भुजगशयनं पद्मनाभं सुरेशं\nविश्वाधारं गगनसदृशं मेघवर्णं शुभाङ्गम् ।\nलक्ष्मीकान्तं कमलनयनं योगिभिर्ध्यानगम्यं\nवन्दे विष्णुं भवभयहरं सर्वलोकैकनाथम्॥",
+      "roman": "shaantaakaaram bhujagashayanam padmanaabham suresham\nvishvaadhaaram gaganasadrisham meghavarnam shubhaangam |\nlakshmeekaantam kamalanayanam yogibhirdhyaanagamyam\nvande vishnum bhavabhayaharam sarvalokaikanaatham ||",
+      "arth": "जिनका रूप शांत है, जो शेषनाग की शय्या पर सोते हैं, जिनकी नाभि में कमल है, जो देवताओं के स्वामी हैं, जगत के आधार हैं, आकाश की तरह अनंत हैं, बादल जैसे साँवले और सुंदर अंगों वाले हैं; जो लक्ष्मी के पति हैं, कमल जैसे नेत्रों वाले हैं, जिन्हें योगी ध्यान से पाते हैं, जो संसार का भय हरते हैं और सारे लोकों के एकमात्र स्वामी हैं — उन भगवान विष्णु की मैं वंदना करता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १",
+      "dev": "वैशम्पायन उवाच ।\nश्रुत्वा धर्मानशेषेण पावनानि च सर्वशः ।\nयुधिष्ठिरः शान्तनवं पुनरेवाभ्यभाषत॥",
+      "roman": "vaishampaayana uvaacha |\nshrutvaa dharmaanasheshena paavanaani cha sarvashah |\nyudhishthirah shaantanavam punarevaabhyabhaashata ||",
+      "arth": "वैशम्पायन जी बोले — सब तरह के धर्म और पवित्र करने वाले उपदेश पूरे-पूरे सुन लेने के बाद युधिष्ठिर ने शांतनु के पुत्र भीष्म जी से फिर पूछा —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक २",
+      "dev": "युधिष्ठिर उवाच ।\nकिमेकं दैवतं लोके किं वाप्येकं परायणम् ।\nस्तुवन्तः कं कमर्चन्तः प्राप्नुयुर्मानवाः शुभम्॥",
+      "roman": "yudhishthira uvaacha |\nkimekam daivatam loke kim vaapyekam paraayanam |\nstuvantah kam kamarchantah praapnuyurmaanavaah shubham ||",
+      "arth": "युधिष्ठिर बोले — संसार में एक देवता कौन है? एक परम आसरा क्या है? किसकी स्तुति और किसकी पूजा करके मनुष्य कल्याण पाते हैं?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ३",
+      "dev": "को धर्मः सर्वधर्माणां भवतः परमो मतः ।\nकिं जपन्मुच्यते जन्तुर्जन्मसंसारबन्धनात्॥",
+      "roman": "ko dharmah sarvadharmaanaam bhavatah paramo matah |\nkim japanmuchyate janturjanmasamsaarabandhanaat ||",
+      "arth": "आपकी राय में सब धर्मों में सबसे बड़ा धर्म कौन-सा है? किसका जप करके जीव जन्म और संसार के बंधन से छूट जाता है?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ४",
+      "dev": "भीष्म उवाच ।\nजगत्प्रभुं देवदेवमनन्तं पुरुषोत्तमम् ।\nस्तुवन् नामसहस्रेण पुरुषः सततोत्थितः॥",
+      "roman": "bheeshma uvaacha |\njagatprabhum devadevamanantam purushottamam |\nstuvan naamasahasrena purushah satatotthitah ||",
+      "arth": "भीष्म जी बोले — जगत के स्वामी, देवों के देव, अनंत पुरुषोत्तम की हज़ार नामों से स्तुति करते हुए जो मनुष्य सदा तत्पर रहता है,",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ५",
+      "dev": "तमेव चार्चयन्नित्यं भक्त्या पुरुषमव्ययम् ।\nध्यायन् स्तुवन् नमस्यंश्च यजमानस्तमेव च॥",
+      "roman": "tameva chaarchayannityam bhaktyaa purushamavyayam |\ndhyaayan stuvan namasyamshcha yajamaanastameva cha ||",
+      "arth": "और उन्हीं अविनाशी पुरुष की भक्ति से नित्य पूजा करता है, उन्हीं का ध्यान, स्तुति और नमस्कार करता है, उन्हीं का यजन करता है —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ६",
+      "dev": "अनादिनिधनं विष्णुं सर्वलोकमहेश्वरम् ।\nलोकाध्यक्षं स्तुवन्नित्यं सर्वदुःखातिगो भवेत्॥",
+      "roman": "anaadinidhanam vishnum sarvalokamaheshvaram |\nlokaadhyaksham stuvannityam sarvaduhkhaatigo bhavet ||",
+      "arth": "जिनका न आदि है न अंत, जो सब लोकों के महान ईश्वर और लोकों के अध्यक्ष हैं, उन विष्णु की नित्य स्तुति करने वाला सब दुखों के पार हो जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ७",
+      "dev": "ब्रह्मण्यं सर्वधर्मज्ञं लोकानां कीर्तिवर्धनम् ।\nलोकनाथं महद्भूतं सर्वभूतभवोद्भवम्॥",
+      "roman": "brahmanyam sarvadharmajnam lokaanaam keertivardhanam |\nlokanaatham mahadbhootam sarvabhootabhavodbhavam ||",
+      "arth": "जो ब्राह्मणों के हितकारी, सब धर्मों को जानने वाले, लोगों की कीर्ति बढ़ाने वाले, लोकों के नाथ, महान सत्ता और सब प्राणियों की उत्पत्ति के कारण हैं —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ८",
+      "dev": "एष मे सर्वधर्माणां धर्मोऽधिकतमो मतः ।\nयद्भक्त्या पुण्डरीकाक्षं स्तवैरर्चेन्नरः सदा॥",
+      "roman": "esha me sarvadharmaanaam dharmo'dhikatamo matah |\nyadbhaktyaa pundareekaaksham stavairarchennarah sadaa ||",
+      "arth": "उन कमल नयन भगवान की भक्ति से, स्तुतियों द्वारा मनुष्य सदा पूजा करे — सब धर्मों में यही धर्म मुझे सबसे बड़ा लगता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ९",
+      "dev": "परमं यो महत्तेजः परमं यो महत्तपः ।\nपरमं यो महद्ब्रह्म परमं यः परायणम्॥",
+      "roman": "paramam yo mahattejah paramam yo mahattapah |\nparamam yo mahadbrahma paramam yah paraayanam ||",
+      "arth": "जो परम महान तेज हैं, परम महान तप हैं, परम महान ब्रह्म हैं और परम आसरा हैं;",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १०",
+      "dev": "पवित्राणां पवित्रं यो मङ्गलानां च मङ्गलम् ।\nदैवतं देवतानां च भूतानां योऽव्ययः पिता॥",
+      "roman": "pavitraanaam pavitram yo mangalaanaam cha mangalam |\ndaivatam devataanaam cha bhootaanaam yo'vyayah pitaa ||",
+      "arth": "जो पवित्र करने वालों में भी पवित्र, मंगलों के भी मंगल, देवताओं के भी देवता और सब प्राणियों के अविनाशी पिता हैं;",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक ११",
+      "dev": "यतः सर्वाणि भूतानि भवन्त्यादियुगागमे ।\nयस्मिंश्च प्रलयं यान्ति पुनरेव युगक्षये॥",
+      "roman": "yatah sarvaani bhootaani bhavantyaadiyugaagame |\nyasmimshcha pralayam yaanti punareva yugakshaye ||",
+      "arth": "युग के आरंभ में जिनसे सब प्राणी पैदा होते हैं, और युग के अंत में फिर जिनमें सब लीन हो जाते हैं —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १२",
+      "dev": "तस्य लोकप्रधानस्य जगन्नाथस्य भूपते ।\nविष्णोर्नामसहस्रं मे शृणु पापभयापहम्॥",
+      "roman": "tasya lokapradhaanasya jagannaathasya bhoopate |\nvishnornaamasahasram me shrinu paapabhayaapaham ||",
+      "arth": "हे राजन, लोकों में प्रधान उन जगन्नाथ विष्णु के हज़ार नाम मुझसे सुनो, जो पाप और भय को दूर करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्लोक १३",
+      "dev": "यानि नामानि गौणानि विख्यातानि महात्मनः ।\nऋषिभिः परिगीतानि तानि वक्ष्यामि भूतये॥",
+      "roman": "yaani naamaani gaunaani vikhyaataani mahaatmanah |\nrishibhih parigeetaani taani vakshyaami bhootaye ||",
+      "arth": "उन महात्मा के जो गुणों से बने, प्रसिद्ध नाम ऋषियों ने गाए हैं, उन्हें मैं सबके कल्याण के लिए कहता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, अनुशासन पर्व — श्री विष्णु सहस्रनाम",
+    "kshetra": "सर्वत्र",
+    "note": "पाठ महाभारत के शोध-संस्करण, दो अलग संग्रहों और छपी पुस्तकों से श्लोक-दर-श्लोक मिलाया गया; 284 पंक्तियों में से 247 तीनों डिजिटल गवाहों में अक्षर-अक्षर एक निकलीं। हज़ार नामों का बँटवारा आचार्य शंकर के भाष्य वाली परंपरा पर है; कुछ नाम दूसरी परंपराओं में अलग पढ़े जाते हैं। दक्षिण के पाठ-क्रम में न्यास, और ध्यान तथा समापन के कई श्लोक भी जुड़ते हैं — वे हर पुस्तक में अलग हैं, इसलिए यहाँ नहीं। आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — शब्दशः अनुवाद नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

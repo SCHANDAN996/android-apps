@@ -200,7 +200,12 @@ class GranthBhandar {
   /// जिन ग्रंथों के पाठ ऐप में हैं। पाठ की id इन्हीं में से किसी से शुरू
   /// होती है (`gita_07`) — उसी से फ़ाइल का फ़ोल्डर तय होता है, सूची पढ़े
   /// बिना। `granth_test.dart` इसे `_suchi.json` से मिलाकर देखता है।
-  static const granthIds = {'gita', 'saptashati', 'sundarkand'};
+  static const granthIds = {
+    'gita',
+    'saptashati',
+    'sundarkand',
+    'vishnusahasranama',
+  };
 
   /// सप्तशती का पाठ गीता से पहले आया था और `assets/paath/saptashati/` में
   /// ही रहा — फ़ाइलें हिलाने से उसकी सारी जाँचें और जगहें हिलतीं।

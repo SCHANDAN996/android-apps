@@ -15,7 +15,7 @@ Puja vidhi, Panchang, Gita, Sundarkand, Saptashati arth sahit, Kundali, offline
 
 ## What's new (500 अक्षर)
 
-नया: ग्रंथालय — पूरी श्रीमद्भगवद्गीता (अठारह अध्याय, सात सौ श्लोक) और पूरा सुंदरकांड, हर श्लोक और हर चौपाई का सरल हिंदी अर्थ। दुर्गा सप्तशती में रात्रि सूक्त, देवी सूक्त, तीन रहस्य और क्षमा प्रार्थना जुड़े — नवरात्रि से पहले। जन्म कुंडली — लग्न, चंद्र और नवमांश का चित्र, ग्रहों की स्थिति, विंशोत्तरी दशा और जन्म का पंचांग; सिर्फ़ गणित, कोई फलादेश नहीं। तिथि और नक्षत्र के समय अब और सटीक।
+नया: ग्रंथालय — पूरी श्रीमद्भगवद्गीता, पूरा सुंदरकांड और श्री विष्णु सहस्रनाम; हर श्लोक, हर चौपाई और हर नाम का सरल हिंदी अर्थ। दुर्गा सप्तशती में रात्रि सूक्त, देवी सूक्त, तीन रहस्य और क्षमा प्रार्थना जुड़े — नवरात्रि से पहले। जन्म कुंडली — लग्न, चंद्र और नवमांश का चित्र, ग्रहों की स्थिति, विंशोत्तरी दशा और जन्म का पंचांग; सिर्फ़ गणित, कोई फलादेश नहीं। तिथि और नक्षत्र के समय अब और सटीक।
 
 ## पूरा विवरण (4000 अक्षर)
 
@@ -29,9 +29,9 @@ Puja vidhi, Panchang, Gita, Sundarkand, Saptashati arth sahit, Kundali, offline
 हर पूजा संकल्प से शुरू होती है, और उसी पर सबसे ज़्यादा लोग अटकते हैं। विधिवत आज का पूरा संकल्प ख़ुद बना देता है — विक्रम संवत्, अयन, ऋतु, मास, पक्ष, तिथि, वार, नक्षत्र, गोत्र और आपका नाम, सब भरकर। संस्कृत में भी, सरल हिंदी में भी।
 
 
-★ नया — ग्रंथालय: गीता और सुंदरकांड, अर्थ सहित
+★ नया — ग्रंथालय: गीता, सुंदरकांड, विष्णु सहस्रनाम
 
-पूरी श्रीमद्भगवद्गीता — अठारह अध्याय, सात सौ श्लोक। पूरा सुंदरकांड — तीन श्लोक, साठ दोहे, बारह प्रसंगों में। हर श्लोक और हर चौपाई के नीचे रोमन और सरल हिंदी अर्थ। जहाँ पढ़ना छोड़ा, वहीं से आगे खुलता है। कृष्ण पूजा से गीता और हनुमान पूजा से सुंदरकांड सीधे खुलते हैं।
+पूरी श्रीमद्भगवद्गीता — अठारह अध्याय, सात सौ श्लोक। पूरा सुंदरकांड — साठ दोहे, बारह प्रसंगों में। श्री विष्णु सहस्रनाम — हज़ार नाम, हर नाम का अर्थ। हर श्लोक और चौपाई के नीचे रोमन और सरल हिंदी अर्थ। जहाँ पढ़ना छोड़ा, वहीं से आगे खुलता है।
 
 
 ★ पूरी दुर्गा सप्तशती, हर श्लोक का अर्थ
@@ -95,7 +95,7 @@ Puja vidhi, Panchang, Gita, Sundarkand, Saptashati arth sahit, Kundali, offline
 विधिवत सिर्फ़ विधि और समय बताता है। आपके घर या क्षेत्र की परंपरा अलग हो तो वही सही है। किसी भी ज़रूरी काम का अंतिम निर्णय अपने पंडित जी से करें।
 
 
-Puja vidhi, panchang, Bhagavad Gita and Sundarkand with Hindi meaning, Durga Saptashati with Hindi meaning, janam kundali (lagna chart, navamsha, vimshottari dasha), Navratri puja vidhi, shradh pitru paksha, karwa chauth, chhath puja, sankalp, choghadiya, shubh muhurat, vrat tyohar, Hanuman Chalisa aur aarti — sab ek jagah, offline. Hindu calendar with tithi, nakshatra, yoga, karana and rahu kaal for your city.
+Puja vidhi, panchang, Bhagavad Gita, Sundarkand, Vishnu Sahasranama and Durga Saptashati with Hindi meaning, janam kundali (lagna chart, navamsha, vimshottari dasha), Navratri puja vidhi, shradh pitru paksha, karwa chauth, chhath puja, sankalp, choghadiya, shubh muhurat, vrat tyohar, Hanuman Chalisa aur aarti — sab ek jagah, offline. Hindu calendar with tithi, nakshatra, yoga, karana and rahu kaal for your city.
 
 ## Screenshots
 
@@ -106,6 +106,7 @@ v1.1 वाले आठ जस के तस चल सकते हैं। �
 |---|---|
 | `अधिक → ग्रंथालय` — गीता, सुंदरकांड, सप्तशती की सूची | एक नज़र में तीन ग्रंथ |
 | सुंदरकांड का कोई प्रसंग, "अर्थ दिखाएँ" दबाकर | सबसे ज़्यादा पढ़ा जाने वाला पाठ |
+| विष्णु सहस्रनाम, "अर्थ दिखाएँ" दबाकर — नामों की सूची | — |
 | गीता अध्याय २, "अर्थ दिखाएँ" दबाकर | — |
 | जन्म कुंडली का चित्र (अपने घर के किसी की नहीं — कोई बनावटी ब्यौरा) | ⚠ नाम और जन्म-ब्यौरा तस्वीर में दिखता है |
 

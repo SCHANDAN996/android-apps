@@ -67,6 +67,9 @@ void main() {
 
       expect(find.text('ग्रंथालय'), findsOneWidget);
       expect(find.text('श्रीमद्भगवद्गीता'), findsOneWidget);
+      // चार ग्रंथ हैं — फ़ोन की ऊँचाई में सप्तशती नीचे है, सूची lazy है
+      await tester.scrollUntilVisible(find.text('दुर्गा सप्तशती'), 200,
+          scrollable: find.byType(Scrollable).first);
       expect(find.text('दुर्गा सप्तशती'), findsOneWidget);
       expect(find.textContaining('जल्द'), findsNothing);
       expect(tester.takeException(), isNull);
@@ -94,6 +97,8 @@ void main() {
 
       await tester.pageBack();
       await tester.pumpAndSettle();
+      await tester.scrollUntilVisible(find.text('दुर्गा सप्तशती'), 200,
+          scrollable: find.byType(Scrollable).first);
       await tester.tap(find.text('दुर्गा सप्तशती'));
       await tester.pumpAndSettle();
       expect(find.text('देवी कवच'), findsOneWidget);

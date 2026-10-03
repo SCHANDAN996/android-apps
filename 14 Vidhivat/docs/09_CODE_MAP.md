@@ -571,9 +571,12 @@ app/assets/granth/
 ├── gita/
 │   ├── _kram.json         18 अध्याय, तीन हिस्सों में
 │   └── gita_01.json … 18  700 श्लोक + हर अध्याय का समापन-वाक्य
-└── sundarkand/            (→ D-106)
-    ├── _kram.json         12 प्रसंग, चार हिस्सों में
-    └── sundarkand_01 … 12 344 पद — श्लोक, चौपाई, दोहा, सोरठा, छंद, समापन
+├── sundarkand/            (→ D-106)
+│   ├── _kram.json         12 प्रसंग, चार हिस्सों में
+│   └── sundarkand_01 … 12 344 पद — श्लोक, चौपाई, दोहा, सोरठा, छंद, समापन
+└── vishnusahasranama/     (→ D-107)
+    ├── _kram.json         तीन भाग
+    └── vishnusahasranama_01 … 03   आरंभ (13) · सहस्रनाम (107) · फलश्रुति (22)
 app/assets/paath/saptashati/   सप्तशती यहीं रही (उसकी `_kram.json` में अब `id`)
 
 app/lib/vidhi/granth.dart            GranthKram · GranthHissa · GranthPaath · GranthSuchiEntry
@@ -592,7 +595,7 @@ app/lib/screens/paath_screen.dart         GranthNavigation — नीचे क�
 | `GranthSuchiEntry.saptashati` | सप्तशती कोड में लिखी है (`_suchi.json` में नहीं) |
 | `GranthBhandar.granthIds` | जिन ग्रंथों के पाठ ऐप में हैं — id से फ़ोल्डर तय होता है |
 | `GranthNavigation` | पट्टी: "गीता · अध्याय 2/18", पिछला/अगला; कुंजी `<ग्रंथ>_aakhri_khand_<पाठ>` |
-| `Charan.granth` | पूजा के कदम पर ग्रंथ का बटन — कृष्ण पूजा का "पाठ" कदम गीता खोलता है; हनुमान और राम पूजा का सुंदरकांड |
+| `Charan.granthSuchi` (`granth` = पहला) | पूजा के कदम पर ग्रंथ के बटन — JSON में `"granth"` नाम भी हो सकता है, सूची भी। कृष्ण पूजा: गीता + विष्णु सहस्रनाम; हनुमान और राम पूजा: सुंदरकांड |
 | `PaathPrakar.granth` | "चालीसा और आरती" की छन्नी में नहीं आता |
 
 | औज़ार / जाँच | क्या |
@@ -605,6 +608,8 @@ app/lib/screens/paath_screen.dart         GranthNavigation — नीचे क�
 | `tools/granth_paath/saptashati/milan/` | सप्तशती का मिलान; `sudhar.py` — पाठ के सुधारों की तालिका (→ D-103) |
 | `tools/granth_paath/gita/milan/` | पाँच स्रोतों का मिलान → `mool.txt` |
 | `tools/granth_paath/sundarkand/` | `kram.json` (`"lipi": "hindi"`), `paath/01…12.txt`; `milan/sk_mool.py` — आधार से 108 सुधारों की तालिका (→ D-106) |
+| `tools/granth_paath/vishnusahasranama/` | `paath/01…03.txt`; `milan/naam_jaanch.py` — हज़ार नाम, क्रम, हर नाम अपने श्लोक में (repo के भीतर से चलता है) (→ D-107) |
+| `app/test/vishnusahasranama_test.dart` | 13 + 107 + 22 श्लोक; नाम १ से १००० बिना टूटे; ⓘ; कृष्ण पूजा के दो बटन |
 | `app/test/sundarkand_test.dart` | 344 पद, दोहा १–६० बिना छूटे, 526 चौपाई-पंक्तियाँ, विराम, भूलें लौटी नहीं, ५९.३ का नोट, स्क्रीन, हनुमान पूजा से रास्ता |
 | `app/test/granth_test.dart` | गिनती 700, क्रम, हर खंड भरा, नुक़्ता, उवाच 59, समापन |
 | `app/test/granth_screens_test.dart` | ग्रंथालय → अध्याय → अगला; याद रखना; कृष्ण पूजा से गीता |
