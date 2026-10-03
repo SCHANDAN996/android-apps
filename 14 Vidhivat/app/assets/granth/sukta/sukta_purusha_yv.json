@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "id": "sukta_purusha_yv",
+  "naam": "पुरुष सूक्त — शुक्ल यजुर्वेद",
+  "upnaam": [
+    "पुरुषसूक्त यजुर्वेद",
+    "माध्यन्दिनीय पुरुषसूक्त",
+    "स भूमिं सर्वत स्पृत्वा"
+  ],
+  "prakar": "granth",
+  "devta": "पुरुष (भगवान विष्णु)",
+  "rachnakar": "शुक्ल यजुर्वेद, अध्याय ३१ — ऋषि नारायण",
+  "bhasha": "वैदिक संस्कृत",
+  "parichay": "वही पुरुष सूक्त, शुक्ल यजुर्वेद की माध्यन्दिन शाखा के इकतीसवें अध्याय में — सोलह मंत्र। उत्तर भारत के ज़्यादातर पंडित जी पूजा में यही पाठ बोलते हैं। ऋग्वेद वाले पाठ से इसमें कुछ शब्द अलग हैं (पहले मंत्र में \"सर्वत स्पृत्वा\", बारहवें में \"श्रोत्राद्वायुश्च प्राणश्च\") और छठे से चौदहवें मंत्र का क्रम अलग है।",
+  "kabPadhein": "विष्णु, सत्यनारायण या शालिग्राम की पूजा में; षोडशोपचार पूजन के साथ।",
+  "kaisePadhein": "वेद-मंत्र परंपरा में स्वर (उदात्त-अनुदात्त) के साथ पढ़े जाते हैं। यहाँ बिना स्वर-चिह्न का पाठ है — स्वर सहित पढ़ना किसी जानकार से सीखा हो तो वैसे पढ़ें, नहीं तो साफ़ और धीमा उच्चारण रखें। कुछ परंपराओं में वेद-मंत्र गुरु से सीखकर ही पढ़े जाते हैं; अपनी परंपरा देखिए।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर मंत्र के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "मंत्र १",
+      "dev": "सहस्रशीर्षा पुरुषः सहस्राक्षः सहस्रपात् ।\nस भूमिं सर्वत स्पृत्वाऽत्यतिष्ठद्दशाङ्गुलम्॥",
+      "roman": "sahasrasheershaa purushah sahasraakshah sahasrapaat |\nsa bhoomim sarvata spritvaa'tyatishthaddashaangulam ||",
+      "arth": "उस विराट पुरुष के हज़ारों सिर, हज़ारों आँखें और हज़ारों पैर हैं। वह पृथ्वी को सब ओर से छूकर, उसमें व्याप्त होकर भी, उससे दस अंगुल आगे निकला हुआ है — यानी जगत में समाकर भी उससे बड़ा है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २",
+      "dev": "पुरुष एवेदं सर्वं यद्भूतं यच्च भाव्यम् ।\nउतामृतत्वस्येशानो यदन्नेनातिरोहति॥",
+      "roman": "purusha evedam sarvam yadbhootam yachcha bhaavyam |\nutaamritatvasyeshaano yadannenaatirohati ||",
+      "arth": "जो कुछ हो चुका है और जो होने वाला है, यह सब पुरुष ही है। वह अमरता का भी स्वामी है, और उस सबका भी जो अन्न से बढ़ता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३",
+      "dev": "एतावानस्य महिमातो ज्यायाँश्च पूरुषः ।\nपादोऽस्य विश्वा भूतानि त्रिपादस्यामृतं दिवि॥",
+      "roman": "etaavaanasya mahimaato jyaayaanshcha poorushah |\npaado'sya vishvaa bhootaani tripaadasyaamritam divi ||",
+      "arth": "इतनी तो उसकी महिमा है; पुरुष इससे भी बड़ा है। सारे प्राणी उसका एक चौथाई हैं; उसके तीन चौथाई अमर रूप में द्युलोक में हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४",
+      "dev": "त्रिपादूर्ध्व उदैत्पुरुषः पादोऽस्येहाभवत् पुनः ।\nततो विष्वङ् व्यक्रामत्साशनानशने अभि॥",
+      "roman": "tripaadoordhva udaitpurushah paado'syehaabhavat punah |\ntato vishvan vyakraamatsaashanaanashane abhi ||",
+      "arth": "तीन चौथाई वाला पुरुष ऊपर उठा हुआ है; उसका एक चौथाई यहाँ बार-बार जगत बनता है। उसी से वह खाने वाले चेतन और न खाने वाले जड़, सबमें चारों ओर फैल गया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ५",
+      "dev": "ततो विराडजायत विराजो अधि पूरुषः ।\nस जातो अत्यरिच्यत पश्चाद्भूमिमथो पुरः॥",
+      "roman": "tato viraadajaayata viraajo adhi poorushah |\nsa jaato atyarichyata pashchaadbhoomimatho purah ||",
+      "arth": "उस आदि पुरुष से विराट पैदा हुआ, और विराट से जीव रूप पुरुष। पैदा होकर वह सबसे आगे बढ़ गया; फिर उसने पृथ्वी को और उसके बाद जीवों के शरीरों को रचा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ६",
+      "dev": "तस्माद्यज्ञात् सर्वहुतः सम्भृतं पृषदाज्यम् ।\nपशूँस्ताँश्चक्रे वायव्यानारण्या ग्राम्याश्च ये॥",
+      "roman": "tasmaadyajnaat sarvahutah sambhritam prishadaajyam |\npashoonstaanshchakre vaayavyaanaaranyaa graamyaashcha ye ||",
+      "arth": "उस यज्ञ से, जिसमें सब कुछ होम दिया गया था, दही मिला घी इकट्ठा हुआ। उसी से हवा में उड़ने वाले, वन के और गाँव के पशु बने।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ७",
+      "dev": "तस्माद्यज्ञात् सर्वहुत ऋचः सामानि जज्ञिरे ।\nछन्दांसि जज्ञिरे तस्माद्यजुस्तस्मादजायत॥",
+      "roman": "tasmaadyajnaat sarvahuta richah saamaani jajnire |\nchhandaamsi jajnire tasmaadyajustasmaadajaayata ||",
+      "arth": "उस सर्वहुत यज्ञ से ऋचाएँ और साम पैदा हुए; उसी से छंद पैदा हुए; उसी से यजुः पैदा हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ८",
+      "dev": "तस्मादश्वा अजायन्त ये के चोभयादतः ।\nगावो ह जज्ञिरे तस्मात्तस्माज्जाता अजावयः॥",
+      "roman": "tasmaadashvaa ajaayanta ye ke chobhayaadatah |\ngaavo ha jajnire tasmaattasmaajjaataa ajaavayah ||",
+      "arth": "उसी से घोड़े पैदा हुए, और वे सब पशु जिनके दोनों ओर दाँत होते हैं। उसी से गायें पैदा हुईं, और उसी से बकरियाँ और भेड़ें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ९",
+      "dev": "तं यज्ञं बर्हिषि प्रौक्षन् पुरुषं जातमग्रतः ।\nतेन देवा अयजन्त साध्या ऋषयश्च ये॥",
+      "roman": "tam yajnam barhishi praukshan purusham jaatamagratah |\ntena devaa ayajanta saadhyaa rishayashcha ye ||",
+      "arth": "सबसे पहले पैदा हुए उस यज्ञ रूप पुरुष को उन्होंने कुशा पर जल छिड़ककर पवित्र किया। उसी से देवताओं ने, साध्यों ने और ऋषियों ने यज्ञ किया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १०",
+      "dev": "यत्पुरुषं व्यदधुः कतिधा व्यकल्पयन् ।\nमुखं किमस्यासीत् किं बाहू किमूरू पादा उच्येते॥",
+      "roman": "yatpurusham vyadadhuh katidhaa vyakalpayan |\nmukham kimasyaaseet kim baahoo kimooroo paadaa uchyete ||",
+      "arth": "जब उन्होंने पुरुष को बाँटा, तो कितने हिस्सों में उसकी कल्पना की? उसका मुख क्या था, भुजाएँ क्या थीं, जाँघें क्या थीं, और पैर क्या कहे गए?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ११",
+      "dev": "ब्राह्मणोऽस्य मुखमासीद्बाहू राजन्यः कृतः ।\nऊरू तदस्य यद्वैश्यः पद्भ्यां शूद्रो अजायत॥",
+      "roman": "braahmano'sya mukhamaaseedbaahoo raajanyah kritah |\nooroo tadasya yadvaishyah padbhyaam shoodro ajaayata ||",
+      "arth": "ब्राह्मण उसका मुख था, भुजाएँ क्षत्रिय बनीं, उसकी जाँघें वैश्य थीं और पैरों से शूद्र पैदा हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १२",
+      "dev": "चन्द्रमा मनसो जातश्चक्षोः सूर्यो अजायत ।\nश्रोत्राद्वायुश्च प्राणश्च मुखादग्निरजायत॥",
+      "roman": "chandramaa manaso jaatashchakshoh sooryo ajaayata |\nshrotraadvaayushcha praanashcha mukhaadagnirajaayata ||",
+      "arth": "उसके मन से चंद्रमा पैदा हुआ, आँख से सूर्य, कान से वायु और प्राण, और मुख से अग्नि।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १३",
+      "dev": "नाभ्या आसीदन्तरिक्षं शीर्ष्णो द्यौः समवर्तत ।\nपद्भ्यां भूमिर्दिशः श्रोत्रात्तथा लोकाँ अकल्पयन्॥",
+      "roman": "naabhyaa aaseedantariksham sheershno dyauh samavartata |\npadbhyaam bhoomirdishah shrotraattathaa lokaan akalpayan ||",
+      "arth": "उसकी नाभि से अंतरिक्ष हुआ, सिर से द्युलोक, पैरों से पृथ्वी और कान से दिशाएँ — इस तरह उन्होंने लोकों की रचना की।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १४",
+      "dev": "यत्पुरुषेण हविषा देवा यज्ञमतन्वत ।\nवसन्तोऽस्यासीदाज्यं ग्रीष्म इध्मः शरद्धविः॥",
+      "roman": "yatpurushena havishaa devaa yajnamatanvata |\nvasanto'syaaseedaajyam greeshma idhmah sharaddhavih ||",
+      "arth": "जब देवताओं ने पुरुष को ही हवि बनाकर यज्ञ किया, तब वसंत उस यज्ञ का घी था, ग्रीष्म ईंधन और शरद हवि।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १५",
+      "dev": "सप्तास्यासन् परिधयस्त्रिः सप्त समिधः कृताः ।\nदेवा यद्यज्ञं तन्वाना अबध्नन् पुरुषं पशुम्॥",
+      "roman": "saptaasyaasan paridhayastrih sapta samidhah kritaah |\ndevaa yadyajnam tanvaanaa abadhnan purusham pashum ||",
+      "arth": "उस यज्ञ की सात परिधियाँ थीं और इक्कीस समिधाएँ बनाई गईं, जब देवताओं ने यज्ञ का विस्तार करते हुए पुरुष को ही पशु की तरह बाँधा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १६",
+      "dev": "यज्ञेन यज्ञमयजन्त देवास्तानि धर्माणि प्रथमान्यासन् ।\nते ह नाकं महिमानः सचन्त यत्र पूर्वे साध्याः सन्ति देवाः॥",
+      "roman": "yajnena yajnamayajanta devaastaani dharmaani prathamaanyaasan |\nte ha naakam mahimaanah sachanta yatra poorve saadhyaah santi devaah ||",
+      "arth": "देवताओं ने यज्ञ से ही यज्ञ रूप पुरुष का पूजन किया; वे ही सबसे पहले धर्म थे। वे महिमा वाले उस स्वर्ग को पहुँचे जहाँ पहले के साध्य देवता रहते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "शुक्ल यजुर्वेद (माध्यन्दिन शाखा) — अध्याय ३१, मंत्र १–१६",
+    "kshetra": "उत्तर भारत की पूजा-पद्धति में यही पाठ चलता है",
+    "note": "सोलहों मंत्र दो जगह मिलाए गए — एक संग्रह और एक वेद-संग्रह (स्वर सहित) — और दोनों में शब्द एक निकले; एक पुरानी छपी पुस्तिका में भी यही पाठ है। यहाँ स्वर-चिह्न हटाए गए हैं। इसी अध्याय के आगे के छह मंत्र (उत्तर नारायण) यहाँ नहीं हैं।\n\nग्यारहवाँ मंत्र समाज के चारों वर्गों को एक ही पुरुष के अंग कहता है। यह रूपक है — ऐप इसे किसी को ऊँचा या नीचा ठहराने के अर्थ में नहीं रख रहा।\n\nअर्थ सरल शब्दों में है, शब्दशः अनुवाद नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

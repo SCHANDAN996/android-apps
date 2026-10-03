@@ -574,9 +574,12 @@ app/assets/granth/
 ├── sundarkand/            (→ D-106)
 │   ├── _kram.json         12 प्रसंग, चार हिस्सों में
 │   └── sundarkand_01 … 12 344 पद — श्लोक, चौपाई, दोहा, सोरठा, छंद, समापन
-└── vishnusahasranama/     (→ D-107)
-    ├── _kram.json         तीन भाग
-    └── vishnusahasranama_01 … 03   आरंभ (13) · सहस्रनाम (107) · फलश्रुति (22)
+├── vishnusahasranama/     (→ D-107)
+│   ├── _kram.json         तीन भाग
+│   └── vishnusahasranama_01 … 03   आरंभ (13) · सहस्रनाम (107) · फलश्रुति (22)
+└── sukta/                 (→ D-108)
+    ├── _kram.json         चार पाठ, तीन हिस्सों में
+    └── sukta_purusha · sukta_purusha_yv · sukta_nasadiya · sukta_shri
 app/assets/paath/saptashati/   सप्तशती यहीं रही (उसकी `_kram.json` में अब `id`)
 
 app/lib/vidhi/granth.dart            GranthKram · GranthHissa · GranthPaath · GranthSuchiEntry
@@ -609,6 +612,8 @@ app/lib/screens/paath_screen.dart         GranthNavigation — नीचे क�
 | `tools/granth_paath/gita/milan/` | पाँच स्रोतों का मिलान → `mool.txt` |
 | `tools/granth_paath/sundarkand/` | `kram.json` (`"lipi": "hindi"`), `paath/01…12.txt`; `milan/sk_mool.py` — आधार से 108 सुधारों की तालिका (→ D-106) |
 | `tools/granth_paath/vishnusahasranama/` | `paath/01…03.txt`; `milan/naam_jaanch.py` — हज़ार नाम, क्रम, हर नाम अपने श्लोक में (repo के भीतर से चलता है) (→ D-107) |
+| `tools/granth_paath/sukta/` | `paath/*.txt` (खंड `मंत्र N`); `milan/` — ऋग्वेद, यजुर्वेद और श्री सूक्त का मिलान (→ D-108) |
+| `app/test/sukta_test.dart` | 16 + 16 + 7 + 15 मंत्र; कोई स्वर-चिह्न नहीं; पुरुष सूक्त के दो पाठ सचमुच अलग; ⓘ; लक्ष्मी पूजन से रास्ता |
 | `app/test/vishnusahasranama_test.dart` | 13 + 107 + 22 श्लोक; नाम १ से १००० बिना टूटे; ⓘ; कृष्ण पूजा के दो बटन |
 | `app/test/sundarkand_test.dart` | 344 पद, दोहा १–६० बिना छूटे, 526 चौपाई-पंक्तियाँ, विराम, भूलें लौटी नहीं, ५९.३ का नोट, स्क्रीन, हनुमान पूजा से रास्ता |
 | `app/test/granth_test.dart` | गिनती 700, क्रम, हर खंड भरा, नुक़्ता, उवाच 59, समापन |

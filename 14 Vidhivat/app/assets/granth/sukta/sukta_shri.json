@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "id": "sukta_shri",
+  "naam": "श्री सूक्त",
+  "upnaam": [
+    "श्रीसूक्त",
+    "हिरण्यवर्णां हरिणीं",
+    "लक्ष्मी सूक्त"
+  ],
+  "prakar": "granth",
+  "devta": "श्री (लक्ष्मी जी)",
+  "rachnakar": "ऋग्वेद के खिल सूक्त — ऋषि आनंद, कर्दम, चिक्लीत",
+  "bhasha": "वैदिक संस्कृत",
+  "parichay": "ऋग्वेद के खिल भाग का सूक्त — पंद्रह मंत्र, देवता श्री (लक्ष्मी)। इसमें अग्नि देव से प्रार्थना है कि वे सोने जैसी आभा वाली, कमल पर विराजमान लक्ष्मी को घर में बुला लाएँ और अलक्ष्मी, यानी अभाव और तंगी, को दूर करें। सोलहवाँ श्लोक बताता है कि इन पंद्रह मंत्रों का जप कैसे किया जाए।\n\nदीपावली के लक्ष्मी पूजन, धनतेरस और शुक्रवार की लक्ष्मी पूजा में यही सबसे बड़ा पाठ है।",
+  "kabPadhein": "दीपावली के लक्ष्मी पूजन में, धनतेरस पर, और शुक्रवार को। बहुत घरों में रोज़ शाम दीपक के सामने पढ़ा जाता है।",
+  "kaisePadhein": "वेद-मंत्र परंपरा में स्वर (उदात्त-अनुदात्त) के साथ पढ़े जाते हैं। यहाँ बिना स्वर-चिह्न का पाठ है — स्वर सहित पढ़ना किसी जानकार से सीखा हो तो वैसे पढ़ें, नहीं तो साफ़ और धीमा उच्चारण रखें। कुछ परंपराओं में वेद-मंत्र गुरु से सीखकर ही पढ़े जाते हैं; अपनी परंपरा देखिए।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर मंत्र के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "मंत्र १",
+      "dev": "हिरण्यवर्णां हरिणीं सुवर्णरजतस्रजाम् ।\nचन्द्रां हिरण्मयीं लक्ष्मीं जातवेदो म आवह॥",
+      "roman": "hiranyavarnaam harineem suvarnarajatasrajaam |\nchandraam hiranmayeem lakshmeem jaatavedo ma aavaha ||",
+      "arth": "हे जातवेदा अग्नि देव, सोने जैसे रंग वाली, हरिणी के समान सुंदर, सोने और चाँदी की मालाएँ पहने, चंद्रमा की तरह चमकती, स्वर्णमयी लक्ष्मी को मेरे लिए बुला लाइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २",
+      "dev": "तां म आवह जातवेदो लक्ष्मीमनपगामिनीम् ।\nयस्यां हिरण्यं विन्देयं गामश्वं पुरुषानहम्॥",
+      "roman": "taam ma aavaha jaatavedo lakshmeemanapagaamineem |\nyasyaam hiranyam vindeyam gaamashvam purushaanaham ||",
+      "arth": "हे जातवेदा, उन कभी न छोड़कर जाने वाली लक्ष्मी को मेरे लिए बुला लाइए, जिनके आने पर मैं सोना, गायें, घोड़े और परिजन पाऊँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३",
+      "dev": "अश्वपूर्वां रथमध्यां हस्तिनादप्रबोधिनीम् ।\nश्रियं देवीमुपह्वये श्रीर्मा देवीर्जुषताम्॥",
+      "roman": "ashvapoorvaam rathamadhyaam hastinaadaprabodhineem |\nshriyam deveemupahvaye shreermaa deveerjushataam ||",
+      "arth": "जिनके आगे घोड़े हैं, बीच में रथ हैं, और जो हाथियों की चिंघाड़ से अपने आने की सूचना देती हैं — उन श्री देवी को मैं पास बुलाता हूँ। श्री देवी मुझे अपनाएँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४",
+      "dev": "कां सोस्मितां हिरण्यप्राकारामार्द्रां ज्वलन्तीं तृप्तां तर्पयन्तीम् ।\nपद्मे स्थितां पद्मवर्णां तामिहोपह्वये श्रियम्॥",
+      "roman": "kaam sosmitaam hiranyapraakaaraamaardraam jvalanteem triptaam tarpayanteem |\npadme sthitaam padmavarnaam taamihopahvaye shriyam ||",
+      "arth": "जो मंद मुस्कान वाली, सोने के परकोटे से घिरी, करुणा से भीगी, तेज से दमकती, स्वयं तृप्त और भक्तों को तृप्त करने वाली, कमल पर विराजमान और कमल जैसे रंग की हैं — उन श्री को मैं यहाँ बुलाता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ५",
+      "dev": "चन्द्रां प्रभासां यशसा ज्वलन्तीं श्रियं लोके देवजुष्टामुदाराम् ।\nतां पद्मिनीमीं शरणमहं प्रपद्येऽलक्ष्मीर्मे नश्यतां त्वां वृणे॥",
+      "roman": "chandraam prabhaasaam yashasaa jvalanteem shriyam loke devajushtaamudaaraam |\ntaam padmineemeem sharanamaham prapadye'lakshmeerme nashyataam tvaam vrine ||",
+      "arth": "जो चंद्रमा जैसी उजली, बहुत कांति वाली, यश से दमकती, लोक में देवताओं से सेवित और उदार हैं — उन कमल धारण करने वाली श्री देवी की मैं शरण लेता हूँ। मेरी अलक्ष्मी, यानी दरिद्रता, नष्ट हो जाए; मैं आपको वरण करता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ६",
+      "dev": "आदित्यवर्णे तपसोऽधिजातो वनस्पतिस्तव वृक्षोऽथ बिल्वः ।\nतस्य फलानि तपसा नुदन्तु मायान्तरायाश्च बाह्या अलक्ष्मीः॥",
+      "roman": "aadityavarne tapaso'dhijaato vanaspatistava vriksho'tha bilvah |\ntasya phalaani tapasaa nudantu maayaantaraayaashcha baahyaa alakshmeeh ||",
+      "arth": "हे सूर्य जैसे रंग वाली, आपके तप से वृक्षों में श्रेष्ठ बेल का पेड़ पैदा हुआ। उसके फल, आपकी कृपा से, मेरे भीतर और बाहर की अलक्ष्मी को दूर करें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ७",
+      "dev": "उपैतु मां देवसखः कीर्तिश्च मणिना सह ।\nप्रादुर्भूतोऽस्मि राष्ट्रेऽस्मिन् कीर्तिमृद्धिं ददातु मे॥",
+      "roman": "upaitu maam devasakhah keertishcha maninaa saha |\npraadurbhooto'smi raashtre'smin keertimriddhim dadaatu me ||",
+      "arth": "देवताओं के मित्र कुबेर, और कीर्ति, मणि के साथ मेरे पास आएँ। मैं इस राष्ट्र में पैदा हुआ हूँ; वे मुझे कीर्ति और समृद्धि दें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ८",
+      "dev": "क्षुत्पिपासामलां ज्येष्ठामलक्ष्मीं नाशयाम्यहम् ।\nअभूतिमसमृद्धिं च सर्वां निर्णुद मे गृहात्॥",
+      "roman": "kshutpipaasaamalaam jyeshthaamalakshmeem naashayaamyaham |\nabhootimasamriddhim cha sarvaam nirnuda me grihaat ||",
+      "arth": "भूख और प्यास से मलिन, लक्ष्मी की बड़ी बहन अलक्ष्मी को मैं नष्ट करता हूँ। हे देवी, मेरे घर से हर तरह के अभाव और तंगी को निकाल दीजिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ९",
+      "dev": "गन्धद्वारां दुराधर्षां नित्यपुष्टां करीषिणीम् ।\nईश्वरीं सर्वभूतानां तामिहोपह्वये श्रियम्॥",
+      "roman": "gandhadvaaraam duraadharshaam nityapushtaam kareeshineem |\neeshvareem sarvabhootaanaam taamihopahvaye shriyam ||",
+      "arth": "जो सुगंध से पहचानी जाती हैं, जिन्हें कोई दबा नहीं सकता, जो सदा पुष्ट हैं, गोधन से संपन्न हैं, और सब प्राणियों की ईश्वरी हैं — उन श्री को मैं यहाँ बुलाता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १०",
+      "dev": "मनसः काममाकूतिं वाचः सत्यमशीमहि ।\nपशूनां रूपमन्नस्य मयि श्रीः श्रयतां यशः॥",
+      "roman": "manasah kaamamaakootim vaachah satyamasheemahi |\npashoonaam roopamannasya mayi shreeh shrayataam yashah ||",
+      "arth": "हम मन की कामना और संकल्प की पूर्ति, और वाणी की सच्चाई पाएँ; पशुओं और अन्न की भरपूरी मिले; श्री और यश मुझमें आश्रय लें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ११",
+      "dev": "कर्दमेन प्रजाभूता मयि सम्भव कर्दम ।\nश्रियं वासय मे कुले मातरं पद्ममालिनीम्॥",
+      "roman": "kardamena prajaabhootaa mayi sambhava kardama |\nshriyam vaasaya me kule maataram padmamaalineem ||",
+      "arth": "कर्दम ऋषि से आप संतान वाली हुईं। हे कर्दम, आप मेरे यहाँ रहिए, और कमलों की माला पहनने वाली माता श्री को मेरे कुल में बसाइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १२",
+      "dev": "आपः सृजन्तु स्निग्धानि चिक्लीत वस मे गृहे ।\nनि च देवीं मातरं श्रियं वासय मे कुले॥",
+      "roman": "aapah srijantu snigdhaani chikleeta vasa me grihe |\nni cha deveem maataram shriyam vaasaya me kule ||",
+      "arth": "जल स्निग्ध, मंगलकारी पदार्थ पैदा करें। हे चिक्लीत, आप मेरे घर में रहिए, और माता श्री देवी को मेरे कुल में बसाइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १३",
+      "dev": "आर्द्रां पुष्करिणीं पुष्टिं पिङ्गलां पद्ममालिनीम् ।\nचन्द्रां हिरण्मयीं लक्ष्मीं जातवेदो म आवह॥",
+      "roman": "aardraam pushkarineem pushtim pingalaam padmamaalineem |\nchandraam hiranmayeem lakshmeem jaatavedo ma aavaha ||",
+      "arth": "हे जातवेदा, जो करुणा से भीगी, कमल के सरोवर में रहने वाली, पुष्टि रूप, सुनहरे-पीले रंग की, कमलों की माला पहने, चंद्रमा जैसी, स्वर्णमयी लक्ष्मी हैं — उन्हें मेरे लिए बुला लाइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १४",
+      "dev": "आर्द्रां यः करिणीं यष्टिं सुवर्णां हेममालिनीम् ।\nसूर्यां हिरण्मयीं लक्ष्मीं जातवेदो म आवह॥",
+      "roman": "aardraam yah karineem yashtim suvarnaam hemamaalineem |\nsooryaam hiranmayeem lakshmeem jaatavedo ma aavaha ||",
+      "arth": "हे जातवेदा, जो करुणा से भीगी, हाथ में छड़ी लिए, सुंदर वर्ण की, सोने की माला पहने, सूर्य जैसी तेजस्विनी, स्वर्णमयी लक्ष्मी हैं — उन्हें मेरे लिए बुला लाइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १५",
+      "dev": "तां म आवह जातवेदो लक्ष्मीमनपगामिनीम् ।\nयस्यां हिरण्यं प्रभूतं गावो दास्योऽश्वान्विन्देयं पुरुषानहम्॥",
+      "roman": "taam ma aavaha jaatavedo lakshmeemanapagaamineem |\nyasyaam hiranyam prabhootam gaavo daasyo'shvaanvindeyam purushaanaham ||",
+      "arth": "हे जातवेदा, उन कभी न जाने वाली लक्ष्मी को मेरे लिए बुला लाइए, जिनके आने पर मैं बहुत-सा सोना, गायें, सेविकाएँ, घोड़े और परिजन पाऊँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "फलश्रुति",
+      "dev": "यः शुचिः प्रयतो भूत्वा जुहुयादाज्यमन्वहम् ।\nश्रियः पञ्चदशर्चं च श्रीकामः सततं जपेत्॥",
+      "roman": "yah shuchih prayato bhootvaa juhuyaadaajyamanvaham |\nshriyah panchadasharcham cha shreekaamah satatam japet ||",
+      "arth": "जो लक्ष्मी की कामना करता हो, वह पवित्र और संयमी होकर रोज़ घी से हवन करे, और श्री के इन पंद्रह मंत्रों का सदा जप करे।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "ऋग्वेद के खिल सूक्त — श्री सूक्त",
+    "kshetra": "सब जगह — लक्ष्मी पूजन में",
+    "note": "पंद्रहों मंत्र दो अलग संग्रहों में अक्षर-अक्षर एक मिले, और एक छपी हिंदी टीका में भी वही पाठ है। श्री सूक्त के छपे रूप आपस में पूरे नहीं मिलते — कहीं \"जातवेदो ममावह\", कहीं \"पद्मनेमिं\", कहीं तेरहवें-चौदहवें मंत्र के शब्द आपस में बदले हुए; कुछ पुस्तकों में आगे और श्लोक भी जुड़ते हैं। आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है; कुछ शब्दों का अर्थ टीकाकार अलग-अलग करते हैं।\n\n📿 यह सूक्त समृद्धि की प्रार्थना है — ऐप किसी फल का वादा नहीं करता।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

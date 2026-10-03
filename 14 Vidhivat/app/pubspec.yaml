@@ -58,6 +58,7 @@ flutter:
     - assets/granth/gita/
     - assets/granth/sundarkand/
     - assets/granth/vishnusahasranama/
+    - assets/granth/sukta/
     - assets/katha/
     - assets/vrat/
     - assets/parv/

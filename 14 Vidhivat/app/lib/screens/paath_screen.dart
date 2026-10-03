@@ -238,6 +238,10 @@ class _PaathReaderState extends State<PaathReader> {
     if (padya) return '${paath.khandKul} पद';
     final shlok =
         paath.khand.where((k) => k.shirshak.startsWith('श्लोक')).length;
+    // वेद के सूक्त में खंड "मंत्र १, मंत्र २ …" हैं (→ D-108)
+    final mantra =
+        paath.khand.where((k) => k.shirshak.startsWith('मंत्र')).length;
+    if (shlok == 0 && mantra > 0) return '$mantra मंत्र';
     return '$shlok श्लोक';
   }
 
