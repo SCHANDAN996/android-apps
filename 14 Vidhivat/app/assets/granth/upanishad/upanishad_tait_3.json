@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "id": "upanishad_tait_3",
+  "naam": "तैत्तिरीय — भृगु वल्ली",
+  "upnaam": [
+    "भृगुवल्ली",
+    "भृगु और वरुण",
+    "अन्नं न निन्द्यात्",
+    "अहमन्नम्"
+  ],
+  "prakar": "granth",
+  "devta": "ब्रह्म (परमात्मा)",
+  "rachnakar": "कृष्ण यजुर्वेद — तैत्तिरीय आरण्यक",
+  "bhasha": "संस्कृत",
+  "parichay": "भृगु अपने पिता वरुण से ब्रह्म पूछते हैं। पिता उत्तर नहीं देते — कसौटी देते हैं: जिससे सब पैदा होते हैं, जिससे जीते हैं, और जिसमें लौट जाते हैं, वही ब्रह्म है; तप करके ख़ुद जानो। भृगु हर बार तप करके लौटते हैं — अन्न ब्रह्म है; नहीं, प्राण; नहीं, मन; नहीं, विज्ञान — और अंत में: आनंद ब्रह्म है।\n\nबाक़ी अनुवाक अन्न के व्रत हैं — अन्न की निंदा न करे, उसे ठुकराए नहीं, उसे बढ़ाए, और घर आए किसी को लौटाए नहीं। वल्ली ज्ञानी के गीत पर ख़त्म होती है: मैं अन्न हूँ, मैं अन्न को खाने वाला हूँ।",
+  "kabPadhein": "किसी भी शांत समय — सुबह या शाम। उपनिषद पूजा का पाठ नहीं, स्वाध्याय और मनन के लिए हैं: थोड़ा पढ़ें, और जो पढ़ा उस पर रुककर सोचें।",
+  "kaisePadhein": "परंपरा में उपनिषद का पाठ शांति पाठ से शुरू होता है और उसी पर ख़त्म — इसलिए हर उपनिषद का पहला खंड उसका शांति पाठ है; पाठ पूरा करके उसे एक बार फिर पढ़ लें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर मंत्र के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं। यहाँ वैदिक स्वर-चिह्न नहीं हैं; साफ़ और धीमा उच्चारण रखें।\n\nउपनिषद के मंत्र गूढ़ हैं और आचार्यों ने कई मंत्रों को अलग-अलग ढंग से समझाया है। यहाँ का अर्थ सिर्फ़ पहली सीढ़ी है — गहराई से समझना हो तो किसी जानकार के साथ या किसी भाष्य के सहारे पढ़ें।",
+  "khand": [
+    {
+      "shirshak": "शांति पाठ",
+      "dev": "ॐ सह नाववतु ।\nसह नौ भुनक्तु ।\nसह वीर्यं करवावहै ।\nतेजस्वि नावधीतमस्तु मा विद्विषावहै ॥\nॐ शान्तिः शान्तिः शान्तिः ॥",
+      "roman": "om saha naavavatu |\nsaha nau bhunaktu |\nsaha veeryam karavaavahai |\ntejasvi naavadheetamastu maa vidvishaavahai ||\nom shaantih shaantih shaantih ||",
+      "arth": "परमात्मा हम दोनों — गुरु और शिष्य — की साथ-साथ रक्षा करे; हम दोनों का साथ-साथ पालन करे। हम दोनों मिलकर पुरुषार्थ करें। हमारा पढ़ा हुआ तेजस्वी हो; हम एक-दूसरे से द्वेष न करें। तीनों तरह के ताप शांत हों।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक १",
+      "dev": "भृगुर्वै वारुणिः ।\nवरुणं पितरमुपससार ।\nअधीहि भगवो ब्रह्मेति ।\nतस्मा एतत्प्रोवाच ।\nअन्नं प्राणं चक्षुः श्रोत्रं मनो वाचमिति ।\nतं होवाच ।\nयतो वा इमानि भूतानि जायन्ते ।\nयेन जातानि जीवन्ति ।\nयत्प्रयन्त्यभिसंविशन्ति ।\nतद्विजिज्ञासस्व ।\nतद्ब्रह्मेति ।\nस तपोऽतप्यत ।\nस तपस्तप्त्वा ॥",
+      "roman": "bhrigurvai vaarunih |\nvarunam pitaramupasasaara |\nadheehi bhagavo brahmeti |\ntasmaa etatprovaacha |\nannam praanam chakshuh shrotram mano vaachamiti |\ntam hovaacha |\nyato vaa imaani bhootaani jaayante |\nyena jaataani jeevanti |\nyatprayantyabhisamvishanti |\ntadvijijnaasasva |\ntadbrahmeti |\nsa tapo'tapyata |\nsa tapastaptvaa ||",
+      "arth": "वरुण के पुत्र भृगु अपने पिता वरुण के पास गए और बोले — \"भगवन्, मुझे ब्रह्म का उपदेश दीजिए।\" वरुण ने उनसे यह कहा — \"अन्न, प्राण, आँख, कान, मन और वाणी — ये ब्रह्म तक पहुँचने के द्वार हैं।\" फिर कहा — \"जिससे ये सारे प्राणी पैदा होते हैं, पैदा होकर जिससे जीते हैं, और जाते समय जिसमें समा जाते हैं — उसे जानने की इच्छा करो; वही ब्रह्म है।\" भृगु ने तप किया; और तप करके —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक २",
+      "dev": "अन्नं ब्रह्मेति व्यजानात् ।\nअन्नाद्ध्येव खल्विमानि भूतानि जायन्ते ।\nअन्नेन जातानि जीवन्ति ।\nअन्नं प्रयन्त्यभिसंविशन्तीति ।\nतद्विज्ञाय ।\nपुनरेव वरुणं पितरमुपससार ।\nअधीहि भगवो ब्रह्मेति ।\nतं होवाच ।\nतपसा ब्रह्म विजिज्ञासस्व ।\nतपो ब्रह्मेति ।\nस तपोऽतप्यत ।\nस तपस्तप्त्वा ॥",
+      "roman": "annam brahmeti vyajaanaat |\nannaaddhyeva khalvimaani bhootaani jaayante |\nannena jaataani jeevanti |\nannam prayantyabhisamvishanteeti |\ntadvijnaaya |\npunareva varunam pitaramupasasaara |\nadheehi bhagavo brahmeti |\ntam hovaacha |\ntapasaa brahma vijijnaasasva |\ntapo brahmeti |\nsa tapo'tapyata |\nsa tapastaptvaa ||",
+      "arth": "उन्होंने जाना कि अन्न ब्रह्म है; क्योंकि अन्न से ही ये सारे प्राणी पैदा होते हैं, पैदा होकर अन्न से जीते हैं, और जाते समय अन्न में ही समा जाते हैं। यह जानकर वे फिर पिता वरुण के पास गए — \"भगवन्, मुझे ब्रह्म का उपदेश दीजिए।\" वरुण ने कहा — \"तप से ब्रह्म को जानने की इच्छा करो; तप ही ब्रह्म है।\" उन्होंने तप किया; और तप करके —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक ३",
+      "dev": "प्राणो ब्रह्मेति व्यजानात् ।\nप्राणाद्ध्येव खल्विमानि भूतानि जायन्ते ।\nप्राणेन जातानि जीवन्ति ।\nप्राणं प्रयन्त्यभिसंविशन्तीति ।\nतद्विज्ञाय ।\nपुनरेव वरुणं पितरमुपससार ।\nअधीहि भगवो ब्रह्मेति ।\nतं होवाच ।\nतपसा ब्रह्म विजिज्ञासस्व ।\nतपो ब्रह्मेति ।\nस तपोऽतप्यत ।\nस तपस्तप्त्वा ॥",
+      "roman": "praano brahmeti vyajaanaat |\npraanaaddhyeva khalvimaani bhootaani jaayante |\npraanena jaataani jeevanti |\npraanam prayantyabhisamvishanteeti |\ntadvijnaaya |\npunareva varunam pitaramupasasaara |\nadheehi bhagavo brahmeti |\ntam hovaacha |\ntapasaa brahma vijijnaasasva |\ntapo brahmeti |\nsa tapo'tapyata |\nsa tapastaptvaa ||",
+      "arth": "उन्होंने जाना कि प्राण ब्रह्म है; क्योंकि प्राण से ही ये सारे प्राणी पैदा होते हैं, पैदा होकर प्राण से जीते हैं, और जाते समय प्राण में ही समा जाते हैं। यह जानकर वे फिर पिता वरुण के पास गए — \"भगवन्, मुझे ब्रह्म का उपदेश दीजिए।\" वरुण ने कहा — \"तप से ब्रह्म को जानने की इच्छा करो; तप ही ब्रह्म है।\" उन्होंने तप किया; और तप करके —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक ४",
+      "dev": "मनो ब्रह्मेति व्यजानात् ।\nमनसो ह्येव खल्विमानि भूतानि जायन्ते ।\nमनसा जातानि जीवन्ति ।\nमनः प्रयन्त्यभिसंविशन्तीति ।\nतद्विज्ञाय ।\nपुनरेव वरुणं पितरमुपससार ।\nअधीहि भगवो ब्रह्मेति ।\nतं होवाच ।\nतपसा ब्रह्म विजिज्ञासस्व ।\nतपो ब्रह्मेति ।\nस तपोऽतप्यत ।\nस तपस्तप्त्वा ॥",
+      "roman": "mano brahmeti vyajaanaat |\nmanaso hyeva khalvimaani bhootaani jaayante |\nmanasaa jaataani jeevanti |\nmanah prayantyabhisamvishanteeti |\ntadvijnaaya |\npunareva varunam pitaramupasasaara |\nadheehi bhagavo brahmeti |\ntam hovaacha |\ntapasaa brahma vijijnaasasva |\ntapo brahmeti |\nsa tapo'tapyata |\nsa tapastaptvaa ||",
+      "arth": "उन्होंने जाना कि मन ब्रह्म है; क्योंकि मन से ही ये सारे प्राणी पैदा होते हैं, पैदा होकर मन से जीते हैं, और जाते समय मन में ही समा जाते हैं। यह जानकर वे फिर पिता वरुण के पास गए — \"भगवन्, मुझे ब्रह्म का उपदेश दीजिए।\" वरुण ने कहा — \"तप से ब्रह्म को जानने की इच्छा करो; तप ही ब्रह्म है।\" उन्होंने तप किया; और तप करके —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक ५",
+      "dev": "विज्ञानं ब्रह्मेति व्यजानात् ।\nविज्ञानाद्ध्येव खल्विमानि भूतानि जायन्ते ।\nविज्ञानेन जातानि जीवन्ति ।\nविज्ञानं प्रयन्त्यभिसंविशन्तीति ।\nतद्विज्ञाय ।\nपुनरेव वरुणं पितरमुपससार ।\nअधीहि भगवो ब्रह्मेति ।\nतं होवाच ।\nतपसा ब्रह्म विजिज्ञासस्व ।\nतपो ब्रह्मेति ।\nस तपोऽतप्यत ।\nस तपस्तप्त्वा ॥",
+      "roman": "vijnaanam brahmeti vyajaanaat |\nvijnaanaaddhyeva khalvimaani bhootaani jaayante |\nvijnaanena jaataani jeevanti |\nvijnaanam prayantyabhisamvishanteeti |\ntadvijnaaya |\npunareva varunam pitaramupasasaara |\nadheehi bhagavo brahmeti |\ntam hovaacha |\ntapasaa brahma vijijnaasasva |\ntapo brahmeti |\nsa tapo'tapyata |\nsa tapastaptvaa ||",
+      "arth": "उन्होंने जाना कि विज्ञान ब्रह्म है; क्योंकि विज्ञान से ही ये सारे प्राणी पैदा होते हैं, पैदा होकर विज्ञान से जीते हैं, और जाते समय विज्ञान में ही समा जाते हैं। यह जानकर वे फिर पिता वरुण के पास गए — \"भगवन्, मुझे ब्रह्म का उपदेश दीजिए।\" वरुण ने कहा — \"तप से ब्रह्म को जानने की इच्छा करो; तप ही ब्रह्म है।\" उन्होंने तप किया; और तप करके —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक ६",
+      "dev": "आनन्दो ब्रह्मेति व्यजानात् ।\nआनन्दाद्ध्येव खल्विमानि भूतानि जायन्ते ।\nआनन्देन जातानि जीवन्ति ।\nआनन्दं प्रयन्त्यभिसंविशन्तीति ।\nसैषा भार्गवी वारुणी विद्या ।\nपरमे व्योमन्प्रतिष्ठिता ।\nस य एवं वेद प्रतितिष्ठति ।\nअन्नवानन्नादो भवति ।\nमहान्भवति प्रजया पशुभिर्ब्रह्मवर्चसेन ।\nमहान् कीर्त्या ॥",
+      "roman": "aanando brahmeti vyajaanaat |\naanandaaddhyeva khalvimaani bhootaani jaayante |\naanandena jaataani jeevanti |\naanandam prayantyabhisamvishanteeti |\nsaishaa bhaargavee vaarunee vidyaa |\nparame vyomanpratishthitaa |\nsa ya evam veda pratitishthati |\nannavaanannaado bhavati |\nmahaanbhavati prajayaa pashubhirbrahmavarchasena |\nmahaan keertyaa ||",
+      "arth": "उन्होंने जाना कि आनंद ब्रह्म है; क्योंकि आनंद से ही ये सारे प्राणी पैदा होते हैं, पैदा होकर आनंद से जीते हैं, और जाते समय आनंद में ही समा जाते हैं। यह भृगु की जानी और वरुण की सिखाई हुई विद्या है, जो हृदय के परम आकाश में टिकी है। जो इसे इस तरह जानता है, वह टिक जाता है; अन्न वाला और अन्न को पचाने वाला होता है; संतान, पशु और ब्रह्म के तेज से बड़ा होता है, और कीर्ति से बड़ा होता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक ७",
+      "dev": "अन्नं न निन्द्यात् ।\nतद्व्रतम् ।\nप्राणो वा अन्नम् ।\nशरीरमन्नादम् ।\nप्राणे शरीरं प्रतिष्ठितम् ।\nशरीरे प्राणः प्रतिष्ठितः ।\nतदेतदन्नमन्ने प्रतिष्ठितम् ।\nस य एतदन्नमन्ने प्रतिष्ठितं वेद प्रतितिष्ठति ।\nअन्नवानन्नादो भवति ।\nमहान्भवति प्रजया पशुभिर्ब्रह्मवर्चसेन ।\nमहान् कीर्त्या ॥",
+      "roman": "annam na nindyaat |\ntadvratam |\npraano vaa annam |\nshareeramannaadam |\npraane shareeram pratishthitam |\nshareere praanah pratishthitah |\ntadetadannamanne pratishthitam |\nsa ya etadannamanne pratishthitam veda pratitishthati |\nannavaanannaado bhavati |\nmahaanbhavati prajayaa pashubhirbrahmavarchasena |\nmahaan keertyaa ||",
+      "arth": "अन्न की निंदा न करे — यह व्रत है। प्राण ही अन्न है, और शरीर अन्न को खाने वाला। शरीर प्राण में टिका है, और प्राण शरीर में — इस तरह अन्न अन्न में टिका है। जो जानता है कि अन्न अन्न में टिका है, वह टिक जाता है; अन्न वाला और अन्न को पचाने वाला होता है; संतान, पशु और ब्रह्म के तेज से बड़ा होता है, और कीर्ति से बड़ा होता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक ८",
+      "dev": "अन्नं न परिचक्षीत ।\nतद्व्रतम् ।\nआपो वा अन्नम् ।\nज्योतिरन्नादम् ।\nअप्सु ज्योतिः प्रतिष्ठितम् ।\nज्योतिष्यापः प्रतिष्ठिताः ।\nतदेतदन्नमन्ने प्रतिष्ठितम् ।\nस य एतदन्नमन्ने प्रतिष्ठितं वेद प्रतितिष्ठति ।\nअन्नवानन्नादो भवति ।\nमहान्भवति प्रजया पशुभिर्ब्रह्मवर्चसेन ।\nमहान् कीर्त्या ॥",
+      "roman": "annam na parichaksheeta |\ntadvratam |\naapo vaa annam |\njyotirannaadam |\napsu jyotih pratishthitam |\njyotishyaapah pratishthitaah |\ntadetadannamanne pratishthitam |\nsa ya etadannamanne pratishthitam veda pratitishthati |\nannavaanannaado bhavati |\nmahaanbhavati prajayaa pashubhirbrahmavarchasena |\nmahaan keertyaa ||",
+      "arth": "अन्न को ठुकराए नहीं — यह व्रत है। जल ही अन्न है, और तेज अन्न को खाने वाला। तेज जल में टिका है, और जल तेज में — इस तरह अन्न अन्न में टिका है। जो जानता है कि अन्न अन्न में टिका है, वह टिक जाता है; अन्न वाला और अन्न को पचाने वाला होता है; संतान, पशु और ब्रह्म के तेज से बड़ा होता है, और कीर्ति से बड़ा होता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक ९",
+      "dev": "अन्नं बहु कुर्वीत ।\nतद्व्रतम् ।\nपृथिवी वा अन्नम् ।\nआकाशोऽन्नादः ।\nपृथिव्यामाकाशः प्रतिष्ठितः ।\nआकाशे पृथिवी प्रतिष्ठिता ।\nतदेतदन्नमन्ने प्रतिष्ठितम् ।\nस य एतदन्नमन्ने प्रतिष्ठितं वेद प्रतितिष्ठति ।\nअन्नवानन्नादो भवति ।\nमहान्भवति प्रजया पशुभिर्ब्रह्मवर्चसेन ।\nमहान् कीर्त्या ॥",
+      "roman": "annam bahu kurveeta |\ntadvratam |\nprithivee vaa annam |\naakaasho'nnaadah |\nprithivyaamaakaashah pratishthitah |\naakaashe prithivee pratishthitaa |\ntadetadannamanne pratishthitam |\nsa ya etadannamanne pratishthitam veda pratitishthati |\nannavaanannaado bhavati |\nmahaanbhavati prajayaa pashubhirbrahmavarchasena |\nmahaan keertyaa ||",
+      "arth": "अन्न को बहुत बढ़ाए — यह व्रत है। पृथ्वी ही अन्न है, और आकाश अन्न को खाने वाला। आकाश पृथ्वी में टिका है, और पृथ्वी आकाश में — इस तरह अन्न अन्न में टिका है। जो जानता है कि अन्न अन्न में टिका है, वह टिक जाता है; अन्न वाला और अन्न को पचाने वाला होता है; संतान, पशु और ब्रह्म के तेज से बड़ा होता है, और कीर्ति से बड़ा होता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक १०",
+      "dev": "न कञ्चन वसतौ प्रत्याचक्षीत ।\nतद्व्रतम् ।\nतस्माद्यया कया च विधया बह्वन्नं प्राप्नुयात् ।\nअराध्यस्मा अन्नमित्याचक्षते ।\nएतद्वै मुखतोऽन्नं राद्धम् ।\nमुखतोऽस्मा अन्नं राध्यते ।\nएतद्वै मध्यतोऽन्नं राद्धम् ।\nमध्यतोऽस्मा अन्नं राध्यते ।\nएतद्वा अन्ततोऽन्नं राद्धम् ।\nअन्ततोऽस्मा अन्नं राध्यते ।\nय एवं वेद ।\nक्षेम इति वाचि ।\nयोगक्षेम इति प्राणापानयोः ।\nकर्मेति हस्तयोः ।\nगतिरिति पादयोः ।\nविमुक्तिरिति पायौ ।\nइति मानुषीः समाज्ञाः ।\nअथ दैवीः ।\nतृप्तिरिति वृष्टौ ।\nबलमिति विद्युति ।\nयश इति पशुषु ।\nज्योतिरिति नक्षत्रेषु ।\nप्रजातिरमृतमानन्द इत्युपस्थे ।\nसर्वमित्याकाशे ।\nतत्प्रतिष्ठेत्युपासीत ।\nप्रतिष्ठावान् भवति ।\nतन्मह इत्युपासीत ।\nमहान्भवति ।\nतन्मन इत्युपासीत ।\nमानवान्भवति ।\nतन्नम इत्युपासीत ।\nनम्यन्तेऽस्मै कामाः ।\nतद्ब्रह्मेत्युपासीत ।\nब्रह्मवान्भवति ।\nतद्ब्रह्मणः परिमर इत्युपासीत ।\nपर्येणं म्रियन्ते द्विषन्तः सपत्नाः ।\nपरि येऽप्रिया भ्रातृव्याः ।\nस यश्चायं पुरुषे ।\nयश्चासावादित्ये ।\nस एकः । स य एवंवित् ।\nअस्माल्लोकात्प्रेत्य ।\nएतमन्नमयमात्मानमुपसङ्क्रम्य ।\nएतं प्राणमयमात्मानमुपसङ्क्रम्य ।\nएतं मनोमयमात्मानमुपसङ्क्रम्य ।\nएतं विज्ञानमयमात्मानमुपसङ्क्रम्य ।\nएतमानन्दमयमात्मानमुपसङ्क्रम्य ।\nइमाँल्लोकान्कामान्नी कामरूप्यनुसञ्चरन् ।\nएतत् साम गायन्नास्ते ।\nहा३वु हा३वु हा३वु ।\nअहमन्नमहमन्नमहमन्नम् ।\nअहमन्नादो३ऽहमन्नादो३ऽहमन्नादः ।\nअहं श्लोककृदहं श्लोककृदहं श्लोककृत् ।\nअहमस्मि प्रथमजा ऋता३स्य ।\nपूर्वं देवेभ्योऽमृतस्य ना३भायि ।\nयो मा ददाति स इदेव मा३वाः ।\nअहमन्नमन्नमदन्तमा३द्मि ।\nअहं विश्वं भुवनमभ्यभवा३म् ।\nसुवर्न ज्योतीः ।\nय एवं वेद ।\nइत्युपनिषत् ॥",
+      "roman": "na kanchana vasatau pratyaachaksheeta |\ntadvratam |\ntasmaadyayaa kayaa cha vidhayaa bahvannam praapnuyaat |\naraadhyasmaa annamityaachakshate |\netadvai mukhato'nnam raaddham |\nmukhato'smaa annam raadhyate |\netadvai madhyato'nnam raaddham |\nmadhyato'smaa annam raadhyate |\netadvaa antato'nnam raaddham |\nantato'smaa annam raadhyate |\nya evam veda |\nkshema iti vaachi |\nyogakshema iti praanaapaanayoh |\nkarmeti hastayoh |\ngatiriti paadayoh |\nvimuktiriti paayau |\niti maanusheeh samaajnaah |\natha daiveeh |\ntriptiriti vrishtau |\nbalamiti vidyuti |\nyasha iti pashushu |\njyotiriti nakshatreshu |\nprajaatiramritamaananda ityupasthe |\nsarvamityaakaashe |\ntatpratishthetyupaaseeta |\npratishthaavaan bhavati |\ntanmaha ityupaaseeta |\nmahaanbhavati |\ntanmana ityupaaseeta |\nmaanavaanbhavati |\ntannama ityupaaseeta |\nnamyante'smai kaamaah |\ntadbrahmetyupaaseeta |\nbrahmavaanbhavati |\ntadbrahmanah parimara ityupaaseeta |\nparyenam mriyante dvishantah sapatnaah |\npari ye'priyaa bhraatrivyaah |\nsa yashchaayam purushe |\nyashchaasaavaaditye |\nsa ekah | sa ya evamvit |\nasmaallokaatpretya |\netamannamayamaatmaanamupasankramya |\netam praanamayamaatmaanamupasankramya |\netam manomayamaatmaanamupasankramya |\netam vijnaanamayamaatmaanamupasankramya |\netamaanandamayamaatmaanamupasankramya |\nimaanllokaankaamaannee kaamaroopyanusancharan |\netat saama gaayannaaste |\nhaavu haavu haavu |\nahamannamahamannamahamannam |\nahamannaado'hamannaado'hamannaadah |\naham shlokakridaham shlokakridaham shlokakrit |\nahamasmi prathamajaa ritaasya |\npoorvam devebhyo'mritasya naabhaayi |\nyo maa dadaati sa ideva maavaah |\nahamannamannamadantamaadmi |\naham vishvam bhuvanamabhyabhavaam |\nsuvarna jyoteeh |\nya evam veda |\nityupanishat ||",
+      "arth": "घर आए किसी को भी लौटाए नहीं — यह व्रत है। इसलिए जिस किसी तरह हो, बहुत सा अन्न जुटाए; क्योंकि गृहस्थ अतिथि से कहते हैं — आपके लिए अन्न तैयार है। जो आदर के साथ पहले दर्जे का अन्न देता है, उसे पहले दर्जे का अन्न मिलता है; जो बीच के दर्जे का देता है, उसे बीच के दर्जे का; और जो आख़िरी दर्जे का देता है, उसे आख़िरी दर्जे का — जो इसे इस तरह जानता है। ब्रह्म की उपासना इस तरह करे — वाणी में रक्षा के रूप में; प्राण और अपान में पाने और बचाने के रूप में; हाथों में कर्म के रूप में; पैरों में चलने के रूप में; गुदा में त्याग के रूप में — ये मनुष्य से जुड़ी उपासनाएँ हैं। अब देवताओं से जुड़ी — वर्षा में तृप्ति के रूप में; बिजली में बल के रूप में; पशुओं में यश के रूप में; नक्षत्रों में ज्योति के रूप में; जननेंद्रिय में संतान, अमरता और आनंद के रूप में; और आकाश में सब कुछ के रूप में। उसे आधार मानकर उपासना करे — तो आधार वाला होता है; महान मानकर करे — तो महान होता है; मन मानकर करे — तो मान वाला होता है; नमन मानकर करे — तो कामनाएँ उसके आगे झुकती हैं; ब्रह्म मानकर करे — तो ब्रह्म वाला होता है; ब्रह्म का परिमर (जिसमें सब समा जाते हैं) मानकर करे — तो उससे द्वेष करने वाले शत्रु और अप्रिय विरोधी मिट जाते हैं। — जो यह इस पुरुष में है, और जो वह सूर्य में है — वह एक ही है। जो इस तरह जानता है, वह इस लोक से जाकर इस अन्नमय आत्मा को, इस प्राणमय आत्मा को, इस मनोमय आत्मा को, इस विज्ञानमय आत्मा को और इस आनंदमय आत्मा को पार करके, मनचाहा अन्न खाता और मनचाहा रूप लेता हुआ इन लोकों में घूमता है, और यह साम गाता रहता है — \"हा वु, हा वु, हा वु! मैं अन्न हूँ, मैं अन्न हूँ, मैं अन्न हूँ! मैं अन्न को खाने वाला हूँ, मैं अन्न को खाने वाला हूँ, मैं अन्न को खाने वाला हूँ! मैं जोड़ने वाला हूँ, मैं जोड़ने वाला हूँ, मैं जोड़ने वाला हूँ! मैं ऋत का पहला जन्मा हूँ — देवताओं से भी पहले, अमृत की नाभि। जो मुझे देता है, वही मेरी रक्षा करता है। मैं अन्न हूँ; अन्न खाने वाले को मैं खा जाता हूँ। मैंने सारे जगत को जीत लिया है। मैं सूर्य जैसी ज्योति हूँ।\" — जो इस तरह जानता है। यही उपनिषद है।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "कृष्ण यजुर्वेद, तैत्तिरीय शाखा — तीन वल्लियाँ, इकतीस अनुवाक",
+    "kshetra": "सब जगह — वेदांत का स्वाध्याय",
+    "note": "यह उपनिषद मंत्रों में नहीं, अनुवाकों में बँटा है — यहाँ हर अनुवाक एक खंड है। पाठ एक संग्रह से लिया गया और शांकर भाष्य के साथ छपे पाठ और छपी हिंदी टीका से मिलाया गया; संग्रह की वर्तनी की भूलें टीका के पाठ से सुधारी गईं (\"सर्वे लोका महीयन्ते\", \"सुमेधा अमृतोक्षितः\", \"आत्मानं स्पृणुते\")।\n\nपरंपरा में यह उपनिषद स्वर के साथ पढ़ा जाता है; \"सुवः\" जैसे रूप तैत्तिरीय शाखा के अपने हैं। \"३\" प्लुत का चिह्न है — वह स्वर खींचकर बोला जाता है।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — किसी एक मत का भाष्य नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

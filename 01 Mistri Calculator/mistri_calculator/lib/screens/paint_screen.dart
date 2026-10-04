@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:share_plus/share_plus.dart';
 import '../core/theme/app_theme.dart';
 import '../core/constants/strings.dart';
@@ -10,6 +9,9 @@ import '../core/math/paint_calculator.dart';
 import '../core/utils/indian_formatter.dart';
 import '../core/utils/unit_converter.dart';
 import '../widgets/shared_widgets.dart';
+import '../widgets/length_field.dart';
+import '../widgets/add_to_project_button.dart';
+import '../core/models/project_item.dart';
 import '../widgets/banner_ad_widget.dart';
 import '../widgets/help_dialogs.dart';
 
@@ -47,13 +49,17 @@ class _PaintScreenState extends State<PaintScreen> {
   }
 
   void _calculate() {
+    // Tapping Calculate again on an unchanged form is not a new calculation.
+    final repeat = _result != null;
     if (_inputMode == 'area') {
       final area = double.tryParse(_areaCtrl.text);
       if (area == null || area <= 0) {
         _showError();
         return;
       }
-      final areaM2 = _unit == 'ft' ? UnitConverter.sqFeetToSqMeters(area) : area;
+      final areaM2 = _unit == 'ft'
+          ? UnitConverter.sqFeetToSqMeters(area)
+          : area;
       setState(() {
         _result = PaintCalculator.calculateByArea(
           areaM2: areaM2,
@@ -79,16 +85,13 @@ class _PaintScreenState extends State<PaintScreen> {
       });
     }
 
-    AdService().onCalculationComplete();
+    AdService().onCalculationComplete(repeat: repeat);
   }
 
-  void _showError() {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(AppStrings.get('enterValue')),
-        backgroundColor: AppColors.error,
-      ),
-    );
+  void _showError() => showInputError(context);
+
+  void _clearResult() {
+    if (_result != null) setState(() => _result = null);
   }
 
   String _buildShareText() {
@@ -102,6 +105,9 @@ class _PaintScreenState extends State<PaintScreen> {
     text += '📊 ${AppStrings.get('result')}:\n';
     text +=
         '${AppStrings.get('paintLitres')}: ${r.totalLitres.toStringAsFixed(1)}\n';
+    text +=
+        '${AppStrings.get('primer')}: ${r.primerLitres.toStringAsFixed(1)} L\n';
+    text += '${AppStrings.get('putty')}: ${r.puttyKg.toStringAsFixed(0)} kg\n';
     text += '${AppStrings.get('bucketSuggestion')}: ';
     text += r.bucketSuggestion.entries
         .map((e) => '${e.value} × ${e.key}')
@@ -119,94 +125,131 @@ class _PaintScreenState extends State<PaintScreen> {
     return text;
   }
 
+  ProjectItem _projectItem() {
+    final r = _result!;
+    return ProjectItem.create(
+      type: 'paint',
+      detail:
+          '${UnitConverter.sqMetersToSqFeet(r.areaM2).toStringAsFixed(0)} sq.ft · ${AppStrings.get('coats')}: ${r.coats}',
+      materials: {ProjectMaterial.paintLitres: r.totalLitres},
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(AppStrings.get('paint')),
-      ),
+      appBar: AppBar(title: Text(AppStrings.get('paint'))),
       bottomNavigationBar: const BannerAdWidget(),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+      body: CalculatorPageBody(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Unit toggle
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                UnitToggle(
-                  value: _unit,
-                  onChanged: (v) => setState(() => _unit = v),
-                ),
-              ],
+            CalculatorToolHeader(
+              title: AppStrings.get('paint'),
+              imageAsset: 'assets/images/paint_coats_reference.webp',
+              color: const Color(0xFFC62828),
+              imageWidth: 112,
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 12),
+            FormSurface(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Unit toggle
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      UnitToggle(
+                        value: _unit,
+                        onChanged: (v) => setState(() {
+                          _unit = v;
+                          _result = null;
+                        }),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
 
-            // Input mode
-            OptionChips<String>(
-              options: const ['room', 'area'],
-              selected: _inputMode,
-              labelBuilder: (m) =>
-                  m == 'room'
-                      ? AppStrings.get('roomDimensions')
-                      : AppStrings.get('manualArea'),
-              onSelected: (v) => setState(() => _inputMode = v),
+                  // Input mode
+                  OptionChips<String>(
+                    options: const ['room', 'area'],
+                    selected: _inputMode,
+                    labelBuilder: (m) => m == 'room'
+                        ? AppStrings.get('roomDimensions')
+                        : AppStrings.get('manualArea'),
+                    onSelected: (v) => setState(() {
+                      _inputMode = v;
+                      _result = null;
+                    }),
+                  ),
+                  const SizedBox(height: 16),
+
+                  if (_inputMode == 'room') ...[
+                    LengthField(
+                      controller: _lengthCtrl,
+                      label: AppStrings.get('length'),
+                      unit: _unit,
+                      onChanged: (_) => _clearResult(),
+                    ),
+                    const SizedBox(height: 14),
+                    LengthField(
+                      controller: _widthCtrl,
+                      label: AppStrings.get('width'),
+                      unit: _unit,
+                      onChanged: (_) => _clearResult(),
+                    ),
+                    const SizedBox(height: 14),
+                    LengthField(
+                      controller: _heightCtrl,
+                      label: AppStrings.get('height'),
+                      unit: _unit,
+                      onChanged: (_) => _clearResult(),
+                    ),
+                  ] else ...[
+                    LargeInputField(
+                      controller: _areaCtrl,
+                      label:
+                          '${AppStrings.get('wallArea')} (${_unit == 'ft' ? 'sq.ft' : 'm²'})',
+                      suffix: _unit == 'ft' ? 'sq.ft' : 'm²',
+                      onChanged: (_) => _clearResult(),
+                    ),
+                  ],
+                  const SizedBox(height: 20),
+
+                  // Coats
+                  Row(
+                    children: [
+                      SectionLabel(title: AppStrings.get('coats')),
+                      const SizedBox(width: 6),
+                      const HelpIconButton(
+                        titleKey: 'paintHelpTitle',
+                        descKey: 'paintHelpDesc',
+                      ),
+                    ],
+                  ),
+                  VisualChoiceGrid<int>(
+                    options: const [1, 2, 3],
+                    selected: _coats,
+                    labelBuilder: (c) => '$c',
+                    imageAssetBuilder: (c) =>
+                        'assets/images/paint_coat_$c.webp',
+                    columns: 3,
+                    compact: true,
+                    onSelected: (v) => setState(() {
+                      _coats = v;
+                      _result = null;
+                    }),
+                  ),
+                  const SizedBox(height: 28),
+
+                  CalculateButton(onPressed: _calculate),
+                ],
+              ),
             ),
-            const SizedBox(height: 16),
-
-            if (_inputMode == 'room') ...[
-              LargeInputField(
-                controller: _lengthCtrl,
-                label: AppStrings.get('length'),
-                suffix: _unit,
-              ),
-              const SizedBox(height: 14),
-              LargeInputField(
-                controller: _widthCtrl,
-                label: AppStrings.get('width'),
-                suffix: _unit,
-              ),
-              const SizedBox(height: 14),
-              LargeInputField(
-                controller: _heightCtrl,
-                label: AppStrings.get('height'),
-                suffix: _unit,
-              ),
-            ] else ...[
-              LargeInputField(
-                controller: _areaCtrl,
-                label:
-                    '${AppStrings.get('wallArea')} (${_unit == 'ft' ? 'sq.ft' : 'm²'})',
-                suffix: _unit == 'ft' ? 'sq.ft' : 'm²',
-              ),
-            ],
-            const SizedBox(height: 20),
-
-            // Coats
-            Row(
-              children: [
-                SectionLabel(title: AppStrings.get('coats')),
-                const SizedBox(width: 6),
-                const HelpIconButton(
-                  titleKey: 'paintHelpTitle',
-                  descKey: 'paintHelpDesc',
-                ),
-              ],
-            ),
-            OptionChips<int>(
-              options: const [1, 2, 3],
-              selected: _coats,
-              labelBuilder: (c) => '$c',
-              onSelected: (v) => setState(() => _coats = v),
-            ),
-            const SizedBox(height: 28),
-
-            CalculateButton(onPressed: _calculate),
 
             if (_result != null) ...[
               const SizedBox(height: 24),
-              _buildResults(),
+              ResultReveal(child: _buildResults()),
             ],
           ],
         ),
@@ -224,6 +267,8 @@ class _PaintScreenState extends State<PaintScreen> {
         HeroResultCard(
           label: AppStrings.get('paintLitres'),
           value: '${r.totalLitres.toStringAsFixed(1)} L',
+          countTo: r.totalLitres,
+          countFormat: (v) => '${v.toStringAsFixed(1)} L',
           icon: Icons.color_lens_rounded,
           color: const Color(0xFFC62828),
         ),
@@ -245,7 +290,7 @@ class _PaintScreenState extends State<PaintScreen> {
                 children: [
                   Text(
                     AppStrings.get('bucketSuggestion'),
-                    style: GoogleFonts.notoSans(
+                    style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w700,
                       color: AppColors.textPrimary,
@@ -275,7 +320,7 @@ class _PaintScreenState extends State<PaintScreen> {
                     ),
                     child: Text(
                       '${entry.value} × ${entry.key}',
-                      style: GoogleFonts.notoSans(
+                      style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                         color: AppColors.textPrimary,
@@ -295,6 +340,18 @@ class _PaintScreenState extends State<PaintScreen> {
                 label: AppStrings.get('coats'),
                 value: '${r.coats}',
                 icon: Icons.layers_outlined,
+              ),
+              const Divider(height: 1),
+              ResultRow(
+                label: AppStrings.get('primer'),
+                value: '${r.primerLitres.toStringAsFixed(1)} L',
+                icon: Icons.format_paint_outlined,
+              ),
+              const Divider(height: 1),
+              ResultRow(
+                label: AppStrings.get('putty'),
+                value: '${r.puttyKg.toStringAsFixed(0)} kg',
+                icon: Icons.texture_outlined,
               ),
             ],
           ),
@@ -320,10 +377,16 @@ class _PaintScreenState extends State<PaintScreen> {
           },
           onCopy: () {
             Clipboard.setData(ClipboardData(text: _buildShareText()));
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(AppStrings.get('copied'))),
-            );
+            ScaffoldMessenger.of(
+              context,
+            ).showSnackBar(SnackBar(content: Text(AppStrings.get('copied'))));
           },
+        ),
+        const SizedBox(height: 12),
+        AddToProjectButton(
+          storage: widget.storage,
+          result: r,
+          buildItem: _projectItem,
         ),
         const DisclaimerFooter(),
       ],

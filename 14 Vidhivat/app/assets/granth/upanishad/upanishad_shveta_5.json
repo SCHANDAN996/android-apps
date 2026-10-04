@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "upanishad_shveta_5",
+  "naam": "श्वेताश्वतर — अध्याय ५",
+  "upnaam": [
+    "विद्या और अविद्या",
+    "बालाग्रशतभागस्य"
+  ],
+  "prakar": "granth",
+  "devta": "ब्रह्म (परमात्मा)",
+  "rachnakar": "कृष्ण यजुर्वेद — ऋषि श्वेताश्वतर",
+  "bhasha": "संस्कृत",
+  "parichay": "ब्रह्म में दो छिपे हैं — विद्या और अविद्या; और जो दोनों पर शासन करता है, वह दोनों से अलग है। फिर जीव का वर्णन: वह अपने कर्मों का फल भोगता हुआ घूमता है; बाल की नोक के सौवें हिस्से के सौवें हिस्से जितना सूक्ष्म है, फिर भी अनंत होने योग्य; न स्त्री है, न पुरुष — जो शरीर लेता है, उसी से जुड़ जाता है।",
+  "kabPadhein": "किसी भी शांत समय — सुबह या शाम। उपनिषद पूजा का पाठ नहीं, स्वाध्याय और मनन के लिए हैं: थोड़ा पढ़ें, और जो पढ़ा उस पर रुककर सोचें।",
+  "kaisePadhein": "परंपरा में उपनिषद का पाठ शांति पाठ से शुरू होता है और उसी पर ख़त्म — इसलिए हर उपनिषद का पहला खंड उसका शांति पाठ है; पाठ पूरा करके उसे एक बार फिर पढ़ लें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर मंत्र के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं। यहाँ वैदिक स्वर-चिह्न नहीं हैं; साफ़ और धीमा उच्चारण रखें।\n\nउपनिषद के मंत्र गूढ़ हैं और आचार्यों ने कई मंत्रों को अलग-अलग ढंग से समझाया है। यहाँ का अर्थ सिर्फ़ पहली सीढ़ी है — गहराई से समझना हो तो किसी जानकार के साथ या किसी भाष्य के सहारे पढ़ें।",
+  "khand": [
+    {
+      "shirshak": "मंत्र १",
+      "dev": "द्वे अक्षरे ब्रह्मपरे त्वनन्ते विद्याविद्ये निहिते यत्र गूढे ।\nक्षरं त्वविद्या ह्यमृतं तु विद्या विद्याविद्ये ईशते यस्तु सोऽन्यः ॥",
+      "roman": "dve akshare brahmapare tvanante vidyaavidye nihite yatra goodhe |\nksharam tvavidyaa hyamritam tu vidyaa vidyaavidye eeshate yastu so'nyah ||",
+      "arth": "उस अविनाशी, अनंत, परम ब्रह्म में दो छिपे हुए रखे हैं — विद्या और अविद्या। अविद्या नाशवान है और विद्या अमृत है; और जो विद्या और अविद्या — दोनों पर शासन करता है, वह इन दोनों से अलग है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २",
+      "dev": "यो योनिं योनिमधितिष्ठत्येको विश्वानि रूपाणि योनीश्च सर्वाः ।\nऋषिं प्रसूतं कपिलं यस्तमग्रे ज्ञानैर्बिभर्ति जायमानं च पश्येत् ॥",
+      "roman": "yo yonim yonimadhitishthatyeko vishvaani roopaani yoneeshcha sarvaah |\nrishim prasootam kapilam yastamagre jnaanairbibharti jaayamaanam cha pashyet ||",
+      "arth": "जो अकेला हर एक कारण पर, सारे रूपों और सारी योनियों पर शासन करता है; जिसने सबसे पहले पैदा हुए ऋषि कपिल को ज्ञान से भर दिया, और उन्हें पैदा होते देखा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३",
+      "dev": "एकैकं जालं बहुधा विकुर्वन्नस्मिन् क्षेत्रे संहरत्येष देवः ।\nभूयः सृष्ट्वा पतयस्तथेशः सर्वाधिपत्यं कुरुते महात्मा ॥",
+      "roman": "ekaikam jaalam bahudhaa vikurvannasmin kshetre samharatyesha devah |\nbhooyah srishtvaa patayastatheshah sarvaadhipatyam kurute mahaatmaa ||",
+      "arth": "यह देव इस खेत (जगत) में एक-एक जाल को कई तरह से फैलाता है, और फिर समेट लेता है। वह ईश्वर, महात्मा, फिर से लोकों के स्वामियों को रचकर सब पर अपना आधिपत्य रखता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४",
+      "dev": "सर्वा दिश ऊर्ध्वमधश्च तिर्यक् प्रकाशयन् भ्राजते यद्वनड्वान् ।\nएवं स देवो भगवान् वरेण्यो योनिस्वभावानधितिष्ठत्येकः ॥",
+      "roman": "sarvaa disha oordhvamadhashcha tiryak prakaashayan bhraajate yadvanadvaan |\nevam sa devo bhagavaan varenyo yonisvabhaavaanadhitishthatyekah ||",
+      "arth": "जैसे सूर्य ऊपर, नीचे और आड़ी — सब दिशाओं को प्रकाशित करता हुआ चमकता है, वैसे ही वह भगवान, वरण करने योग्य एक देव, सारे कारण-स्वभावों पर शासन करता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ५",
+      "dev": "यच्च स्वभावं पचति विश्वयोनिः पाच्यांश्च सर्वान् परिणामयेद् यः ।\nसर्वमेतद् विश्वमधितिष्ठत्येको गुणांश्च सर्वान् विनियोजयेद् यः ॥",
+      "roman": "yachcha svabhaavam pachati vishvayonih paachyaamshcha sarvaan parinaamayed yah |\nsarvametad vishvamadhitishthatyeko gunaamshcha sarvaan viniyojayed yah ||",
+      "arth": "जो सबका कारण है, जो हर चीज़ के स्वभाव को पकाता — रूप देता — है, जो पकने योग्य सबको बदलता है; जो अकेला इस सारे जगत पर शासन करता है और सब गुणों को उनके काम में लगाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ६",
+      "dev": "तद् वेदगुह्योपनिषत्सु गूढं तद् ब्रह्मा वेदते ब्रह्मयोनिम् ।\nये पूर्वं देवा ऋषयश्च तद् विदुस्ते तन्मया अमृता वै बभूवुः ॥",
+      "roman": "tad vedaguhyopanishatsu goodham tad brahmaa vedate brahmayonim |\nye poorvam devaa rishayashcha tad viduste tanmayaa amritaa vai babhoovuh ||",
+      "arth": "वह वेदों के रहस्य — उपनिषदों — में छिपा है। ब्रह्मा उसे वेद के कारण के रूप में जानते हैं। पहले के जिन देवताओं और ऋषियों ने उसे जाना, वे उसी में एक होकर अमर हो गए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ७",
+      "dev": "गुणान्वयो यः फलकर्मकर्ता कृतस्य तस्यैव स चोपभोक्ता ।\nस विश्वरूपस्त्रिगुणस्त्रिवर्त्मा प्राणाधिपः सञ्चरति स्वकर्मभिः ॥",
+      "roman": "gunaanvayo yah phalakarmakartaa kritasya tasyaiva sa chopabhoktaa |\nsa vishvaroopastrigunastrivartmaa praanaadhipah sancharati svakarmabhih ||",
+      "arth": "जो गुणों से जुड़ा है, फल के लिए कर्म करता है, और अपने ही किए हुए को भोगता है — वह (जीव) सब रूप लेने वाला, तीन गुणों वाला, तीन मार्गों वाला, प्राणों का स्वामी, अपने कर्मों के अनुसार घूमता रहता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ८",
+      "dev": "अङ्गुष्ठमात्रो रवितुल्यरूपः सङ्कल्पाहङ्कारसमन्वितो यः ।\nबुद्धेर्गुणेनात्मगुणेन चैव आराग्रमात्रोऽप्यपरोऽपि दृष्टः ॥",
+      "roman": "angushthamaatro ravitulyaroopah sankalpaahankaarasamanvito yah |\nbuddhergunenaatmagunena chaiva aaraagramaatro'pyaparo'pi drishtah ||",
+      "arth": "वह अँगूठे जितना, सूर्य जैसे रूप वाला, संकल्प और अहंकार से जुड़ा हुआ है। बुद्धि के गुण और शरीर के गुण के कारण वह दूसरा (जीव) सुई की नोक जितना भी देखा गया है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ९",
+      "dev": "बालाग्रशतभागस्य शतधा कल्पितस्य च ।\nभागो जीवः स विज्ञेयः स चानन्त्याय कल्पते ॥",
+      "roman": "baalaagrashatabhaagasya shatadhaa kalpitasya cha |\nbhaago jeevah sa vijneyah sa chaanantyaaya kalpate ||",
+      "arth": "बाल की नोक के सौवें हिस्से के भी सौ हिस्से किए जाएँ, तो उसका एक हिस्सा जितना — जीव को उतना सूक्ष्म जानना चाहिए; और फिर भी वह अनंत होने योग्य है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १०",
+      "dev": "नैव स्त्री न पुमानेष न चैवायं नपुंसकः ।\nयद्यच्छरीरमादत्ते तेन तेन स युज्यते ॥",
+      "roman": "naiva stree na pumaanesha na chaivaayam napumsakah |\nyadyachchhareeramaadatte tena tena sa yujyate ||",
+      "arth": "यह न स्त्री है, न पुरुष, न नपुंसक। जो-जो शरीर यह लेता है, उसी-उसी से जुड़ जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ११",
+      "dev": "सङ्कल्पनस्पर्शनदृष्टिमोहैर्ग्रासाम्बुवृष्ट्या चात्मविवृद्धिजन्म ।\nकर्मानुगान्यनुक्रमेण देही स्थानेषु रूपाण्यभिसम्प्रपद्यते ॥",
+      "roman": "sankalpanasparshanadrishtimohairgraasaambuvrishtyaa chaatmavivriddhijanma |\nkarmaanugaanyanukramena dehee sthaaneshu roopaanyabhisamprapadyate ||",
+      "arth": "जैसे अन्न और जल के सेवन से शरीर बढ़ता है, वैसे ही संकल्प, स्पर्श, दृष्टि और मोह से देही अपने कर्मों के अनुसार अलग-अलग जगहों में एक के बाद एक रूप लेता जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १२",
+      "dev": "स्थूलानि सूक्ष्माणि बहूनि चैव रूपाणि देही स्वगुणैर्वृणोति ।\nक्रियागुणैरात्मगुणैश्च तेषां संयोगहेतुरपरोऽपि दृष्टः ॥",
+      "roman": "sthoolaani sookshmaani bahooni chaiva roopaani dehee svagunairvrinoti |\nkriyaagunairaatmagunaishcha teshaam samyogaheturaparo'pi drishtah ||",
+      "arth": "देही अपने गुणों के अनुसार मोटे और सूक्ष्म — बहुत से रूप चुनता है। उसके कर्मों के गुण और उसके अपने गुणों के अनुसार उसे उन रूपों से जोड़ने वाला कोई दूसरा ही देखा गया है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १३",
+      "dev": "अनाद्यनन्तं कलिलस्य मध्ये विश्वस्य स्रष्टारमनेकरूपम् ।\nविश्वस्यैकं परिवेष्टितारं ज्ञात्वा देवं मुच्यते सर्वपाशैः ॥",
+      "roman": "anaadyanantam kalilasya madhye vishvasya srashtaaramanekaroopam |\nvishvasyaikam pariveshtitaaram jnaatvaa devam muchyate sarvapaashaih ||",
+      "arth": "जिसका न आदि है न अंत, जो इस घने उलझे संसार के बीच रहता है, जगत को रचने वाला, अनेक रूपों वाला, और अकेला ही सारे जगत को घेरे हुए है — उस देव को जानकर मनुष्य सारे बंधनों से छूट जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १४",
+      "dev": "भावग्राह्यमनीडाख्यं भावाभावकरं शिवम् ।\nकलासर्गकरं देवं ये विदुस्ते जहुस्तनुम् ॥",
+      "roman": "bhaavagraahyamaneedaakhyam bhaavaabhaavakaram shivam |\nkalaasargakaram devam ye viduste jahustanum ||",
+      "arth": "जो भाव से पकड़ में आता है, जिसका कोई घोंसला (शरीर) नहीं कहा जाता, जो होने और न होने — दोनों को करने वाला, कल्याणमय है; जो जगत के अंगों की रचना करता है — उस देव को जो जानते हैं, वे शरीर के बंधन को छोड़ देते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "कृष्ण यजुर्वेद — छह अध्याय, एक सौ तेरह मंत्र",
+    "kshetra": "सब जगह — वेदांत का स्वाध्याय",
+    "note": "पाठ एक संग्रह से लिया गया और दो छपे संस्करणों — एक हिंदी टीका और शांकर भाष्य वाला एक पुराना संस्करण — से मिलाया गया। जहाँ दोनों छपे संस्करण एक थे वहाँ उनका पाठ रखा: \"भयावहानि\", \"मन्वीशो\", \"शरणं बृहत्\", \"मायिनं तु महेश्वरम्\"। जहाँ वे आपस में बँटे हैं वहाँ संग्रह वाला पाठ रहा: \"दधिनीव\" (दूसरे में \"दधनीव\"), \"कालकारो\" (\"कालकालो\"), \"पूर्तम्\" (\"पूर्वम्\")।\n\nदूसरे अध्याय में योग के जो फल कहे गए हैं, वे ग्रंथ की बात हैं — ऐप किसी फल का वादा नहीं करता।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — किसी एक मत का भाष्य नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

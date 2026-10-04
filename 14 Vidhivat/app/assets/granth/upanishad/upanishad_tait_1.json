@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "id": "upanishad_tait_1",
+  "naam": "तैत्तिरीय — शीक्षा वल्ली",
+  "upnaam": [
+    "तैत्तिरीयोपनिषद",
+    "तैत्तिरीयोपनिषत्",
+    "शिक्षावल्ली",
+    "सत्यं वद धर्मं चर",
+    "मातृदेवो भव"
+  ],
+  "prakar": "granth",
+  "devta": "ब्रह्म (परमात्मा)",
+  "rachnakar": "कृष्ण यजुर्वेद — तैत्तिरीय आरण्यक",
+  "bhasha": "संस्कृत",
+  "parichay": "तैत्तिरीय उपनिषद की पहली वल्ली — गुरुकुल की पढ़ाई से जुड़ी। यह \"शं नो मित्रः\" वाले शांति पाठ से खुलती और उसी पर बंद होती है। बीच में उच्चारण की विद्या (शिक्षा), संहिता का रहस्य, मेधा और शिष्यों के लिए आचार्य की प्रार्थना, भूः-भुवः-सुवः-महः चार व्याहृतियाँ, और ओंकार।\n\nग्यारहवाँ अनुवाक वह सीख है जो आचार्य पढ़ाई पूरी होने पर शिष्य को देते हैं — सत्य बोलो, धर्म पर चलो, स्वाध्याय में लापरवाही मत करो; माता, पिता, आचार्य और अतिथि को देवता मानो। दीक्षांत समारोहों में आज भी यही सीख दोहराई जाती है।",
+  "kabPadhein": "किसी भी शांत समय — सुबह या शाम। उपनिषद पूजा का पाठ नहीं, स्वाध्याय और मनन के लिए हैं: थोड़ा पढ़ें, और जो पढ़ा उस पर रुककर सोचें।",
+  "kaisePadhein": "परंपरा में उपनिषद का पाठ शांति पाठ से शुरू होता है और उसी पर ख़त्म — इसलिए हर उपनिषद का पहला खंड उसका शांति पाठ है; पाठ पूरा करके उसे एक बार फिर पढ़ लें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर मंत्र के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं। यहाँ वैदिक स्वर-चिह्न नहीं हैं; साफ़ और धीमा उच्चारण रखें।\n\nउपनिषद के मंत्र गूढ़ हैं और आचार्यों ने कई मंत्रों को अलग-अलग ढंग से समझाया है। यहाँ का अर्थ सिर्फ़ पहली सीढ़ी है — गहराई से समझना हो तो किसी जानकार के साथ या किसी भाष्य के सहारे पढ़ें।",
+  "khand": [
+    {
+      "shirshak": "अनुवाक १",
+      "dev": "ॐ शं नो मित्रः शं वरुणः ।\nशं नो भवत्वर्यमा ।\nशं न इन्द्रो बृहस्पतिः ।\nशं नो विष्णुरुरुक्रमः ।\nनमो ब्रह्मणे ।\nनमस्ते वायो ।\nत्वमेव प्रत्यक्षं ब्रह्मासि ।\nत्वामेव प्रत्यक्षं ब्रह्म वदिष्यामि ।\nऋतं वदिष्यामि ।\nसत्यं वदिष्यामि ।\nतन्मामवतु ।\nतद्वक्तारमवतु ।\nअवतु माम् ।\nअवतु वक्तारम् ।\nॐ शान्तिः शान्तिः शान्तिः ॥",
+      "roman": "om sham no mitrah sham varunah |\nsham no bhavatvaryamaa |\nsham na indro brihaspatih |\nsham no vishnururukramah |\nnamo brahmane |\nnamaste vaayo |\ntvameva pratyaksham brahmaasi |\ntvaameva pratyaksham brahma vadishyaami |\nritam vadishyaami |\nsatyam vadishyaami |\ntanmaamavatu |\ntadvaktaaramavatu |\navatu maam |\navatu vaktaaram |\nom shaantih shaantih shaantih ||",
+      "arth": "मित्र हमारे लिए सुखकारी हों, वरुण सुखकारी हों; अर्यमा हमारे लिए सुखकारी हों; इंद्र और बृहस्पति सुखकारी हों; लंबे डग भरने वाले विष्णु हमारे लिए सुखकारी हों। ब्रह्म को नमस्कार। हे वायु, तुम्हें नमस्कार — तुम ही प्रत्यक्ष ब्रह्म हो; मैं तुम्हीं को प्रत्यक्ष ब्रह्म कहूँगा। मैं ऋत (ठीक बात) कहूँगा, मैं सत्य कहूँगा। वह मेरी रक्षा करे, वह बोलने वाले आचार्य की रक्षा करे; मेरी रक्षा करे, आचार्य की रक्षा करे। तीनों तरह के ताप शांत हों।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक २",
+      "dev": "ॐ शीक्षां व्याख्यास्यामः ।\nवर्णः स्वरः ।\nमात्रा बलम् ।\nसाम सन्तानः ।\nइत्युक्तः शीक्षाध्यायः ॥",
+      "roman": "om sheekshaam vyaakhyaasyaamah |\nvarnah svarah |\nmaatraa balam |\nsaama santaanah |\nityuktah sheekshaadhyaayah ||",
+      "arth": "अब हम शिक्षा — उच्चारण की विद्या — बताएँगे: वर्ण, स्वर, मात्रा, बल, साम (एक-सी लय) और संतान (शब्दों का जोड़)। शिक्षा का अध्याय इतना ही कहा गया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक ३",
+      "dev": "सह नौ यशः ।\nसह नौ ब्रह्मवर्चसम् ।\nअथातः संहिताया उपनिषदं व्याख्यास्यामः ।\nपञ्चस्वधिकरणेषु ।\nअधिलोकमधिज्यौतिषमधिविद्यमधिप्रजमध्यात्मम् ।\nता महासंहिता इत्याचक्षते ।\nअथाधिलोकम् ।\nपृथिवी पूर्वरूपम् ।\nद्यौरुत्तररूपम् ।\nआकाशः सन्धिः ।\nवायुः सन्धानम् ।\nइत्यधिलोकम् ।\nअथाधिज्यौतिषम् ।\nअग्निः पूर्वरूपम् ।\nआदित्य उत्तररूपम् ।\nआपः सन्धिः ।\nवैद्युतः सन्धानम् ।\nइत्यधिज्यौतिषम् ।\nअथाधिविद्यम् ।\nआचार्यः पूर्वरूपम् ।\nअन्तेवास्युत्तररूपम् ।\nविद्या सन्धिः ।\nप्रवचनं सन्धानम् ।\nइत्यधिविद्यम् ।\nअथाधिप्रजम् ।\nमाता पूर्वरूपम् ।\nपितोत्तररूपम् ।\nप्रजा सन्धिः ।\nप्रजननं सन्धानम् ।\nइत्यधिप्रजम् ।\nअथाध्यात्मम् ।\nअधरा हनुः पूर्वरूपम् ।\nउत्तरा हनुरुत्तररूपम् ।\nवाक्सन्धिः ।\nजिह्वासन्धानम् ।\nइत्यध्यात्मम् ।\nइतीमा महासंहिताः ।\nय एवमेता महासंहिता व्याख्याता वेद ।\nसन्धीयते प्रजया पशुभिः ।\nब्रह्मवर्चसेनान्नाद्येन सुवर्ग्येण लोकेन ॥",
+      "roman": "saha nau yashah |\nsaha nau brahmavarchasam |\nathaatah samhitaayaa upanishadam vyaakhyaasyaamah |\npanchasvadhikaraneshu |\nadhilokamadhijyautishamadhividyamadhiprajamadhyaatmam |\ntaa mahaasamhitaa ityaachakshate |\nathaadhilokam |\nprithivee poorvaroopam |\ndyauruttararoopam |\naakaashah sandhih |\nvaayuh sandhaanam |\nityadhilokam |\nathaadhijyautisham |\nagnih poorvaroopam |\naaditya uttararoopam |\naapah sandhih |\nvaidyutah sandhaanam |\nityadhijyautisham |\nathaadhividyam |\naachaaryah poorvaroopam |\nantevaasyuttararoopam |\nvidyaa sandhih |\npravachanam sandhaanam |\nityadhividyam |\nathaadhiprajam |\nmaataa poorvaroopam |\npitottararoopam |\nprajaa sandhih |\nprajananam sandhaanam |\nityadhiprajam |\nathaadhyaatmam |\nadharaa hanuh poorvaroopam |\nuttaraa hanuruttararoopam |\nvaaksandhih |\njihvaasandhaanam |\nityadhyaatmam |\niteemaa mahaasamhitaah |\nya evametaa mahaasamhitaa vyaakhyaataa veda |\nsandheeyate prajayaa pashubhih |\nbrahmavarchasenaannaadyena suvargyena lokena ||",
+      "arth": "हम दोनों — गुरु और शिष्य — को साथ-साथ यश मिले, साथ-साथ ब्रह्म का तेज मिले। अब हम पाँच विषयों में संहिता (मेल) का रहस्य बताते हैं — लोकों में, ज्योतियों में, विद्या में, संतान में और शरीर में; इन्हें महासंहिता कहते हैं। लोकों में: पृथ्वी पहला रूप है, द्युलोक बाद का रूप, आकाश उनका जोड़ और वायु जोड़ने वाला। ज्योतियों में: अग्नि पहला रूप, सूर्य बाद का रूप, जल उनका जोड़ और बिजली जोड़ने वाली। विद्या में: आचार्य पहला रूप, शिष्य बाद का रूप, विद्या उनका जोड़ और प्रवचन जोड़ने वाला। संतान में: माता पहला रूप, पिता बाद का रूप, संतान उनका जोड़ और जनन जोड़ने वाला। शरीर में: नीचे का जबड़ा पहला रूप, ऊपर का जबड़ा बाद का रूप, वाणी उनका जोड़ और जीभ जोड़ने वाली। जो इन महासंहिताओं को इस तरह समझाया हुआ जानता है, वह संतान, पशु, ब्रह्म के तेज, अन्न और स्वर्गलोक से जुड़ जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक ४",
+      "dev": "यश्छन्दसामृषभो विश्वरूपः ।\nछन्दोभ्योऽध्यमृतात्सम्बभूव ।\nस मेन्द्रो मेधया स्पृणोतु ।\nअमृतस्य देव धारणो भूयासम् ।\nशरीरं मे विचर्षणम् ।\nजिह्वा मे मधुमत्तमा ।\nकर्णाभ्यां भूरिविश्रुवम् ।\nब्रह्मणः कोशोऽसि मेधया पिहितः ।\nश्रुतं मे गोपाय ।\nआवहन्ती वितन्वाना ।\nकुर्वाणाऽचीरमात्मनः ।\nवासांसि मम गावश्च ।\nअन्नपाने च सर्वदा ।\nततो मे श्रियमावह ।\nलोमशां पशुभिः सह स्वाहा ।\nआमायन्तु ब्रह्मचारिणः स्वाहा ।\nविमाऽऽयन्तु ब्रह्मचारिणः स्वाहा ।\nप्रमाऽऽयन्तु ब्रह्मचारिणः स्वाहा ।\nदमायन्तु ब्रह्मचारिणः स्वाहा ।\nशमायन्तु ब्रह्मचारिणः स्वाहा ।\nयशो जनेऽसानि स्वाहा ।\nश्रेयान् वस्यसोऽसानि स्वाहा ।\nतं त्वा भग प्रविशानि स्वाहा ।\nस मा भग प्रविश स्वाहा ।\nतस्मिन् सहस्रशाखे ।\nनिभगाऽहं त्वयि मृजे स्वाहा ।\nयथाऽऽपः प्रवताऽऽयन्ति ।\nयथा मासा अहर्जरम् ।\nएवं मां ब्रह्मचारिणः ।\nधातरायन्तु सर्वतः स्वाहा ।\nप्रतिवेशोऽसि प्रमाभाहि प्रमापद्यस्व ॥",
+      "roman": "yashchhandasaamrishabho vishvaroopah |\nchhandobhyo'dhyamritaatsambabhoova |\nsa mendro medhayaa sprinotu |\namritasya deva dhaarano bhooyaasam |\nshareeram me vicharshanam |\njihvaa me madhumattamaa |\nkarnaabhyaam bhoorivishruvam |\nbrahmanah kosho'si medhayaa pihitah |\nshrutam me gopaaya |\naavahantee vitanvaanaa |\nkurvaanaa'cheeramaatmanah |\nvaasaamsi mama gaavashcha |\nannapaane cha sarvadaa |\ntato me shriyamaavaha |\nlomashaam pashubhih saha svaahaa |\naamaayantu brahmachaarinah svaahaa |\nvimaa''yantu brahmachaarinah svaahaa |\npramaa''yantu brahmachaarinah svaahaa |\ndamaayantu brahmachaarinah svaahaa |\nshamaayantu brahmachaarinah svaahaa |\nyasho jane'saani svaahaa |\nshreyaan vasyaso'saani svaahaa |\ntam tvaa bhaga pravishaani svaahaa |\nsa maa bhaga pravisha svaahaa |\ntasmin sahasrashaakhe |\nnibhagaa'ham tvayi mrije svaahaa |\nyathaa''pah pravataa''yanti |\nyathaa maasaa aharjaram |\nevam maam brahmachaarinah |\ndhaataraayantu sarvatah svaahaa |\nprativesho'si pramaabhaahi pramaapadyasva ||",
+      "arth": "जो वेदों में सबसे श्रेष्ठ है, सब रूपों वाला है, और वेदों के अमृत से प्रकट हुआ है — वह इंद्र (ओंकार) मुझे मेधा से पुष्ट करे। हे देव, मैं अमृत-रूप ज्ञान को धारण करने वाला बनूँ। मेरा शरीर फुर्तीला हो, मेरी जीभ बहुत मीठी हो, मैं कानों से ख़ूब सुनूँ। तुम ब्रह्म का कोश हो, बुद्धि से ढके हुए; मेरे सुने हुए की रक्षा करो। — जो श्री मेरे लिए बिना देर किए कपड़े, गायें और अन्न-जल सदा लाती, बढ़ाती और बनाती रहे — उसे ऊन वाले पशुओं के साथ मेरे पास लाओ, स्वाहा। ब्रह्मचारी मेरे पास आएँ, स्वाहा। ब्रह्मचारी सब ओर से आएँ, स्वाहा। ब्रह्मचारी ठीक से आएँ, स्वाहा। ब्रह्मचारी संयमी हों, स्वाहा। ब्रह्मचारी शांत हों, स्वाहा। मैं लोगों में यशस्वी बनूँ, स्वाहा। मैं धनवानों में श्रेष्ठ बनूँ, स्वाहा। हे भगवन्, मैं तुममें प्रवेश करूँ, स्वाहा। हे भगवन्, तुम मुझमें प्रवेश करो, स्वाहा। हे भगवन्, हज़ार शाखाओं वाले तुममें मैं अपने को शुद्ध करता हूँ, स्वाहा। जैसे जल ढलान की ओर बहता है, जैसे महीने बरस में समा जाते हैं — वैसे ही हे विधाता, ब्रह्मचारी सब ओर से मेरे पास आएँ, स्वाहा। तुम पास का आसरा हो; मुझ पर प्रकाश करो, मुझे अपना लो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक ५",
+      "dev": "भूर्भुवः सुवरिति वा एतास्तिस्रो व्याहृतयः ।\nतासामुहस्मै तां चतुर्थीम् ।\nमाहाचमस्यः प्रवेदयते ।\nमह इति । तद्ब्रह्म ।\nस आत्मा ।\nअङ्गान्यन्या देवताः ।\nभूरिति वा अयं लोकः ।\nभुव इत्यन्तरिक्षम् ।\nसुवरित्यसौ लोकः ।\nमह इत्यादित्यः ।\nआदित्येन वाव सर्वे लोका महीयन्ते ।\nभूरिति वा अग्निः ।\nभुव इति वायुः ।\nसुवरित्यादित्यः ।\nमह इति चन्द्रमाः ।\nचन्द्रमसा वाव सर्वाणि ज्योतींषि महीयन्ते ।\nभूरिति वा ऋचः ।\nभुव इति सामानि ।\nसुवरिति यजूंषि ।\nमह इति ब्रह्म ।\nब्रह्मणा वाव सर्वे वेदा महीयन्ते ।\nभूरिति वै प्राणः ।\nभुव इत्यपानः ।\nसुवरिति व्यानः ।\nमह इत्यन्नम् ।\nअन्नेन वाव सर्वे प्राणा महीयन्ते ।\nता वा एताश्चतस्रश्चतुर्धा ।\nचतस्रश्चतस्रो व्याहृतयः ।\nता यो वेद ।\nस वेद ब्रह्म ।\nसर्वेऽस्मै देवा बलिमावहन्ति ॥",
+      "roman": "bhoorbhuvah suvariti vaa etaastisro vyaahritayah |\ntaasaamuhasmai taam chaturtheem |\nmaahaachamasyah pravedayate |\nmaha iti | tadbrahma |\nsa aatmaa |\nangaanyanyaa devataah |\nbhooriti vaa ayam lokah |\nbhuva ityantariksham |\nsuvarityasau lokah |\nmaha ityaadityah |\naadityena vaava sarve lokaa maheeyante |\nbhooriti vaa agnih |\nbhuva iti vaayuh |\nsuvarityaadityah |\nmaha iti chandramaah |\nchandramasaa vaava sarvaani jyoteemshi maheeyante |\nbhooriti vaa richah |\nbhuva iti saamaani |\nsuvariti yajoomshi |\nmaha iti brahma |\nbrahmanaa vaava sarve vedaa maheeyante |\nbhooriti vai praanah |\nbhuva ityapaanah |\nsuvariti vyaanah |\nmaha ityannam |\nannena vaava sarve praanaa maheeyante |\ntaa vaa etaashchatasrashchaturdhaa |\nchatasrashchatasro vyaahritayah |\ntaa yo veda |\nsa veda brahma |\nsarve'smai devaa balimaavahanti ||",
+      "arth": "\"भूः, भुवः, सुवः\" — ये तीन व्याहृतियाँ हैं। इनमें चौथी \"महः\" को महाचमस के पुत्र ने बताया; वह ब्रह्म है, वही आत्मा है, और बाक़ी देवता उसके अंग हैं। भूः यह लोक है, भुवः अंतरिक्ष, सुवः वह लोक, और महः सूर्य — सूर्य से ही सब लोक बढ़ते हैं। भूः अग्नि है, भुवः वायु, सुवः सूर्य, और महः चंद्रमा — चंद्रमा से ही सब ज्योतियाँ बढ़ती हैं। भूः ऋचाएँ हैं, भुवः साम, सुवः यजु, और महः ब्रह्म (ओंकार) — ब्रह्म से ही सब वेद बढ़ते हैं। भूः प्राण है, भुवः अपान, सुवः व्यान, और महः अन्न — अन्न से ही सब प्राण बढ़ते हैं। इस तरह ये चार व्याहृतियाँ चार-चार तरह की हैं। जो इन्हें जानता है, वह ब्रह्म को जानता है; सब देवता उसे भेंट लाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक ६",
+      "dev": "स य एषोऽन्तर्हृदय आकाशः ।\nतस्मिन्नयं पुरुषो मनोमयः ।\nअमृतो हिरण्मयः ।\nअन्तरेण तालुके ।\nय एषस्तन इवावलम्बते ।\nसेन्द्रयोनिः ।\nयत्रासौ केशान्तो विवर्तते ।\nव्यपोह्य शीर्षकपाले ।\nभूरित्यग्नौ प्रतितिष्ठति ।\nभुव इति वायौ ।\nसुवरित्यादित्ये ।\nमह इति ब्रह्मणि ।\nआप्नोति स्वाराज्यम् ।\nआप्नोति मनसस्पतिम् ।\nवाक्पतिश्चक्षुष्पतिः ।\nश्रोत्रपतिर्विज्ञानपतिः ।\nएतत्ततो भवति ।\nआकाशशरीरं ब्रह्म ।\nसत्यात्म प्राणारामं मन आनन्दम् ।\nशान्तिसमृद्धममृतम् ।\nइति प्राचीनयोग्योपास्स्व ॥",
+      "roman": "sa ya esho'ntarhridaya aakaashah |\ntasminnayam purusho manomayah |\namrito hiranmayah |\nantarena taaluke |\nya eshastana ivaavalambate |\nsendrayonih |\nyatraasau keshaanto vivartate |\nvyapohya sheershakapaale |\nbhoorityagnau pratitishthati |\nbhuva iti vaayau |\nsuvarityaaditye |\nmaha iti brahmani |\naapnoti svaaraajyam |\naapnoti manasaspatim |\nvaakpatishchakshushpatih |\nshrotrapatirvijnaanapatih |\netattato bhavati |\naakaashashareeram brahma |\nsatyaatma praanaaraamam mana aanandam |\nshaantisamriddhamamritam |\niti praacheenayogyopaassva ||",
+      "arth": "हृदय के भीतर जो आकाश है, उसमें यह मनोमय, अमर, सोने जैसा पुरुष रहता है। तालु के दोनों भागों के बीच जो थन की तरह लटकता है, वह इंद्र का मार्ग है — जहाँ बालों की जड़ अलग होती है, वहाँ सिर के कपाल को भेदकर वह निकलता है। \"भूः\" कहकर वह अग्नि में टिकता है, \"भुवः\" कहकर वायु में, \"सुवः\" कहकर सूर्य में, और \"महः\" कहकर ब्रह्म में। वह स्वराज्य पाता है; मन का स्वामी हो जाता है; वाणी का स्वामी, आँख का स्वामी, कान का स्वामी और विज्ञान का स्वामी हो जाता है। और फिर वह यह हो जाता है — आकाश जैसे शरीर वाला ब्रह्म, जिसका स्वरूप सत्य है, जो प्राण में रमता है, जिसका मन आनंद है, जो शांति से भरा और अमर है। हे प्राचीनयोग्य, इसकी इसी तरह उपासना करो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक ७",
+      "dev": "पृथिव्यन्तरिक्षं द्यौर्दिशोऽवान्तरदिशाः ।\nअग्निर्वायुरादित्यश्चन्द्रमा नक्षत्राणि ।\nआप ओषधयो वनस्पतय आकाश आत्मा ।\nइत्यधिभूतम् ।\nअथाध्यात्मम् ।\nप्राणो व्यानोऽपान उदानः समानः ।\nचक्षुः श्रोत्रं मनो वाक् त्वक् ।\nचर्म मांसं स्नावास्थि मज्जा ।\nएतदधिविधाय ऋषिरवोचत् ।\nपाङ्क्तं वा इदं सर्वम् ।\nपाङ्क्तेनैव पाङ्क्तं स्पृणोतीति ॥",
+      "roman": "prithivyantariksham dyaurdisho'vaantaradishaah |\nagnirvaayuraadityashchandramaa nakshatraani |\naapa oshadhayo vanaspataya aakaasha aatmaa |\nityadhibhootam |\nathaadhyaatmam |\npraano vyaano'paana udaanah samaanah |\nchakshuh shrotram mano vaak tvak |\ncharma maamsam snaavaasthi majjaa |\netadadhividhaaya rishiravochat |\npaanktam vaa idam sarvam |\npaanktenaiva paanktam sprinoteeti ||",
+      "arth": "पृथ्वी, अंतरिक्ष, द्युलोक, दिशाएँ और बीच की दिशाएँ; अग्नि, वायु, सूर्य, चंद्रमा और नक्षत्र; जल, औषधियाँ, वनस्पतियाँ, आकाश और शरीर — यह बाहर के जगत का पाँच-पाँच का समूह है। अब शरीर के भीतर का: प्राण, व्यान, अपान, उदान और समान; आँख, कान, मन, वाणी और त्वचा; चमड़ा, मांस, नसें, हड्डी और मज्जा। यह बँटवारा करके ऋषि ने कहा — यह सब पाँच-पाँच का है; पाँच से ही मनुष्य पाँच को पुष्ट करता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक ८",
+      "dev": "ओमिति ब्रह्म ।\nओमितीदंसर्वम् ।\nओमित्येतदनुकृतिर्हस्म वा अप्योश्रावयेत्याश्रावयन्ति ।\nओमिति सामानि गायन्ति ।\nओं शोमिति शस्त्राणि शंसन्ति ।\nओमित्यध्वर्युः प्रतिगरं प्रतिगृणाति ।\nओमिति ब्रह्मा प्रसौति ।\nओमित्यग्निहोत्रमनुजानाति ।\nओमिति ब्राह्मणः प्रवक्ष्यन्नाह ब्रह्मोपाप्नवानीति ।\nब्रह्मैवोपाप्नोति ॥",
+      "roman": "omiti brahma |\nomiteedamsarvam |\nomityetadanukritirhasma vaa apyoshraavayetyaashraavayanti |\nomiti saamaani gaayanti |\nom shomiti shastraani shamsanti |\nomityadhvaryuh pratigaram pratigrinaati |\nomiti brahmaa prasauti |\nomityagnihotramanujaanaati |\nomiti braahmanah pravakshyannaaha brahmopaapnavaaneeti |\nbrahmaivopaapnoti ||",
+      "arth": "\"ॐ\" ब्रह्म है; \"ॐ\" ही यह सब कुछ है। \"ॐ\" हामी भरने का शब्द है; \"ओ, सुनाओ\" कहने पर ही ऋत्विज सुनाते हैं। \"ॐ\" कहकर साम गाए जाते हैं; \"ॐ शोम्\" कहकर स्तुतियाँ बोली जाती हैं। \"ॐ\" कहकर अध्वर्यु उत्तर देता है; \"ॐ\" कहकर ब्रह्मा अनुमति देता है; \"ॐ\" कहकर अग्निहोत्र की अनुमति दी जाती है। वेद पढ़ने चला ब्राह्मण \"ॐ\" कहकर ही कहता है — मैं ब्रह्म को पाऊँ — और वह ब्रह्म को पा ही लेता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक ९",
+      "dev": "ऋतं च स्वाध्यायप्रवचने च ।\nसत्यं च स्वाध्यायप्रवचने च ।\nतपश्च स्वाध्यायप्रवचने च ।\nदमश्च स्वाध्यायप्रवचने च ।\nशमश्च स्वाध्यायप्रवचने च ।\nअग्नयश्च स्वाध्यायप्रवचने च ।\nअग्निहोत्रं च स्वाध्यायप्रवचने च ।\nअतिथयश्च स्वाध्यायप्रवचने च ।\nमानुषं च स्वाध्यायप्रवचने च ।\nप्रजा च स्वाध्यायप्रवचने च ।\nप्रजनश्च स्वाध्यायप्रवचने च ।\nप्रजातिश्च स्वाध्यायप्रवचने च ।\nसत्यमिति सत्यवचा राथीतरः ।\nतप इति तपोनित्यः पौरुशिष्टिः ।\nस्वाध्यायप्रवचने एवेति नाको मौद्गल्यः ।\nतद्धि तपस्तद्धि तपः ॥",
+      "roman": "ritam cha svaadhyaayapravachane cha |\nsatyam cha svaadhyaayapravachane cha |\ntapashcha svaadhyaayapravachane cha |\ndamashcha svaadhyaayapravachane cha |\nshamashcha svaadhyaayapravachane cha |\nagnayashcha svaadhyaayapravachane cha |\nagnihotram cha svaadhyaayapravachane cha |\natithayashcha svaadhyaayapravachane cha |\nmaanusham cha svaadhyaayapravachane cha |\nprajaa cha svaadhyaayapravachane cha |\nprajanashcha svaadhyaayapravachane cha |\nprajaatishcha svaadhyaayapravachane cha |\nsatyamiti satyavachaa raatheetarah |\ntapa iti taponityah paurushishtih |\nsvaadhyaayapravachane eveti naako maudgalyah |\ntaddhi tapastaddhi tapah ||",
+      "arth": "ऋत (ठीक आचरण) — और पढ़ना-पढ़ाना। सत्य — और पढ़ना-पढ़ाना। तप — और पढ़ना-पढ़ाना। इंद्रियों का संयम — और पढ़ना-पढ़ाना। मन की शांति — और पढ़ना-पढ़ाना। अग्नियों की स्थापना — और पढ़ना-पढ़ाना। अग्निहोत्र — और पढ़ना-पढ़ाना। अतिथियों का सत्कार — और पढ़ना-पढ़ाना। लोगों से ठीक व्यवहार — और पढ़ना-पढ़ाना। संतान — और पढ़ना-पढ़ाना। संतान का जन्म — और पढ़ना-पढ़ाना। पोते-पोतियाँ — और पढ़ना-पढ़ाना। रथीतर के पुत्र सत्यवचा कहते हैं — सत्य ही सबसे बड़ा है। पुरुशिष्ट के पुत्र तपोनित्य कहते हैं — तप ही। और मुद्गल के पुत्र नाक कहते हैं — पढ़ना और पढ़ाना ही; वही तप है, वही तप है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक १०",
+      "dev": "अहं वृक्षस्य रेरिवा ।\nकीर्तिः पृष्ठं गिरेरिव ।\nऊर्ध्वपवित्रो वाजिनीव स्वमृतमस्मि ।\nद्रविणं सवर्चसम् ।\nसुमेधा अमृतोक्षितः ।\nइति त्रिशङ्कोर्वेदानुवचनम् ॥",
+      "roman": "aham vrikshasya rerivaa |\nkeertih prishtham gireriva |\noordhvapavitro vaajineeva svamritamasmi |\ndravinam savarchasam |\nsumedhaa amritokshitah |\niti trishankorvedaanuvachanam ||",
+      "arth": "\"मैं संसार-रूपी वृक्ष को हिलाने वाला हूँ। मेरी कीर्ति पर्वत की चोटी जैसी ऊँची है। मैं ऊपर तक पवित्र हूँ — जैसे सूर्य में अमृत है, वैसा ही शुद्ध अमृत मैं हूँ। मैं चमकता हुआ धन हूँ; अच्छी बुद्धि वाला, अमृत से सींचा हुआ।\" — यह त्रिशंकु ऋषि का, ज्ञान पाने के बाद का वचन है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक ११",
+      "dev": "वेदमनूच्याचार्योऽन्तेवासिनमनुशास्ति ।\nसत्यं वद । धर्मं चर ।\nस्वाध्यायान्मा प्रमदः ।\nआचार्याय प्रियं धनमाहृत्य प्रजातन्तुं मा व्यवच्छेत्सीः ।\nसत्यान्न प्रमदितव्यम् ।\nधर्मान्न प्रमदितव्यम् ।\nकुशलान्न प्रमदितव्यम् ।\nभूत्यै न प्रमदितव्यम् ।\nस्वाध्यायप्रवचनाभ्यां न प्रमदितव्यम् ।\nदेवपितृकार्याभ्यां न प्रमदितव्यम् ।\nमातृदेवो भव ।\nपितृदेवो भव ।\nआचार्यदेवो भव ।\nअतिथिदेवो भव ।\nयान्यनवद्यानि कर्माणि ।\nतानि सेवितव्यानि ।\nनो इतराणि ।\nयान्यस्माकं सुचरितानि ।\nतानि त्वयोपास्यानि ।\nनो इतराणि ।\nये के चास्मच्छ्रेयांसो ब्राह्मणाः ।\nतेषां त्वयाऽऽसनेन प्रश्वसितव्यम् ।\nश्रद्धया देयम् ।\nअश्रद्धयाऽदेयम् ।\nश्रिया देयम् ।\nह्रिया देयम् ।\nभिया देयम् ।\nसंविदा देयम् ।\nअथ यदि ते कर्मविचिकित्सा वा वृत्तविचिकित्सा वा स्यात् ।\nये तत्र ब्राह्मणाः संमर्शिनः ।\nयुक्ता आयुक्ताः ।\nअलूक्षा धर्मकामाः स्युः ।\nयथा ते तत्र वर्तेरन् ।\nतथा तत्र वर्तेथाः ।\nअथाभ्याख्यातेषु ।\nये तत्र ब्राह्मणाः संमर्शिनः ।\nयुक्ता आयुक्ताः ।\nअलूक्षा धर्मकामाः स्युः ।\nयथा ते तेषु वर्तेरन् ।\nतथा तेषु वर्तेथाः ।\nएष आदेशः । एष उपदेशः ।\nएषा वेदोपनिषत् ।\nएतदनुशासनम् ।\nएवमुपासितव्यम् ।\nएवमु चैतदुपास्यम् ॥",
+      "roman": "vedamanoochyaachaaryo'ntevaasinamanushaasti |\nsatyam vada | dharmam chara |\nsvaadhyaayaanmaa pramadah |\naachaaryaaya priyam dhanamaahritya prajaatantum maa vyavachchhetseeh |\nsatyaanna pramaditavyam |\ndharmaanna pramaditavyam |\nkushalaanna pramaditavyam |\nbhootyai na pramaditavyam |\nsvaadhyaayapravachanaabhyaam na pramaditavyam |\ndevapitrikaaryaabhyaam na pramaditavyam |\nmaatridevo bhava |\npitridevo bhava |\naachaaryadevo bhava |\natithidevo bhava |\nyaanyanavadyaani karmaani |\ntaani sevitavyaani |\nno itaraani |\nyaanyasmaakam sucharitaani |\ntaani tvayopaasyaani |\nno itaraani |\nye ke chaasmachchhreyaamso braahmanaah |\nteshaam tvayaa''sanena prashvasitavyam |\nshraddhayaa deyam |\nashraddhayaa'deyam |\nshriyaa deyam |\nhriyaa deyam |\nbhiyaa deyam |\nsamvidaa deyam |\natha yadi te karmavichikitsaa vaa vrittavichikitsaa vaa syaat |\nye tatra braahmanaah sammarshinah |\nyuktaa aayuktaah |\nalookshaa dharmakaamaah syuh |\nyathaa te tatra varteran |\ntathaa tatra vartethaah |\nathaabhyaakhyaateshu |\nye tatra braahmanaah sammarshinah |\nyuktaa aayuktaah |\nalookshaa dharmakaamaah syuh |\nyathaa te teshu varteran |\ntathaa teshu vartethaah |\nesha aadeshah | esha upadeshah |\neshaa vedopanishat |\netadanushaasanam |\nevamupaasitavyam |\nevamu chaitadupaasyam ||",
+      "arth": "वेद पढ़ाकर आचार्य शिष्य को यह सीख देते हैं — सत्य बोलो। धर्म पर चलो। स्वाध्याय में लापरवाही मत करो। आचार्य को उनकी प्रिय दक्षिणा देकर गृहस्थ बनो, और संतान की परंपरा को मत तोड़ो। सत्य से मत हटो। धर्म से मत हटो। भलाई के काम से मत हटो। अपनी उन्नति में लापरवाही मत करो। पढ़ने और पढ़ाने में लापरवाही मत करो। देवताओं और पितरों के काम में लापरवाही मत करो। माता को देवता मानो। पिता को देवता मानो। आचार्य को देवता मानो। अतिथि को देवता मानो। जो काम निर्दोष हैं, वही करो; दूसरे नहीं। हमारे जो अच्छे आचरण हैं, उन्हीं को अपनाओ; दूसरों को नहीं। जो ब्राह्मण हमसे श्रेष्ठ हों, उन्हें आसन देकर विश्राम कराओ। श्रद्धा से दो; बिना श्रद्धा के मत दो। अपनी हैसियत के अनुसार दो। विनम्रता से दो। भय के साथ दो। समझ के साथ दो। और अगर कभी किसी कर्म या आचरण के बारे में संदेह हो — तो वहाँ जो विचारशील, काम में लगे हुए, किसी के दबाव में न रहने वाले, कोमल स्वभाव के और धर्म चाहने वाले ब्राह्मण हों, वे उस बात में जैसा करते हों, वैसा ही तुम करो। और जिन पर कोई दोष लगाया गया हो, उनके साथ भी — वहाँ के वैसे ही ब्राह्मण जैसा बरताव करते हों, वैसा ही तुम करो। यही आदेश है। यही उपदेश है। यही वेद का रहस्य है। यही सीख है। इसी तरह चलना चाहिए — इसी तरह चलना चाहिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अनुवाक १२",
+      "dev": "शं नो मित्रः शं वरुणः ।\nशं नो भवत्वर्यमा ।\nशं न इन्द्रो बृहस्पतिः ।\nशं नो विष्णुरुरुक्रमः ।\nनमो ब्रह्मणे ।\nनमस्ते वायो ।\nत्वमेव प्रत्यक्षं ब्रह्मासि ।\nत्वामेव प्रत्यक्षं ब्रह्मावादिषम् ।\nऋतमवादिषम् ।\nसत्यमवादिषम् ।\nतन्मामावीत् ।\nतद्वक्तारमावीत् ।\nआवीन्माम् ।\nआवीद्वक्तारम् ।\nॐ शान्तिः शान्तिः शान्तिः ॥",
+      "roman": "sham no mitrah sham varunah |\nsham no bhavatvaryamaa |\nsham na indro brihaspatih |\nsham no vishnururukramah |\nnamo brahmane |\nnamaste vaayo |\ntvameva pratyaksham brahmaasi |\ntvaameva pratyaksham brahmaavaadisham |\nritamavaadisham |\nsatyamavaadisham |\ntanmaamaaveet |\ntadvaktaaramaaveet |\naaveenmaam |\naaveedvaktaaram |\nom shaantih shaantih shaantih ||",
+      "arth": "मित्र हमारे लिए सुखकारी हों, वरुण सुखकारी हों; अर्यमा हमारे लिए सुखकारी हों; इंद्र और बृहस्पति सुखकारी हों; लंबे डग भरने वाले विष्णु हमारे लिए सुखकारी हों। ब्रह्म को नमस्कार। हे वायु, तुम्हें नमस्कार — तुम ही प्रत्यक्ष ब्रह्म हो; मैंने तुम्हीं को प्रत्यक्ष ब्रह्म कहा। मैंने ऋत कहा, मैंने सत्य कहा। उसने मेरी रक्षा की, उसने आचार्य की रक्षा की; मेरी रक्षा की, आचार्य की रक्षा की। तीनों तरह के ताप शांत हों।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "कृष्ण यजुर्वेद, तैत्तिरीय शाखा — तीन वल्लियाँ, इकतीस अनुवाक",
+    "kshetra": "सब जगह — वेदांत का स्वाध्याय",
+    "note": "यह उपनिषद मंत्रों में नहीं, अनुवाकों में बँटा है — यहाँ हर अनुवाक एक खंड है। पाठ एक संग्रह से लिया गया और शांकर भाष्य के साथ छपे पाठ और छपी हिंदी टीका से मिलाया गया; संग्रह की वर्तनी की भूलें टीका के पाठ से सुधारी गईं (\"सर्वे लोका महीयन्ते\", \"सुमेधा अमृतोक्षितः\", \"आत्मानं स्पृणुते\")।\n\nपरंपरा में यह उपनिषद स्वर के साथ पढ़ा जाता है; \"सुवः\" जैसे रूप तैत्तिरीय शाखा के अपने हैं। \"३\" प्लुत का चिह्न है — वह स्वर खींचकर बोला जाता है।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — किसी एक मत का भाष्य नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

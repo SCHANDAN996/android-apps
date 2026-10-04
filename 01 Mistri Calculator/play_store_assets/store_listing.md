@@ -45,7 +45,7 @@
 आज भी ज़्यादातर मिस्त्री और ठेकेदार कागज़ पर या अंदाज़े से मटेरियल का हिसाब लगाते हैं, जिससे या तो सामान कम पड़ता है या पैसा बर्बाद होता है। मिस्त्री कैलकुलेटर यह काम आसान, सही और तेज़ बना देता है — बिल्कुल आसान हिंदी में।
 
 आपको क्या मिलेगा:
-🧱 ईंट का हिसाब — दीवार की लंबाई, ऊँचाई और मोटाई (4.5"/9") डालें, कितनी ईंट + सीमेंट-बालू लगेगा तुरंत जानें
+🧱 ईंट का हिसाब — अपने इलाके की ईंट चुनें (देसी / मानक / बड़ी) या अपना नाप डालें; दीवार की मोटाई ईंट के हिसाब से अपने-आप, और कितनी ईंट + सीमेंट-बालू लगेगा तुरंत जानें
 🏗️ कंक्रीट / ढलाई — स्लैब, कॉलम, बीम के लिए सीमेंट, बालू और गिट्टी (M15/M20/M25 ग्रेड)
 ⚙️ सरिया (TMT) — व्यास और लंबाई से सरिया का वज़न (kg) और अनुमानित ख़र्चा
 🎨 प्लास्टर, टाइल्स और पेंट — हर काम का सही मटेरियल हिसाब एक जगह
@@ -54,10 +54,10 @@
 📴 100% ऑफलाइन — बिना इंटरनेट, साइट पर कहीं भी, कभी भी चलाएँ
 
 ख़ास बातें:
-• हिंदी + English भाषा, फ़ीट/मीटर टॉगल
+• 10 भाषाएँ — हिंदी, English, मराठी, বাংলা, తెలుగు, தமிழ், ગુજરાતી, ಕನ್ನಡ, ਪੰਜਾਬੀ, भोजपुरी; फ़ीट/मीटर टॉगल
 • भारतीय अंक फ़ॉर्मैट (1,00,000)
 • बड़े बटन और सरल डिज़ाइन — हर उम्र के मिस्त्री के लिए
-• कोई लॉगिन नहीं, कोई निजी जानकारी नहीं, कोई झंझट नहीं
+• कोई लॉगिन नहीं, कोई निजी जानकारी नहीं माँगता — ऐप मुफ़्त है और विज्ञापनों से चलता है
 
 क्यों चुनें मिस्त्री कैलकुलेटर?
 अंग्रेज़ी के जटिल और ऑनलाइन ऐप्स की जगह यह ऐप ख़ास भारतीय राज मिस्त्री, ठेकेदार और घर बनवाने वालों के लिए बना है। सही अनुमान से मटेरियल की बर्बादी रुकती है और पैसे की बचत होती है।
@@ -75,7 +75,7 @@ Mistri Calculator is a simple, 100% offline construction material calculator for
 Most masons and thekedars still estimate material on paper or by guesswork, which means either shortages or wasted money. Mistri Calculator makes that estimate fast, accurate and easy — in plain Hindi and English.
 
 What you get:
-🧱 Brick calculator — enter wall length, height and thickness (4.5"/9") to get bricks + cement & sand instantly
+🧱 Brick calculator — pick the brick used in your area (Desi / Modular / Large) or enter your own size; wall thickness follows the brick, and you get bricks + cement & sand instantly
 🏗️ Concrete / slab — cement, sand and aggregate for slab, column and beam (M15/M20/M25 grades)
 ⚙️ Steel (TMT saria) — weight in kg from diameter & length, plus estimated cost
 🎨 Plaster, tiles and paint — the right material estimate for every job in one place
@@ -84,10 +84,10 @@ What you get:
 📴 100% offline — works anywhere on site, no internet needed
 
 Highlights:
-• Hindi + English, feet/meter toggle
+• 10 languages — Hindi, English, Marathi, Bengali, Telugu, Tamil, Gujarati, Kannada, Punjabi, Bhojpuri; feet/meter toggle
 • Indian number format (1,00,000)
 • Large buttons, simple design — friendly for every age
-• No login, no personal data, no clutter
+• No login and no personal details asked — the app is free and supported by ads
 
 Why Mistri Calculator?
 Instead of complex, online, English-only tools, this app is built specifically for Indian raj mistris, contractors and homeowners. Better estimates mean less material waste and real money saved.

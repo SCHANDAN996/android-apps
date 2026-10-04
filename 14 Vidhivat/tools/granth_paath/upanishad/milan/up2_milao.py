@@ -56,8 +56,16 @@ def gawah(nm):
         return {'G': U.ki(' '.join(g)), 'NS': U.kd(ns)}
     if nm == 'shveta':
         ga = g_para('g_sa_zvetAzvataropaniSad-alt.txt', r'//\s*SvetUp_[\d.]+')
+        # विकिस्रोत के छह पन्ने (अध्याय-क्रम में: 5, 3, 2, 1, 4, 6) — S की नक़ल नहीं हैं
+        w = []
+        for i in (5, 3, 2, 1, 4, 6):
+            t = U.rd('ws_shveta_%d.txt' % i)
+            t = re.sub(r'</?poem>|\{\{[^}]*\}\}|\[\[[^\]]*\]\]', ' ', t)
+            t = re.sub(r'(?m)^\s*[|॥]+\s*\S+ऽध्यायः\s*[|॥]+\s*$', ' ', t)
+            t = re.sub(r'(?m)^.*(सहनाववतु|शान्तिः शान्तिः|इति .*ध्यायः).*$', ' ', t)
+            w.append(t)
         print('Ga', len(ga))
-        return {'Ga': U.ki(' '.join(ga))}
+        return {'Ga': U.ki(' '.join(ga)), 'W': U.kd(' '.join(w))}
     raise SystemExit('?')
 
 
@@ -65,4 +73,4 @@ if __name__ == '__main__':
     nm = sys.argv[1]
     dikhao = sys.argv[2] if len(sys.argv) > 2 else 'vivad'
     a = aadhar(nm)
-    U.milao(a, gawah(nm), dikhao, kam=1 if nm == 'shveta' else 2)
+    U.milao(a, gawah(nm), dikhao)

@@ -1,3 +1,4 @@
+import '../utils/purchase.dart';
 import '../utils/unit_converter.dart';
 
 /// Paint calculation result.
@@ -13,12 +14,23 @@ class PaintResult {
     required this.totalLitres,
     required this.bucketSuggestion,
   });
+
+  /// One coat of primer under the paint.
+  double get primerLitres => areaM2 / PaintCalculator.primerCoveragePerLitre;
+
+  /// Two coats of wall putty to level the plaster.
+  double get puttyKg => areaM2 / PaintCalculator.puttyCoveragePerKg;
 }
 
 class PaintCalculator {
   /// Coverage: 1 litre covers ~10 sq m (per coat).
   static const double coveragePerLitre = 10.0; // m² per litre per coat
   static const double openingsDeduction = 0.10; // 10% for doors/windows
+
+  /// Rough shop figures: a litre of primer does about 10 m² in one coat, and
+  /// a kilo of putty about 20 sq ft (1.86 m²) in two coats.
+  static const double primerCoveragePerLitre = 10.0;
+  static const double puttyCoveragePerKg = 1.86;
 
   /// Bucket sizes in litres
   static const List<int> bucketSizes = [20, 10, 4, 1];
@@ -58,22 +70,20 @@ class PaintCalculator {
     return calculateByArea(areaM2: areaAfterOpenings, coats: coats);
   }
 
-  /// Suggest optimal bucket combination.
+  /// Suggest the bucket combination to buy.
+  ///
+  /// Paint is sold in whole tins, so the need is rounded up to a whole litre
+  /// first — 9.5 L becomes one 10 L bucket, not 4 + 4 + 1 + 1.
   static Map<String, int> _suggestBuckets(double litres) {
     final buckets = <String, int>{};
-    var remaining = litres;
+    var remaining = roundUpToBuy(litres);
 
     for (final size in bucketSizes) {
-      if (remaining >= size) {
-        final count = (remaining / size).floor();
+      final count = remaining ~/ size;
+      if (count > 0) {
         buckets['${size}L'] = count;
         remaining -= count * size;
       }
-    }
-
-    // If there's a remainder, add one 1L bucket
-    if (remaining > 0) {
-      buckets['1L'] = (buckets['1L'] ?? 0) + 1;
     }
 
     return buckets;

@@ -242,6 +242,10 @@ class _PaathReaderState extends State<PaathReader> {
     final mantra =
         paath.khand.where((k) => k.shirshak.startsWith('मंत्र')).length;
     if (shlok == 0 && mantra > 0) return '$mantra मंत्र';
+    // तैत्तिरीय उपनिषद अनुवाकों में बँटा है (→ D-109)
+    final anuvak =
+        paath.khand.where((k) => k.shirshak.startsWith('अनुवाक')).length;
+    if (shlok == 0 && anuvak > 0) return '$anuvak अनुवाक';
     return '$shlok श्लोक';
   }
 

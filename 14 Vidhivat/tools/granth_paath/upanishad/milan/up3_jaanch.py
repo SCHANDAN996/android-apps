@@ -45,4 +45,4 @@ if __name__ == '__main__':
         dikhao = 'sab'
     for nm in naam:
         print('════', nm)
-        U.milao(aadhar(nm), gawah(nm), dikhao, kam=1 if nm == 'shveta' else 2)
+        U.milao(aadhar(nm), gawah(nm), dikhao)

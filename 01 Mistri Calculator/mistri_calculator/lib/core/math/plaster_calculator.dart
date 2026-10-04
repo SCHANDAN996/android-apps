@@ -1,3 +1,4 @@
+import '../utils/purchase.dart';
 import '../utils/unit_converter.dart';
 
 /// Plaster calculation result.
@@ -13,10 +14,18 @@ class PlasterResult {
     required this.sandM3,
     required this.sandCFT,
   });
+
+  /// Whole bags / whole CFT to actually order.
+  int get cementBagsToBuy => roundUpToBuy(cementBags);
+  int get sandCftToBuy => roundUpToBuy(sandCFT);
 }
 
 class PlasterCalculator {
   static const double dryVolumeFactor = 1.33;
+
+  /// 20% extra — a brick wall is never flat, so mortar also fills the joints
+  /// and the dips. Without it the estimate runs short on site.
+  static const double surfaceAllowance = 1.20;
   static const double cementBagVolume = 0.0347;
 
   /// Thickness options in meters
@@ -35,7 +44,7 @@ class PlasterCalculator {
     required int ratioS,
   }) {
     final wetVolume = areaM2 * thicknessM;
-    final dryVolume = wetVolume * dryVolumeFactor;
+    final dryVolume = wetVolume * dryVolumeFactor * surfaceAllowance;
 
     final totalParts = ratioC + ratioS;
     final cementM3 = dryVolume * ratioC / totalParts;

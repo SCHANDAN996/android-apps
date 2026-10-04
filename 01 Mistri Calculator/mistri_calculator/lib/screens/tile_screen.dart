@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:share_plus/share_plus.dart';
 import '../core/theme/app_theme.dart';
 import '../core/constants/strings.dart';
@@ -9,6 +8,9 @@ import '../core/services/ad_service.dart';
 import '../core/math/tile_calculator.dart';
 import '../core/utils/indian_formatter.dart';
 import '../widgets/shared_widgets.dart';
+import '../widgets/length_field.dart';
+import '../widgets/add_to_project_button.dart';
+import '../core/models/project_item.dart';
 import '../widgets/banner_ad_widget.dart';
 import '../widgets/help_dialogs.dart';
 
@@ -48,11 +50,18 @@ class _TileScreenState extends State<TileScreen> {
   }
 
   void _calculate() {
+    // Tapping Calculate again on an unchanged form is not a new calculation.
+    final repeat = _result != null;
     final length = double.tryParse(_lengthCtrl.text);
     final width = double.tryParse(_widthCtrl.text);
-    final tilesPerBox = int.tryParse(_tilesPerBoxCtrl.text) ?? 4;
+    final tilesPerBox = int.tryParse(_tilesPerBoxCtrl.text);
 
-    if (length == null || length <= 0 || width == null || width <= 0) {
+    if (length == null ||
+        length <= 0 ||
+        width == null ||
+        width <= 0 ||
+        tilesPerBox == null ||
+        tilesPerBox <= 0) {
       _showError();
       return;
     }
@@ -80,16 +89,13 @@ class _TileScreenState extends State<TileScreen> {
       );
     });
 
-    AdService().onCalculationComplete();
+    AdService().onCalculationComplete(repeat: repeat);
   }
 
-  void _showError() {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(AppStrings.get('enterValue')),
-        backgroundColor: AppColors.error,
-      ),
-    );
+  void _showError() => showInputError(context);
+
+  void _clearResult() {
+    if (_result != null) setState(() => _result = null);
   }
 
   String _buildShareText() {
@@ -98,14 +104,12 @@ class _TileScreenState extends State<TileScreen> {
     var text = '${AppStrings.get('shareHeader')}\n\n';
     text += '🔲 ${AppStrings.get('tiles')}\n';
     text +=
-        '${AppStrings.get('floorLength')}: ${_lengthCtrl.text} $_unit\n';
+        '${AppStrings.get('floorLength')}: ${lengthLabel(_lengthCtrl.text, _unit)}\n';
     text +=
-        '${AppStrings.get('floorWidth')}: ${_widthCtrl.text} $_unit\n\n';
+        '${AppStrings.get('floorWidth')}: ${lengthLabel(_widthCtrl.text, _unit)}\n\n';
     text += '📊 ${AppStrings.get('result')}:\n';
-    text +=
-        '${AppStrings.get('totalTiles')}: ${r.totalTiles}\n';
-    text +=
-        '${AppStrings.get('totalBoxes')}: ${r.totalBoxes}\n';
+    text += '${AppStrings.get('totalTiles')}: ${r.totalTiles}\n';
+    text += '${AppStrings.get('totalBoxes')}: ${r.totalBoxes}\n';
 
     final rates = widget.storage.allRates;
     if (rates.containsKey('tile')) {
@@ -118,161 +122,174 @@ class _TileScreenState extends State<TileScreen> {
     return text;
   }
 
+  /// Scales the tile picture by the tile's real area, so a 2x2 ft tile looks
+  /// bigger than a 1x1 ft one. Custom sits in the middle until it is measured.
+  double _tileOptionScale(String value) {
+    if (value == 'custom') return 0.8;
+    final t = TileCalculator.standardSizes[int.parse(value)];
+    final area = t.lengthMm * t.widthMm;
+    const smallest = 300.0 * 300.0;
+    const largest = 1200.0 * 600.0;
+    final f = ((area - smallest) / (largest - smallest)).clamp(0.0, 1.0);
+    return 0.55 + 0.45 * f;
+  }
+
+  ProjectItem _projectItem() {
+    final r = _result!;
+    return ProjectItem.create(
+      type: 'tiles',
+      detail:
+          '${lengthLabel(_lengthCtrl.text, _unit)} × ${lengthLabel(_widthCtrl.text, _unit)}',
+      materials: {
+        ProjectMaterial.tiles: r.totalTiles.toDouble(),
+        ProjectMaterial.tileBoxes: r.totalBoxes.toDouble(),
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(AppStrings.get('tiles')),
-      ),
+      appBar: AppBar(title: Text(AppStrings.get('tiles'))),
       bottomNavigationBar: const BannerAdWidget(),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+      body: CalculatorPageBody(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Unit toggle
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                UnitToggle(
-                  value: _unit,
-                  onChanged: (v) => setState(() => _unit = v),
-                ),
-              ],
+            CalculatorToolHeader(
+              title: AppStrings.get('tiles'),
+              imageAsset: 'assets/images/tile_sizes_reference.webp',
+              color: const Color(0xFF0277BD),
+              imageWidth: 112,
             ),
-            const SizedBox(height: 16),
-
-            // Floor dimensions
-            LargeInputField(
-              controller: _lengthCtrl,
-              label: AppStrings.get('floorLength'),
-              suffix: _unit,
-            ),
-            const SizedBox(height: 14),
-            LargeInputField(
-              controller: _widthCtrl,
-              label: AppStrings.get('floorWidth'),
-              suffix: _unit,
-            ),
-            const SizedBox(height: 20),
-
-            // Tile size
-            SectionLabel(title: AppStrings.get('tileSize')),
-            Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: [
-                ...TileCalculator.standardSizes.asMap().entries.map((entry) {
-                  final idx = entry.key;
-                  final size = entry.value;
-                  final isActive = !_isCustom && _selectedTileIndex == idx;
-                  return GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        _selectedTileIndex = idx;
-                        _isCustom = false;
-                      });
-                    },
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 200),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 14, vertical: 10),
-                      decoration: BoxDecoration(
-                        color: isActive
-                            ? AppColors.primary
-                            : AppColors.surfaceVariant,
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(
-                          color: isActive
-                              ? AppColors.primary
-                              : AppColors.cardBorder,
-                        ),
-                      ),
-                      child: Text(
-                        size.label,
-                        style: GoogleFonts.notoSans(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
-                          color: isActive
-                              ? Colors.white
-                              : AppColors.textPrimary,
-                        ),
-                      ),
-                    ),
-                  );
-                }),
-                GestureDetector(
-                  onTap: () => setState(() => _isCustom = true),
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 200),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 14, vertical: 10),
-                    decoration: BoxDecoration(
-                      color: _isCustom
-                          ? AppColors.primary
-                          : AppColors.surfaceVariant,
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(
-                        color: _isCustom
-                            ? AppColors.primary
-                            : AppColors.cardBorder,
-                      ),
-                    ),
-                    child: Text(
-                      AppStrings.get('customSize'),
-                      style: GoogleFonts.notoSans(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w600,
-                        color: _isCustom
-                            ? Colors.white
-                            : AppColors.textPrimary,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-
-            if (_isCustom) ...[
-              const SizedBox(height: 8),
-              Row(
+            const SizedBox(height: 12),
+            FormSurface(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Expanded(
-                    child: LargeInputField(
-                      controller: _customLengthCtrl,
-                      label: AppStrings.get('tileLength'),
-                      suffix: 'mm',
+                  // Unit toggle
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      UnitToggle(
+                        value: _unit,
+                        onChanged: (v) => setState(() {
+                          _unit = v;
+                          _result = null;
+                        }),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Floor dimensions
+                  LengthField(
+                    controller: _lengthCtrl,
+                    label: AppStrings.get('floorLength'),
+                    unit: _unit,
+                    onChanged: (_) => _clearResult(),
+                  ),
+                  const SizedBox(height: 14),
+                  LengthField(
+                    controller: _widthCtrl,
+                    label: AppStrings.get('floorWidth'),
+                    unit: _unit,
+                    onChanged: (_) => _clearResult(),
+                  ),
+                  const SizedBox(height: 20),
+
+                  // Tile size
+                  SectionLabel(title: AppStrings.get('tileSize')),
+                  VisualChoiceGrid<String>(
+                    options: [
+                      ...TileCalculator.standardSizes.asMap().keys.map(
+                        (index) => index.toString(),
+                      ),
+                      'custom',
+                    ],
+                    selected: _isCustom
+                        ? 'custom'
+                        : _selectedTileIndex.toString(),
+                    labelBuilder: (value) => value == 'custom'
+                        ? AppStrings.get('customSize')
+                        : TileCalculator.standardSizes[int.parse(value)].label,
+                    imageAssetBuilder: (_) => 'assets/images/tile_size_4.webp',
+                    // One tile, drawn bigger or smaller to match the real size -
+                    // four different crops would all render at the same size and
+                    // say nothing.
+                    imageScaleBuilder: _tileOptionScale,
+                    compact: true,
+                    onSelected: (value) => setState(() {
+                      _isCustom = value == 'custom';
+                      if (!_isCustom) _selectedTileIndex = int.parse(value);
+                      _result = null;
+                    }),
+                  ),
+
+                  if (_isCustom) ...[
+                    const SizedBox(height: 8),
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final fields = [
+                          LargeInputField(
+                            controller: _customLengthCtrl,
+                            label: AppStrings.get('tileLength'),
+                            suffix: 'mm',
+                            onChanged: (_) => _clearResult(),
+                          ),
+                          LargeInputField(
+                            controller: _customWidthCtrl,
+                            label: AppStrings.get('tileWidth'),
+                            suffix: 'mm',
+                            onChanged: (_) => _clearResult(),
+                          ),
+                        ];
+
+                        // Two outlined fields with translated labels become too
+                        // cramped on compact phones. Stack them before they can
+                        // paint into each other.
+                        if (constraints.maxWidth < 360) {
+                          return Column(
+                            children: [
+                              fields[0],
+                              const SizedBox(height: 14),
+                              fields[1],
+                            ],
+                          );
+                        }
+
+                        return Row(
+                          children: [
+                            Expanded(child: fields[0]),
+                            const SizedBox(width: 12),
+                            Expanded(child: fields[1]),
+                          ],
+                        );
+                      },
+                    ),
+                  ],
+
+                  const SizedBox(height: 14),
+                  LargeInputField(
+                    controller: _tilesPerBoxCtrl,
+                    label: AppStrings.get('tilesPerBox'),
+                    allowDecimal: false,
+                    onChanged: (_) => _clearResult(),
+                    suffixIcon: const HelpIconButton(
+                      titleKey: 'tileHelpTitle',
+                      descKey: 'tileHelpDesc',
                     ),
                   ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: LargeInputField(
-                      controller: _customWidthCtrl,
-                      label: AppStrings.get('tileWidth'),
-                      suffix: 'mm',
-                    ),
-                  ),
+                  const SizedBox(height: 28),
+
+                  CalculateButton(onPressed: _calculate),
                 ],
               ),
-            ],
-
-            const SizedBox(height: 14),
-            LargeInputField(
-              controller: _tilesPerBoxCtrl,
-              label: AppStrings.get('tilesPerBox'),
-              allowDecimal: false,
-              suffixIcon: const HelpIconButton(
-                titleKey: 'tileHelpTitle',
-                descKey: 'tileHelpDesc',
-              ),
             ),
-            const SizedBox(height: 28),
-
-            CalculateButton(onPressed: _calculate),
 
             if (_result != null) ...[
               const SizedBox(height: 24),
-              _buildResults(),
+              ResultReveal(child: _buildResults()),
             ],
           ],
         ),
@@ -290,6 +307,8 @@ class _TileScreenState extends State<TileScreen> {
         HeroResultCard(
           label: AppStrings.get('totalTiles'),
           value: IndianFormatter.format(r.totalTiles.toDouble()),
+          countTo: r.totalTiles.toDouble(),
+          countFormat: IndianFormatter.format,
           icon: Icons.grid_view_rounded,
           color: const Color(0xFF0277BD),
         ),
@@ -343,10 +362,16 @@ class _TileScreenState extends State<TileScreen> {
           },
           onCopy: () {
             Clipboard.setData(ClipboardData(text: _buildShareText()));
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(AppStrings.get('copied'))),
-            );
+            ScaffoldMessenger.of(
+              context,
+            ).showSnackBar(SnackBar(content: Text(AppStrings.get('copied'))));
           },
+        ),
+        const SizedBox(height: 12),
+        AddToProjectButton(
+          storage: widget.storage,
+          result: r,
+          buildItem: _projectItem,
         ),
         const DisclaimerFooter(),
       ],

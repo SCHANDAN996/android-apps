@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../core/theme/app_theme.dart';
 import '../core/constants/strings.dart';
 
 /// Shows a beautiful, village-friendly bottom sheet to explain tricky terms.
-void showHelpBottomSheet(BuildContext context, String titleKey, String descKey) {
+void showHelpBottomSheet(
+  BuildContext context,
+  String titleKey,
+  String descKey,
+) {
   showModalBottomSheet(
     context: context,
     backgroundColor: AppColors.background,
@@ -51,7 +54,7 @@ void showHelpBottomSheet(BuildContext context, String titleKey, String descKey) 
                   Expanded(
                     child: Text(
                       AppStrings.get(titleKey),
-                      style: GoogleFonts.notoSans(
+                      style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
                         color: AppColors.textPrimary,
@@ -67,7 +70,7 @@ void showHelpBottomSheet(BuildContext context, String titleKey, String descKey) 
               // Description
               Text(
                 AppStrings.get(descKey),
-                style: GoogleFonts.notoSans(
+                style: TextStyle(
                   fontSize: 15,
                   color: AppColors.textSecondary,
                   height: 1.6,
@@ -90,10 +93,7 @@ void showHelpBottomSheet(BuildContext context, String titleKey, String descKey) 
                   onPressed: () => Navigator.pop(context),
                   child: Text(
                     AppStrings.get('close'),
-                    style: GoogleFonts.notoSans(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
                   ),
                 ),
               ),

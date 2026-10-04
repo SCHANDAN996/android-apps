@@ -6,7 +6,10 @@ import os
 import sys
 
 sys.stdout.reconfigure(encoding='utf-8')
-REPO = r'C:\Users\Admin\Desktop\my project\MASS APP\14 Vidhivat'
+# ऐप का repo: ये औज़ार यहीं (repo के भीतर) रखे हैं, पर चलते एक अस्थायी फ़ोल्डर से हैं जहाँ
+# स्रोत उतारे गए हों — वहाँ से चलाते समय VIDHIVAT_REPO में repo का रास्ता दो।
+REPO = os.environ.get('VIDHIVAT_REPO') or os.path.normpath(
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..'))
 P = os.path.join(REPO, 'tools', 'granth_paath', 'upanishad', 'kram.json')
 k = json.load(io.open(P, encoding='utf-8'))
 

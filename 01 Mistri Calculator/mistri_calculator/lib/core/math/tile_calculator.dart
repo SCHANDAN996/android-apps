@@ -49,6 +49,28 @@ class TileCalculator {
     required TileSize tileSize,
     required int tilesPerBox,
   }) {
+    if (floorLength <= 0 || floorWidth <= 0) {
+      throw ArgumentError.value(
+        '$floorLength × $floorWidth',
+        'floor dimensions',
+        'must both be greater than zero',
+      );
+    }
+    if (tileSize.areaM2 <= 0) {
+      throw ArgumentError.value(
+        tileSize,
+        'tileSize',
+        'must have a positive area',
+      );
+    }
+    if (tilesPerBox <= 0) {
+      throw ArgumentError.value(
+        tilesPerBox,
+        'tilesPerBox',
+        'must be greater than zero',
+      );
+    }
+
     final l = UnitConverter.toMeters(floorLength, unit);
     final w = UnitConverter.toMeters(floorWidth, unit);
     final floorAreaM2 = l * w;

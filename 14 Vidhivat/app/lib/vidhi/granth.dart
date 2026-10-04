@@ -101,11 +101,16 @@ class GranthPaath {
   /// कितने श्लोक — सूची में दिखता है ताकि पता रहे कि अध्याय कितना लंबा है।
   final int shlok;
 
+  /// इस पाठ की अपनी गिनती की इकाई — हो तो ग्रंथ वाली की जगह यही। तैत्तिरीय
+  /// उपनिषद मंत्रों में नहीं, अनुवाकों में बँटा है (→ D-109)।
+  final String? gintiNaam;
+
   const GranthPaath({
     required this.id,
     required this.naam,
     required this.ekLine,
     required this.shlok,
+    this.gintiNaam,
   });
 
   factory GranthPaath._fromJson(
@@ -123,6 +128,7 @@ class GranthPaath {
       naam: _str(file, j, 'naam'),
       ekLine: _str(file, j, 'ekLine'),
       shlok: shlok,
+      gintiNaam: j['gintiNaam'] is String ? j['gintiNaam'] as String : null,
     );
   }
 }

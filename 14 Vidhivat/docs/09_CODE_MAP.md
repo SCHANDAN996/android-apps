@@ -577,9 +577,13 @@ app/assets/granth/
 ├── vishnusahasranama/     (→ D-107)
 │   ├── _kram.json         तीन भाग
 │   └── vishnusahasranama_01 … 03   आरंभ (13) · सहस्रनाम (107) · फलश्रुति (22)
-└── sukta/                 (→ D-108)
-    ├── _kram.json         चार पाठ, तीन हिस्सों में
-    └── sukta_purusha · sukta_purusha_yv · sukta_nasadiya · sukta_shri
+├── sukta/                 (→ D-108)
+│   ├── _kram.json         चार पाठ, तीन हिस्सों में
+│   └── sukta_purusha · sukta_purusha_yv · sukta_nasadiya · sukta_shri
+└── upanishad/             (→ D-109)
+    ├── _kram.json         34 पाठ, दस हिस्सों में — नौ उपनिषद + शांति मंत्र
+    └── upanishad_isha · _kena · _katha_11…23 · _prashna_1…6 · _mundaka_11…32 ·
+        _mandukya · _tait_1…3 (अनुवाक) · _aitareya_1…3 · _shveta_1…6 · _shanti
 app/assets/paath/saptashati/   सप्तशती यहीं रही (उसकी `_kram.json` में अब `id`)
 
 app/lib/vidhi/granth.dart            GranthKram · GranthHissa · GranthPaath · GranthSuchiEntry
@@ -612,6 +616,8 @@ app/lib/screens/paath_screen.dart         GranthNavigation — नीचे क�
 | `tools/granth_paath/gita/milan/` | पाँच स्रोतों का मिलान → `mool.txt` |
 | `tools/granth_paath/sundarkand/` | `kram.json` (`"lipi": "hindi"`), `paath/01…12.txt`; `milan/sk_mool.py` — आधार से 108 सुधारों की तालिका (→ D-106) |
 | `tools/granth_paath/vishnusahasranama/` | `paath/01…03.txt`; `milan/naam_jaanch.py` — हज़ार नाम, क्रम, हर नाम अपने श्लोक में (repo के भीतर से चलता है) (→ D-107) |
+| `tools/granth_paath/upanishad/` | `paath/*.txt` (खंड `मंत्र N`, तैत्तिरीय में `अनुवाक N`); `kram.json` में तैत्तिरीय पर `gintiNaam`; `milan/` — S को गवाहों और छपी टीका के OCR से कसना, 163 सुधारों की तालिका (→ D-109) |
+| `app/test/upanishad_test.dart` | 34 पाठों की गिनती (460 मंत्र + 31 अनुवाक + 8); हर उपनिषद का शांति पाठ = शांति मंत्रों वाला; बँटे हुए पाठ और उनका ⓘ; तैत्तिरीय "अनुवाक" में |
 | `tools/granth_paath/sukta/` | `paath/*.txt` (खंड `मंत्र N`); `milan/` — ऋग्वेद, यजुर्वेद और श्री सूक्त का मिलान (→ D-108) |
 | `app/test/sukta_test.dart` | 16 + 16 + 7 + 15 मंत्र; कोई स्वर-चिह्न नहीं; पुरुष सूक्त के दो पाठ सचमुच अलग; ⓘ; लक्ष्मी पूजन से रास्ता |
 | `app/test/vishnusahasranama_test.dart` | 13 + 107 + 22 श्लोक; नाम १ से १००० बिना टूटे; ⓘ; कृष्ण पूजा के दो बटन |

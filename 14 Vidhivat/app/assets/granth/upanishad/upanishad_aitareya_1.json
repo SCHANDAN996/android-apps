@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "id": "upanishad_aitareya_1",
+  "naam": "ऐतरेय — अध्याय १",
+  "upnaam": [
+    "ऐतरेयोपनिषद",
+    "ऐतरेयोपनिषत्",
+    "आत्मा वा इदमेक एवाग्र आसीत्"
+  ],
+  "prakar": "granth",
+  "devta": "ब्रह्म (परमात्मा)",
+  "rachnakar": "ऋग्वेद — ऐतरेय आरण्यक",
+  "bhasha": "संस्कृत",
+  "parichay": "आरंभ में केवल एक आत्मा था। उसने लोक रचे, फिर लोकों के रखवाले — जल में से एक पुरुष निकालकर; उसके मुख से वाणी और अग्नि, आँखों से दृष्टि और सूर्य, और इसी तरह सब देवता। देवताओं ने रहने को ठिकाना माँगा: गाय लाई गई, घोड़ा लाया गया — उन्हें मनुष्य ही जँचा। फिर अन्न रचा गया, जो वाणी, आँख या कान से नहीं, केवल अपान से पकड़ में आया।\n\nअंत में रचने वाला ख़ुद सिर की सीमा चीरकर मनुष्य में प्रवेश करता है — और सबमें अपने को ही देखता है।",
+  "kabPadhein": "किसी भी शांत समय — सुबह या शाम। उपनिषद पूजा का पाठ नहीं, स्वाध्याय और मनन के लिए हैं: थोड़ा पढ़ें, और जो पढ़ा उस पर रुककर सोचें।",
+  "kaisePadhein": "परंपरा में उपनिषद का पाठ शांति पाठ से शुरू होता है और उसी पर ख़त्म — इसलिए हर उपनिषद का पहला खंड उसका शांति पाठ है; पाठ पूरा करके उसे एक बार फिर पढ़ लें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर मंत्र के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं। यहाँ वैदिक स्वर-चिह्न नहीं हैं; साफ़ और धीमा उच्चारण रखें।\n\nउपनिषद के मंत्र गूढ़ हैं और आचार्यों ने कई मंत्रों को अलग-अलग ढंग से समझाया है। यहाँ का अर्थ सिर्फ़ पहली सीढ़ी है — गहराई से समझना हो तो किसी जानकार के साथ या किसी भाष्य के सहारे पढ़ें।",
+  "khand": [
+    {
+      "shirshak": "शांति पाठ",
+      "dev": "ॐ वाङ् मे मनसि प्रतिष्ठिता मनो मे वाचि प्रतिष्ठितमाविरावीर्म एधि ।\nवेदस्य म आणीस्थः श्रुतं मे मा प्रहासीरनेनाधीतेनाहोरात्रान् सन्दधाम्यृतं वदिष्यामि सत्यं वदिष्यामि ।\nतन्मामवतु तद्वक्तारमवत्ववतु मामवतु वक्तारमवतु वक्तारम् ॥\nॐ शान्तिः शान्तिः शान्तिः ॥",
+      "roman": "om vaan me manasi pratishthitaa mano me vaachi pratishthitamaaviraaveerma edhi |\nvedasya ma aaneesthah shrutam me maa prahaaseeranenaadheetenaahoraatraan sandadhaamyritam vadishyaami satyam vadishyaami |\ntanmaamavatu tadvaktaaramavatvavatu maamavatu vaktaaramavatu vaktaaram ||\nom shaantih shaantih shaantih ||",
+      "arth": "मेरी वाणी मन में टिकी रहे और मेरा मन वाणी में टिका रहे। हे अपने आप प्रकाशित परमात्मा, मेरे सामने प्रकट हो। हे वाणी और मन, तुम दोनों मेरे लिए वेद का ज्ञान लाने वाले बनो; मेरा सुना हुआ मुझे छोड़कर न जाए। इस पढ़े हुए के सहारे मैं दिन और रात को जोड़ दूँ — दिन-रात इसी में लगा रहूँ। मैं ऋत (ठीक बात) कहूँगा, मैं सत्य कहूँगा। वह ब्रह्म मेरी रक्षा करे, वह बोलने वाले आचार्य की रक्षा करे; मेरी रक्षा करे, आचार्य की रक्षा करे, आचार्य की रक्षा करे। तीनों तरह के ताप शांत हों।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १.१",
+      "dev": "ॐ आत्मा वा इदमेक एवाग्र आसीन्नान्यत्किञ्चन मिषत् ।\nस ईक्षत लोकान्नु सृजा इति ॥",
+      "roman": "om aatmaa vaa idameka evaagra aaseennaanyatkinchana mishat |\nsa eekshata lokaannu srijaa iti ||",
+      "arth": "आरंभ में यह सब केवल एक आत्मा ही था; पलक झपकाने वाला दूसरा कुछ भी नहीं था। उसने सोचा — \"मैं लोकों को रचूँ।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १.२",
+      "dev": "स इमाँल्लोकानसृजत ।\nअम्भो मरीचीर्मरमापोऽदोऽम्भः परेण दिवं द्यौः प्रतिष्ठाऽन्तरिक्षं मरीचयः ।\nपृथिवी मरो या अधस्तात्ता आपः ॥",
+      "roman": "sa imaanllokaanasrijata |\nambho mareecheermaramaapo'do'mbhah parena divam dyauh pratishthaa'ntariksham mareechayah |\nprithivee maro yaa adhastaattaa aapah ||",
+      "arth": "उसने इन लोकों को रचा — अम्भ, मरीचि, मर और आप। अम्भ वह है जो द्युलोक से परे है, और द्युलोक उसका आधार है। मरीचि (किरणों का लोक) अंतरिक्ष है। मर (मरने वालों का लोक) पृथ्वी है। और जो नीचे है, वह आप (जल) है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १.३",
+      "dev": "स ईक्षतेमे नु लोका लोकपालान्नु सृजा इति ।\nसोऽद्भ्य एव पुरुषं समुद्धृत्यामूर्छयत् ॥",
+      "roman": "sa eekshateme nu lokaa lokapaalaannu srijaa iti |\nso'dbhya eva purusham samuddhrityaamoorchhayat ||",
+      "arth": "उसने सोचा — \"ये लोक तो बन गए; अब मैं लोकों के रखवाले रचूँ।\" उसने जल में से ही एक पुरुष को निकालकर उसे आकार दिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १.४",
+      "dev": "तमभ्यतपत्तस्याभितप्तस्य मुखं निरभिद्यत यथाऽण्डं मुखाद्वाग्वाचोऽग्निर्नासिके निरभिद्येतां नासिकाभ्यां प्राणः ।\nप्राणाद्वायुरक्षिणी निरभिद्येतामक्षीभ्यां चक्षुश्चक्षुष आदित्यः कर्णौ निरभिद्येतां कर्णाभ्यां श्रोत्रं श्रोत्राद्दिशस्त्वङ्निरभिद्यत त्वचो लोमानि लोमभ्य ओषधिवनस्पतयो हृदयं निरभिद्यत हृदयान्मनो मनसश्चन्द्रमा नाभिर्निरभिद्यत नाभ्या अपानोऽपानान्मृत्युः शिश्नं निरभिद्यत शिश्नाद्रेतो रेतस आपः ॥",
+      "roman": "tamabhyatapattasyaabhitaptasya mukham nirabhidyata yathaa'ndam mukhaadvaagvaacho'gnirnaasike nirabhidyetaam naasikaabhyaam praanah |\npraanaadvaayurakshinee nirabhidyetaamaksheebhyaam chakshushchakshusha aadityah karnau nirabhidyetaam karnaabhyaam shrotram shrotraaddishastvannirabhidyata tvacho lomaani lomabhya oshadhivanaspatayo hridayam nirabhidyata hridayaanmano manasashchandramaa naabhirnirabhidyata naabhyaa apaano'paanaanmrityuh shishnam nirabhidyata shishnaadreto retasa aapah ||",
+      "arth": "उसने उस पर तप किया। तप किए जाने पर उसका मुख वैसे ही फूटा जैसे अंडा फूटता है; मुख से वाणी, और वाणी से अग्नि। नथुने फूटे; नथुनों से प्राण, और प्राण से वायु। आँखें फूटीं; आँखों से देखने की शक्ति, और उससे सूर्य। कान फूटे; कानों से सुनने की शक्ति, और उससे दिशाएँ। त्वचा फूटी; त्वचा से रोएँ, और रोओं से औषधियाँ और वनस्पतियाँ। हृदय फूटा; हृदय से मन, और मन से चंद्रमा। नाभि फूटी; नाभि से अपान, और अपान से मृत्यु। जननेंद्रिय फूटी; उससे वीर्य, और वीर्य से जल।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २.१",
+      "dev": "ता एता देवताः सृष्टा अस्मिन्महत्यर्णवे प्रापतन् ।\nतमशनापिपासाभ्यामन्ववार्जत् ।\nता एनमब्रुवन्नायतनं नः प्रजानीहि यस्मिन्प्रतिष्ठिता अन्नमदामेति ॥",
+      "roman": "taa etaa devataah srishtaa asminmahatyarnave praapatan |\ntamashanaapipaasaabhyaamanvavaarjat |\ntaa enamabruvannaayatanam nah prajaaneehi yasminpratishthitaa annamadaameti ||",
+      "arth": "रचे जाने पर ये देवता इस बड़े सागर में आ गिरे। उसने उस पुरुष को भूख और प्यास से जोड़ दिया। देवताओं ने उससे कहा — \"हमें कोई ठिकाना बताइए, जिसमें टिककर हम अन्न खा सकें।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २.२",
+      "dev": "ताभ्यो गामानयत्ता अब्रुवन्न वै नोऽयमलमिति ।\nताभ्योऽश्वमानयत्ता अब्रुवन्न वै नोऽयमलमिति ॥",
+      "roman": "taabhyo gaamaanayattaa abruvanna vai no'yamalamiti |\ntaabhyo'shvamaanayattaa abruvanna vai no'yamalamiti ||",
+      "arth": "वह उनके लिए गाय लाया। वे बोले — \"यह हमारे लिए काफ़ी नहीं।\" वह घोड़ा लाया। वे बोले — \"यह भी हमारे लिए काफ़ी नहीं।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २.३",
+      "dev": "ताभ्यः पुरुषमानयत्ता अब्रुवन् सुकृतं बतेति पुरुषो वाव सुकृतम् ।\nता अब्रवीद्यथायतनं प्रविशतेति ॥",
+      "roman": "taabhyah purushamaanayattaa abruvan sukritam bateti purusho vaava sukritam |\ntaa abraveedyathaayatanam pravishateti ||",
+      "arth": "तब वह उनके लिए मनुष्य लाया। वे बोले — \"वाह, यह अच्छा बना है!\" सचमुच मनुष्य ही अच्छी रचना है। उसने उनसे कहा — \"अपने-अपने ठिकाने में प्रवेश करो।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २.४",
+      "dev": "अग्निर्वाग्भूत्वा मुखं प्राविशद्वायुः प्राणो भूत्वा नासिके प्राविशदादित्यश्चक्षुर्भूत्वाऽक्षिणी प्राविशद्दिशः श्रोत्रं भूत्वा कर्णौ प्राविशन्नोषधिवनस्पतयो लोमानि भूत्वा त्वचं प्राविशंश्चन्द्रमा मनो भूत्वा हृदयं प्राविशन्मृत्युरपानो भूत्वा नाभिं प्राविशदापो रेतो भूत्वा शिश्नं प्राविशन् ॥",
+      "roman": "agnirvaagbhootvaa mukham praavishadvaayuh praano bhootvaa naasike praavishadaadityashchakshurbhootvaa'kshinee praavishaddishah shrotram bhootvaa karnau praavishannoshadhivanaspatayo lomaani bhootvaa tvacham praavishamshchandramaa mano bhootvaa hridayam praavishanmrityurapaano bhootvaa naabhim praavishadaapo reto bhootvaa shishnam praavishan ||",
+      "arth": "अग्नि वाणी बनकर मुख में पैठी; वायु प्राण बनकर नथुनों में; सूर्य दृष्टि बनकर आँखों में; दिशाएँ सुनने की शक्ति बनकर कानों में; औषधियाँ और वनस्पतियाँ रोएँ बनकर त्वचा में; चंद्रमा मन बनकर हृदय में; मृत्यु अपान बनकर नाभि में; और जल वीर्य बनकर जननेंद्रिय में पैठा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २.५",
+      "dev": "तमशनायापिपासे अब्रूतामावाभ्यामभिप्रजानीहीति ते अब्रवीदेतास्वेव वां देवतास्वाभजाम्येतासु भागिन्यौ करोमीति ।\nतस्माद्यस्यै कस्यै च देवतायै हविर्गृह्यते भागिन्यावेवास्यामशनायापिपासे भवतः ॥",
+      "roman": "tamashanaayaapipaase abrootaamaavaabhyaamabhiprajaaneeheeti te abraveedetaasveva vaam devataasvaabhajaamyetaasu bhaaginyau karomeeti |\ntasmaadyasyai kasyai cha devataayai havirgrihyate bhaaginyaavevaasyaamashanaayaapipaase bhavatah ||",
+      "arth": "भूख और प्यास ने उससे कहा — \"हमारे लिए भी कोई ठिकाना बताइए।\" उसने कहा — \"मैं तुम दोनों को इन्हीं देवताओं में हिस्सा देता हूँ; इन्हीं का साझीदार बनाता हूँ।\" इसीलिए जिस किसी देवता के लिए हवि ली जाती है, भूख और प्यास उसमें साझीदार होती ही हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.१",
+      "dev": "स ईक्षतेमे नु लोकाश्च लोकपालाश्चान्नमेभ्यः सृजा इति ॥",
+      "roman": "sa eekshateme nu lokaashcha lokapaalaashchaannamebhyah srijaa iti ||",
+      "arth": "उसने सोचा — \"ये लोक और लोकों के रखवाले तो बन गए; अब मैं इनके लिए अन्न रचूँ।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.२",
+      "dev": "सोऽपोऽभ्यतपत्ताभ्योऽभितप्ताभ्यो मूर्तिरजायत ।\nया वै सा मूर्तिरजायतान्नं वै तत् ॥",
+      "roman": "so'po'bhyatapattaabhyo'bhitaptaabhyo moortirajaayata |\nyaa vai saa moortirajaayataannam vai tat ||",
+      "arth": "उसने जल पर तप किया। तपे हुए जल से एक आकार पैदा हुआ। जो आकार पैदा हुआ, वही अन्न है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.३",
+      "dev": "तदेनत्सृष्टं पराङत्यजिघांसत्तद्वाचाऽजिघृक्षत् तन्नाशक्नोद्वाचा ग्रहीतुम् ।\nस यद्धैनद्वाचाऽग्रहैष्यदभिव्याहृत्य हैवान्नमत्रप्स्यत् ॥",
+      "roman": "tadenatsrishtam paraanatyajighaamsattadvaachaa'jighrikshat tannaashaknodvaachaa graheetum |\nsa yaddhainadvaachaa'grahaishyadabhivyaahritya haivaannamatrapsyat ||",
+      "arth": "रचा हुआ वह अन्न उलटे पाँव भाग जाना चाहता था। उसने उसे वाणी से पकड़ना चाहा, पर न पकड़ सका। अगर वह उसे वाणी से पकड़ लेता, तो अन्न को बोलने भर से पेट भर जाता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.४",
+      "dev": "तत्प्राणेनाजिघृक्षत् तन्नाशक्नोत्प्राणेन ग्रहीतुं स यद्धैनत्प्राणेनाग्रहैष्यदभिप्राण्य हैवान्नमत्रप्स्यत् ॥",
+      "roman": "tatpraanenaajighrikshat tannaashaknotpraanena graheetum sa yaddhainatpraanenaagrahaishyadabhipraanya haivaannamatrapsyat ||",
+      "arth": "उसने उसे प्राण (सूँघने की शक्ति) से पकड़ना चाहा, पर न पकड़ सका। अगर वह उसे प्राण (सूँघने की शक्ति) से पकड़ लेता, तो अन्न को सूँघने भर से पेट भर जाता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.५",
+      "dev": "तच्चक्षुषाऽजिघृक्षत् तन्नाशक्नोच्चक्षुषा ग्रहीतुं स यद्धैनच्चक्षुषाऽग्रहैष्यद्दृष्ट्वा हैवान्नमत्रप्स्यत् ॥",
+      "roman": "tachchakshushaa'jighrikshat tannaashaknochchakshushaa graheetum sa yaddhainachchakshushaa'grahaishyaddrishtvaa haivaannamatrapsyat ||",
+      "arth": "उसने उसे आँख से पकड़ना चाहा, पर न पकड़ सका। अगर वह उसे आँख से पकड़ लेता, तो अन्न को देखने भर से पेट भर जाता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.६",
+      "dev": "तच्छ्रोत्रेणाजिघृक्षत् तन्नाशक्नोच्छ्रोत्रेण ग्रहीतुं स यद्धैनच्छ्रोत्रेणाग्रहैष्यच्छ्रुत्वा हैवान्नमत्रप्स्यत् ॥",
+      "roman": "tachchhrotrenaajighrikshat tannaashaknochchhrotrena graheetum sa yaddhainachchhrotrenaagrahaishyachchhrutvaa haivaannamatrapsyat ||",
+      "arth": "उसने उसे कान से पकड़ना चाहा, पर न पकड़ सका। अगर वह उसे कान से पकड़ लेता, तो अन्न को सुनने भर से पेट भर जाता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.७",
+      "dev": "तत्त्वचाऽजिघृक्षत् तन्नाशक्नोत्त्वचा ग्रहीतुं स यद्धैनत्त्वचाऽग्रहैष्यत् स्पृष्ट्वा हैवान्नमत्रप्स्यत् ॥",
+      "roman": "tattvachaa'jighrikshat tannaashaknottvachaa graheetum sa yaddhainattvachaa'grahaishyat sprishtvaa haivaannamatrapsyat ||",
+      "arth": "उसने उसे त्वचा से पकड़ना चाहा, पर न पकड़ सका। अगर वह उसे त्वचा से पकड़ लेता, तो अन्न को छूने भर से पेट भर जाता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.८",
+      "dev": "तन्मनसाऽजिघृक्षत् तन्नाशक्नोन्मनसा ग्रहीतुं स यद्धैनन्मनसाऽग्रहैष्यद्ध्यात्वा हैवान्नमत्रप्स्यत् ॥",
+      "roman": "tanmanasaa'jighrikshat tannaashaknonmanasaa graheetum sa yaddhainanmanasaa'grahaishyaddhyaatvaa haivaannamatrapsyat ||",
+      "arth": "उसने उसे मन से पकड़ना चाहा, पर न पकड़ सका। अगर वह उसे मन से पकड़ लेता, तो अन्न को सोचने भर से पेट भर जाता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.९",
+      "dev": "तच्छिश्नेनाजिघृक्षत् तन्नाशक्नोच्छिश्नेन ग्रहीतुं स यद्धैनच्छिश्नेनाग्रहैष्यद्विसृज्य हैवान्नमत्रप्स्यत् ॥",
+      "roman": "tachchhishnenaajighrikshat tannaashaknochchhishnena graheetum sa yaddhainachchhishnenaagrahaishyadvisrijya haivaannamatrapsyat ||",
+      "arth": "उसने उसे जननेंद्रिय से पकड़ना चाहा, पर न पकड़ सका। अगर वह उसे जननेंद्रिय से पकड़ लेता, तो अन्न को त्यागने भर से पेट भर जाता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.१०",
+      "dev": "तदपानेनाजिघृक्षत् तदावयत् सैषोऽन्नस्य ग्रहो यद्वायुरन्नायुर्वा एष यद्वायुः ॥",
+      "roman": "tadapaanenaajighrikshat tadaavayat saisho'nnasya graho yadvaayurannaayurvaa esha yadvaayuh ||",
+      "arth": "तब उसने उसे अपान से पकड़ना चाहा — और निगल लिया। अन्न को पकड़ने वाला यही वायु है; अन्न से जीने वाला भी यही वायु है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.११",
+      "dev": "स ईक्षत कथं न्विदं मदृते स्यादिति स ईक्षत कतरेण प्रपद्या इति ।\nस ईक्षत यदि वाचाऽभिव्याहृतं यदि प्राणेनाभिप्राणितं यदि चक्षुषा दृष्टं यदि श्रोत्रेण श्रुतं यदि त्वचा स्पृष्टं यदि मनसा ध्यातं यद्यपानेनाभ्यपानितं यदि शिश्नेन विसृष्टमथ कोऽहमिति ॥",
+      "roman": "sa eekshata katham nvidam madrite syaaditi sa eekshata katarena prapadyaa iti |\nsa eekshata yadi vaachaa'bhivyaahritam yadi praanenaabhipraanitam yadi chakshushaa drishtam yadi shrotrena shrutam yadi tvachaa sprishtam yadi manasaa dhyaatam yadyapaanenaabhyapaanitam yadi shishnena visrishtamatha ko'hamiti ||",
+      "arth": "उसने सोचा — \"यह सब मेरे बिना कैसे रहेगा?\" फिर सोचा — \"मैं किस रास्ते से इसमें प्रवेश करूँ?\" फिर सोचा — \"अगर बोलना वाणी से हो गया, सूँघना प्राण से, देखना आँख से, सुनना कान से, छूना त्वचा से, सोचना मन से, निगलना अपान से और त्यागना जननेंद्रिय से — तो फिर मैं कौन हूँ?\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.१२",
+      "dev": "स एतमेव सीमानं विदार्यैतया द्वारा प्रापद्यत ।\nसैषा विदृतिर्नाम द्वास्तदेतन्नाऽन्दनम् ।\nतस्य त्रय आवसथास्त्रयः स्वप्ना अयमावसथोऽयमावसथोऽयमावसथ इति ॥",
+      "roman": "sa etameva seemaanam vidaaryaitayaa dvaaraa praapadyata |\nsaishaa vidritirnaama dvaastadetannaa'ndanam |\ntasya traya aavasathaastrayah svapnaa ayamaavasatho'yamaavasatho'yamaavasatha iti ||",
+      "arth": "तब वह सिर की इसी सीमा को चीरकर इसी द्वार से भीतर आया। इस द्वार का नाम \"विदृति\" है; यही आनंद का स्थान है। उसके तीन निवास हैं और तीन स्वप्न — यह निवास, यह निवास, यह निवास।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.१३",
+      "dev": "स जातो भूतान्यभिव्यैख्यत् किमिहान्यं वावदिषदिति ।\nस एतमेव पुरुषं ब्रह्म ततममपश्यदिदमदर्शमिती३ ॥",
+      "roman": "sa jaato bhootaanyabhivyaikhyat kimihaanyam vaavadishaditi |\nsa etameva purusham brahma tatamamapashyadidamadarshamitee ||",
+      "arth": "जन्म लेकर उसने सब प्राणियों को देखा — \"यहाँ मेरे सिवा दूसरा किसे कहूँ?\" उसने इसी पुरुष को सबमें फैला हुआ ब्रह्म देखा, और कहा — \"मैंने इसे देख लिया!\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.१४",
+      "dev": "तस्मादिदन्द्रो नामेदन्द्रो ह वै नाम ।\nतमिदन्द्रं सन्तमिन्द्र इत्याचक्षते परोक्षेण ।\nपरोक्षप्रिया इव हि देवाः परोक्षप्रिया इव हि देवाः ॥",
+      "roman": "tasmaadidandro naamedandro ha vai naama |\ntamidandram santamindra ityaachakshate parokshena |\nparokshapriyaa iva hi devaah parokshapriyaa iva hi devaah ||",
+      "arth": "इसलिए उसका नाम \"इदंद्र\" — इसे देखने वाला — है। इदंद्र ही उसका नाम है; उसी इदंद्र को परोक्ष रूप से \"इंद्र\" कहते हैं — क्योंकि देवताओं को परोक्ष ही प्रिय है; देवताओं को परोक्ष ही प्रिय है।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "ऋग्वेद, ऐतरेय आरण्यक — तीन अध्याय",
+    "kshetra": "सब जगह — वेदांत का स्वाध्याय",
+    "note": "तैंतीस मंत्र तीन जगह मिलाए गए — एक संग्रह, शांकर भाष्य के साथ छपा एक पाठ और एक पुराने छपे संस्करण की प्रतिलिपि — और छपी हिंदी टीका से देखे गए। संग्रह वाले पाठ की वर्तनी की भूलें बाक़ी गवाहों से सुधारी गईं। दो जगह छपी पुस्तकें बँटी हैं: \"अशनायापिपासे\" / \"अशनापिपासे\", और \"आत्मभूयं\" / \"आत्मभूतं\" — यहाँ पहला रूप है।\n\nदूसरे अध्याय में गर्भ और जन्म की बात सीधे शब्दों में है — वह ग्रंथ का अपना ढंग है।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — किसी एक मत का भाष्य नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

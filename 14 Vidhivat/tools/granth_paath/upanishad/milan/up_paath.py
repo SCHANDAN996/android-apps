@@ -116,7 +116,9 @@ def mool(nm):
 
 def ek_paath(nm, key, arth, shirshak, chuno=None, shanti=True):
     """एक पाठ-फ़ाइल। `chuno(m)` — इस फ़ाइल में कौन से मंत्र; `shirshak(m)` — खंड का नाम।"""
-    out = [shanti_khand(KISKA_SHANTI[nm])] if shanti else []
+    # shanti: False — नहीं · True — इस उपनिषद का अपना · डोरी — वही शांति मंत्र
+    kaun = shanti if isinstance(shanti, str) else KISKA_SHANTI[nm]
+    out = [shanti_khand(kaun)] if shanti else []
     n = 0
     for m in mool(nm):
         if chuno and not chuno(m):
@@ -158,6 +160,26 @@ def main(kaun):
         from up_arth_3 import MUNDAKA
         kai('mundaka', MUNDAKA, {1: 'mundaka_11', 2: 'mundaka_12', 3: 'mundaka_21',
                                  4: 'mundaka_22', 5: 'mundaka_31', 6: 'mundaka_32'})
+    if 'aitareya' in kaun:
+        from up_arth_4 import AITAREYA
+        # पहला अध्याय तीन खंडों का — केन की तरह «मंत्र खंड.मंत्र»; दूसरा और तीसरा अध्याय सीधे
+        ek_paath('aitareya', 'aitareya_1', AITAREYA,
+                 lambda m: 'मंत्र %s.%s' % (dev_ank(m['sec']), dev_ank(int(m['num']))),
+                 chuno=lambda m: m['sec'] <= 3)
+        ek_paath('aitareya', 'aitareya_2', AITAREYA, lambda m: 'मंत्र ' + dev_ank(int(m['num'])),
+                 chuno=lambda m: m['sec'] == 4, shanti=False)
+        ek_paath('aitareya', 'aitareya_3', AITAREYA, lambda m: 'मंत्र ' + dev_ank(int(m['num'])),
+                 chuno=lambda m: m['sec'] == 5, shanti=False)
+    if 'shveta' in kaun:
+        from up_arth_4 import SHVETA
+        kai('shveta', SHVETA, {i: 'shveta_%d' % i for i in range(1, 7)})
+    if 'tait' in kaun:
+        from up_arth_5 import TAIT
+        # शीक्षा वल्ली का पहला अनुवाक ही उसका शांति पाठ ("शं नो मित्रः") है; बाक़ी दो
+        # वल्लियाँ "सह नाववतु" से खुलती हैं
+        for sec, shanti in ((1, False), (2, 'sahanavavatu'), (3, 'sahanavavatu')):
+            ek_paath('tait', 'tait_%d' % sec, TAIT, lambda m: 'अनुवाक ' + dev_ank(int(m['num'])),
+                     chuno=lambda m, s=sec: m['sec'] == s, shanti=shanti)
     if 'shanti' in kaun:
         out = []
         for i, (k, naam) in enumerate(SHANTI_KRAM, 1):

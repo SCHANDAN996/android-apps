@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../core/theme/app_theme.dart';
 import '../core/constants/strings.dart';
+import '../core/constants/app_info.dart';
 import '../core/services/storage_service.dart';
 import 'guide_screen.dart';
+import '../widgets/banner_ad_widget.dart';
 
 class SettingsScreen extends StatefulWidget {
   final StorageService storage;
@@ -24,7 +25,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
     super.initState();
     _lang = widget.storage.language;
     _unit = widget.storage.defaultUnit;
-  }  static const Map<String, String> _languages = {
+  }
+
+  static const Map<String, String> _languages = {
     'hi': 'हिन्दी (Hindi)',
     'en': 'English',
     'bho': 'भोजपुरी (Bhojpuri)',
@@ -48,58 +51,70 @@ class _SettingsScreenState extends State<SettingsScreen> {
         return SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 16),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  width: 48,
-                  height: 5,
-                  margin: const EdgeInsets.only(bottom: 16),
-                  decoration: BoxDecoration(
-                    color: AppColors.cardBorder,
-                    borderRadius: BorderRadius.circular(10),
+            child: FractionallySizedBox(
+              heightFactor: 0.82,
+              child: Column(
+                children: [
+                  Container(
+                    width: 48,
+                    height: 5,
+                    margin: const EdgeInsets.only(bottom: 16),
+                    decoration: BoxDecoration(
+                      color: AppColors.cardBorder,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
-                ),
-                Text(
-                  AppStrings.get('language'),
-                  style: GoogleFonts.notoSans(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.textPrimary,
+                  Text(
+                    AppStrings.get('language'),
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.textPrimary,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 12),
-                const Divider(),
-                Flexible(
-                  child: ListView(
-                    shrinkWrap: true,
-                    children: _languages.entries.map((entry) {
-                      final code = entry.key;
-                      final name = entry.value;
-                      final isSelected = _lang == code;
-                      return ListTile(
-                        leading: isSelected
-                            ? const Icon(Icons.check_circle_rounded, color: AppColors.primary)
-                            : const Icon(Icons.circle_outlined, color: AppColors.textHint),
-                        title: Text(
-                          name,
-                          style: GoogleFonts.notoSans(
-                            fontSize: 16,
-                            fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
-                            color: isSelected ? AppColors.primary : AppColors.textPrimary,
+                  const SizedBox(height: 12),
+                  const Divider(),
+                  Expanded(
+                    child: ListView(
+                      shrinkWrap: true,
+                      children: _languages.entries.map((entry) {
+                        final code = entry.key;
+                        final name = entry.value;
+                        final isSelected = _lang == code;
+                        return ListTile(
+                          leading: isSelected
+                              ? const Icon(
+                                  Icons.check_circle_rounded,
+                                  color: AppColors.primary,
+                                )
+                              : Icon(
+                                  Icons.circle_outlined,
+                                  color: AppColors.textHint,
+                                ),
+                          title: Text(
+                            name,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: isSelected
+                                  ? FontWeight.w700
+                                  : FontWeight.w500,
+                              color: isSelected
+                                  ? AppColors.primary
+                                  : AppColors.textPrimary,
+                            ),
                           ),
-                        ),
-                        onTap: () async {
-                          Navigator.pop(context);
-                          await widget.storage.setLanguage(code);
-                          AppStrings.setLanguage(code);
-                          setState(() => _lang = code);
-                        },
-                      );
-                    }).toList(),
+                          onTap: () async {
+                            Navigator.pop(context);
+                            await widget.storage.setLanguage(code);
+                            AppStrings.setLanguage(code);
+                            setState(() => _lang = code);
+                          },
+                        );
+                      }).toList(),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         );
@@ -110,129 +125,168 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(AppStrings.get('settings')),
-      ),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: [
-          // Language
-          _SettingsAction(
-            icon: Icons.language_rounded,
-            iconColor: const Color(0xFFE65100),
-            title: '${AppStrings.get('language')}: ${_languages[_lang] ?? _lang}',
-            onTap: _showLanguagePicker,
-          ),
-          const SizedBox(height: 12),
+      bottomNavigationBar: const BannerAdWidget(),
+      appBar: AppBar(title: Text(AppStrings.get('settings'))),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          final side = ((constraints.maxWidth - 680) / 2).clamp(16.0, 80.0);
+          return ListView(
+            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+            padding: EdgeInsets.fromLTRB(side, 8, side, 32),
+            children: [
+              // Language
+              _SettingsAction(
+                icon: Icons.language_rounded,
+                iconColor: const Color(0xFFE65100),
+                title:
+                    '${AppStrings.get('language')}: ${_languages[_lang] ?? _lang}',
+                onTap: _showLanguagePicker,
+              ),
+              const SizedBox(height: 12),
 
-          // Default unit
-          _SettingsTile(
-            icon: Icons.straighten_rounded,
-            iconColor: const Color(0xFF4527A0),
-            title: AppStrings.get('defaultUnit'),
-            trailing: SegmentedButton<String>(
-              segments: [
-                ButtonSegment(
-                  value: 'ft',
-                  label: Text(AppStrings.get('feet')),
+              // Default unit
+              _SettingsTile(
+                icon: Icons.straighten_rounded,
+                iconColor: const Color(0xFF4527A0),
+                title: AppStrings.get('defaultUnit'),
+                trailing: SegmentedButton<String>(
+                  segments: [
+                    ButtonSegment(
+                      value: 'ft',
+                      label: Text(AppStrings.get('feet')),
+                    ),
+                    ButtonSegment(
+                      value: 'm',
+                      label: Text(AppStrings.get('meter')),
+                    ),
+                  ],
+                  selected: {_unit},
+                  onSelectionChanged: (v) async {
+                    final newUnit = v.first;
+                    await widget.storage.setDefaultUnit(newUnit);
+                    setState(() => _unit = newUnit);
+                  },
+                  style: SegmentedButton.styleFrom(
+                    selectedBackgroundColor: AppColors.primary,
+                    selectedForegroundColor: Colors.white,
+                  ),
                 ),
-                ButtonSegment(
-                  value: 'm',
-                  label: Text(AppStrings.get('meter')),
+              ),
+              const SizedBox(height: 12),
+
+              // Theme
+              _SettingsTile(
+                icon: Icons.dark_mode_outlined,
+                iconColor: const Color(0xFF37474F),
+                title: AppStrings.get('theme'),
+                trailing: SegmentedButton<String>(
+                  showSelectedIcon: false,
+                  segments: [
+                    for (final m in const ['system', 'light', 'dark'])
+                      ButtonSegment(
+                        value: m,
+                        label: Text(
+                          AppStrings.get(switch (m) {
+                            'light' => 'themeLight',
+                            'dark' => 'themeDark',
+                            _ => 'themeSystem',
+                          }),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                  ],
+                  selected: {AppTheme.mode.value},
+                  onSelectionChanged: (v) async {
+                    await widget.storage.setThemeMode(v.first);
+                    AppTheme.mode.value = v.first;
+                  },
+                  style: SegmentedButton.styleFrom(
+                    selectedBackgroundColor: AppColors.primary,
+                    selectedForegroundColor: Colors.white,
+                  ),
                 ),
-              ],
-              selected: {_unit},
-              onSelectionChanged: (v) async {
-                final newUnit = v.first;
-                await widget.storage.setDefaultUnit(newUnit);
-                setState(() => _unit = newUnit);
-              },
-              style: SegmentedButton.styleFrom(
-                selectedBackgroundColor: AppColors.primary,
-                selectedForegroundColor: Colors.white,
               ),
-            ),
-          ),
-          const SizedBox(height: 12),
+              const SizedBox(height: 12),
 
-          // Construction Guide
-          _SettingsAction(
-            icon: Icons.book_outlined,
-            iconColor: const Color(0xFFE65100),
-            title: AppStrings.get('constructionGuide'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const GuideScreen()),
-              );
-            },
-          ),
-          const SizedBox(height: 12),
-
-          // Share app
-          _SettingsAction(
-            icon: Icons.share_outlined,
-            iconColor: const Color(0xFF00695C),
-            title: AppStrings.get('shareApp'),
-            onTap: () {
-              Share.share(
-                AppStrings.currentLang == 'hi'
-                      ? 'मिस्त्री कैलकुलेटर — घर बनाने का पूरा हिसाब, बिल्कुल फ्री! 📐🧱\n\nडाउनलोड करें: https://play.google.com/store/apps/details?id=com.mistricalculator.mistri_calculator'
-                      : 'Mistri Calculator — Complete construction estimate, totally free! 📐🧱\n\nDownload: https://play.google.com/store/apps/details?id=com.mistricalculator.mistri_calculator',
-              );
-            },
-          ),
-          const SizedBox(height: 12),
-
-          // Privacy Policy
-          _SettingsAction(
-            icon: Icons.privacy_tip_outlined,
-            iconColor: const Color(0xFF0277BD),
-            title: AppStrings.get('privacyPolicy'),
-            onTap: () async {
-              final uri = Uri.parse('https://tubealgo.github.io/mistri-calculator-privacy-policy/');
-              if (await canLaunchUrl(uri)) {
-                await launchUrl(uri, mode: LaunchMode.externalApplication);
-              }
-            },
-          ),
-          const SizedBox(height: 12),
-
-          // More Apps
-          _SettingsAction(
-            icon: Icons.apps_rounded,
-            iconColor: const Color(0xFFC62828),
-            title: AppStrings.get('moreApps'),
-            onTap: () async {
-              final uri = Uri.parse('https://play.google.com/store/apps/developer?id=Tube+algo');
-              if (await canLaunchUrl(uri)) {
-                await launchUrl(uri, mode: LaunchMode.externalApplication);
-              }
-            },
-          ),
-          const SizedBox(height: 24),
-
-          // Version
-          Center(
-            child: Text(
-              '${AppStrings.get('version')}: 1.0.0',
-              style: GoogleFonts.notoSans(
-                fontSize: 13,
-                color: AppColors.textHint,
+              // Construction Guide
+              _SettingsAction(
+                icon: Icons.book_outlined,
+                iconColor: const Color(0xFFE65100),
+                title: AppStrings.get('constructionGuide'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const GuideScreen()),
+                  );
+                },
               ),
-            ),
-          ),
-          const SizedBox(height: 8),
-          Center(
-            child: Text(
-              'Made with ❤️ in India 🇮🇳',
-              style: GoogleFonts.notoSans(
-                fontSize: 12,
-                color: AppColors.textHint,
+              const SizedBox(height: 12),
+
+              // Share app
+              _SettingsAction(
+                icon: Icons.share_outlined,
+                iconColor: const Color(0xFF00695C),
+                title: AppStrings.get('shareApp'),
+                onTap: () {
+                  Share.share(
+                    AppStrings.currentLang == 'hi'
+                        ? 'मिस्त्री कैलकुलेटर — घर बनाने का पूरा हिसाब, बिल्कुल फ्री! 📐🧱\n\nडाउनलोड करें: https://play.google.com/store/apps/details?id=com.mistricalculator.mistri_calculator'
+                        : 'Mistri Calculator — Complete construction estimate, totally free! 📐🧱\n\nDownload: https://play.google.com/store/apps/details?id=com.mistricalculator.mistri_calculator',
+                  );
+                },
               ),
-            ),
-          ),
-        ],
+              const SizedBox(height: 12),
+
+              // Privacy Policy
+              _SettingsAction(
+                icon: Icons.privacy_tip_outlined,
+                iconColor: const Color(0xFF0277BD),
+                title: AppStrings.get('privacyPolicy'),
+                onTap: () async {
+                  final uri = Uri.parse(
+                    'https://tubealgo.github.io/mistri-calculator-privacy-policy/',
+                  );
+                  if (await canLaunchUrl(uri)) {
+                    await launchUrl(uri, mode: LaunchMode.externalApplication);
+                  }
+                },
+              ),
+              const SizedBox(height: 12),
+
+              // More Apps
+              _SettingsAction(
+                icon: Icons.apps_rounded,
+                iconColor: const Color(0xFFC62828),
+                title: AppStrings.get('moreApps'),
+                onTap: () async {
+                  final uri = Uri.parse(
+                    'https://play.google.com/store/apps/developer?id=Tube+algo',
+                  );
+                  if (await canLaunchUrl(uri)) {
+                    await launchUrl(uri, mode: LaunchMode.externalApplication);
+                  }
+                },
+              ),
+              const SizedBox(height: 24),
+
+              // Version
+              Center(
+                child: Text(
+                  '${AppStrings.get('version')}: ${AppInfo.version}',
+                  style: TextStyle(fontSize: 13, color: AppColors.textHint),
+                ),
+              ),
+              const SizedBox(height: 8),
+              Center(
+                child: Text(
+                  'Made with ❤️ in India 🇮🇳',
+                  style: TextStyle(fontSize: 12, color: AppColors.textHint),
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
@@ -274,12 +328,16 @@ class _SettingsTile extends StatelessWidget {
                 child: Icon(icon, color: iconColor, size: 20),
               ),
               const SizedBox(width: 12),
-              Text(
-                title,
-                style: GoogleFonts.notoSans(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.textPrimary,
+              Expanded(
+                child: Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.textPrimary,
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ],
@@ -333,14 +391,16 @@ class _SettingsAction extends StatelessWidget {
               Expanded(
                 child: Text(
                   title,
-                  style: GoogleFonts.notoSans(
+                  style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                     color: AppColors.textPrimary,
                   ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
-              const Icon(
+              Icon(
                 Icons.chevron_right_rounded,
                 color: AppColors.textHint,
               ),

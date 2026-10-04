@@ -43,21 +43,12 @@ class SteelCalculator {
     required int rodCount,
   }) {
     final totalLength = rodCount * 12.0; // each rod = 12m
-    return calculateByLength(
-      diameterMm: diameterMm,
-      totalLengthM: totalLength,
-    );
+    return calculateByLength(diameterMm: diameterMm, totalLengthM: totalLength);
   }
 
   /// Quick slab mode: slab volume → steel weight (80 kg/m³ residential).
-  static SteelResult calculateBySlab({
-    required double slabVolumeM3,
-  }) {
+  static SteelResult calculateBySlab({required double slabVolumeM3}) {
     final weight = slabVolumeM3 * slabSteelRate * wastage;
-    return SteelResult(
-      weightKg: weight,
-      weightPerMeter: 0,
-      totalLength: 0,
-    );
+    return SteelResult(weightKg: weight, weightPerMeter: 0, totalLength: 0);
   }
 }

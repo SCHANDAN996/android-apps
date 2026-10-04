@@ -38,6 +38,7 @@
 समापन-वाक्य), उनके शीर्षक की शुरुआत `sanskritShirshak` में लिखो।
 `"ginoShirshak": ""` — सूची में गिनती सारे खंडों की।
 `"yatiPar": ["चौपाई"]` — इन खंडों की हर पंक्ति «अ। ब॥» ऐप में दो पंक्तियों में।
+पाठ में `"gintiNaam": "अनुवाक"` — सूची में उस पाठ की गिनती इसी इकाई में (तैत्तिरीय)।
 """
 import io
 import json
@@ -216,6 +217,9 @@ def banao_khand(gid, kram, src, dst):
         })
         suchi[key] = {'id': pid, 'naam': f['naam'], 'ekLine': khula(f['ekLine']),
                       'shlok': ginti}
+        # पाठ की अपनी इकाई (तैत्तिरीय में "अनुवाक") — हो तो सूची में ग्रंथ वाली की जगह यही
+        if p.get('gintiNaam'):
+            suchi[key]['gintiNaam'] = p['gintiNaam']
         kul_khand += len(khand)
 
     baaki = set(kram['paath']) - {k for h in kram['hisse'] for k in h['paath']}

@@ -99,6 +99,9 @@ void main() {
       await tester.pumpAndSettle();
       await tester.scrollUntilVisible(find.text('दुर्गा सप्तशती'), 200,
           scrollable: find.byType(Scrollable).first);
+      // छह ग्रंथ हो गए — नाम दिखते ही रुकने पर कार्ड आधा नीचे रह जाता है
+      await tester.ensureVisible(find.text('दुर्गा सप्तशती'));
+      await tester.pumpAndSettle();
       await tester.tap(find.text('दुर्गा सप्तशती'));
       await tester.pumpAndSettle();
       expect(find.text('देवी कवच'), findsOneWidget);

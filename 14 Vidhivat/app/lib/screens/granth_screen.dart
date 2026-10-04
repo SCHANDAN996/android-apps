@@ -79,7 +79,7 @@ class _GranthScreenState extends State<GranthScreen> {
           granthId: granth.id,
           granthNaam: granth.chhotaNaam,
           ikai: granth.ikai,
-          khandIkai: granth.khandIkai,
+          khandIkai: p.gintiNaam ?? granth.khandIkai,
           paathId: p.id,
           kram: i,
           kul: kram.length,
@@ -224,7 +224,7 @@ class _Pankti extends StatelessWidget {
                 ],
                 const SizedBox(height: 2),
                 Text(
-                  '${paath.shlok} $gintiNaam'
+                  '${paath.shlok} ${paath.gintiNaam ?? gintiNaam}'
                   '${pichhla ? ' · पिछली बार खोला था' : ''}',
                   style: type.bodySmall.copyWith(
                     color: pichhla ? colors.primary : null,

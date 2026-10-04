@@ -6,7 +6,10 @@ import os
 import re
 import sys
 
-REPO = r'C:\Users\Admin\Desktop\my project\MASS APP\14 Vidhivat'
+# ऐप का repo: ये औज़ार यहीं (repo के भीतर) रखे हैं, पर चलते एक अस्थायी फ़ोल्डर से हैं जहाँ
+# स्रोत उतारे गए हों — वहाँ से चलाते समय VIDHIVAT_REPO में repo का रास्ता दो।
+REPO = os.environ.get('VIDHIVAT_REPO') or os.path.normpath(
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..'))
 sys.path.insert(0, os.path.join(REPO, 'tools'))
 import milan  # noqa: E402
 from milan import html_path, kunji_iast, nfc, saaf  # noqa: E402,F401
