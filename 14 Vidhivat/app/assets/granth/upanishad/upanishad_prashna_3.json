@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "id": "upanishad_prashna_3",
+  "naam": "प्रश्न — तीसरा प्रश्न",
+  "upnaam": [
+    "पाँच प्राण",
+    "प्राण, अपान, समान, व्यान, उदान"
+  ],
+  "prakar": "granth",
+  "devta": "ब्रह्म (परमात्मा)",
+  "rachnakar": "अथर्ववेद — पिप्पलाद शाखा",
+  "bhasha": "संस्कृत",
+  "parichay": "कौसल्य आश्वलायन का प्रश्न: प्राण कहाँ से पैदा होता है, शरीर में कैसे आता और रहता है, और कैसे निकलता है? उत्तर: प्राण आत्मा से वैसे ही निकलता है जैसे मनुष्य से उसकी छाया; और जैसे सम्राट अधिकारियों को गाँव बाँटता है, वैसे वह अपने को पाँच में बाँटता है — प्राण, अपान, समान, व्यान, उदान। यहीं हृदय की एक सौ एक नाड़ियों की बात है।",
+  "kabPadhein": "किसी भी शांत समय — सुबह या शाम। उपनिषद पूजा का पाठ नहीं, स्वाध्याय और मनन के लिए हैं: थोड़ा पढ़ें, और जो पढ़ा उस पर रुककर सोचें।",
+  "kaisePadhein": "परंपरा में उपनिषद का पाठ शांति पाठ से शुरू होता है और उसी पर ख़त्म — इसलिए हर उपनिषद का पहला खंड उसका शांति पाठ है; पाठ पूरा करके उसे एक बार फिर पढ़ लें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर मंत्र के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं। यहाँ वैदिक स्वर-चिह्न नहीं हैं; साफ़ और धीमा उच्चारण रखें।\n\nउपनिषद के मंत्र गूढ़ हैं और आचार्यों ने कई मंत्रों को अलग-अलग ढंग से समझाया है। यहाँ का अर्थ सिर्फ़ पहली सीढ़ी है — गहराई से समझना हो तो किसी जानकार के साथ या किसी भाष्य के सहारे पढ़ें।",
+  "khand": [
+    {
+      "shirshak": "मंत्र १",
+      "dev": "अथ हैनं कौसल्यश्चाश्वलायनः पप्रच्छ ।\nभगवन् कुत एष प्राणो जायते कथमायात्यस्मिञ्शरीर आत्मानं वा प्रविभज्य कथं प्रातिष्ठते केनोत्क्रमते कथं बाह्यमभिधत्ते कथमध्यात्ममिति ॥",
+      "roman": "atha hainam kausalyashchaashvalaayanah paprachchha |\nbhagavan kuta esha praano jaayate kathamaayaatyasminshareera aatmaanam vaa pravibhajya katham praatishthate kenotkramate katham baahyamabhidhatte kathamadhyaatmamiti ||",
+      "arth": "फिर कौसल्य आश्वलायन ने पूछा — \"भगवन्, यह प्राण कहाँ से पैदा होता है? इस शरीर में कैसे आता है? अपने को बाँटकर कैसे रहता है? किस रास्ते निकलता है? बाहर के जगत को और भीतर के शरीर को कैसे सँभालता है?\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २",
+      "dev": "तस्मै स होवाचातिप्रश्नान् पृच्छसि ब्रह्मिष्ठोऽसीति तस्मात्तेऽहं ब्रवीमि ॥",
+      "roman": "tasmai sa hovaachaatiprashnaan prichchhasi brahmishtho'seeti tasmaatte'ham braveemi ||",
+      "arth": "पिप्पलाद ने कहा — \"तुम बहुत कठिन प्रश्न पूछ रहे हो। पर तुम ब्रह्म में बहुत निष्ठा रखते हो, इसलिए मैं तुम्हें बताता हूँ।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३",
+      "dev": "आत्मन एष प्राणो जायते ।\nयथैषा पुरुषे छायैतस्मिन्नेतदाततं मनोकृतेनायात्यस्मिञ्शरीरे ॥",
+      "roman": "aatmana esha praano jaayate |\nyathaishaa purushe chhaayaitasminnetadaatatam manokritenaayaatyasminshareere ||",
+      "arth": "\"यह प्राण आत्मा से पैदा होता है। जैसे मनुष्य के साथ उसकी छाया रहती है, वैसे ही यह आत्मा में फैला है; और मन के किए हुए — संकल्प और कर्म — से इस शरीर में आता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४",
+      "dev": "यथा सम्राडेवाधिकृतान् विनियुङ्क्ते ।\nएतान् ग्रामानेतान् ग्रामानधितिष्ठस्वेत्येवमेवैष प्राण इतरान् प्राणान् पृथक् पृथगेव सन्निधत्ते ॥",
+      "roman": "yathaa samraadevaadhikritaan viniyunkte |\netaan graamaanetaan graamaanadhitishthasvetyevamevaisha praana itaraan praanaan prithak prithageva sannidhatte ||",
+      "arth": "\"जैसे सम्राट अपने अधिकारियों को काम सौंपता है — तुम इन गाँवों को सँभालो, तुम इन गाँवों को — वैसे ही यह प्राण दूसरे प्राणों को अलग-अलग जगह लगा देता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ५",
+      "dev": "पायूपस्थेऽपानं चक्षुःश्रोत्रे मुखनासिकाभ्यां प्राणः स्वयं प्रातिष्ठते मध्ये तु समानः ।\nएष ह्येतद्धुतमन्नं समं नयति तस्मादेताः सप्तार्चिषो भवन्ति ॥",
+      "roman": "paayoopasthe'paanam chakshuhshrotre mukhanaasikaabhyaam praanah svayam praatishthate madhye tu samaanah |\nesha hyetaddhutamannam samam nayati tasmaadetaah saptaarchisho bhavanti ||",
+      "arth": "\"मल-मूत्र के अंगों में वह अपान को रखता है; आँख और कान में, मुँह और नाक के रास्ते, प्राण स्वयं रहता है; और बीच में समान। यही खाए हुए अन्न को सब जगह बराबर पहुँचाता है; उसी से ये सात लपटें उठती हैं।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ६",
+      "dev": "हृदि ह्येष आत्मा ।\nअत्रैतदेकशतं नाडीनां तासां शतं शतमेकैकस्यां द्वासप्ततिर्द्वासप्ततिः प्रतिशाखानाडीसहस्राणि भवन्त्यासु व्यानश्चरति ॥",
+      "roman": "hridi hyesha aatmaa |\natraitadekashatam naadeenaam taasaam shatam shatamekaikasyaam dvaasaptatirdvaasaptatih pratishaakhaanaadeesahasraani bhavantyaasu vyaanashcharati ||",
+      "arth": "\"यह आत्मा हृदय में है। यहाँ एक सौ एक नाड़ियाँ हैं; उनमें से हर एक की सौ-सौ शाखाएँ हैं, और हर शाखा की बहत्तर-बहत्तर हज़ार उपशाखाएँ। इन सबमें व्यान चलता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ७",
+      "dev": "अथैकयोर्ध्व उदानः पुण्येन पुण्यं लोकं नयति पापेन पापमुभाभ्यामेव मनुष्यलोकम् ॥",
+      "roman": "athaikayordhva udaanah punyena punyam lokam nayati paapena paapamubhaabhyaameva manushyalokam ||",
+      "arth": "\"और उनमें से एक नाड़ी से ऊपर की ओर उदान चलता है। वह पुण्य से पुण्य-लोक में ले जाता है, पाप से पाप-लोक में, और दोनों से मनुष्य-लोक में।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ८",
+      "dev": "आदित्यो ह वै बाह्यः प्राण उदयत्येष ह्येनं चाक्षुषं प्राणमनुगृह्णानः ।\nपृथिव्यां या देवता सैषा पुरुषस्यापानमवष्टभ्यान्तरा यदाकाशः स समानो वायुर्व्यानः ॥",
+      "roman": "aadityo ha vai baahyah praana udayatyesha hyenam chaakshusham praanamanugrihnaanah |\nprithivyaam yaa devataa saishaa purushasyaapaanamavashtabhyaantaraa yadaakaashah sa samaano vaayurvyaanah ||",
+      "arth": "\"सूर्य ही बाहर का प्राण है; वह उगकर आँख में रहने वाले प्राण पर कृपा करता है। पृथ्वी में जो देवता है, वह मनुष्य के अपान को थामे रहती है। बीच में जो आकाश है, वह समान है; और वायु व्यान है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ९",
+      "dev": "तेजो ह वा उदानस्तस्मादुपशान्ततेजाः ।\nपुनर्भवमिन्द्रियैर्मनसि सम्पद्यमानैः ॥",
+      "roman": "tejo ha vaa udaanastasmaadupashaantatejaah |\npunarbhavamindriyairmanasi sampadyamaanaih ||",
+      "arth": "\"तेज ही उदान है। इसलिए जिसका तेज बुझ जाता है, वह मन में लीन हुई इंद्रियों के साथ दूसरे जन्म में जाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १०",
+      "dev": "यच्चित्तस्तेनैष प्राणमायाति ।\nप्राणस्तेजसा युक्तः सहात्मना यथासङ्कल्पितं लोकं नयति ॥",
+      "roman": "yachchittastenaisha praanamaayaati |\npraanastejasaa yuktah sahaatmanaa yathaasankalpitam lokam nayati ||",
+      "arth": "\"मरते समय मनुष्य का चित्त जैसा होता है, उसी के साथ वह प्राण में आता है। प्राण तेज से जुड़कर, आत्मा के साथ, उसे उसके संकल्प के अनुसार लोक में ले जाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ११",
+      "dev": "य एवं विद्वान् प्राणं वेद न हास्य प्रजा हीयतेऽमृतो भवति तदेष श्लोकः ॥",
+      "roman": "ya evam vidvaan praanam veda na haasya prajaa heeyate'mrito bhavati tadesha shlokah ||",
+      "arth": "\"जो विद्वान प्राण को इस तरह जानता है, उसकी संतान की परंपरा नहीं टूटती और वह अमर हो जाता है। इस पर यह श्लोक है —\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १२",
+      "dev": "उत्पत्तिमायतिं स्थानं विभुत्वं चैव पञ्चधा ।\nअध्यात्मं चैव प्राणस्य विज्ञायामृतमश्नुते विज्ञायामृतमश्नुत इति ॥",
+      "roman": "utpattimaayatim sthaanam vibhutvam chaiva panchadhaa |\nadhyaatmam chaiva praanasya vijnaayaamritamashnute vijnaayaamritamashnuta iti ||",
+      "arth": "\"प्राण की उत्पत्ति, उसका आना, उसका स्थान, पाँच रूपों में उसका फैलाव और शरीर के भीतर उसका रहना — यह जानकर मनुष्य अमरता पाता है; यह जानकर अमरता पाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "अथर्ववेद, पिप्पलाद शाखा — छह प्रश्न",
+    "kshetra": "सब जगह — वेदांत का स्वाध्याय",
+    "note": "सड़सठ मंत्र तीन जगह मिलाए गए — एक संग्रह, शांकर भाष्य के साथ छपा एक पाठ (जिसका मूल एक शोध-संस्करण से मिलाया हुआ है) और एक पुराने छपे संस्करण की प्रतिलिपि — और छपी हिंदी टीका से देखे गए। संग्रह वाले पाठ में वर्तनी की कई भूलें थीं (\"कुते\", \"सोभ्य\", \"यादौ\"); चौबीस जगह बाक़ी गवाहों वाला पाठ रखा है।\n\nरयि, प्राण और सोलह कलाओं जैसे शब्दों को आचार्यों ने विस्तार से समझाया है; यहाँ सीधा शब्दार्थ है, किसी एक मत का भाष्य नहीं।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

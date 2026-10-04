@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "id": "upanishad_katha_11",
+  "naam": "कठ — अध्याय १, वल्ली १",
+  "upnaam": [
+    "कठोपनिषद",
+    "कठोपनिषत्",
+    "काठक उपनिषद",
+    "नचिकेता और यम",
+    "नचिकेता"
+  ],
+  "prakar": "granth",
+  "devta": "ब्रह्म (परमात्मा)",
+  "rachnakar": "कृष्ण यजुर्वेद — कठ शाखा",
+  "bhasha": "संस्कृत",
+  "parichay": "कठ उपनिषद की कथा: वाजश्रवस ने यज्ञ में अपना सब कुछ दान किया, पर गायें बूढ़ी थीं। बालक नचिकेता ने टोका, तो पिता ने झुँझलाकर कह दिया — तुझे मृत्यु को देता हूँ। नचिकेता यम के घर पहुँचा और तीन रात बिना खाए प्रतीक्षा करता रहा; यम ने बदले में तीन वर दिए।\n\nइस वल्ली में तीनों वर हैं: पिता का क्रोध शांत हो; स्वर्ग दिलाने वाली अग्नि की विद्या; और तीसरा — मरने के बाद मनुष्य रहता है या नहीं? यम ने धन, राज्य और लंबी आयु देकर टालना चाहा; नचिकेता नहीं माना।",
+  "kabPadhein": "किसी भी शांत समय — सुबह या शाम। उपनिषद पूजा का पाठ नहीं, स्वाध्याय और मनन के लिए हैं: थोड़ा पढ़ें, और जो पढ़ा उस पर रुककर सोचें।",
+  "kaisePadhein": "परंपरा में उपनिषद का पाठ शांति पाठ से शुरू होता है और उसी पर ख़त्म — इसलिए हर उपनिषद का पहला खंड उसका शांति पाठ है; पाठ पूरा करके उसे एक बार फिर पढ़ लें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर मंत्र के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं। यहाँ वैदिक स्वर-चिह्न नहीं हैं; साफ़ और धीमा उच्चारण रखें।\n\nउपनिषद के मंत्र गूढ़ हैं और आचार्यों ने कई मंत्रों को अलग-अलग ढंग से समझाया है। यहाँ का अर्थ सिर्फ़ पहली सीढ़ी है — गहराई से समझना हो तो किसी जानकार के साथ या किसी भाष्य के सहारे पढ़ें।",
+  "khand": [
+    {
+      "shirshak": "शांति पाठ",
+      "dev": "ॐ सह नाववतु ।\nसह नौ भुनक्तु ।\nसह वीर्यं करवावहै ।\nतेजस्वि नावधीतमस्तु मा विद्विषावहै ॥\nॐ शान्तिः शान्तिः शान्तिः ॥",
+      "roman": "om saha naavavatu |\nsaha nau bhunaktu |\nsaha veeryam karavaavahai |\ntejasvi naavadheetamastu maa vidvishaavahai ||\nom shaantih shaantih shaantih ||",
+      "arth": "परमात्मा हम दोनों — गुरु और शिष्य — की साथ-साथ रक्षा करे; हम दोनों का साथ-साथ पालन करे। हम दोनों मिलकर पुरुषार्थ करें। हमारा पढ़ा हुआ तेजस्वी हो; हम एक-दूसरे से द्वेष न करें। तीनों तरह के ताप शांत हों।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १",
+      "dev": "ॐ उशन् ह वै वाजश्रवसः सर्ववेदसं ददौ ।\nतस्य ह नचिकेता नाम पुत्र आस ॥",
+      "roman": "om ushan ha vai vaajashravasah sarvavedasam dadau |\ntasya ha nachiketaa naama putra aasa ||",
+      "arth": "स्वर्ग के फल की इच्छा से वाजश्रवस ने यज्ञ में अपना सारा धन दान कर दिया। उनका नचिकेता नाम का एक पुत्र था।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २",
+      "dev": "तं ह कुमारं सन्तं दक्षिणासु नीयमानासु श्रद्धाविवेश सोऽमन्यत ॥",
+      "roman": "tam ha kumaaram santam dakshinaasu neeyamaanaasu shraddhaavivesha so'manyata ||",
+      "arth": "जब दक्षिणा की गायें ले जाई जा रही थीं, तब उस बालक के मन में श्रद्धा जागी, और वह सोचने लगा —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३",
+      "dev": "पीतोदका जग्धतृणा दुग्धदोहा निरिन्द्रियाः ।\nअनन्दा नाम ते लोकास्तान् स गच्छति ता ददत् ॥",
+      "roman": "peetodakaa jagdhatrinaa dugdhadohaa nirindriyaah |\nanandaa naama te lokaastaan sa gachchhati taa dadat ||",
+      "arth": "\"जो गायें पानी पी चुकीं, घास खा चुकीं, जिनका दूध दुहा जा चुका और जो अब बछड़ा देने लायक़ नहीं रहीं — ऐसी गायों का दान करने वाला उन लोकों में जाता है जिनमें कोई आनंद नहीं।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४",
+      "dev": "स होवाच पितरं तत कस्मै मां दास्यसीति ।\nद्वितीयं तृतीयं तं होवाच मृत्यवे त्वा ददामीति ॥",
+      "roman": "sa hovaacha pitaram tata kasmai maam daasyaseeti |\ndviteeyam triteeyam tam hovaacha mrityave tvaa dadaameeti ||",
+      "arth": "उसने पिता से पूछा — \"पिताजी, मुझे आप किसे देंगे?\" दूसरी बार, तीसरी बार पूछने पर पिता ने झुँझलाकर कह दिया — \"तुझे मैं मृत्यु को देता हूँ।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ५",
+      "dev": "बहूनामेमि प्रथमो बहूनामेमि मध्यमः ।\nकिं स्विद्यमस्य कर्तव्यं यन्मयाऽद्य करिष्यति ॥",
+      "roman": "bahoonaamemi prathamo bahoonaamemi madhyamah |\nkim svidyamasya kartavyam yanmayaa'dya karishyati ||",
+      "arth": "(नचिकेता ने सोचा —) \"बहुतों में मैं पहला होकर जा रहा हूँ, बहुतों में बीच का होकर। यम का ऐसा कौन सा काम है जो पिताजी आज मुझसे पूरा कराएँगे?\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ६",
+      "dev": "अनुपश्य यथा पूर्वे प्रतिपश्य तथाऽपरे ।\nसस्यमिव मर्त्यः पच्यते सस्यमिवाजायते पुनः ॥",
+      "roman": "anupashya yathaa poorve pratipashya tathaa'pare |\nsasyamiva martyah pachyate sasyamivaajaayate punah ||",
+      "arth": "(उसने पिता से कहा —) \"देखिए, आपके पूर्वज कैसे चले, और आज के भले लोग कैसे चलते हैं। मनुष्य अनाज की तरह पकता और झड़ जाता है, और अनाज की तरह ही फिर पैदा होता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ७",
+      "dev": "वैश्वानरः प्रविशत्यतिथिर्ब्राह्मणो गृहान् ।\nतस्यैतां शान्तिं कुर्वन्ति हर वैवस्वतोदकम् ॥",
+      "roman": "vaishvaanarah pravishatyatithirbraahmano grihaan |\ntasyaitaam shaantim kurvanti hara vaivasvatodakam ||",
+      "arth": "(नचिकेता यम के घर पहुँचा और तीन रात बिना खाए-पिए बैठा रहा। यम लौटे तो उनसे कहा गया —) \"ब्राह्मण अतिथि घर में अग्नि की तरह प्रवेश करता है। उसे शांत करने के लिए लोग यह सत्कार करते हैं — हे सूर्यपुत्र यम, जल ले आइए।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ८",
+      "dev": "आशाप्रतीक्षे संगतं सूनृतां चेष्टापूर्ते पुत्रपशूंश्च सर्वान् ।\nएतद्वृङ्क्ते पुरुषस्याल्पमेधसो यस्यानश्नन्वसति ब्राह्मणो गृहे ॥",
+      "roman": "aashaaprateekshe samgatam soonritaam cheshtaapoorte putrapashoomshcha sarvaan |\netadvrinkte purushasyaalpamedhaso yasyaanashnanvasati braahmano grihe ||",
+      "arth": "\"जिस मंदबुद्धि के घर में ब्राह्मण अतिथि बिना खाए रहता है, उसकी आशा और प्रतीक्षा, सत्संग का फल, मीठी वाणी, यज्ञ और परोपकार के पुण्य, पुत्र और पशु — यह सब नष्ट हो जाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ९",
+      "dev": "तिस्रो रात्रीर्यदवात्सीर्गृहे मेऽनश्नन् ब्रह्मन्नतिथिर्नमस्यः ।\nनमस्तेऽस्तु ब्रह्मन् स्वस्ति मेऽस्तु तस्मात्प्रति त्रीन्वरान्वृणीष्व ॥",
+      "roman": "tisro raatreeryadavaatseergrihe me'nashnan brahmannatithirnamasyah |\nnamaste'stu brahman svasti me'stu tasmaatprati treenvaraanvrineeshva ||",
+      "arth": "(यम ने कहा —) \"हे ब्राह्मण, तुम नमस्कार के योग्य अतिथि हो, और मेरे घर में तीन रात बिना खाए रहे। तुम्हें नमस्कार; मेरा कल्याण हो। इसलिए हर रात के बदले एक — तीन वर माँग लो।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १०",
+      "dev": "शान्तसंकल्पः सुमना यथा स्याद् वीतमन्युर्गौतमो माऽभि मृत्यो ।\nत्वत्प्रसृष्टं माऽभिवदेत्प्रतीत एतत् त्रयाणां प्रथमं वरं वृणे ॥",
+      "roman": "shaantasamkalpah sumanaa yathaa syaad veetamanyurgautamo maa'bhi mrityo |\ntvatprasrishtam maa'bhivadetprateeta etat trayaanaam prathamam varam vrine ||",
+      "arth": "(नचिकेता:) \"हे मृत्यु, मेरे पिता गौतम की चिंता शांत हो जाए, उनका मन प्रसन्न हो, मुझ पर उनका क्रोध न रहे; और जब आप मुझे लौटाएँ तो वे मुझे पहचानकर प्रेम से बोलें — तीन वरों में यह पहला वर माँगता हूँ।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ११",
+      "dev": "यथा पुरस्ताद् भविता प्रतीत औद्दालकिरारुणिर्मत्प्रसृष्टः ।\nसुखं रात्रीः शयिता वीतमन्युस्त्वां ददृशिवान्मृत्युमुखात् प्रमुक्तम् ॥",
+      "roman": "yathaa purastaad bhavitaa prateeta auddaalakiraarunirmatprasrishtah |\nsukham raatreeh shayitaa veetamanyustvaam dadrishivaanmrityumukhaat pramuktam ||",
+      "arth": "(यम:) \"मेरी प्रेरणा से तुम्हारे पिता — अरुण के पुत्र उद्दालक — तुम्हें पहले की तरह पहचान लेंगे। तुम्हें मृत्यु के मुख से छूटा हुआ देखकर उनका क्रोध जाता रहेगा, और वे रातों को सुख से सोएँगे।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १२",
+      "dev": "स्वर्गे लोके न भयं किंचनास्ति न तत्र त्वं न जरया बिभेति ।\nउभे तीर्त्वाऽशनायापिपासे शोकातिगो मोदते स्वर्गलोके ॥",
+      "roman": "svarge loke na bhayam kimchanaasti na tatra tvam na jarayaa bibheti |\nubhe teertvaa'shanaayaapipaase shokaatigo modate svargaloke ||",
+      "arth": "(नचिकेता:) \"स्वर्गलोक में कोई भय नहीं है; वहाँ आप (मृत्यु) नहीं हैं, और न कोई बुढ़ापे से डरता है। भूख और प्यास — दोनों को पार करके, शोक से परे होकर मनुष्य स्वर्गलोक में आनंद करता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १३",
+      "dev": "स त्वमग्निं स्वर्ग्यमध्येषि मृत्यो प्रब्रूहि त्वं श्रद्दधानाय मह्यम् ।\nस्वर्गलोका अमृतत्वं भजन्त एतद् द्वितीयेन वृणे वरेण ॥",
+      "roman": "sa tvamagnim svargyamadhyeshi mrityo prabroohi tvam shraddadhaanaaya mahyam |\nsvargalokaa amritatvam bhajanta etad dviteeyena vrine varena ||",
+      "arth": "\"हे मृत्यु, आप स्वर्ग दिलाने वाली उस अग्नि को जानते हैं; मुझ श्रद्धा रखने वाले को वह बताइए — जिससे स्वर्ग के लोग अमरता पाते हैं। दूसरे वर से मैं यही माँगता हूँ।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १४",
+      "dev": "प्र ते ब्रवीमि तदु मे निबोध स्वर्ग्यमग्निं नचिकेतः प्रजानन् ।\nअनन्तलोकाप्तिमथो प्रतिष्ठां विद्धि त्वमेतं निहितं गुहायाम् ॥",
+      "roman": "pra te braveemi tadu me nibodha svargyamagnim nachiketah prajaanan |\nanantalokaaptimatho pratishthaam viddhi tvametam nihitam guhaayaam ||",
+      "arth": "(यम:) \"नचिकेता, स्वर्ग दिलाने वाली उस अग्नि को मैं जानता हूँ और तुम्हें बताता हूँ; ध्यान से समझो। वह अनंत लोकों की प्राप्ति कराने वाली और उनका आधार है; और जान लो कि वह हृदय की गुफा में छिपी है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १५",
+      "dev": "लोकादिमग्निं तमुवाच तस्मै या इष्टका यावतीर्वा यथा वा ।\nस चापि तत्प्रत्यवदद्यथोक्तमथास्य मृत्युः पुनरेवाह तुष्टः ॥",
+      "roman": "lokaadimagnim tamuvaacha tasmai yaa ishtakaa yaavateervaa yathaa vaa |\nsa chaapi tatpratyavadadyathoktamathaasya mrityuh punarevaaha tushtah ||",
+      "arth": "यम ने उसे वह अग्नि बताई जो लोकों का आदि-कारण है — वेदी में कौन सी ईंटें लगें, कितनी, और किस तरह। नचिकेता ने सब, जैसा कहा गया था, वैसा ही दोहरा दिया। तब प्रसन्न होकर मृत्यु फिर बोले —",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १६",
+      "dev": "तमब्रवीत् प्रीयमाणो महात्मा वरं तवेहाद्य ददामि भूयः ।\nतवैव नाम्ना भविताऽयमग्निः सृङ्कां चेमामनेकरूपां गृहाण ॥",
+      "roman": "tamabraveet preeyamaano mahaatmaa varam tavehaadya dadaami bhooyah |\ntavaiva naamnaa bhavitaa'yamagnih srinkaam chemaamanekaroopaam grihaana ||",
+      "arth": "प्रसन्न हुए महात्मा यम ने कहा — \"आज मैं तुम्हें एक वर और देता हूँ: यह अग्नि अब तुम्हारे ही नाम से जानी जाएगी। और यह कई रंगों वाली माला भी लो।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १७",
+      "dev": "त्रिणाचिकेतस्त्रिभिरेत्य सन्धिं त्रिकर्मकृत्तरति जन्ममृत्यू ।\nब्रह्मजज्ञं देवमीड्यं विदित्वा निचाय्येमां शान्तिमत्यन्तमेति ॥",
+      "roman": "trinaachiketastribhiretya sandhim trikarmakrittarati janmamrityoo |\nbrahmajajnam devameedyam viditvaa nichaayyemaam shaantimatyantameti ||",
+      "arth": "\"जो तीन बार नाचिकेत अग्नि का चयन करता है, तीनों (माता, पिता और आचार्य) से जुड़ा रहता है और तीन कर्म (यज्ञ, दान, तप) करता है, वह जन्म और मृत्यु को पार कर जाता है। ब्रह्म से उत्पन्न, सब जानने वाले उस पूजनीय देव को जानकर और अनुभव करके वह परम शांति पाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १८",
+      "dev": "त्रिणाचिकेतस्त्रयमेतद्विदित्वा य एवं विद्वांश्चिनुते नाचिकेतम् ।\nस मृत्युपाशान् पुरतः प्रणोद्य शोकातिगो मोदते स्वर्गलोके ॥",
+      "roman": "trinaachiketastrayametadviditvaa ya evam vidvaamshchinute naachiketam |\nsa mrityupaashaan puratah pranodya shokaatigo modate svargaloke ||",
+      "arth": "\"जो इन तीनों बातों (ईंटें, उनकी गिनती और विधि) को जानकर तीन बार नाचिकेत अग्नि का चयन करता है, वह शरीर छूटने से पहले ही मृत्यु के फंदों को काट देता है, और शोक से परे होकर स्वर्गलोक में आनंद करता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १९",
+      "dev": "एष तेऽग्निर्नचिकेतः स्वर्ग्यो यमवृणीथा द्वितीयेन वरेण ।\nएतमग्निं तवैव प्रवक्ष्यन्ति जनासस्तृतीयं वरं नचिकेतो वृणीष्व ॥",
+      "roman": "esha te'gnirnachiketah svargyo yamavrineethaa dviteeyena varena |\netamagnim tavaiva pravakshyanti janaasastriteeyam varam nachiketo vrineeshva ||",
+      "arth": "\"नचिकेता, यह तुम्हारी स्वर्ग दिलाने वाली अग्नि है, जिसे तुमने दूसरे वर से माँगा था। लोग इस अग्नि को तुम्हारे ही नाम से पुकारेंगे। अब तीसरा वर माँगो।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २०",
+      "dev": "येयं प्रेते विचिकित्सा मनुष्येऽस्तीत्येके नायमस्तीति चैके ।\nएतद्विद्यामनुशिष्टस्त्वयाऽहं वराणामेष वरस्तृतीयः ॥",
+      "roman": "yeyam prete vichikitsaa manushye'steetyeke naayamasteeti chaike |\netadvidyaamanushishtastvayaa'ham varaanaamesha varastriteeyah ||",
+      "arth": "(नचिकेता:) \"मरे हुए मनुष्य के बारे में यह जो संदेह है — कोई कहता है कि वह रहता है, कोई कहता है कि नहीं रहता — आपके सिखाने से मैं इसे जान लूँ। वरों में यही मेरा तीसरा वर है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २१",
+      "dev": "देवैरत्रापि विचिकित्सितं पुरा न हि सुविज्ञेयमणुरेष धर्मः ।\nअन्यं वरं नचिकेतो वृणीष्व मा मोपरोत्सीरति मा सृजैनम् ॥",
+      "roman": "devairatraapi vichikitsitam puraa na hi suvijneyamanuresha dharmah |\nanyam varam nachiketo vrineeshva maa moparotseerati maa srijainam ||",
+      "arth": "(यम:) \"इस बात पर तो पुराने समय में देवताओं को भी संदेह रहा है। यह विषय बहुत सूक्ष्म है, आसानी से समझ में आने वाला नहीं। नचिकेता, कोई दूसरा वर माँग लो; मुझ पर दबाव मत डालो, मुझे इस वर से छोड़ दो।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २२",
+      "dev": "देवैरत्रापि विचिकित्सितं किल त्वं च मृत्यो यन्न सुज्ञेयमात्थ ।\nवक्ता चास्य त्वादृगन्यो न लभ्यो नान्यो वरस्तुल्य एतस्य कश्चित् ॥",
+      "roman": "devairatraapi vichikitsitam kila tvam cha mrityo yanna sujneyamaattha |\nvaktaa chaasya tvaadriganyo na labhyo naanyo varastulya etasya kashchit ||",
+      "arth": "(नचिकेता:) \"हे मृत्यु, जब देवताओं को भी इस पर संदेह रहा, और आप ख़ुद कहते हैं कि यह आसानी से जानने लायक़ नहीं — तो इसे बताने वाला आप जैसा दूसरा कोई मिल नहीं सकता, और इसके बराबर कोई दूसरा वर नहीं है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २३",
+      "dev": "शतायुषः पुत्रपौत्रान्वृणीष्व बहून्पशून् हस्तिहिरण्यमश्वान् ।\nभूमेर्महदायतनं वृणीष्व स्वयं च जीव शरदो यावदिच्छसि ॥",
+      "roman": "shataayushah putrapautraanvrineeshva bahoonpashoon hastihiranyamashvaan |\nbhoomermahadaayatanam vrineeshva svayam cha jeeva sharado yaavadichchhasi ||",
+      "arth": "(यम:) \"सौ-सौ बरस जीने वाले बेटे-पोते माँग लो; बहुत से पशु, हाथी, सोना और घोड़े माँग लो; धरती का बड़ा राज्य माँग लो — और ख़ुद जितने बरस चाहो, जियो।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २४",
+      "dev": "एतत्तुल्यं यदि मन्यसे वरं वृणीष्व वित्तं चिरजीविकां च ।\nमहाभूमौ नचिकेतस्त्वमेधि कामानां त्वा कामभाजं करोमि ॥",
+      "roman": "etattulyam yadi manyase varam vrineeshva vittam chirajeevikaam cha |\nmahaabhoomau nachiketastvamedhi kaamaanaam tvaa kaamabhaajam karomi ||",
+      "arth": "\"इसके बराबर और कोई वर सूझता हो तो वह भी माँग लो — धन और लंबी आयु। नचिकेता, तुम बड़ी धरती के राजा बनो; मैं तुम्हें सब कामनाओं को भोगने वाला बना देता हूँ।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २५",
+      "dev": "ये ये कामा दुर्लभा मर्त्यलोके सर्वान् कामांश्छन्दतः प्रार्थयस्व ।\nइमा रामाः सरथाः सतूर्या न हीदृशा लम्भनीया मनुष्यैः ।\nआभिर्मत्प्रत्ताभिः परिचारयस्व नचिकेतो मरणं माऽनुप्राक्षीः ॥",
+      "roman": "ye ye kaamaa durlabhaa martyaloke sarvaan kaamaamshchhandatah praarthayasva |\nimaa raamaah sarathaah satooryaa na heedrishaa lambhaneeyaa manushyaih |\naabhirmatprattaabhih parichaarayasva nachiketo maranam maa'nupraaksheeh ||",
+      "arth": "\"मनुष्य-लोक में जो-जो भोग दुर्लभ हैं, वे सब अपनी इच्छा से माँग लो। रथों और बाजों के साथ ये सुंदर स्त्रियाँ — ऐसी मनुष्यों को मिल ही नहीं सकतीं; मैं देता हूँ, इनसे अपनी सेवा कराओ। पर नचिकेता, मरने के बाद की बात मत पूछो।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २६",
+      "dev": "श्वोभावा मर्त्यस्य यदन्तकैतत् सर्वेन्द्रियाणां जरयन्ति तेजः ।\nअपि सर्वं जीवितमल्पमेव तवैव वाहास्तव नृत्यगीते ॥",
+      "roman": "shvobhaavaa martyasya yadantakaitat sarvendriyaanaam jarayanti tejah |\napi sarvam jeevitamalpameva tavaiva vaahaastava nrityageete ||",
+      "arth": "(नचिकेता:) \"हे अंतक (मृत्यु), ये सब भोग कल तक रहेंगे या नहीं, पता नहीं; और ये मनुष्य की सारी इंद्रियों का तेज घिसा देते हैं। पूरा जीवन भी थोड़ा ही है। ये रथ आपके ही पास रहें, यह नाच-गाना भी आपका ही रहे।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २७",
+      "dev": "न वित्तेन तर्पणीयो मनुष्यो लप्स्यामहे वित्तमद्राक्ष्म चेत्त्वा ।\nजीविष्यामो यावदीशिष्यसि त्वं वरस्तु मे वरणीयः स एव ॥",
+      "roman": "na vittena tarpaneeyo manushyo lapsyaamahe vittamadraakshma chettvaa |\njeevishyaamo yaavadeeshishyasi tvam varastu me varaneeyah sa eva ||",
+      "arth": "\"धन से मनुष्य कभी तृप्त नहीं होता। और जब आपके दर्शन हो गए तो धन तो मिल ही जाएगा; जब तक आपका शासन है, हम जीते भी रहेंगे। पर मेरे माँगने लायक़ वर तो वही है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २८",
+      "dev": "अजीर्यताममृतानामुपेत्य जीर्यन्मर्त्यः क्वधःस्थः प्रजानन् ।\nअभिध्यायन् वर्णरतिप्रमोदान् अतिदीर्घे जीविते को रमेत ॥",
+      "roman": "ajeeryataamamritaanaamupetya jeeryanmartyah kvadhahsthah prajaanan |\nabhidhyaayan varnaratipramodaan atideerghe jeevite ko rameta ||",
+      "arth": "\"नीचे पृथ्वी पर रहने वाला, बूढ़ा होने और मरने वाला मनुष्य — जो कभी बूढ़े न होने वाले अमर देवों के पास पहुँच गया हो और यह सब समझता हो — वह रूप, भोग और मौज-मस्ती का सच सोचकर बहुत लंबे जीवन में भी भला क्या सुख मानेगा?\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २९",
+      "dev": "यस्मिन्निदं विचिकित्सन्ति मृत्यो यत्साम्पराये महति ब्रूहि नस्तत् ।\nयोऽयं वरो गूढमनुप्रविष्टो नान्यं तस्मान्नचिकेता वृणीते ॥",
+      "roman": "yasminnidam vichikitsanti mrityo yatsaamparaaye mahati broohi nastat |\nyo'yam varo goodhamanupravishto naanyam tasmaannachiketaa vrineete ||",
+      "arth": "\"हे मृत्यु, जिस बात पर लोग संदेह करते हैं — उस महान परलोक-यात्रा में क्या होता है — वही हमें बताइए। यह वर जो इस गहरे रहस्य तक पहुँचता है — नचिकेता इसके सिवा कोई दूसरा वर नहीं माँगता।\"",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "कृष्ण यजुर्वेद, कठ शाखा — दो अध्याय, छह वल्लियाँ",
+    "kshetra": "सब जगह — वेदांत का स्वाध्याय",
+    "note": "एक सौ उन्नीस मंत्र तीन जगह मिलाए गए — एक संग्रह, एक शोध-संस्करण पर बना पाठ और एक पुराने छपे संस्करण की प्रतिलिपि — और छपी हिंदी टीका से देखे गए। जहाँ संग्रह अकेला पड़ा वहाँ बाक़ी गवाहों का पाठ रखा है: \"ईशानो भूतभव्यस्य\", \"न विचेष्टति\", और चरणों के बीच की संधि।\n\nदो जगह आचार्यों ने मंत्र को अलग-अलग पढ़ा है: \"यमेवैष वृणुते\" — आत्मा साधक को चुनता है या साधक आत्मा को; और \"धातुप्रसादात्\" — मन की निर्मलता से या विधाता की कृपा से। यहाँ सीधा शब्दार्थ है, किसी एक मत का भाष्य नहीं।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

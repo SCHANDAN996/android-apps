@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "id": "upanishad_kena",
+  "naam": "केन उपनिषद",
+  "upnaam": [
+    "केनोपनिषद",
+    "केनोपनिषत्",
+    "तलवकार उपनिषद",
+    "केनेषितं पतति"
+  ],
+  "prakar": "granth",
+  "devta": "ब्रह्म (परमात्मा)",
+  "rachnakar": "सामवेद — जैमिनीय (तलवकार) ब्राह्मण का भाग",
+  "bhasha": "संस्कृत",
+  "parichay": "\"केन\" यानी \"किसके द्वारा?\" — उपनिषद इसी प्रश्न से खुलता है: मन किसके भेजने से चलता है, आँख और कान को कौन काम में लगाता है? उत्तर है — वह, जो कान का भी कान और मन का भी मन है; जिसे आँख नहीं देखती, पर जिससे आँख देखती है। वही ब्रह्म है।\n\nपहले दो खंड पद्य में हैं। तीसरे और चौथे खंड में एक कथा है: देवता अपनी जीत पर फूल उठे, तब ब्रह्म एक यक्ष के रूप में प्रकट हुआ — और अग्नि एक तिनका न जला सका, वायु उसे हिला न सका। अंत में उमा हैमवती ने इंद्र को बताया कि वह ब्रह्म था।",
+  "kabPadhein": "किसी भी शांत समय — सुबह या शाम। उपनिषद पूजा का पाठ नहीं, स्वाध्याय और मनन के लिए हैं: थोड़ा पढ़ें, और जो पढ़ा उस पर रुककर सोचें।",
+  "kaisePadhein": "परंपरा में उपनिषद का पाठ शांति पाठ से शुरू होता है और उसी पर ख़त्म — इसलिए हर उपनिषद का पहला खंड उसका शांति पाठ है; पाठ पूरा करके उसे एक बार फिर पढ़ लें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर मंत्र के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं। यहाँ वैदिक स्वर-चिह्न नहीं हैं; साफ़ और धीमा उच्चारण रखें।\n\nउपनिषद के मंत्र गूढ़ हैं और आचार्यों ने कई मंत्रों को अलग-अलग ढंग से समझाया है। यहाँ का अर्थ सिर्फ़ पहली सीढ़ी है — गहराई से समझना हो तो किसी जानकार के साथ या किसी भाष्य के सहारे पढ़ें।",
+  "khand": [
+    {
+      "shirshak": "शांति पाठ",
+      "dev": "ॐ आप्यायन्तु ममाङ्गानि वाक्प्राणश्चक्षुः श्रोत्रमथो बलमिन्द्रियाणि च सर्वाणि ।\nसर्वं ब्रह्मौपनिषदं माऽहं ब्रह्म निराकुर्यां मा मा ब्रह्म निराकरोदनिराकरणमस्त्वनिराकरणं मेऽस्तु ।\nतदात्मनि निरते य उपनिषत्सु धर्मास्ते मयि सन्तु ते मयि सन्तु ॥\nॐ शान्तिः शान्तिः शान्तिः ॥",
+      "roman": "om aapyaayantu mamaangaani vaakpraanashchakshuh shrotramatho balamindriyaani cha sarvaani |\nsarvam brahmaupanishadam maa'ham brahma niraakuryaam maa maa brahma niraakarodaniraakaranamastvaniraakaranam me'stu |\ntadaatmani nirate ya upanishatsu dharmaaste mayi santu te mayi santu ||\nom shaantih shaantih shaantih ||",
+      "arth": "मेरे अंग पुष्ट हों — वाणी, प्राण, आँखें, कान, बल और सारी इंद्रियाँ। यह सब उपनिषदों में कहा हुआ ब्रह्म ही है। मैं ब्रह्म को कभी न नकारूँ और ब्रह्म मुझे कभी न त्यागे; हमारा नाता न टूटे, मेरा नाता न टूटे। आत्मा में लगे हुए मुझमें वे सब धर्म बसें जो उपनिषदों में कहे गए हैं — वे मुझमें बसें। तीनों तरह के ताप शांत हों।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १.१",
+      "dev": "ॐ केनेषितं पतति प्रेषितं मनः केन प्राणः प्रथमः प्रैति युक्तः ।\nकेनेषितां वाचमिमां वदन्ति चक्षुः श्रोत्रं क उ देवो युनक्ति ॥",
+      "roman": "om keneshitam patati preshitam manah kena praanah prathamah praiti yuktah |\nkeneshitaam vaachamimaam vadanti chakshuh shrotram ka u devo yunakti ||",
+      "arth": "(शिष्य पूछता है:) किसकी इच्छा से भेजा हुआ मन अपने विषयों की ओर जाता है? किसके लगाने से पहला प्राण चलता है? किसकी इच्छा से लोग यह वाणी बोलते हैं? और कौन देव आँख और कान को काम में लगाता है?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १.२",
+      "dev": "श्रोत्रस्य श्रोत्रं मनसो मनो यद् वाचो ह वाचं स उ प्राणस्य प्राणः ।\nचक्षुषश्चक्षुरतिमुच्य धीराः प्रेत्यास्माल्लोकादमृता भवन्ति ॥",
+      "roman": "shrotrasya shrotram manaso mano yad vaacho ha vaacham sa u praanasya praanah |\nchakshushashchakshuratimuchya dheeraah pretyaasmaallokaadamritaa bhavanti ||",
+      "arth": "(गुरु कहते हैं:) वह कान का भी कान है, मन का भी मन, वाणी की भी वाणी; वही प्राण का प्राण और आँख की आँख है। यह जानकर धीर पुरुष इंद्रियों में अपनापन छोड़ देते हैं, और इस लोक से जाने पर अमर हो जाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १.३",
+      "dev": "न तत्र चक्षुर्गच्छति न वाग्गच्छति नो मनः ।\nन विद्मो न विजानीमो यथैतदनुशिष्यात् ॥",
+      "roman": "na tatra chakshurgachchhati na vaaggachchhati no manah |\nna vidmo na vijaaneemo yathaitadanushishyaat ||",
+      "arth": "वहाँ न आँख पहुँचती है, न वाणी पहुँचती है, न मन। हम उसे नहीं जानते; और यह भी नहीं समझ पाते कि उसे किस तरह सिखाया जाए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १.४",
+      "dev": "अन्यदेव तद्विदितादथो अविदितादधि ।\nइति शुश्रुम पूर्वेषां ये नस्तद्व्याचचक्षिरे ॥",
+      "roman": "anyadeva tadviditaadatho aviditaadadhi |\niti shushruma poorveshaam ye nastadvyaachachakshire ||",
+      "arth": "वह जाने हुए से अलग है, और अनजाने से भी ऊपर है — ऐसा हमने उन पूर्वजों से सुना है जिन्होंने हमें यह समझाया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १.५",
+      "dev": "यद्वाचाऽनभ्युदितं येन वागभ्युद्यते ।\nतदेव ब्रह्म त्वं विद्धि नेदं यदिदमुपासते ॥",
+      "roman": "yadvaachaa'nabhyuditam yena vaagabhyudyate |\ntadeva brahma tvam viddhi nedam yadidamupaasate ||",
+      "arth": "जिसे वाणी नहीं कह पाती, बल्कि जिससे वाणी बोली जाती है — उसी को तुम ब्रह्म जानो; वह नहीं, जिसकी लोग यहाँ उपासना करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १.६",
+      "dev": "यन्मनसा न मनुते येनाहुर्मनो मतम् ।\nतदेव ब्रह्म त्वं विद्धि नेदं यदिदमुपासते ॥",
+      "roman": "yanmanasaa na manute yenaahurmano matam |\ntadeva brahma tvam viddhi nedam yadidamupaasate ||",
+      "arth": "जिसे मन नहीं सोच पाता, बल्कि जिससे मन सोचा हुआ कहा जाता है — उसी को तुम ब्रह्म जानो; वह नहीं, जिसकी लोग यहाँ उपासना करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १.७",
+      "dev": "यच्चक्षुषा न पश्यति येन चक्षूंषि पश्यति ।\nतदेव ब्रह्म त्वं विद्धि नेदं यदिदमुपासते ॥",
+      "roman": "yachchakshushaa na pashyati yena chakshoomshi pashyati |\ntadeva brahma tvam viddhi nedam yadidamupaasate ||",
+      "arth": "जिसे आँख नहीं देख पाती, बल्कि जिससे आँखें देखती हैं — उसी को तुम ब्रह्म जानो; वह नहीं, जिसकी लोग यहाँ उपासना करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १.८",
+      "dev": "यच्छ्रोत्रेण न शृणोति येन श्रोत्रमिदं श्रुतम् ।\nतदेव ब्रह्म त्वं विद्धि नेदं यदिदमुपासते ॥",
+      "roman": "yachchhrotrena na shrinoti yena shrotramidam shrutam |\ntadeva brahma tvam viddhi nedam yadidamupaasate ||",
+      "arth": "जिसे कान नहीं सुन पाता, बल्कि जिससे यह कान सुना हुआ होता है — उसी को तुम ब्रह्म जानो; वह नहीं, जिसकी लोग यहाँ उपासना करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १.९",
+      "dev": "यत्प्राणेन न प्राणिति येन प्राणः प्रणीयते ।\nतदेव ब्रह्म त्वं विद्धि नेदं यदिदमुपासते ॥",
+      "roman": "yatpraanena na praaniti yena praanah praneeyate |\ntadeva brahma tvam viddhi nedam yadidamupaasate ||",
+      "arth": "जो प्राण से साँस नहीं लेता, बल्कि जिससे प्राण चलाया जाता है — उसी को तुम ब्रह्म जानो; वह नहीं, जिसकी लोग यहाँ उपासना करते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २.१",
+      "dev": "यदि मन्यसे सुवेदेति दभ्रमेवापि नूनं त्वं वेत्थ ब्रह्मणो रूपम् ।\nयदस्य त्वं यदस्य देवेष्वथ नु मीमांस्यमेव ते मन्ये विदितम् ॥",
+      "roman": "yadi manyase suvedeti dabhramevaapi noonam tvam vettha brahmano roopam |\nyadasya tvam yadasya deveshvatha nu meemaamsyameva te manye viditam ||",
+      "arth": "(गुरु:) अगर तुम मानते हो कि \"मैं ब्रह्म को अच्छी तरह जानता हूँ\", तो निश्चय ही तुम ब्रह्म का बहुत थोड़ा रूप जानते हो — चाहे वह रूप तुममें हो या देवताओं में। इसलिए तुम्हें अभी और विचार करना चाहिए। (शिष्य, सोचकर:) मुझे लगता है कि मैंने जान लिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २.२",
+      "dev": "नाहं मन्ये सुवेदेति नो न वेदेति वेद च ।\nयो नस्तद्वेद तद्वेद नो न वेदेति वेद च ॥",
+      "roman": "naaham manye suvedeti no na vedeti veda cha |\nyo nastadveda tadveda no na vedeti veda cha ||",
+      "arth": "मैं यह नहीं मानता कि मैं उसे अच्छी तरह जानता हूँ; और यह भी नहीं कि मैं उसे नहीं जानता — जानता भी हूँ। हममें से जो इस बात को समझता है, वही उसे जानता है — कि \"ऐसा नहीं कि मैं नहीं जानता, और जानता भी हूँ\"।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २.३",
+      "dev": "यस्यामतं तस्य मतं मतं यस्य न वेद सः ।\nअविज्ञातं विजानतां विज्ञातमविजानताम् ॥",
+      "roman": "yasyaamatam tasya matam matam yasya na veda sah |\navijnaatam vijaanataam vijnaatamavijaanataam ||",
+      "arth": "जो मानता है कि ब्रह्म जाना नहीं गया, उसी ने उसे जाना है; जो मानता है कि मैंने जान लिया, वह नहीं जानता। जानने का दावा करने वालों के लिए वह अनजाना है, और दावा न करने वालों के लिए जाना हुआ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २.४",
+      "dev": "प्रतिबोधविदितं मतममृतत्वं हि विन्दते ।\nआत्मना विन्दते वीर्यं विद्यया विन्दतेऽमृतम् ॥",
+      "roman": "pratibodhaviditam matamamritatvam hi vindate |\naatmanaa vindate veeryam vidyayaa vindate'mritam ||",
+      "arth": "जब वह हर एक अनुभव में पहचाना जाता है, तभी ठीक से जाना गया — और तब मनुष्य अमरता पाता है। अपनी आत्मा से बल मिलता है, और ज्ञान से अमरता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २.५",
+      "dev": "इह चेदवेदीदथ सत्यमस्ति न चेदिहावेदीन्महती विनष्टिः ।\nभूतेषु भूतेषु विचित्य धीराः प्रेत्यास्माल्लोकादमृता भवन्ति ॥",
+      "roman": "iha chedavedeedatha satyamasti na chedihaavedeenmahatee vinashtih |\nbhooteshu bhooteshu vichitya dheeraah pretyaasmaallokaadamritaa bhavanti ||",
+      "arth": "अगर यहीं, इसी जीवन में जान लिया, तो जीवन सच्चा हुआ; अगर यहाँ नहीं जाना, तो बहुत बड़ी हानि है। धीर पुरुष हर प्राणी में उसी को पहचानकर, इस लोक से जाने पर अमर हो जाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.१",
+      "dev": "ब्रह्म ह देवेभ्यो विजिग्ये तस्य ह ब्रह्मणो विजये देवा अमहीयन्त ॥",
+      "roman": "brahma ha devebhyo vijigye tasya ha brahmano vijaye devaa amaheeyanta ||",
+      "arth": "एक बार ब्रह्म ने देवताओं के लिए विजय पाई। ब्रह्म की उस विजय पर देवता फूल उठे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.२",
+      "dev": "त ऐक्षन्तास्माकमेवायं विजयोऽस्माकमेवायं महिमेति ।\nतद्धैषां विजज्ञौ तेभ्यो ह प्रादुर्बभूव तन्न व्यजानत किमिदं यक्षमिति ॥",
+      "roman": "ta aikshantaasmaakamevaayam vijayo'smaakamevaayam mahimeti |\ntaddhaishaam vijajnau tebhyo ha praadurbabhoova tanna vyajaanata kimidam yakshamiti ||",
+      "arth": "उन्होंने सोचा — \"यह जीत हमारी ही है, यह महिमा हमारी ही है।\" ब्रह्म ने उनका यह भाव जान लिया और उनके सामने प्रकट हुआ; पर वे पहचान न सके कि यह अद्भुत रूप (यक्ष) कौन है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.३",
+      "dev": "तेऽग्निमब्रुवञ्जातवेद एतद्विजानीहि किमिदं यक्षमिति तथेति ॥",
+      "roman": "te'gnimabruvanjaataveda etadvijaaneehi kimidam yakshamiti tatheti ||",
+      "arth": "उन्होंने अग्नि से कहा — \"हे जातवेदा, पता लगाओ कि यह यक्ष कौन है।\" अग्नि ने कहा — \"ठीक है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.४",
+      "dev": "तदभ्यद्रवत्तमभ्यवदत्कोऽसीत्यग्निर्वा अहमस्मीत्यब्रवीज्जातवेदा वा अहमस्मीति ॥",
+      "roman": "tadabhyadravattamabhyavadatko'seetyagnirvaa ahamasmeetyabraveejjaatavedaa vaa ahamasmeeti ||",
+      "arth": "अग्नि उसके पास दौड़ा। उसने अग्नि से पूछा — \"तुम कौन हो?\" अग्नि बोला — \"मैं अग्नि हूँ; मैं ही जातवेदा हूँ।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.५",
+      "dev": "तस्मिंस्त्वयि किं वीर्यमित्यपीदं सर्वं दहेयं यदिदं पृथिव्यामिति ॥",
+      "roman": "tasmimstvayi kim veeryamityapeedam sarvam daheyam yadidam prithivyaamiti ||",
+      "arth": "\"तो तुममें क्या शक्ति है?\" \"पृथ्वी पर जो कुछ है, मैं वह सब जला सकता हूँ।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.६",
+      "dev": "तस्मै तृणं निदधावेतद्दहेति ।\nतदुपप्रेयाय सर्वजवेन तन्न शशाक दग्धुं स तत एव निववृते नैतदशकं विज्ञातुं यदेतद्यक्षमिति ॥",
+      "roman": "tasmai trinam nidadhaavetaddaheti |\ntadupapreyaaya sarvajavena tanna shashaaka dagdhum sa tata eva nivavrite naitadashakam vijnaatum yadetadyakshamiti ||",
+      "arth": "उसने अग्नि के सामने एक तिनका रखा और कहा — \"इसे जलाओ।\" अग्नि पूरे वेग से उस पर झपटा, पर उसे जला न सका। वह वहीं से लौट आया और बोला — \"मैं नहीं जान सका कि यह यक्ष कौन है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.७",
+      "dev": "अथ वायुमब्रुवन्वायवेतद्विजानीहि किमेतद्यक्षमिति तथेति ॥",
+      "roman": "atha vaayumabruvanvaayavetadvijaaneehi kimetadyakshamiti tatheti ||",
+      "arth": "फिर उन्होंने वायु से कहा — \"हे वायु, पता लगाओ कि यह यक्ष कौन है।\" वायु ने कहा — \"ठीक है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.८",
+      "dev": "तदभ्यद्रवत्तमभ्यवदत्कोऽसीति वायुर्वा अहमस्मीत्यब्रवीन्मातरिश्वा वा अहमस्मीति ॥",
+      "roman": "tadabhyadravattamabhyavadatko'seeti vaayurvaa ahamasmeetyabraveenmaatarishvaa vaa ahamasmeeti ||",
+      "arth": "वायु उसके पास दौड़ा। उसने वायु से पूछा — \"तुम कौन हो?\" वायु बोला — \"मैं वायु हूँ; मैं ही मातरिश्वा हूँ।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.९",
+      "dev": "तस्मिंस्त्वयि किं वीर्यमित्यपीदं सर्वमाददीय यदिदं पृथिव्यामिति ॥",
+      "roman": "tasmimstvayi kim veeryamityapeedam sarvamaadadeeya yadidam prithivyaamiti ||",
+      "arth": "\"तो तुममें क्या शक्ति है?\" \"पृथ्वी पर जो कुछ है, मैं वह सब उठा ले जा सकता हूँ।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.१०",
+      "dev": "तस्मै तृणं निदधावेतदादत्स्वेति तदुपप्रेयाय सर्वजवेन तन्न शशाकादातुं स तत एव निववृते नैतदशकं विज्ञातुं यदेतद्यक्षमिति ॥",
+      "roman": "tasmai trinam nidadhaavetadaadatsveti tadupapreyaaya sarvajavena tanna shashaakaadaatum sa tata eva nivavrite naitadashakam vijnaatum yadetadyakshamiti ||",
+      "arth": "उसने वायु के सामने एक तिनका रखा और कहा — \"इसे उठाओ।\" वायु पूरे वेग से उस पर झपटा, पर उसे उठा न सका। वह वहीं से लौट आया और बोला — \"मैं नहीं जान सका कि यह यक्ष कौन है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.११",
+      "dev": "अथेन्द्रमब्रुवन्मघवन्नेतद्विजानीहि किमेतद्यक्षमिति तथेति तदभ्यद्रवत्तस्मात्तिरोदधे ॥",
+      "roman": "athendramabruvanmaghavannetadvijaaneehi kimetadyakshamiti tatheti tadabhyadravattasmaattirodadhe ||",
+      "arth": "फिर उन्होंने इंद्र से कहा — \"हे मघवन्, पता लगाओ कि यह यक्ष कौन है।\" इंद्र ने कहा — \"ठीक है\", और उसके पास दौड़ा; पर वह इंद्र के सामने से ओझल हो गया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३.१२",
+      "dev": "स तस्मिन्नेवाकाशे स्त्रियमाजगाम बहुशोभमानामुमां हैमवतीं तां होवाच किमेतद्यक्षमिति ॥",
+      "roman": "sa tasminnevaakaashe striyamaajagaama bahushobhamaanaamumaam haimavateem taam hovaacha kimetadyakshamiti ||",
+      "arth": "उसी आकाश में इंद्र को एक बहुत शोभा वाली स्त्री मिली — हिमवान की पुत्री उमा। इंद्र ने उनसे पूछा — \"यह यक्ष कौन था?\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४.१",
+      "dev": "सा ब्रह्मेति होवाच ब्रह्मणो वा एतद्विजये महीयध्वमिति ततो हैव विदाञ्चकार ब्रह्मेति ॥",
+      "roman": "saa brahmeti hovaacha brahmano vaa etadvijaye maheeyadhvamiti tato haiva vidaanchakaara brahmeti ||",
+      "arth": "उमा ने कहा — \"वह ब्रह्म था। ब्रह्म की ही विजय पर तुम सब फूल रहे थे।\" तभी इंद्र ने जाना कि वह ब्रह्म था।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४.२",
+      "dev": "तस्माद्वा एते देवा अतितरामिवान्यान्देवान्यदग्निर्वायुरिन्द्रस्ते ह्येनन्नेदिष्ठं पस्पृशुस्ते ह्येनत्प्रथमो विदाञ्चकार ब्रह्मेति ॥",
+      "roman": "tasmaadvaa ete devaa atitaraamivaanyaandevaanyadagnirvaayurindraste hyenannedishtham pasprishuste hyenatprathamo vidaanchakaara brahmeti ||",
+      "arth": "इसीलिए ये देवता — अग्नि, वायु और इंद्र — बाक़ी देवताओं से बढ़कर माने गए; क्योंकि ये ही उसके सबसे पास पहुँचे, और इन्होंने ही सबसे पहले जाना कि वह ब्रह्म है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४.३",
+      "dev": "तस्माद्वा इन्द्रोऽतितरामिवान्यान्देवान्स ह्येनन्नेदिष्ठं पस्पर्श स ह्येनत्प्रथमो विदाञ्चकार ब्रह्मेति ॥",
+      "roman": "tasmaadvaa indro'titaraamivaanyaandevaansa hyenannedishtham pasparsha sa hyenatprathamo vidaanchakaara brahmeti ||",
+      "arth": "और इसीलिए इंद्र बाक़ी देवताओं से बढ़कर माना गया; क्योंकि वही उसके सबसे पास पहुँचा, और उसी ने सबसे पहले जाना कि वह ब्रह्म है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४.४",
+      "dev": "तस्यैष आदेशो यदेतद्विद्युतो व्यद्युतदा३ इतीन्न्यमीमिषदा३ इत्यधिदैवतम् ॥",
+      "roman": "tasyaisha aadesho yadetadvidyuto vyadyutadaa iteennyameemishadaa ityadhidaivatam ||",
+      "arth": "उस ब्रह्म की पहचान यह बताई गई है — जैसे बिजली कौंध जाए, या जैसे पलक झपक जाए। यह देवताओं के जगत से ली हुई उपमा है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४.५",
+      "dev": "अथाध्यात्मं यदेतद्गच्छतीव च मनोऽनेन चैतदुपस्मरत्यभीक्ष्णं सङ्कल्पः ॥",
+      "roman": "athaadhyaatmam yadetadgachchhateeva cha mano'nena chaitadupasmaratyabheekshnam sankalpah ||",
+      "arth": "अब अपने भीतर की उपमा — जब मन मानो उसकी ओर जाता है, उसी के सहारे उसे बार-बार याद करता है, और संकल्प करता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४.६",
+      "dev": "तद्ध तद्वनं नाम तद्वनमित्युपासितव्यं स य एतदेवं वेदाभि हैनं सर्वाणि भूतानि संवाञ्छन्ति ॥",
+      "roman": "taddha tadvanam naama tadvanamityupaasitavyam sa ya etadevam vedaabhi hainam sarvaani bhootaani samvaanchhanti ||",
+      "arth": "उस ब्रह्म का नाम \"तद्वन\" है — जिसे सब चाहते हैं; इसी नाम से उसकी उपासना करनी चाहिए। जो उसे इस तरह जानता है, उसे सब प्राणी चाहने लगते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४.७",
+      "dev": "उपनिषदं भो ब्रूहीत्युक्ता त उपनिषद्ब्राह्मीं वाव त उपनिषदमब्रूमेति ॥",
+      "roman": "upanishadam bho brooheetyuktaa ta upanishadbraahmeem vaava ta upanishadamabroometi ||",
+      "arth": "(शिष्य:) \"भगवन्, मुझे उपनिषद बताइए।\" (गुरु:) \"उपनिषद तुम्हें बता दी गई; हमने तुम्हें ब्रह्म की ही उपनिषद बताई है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४.८",
+      "dev": "तस्यै तपो दमः कर्मेति प्रतिष्ठा वेदाः सर्वाङ्गानि सत्यमायतनम् ॥",
+      "roman": "tasyai tapo damah karmeti pratishthaa vedaah sarvaangaani satyamaayatanam ||",
+      "arth": "तप, इंद्रियों का संयम और कर्म — ये उस विद्या की नींव हैं। वेद उसके सारे अंग हैं, और सत्य उसका घर है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४.९",
+      "dev": "यो वा एतामेवं वेदापहत्य पाप्मानमनन्ते स्वर्गे लोके ज्येये प्रतितिष्ठति प्रतितिष्ठति ॥",
+      "roman": "yo vaa etaamevam vedaapahatya paapmaanamanante svarge loke jyeye pratitishthati pratitishthati ||",
+      "arth": "जो इस विद्या को इस तरह जानता है, वह पाप को मिटाकर उस अनंत, सबसे ऊँचे स्वर्ग-लोक में टिक जाता है — सचमुच टिक जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "सामवेद, तलवकार (जैमिनीय) शाखा — चार खंड",
+    "kshetra": "सब जगह — वेदांत का स्वाध्याय",
+    "note": "पैंतीसों मंत्र एक संग्रह, पुराने छपे संस्करणों की दो प्रतिलिपियों और एक छपी हिंदी टीका से मिलाए गए। जहाँ फ़र्क़ निकला वहाँ छपी पुस्तकों वाला पाठ रखा है: दूसरे खंड के पहले मंत्र में \"दभ्रमेवापि\" (कुछ पुस्तकों में \"दहरमेवापि\") और चौथे खंड के दूसरे मंत्र में \"पस्पृशुः\" (कुछ में \"पस्पर्शुः\")। आपकी पुस्तक का पाठ अलग हो तो वही आपके लिए सही है।\n\nपहले खंड में कुछ पुस्तकें तीसरा और चौथा मंत्र मिलाकर आठ गिनती हैं; यहाँ नौ हैं।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है — किसी एक आचार्य का भाष्य नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

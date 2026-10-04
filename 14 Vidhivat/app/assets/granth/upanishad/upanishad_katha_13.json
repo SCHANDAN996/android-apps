@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "id": "upanishad_katha_13",
+  "naam": "कठ — अध्याय १, वल्ली ३",
+  "upnaam": [
+    "रथ का रूपक",
+    "उत्तिष्ठत जाग्रत"
+  ],
+  "prakar": "granth",
+  "devta": "ब्रह्म (परमात्मा)",
+  "rachnakar": "कृष्ण यजुर्वेद — कठ शाखा",
+  "bhasha": "संस्कृत",
+  "parichay": "रथ का प्रसिद्ध रूपक: आत्मा रथ का स्वामी है, शरीर रथ, बुद्धि सारथी, मन लगाम और इंद्रियाँ घोड़े। जिसका सारथी सधा हुआ है, वही रास्ते के पार पहुँचता है। फिर इंद्रियों से पुरुष तक की सीढ़ी, और वह पुकार — उत्तिष्ठत जाग्रत प्राप्य वरान्निबोधत: उठो, जागो, और श्रेष्ठ जनों के पास जाकर समझो। पहला अध्याय यहीं पूरा होता है।",
+  "kabPadhein": "किसी भी शांत समय — सुबह या शाम। उपनिषद पूजा का पाठ नहीं, स्वाध्याय और मनन के लिए हैं: थोड़ा पढ़ें, और जो पढ़ा उस पर रुककर सोचें।",
+  "kaisePadhein": "परंपरा में उपनिषद का पाठ शांति पाठ से शुरू होता है और उसी पर ख़त्म — इसलिए हर उपनिषद का पहला खंड उसका शांति पाठ है; पाठ पूरा करके उसे एक बार फिर पढ़ लें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर मंत्र के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं। यहाँ वैदिक स्वर-चिह्न नहीं हैं; साफ़ और धीमा उच्चारण रखें।\n\nउपनिषद के मंत्र गूढ़ हैं और आचार्यों ने कई मंत्रों को अलग-अलग ढंग से समझाया है। यहाँ का अर्थ सिर्फ़ पहली सीढ़ी है — गहराई से समझना हो तो किसी जानकार के साथ या किसी भाष्य के सहारे पढ़ें।",
+  "khand": [
+    {
+      "shirshak": "मंत्र १",
+      "dev": "ऋतं पिबन्तौ सुकृतस्य लोके गुहां प्रविष्टौ परमे परार्धे ।\nछायातपौ ब्रह्मविदो वदन्ति पञ्चाग्नयो ये च त्रिणाचिकेताः ॥",
+      "roman": "ritam pibantau sukritasya loke guhaam pravishtau parame paraardhe |\nchhaayaatapau brahmavido vadanti panchaagnayo ye cha trinaachiketaah ||",
+      "arth": "\"अच्छे कर्मों से मिले इस शरीर में, हृदय की गुफा के सबसे ऊँचे स्थान में दो बैठे हैं, जो कर्म का फल भोगते हैं। ब्रह्म को जानने वाले, पाँच अग्नियों वाले गृहस्थ और तीन बार नाचिकेत अग्नि का चयन करने वाले — सब उन दोनों को छाया और धूप जैसा बताते हैं।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २",
+      "dev": "यः सेतुरीजानानामक्षरं ब्रह्म यत् परम् ।\nअभयं तितीर्षतां पारं नाचिकेतं शकेमहि ॥",
+      "roman": "yah setureejaanaanaamaksharam brahma yat param |\nabhayam titeershataam paaram naachiketam shakemahi ||",
+      "arth": "\"जो यज्ञ करने वालों के लिए पुल है उस नाचिकेत अग्नि को, और जो पार जाना चाहने वालों के लिए निर्भय किनारा है उस अविनाशी परब्रह्म को — हम दोनों को जान सकें।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३",
+      "dev": "आत्मानं रथिनं विद्धि शरीरं रथमेव तु ।\nबुद्धिं तु सारथिं विद्धि मनः प्रग्रहमेव च ॥",
+      "roman": "aatmaanam rathinam viddhi shareeram rathameva tu |\nbuddhim tu saarathim viddhi manah pragrahameva cha ||",
+      "arth": "\"आत्मा को रथ का स्वामी जानो, और शरीर को रथ। बुद्धि को सारथी जानो, और मन को लगाम।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४",
+      "dev": "इन्द्रियाणि हयानाहुर्विषयांस्तेषु गोचरान् ।\nआत्मेन्द्रियमनोयुक्तं भोक्तेत्याहुर्मनीषिणः ॥",
+      "roman": "indriyaani hayaanaahurvishayaamsteshu gocharaan |\naatmendriyamanoyuktam bhoktetyaahurmaneeshinah ||",
+      "arth": "\"इंद्रियों को घोड़े कहा गया है, और विषयों को उनके चलने के रास्ते। शरीर, इंद्रियों और मन से जुड़े हुए आत्मा को ही ज्ञानी लोग भोगने वाला कहते हैं।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ५",
+      "dev": "यस्त्वविज्ञानवान्भवत्ययुक्तेन मनसा सदा ।\nतस्येन्द्रियाण्यवश्यानि दुष्टाश्वा इव सारथेः ॥",
+      "roman": "yastvavijnaanavaanbhavatyayuktena manasaa sadaa |\ntasyendriyaanyavashyaani dushtaashvaa iva saaratheh ||",
+      "arth": "\"जो विवेक से रहित है और जिसका मन सदा बिखरा रहता है, उसकी इंद्रियाँ उसके वश में नहीं रहतीं — जैसे सारथी के बिगड़ैल घोड़े।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ६",
+      "dev": "यस्तु विज्ञानवान्भवति युक्तेन मनसा सदा ।\nतस्येन्द्रियाणि वश्यानि सदश्वा इव सारथेः ॥",
+      "roman": "yastu vijnaanavaanbhavati yuktena manasaa sadaa |\ntasyendriyaani vashyaani sadashvaa iva saaratheh ||",
+      "arth": "\"और जो विवेक वाला है, जिसका मन सदा सधा रहता है, उसकी इंद्रियाँ उसके वश में रहती हैं — जैसे सारथी के अच्छे घोड़े।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ७",
+      "dev": "यस्त्वविज्ञानवान्भवत्यमनस्कः सदाऽशुचिः ।\nन स तत्पदमाप्नोति संसारं चाधिगच्छति ॥",
+      "roman": "yastvavijnaanavaanbhavatyamanaskah sadaa'shuchih |\nna sa tatpadamaapnoti samsaaram chaadhigachchhati ||",
+      "arth": "\"जो विवेक से रहित, मन को न सँभालने वाला और सदा अपवित्र रहता है, वह उस पद तक नहीं पहुँचता, और जन्म-मरण के चक्कर में ही पड़ा रहता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ८",
+      "dev": "यस्तु विज्ञानवान्भवति समनस्कः सदा शुचिः ।\nस तु तत्पदमाप्नोति यस्माद्भूयो न जायते ॥",
+      "roman": "yastu vijnaanavaanbhavati samanaskah sadaa shuchih |\nsa tu tatpadamaapnoti yasmaadbhooyo na jaayate ||",
+      "arth": "\"और जो विवेक वाला, मन को सँभालने वाला और सदा पवित्र रहता है, वह उस पद को पा लेता है जहाँ से फिर जन्म नहीं होता।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ९",
+      "dev": "विज्ञानसारथिर्यस्तु मनः प्रग्रहवान्नरः ।\nसोऽध्वनः पारमाप्नोति तद्विष्णोः परमं पदम् ॥",
+      "roman": "vijnaanasaarathiryastu manah pragrahavaannarah |\nso'dhvanah paaramaapnoti tadvishnoh paramam padam ||",
+      "arth": "\"जिस मनुष्य का सारथी विवेक है और जिसकी लगाम — मन — उसके हाथ में है, वह रास्ते के पार पहुँच जाता है; वही विष्णु का परम पद है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १०",
+      "dev": "इन्द्रियेभ्यः परा ह्यर्था अर्थेभ्यश्च परं मनः ।\nमनसस्तु परा बुद्धिर्बुद्धेरात्मा महान्परः ॥",
+      "roman": "indriyebhyah paraa hyarthaa arthebhyashcha param manah |\nmanasastu paraa buddhirbuddheraatmaa mahaanparah ||",
+      "arth": "\"इंद्रियों से परे उनके विषय हैं, विषयों से परे मन है, मन से परे बुद्धि है, और बुद्धि से परे महान आत्मा (महत्) है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ११",
+      "dev": "महतः परमव्यक्तमव्यक्तात्पुरुषः परः ।\nपुरुषान्न परं किंचित्सा काष्ठा सा परा गतिः ॥",
+      "roman": "mahatah paramavyaktamavyaktaatpurushah parah |\npurushaanna param kimchitsaa kaashthaa saa paraa gatih ||",
+      "arth": "\"महत् से परे अव्यक्त है, और अव्यक्त से परे पुरुष। पुरुष से परे कुछ नहीं है — वही आख़िरी सीमा है, वही परम गति है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १२",
+      "dev": "एष सर्वेषु भूतेषु गूढोऽऽत्मा न प्रकाशते ।\nदृश्यते त्वग्र्यया बुद्ध्या सूक्ष्मया सूक्ष्मदर्शिभिः ॥",
+      "roman": "esha sarveshu bhooteshu goodho''tmaa na prakaashate |\ndrishyate tvagryayaa buddhyaa sookshmayaa sookshmadarshibhih ||",
+      "arth": "\"यह आत्मा सब प्राणियों में छिपा हुआ है, इसलिए दिखता नहीं। पर सूक्ष्म देखने वाले लोग अपनी पैनी और सूक्ष्म बुद्धि से इसे देख लेते हैं।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १३",
+      "dev": "यच्छेद्वाङ्मनसी प्राज्ञस्तद्यच्छेज्ज्ञान आत्मनि ।\nज्ञानमात्मनि महति नियच्छेत्तद्यच्छेच्छान्त आत्मनि ॥",
+      "roman": "yachchhedvaanmanasee praajnastadyachchhejjnaana aatmani |\njnaanamaatmani mahati niyachchhettadyachchhechchhaanta aatmani ||",
+      "arth": "\"समझदार मनुष्य वाणी को मन में समेटे, मन को बुद्धि में, बुद्धि को महान आत्मा (महत्) में, और उसे शांत आत्मा में समेट दे।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १४",
+      "dev": "उत्तिष्ठत जाग्रत प्राप्य वरान्निबोधत ।\nक्षुरस्य धारा निशिता दुरत्यया दुर्गं पथस्तत्कवयो वदन्ति ॥",
+      "roman": "uttishthata jaagrata praapya varaannibodhata |\nkshurasya dhaaraa nishitaa duratyayaa durgam pathastatkavayo vadanti ||",
+      "arth": "\"उठो, जागो, और श्रेष्ठ जनों के पास जाकर इसे समझो। ज्ञानी कहते हैं कि वह रास्ता छुरे की पैनी धार जैसा है — जिस पर चलना कठिन है और जिसे पार करना मुश्किल।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १५",
+      "dev": "अशब्दमस्पर्शमरूपमव्ययं तथाऽरसं नित्यमगन्धवच्च यत् ।\nअनाद्यनन्तं महतः परं ध्रुवं निचाय्य तन्मृत्युमुखात् प्रमुच्यते ॥",
+      "roman": "ashabdamasparshamaroopamavyayam tathaa'rasam nityamagandhavachcha yat |\nanaadyanantam mahatah param dhruvam nichaayya tanmrityumukhaat pramuchyate ||",
+      "arth": "\"जो बिना शब्द, बिना स्पर्श और बिना रूप का है, घटता नहीं; बिना रस और बिना गंध का है, नित्य है; जिसका न आदि है न अंत; जो महत् से भी परे और अटल है — उसे जानकर मनुष्य मृत्यु के मुख से छूट जाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १६",
+      "dev": "नाचिकेतमुपाख्यानं मृत्युप्रोक्तं सनातनम् ।\nउक्त्वा श्रुत्वा च मेधावी ब्रह्मलोके महीयते ॥",
+      "roman": "naachiketamupaakhyaanam mrityuproktam sanaatanam |\nuktvaa shrutvaa cha medhaavee brahmaloke maheeyate ||",
+      "arth": "मृत्यु की कही हुई नचिकेता की यह सनातन कथा जो बुद्धिमान सुनाता और सुनता है, वह ब्रह्मलोक में महिमा पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १७",
+      "dev": "य इमं परमं गुह्यं श्रावयेद् ब्रह्मसंसदि ।\nप्रयतः श्राद्धकाले वा तदानन्त्याय कल्पते ।\nतदानन्त्याय कल्पत इति ॥",
+      "roman": "ya imam paramam guhyam shraavayed brahmasamsadi |\nprayatah shraaddhakaale vaa tadaanantyaaya kalpate |\ntadaanantyaaya kalpata iti ||",
+      "arth": "जो पवित्र होकर इस परम रहस्य को ब्राह्मणों की सभा में या श्राद्ध के समय सुनाता है, उसका वह कर्म अनंत फल देने वाला होता है — अनंत फल देने वाला होता है।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "कृष्ण यजुर्वेद, कठ शाखा — दो अध्याय, छह वल्लियाँ",
+    "kshetra": "सब जगह — वेदांत का स्वाध्याय",
+    "note": "एक सौ उन्नीस मंत्र तीन जगह मिलाए गए — एक संग्रह, एक शोध-संस्करण पर बना पाठ और एक पुराने छपे संस्करण की प्रतिलिपि — और छपी हिंदी टीका से देखे गए। जहाँ संग्रह अकेला पड़ा वहाँ बाक़ी गवाहों का पाठ रखा है: \"ईशानो भूतभव्यस्य\", \"न विचेष्टति\", और चरणों के बीच की संधि।\n\nदो जगह आचार्यों ने मंत्र को अलग-अलग पढ़ा है: \"यमेवैष वृणुते\" — आत्मा साधक को चुनता है या साधक आत्मा को; और \"धातुप्रसादात्\" — मन की निर्मलता से या विधाता की कृपा से। यहाँ सीधा शब्दार्थ है, किसी एक मत का भाष्य नहीं।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

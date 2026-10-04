@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "id": "upanishad_katha_12",
+  "naam": "कठ — अध्याय १, वल्ली २",
+  "upnaam": [
+    "श्रेय और प्रेय",
+    "न जायते म्रियते वा"
+  ],
+  "prakar": "granth",
+  "devta": "ब्रह्म (परमात्मा)",
+  "rachnakar": "कृष्ण यजुर्वेद — कठ शाखा",
+  "bhasha": "संस्कृत",
+  "parichay": "यम का उत्तर यहाँ से शुरू होता है। पहले श्रेय और प्रेय का भेद — जो सचमुच भला है और जो प्यारा लगता है — और नचिकेता की प्रशंसा कि उसने प्रेय को छोड़ दिया। फिर वह पद जिसे सारे वेद बताते हैं: ॐ। और फिर आत्मा — जो न पैदा होता है, न मरता है; सूक्ष्म से भी सूक्ष्म और बड़े से भी बड़ा।\n\nइस वल्ली के दो मंत्र गीता के दूसरे अध्याय में लगभग इन्हीं शब्दों में आते हैं।",
+  "kabPadhein": "किसी भी शांत समय — सुबह या शाम। उपनिषद पूजा का पाठ नहीं, स्वाध्याय और मनन के लिए हैं: थोड़ा पढ़ें, और जो पढ़ा उस पर रुककर सोचें।",
+  "kaisePadhein": "परंपरा में उपनिषद का पाठ शांति पाठ से शुरू होता है और उसी पर ख़त्म — इसलिए हर उपनिषद का पहला खंड उसका शांति पाठ है; पाठ पूरा करके उसे एक बार फिर पढ़ लें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर मंत्र के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं। यहाँ वैदिक स्वर-चिह्न नहीं हैं; साफ़ और धीमा उच्चारण रखें।\n\nउपनिषद के मंत्र गूढ़ हैं और आचार्यों ने कई मंत्रों को अलग-अलग ढंग से समझाया है। यहाँ का अर्थ सिर्फ़ पहली सीढ़ी है — गहराई से समझना हो तो किसी जानकार के साथ या किसी भाष्य के सहारे पढ़ें।",
+  "khand": [
+    {
+      "shirshak": "मंत्र १",
+      "dev": "अन्यच्छ्रेयोऽन्यदुतैव प्रेयस्ते उभे नानार्थे पुरुषं सिनीतः ।\nतयोः श्रेय आददानस्य साधु भवति हीयतेऽर्थाद्य उ प्रेयो वृणीते ॥",
+      "roman": "anyachchhreyo'nyadutaiva preyaste ubhe naanaarthe purusham sineetah |\ntayoh shreya aadadaanasya saadhu bhavati heeyate'rthaadya u preyo vrineete ||",
+      "arth": "(यम:) \"श्रेय — जो सचमुच भला है — एक चीज़ है, और प्रेय — जो प्यारा लगता है — दूसरी। दोनों के लक्ष्य अलग हैं, और दोनों मनुष्य को बाँधते हैं। जो श्रेय को अपनाता है उसका भला होता है; जो प्रेय को चुनता है वह अपने लक्ष्य से चूक जाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २",
+      "dev": "श्रेयश्च प्रेयश्च मनुष्यमेतस्तौ सम्परीत्य विविनक्ति धीरः ।\nश्रेयो हि धीरोऽभि प्रेयसो वृणीते प्रेयो मन्दो योगक्षेमाद्वृणीते ॥",
+      "roman": "shreyashcha preyashcha manushyametastau sampareetya vivinakti dheerah |\nshreyo hi dheero'bhi preyaso vrineete preyo mando yogakshemaadvrineete ||",
+      "arth": "\"श्रेय और प्रेय — दोनों मनुष्य के सामने आते हैं। समझदार उन दोनों को अच्छी तरह परखकर अलग-अलग पहचानता है, और प्रेय की जगह श्रेय को चुनता है। मंदबुद्धि कमाने और बचाने के मोह में प्रेय को चुनता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३",
+      "dev": "स त्वं प्रियान्प्रियरूपांश्च कामान् अभिध्यायन्नचिकेतोऽत्यस्राक्षीः ।\nनैतां सृङ्कां वित्तमयीमवाप्तो यस्यां मज्जन्ति बहवो मनुष्याः ॥",
+      "roman": "sa tvam priyaanpriyaroopaamshcha kaamaan abhidhyaayannachiketo'tyasraaksheeh |\nnaitaam srinkaam vittamayeemavaapto yasyaam majjanti bahavo manushyaah ||",
+      "arth": "\"नचिकेता, तुमने प्यारे और लुभावने दिखने वाले भोगों को सोच-समझकर छोड़ दिया। तुम धन की उस ज़ंजीर में नहीं फँसे, जिसमें बहुत से मनुष्य डूब जाते हैं।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४",
+      "dev": "दूरमेते विपरीते विषूची अविद्या या च विद्येति ज्ञाता ।\nविद्याभीप्सिनं नचिकेतसं मन्ये न त्वा कामा बहवोऽलोलुपन्त ॥",
+      "roman": "dooramete vipareete vishoochee avidyaa yaa cha vidyeti jnaataa |\nvidyaabheepsinam nachiketasam manye na tvaa kaamaa bahavo'lolupanta ||",
+      "arth": "\"जिन्हें अविद्या और विद्या कहा जाता है, वे दोनों एक-दूसरे से बहुत दूर, उलटी और अलग-अलग दिशा में ले जाने वाली हैं। मैं नचिकेता को विद्या का चाहने वाला मानता हूँ — इतने सारे भोग भी तुम्हें ललचा न सके।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ५",
+      "dev": "अविद्यायामन्तरे वर्तमानाः स्वयं धीराः पण्डितंमन्यमानाः ।\nदन्द्रम्यमाणाः परियन्ति मूढा अन्धेनैव नीयमाना यथान्धाः ॥",
+      "roman": "avidyaayaamantare vartamaanaah svayam dheeraah panditammanyamaanaah |\ndandramyamaanaah pariyanti moodhaa andhenaiva neeyamaanaa yathaandhaah ||",
+      "arth": "\"जो अविद्या के भीतर रहते हुए भी अपने को समझदार और पंडित मानते हैं, वे मूढ़ ठोकरें खाते हुए भटकते रहते हैं — जैसे अंधे के पीछे चलते हुए अंधे।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ६",
+      "dev": "न साम्परायः प्रतिभाति बालं प्रमाद्यन्तं वित्तमोहेन मूढम् ।\nअयं लोको नास्ति पर इति मानी पुनः पुनर्वशमापद्यते मे ॥",
+      "roman": "na saamparaayah pratibhaati baalam pramaadyantam vittamohena moodham |\nayam loko naasti para iti maanee punah punarvashamaapadyate me ||",
+      "arth": "\"धन के मोह से अंधे, लापरवाह और नासमझ आदमी को परलोक की बात सूझती ही नहीं। जो मानता है कि बस यही लोक है, दूसरा कोई नहीं — वह बार-बार मेरे वश में आता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ७",
+      "dev": "श्रवणायापि बहुभिर्यो न लभ्यः शृण्वन्तोऽपि बहवो यं न विद्युः ।\nआश्चर्यो वक्ता कुशलोऽस्य लब्धा आश्चर्यो ज्ञाता कुशलानुशिष्टः ॥",
+      "roman": "shravanaayaapi bahubhiryo na labhyah shrinvanto'pi bahavo yam na vidyuh |\naashcharyo vaktaa kushalo'sya labdhaa aashcharyo jnaataa kushalaanushishtah ||",
+      "arth": "\"जिसके बारे में सुनना भी बहुतों को नहीं मिलता, और सुनकर भी बहुत से जिसे नहीं समझ पाते — उस आत्मा को बताने वाला दुर्लभ है, उसे पाने वाला कोई कुशल ही होता है; और कुशल गुरु से सीखकर उसे जानने वाला भी दुर्लभ है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ८",
+      "dev": "न नरेणावरेण प्रोक्त एष सुविज्ञेयो बहुधा चिन्त्यमानः ।\nअनन्यप्रोक्ते गतिरत्र नास्त्यणीयान् ह्यतर्क्यमणुप्रमाणात् ॥",
+      "roman": "na narenaavarena prokta esha suvijneyo bahudhaa chintyamaanah |\nananyaprokte gatiratra naastyaneeyaan hyatarkyamanupramaanaat ||",
+      "arth": "\"साधारण समझ का आदमी बताए तो यह आत्मा ठीक से समझ में नहीं आता, क्योंकि लोग इसे कई तरह से सोचते हैं। पर जो इसे अपने से अलग नहीं देखता, वह बताए तो कोई संदेह नहीं रहता। यह सूक्ष्म से भी सूक्ष्म है, और तर्क की पहुँच से बाहर।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ९",
+      "dev": "नैषा तर्केण मतिरापनेया प्रोक्तान्येनैव सुज्ञानाय प्रेष्ठ ।\nयां त्वमापः सत्यधृतिर्बतासि त्वादृङ्नो भूयान्नचिकेतः प्रष्टा ॥",
+      "roman": "naishaa tarkena matiraapaneyaa proktaanyenaiva sujnaanaaya preshtha |\nyaam tvamaapah satyadhritirbataasi tvaadrinno bhooyaannachiketah prashtaa ||",
+      "arth": "\"प्यारे, यह समझ तर्क से नहीं मिलती; कोई जानने वाला बताए तभी ठीक से आती है। और तुमने वह पा ली है — तुम सचमुच सत्य पर टिके हो। नचिकेता, हमें तुम जैसा पूछने वाला मिलता रहे।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १०",
+      "dev": "जानाम्यहं शेवधिरित्यनित्यं न ह्यध्रुवैः प्राप्यते हि ध्रुवं तत् ।\nततो मया नाचिकेतश्चितोऽग्निरनित्यैर्द्रव्यैः प्राप्तवानस्मि नित्यम् ॥",
+      "roman": "jaanaamyaham shevadhirityanityam na hyadhruvaih praapyate hi dhruvam tat |\ntato mayaa naachiketashchito'gniranityairdravyaih praaptavaanasmi nityam ||",
+      "arth": "\"मैं जानता हूँ कि कर्म-फल का ख़ज़ाना टिकने वाला नहीं है, और टिकाऊ चीज़ अस्थिर साधनों से नहीं मिलती। फिर भी मैंने अस्थिर द्रव्यों से नाचिकेत अग्नि का चयन किया, और यह टिकाऊ पद पाया।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ११",
+      "dev": "कामस्याप्तिं जगतः प्रतिष्ठां क्रतोरानन्त्यमभयस्य पारम् ।\nस्तोममहदुरुगायं प्रतिष्ठां दृष्ट्वा धृत्या धीरो नचिकेतोऽत्यस्राक्षीः ॥",
+      "roman": "kaamasyaaptim jagatah pratishthaam kratoraanantyamabhayasya paaram |\nstomamahadurugaayam pratishthaam drishtvaa dhrityaa dheero nachiketo'tyasraaksheeh ||",
+      "arth": "\"कामनाओं की पूर्ति, जगत का आधार, यज्ञ का अनंत फल, निर्भयता का दूसरा किनारा, स्तुति के योग्य बड़ी और दूर तक फैली प्रतिष्ठा — नचिकेता, तुमने यह सब देखकर भी समझदारी और धीरज से इसे छोड़ दिया।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १२",
+      "dev": "तं दुर्दर्शं गूढमनुप्रविष्टं गुहाहितं गह्वरेष्ठं पुराणम् ।\nअध्यात्मयोगाधिगमेन देवं मत्वा धीरो हर्षशोकौ जहाति ॥",
+      "roman": "tam durdarsham goodhamanupravishtam guhaahitam gahvareshtham puraanam |\nadhyaatmayogaadhigamena devam matvaa dheero harshashokau jahaati ||",
+      "arth": "\"वह पुरातन देव — जिसे देखना कठिन है, जो छिपा हुआ है, भीतर पैठा हुआ है, हृदय की गुफा में और गहराई में बैठा है — उसे अपने भीतर के योग से जानकर समझदार मनुष्य हर्ष और शोक दोनों को छोड़ देता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १३",
+      "dev": "एतच्छ्रुत्वा सम्परिगृह्य मर्त्यः प्रवृह्य धर्म्यमणुमेतमाप्य ।\nस मोदते मोदनीयं हि लब्ध्वा विवृतं सद्म नचिकेतसं मन्ये ॥",
+      "roman": "etachchhrutvaa samparigrihya martyah pravrihya dharmyamanumetamaapya |\nsa modate modaneeyam hi labdhvaa vivritam sadma nachiketasam manye ||",
+      "arth": "\"जो मनुष्य इसे सुनकर ठीक से ग्रहण करता है, और इस सूक्ष्म तत्त्व को शरीर से अलग पहचानकर पा लेता है, वह आनंद के उस स्रोत को पाकर आनंदित होता है। मैं मानता हूँ कि नचिकेता के लिए वह घर खुला हुआ है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १४",
+      "dev": "अन्यत्र धर्मादन्यत्राधर्मादन्यत्रास्मात्कृताकृतात् ।\nअन्यत्र भूताच्च भव्याच्च यत्तत्पश्यसि तद्वद ॥",
+      "roman": "anyatra dharmaadanyatraadharmaadanyatraasmaatkritaakritaat |\nanyatra bhootaachcha bhavyaachcha yattatpashyasi tadvada ||",
+      "arth": "(नचिकेता:) \"जो धर्म से परे है और अधर्म से भी, इस कार्य और कारण से परे है, जो बीते हुए और आने वाले से भी परे है — जिसे आप ऐसा देखते हैं, वह मुझे बताइए।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १५",
+      "dev": "सर्वे वेदा यत्पदमामनन्ति तपांसि सर्वाणि च यद्वदन्ति ।\nयदिच्छन्तो ब्रह्मचर्यं चरन्ति तत्ते पदं सङ्ग्रहेण ब्रवीम्योमित्येतत् ॥",
+      "roman": "sarve vedaa yatpadamaamananti tapaamsi sarvaani cha yadvadanti |\nyadichchhanto brahmacharyam charanti tatte padam sangrahena braveemyomityetat ||",
+      "arth": "(यम:) \"सारे वेद जिस पद को बताते हैं, सारे तप जिसकी बात करते हैं, जिसे चाहकर लोग ब्रह्मचर्य का पालन करते हैं — वह पद मैं तुम्हें थोड़े में बताता हूँ: वह ॐ है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १६",
+      "dev": "एतद्ध्येवाक्षरं ब्रह्म एतद्ध्येवाक्षरं परम् ।\nएतद्ध्येवाक्षरं ज्ञात्वा यो यदिच्छति तस्य तत् ॥",
+      "roman": "etaddhyevaaksharam brahma etaddhyevaaksharam param |\netaddhyevaaksharam jnaatvaa yo yadichchhati tasya tat ||",
+      "arth": "\"यही अक्षर ब्रह्म है, यही अक्षर सबसे ऊँचा है। इसी अक्षर को जानकर जो जो चाहता है, वह उसे मिल जाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १७",
+      "dev": "एतदालम्बनं श्रेष्ठमेतदालम्बनं परम् ।\nएतदालम्बनं ज्ञात्वा ब्रह्मलोके महीयते ॥",
+      "roman": "etadaalambanam shreshthametadaalambanam param |\netadaalambanam jnaatvaa brahmaloke maheeyate ||",
+      "arth": "\"यही सबसे अच्छा सहारा है, यही सबसे ऊँचा सहारा है। इस सहारे को जानकर मनुष्य ब्रह्मलोक में महिमा पाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १८",
+      "dev": "न जायते म्रियते वा विपश्चिन्नायं कुतश्चिन्न बभूव कश्चित् ।\nअजो नित्यः शाश्वतोऽयं पुराणो न हन्यते हन्यमाने शरीरे ॥",
+      "roman": "na jaayate mriyate vaa vipashchinnaayam kutashchinna babhoova kashchit |\najo nityah shaashvato'yam puraano na hanyate hanyamaane shareere ||",
+      "arth": "\"यह जानने वाला आत्मा न पैदा होता है, न मरता है। न यह किसी से बना, न इससे कोई बना। यह अजन्मा, नित्य, सदा रहने वाला और पुरातन है; शरीर के मारे जाने पर भी यह नहीं मारा जाता।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १९",
+      "dev": "हन्ता चेन्मन्यते हन्तुं हतश्चेन्मन्यते हतम् ।\nउभौ तौ न विजानीतो नायं हन्ति न हन्यते ॥",
+      "roman": "hantaa chenmanyate hantum hatashchenmanyate hatam |\nubhau tau na vijaaneeto naayam hanti na hanyate ||",
+      "arth": "\"अगर मारने वाला सोचता है कि मैं मार रहा हूँ, और मारा जाने वाला सोचता है कि मैं मारा गया — तो दोनों ही नहीं जानते। यह न मारता है, न मारा जाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २०",
+      "dev": "अणोरणीयान्महतो महीयानात्माऽस्य जन्तोर्निहितो गुहायाम् ।\nतमक्रतुः पश्यति वीतशोको धातुप्रसादान्महिमानमात्मनः ॥",
+      "roman": "anoraneeyaanmahato maheeyaanaatmaa'sya jantornihito guhaayaam |\ntamakratuh pashyati veetashoko dhaatuprasaadaanmahimaanamaatmanah ||",
+      "arth": "\"सूक्ष्म से भी सूक्ष्म और बड़े से भी बड़ा यह आत्मा इस प्राणी के हृदय की गुफा में रखा है। जो कामनाओं से छूट गया है, वह मन और इंद्रियों की निर्मलता से आत्मा की उस महिमा को देखता है, और शोक से पार हो जाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २१",
+      "dev": "आसीनो दूरं व्रजति शयानो याति सर्वतः ।\nकस्तं मदामदं देवं मदन्यो ज्ञातुमर्हति ॥",
+      "roman": "aaseeno dooram vrajati shayaano yaati sarvatah |\nkastam madaamadam devam madanyo jnaatumarhati ||",
+      "arth": "\"वह बैठा हुआ भी दूर चला जाता है, लेटा हुआ भी सब ओर पहुँच जाता है। उस देव को, जो हर्ष से भरा भी है और हर्ष से रहित भी, मेरे सिवा कौन जान सकता है?\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २२",
+      "dev": "अशरीरं शरीरेष्वनवस्थेष्ववस्थितम् ।\nमहान्तं विभुमात्मानं मत्वा धीरो न शोचति ॥",
+      "roman": "ashareeram shareereshvanavastheshvavasthitam |\nmahaantam vibhumaatmaanam matvaa dheero na shochati ||",
+      "arth": "\"जो शरीरों में रहकर भी बिना शरीर का है, और बदलती हुई चीज़ों में रहकर भी ठहरा हुआ है — उस महान, सब जगह फैले आत्मा को जानकर समझदार मनुष्य शोक नहीं करता।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २३",
+      "dev": "नायमात्मा प्रवचनेन लभ्यो न मेधया न बहुना श्रुतेन ।\nयमेवैष वृणुते तेन लभ्यस्तस्यैष आत्मा विवृणुते तनूं स्वाम् ॥",
+      "roman": "naayamaatmaa pravachanena labhyo na medhayaa na bahunaa shrutena |\nyamevaisha vrinute tena labhyastasyaisha aatmaa vivrinute tanoom svaam ||",
+      "arth": "\"यह आत्मा न प्रवचन से मिलता है, न बुद्धि से, न बहुत सुनने से। जिसे यह स्वयं चुन लेता है, उसी को मिलता है; उसके सामने यह आत्मा अपना स्वरूप खोल देता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २४",
+      "dev": "नाविरतो दुश्चरितान्नाशान्तो नासमाहितः ।\nनाशान्तमानसो वाऽपि प्रज्ञानेनैनमाप्नुयात् ॥",
+      "roman": "naavirato dushcharitaannaashaanto naasamaahitah |\nnaashaantamaanaso vaa'pi prajnaanenainamaapnuyaat ||",
+      "arth": "\"जो बुरे आचरण से नहीं हटा, जो शांत नहीं, जिसका मन एकाग्र नहीं, और जिसका चित्त ठहरा नहीं — वह केवल बुद्धि के बल पर इसे नहीं पा सकता।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २५",
+      "dev": "यस्य ब्रह्म च क्षत्रं च उभे भवत ओदनः ।\nमृत्युर्यस्योपसेचनं क इत्था वेद यत्र सः ॥",
+      "roman": "yasya brahma cha kshatram cha ubhe bhavata odanah |\nmrityuryasyopasechanam ka itthaa veda yatra sah ||",
+      "arth": "\"ब्राह्मण और क्षत्रिय — दोनों जिसके लिए भात जैसे हैं, और मृत्यु जिसके लिए उस पर की चटनी — वह कहाँ है, यह इस तरह कौन जान सकता है?\"",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "कृष्ण यजुर्वेद, कठ शाखा — दो अध्याय, छह वल्लियाँ",
+    "kshetra": "सब जगह — वेदांत का स्वाध्याय",
+    "note": "एक सौ उन्नीस मंत्र तीन जगह मिलाए गए — एक संग्रह, एक शोध-संस्करण पर बना पाठ और एक पुराने छपे संस्करण की प्रतिलिपि — और छपी हिंदी टीका से देखे गए। जहाँ संग्रह अकेला पड़ा वहाँ बाक़ी गवाहों का पाठ रखा है: \"ईशानो भूतभव्यस्य\", \"न विचेष्टति\", और चरणों के बीच की संधि।\n\nदो जगह आचार्यों ने मंत्र को अलग-अलग पढ़ा है: \"यमेवैष वृणुते\" — आत्मा साधक को चुनता है या साधक आत्मा को; और \"धातुप्रसादात्\" — मन की निर्मलता से या विधाता की कृपा से। यहाँ सीधा शब्दार्थ है, किसी एक मत का भाष्य नहीं।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "id": "upanishad_prashna_4",
+  "naam": "प्रश्न — चौथा प्रश्न",
+  "upnaam": [
+    "नींद और सपना",
+    "सुषुप्ति"
+  ],
+  "prakar": "granth",
+  "devta": "ब्रह्म (परमात्मा)",
+  "rachnakar": "अथर्ववेद — पिप्पलाद शाखा",
+  "bhasha": "संस्कृत",
+  "parichay": "सौर्यायणी गार्ग्य का प्रश्न: मनुष्य में कौन सोता है, कौन जागता है, सपने कौन देखता है, और गहरी नींद का सुख किसे होता है? उत्तर: जैसे डूबते सूरज की किरणें उसी में सिमट जाती हैं, वैसे इंद्रियाँ मन में सिमट जाती हैं; प्राण की अग्नियाँ जागती रहती हैं। सपने में मन अपनी महिमा देखता है; गहरी नींद में सब कुछ परम आत्मा में वैसे टिक जाता है जैसे पक्षी अपने बसेरे के पेड़ पर।",
+  "kabPadhein": "किसी भी शांत समय — सुबह या शाम। उपनिषद पूजा का पाठ नहीं, स्वाध्याय और मनन के लिए हैं: थोड़ा पढ़ें, और जो पढ़ा उस पर रुककर सोचें।",
+  "kaisePadhein": "परंपरा में उपनिषद का पाठ शांति पाठ से शुरू होता है और उसी पर ख़त्म — इसलिए हर उपनिषद का पहला खंड उसका शांति पाठ है; पाठ पूरा करके उसे एक बार फिर पढ़ लें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर मंत्र के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं। यहाँ वैदिक स्वर-चिह्न नहीं हैं; साफ़ और धीमा उच्चारण रखें।\n\nउपनिषद के मंत्र गूढ़ हैं और आचार्यों ने कई मंत्रों को अलग-अलग ढंग से समझाया है। यहाँ का अर्थ सिर्फ़ पहली सीढ़ी है — गहराई से समझना हो तो किसी जानकार के साथ या किसी भाष्य के सहारे पढ़ें।",
+  "khand": [
+    {
+      "shirshak": "मंत्र १",
+      "dev": "अथ हैनं सौर्यायणी गार्ग्यः पप्रच्छ ।\nभगवन्नेतस्मिन् पुरुषे कानि स्वपन्ति कान्यस्मिञ्जाग्रति कतर एष देवः स्वप्नान् पश्यति कस्यैतत् सुखं भवति कस्मिन्नु सर्वे सम्प्रतिष्ठिता भवन्तीति ॥",
+      "roman": "atha hainam sauryaayanee gaargyah paprachchha |\nbhagavannetasmin purushe kaani svapanti kaanyasminjaagrati katara esha devah svapnaan pashyati kasyaitat sukham bhavati kasminnu sarve sampratishthitaa bhavanteeti ||",
+      "arth": "फिर सौर्यायणी गार्ग्य ने पूछा — \"भगवन्, इस मनुष्य में कौन सोते हैं, और कौन जागते रहते हैं? वह कौन देव है जो सपने देखता है? यह सुख किसे होता है? और सब किसमें जाकर टिकते हैं?\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २",
+      "dev": "तस्मै स होवाच यथा गार्ग्य मरीचयोऽर्कस्यास्तं गच्छतः सर्वा एतस्मिंस्तेजोमण्डल एकीभवन्ति ताः पुनः पुनरुदयतः प्रचरन्त्येवं ह वै तत् सर्वं परे देवे मनस्येकीभवति तेन तर्ह्येष पुरुषो न शृणोति न पश्यति न जिघ्रति न रसयते न स्पृशते नाभिवदते नादत्ते नानन्दयते न विसृजते नेयायते स्वपितीत्याचक्षते ॥",
+      "roman": "tasmai sa hovaacha yathaa gaargya mareechayo'rkasyaastam gachchhatah sarvaa etasmimstejomandala ekeebhavanti taah punah punarudayatah pracharantyevam ha vai tat sarvam pare deve manasyekeebhavati tena tarhyesha purusho na shrinoti na pashyati na jighrati na rasayate na sprishate naabhivadate naadatte naanandayate na visrijate neyaayate svapiteetyaachakshate ||",
+      "arth": "पिप्पलाद ने कहा — \"गार्ग्य, जैसे डूबते सूरज की सारी किरणें उसके तेज के गोले में एक हो जाती हैं, और उसके फिर उगने पर फिर फैल जाती हैं — वैसे ही सारी इंद्रियाँ सबसे ऊँचे देव, मन, में एक हो जाती हैं। इसीलिए तब यह मनुष्य न सुनता है, न देखता है, न सूँघता है, न चखता है, न छूता है, न बोलता है, न पकड़ता है, न आनंद लेता है, न मल त्यागता है, न चलता है। तब कहते हैं कि वह सो रहा है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३",
+      "dev": "प्राणाग्नय एवैतस्मिन् पुरे जाग्रति ।\nगार्हपत्यो ह वा एषोऽपानो व्यानोऽन्वाहार्यपचनो यद्गार्हपत्यात् प्रणीयते प्रणयनादाहवनीयः प्राणः ॥",
+      "roman": "praanaagnaya evaitasmin pure jaagrati |\ngaarhapatyo ha vaa esho'paano vyaano'nvaahaaryapachano yadgaarhapatyaat praneeyate pranayanaadaahavaneeyah praanah ||",
+      "arth": "\"शरीर रूपी इस नगर में प्राण की अग्नियाँ ही जागती रहती हैं। यह अपान गार्हपत्य अग्नि है; व्यान दक्षिण अग्नि (अन्वाहार्यपचन) है; और प्राण आहवनीय अग्नि है — क्योंकि वह गार्हपत्य से ही ले जाई जाती है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४",
+      "dev": "यदुच्छ्वासनिःश्वासावेतावाहुती समं नयतीति स समानः ।\nमनो ह वाव यजमानः ।\nइष्टफलमेवोदानः ।\nस एनं यजमानमहरहर्ब्रह्म गमयति ॥",
+      "roman": "yaduchchhvaasanihshvaasaavetaavaahutee samam nayateeti sa samaanah |\nmano ha vaava yajamaanah |\nishtaphalamevodaanah |\nsa enam yajamaanamaharaharbrahma gamayati ||",
+      "arth": "\"साँस का लेना और छोड़ना दो आहुतियाँ हैं; जो इन्हें बराबर पहुँचाता है वह समान है। मन ही यजमान है। यज्ञ का चाहा हुआ फल ही उदान है; वही इस यजमान को हर रोज़ गहरी नींद में ब्रह्म के पास ले जाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ५",
+      "dev": "अत्रैष देवः स्वप्ने महिमानमनुभवति ।\nयद्दृष्टं दृष्टमनुपश्यति श्रुतं श्रुतमेवार्थमनुशृणोति देशदिगन्तरैश्च प्रत्यनुभूतं पुनः पुनः प्रत्यनुभवति दृष्टं चादृष्टं च श्रुतं चाश्रुतं चानुभूतं चाननुभूतं च सच्चासच्च सर्वं पश्यति सर्वः पश्यति ॥",
+      "roman": "atraisha devah svapne mahimaanamanubhavati |\nyaddrishtam drishtamanupashyati shrutam shrutamevaarthamanushrinoti deshadigantaraishcha pratyanubhootam punah punah pratyanubhavati drishtam chaadrishtam cha shrutam chaashrutam chaanubhootam chaananubhootam cha sachchaasachcha sarvam pashyati sarvah pashyati ||",
+      "arth": "\"यहीं सपने में यह देव — मन — अपनी महिमा का अनुभव करता है। जो देखा था उसे फिर देखता है, जो सुना था उसे फिर सुनता है; अलग-अलग देशों और दिशाओं में जो अनुभव किया था उसे बार-बार अनुभव करता है। देखा और अनदेखा, सुना और अनसुना, अनुभव किया और न किया हुआ, जो है और जो नहीं है — वह सब देखता है; ख़ुद सब कुछ बनकर देखता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ६",
+      "dev": "स यदा तेजसाऽभिभूतो भवति ।\nअत्रैष देवः स्वप्नान्न पश्यत्यथ तदैतस्मिञ्शरीर एतत्सुखं भवति ॥",
+      "roman": "sa yadaa tejasaa'bhibhooto bhavati |\natraisha devah svapnaanna pashyatyatha tadaitasminshareera etatsukham bhavati ||",
+      "arth": "\"जब वह तेज से ढक जाता है, तब वह देव सपने नहीं देखता। तब इस शरीर में वह गहरी नींद का सुख होता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ७",
+      "dev": "स यथा सोम्य वयांसि वासोवृक्षं सम्प्रतिष्ठन्ते ।\nएवं ह वै तत् सर्वं पर आत्मनि सम्प्रतिष्ठते ॥",
+      "roman": "sa yathaa somya vayaamsi vaasovriksham sampratishthante |\nevam ha vai tat sarvam para aatmani sampratishthate ||",
+      "arth": "\"हे सोम्य, जैसे पक्षी अपने बसेरे के पेड़ पर आकर टिक जाते हैं, वैसे ही वह सब कुछ परम आत्मा में जाकर टिक जाता है —\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ८",
+      "dev": "पृथिवी च पृथिवीमात्रा चापश्चापोमात्रा च तेजश्च तेजोमात्रा च वायुश्च वायुमात्रा चाकाशश्चाकाशमात्रा च चक्षुश्च द्रष्टव्यं च श्रोत्रं च श्रोतव्यं च घ्राणं च घ्रातव्यं च रसश्च रसयितव्यं च त्वक्च स्पर्शयितव्यं च वाक्च वक्तव्यं च हस्तौ चादातव्यं चोपस्थश्चानन्दयितव्यं च पायुश्च विसर्जयितव्यं च पादौ च गन्तव्यं च मनश्च मन्तव्यं च बुद्धिश्च बोद्धव्यं चाहङ्कारश्चाहङ्कर्तव्यं च चित्तं च चेतयितव्यं च तेजश्च विद्योतयितव्यं च प्राणश्च विधारयितव्यं च ॥",
+      "roman": "prithivee cha prithiveemaatraa chaapashchaapomaatraa cha tejashcha tejomaatraa cha vaayushcha vaayumaatraa chaakaashashchaakaashamaatraa cha chakshushcha drashtavyam cha shrotram cha shrotavyam cha ghraanam cha ghraatavyam cha rasashcha rasayitavyam cha tvakcha sparshayitavyam cha vaakcha vaktavyam cha hastau chaadaatavyam chopasthashchaanandayitavyam cha paayushcha visarjayitavyam cha paadau cha gantavyam cha manashcha mantavyam cha buddhishcha boddhavyam chaahankaarashchaahankartavyam cha chittam cha chetayitavyam cha tejashcha vidyotayitavyam cha praanashcha vidhaarayitavyam cha ||",
+      "arth": "\"पृथ्वी और उसका सूक्ष्म रूप, जल और उसका सूक्ष्म रूप, तेज और उसका सूक्ष्म रूप, वायु और उसका सूक्ष्म रूप, आकाश और उसका सूक्ष्म रूप; आँख और जो देखा जाता है, कान और जो सुना जाता है, नाक और जो सूँघा जाता है, जीभ और जो चखा जाता है, त्वचा और जो छुआ जाता है; वाणी और जो बोला जाता है, हाथ और जो पकड़ा जाता है, जननेंद्रिय और उसका सुख, गुदा और जो त्यागा जाता है, पैर और जो चला जाता है; मन और जो सोचा जाता है, बुद्धि और जो समझा जाता है, अहंकार और उसका विषय, चित्त और जो चेता जाता है, तेज और जो प्रकाशित होता है, प्राण और जो उससे सँभला है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ९",
+      "dev": "एष हि द्रष्टा स्प्रष्टा श्रोता घ्राता रसयिता मन्ता बोद्धा कर्ता विज्ञानात्मा पुरुषः ।\nस परेऽक्षर आत्मनि सम्प्रतिष्ठते ॥",
+      "roman": "esha hi drashtaa sprashtaa shrotaa ghraataa rasayitaa mantaa boddhaa kartaa vijnaanaatmaa purushah |\nsa pare'kshara aatmani sampratishthate ||",
+      "arth": "\"यही देखने वाला, छूने वाला, सुनने वाला, सूँघने वाला, चखने वाला, सोचने वाला, समझने वाला और करने वाला है — विज्ञान-रूप आत्मा, पुरुष। वह परम अविनाशी आत्मा में जाकर टिक जाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १०",
+      "dev": "परमेवाक्षरं प्रतिपद्यते स यो ह वै तदच्छायमशरीरमलोहितं शुभ्रमक्षरं वेदयते यस्तु सोम्य ।\nस सर्वज्ञः सर्वो भवति ।\nतदेष श्लोकः ॥",
+      "roman": "paramevaaksharam pratipadyate sa yo ha vai tadachchhaayamashareeramalohitam shubhramaksharam vedayate yastu somya |\nsa sarvajnah sarvo bhavati |\ntadesha shlokah ||",
+      "arth": "\"हे सोम्य, जो उस बिना छाया के, बिना शरीर के, बिना रंग के, शुद्ध और अविनाशी को जान लेता है, वह परम अविनाशी को ही पा लेता है। वह सब कुछ जानने वाला और सब कुछ हो जाता है। इस पर यह श्लोक है —\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ११",
+      "dev": "विज्ञानात्मा सह देवैश्च सर्वैः प्राणा भूतानि सम्प्रतिष्ठन्ति यत्र तदक्षरं वेदयते यस्तु सोम्य स सर्वज्ञः सर्वमेवाविवेशेति ॥",
+      "roman": "vijnaanaatmaa saha devaishcha sarvaih praanaa bhootaani sampratishthanti yatra tadaksharam vedayate yastu somya sa sarvajnah sarvamevaavivesheti ||",
+      "arth": "\"हे सोम्य, विज्ञान-रूप आत्मा, सारे देवताओं (इंद्रियों) के साथ, और प्राण और पाँचों भूत जिसमें जाकर टिकते हैं — उस अविनाशी को जो जान लेता है, वह सब कुछ जानने वाला होकर सबमें समा जाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "अथर्ववेद, पिप्पलाद शाखा — छह प्रश्न",
+    "kshetra": "सब जगह — वेदांत का स्वाध्याय",
+    "note": "सड़सठ मंत्र तीन जगह मिलाए गए — एक संग्रह, शांकर भाष्य के साथ छपा एक पाठ (जिसका मूल एक शोध-संस्करण से मिलाया हुआ है) और एक पुराने छपे संस्करण की प्रतिलिपि — और छपी हिंदी टीका से देखे गए। संग्रह वाले पाठ में वर्तनी की कई भूलें थीं (\"कुते\", \"सोभ्य\", \"यादौ\"); चौबीस जगह बाक़ी गवाहों वाला पाठ रखा है।\n\nरयि, प्राण और सोलह कलाओं जैसे शब्दों को आचार्यों ने विस्तार से समझाया है; यहाँ सीधा शब्दार्थ है, किसी एक मत का भाष्य नहीं।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

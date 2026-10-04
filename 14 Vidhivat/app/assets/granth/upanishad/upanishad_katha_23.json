@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "id": "upanishad_katha_23",
+  "naam": "कठ — अध्याय २, वल्ली ३",
+  "upnaam": [
+    "ऊर्ध्वमूलोऽवाक्शाख",
+    "हृदय की गाँठें"
+  ],
+  "prakar": "granth",
+  "devta": "ब्रह्म (परमात्मा)",
+  "rachnakar": "कृष्ण यजुर्वेद — कठ शाखा",
+  "bhasha": "संस्कृत",
+  "parichay": "आख़िरी वल्ली। संसार एक उलटा पीपल है — जड़ ऊपर, डालियाँ नीचे; यही रूपक गीता के पंद्रहवें अध्याय में भी है। फिर योग की परिभाषा: जब पाँचों इंद्रियाँ मन के साथ ठहर जाएँ और बुद्धि भी चेष्टा न करे। जब हृदय की सारी कामनाएँ छूट जाती हैं और उसकी गाँठें खुल जाती हैं, तब मनुष्य यहीं अमर हो जाता है। नचिकेता यह विद्या पाकर मृत्यु से मुक्त हुआ।",
+  "kabPadhein": "किसी भी शांत समय — सुबह या शाम। उपनिषद पूजा का पाठ नहीं, स्वाध्याय और मनन के लिए हैं: थोड़ा पढ़ें, और जो पढ़ा उस पर रुककर सोचें।",
+  "kaisePadhein": "परंपरा में उपनिषद का पाठ शांति पाठ से शुरू होता है और उसी पर ख़त्म — इसलिए हर उपनिषद का पहला खंड उसका शांति पाठ है; पाठ पूरा करके उसे एक बार फिर पढ़ लें।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर मंत्र के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं। यहाँ वैदिक स्वर-चिह्न नहीं हैं; साफ़ और धीमा उच्चारण रखें।\n\nउपनिषद के मंत्र गूढ़ हैं और आचार्यों ने कई मंत्रों को अलग-अलग ढंग से समझाया है। यहाँ का अर्थ सिर्फ़ पहली सीढ़ी है — गहराई से समझना हो तो किसी जानकार के साथ या किसी भाष्य के सहारे पढ़ें।",
+  "khand": [
+    {
+      "shirshak": "मंत्र १",
+      "dev": "ऊर्ध्वमूलोऽवाक्शाख एषोऽश्वत्थः सनातनः ।\nतदेव शुक्रं तद्ब्रह्म तदेवामृतमुच्यते ।\nतस्मिँल्लोकाः श्रिताः सर्वे तदु नात्येति कश्चन । एतद्वै तत् ॥",
+      "roman": "oordhvamoolo'vaakshaakha esho'shvatthah sanaatanah |\ntadeva shukram tadbrahma tadevaamritamuchyate |\ntasminllokaah shritaah sarve tadu naatyeti kashchana | etadvai tat ||",
+      "arth": "(यम:) \"यह सनातन पीपल का पेड़ ऐसा है कि जड़ ऊपर है और डालियाँ नीचे। उसकी जो जड़ है, वही शुद्ध है, वही ब्रह्म है, उसी को अमृत कहते हैं। सब लोक उसी में टिके हैं; उसे कोई लाँघ नहीं सकता। यही वह है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २",
+      "dev": "यदिदं किं च जगत् सर्वं प्राण एजति निःसृतम् ।\nमहद्भयं वज्रमुद्यतं य एतद्विदुरमृतास्ते भवन्ति ॥",
+      "roman": "yadidam kim cha jagat sarvam praana ejati nihsritam |\nmahadbhayam vajramudyatam ya etadviduramritaaste bhavanti ||",
+      "arth": "\"यह जो कुछ भी जगत है, वह सब प्राण (ब्रह्म) से निकला है और उसी में चल रहा है। वह उठे हुए वज्र जैसा बड़ा भय है। जो उसे जानते हैं, वे अमर हो जाते हैं।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३",
+      "dev": "भयादस्याग्निस्तपति भयात्तपति सूर्यः ।\nभयादिन्द्रश्च वायुश्च मृत्युर्धावति पञ्चमः ॥",
+      "roman": "bhayaadasyaagnistapati bhayaattapati sooryah |\nbhayaadindrashcha vaayushcha mrityurdhaavati panchamah ||",
+      "arth": "\"उसी के भय से अग्नि तपती है, उसी के भय से सूर्य तपता है; उसी के भय से इंद्र, वायु और पाँचवाँ मृत्यु — अपने-अपने काम में दौड़ते हैं।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४",
+      "dev": "इह चेदशकद्बोद्धुं प्राक् शरीरस्य विस्रसः ।\nततः सर्गेषु लोकेषु शरीरत्वाय कल्पते ॥",
+      "roman": "iha chedashakadboddhum praak shareerasya visrasah |\ntatah sargeshu lokeshu shareeratvaaya kalpate ||",
+      "arth": "\"अगर मनुष्य शरीर छूटने से पहले यहीं उसे जान सका, तो मुक्त हो जाता है; नहीं तो उसे रचे हुए लोकों में फिर शरीर धारण करना पड़ता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ५",
+      "dev": "यथाऽऽदर्शे तथाऽऽत्मनि यथा स्वप्ने तथा पितृलोके ।\nयथाऽप्सु परीव ददृशे तथा गन्धर्वलोके छायातपयोरिव ब्रह्मलोके ॥",
+      "roman": "yathaa''darshe tathaa''tmani yathaa svapne tathaa pitriloke |\nyathaa'psu pareeva dadrishe tathaa gandharvaloke chhaayaatapayoriva brahmaloke ||",
+      "arth": "\"जैसे दर्पण में साफ़ दिखता है, वैसे ही वह अपने भीतर दिखता है; जैसे सपने में, वैसा पितृलोक में; जैसे पानी में झलक सी, वैसा गंधर्वलोक में; और ब्रह्मलोक में छाया और धूप की तरह साफ़ अलग-अलग।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ६",
+      "dev": "इन्द्रियाणां पृथग्भावमुदयास्तमयौ च यत् ।\nपृथगुत्पद्यमानानां मत्वा धीरो न शोचति ॥",
+      "roman": "indriyaanaam prithagbhaavamudayaastamayau cha yat |\nprithagutpadyamaanaanaam matvaa dheero na shochati ||",
+      "arth": "\"इंद्रियाँ आत्मा से अलग हैं, अलग-अलग पैदा होती हैं, और उनका जागना और शांत होना भी उन्हीं का है — यह जानकर समझदार मनुष्य शोक नहीं करता।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ७",
+      "dev": "इन्द्रियेभ्यः परं मनो मनसः सत्त्वमुत्तमम् ।\nसत्त्वादधि महानात्मा महतोऽव्यक्तमुत्तमम् ॥",
+      "roman": "indriyebhyah param mano manasah sattvamuttamam |\nsattvaadadhi mahaanaatmaa mahato'vyaktamuttamam ||",
+      "arth": "\"इंद्रियों से ऊपर मन है, मन से ऊपर बुद्धि (सत्त्व), बुद्धि से ऊपर महान आत्मा (महत्), और महत् से ऊपर अव्यक्त।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ८",
+      "dev": "अव्यक्तात्तु परः पुरुषो व्यापकोऽलिङ्ग एव च ।\nयं ज्ञात्वा मुच्यते जन्तुरमृतत्वं च गच्छति ॥",
+      "roman": "avyaktaattu parah purusho vyaapako'linga eva cha |\nyam jnaatvaa muchyate janturamritatvam cha gachchhati ||",
+      "arth": "\"अव्यक्त से भी परे पुरुष है — सब जगह फैला हुआ, और बिना किसी चिह्न का। उसे जानकर प्राणी मुक्त हो जाता है और अमरता पाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ९",
+      "dev": "न संदृशे तिष्ठति रूपमस्य न चक्षुषा पश्यति कश्चनैनम् ।\nहृदा मनीषा मनसाऽभिक्लृप्तो य एतद्विदुरमृतास्ते भवन्ति ॥",
+      "roman": "na samdrishe tishthati roopamasya na chakshushaa pashyati kashchanainam |\nhridaa maneeshaa manasaa'bhiklripto ya etadviduramritaaste bhavanti ||",
+      "arth": "\"उसका रूप नज़र के सामने नहीं ठहरता; कोई उसे आँख से नहीं देखता। वह हृदय, बुद्धि और मन से जाना जाता है। जो उसे जानते हैं, वे अमर हो जाते हैं।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १०",
+      "dev": "यदा पञ्चावतिष्ठन्ते ज्ञानानि मनसा सह ।\nबुद्धिश्च न विचेष्टति तामाहुः परमां गतिम् ॥",
+      "roman": "yadaa panchaavatishthante jnaanaani manasaa saha |\nbuddhishcha na vicheshtati taamaahuh paramaam gatim ||",
+      "arth": "\"जब पाँचों ज्ञानेंद्रियाँ मन के साथ ठहर जाती हैं, और बुद्धि भी कोई चेष्टा नहीं करती — उसी को परम गति कहते हैं।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ११",
+      "dev": "तां योगमिति मन्यन्ते स्थिरामिन्द्रियधारणाम् ।\nअप्रमत्तस्तदा भवति योगो हि प्रभवाप्ययौ ॥",
+      "roman": "taam yogamiti manyante sthiraamindriyadhaaranaam |\napramattastadaa bhavati yogo hi prabhavaapyayau ||",
+      "arth": "\"इंद्रियों को इस तरह स्थिर थामे रखने को ही योग माना जाता है। उस समय साधक को सावधान रहना चाहिए, क्योंकि योग आता भी है और चला भी जाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १२",
+      "dev": "नैव वाचा न मनसा प्राप्तुं शक्यो न चक्षुषा ।\nअस्तीति ब्रुवतोऽन्यत्र कथं तदुपलभ्यते ॥",
+      "roman": "naiva vaachaa na manasaa praaptum shakyo na chakshushaa |\nasteeti bruvato'nyatra katham tadupalabhyate ||",
+      "arth": "\"वह न वाणी से पाया जा सकता है, न मन से, न आँख से। जो कहता है कि वह है — उसके सिवा किसी और को वह कैसे मिल सकता है?\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १३",
+      "dev": "अस्तीत्येवोपलब्धव्यस्तत्त्वभावेन चोभयोः ।\nअस्तीत्येवोपलब्धस्य तत्त्वभावः प्रसीदति ॥",
+      "roman": "asteetyevopalabdhavyastattvabhaavena chobhayoh |\nasteetyevopalabdhasya tattvabhaavah praseedati ||",
+      "arth": "\"उसे पहले इसी रूप में जानना चाहिए कि वह है, और फिर उसके असली स्वरूप में। जिसने उसे इतना जान लिया कि वह है, उसके सामने उसका असली स्वरूप अपने आप खुल जाता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १४",
+      "dev": "यदा सर्वे प्रमुच्यन्ते कामा येऽस्य हृदि श्रिताः ।\nअथ मर्त्योऽमृतो भवत्यत्र ब्रह्म समश्नुते ॥",
+      "roman": "yadaa sarve pramuchyante kaamaa ye'sya hridi shritaah |\natha martyo'mrito bhavatyatra brahma samashnute ||",
+      "arth": "\"जब हृदय में बसी सारी कामनाएँ छूट जाती हैं, तब मरने वाला मनुष्य अमर हो जाता है, और यहीं ब्रह्म को पा लेता है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १५",
+      "dev": "यदा सर्वे प्रभिद्यन्ते हृदयस्येह ग्रन्थयः ।\nअथ मर्त्योऽमृतो भवत्येतावद्ध्यनुशासनम् ॥",
+      "roman": "yadaa sarve prabhidyante hridayasyeha granthayah |\natha martyo'mrito bhavatyetaavaddhyanushaasanam ||",
+      "arth": "\"जब यहीं, इसी जीवन में हृदय की सारी गाँठें खुल जाती हैं, तब मरने वाला मनुष्य अमर हो जाता है। उपदेश बस इतना ही है।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १६",
+      "dev": "शतं चैका च हृदयस्य नाड्यस्तासां मूर्धानमभिनिःसृतैका ।\nतयोर्ध्वमायन्नमृतत्वमेति विष्वङ्ङन्या उत्क्रमणे भवन्ति ॥",
+      "roman": "shatam chaikaa cha hridayasya naadyastaasaam moordhaanamabhinihsritaikaa |\ntayordhvamaayannamritatvameti vishvannanyaa utkramane bhavanti ||",
+      "arth": "\"हृदय की एक सौ एक नाड़ियाँ हैं; उनमें से एक सिर की चोटी की ओर निकलती है। उससे ऊपर जाने वाला अमरता पाता है; बाक़ी नाड़ियाँ निकलते समय अलग-अलग दिशाओं में ले जाती हैं।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १७",
+      "dev": "अङ्गुष्ठमात्रः पुरुषोऽन्तरात्मा सदा जनानां हृदये संनिविष्टः ।\nतं स्वाच्छरीरात्प्रवृहेन्मुञ्जादिवेषीकां धैर्येण ।\nतं विद्याच्छुक्रममृतं तं विद्याच्छुक्रममृतमिति ॥",
+      "roman": "angushthamaatrah purusho'ntaraatmaa sadaa janaanaam hridaye samnivishtah |\ntam svaachchhareeraatpravrihenmunjaadivesheekaam dhairyena |\ntam vidyaachchhukramamritam tam vidyaachchhukramamritamiti ||",
+      "arth": "\"अँगूठे जितना पुरुष — अंतरात्मा — सदा लोगों के हृदय में बैठा है। उसे धीरज के साथ अपने शरीर से वैसे ही अलग पहचाने, जैसे मूँज की घास से उसकी सींक निकाली जाती है। उसी को शुद्ध और अमृत जाने — उसी को शुद्ध और अमृत जाने।\"",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १८",
+      "dev": "मृत्युप्रोक्तां नचिकेतोऽथ लब्ध्वा विद्यामेतां योगविधिं च कृत्स्नम् ।\nब्रह्मप्राप्तो विरजोऽभूद्विमृत्युरन्योऽप्येवं यो विदध्यात्ममेव ॥",
+      "roman": "mrityuproktaam nachiketo'tha labdhvaa vidyaametaam yogavidhim cha kritsnam |\nbrahmapraapto virajo'bhoodvimrityuranyo'pyevam yo vidadhyaatmameva ||",
+      "arth": "मृत्यु की बताई हुई यह विद्या और योग की पूरी विधि पाकर नचिकेता ब्रह्म को प्राप्त हुआ — मल से रहित और मृत्यु से मुक्त हो गया। और कोई भी, जो अध्यात्म को इसी तरह जान ले, वैसा ही हो जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "कृष्ण यजुर्वेद, कठ शाखा — दो अध्याय, छह वल्लियाँ",
+    "kshetra": "सब जगह — वेदांत का स्वाध्याय",
+    "note": "एक सौ उन्नीस मंत्र तीन जगह मिलाए गए — एक संग्रह, एक शोध-संस्करण पर बना पाठ और एक पुराने छपे संस्करण की प्रतिलिपि — और छपी हिंदी टीका से देखे गए। जहाँ संग्रह अकेला पड़ा वहाँ बाक़ी गवाहों का पाठ रखा है: \"ईशानो भूतभव्यस्य\", \"न विचेष्टति\", और चरणों के बीच की संधि।\n\nदो जगह आचार्यों ने मंत्र को अलग-अलग पढ़ा है: \"यमेवैष वृणुते\" — आत्मा साधक को चुनता है या साधक आत्मा को; और \"धातुप्रसादात्\" — मन की निर्मलता से या विधाता की कृपा से। यहाँ सीधा शब्दार्थ है, किसी एक मत का भाष्य नहीं।\n\nअर्थ सरल हिंदी में, अपने शब्दों में है।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}
