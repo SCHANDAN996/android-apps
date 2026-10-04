@@ -60,6 +60,7 @@ flutter:
     - assets/granth/vishnusahasranama/
     - assets/granth/sukta/
     - assets/granth/upanishad/
+    - assets/granth/mahabharat/
     - assets/katha/
     - assets/vrat/
     - assets/parv/

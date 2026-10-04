@@ -80,7 +80,13 @@ def jaancho(gid):
         for k in d['khand']:
             kahan = '%s %s' % (f, k['shirshak'])
             kul += 1
-            if not k['dev'].strip() or not k['arth'].strip() or not k['roman'].strip():
+            if d['prakar'] == 'saar':
+                # गद्य का सार (→ D-111): रोमन और अर्थ होते ही नहीं — और हों तो भूल है
+                if not k['dev'].strip() or k['arth'].strip() or k['roman'].strip():
+                    galti.append(kahan + ' — सार का खंड: गद्य ख़ाली, या रोमन/अर्थ भरा')
+                if JUDA.search(k['dev']) or WEB.search(k['dev']):
+                    galti.append(kahan + ' — जुड़ा हुआ नुक़्ता या वेबसाइट का नाम')
+            elif not k['dev'].strip() or not k['arth'].strip() or not k['roman'].strip():
                 galti.append(kahan + ' — पाठ/रोमन/अर्थ ख़ाली')
             if LATIN.search(k['dev']) or LATIN.search(k['arth']):
                 galti.append(kahan + ' — अंग्रेज़ी अक्षर/अंक')

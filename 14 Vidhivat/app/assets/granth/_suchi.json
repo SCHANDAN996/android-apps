@@ -44,6 +44,15 @@
       "ikai": "भाग",
       "khandIkai": "मंत्र",
       "gintiNaam": "मंत्र"
+    },
+    {
+      "id": "mahabharat",
+      "naam": "महाभारत",
+      "chhotaNaam": "महाभारत",
+      "ekLine": "अठारह पर्वों का सार — किस पर्व में कौन सी कथा",
+      "ikai": "भाग",
+      "khandIkai": "खंड",
+      "gintiNaam": "खंड"
     }
   ]
 }

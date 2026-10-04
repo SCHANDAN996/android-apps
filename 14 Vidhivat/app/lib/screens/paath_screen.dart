@@ -224,7 +224,7 @@ class _PaathReaderState extends State<PaathReader> {
   /// हैं — समापन-वाक्य श्लोक नहीं है, इसलिए "48 खंड" नहीं, "47 श्लोक"।
   static String _khandGinti(Paath paath) => switch (paath.prakar) {
         PaathPrakar.granth => _granthGinti(paath),
-        PaathPrakar.stotra => '${paath.khandKul} खंड',
+        PaathPrakar.stotra || PaathPrakar.saar => '${paath.khandKul} खंड',
         PaathPrakar.chalisa || PaathPrakar.aarti => '${paath.khandKul} पद',
       };
 
@@ -383,14 +383,17 @@ class _PaathReaderState extends State<PaathReader> {
                 // ── पाठ ──
                 const SizedBox(height: VidhivatSpacing.xxl),
                 VidhivatSectionHeader(
-                  title: 'पाठ',
+                  // सार में "पाठ" लिखना ग़लत होता — वह पाठ नहीं, कथा का सार है
+                  title: paath.prakar == PaathPrakar.saar ? 'सार' : 'पाठ',
                   // हल्के रंग वाली पंक्तियाँ क्या हैं — यह **एक बार** यहीं
                   // कहा जाता है, हर पद पर लेबल लगाकर नहीं (→ D-083)।
                   supportingText: paath.dohraavKhand == null
                       ? _khandGinti(paath)
                       : '${paath.padGinti} पद · हल्के रंग वाली पंक्तियाँ '
                           'हर पद के बाद दोहराएँ',
-                  action: paath.kuchBharaHai
+                  // सार में न रोमन है, न अर्थ — बटन का कोई काम नहीं
+                  action: paath.kuchBharaHai &&
+                          paath.prakar != PaathPrakar.saar
                       ? VidhivatButton(
                           // जिस पाठ में अर्थ नहीं, सिर्फ़ रोमन है — वहाँ
                           // "अर्थ दिखाएँ" लिखना झूठ होता।
@@ -430,6 +433,7 @@ class _PaathReaderState extends State<PaathReader> {
                     khand: k,
                     arthDikhao: _arthDikhao,
                     shirshakDikhao: paath.prakar != PaathPrakar.aarti,
+                    gadya: paath.prakar == PaathPrakar.saar,
                     baadMein: k.dohraav ? null : paath.dohraavKhand,
                   ),
                   const SizedBox(height: VidhivatSpacing.sm),
@@ -710,12 +714,17 @@ class _KhandCard extends StatelessWidget {
   /// इस पद के **बाद** दोहराई जाने वाली पंक्तियाँ — आरती की टेक (→ D-083)।
   final PaathKhand? baadMein;
 
+  /// खंड गद्य है (सार) — मंत्र वाले बड़े अक्षर नहीं, पढ़ने वाले अक्षर
+  /// (`bodyLarge`, जैसे कथा में → D-060)।
+  final bool gadya;
+
   const _KhandCard({
     super.key,
     required this.khand,
     this.arthDikhao = false,
     this.shirshakDikhao = true,
     this.baadMein,
+    this.gadya = false,
   });
 
   @override
@@ -743,7 +752,7 @@ class _KhandCard extends StatelessWidget {
             // scrollable हो जाते हैं, और लंबे पन्ने पर स्क्रॉल उलझता है।
             // (विधि प्लेयर में एक पन्ने पर एक ही मंत्र होता है, इसलिए
             // वहाँ `SelectableText` ठीक है।)
-            Text(khand.dev, style: type.mantra),
+            Text(khand.dev, style: gadya ? type.bodyLarge : type.mantra),
             if (arthDikhao && khand.roman.isNotEmpty) ...[
               const SizedBox(height: VidhivatSpacing.xs),
               Text(khand.roman, style: type.mantraTransliteration),

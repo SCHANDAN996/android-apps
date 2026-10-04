@@ -39,6 +39,11 @@
 `"ginoShirshak": ""` — सूची में गिनती सारे खंडों की।
 `"yatiPar": ["चौपाई"]` — इन खंडों की हर पंक्ति «अ। ब॥» ऐप में दो पंक्तियों में।
 पाठ में `"gintiNaam": "अनुवाक"` — सूची में उस पाठ की गिनती इसी इकाई में (तैत्तिरीय)।
+
+`"prakar": "saar"` — **गद्य का सार** (महाभारत के पर्व → D-111): खंड में सिर्फ़ शीर्षक
+और हिंदी गद्य; `= अर्थ` की पंक्ति नहीं होती, रोमन नहीं बनता। ऐसे पाठ के
+`kaisePadhein` में «⚠ … शब्दशः पाठ नहीं …» वाली पंक्ति होनी ही चाहिए — ऐप उसे
+पाठ के ऊपर खुला दिखाता है (→ D-060)।
 """
 import io
 import json
@@ -119,8 +124,10 @@ def asset_dir(gid):
 NBSP = chr(0xA0)
 
 
-def khand_padho(path):
-    """`paath/<कुंजी>.txt` → [(शीर्षक, [मूल की पंक्तियाँ], अर्थ)]"""
+def khand_padho(path, gadya=False):
+    """`paath/<कुंजी>.txt` → [(शीर्षक, [मूल की पंक्तियाँ], अर्थ)]
+
+    [gadya] — सार वाला पाठ: अर्थ की पंक्ति नहीं होती, अर्थ ख़ाली लौटता है।"""
     out = []
     for blk in re.split(r'\n\s*\n', padho(path).strip()):
         lines = [x.rstrip() for x in blk.split('\n')]
@@ -130,7 +137,11 @@ def khand_padho(path):
         arth = [x[2:].strip() for x in lines[1:] if x.startswith('= ')]
         if not mool:
             ruko('%s: "%s" में मूल पाठ नहीं' % (path, lines[0]))
-        if len(arth) != 1:
+        if gadya:
+            if arth:
+                ruko('%s: "%s" सार है — इसमें "= अर्थ" की पंक्ति नहीं होती' % (path, lines[0]))
+            arth = ['']
+        elif len(arth) != 1:
             ruko('%s: "%s" में अर्थ की %d पंक्तियाँ — ठीक एक चाहिए'
                  % (path, lines[0], len(arth)))
         out.append((lines[0][2:].strip(), mool, arth[0]))
@@ -156,11 +167,14 @@ def banao_khand(gid, kram, src, dst):
         if len(note) > kram.get('noteHadd', 600):
             ruko('%s: ⓘ का नोट %d अक्षर — हद पार' % (key, len(note)))
         hindi = f.get('lipi') == 'hindi'
+        gadya = f['prakar'] == 'saar'
+        if gadya and not re.search('⚠[^\n]*शब्दशः पाठ नहीं', f['kaisePadhein']):
+            ruko('%s: सार है, पर `kaisePadhein` में «⚠ … शब्दशः पाठ नहीं» वाली पंक्ति नहीं' % key)
         sanskrit_wale = tuple(f.get('sanskritShirshak', []))
         yati_wale = tuple(f.get('yatiPar', []))
         khand = []
         dekhe = set()
-        for shirshak, mool, arth in khand_padho(os.path.join(src, 'paath', key + '.txt')):
+        for shirshak, mool, arth in khand_padho(os.path.join(src, 'paath', key + '.txt'), gadya):
             if shirshak in dekhe:
                 ruko('%s: शीर्षक "%s" दो बार' % (key, shirshak))
             dekhe.add(shirshak)
@@ -175,15 +189,18 @@ def banao_khand(gid, kram, src, dst):
                         ruko('%s %s: पंक्ति «अ। ब॥» के रूप में नहीं: %s' % (key, shirshak, x))
                     tode += [aadhe[0] + '।', aadhe[1]]
                 mool = tode
-            dev = '\n'.join(mool).replace(' ।', NBSP + '।')
+            # सार में हर पंक्ति एक अनुच्छेद है — बीच में ख़ाली पंक्ति
+            dev = ('\n\n' if gadya else '\n').join(mool).replace(' ।', NBSP + '।')
             if re.search(r'[A-Za-z0-9]', dev):
                 ruko('%s %s: पाठ में अंग्रेज़ी अक्षर/अंक' % (key, shirshak))
+            if gadya and len(dev.split()) < 8:
+                ruko('%s %s: सार का खंड %d शब्द का — बहुत छोटा' % (key, shirshak, len(dev.split())))
             if re.search(r'[A-Za-z0-9]', arth):
                 ruko('%s %s: अर्थ में अंग्रेज़ी अक्षर/अंक: %s' % (key, shirshak, arth))
             khand.append({
                 'shirshak': shirshak,
                 'dev': dev,
-                'roman': (roman_hindi(dev)
+                'roman': ('' if gadya else roman_hindi(dev)
                           if hindi and not (sanskrit_wale and shirshak.startswith(sanskrit_wale))
                           else roman_sanskrit(dev)),
                 'arth': khula(arth),

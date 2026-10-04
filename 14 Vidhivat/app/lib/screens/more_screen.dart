@@ -94,7 +94,8 @@ class MoreScreen extends StatelessWidget {
                 _MoreItem(
                   icon: Icons.auto_stories_outlined,
                   title: 'ग्रंथालय',
-                  subtitle: 'गीता, उपनिषद, सुंदरकांड, सप्तशती, सहस्रनाम, सूक्त — अर्थ सहित',
+                  subtitle: 'गीता, उपनिषद, सुंदरकांड, सप्तशती, सहस्रनाम, सूक्त — अर्थ सहित; '
+                      'महाभारत का सार',
                   onTap: () => _open(context, const GranthalayaScreen()),
                 ),
                 // ── कुंडली (→ D-098, D-105) ─────────────────────────

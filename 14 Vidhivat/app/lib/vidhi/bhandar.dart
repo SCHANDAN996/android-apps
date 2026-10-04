@@ -207,6 +207,7 @@ class GranthBhandar {
     'vishnusahasranama',
     'sukta',
     'upanishad',
+    'mahabharat',
   };
 
   /// सप्तशती का पाठ गीता से पहले आया था और `assets/paath/saptashati/` में

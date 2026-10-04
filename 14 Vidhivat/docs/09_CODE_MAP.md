@@ -584,6 +584,12 @@ app/assets/granth/
     ├── _kram.json         34 पाठ, दस हिस्सों में — नौ उपनिषद + शांति मंत्र
     └── upanishad_isha · _kena · _katha_11…23 · _prashna_1…6 · _mundaka_11…32 ·
         _mandukya · _tait_1…3 (अनुवाक) · _aitareya_1…3 · _shveta_1…6 · _shanti
+```
+
+`mahabharat/` (→ D-111) — `_kram.json` + `mahabharat_parichay` · `_p01 … _p18`: **सार**
+(`"prakar": "saar"`) — गद्य, बिना रोमन और अर्थ के।
+
+```
 app/assets/paath/saptashati/   सप्तशती यहीं रही (उसकी `_kram.json` में अब `id`)
 
 app/lib/vidhi/granth.dart            GranthKram · GranthHissa · GranthPaath · GranthSuchiEntry
@@ -616,6 +622,9 @@ app/lib/screens/paath_screen.dart         GranthNavigation — नीचे क�
 | `tools/granth_paath/gita/milan/` | पाँच स्रोतों का मिलान → `mool.txt` |
 | `tools/granth_paath/sundarkand/` | `kram.json` (`"lipi": "hindi"`), `paath/01…12.txt`; `milan/sk_mool.py` — आधार से 108 सुधारों की तालिका (→ D-106) |
 | `tools/granth_paath/vishnusahasranama/` | `paath/01…03.txt`; `milan/naam_jaanch.py` — हज़ार नाम, क्रम, हर नाम अपने श्लोक में (repo के भीतर से चलता है) (→ D-107) |
+| `tools/granth_paath/mahabharat/` | अठारह पर्वों का **सार** — `"prakar": "saar"`; `paath/*.txt` में शीर्षक + गद्य, `= अर्थ` नहीं; `kaisePadhein` में «⚠ … शब्दशः पाठ नहीं» ज़रूरी (औज़ार इसके बिना रुक जाता है) (→ D-111) |
+| `app/test/mahabharat_test.dart` | 12 जाँचें — उन्नीस पन्ने क्रम में; दोनों गिनतियाँ अंक-दर-अंक और उनका जोड़; "यह सार है" खुला; पन्ने पर "अर्थ दिखाएँ" नहीं |
+| `PaathPrakar.saar` | `vidhi/paath.dart` — गद्य का सार; `paath_screen` में शीर्षक "सार", बटन नहीं, अक्षर `bodyLarge` |
 | `tools/granth_paath/upanishad/` | `paath/*.txt` (खंड `मंत्र N`, तैत्तिरीय में `अनुवाक N`); `kram.json` में तैत्तिरीय पर `gintiNaam`; `milan/` — S को गवाहों और छपी टीका के OCR से कसना, 163 सुधारों की तालिका (→ D-109) |
 | `app/test/upanishad_test.dart` | 34 पाठों की गिनती (460 मंत्र + 31 अनुवाक + 8); हर उपनिषद का शांति पाठ = शांति मंत्रों वाला; बँटे हुए पाठ और उनका ⓘ; तैत्तिरीय "अनुवाक" में |
 | `tools/granth_paath/sukta/` | `paath/*.txt` (खंड `मंत्र N`); `milan/` — ऋग्वेद, यजुर्वेद और श्री सूक्त का मिलान (→ D-108) |
