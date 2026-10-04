@@ -51,6 +51,7 @@ class _KundaliScreenState extends State<KundaliScreen> {
   late final GrahaSthiti _spashtRahu;
   late final JanmPanchang _jp;
   late final List<DashaKhand> _dasha;
+  late final Avakahada _av;
   KundaliAadhar _aadhar = KundaliAadhar.lagna;
   final _chitraKey = GlobalKey();
   bool _bhejRahe = false;
@@ -67,6 +68,7 @@ class _KundaliScreenState extends State<KundaliScreen> {
         computeKundali(janm, place, spashtRahu: true)[KundaliGraha.rahu];
     _jp = janmPanchang(janm, place, masaSystem: settings.masaSystem);
     _dasha = vimshottariMahadasha(janm, _k[KundaliGraha.chandra].nirayan);
+    _av = avakahada(_k[KundaliGraha.chandra].nirayan);
   }
 
   /// चित्र वाला हिस्सा PNG बनाकर भेजना। PDF नहीं — Dart की PDF लाइब्रेरियाँ
@@ -479,9 +481,96 @@ class _KundaliScreenState extends State<KundaliScreen> {
             ],
           ),
         ),
-        const SizedBox(height: VidhivatSpacing.sm),
+        const SizedBox(height: VidhivatSpacing.md),
+        ..._avakahadaKhand(context),
+        const SizedBox(height: VidhivatSpacing.md),
         _ganitKaButton(),
       ],
     );
+  }
+
+  // ───────────────────────── अवकहड़ा (→ D-110) ─────────────────────────
+
+  /// नाम के अक्षर के नीचे की बात — नक्षत्र-चरण, और जो अपवाद लागू हों।
+  String _aksharKiBaat() {
+    final jagah = _av.naamAksharKiJagah;
+    final abhijit = _av.abhijitAkshar;
+    return [
+      '${_av.chandra.nakshatraNaam}, चरण ${_av.charan}',
+      if (jagah != null)
+        '"${_av.naamAkshar}" से नाम शुरू नहीं होता — पुस्तक इसकी जगह "$jagah" बताती है',
+      if (abhijit != null) 'अभिजित नक्षत्र मानें तो "$abhijit"',
+    ].join('\n');
+  }
+
+  List<Widget> _avakahadaKhand(BuildContext context) {
+    final type = VidhivatTheme.typographyOf(context);
+    final colors = VidhivatTheme.colorsOf(context);
+    final purana = _av.vashyaPurana;
+    return [
+      const VidhivatSectionHeader(title: 'अवकहड़ा'),
+      const SizedBox(height: VidhivatSpacing.xs),
+      // चंद्रमा चरण की सीमा पर हो तो अक्षर जन्म-समय के भरोसे है — खुला सच
+      if (_av.chandra.charanSeemaSeDoori < 0.3)
+        const Chetavni(
+          'चंद्रमा नक्षत्र के चरण की सीमा के बिल्कुल पास है। जन्म का समय आधा '
+          'घंटा भी अलग हो तो नाम का अक्षर अगला या पिछला होगा।',
+          serious: true,
+        ),
+      VidhivatSurfaceCard(
+        padding: const EdgeInsets.symmetric(vertical: VidhivatSpacing.xs),
+        child: Column(
+          children: [
+            Pankti('नाम का अक्षर', _av.naamAkshar,
+                note: _aksharKiBaat(), bold: true),
+            Pankti('राशि स्वामी', _av.rashiSwami.naam,
+                note: 'चंद्र राशि ${_av.chandra.rashiNaam}'),
+            Pankti('वर्ण', _av.varna.naam,
+                note: 'राशि का पुराना वर्ग — जाति से इसका कोई संबंध नहीं'),
+            Pankti('वश्य', _av.vashya.naam,
+                note: purana == null
+                    ? null
+                    : 'पुरानी पुस्तकों में ${purana.naam}'),
+            Pankti('योनि', _av.yoni.naam, note: _av.yoni.saral),
+            Pankti('गण', _av.gana.naam),
+            Pankti('नाड़ी', _av.nadi.naam),
+          ],
+        ),
+      ),
+      const SizedBox(height: VidhivatSpacing.sm),
+      // ── खुला, ⓘ के पीछे नहीं (→ D-056) ───────────────────────────
+      Text(
+        'ये नक्षत्र और राशि की पुरानी तालिकाओं के नाम हैं — बच्चे का नाम '
+        'रखने और गुण मिलाने में काम आते हैं। इनसे किसी का स्वभाव तय नहीं '
+        'होता, और ऐप इनका कोई फल नहीं बताता।',
+        style: type.bodySmall.copyWith(color: colors.textSecondary),
+      ),
+      const SizedBox(height: VidhivatSpacing.sm),
+      const VidhivatSrotButton(
+        label: 'ये तालिकाएँ कहाँ से',
+        panktiyan: [
+          VidhivatSrotPankti(
+            'नाम का अक्षर',
+            'शतपद चक्र (अवकहड़ा चक्र) से: हर नक्षत्र के चार चरण, हर चरण का '
+                'एक अक्षर। दो अलग छपी पुस्तकों के श्लोकों से मिलाया हुआ। '
+                'छोटी-बड़ी मात्रा एक ही गिनी जाती है — "का" वाले चरण में "क" '
+                'से शुरू होने वाला नाम भी चलता है।',
+          ),
+          VidhivatSrotPankti(
+            'वर्ण, योनि, गण, नाड़ी',
+            'मुहूर्तचिंतामणि के विवाह प्रकरण के श्लोकों से। ये चारों देखी गई '
+                'हर पुस्तक में एक हैं।',
+          ),
+          VidhivatSrotPankti(
+            'वश्य',
+            'यहाँ पुस्तकें बँटी हैं: कर्क कहीं जलचर गिना है, कहीं कीट; कुंभ '
+                'कहीं मानव, कहीं जलचर; सिंह कहीं वनचर, कहीं चतुष्पद। ऊपर आजकल '
+                'की प्रचलित गिनती है; जहाँ पुरानी अलग है, साथ में लिखी है।',
+          ),
+        ],
+        antimBaat: 'घर के पंचांग में कुछ अलग छपा हो तो वही मानिए। इन '
+            'तालिकाओं का कोई फल ऐप नहीं बताता।',
+      ),
+    ];
   }
 }

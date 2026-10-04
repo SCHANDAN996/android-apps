@@ -1,4 +1,4 @@
-# Play listing — v1.2.0 के लिए प्रस्ताव (2 अक्टू 2026; 4 अक्टू को उपनिषद और सूक्त जोड़े)
+# Play listing — v1.2.0 के लिए प्रस्ताव (2 अक्टू 2026; 4 अक्टू को उपनिषद, सूक्त, नाम का अक्षर और गुण मिलान जोड़े)
 
 > डेवलपर देखकर ख़ुद Console में डाले। Console में **"**"** वाला markdown नहीं चलता —
 > इसलिए नीचे के पाठ में कहीं नहीं है।
@@ -15,7 +15,7 @@ Puja vidhi, Panchang, Gita, Sundarkand, Saptashati arth sahit, Kundali, offline
 
 ## What's new (500 अक्षर)
 
-नया: ग्रंथालय — पूरी श्रीमद्भगवद्गीता, सुंदरकांड, विष्णु सहस्रनाम, नौ उपनिषद और वेद के सूक्त (पुरुष सूक्त, श्री सूक्त); हर श्लोक, चौपाई और मंत्र का सरल हिंदी अर्थ। दुर्गा सप्तशती में रात्रि सूक्त, देवी सूक्त, तीन रहस्य और क्षमा प्रार्थना जुड़े — नवरात्रि से पहले। जन्म कुंडली — लग्न, चंद्र और नवमांश का चित्र, ग्रहों की स्थिति, विंशोत्तरी दशा और जन्म का पंचांग; सिर्फ़ गणित, कोई फलादेश नहीं। तिथि और नक्षत्र के समय अब और सटीक।
+नया: ग्रंथालय — पूरी श्रीमद्भगवद्गीता, सुंदरकांड, विष्णु सहस्रनाम, नौ उपनिषद और वेद के सूक्त (पुरुष सूक्त, श्री सूक्त); हर श्लोक, चौपाई और मंत्र का सरल हिंदी अर्थ। दुर्गा सप्तशती में रात्रि सूक्त, देवी सूक्त, तीन रहस्य और क्षमा प्रार्थना जुड़े — नवरात्रि से पहले। जन्म कुंडली — लग्न, चंद्र और नवमांश का चित्र, ग्रहों की स्थिति, विंशोत्तरी दशा, नाम का अक्षर, गुण मिलान के अंक और जन्म का पंचांग; सिर्फ़ गणित, कोई फलादेश नहीं। तिथि और नक्षत्र के समय अब और सटीक।
 
 ## पूरा विवरण (4000 अक्षर)
 
@@ -41,7 +41,7 @@ Puja vidhi, Panchang, Gita, Sundarkand, Saptashati arth sahit, Kundali, offline
 
 ★ नया — जन्म कुंडली (सिर्फ़ गणित)
 
-जन्म की तारीख़, समय और जगह भरिए — लग्न, चंद्र और नवमांश कुंडली का चित्र, नौ ग्रहों की राशि, अंश और नक्षत्र, विंशोत्तरी महादशा-अंतर्दशा और जन्म के क्षण का पंचांग। परिवार के कई लोगों की कुंडली रख सकते हैं; चित्र भेज भी सकते हैं। जन्म का ब्यौरा सिर्फ़ आपके फ़ोन में रहता है। ऐप फल, दोष या उपाय नहीं बताता — वह आपके पंडित जी का काम है।
+जन्म की तारीख़, समय, जगह भरिए — लग्न, चंद्र और नवमांश कुंडली का चित्र, नौ ग्रहों की राशि-अंश-नक्षत्र, विंशोत्तरी दशा, नाम का अक्षर और जन्म का पंचांग। गुण मिलान के अंक भी। पूरे परिवार की कुंडलियाँ रखिए; चित्र भेजिए। जन्म का ब्यौरा सिर्फ़ आपके फ़ोन में रहता है। ऐप फल, दोष या उपाय नहीं बताता — वह आपके पंडित जी का काम है।
 
 
 ★ शारदीय नवरात्रि
@@ -95,7 +95,7 @@ Puja vidhi, Panchang, Gita, Sundarkand, Saptashati arth sahit, Kundali, offline
 विधिवत सिर्फ़ विधि और समय बताता है। आपके घर या क्षेत्र की परंपरा अलग हो तो वही सही है। किसी भी ज़रूरी काम का अंतिम निर्णय अपने पंडित जी से करें।
 
 
-Puja vidhi, panchang, Bhagavad Gita, Upanishads, Sundarkand, Vishnu Sahasranama and Durga Saptashati with Hindi meaning, janam kundali (lagna chart, navamsha, vimshottari dasha), Navratri puja vidhi, shradh pitru paksha, karwa chauth, chhath puja, sankalp, choghadiya, shubh muhurat, vrat tyohar, Hanuman Chalisa aur aarti — sab ek jagah, offline. Hindu calendar with tithi, nakshatra, yoga, karana and rahu kaal for your city.
+Puja vidhi, panchang, Bhagavad Gita, Upanishads, Sundarkand, Vishnu Sahasranama and Durga Saptashati with Hindi meaning, janam kundali (lagna chart, navamsha, vimshottari dasha, gun milan), Navratri puja vidhi, shradh pitru paksha, karwa chauth, chhath puja, sankalp, choghadiya, shubh muhurat, vrat tyohar, Hanuman Chalisa aur aarti — sab ek jagah, offline. Hindu calendar with tithi, nakshatra, yoga, karana and rahu kaal for your city.
 
 ## Screenshots
 
@@ -109,6 +109,7 @@ v1.1 वाले आठ जस के तस चल सकते हैं। �
 | विष्णु सहस्रनाम, "अर्थ दिखाएँ" दबाकर — नामों की सूची | — |
 | गीता अध्याय २, "अर्थ दिखाएँ" दबाकर | — |
 | जन्म कुंडली का चित्र (अपने घर के किसी की नहीं — कोई बनावटी ब्यौरा) | ⚠ नाम और जन्म-ब्यौरा तस्वीर में दिखता है |
+| गुण मिलान का पन्ना — चाहें तो (बनावटी नामों से) | ⚠ तस्वीर में "दोष" या कोई फ़ैसला नहीं दिखना चाहिए — ऐप में है भी नहीं |
 
 ## ⚠ listing में जो शब्द अब भी नहीं
 

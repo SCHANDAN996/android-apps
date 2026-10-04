@@ -27,7 +27,9 @@ export 'src/moon.dart'
         moonMeanLongitude,
         moonGeometricLongitude;
 export 'src/nutation.dart' show nutationInLongitude;
+export 'src/avakahada.dart';
 export 'src/dasha.dart';
+export 'src/gun_milan.dart';
 export 'src/graha.dart';
 export 'src/kundali.dart';
 export 'src/bharat_samay.dart';

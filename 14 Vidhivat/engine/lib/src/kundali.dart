@@ -99,6 +99,18 @@ class RashiSthiti {
 
   /// राशि की सीमा से कितने अंश दूर — दोनों में जो पास हो।
   double get rashiSeemaSeDoori => ansh < 15 ? ansh : 30 - ansh;
+
+  /// नक्षत्र की सीमा से कितने अंश दूर — दोनों में जो पास हो।
+  double get nakshatraSeemaSeDoori {
+    final x = nirayan % _nakshatraAnsh;
+    return x < _nakshatraAnsh / 2 ? x : _nakshatraAnsh - x;
+  }
+
+  /// चरण की सीमा से कितने अंश दूर — दोनों में जो पास हो।
+  double get charanSeemaSeDoori {
+    final x = nirayan % _charanAnsh;
+    return x < _charanAnsh / 2 ? x : _charanAnsh - x;
+  }
 }
 
 /// कुंडली में एक ग्रह।

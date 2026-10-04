@@ -665,3 +665,30 @@ app/lib/screens/paath_screen.dart         GranthNavigation — नीचे क�
 | `app/test/kundali_screens_test.dart` | 17 जाँचें — छोटे फ़ोन, बड़े अक्षर, और वर्जित शब्द |
 
 ⛔ फलादेश, राशिफल, उपाय — इन फ़ाइलों में नहीं हैं और नहीं आएँगे।
+
+### अवकहड़ा और गुण मिलान — `avakahada.dart` + `gun_milan.dart` (→ D-110)
+
+सिर्फ़ तालिकाएँ — खगोल `kundali.dart` से आता है (चंद्रमा का निरयन देशांतर)।
+
+| नाम | क्या |
+|---|---|
+| `avakahada(चंद्र)` → `Avakahada` | `naamAkshar` · `naamAksharKiJagah` (ङ, ण, ञ पर) · `abhijitAkshar` · `varna` · `vashya` · `vashyaPurana` · `yoni` · `gana` · `nadi` · `rashiSwami` |
+| `enum Varna · Vashya · Yoni · Gana · Nadi` | नाम देवनागरी में; `Yoni.saral` बोलचाल का नाम |
+| `gunMilan(varChandra:, kanyaChandra:)` → `GunMilan` | `koot` (आठ `KootAnk`) · `kul` · `puraniTalikaSeKul` (अलग हो तभी) |
+| `KootAnk` | `ank` · `puraniTalikaSe` (योनि, गण — अलग हो तभी) · `talikaBantiHai` (वश्य) · `varKa` · `kanyaKa` |
+| `grahaMaitriAnk` · `tara` · `taraAnk` · `bhakootAnk` | नियम से निकलने वाले अंक |
+| `RashiSthiti.nakshatraSeemaSeDoori` · `charanSeemaSeDoori` | `kundali.dart` में — चंद्रमा सीमा के पास हो तो चेतावनी के लिए |
+| `avakahada_data.dart` | ⚠ **औज़ार से बनी** — `python tools/banao_avakahada.py`; तालिकाएँ `[कन्या][वर]` |
+
+`test/avakahada_test.dart` (20) — तालिकाएँ यहाँ **दोबारा टाइप** हैं, औज़ार वाली प्रति से
+अलग। `tools/banao_avakahada.py --jaancho` (फ़ाइल औज़ार से हूबहू?) · `--bhed` (पुस्तकों
+के बीच के फ़र्क़ — `docs/18` अध्याय २६ यहीं से)।
+
+| फ़ाइल | क्या |
+|---|---|
+| `app/lib/screens/kundali_screen.dart` | "पंचांग" पट्टी के नीचे `_avakahadaKhand` — सात पंक्तियाँ, दो खुले वाक्य, ⓘ "ये तालिकाएँ कहाँ से" |
+| `app/lib/screens/gun_milan_screen.dart` | वर/कन्या का चुनाव (सहेजी कुंडलियों में से), कुल, आठ कूट, ⓘ "ये अंक कैसे निकले"; `gunAnk()` — "1½" |
+| `app/lib/screens/kundali_profiles_screen.dart` | `गुण मिलान` का बटन — दो कुंडलियाँ हों तभी |
+| `app/test/gun_milan_test.dart` | 15 जाँचें — अंक इंजन वाले ही, तीन खुले सच, छोटा फ़ोन, तेरह वर्जित शब्द |
+
+⛔ फ़ैसला ("इतने गुण पर…"), "दोष", किसी कूट का फल, परिहार — नहीं हैं और नहीं आएँगे।

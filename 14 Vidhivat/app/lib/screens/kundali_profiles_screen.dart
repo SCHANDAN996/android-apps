@@ -7,6 +7,7 @@ import '../state/settings.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
+import 'gun_milan_screen.dart';
 import 'kundali_screen.dart';
 
 /// परिवार की कुंडलियाँ — जन्म का ब्यौरा भरो, कुंडली खोलो (→ D-105)।
@@ -132,6 +133,27 @@ class _KundaliProfilesScreenState extends State<KundaliProfilesScreen> {
                   ),
                   const SizedBox(height: VidhivatSpacing.sm),
                 ],
+              // ── गुण मिलान — दो कुंडलियाँ हों तभी (→ D-110) ──────────────
+              if (!_loading && kundaliProfiles.items.length >= 2) ...[
+                const SizedBox(height: VidhivatSpacing.sm),
+                VidhivatButton(
+                  label: 'गुण मिलान',
+                  icon: Icons.compare_arrows,
+                  variant: VidhivatButtonVariant.secondary,
+                  fullWidth: true,
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          GunMilanScreen(profiles: kundaliProfiles.items),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: VidhivatSpacing.xxs),
+                Text(
+                  'दो कुंडलियों के बीच अष्टकूट के अंक — सिर्फ़ जोड़, फ़ैसला नहीं।',
+                  style: type.bodySmall.copyWith(color: colors.textSecondary),
+                ),
+              ],
               const SizedBox(height: VidhivatSpacing.md),
               Text(
                 'जन्म का ब्यौरा सिर्फ़ इस फ़ोन में रहता है; ऐप इसे कहीं नहीं '
