@@ -11,9 +11,12 @@ import 'package:vidhivat/vidhi/bhandar.dart';
 import 'package:vidhivat/vidhi/granth.dart';
 import 'package:vidhivat/vidhi/paath.dart';
 
-/// अठारह पुराण — **परिचय** (→ D-113)। पाठ नहीं, गद्य; आधार पुराणों की अपनी
-/// सूचियाँ: मत्स्य ५३, भागवत १२.७ और १२.१३, विष्णु ३.६
-/// (`docs/18_SROT_PANJI.md` अध्याय २८)।
+/// वेद और पुराण — **परिचय**। पाठ नहीं, गद्य।
+///
+/// अठारह पुराण (→ D-113): आधार पुराणों की अपनी सूचियाँ — मत्स्य ५३, भागवत
+/// १२.७ और १२.१३, विष्णु ३.६ (`docs/18_SROT_PANJI.md` अध्याय २८)।
+/// चार वेद (→ D-114): संहिताओं के ढाँचे की गिनती डिजिटल पाठों में मशीन से;
+/// वेद का बँटना विष्णु ३.४ से (अध्याय २९)।
 void main() {
   const dir = 'assets/granth/puran';
 
@@ -57,6 +60,7 @@ void main() {
   late GranthKram kram;
   late Paath parichay;
   late Paath atharah;
+  late Paath ved;
 
   setUpAll(() {
     kram = GranthKram.parse(
@@ -65,26 +69,29 @@ void main() {
         Paath.parse('$dir/$id.json', File('$dir/$id.json').readAsStringSync());
     parichay = padho('puran_parichay');
     atharah = padho('puran_atharah');
+    ved = padho('puran_ved');
   });
 
   group('ढाँचा', () {
-    test('ग्रंथालय की सूची में है; दो पन्ने, क्रम में', () {
+    test('ग्रंथालय की सूची में है; तीन पन्ने, क्रम में', () {
       final sab = GranthSuchiEntry.parseAll(GranthBhandar.suchiPath,
           File(GranthBhandar.suchiPath).readAsStringSync());
       final g = sab.singleWhere((g) => g.id == 'puran');
-      expect(g.naam, 'अठारह पुराण — परिचय');
+      expect(g.naam, 'वेद और पुराण — परिचय');
       expect(g.gintiNaam, 'खंड');
       // सूची की पंक्ति में ही लिखा है कि यह पाठ नहीं है
       expect(g.ekLine, contains('परिचय है, पाठ नहीं'));
       expect(GranthBhandar.granthIds, contains('puran'));
-      expect(kram.kram.map((p) => p.id), ['puran_parichay', 'puran_atharah']);
+      expect(kram.kram.map((p) => p.id),
+          ['puran_ved', 'puran_parichay', 'puran_atharah']);
     });
 
-    test('दोनों पन्ने "सार" हैं — गद्य भरा, रोमन और अर्थ ख़ाली, अंग्रेज़ी अक्षर नहीं', () {
+    test('तीनों पन्ने "सार" हैं — गद्य भरा, रोमन और अर्थ ख़ाली, अंग्रेज़ी अक्षर नहीं', () {
       final latin = RegExp(r'[A-Za-z0-9]');
       expect(parichay.khand, hasLength(7));
       expect(atharah.khand, hasLength(18));
-      for (final p in [parichay, atharah]) {
+      expect(ved.khand, hasLength(7));
+      for (final p in [ved, parichay, atharah]) {
         expect(p.prakar, PaathPrakar.saar, reason: p.id);
         expect(p.bhasha, 'हिंदी');
         for (final k in p.khand) {
@@ -97,8 +104,8 @@ void main() {
       }
     });
 
-    test('🔑 "यह परिचय है — शब्दशः पाठ नहीं" दोनों पन्नों पर खुला रहेगा', () {
-      for (final p in [parichay, atharah]) {
+    test('🔑 "यह परिचय है — शब्दशः पाठ नहीं" तीनों पन्नों पर खुला रहेगा', () {
+      for (final p in [ved, parichay, atharah]) {
         expect(p.saavdhani, contains('यह परिचय है'), reason: p.id);
         expect(p.saavdhani, contains('शब्दशः पाठ नहीं'), reason: p.id);
       }
@@ -268,6 +275,119 @@ void main() {
     });
   });
 
+  group('चार वेद', () {
+    String khand(String naam) =>
+        ved.khand.singleWhere((k) => k.shirshak == naam).dev;
+
+    /// ऋग्वेद, शाकल शाखा — मण्डल-वार सूक्त। यह तालिका
+    /// `tools/granth_paath/puran/milan/ved_suchi.py` से अलग, दोबारा लिखी गई है।
+    const mandal = [191, 43, 62, 58, 87, 75, 104, 103, 114, 191];
+    const kram10 = [
+      'पहले', 'दूसरे', 'तीसरे', 'चौथे', 'पाँचवें', 'छठे', 'सातवें', 'आठवें',
+      'नवें', 'दसवें',
+    ];
+
+    test('सात खंड — चार वेद, उनका काम, और संहिता के आगे', () {
+      expect(ved.khand.map((k) => k.shirshak), [
+        'वेद एक, फिर चार',
+        'किस वेद का क्या काम',
+        'ऋग्वेद',
+        'यजुर्वेद',
+        'सामवेद',
+        'अथर्ववेद',
+        'संहिता, और उसके आगे',
+      ]);
+      expect(ved.devta, 'वेद');
+      expect(ved.strot.note, contains('याद से नहीं लिखी गईं'));
+      expect(ved.strot.note, contains('वह पुराण की कही हुई बात है'));
+      expect(ved.saavdhani, contains('एक-एक शाखा'));
+    });
+
+    test('वेद का बँटना — विष्णु पुराण के चार शिष्य और चार ऋत्विज', () {
+      final k = khand('वेद एक, फिर चार');
+      expect(k, contains('विष्णु पुराण में पराशर कहते हैं'));
+      expect(
+          k,
+          contains('पैल को ऋग्वेद, वैशम्पायन को यजुर्वेद, जैमिनि को सामवेद '
+              'और सुमन्तु को अथर्ववेद'));
+      expect(
+          khand('किस वेद का क्या काम'),
+          contains('ऋचाओं से होता का काम, यजुओं से अध्वर्यु का, सामों से उद्गाता का, '
+              'और अथर्व-मंत्रों से ब्रह्मा नाम के ऋत्विज का'));
+    });
+
+    test('🔑 ऋग्वेद: दस मण्डल, 1,028 सूक्त, 10,552 मंत्र — और मण्डल-वार जोड़ वही', () {
+      final k = khand('ऋग्वेद');
+      expect(mandal.fold<int>(0, (a, b) => a + b), 1028);
+      expect(k, contains('दस मण्डलों में'));
+      expect(k, contains('१,०२८ सूक्त और १०,५५२ मंत्र'));
+      for (final (i, n) in mandal.indexed) {
+        expect(k, contains('${kram10[i]} में ${dev(n)}'), reason: '${i + 1}');
+      }
+    });
+
+    test('यजुर्वेद, सामवेद, अथर्ववेद की गिनतियाँ', () {
+      final y = khand('यजुर्वेद');
+      expect(y, contains('शुक्ल यजुर्वेद की संहिता में चालीस अध्याय'));
+      expect(y, contains('तैत्तिरीय संहिता में सात काण्ड और चौवालीस प्रपाठक'));
+      final sv = khand('सामवेद');
+      expect(650 + 1225, 1875);
+      expect(sv, contains('कुल १,८७५ मंत्र'));
+      expect(sv, contains('पहले भाग में ६५०, दूसरे में १,२२५'));
+      final a = khand('अथर्ववेद');
+      expect(a, contains('बीस काण्डों में'));
+      // सूक्तों की गिनती एक नहीं — यह बात छिपाई नहीं गई
+      expect(a, contains('इसलिए गिनती एक नहीं है'));
+      expect(a, contains('एक संस्करण में ७३१'));
+    });
+
+    test('🔑 "इस ऐप में" — हर बात उसी पाठ की अपनी फ़ाइल में लिखी है', () {
+      // (खंड, ऐप की फ़ाइल, उसमें होने चाहिए ये शब्द)
+      final jod = <(String, String, List<String>)>[
+        ('ऋग्वेद', 'assets/granth/sukta/sukta_purusha.json', ['मण्डल १०, सूक्त ९०']),
+        ('ऋग्वेद', 'assets/granth/sukta/sukta_nasadiya.json', ['मण्डल १०, सूक्त १२९']),
+        ('ऋग्वेद', 'assets/paath/saptashati/saptashati_devi_sukta.json', ['मण्डल १०, सूक्त १२५']),
+        ('ऋग्वेद', 'assets/paath/saptashati/saptashati_ratri_sukta.json', ['मण्डल १०, सूक्त १२७']),
+        ('ऋग्वेद', 'assets/paath/vishwakarma_sukta.json', ['मण्डल १०, सूक्त ८१']),
+        ('ऋग्वेद', 'assets/granth/sukta/sukta_shri.json', ['ऋग्वेद के खिल']),
+        ('ऋग्वेद', 'assets/granth/upanishad/upanishad_aitareya_1.json', ['ऋग्वेद', 'ऐतरेय आरण्यक']),
+        ('यजुर्वेद', 'assets/granth/sukta/sukta_purusha_yv.json', ['शुक्ल यजुर्वेद, अध्याय ३१']),
+        ('यजुर्वेद', 'assets/granth/upanishad/upanishad_isha.json', ['शुक्ल यजुर्वेद', 'अध्याय ४०']),
+        ('यजुर्वेद', 'assets/granth/upanishad/upanishad_katha_11.json', ['कृष्ण यजुर्वेद']),
+        ('यजुर्वेद', 'assets/granth/upanishad/upanishad_tait_1.json', ['कृष्ण यजुर्वेद', 'तैत्तिरीय आरण्यक']),
+        ('यजुर्वेद', 'assets/granth/upanishad/upanishad_shveta_1.json', ['कृष्ण यजुर्वेद']),
+        ('सामवेद', 'assets/granth/upanishad/upanishad_kena.json', ['सामवेद', 'ब्राह्मण का भाग']),
+        ('सामवेद', 'assets/granth/gita/gita_10.json', ['वेदानां सामवेदोऽस्मि']),
+        ('अथर्ववेद', 'assets/granth/upanishad/upanishad_mundaka_11.json', ['अथर्ववेद']),
+        ('अथर्ववेद', 'assets/granth/upanishad/upanishad_prashna_1.json', ['अथर्ववेद']),
+        ('अथर्ववेद', 'assets/granth/upanishad/upanishad_mandukya.json', ['अथर्ववेद']),
+      ];
+      for (final (kh, path, shabdSab) in jod) {
+        expect(khand(kh), contains('इस ऐप में:'), reason: kh);
+        final s = File(path).readAsStringSync();
+        for (final w in shabdSab) {
+          expect(s, contains(w), reason: '$kh ← $path');
+        }
+      }
+      final r = khand('ऋग्वेद');
+      for (final w in [
+        'दसवें मण्डल का नब्बेवाँ सूक्त',
+        'एक सौ उनतीसवाँ',
+        'सूक्त १२५',
+        'सूक्त १२७',
+        'सूक्त ८१',
+        'ऐतरेय आरण्यक',
+      ]) {
+        expect(r, contains(w), reason: w);
+      }
+      expect(khand('यजुर्वेद'), contains('इकतीसवें अध्याय'));
+      expect(khand('यजुर्वेद'), contains('चालीसवाँ — आख़िरी — अध्याय'));
+      // और यह साफ़ कहा है कि वेदों का पूरा पाठ यहाँ नहीं है
+      expect(khand('संहिता, और उसके आगे'),
+          contains('इस ऐप में वेदों का पूरा पाठ नहीं है'));
+    });
+  });
+
   group('स्क्रीन पर', () {
     setUp(() async {
       SharedPreferences.setMockInitialValues({});
@@ -292,11 +412,14 @@ void main() {
       await tester.pumpAndSettle();
     }
 
-    testWidgets('ग्रंथ का पन्ना — दो पन्ने, गिनती "खंड" में', (tester) async {
+    testWidgets('ग्रंथ का पन्ना — दो हिस्से, तीन पन्ने, गिनती "खंड" में', (tester) async {
       await granthKholo(tester);
+      expect(find.text('चार वेद'), findsOneWidget);
+      expect(find.text('अठारह पुराण'), findsOneWidget);
+      expect(find.text('चार वेद — परिचय'), findsOneWidget);
       expect(find.text('पुराण क्या हैं'), findsOneWidget);
       expect(find.text('अठारह पुराण — एक-एक'), findsOneWidget);
-      expect(find.text('7 खंड'), findsOneWidget);
+      expect(find.text('7 खंड'), findsNWidgets(2));
       expect(find.text('18 खंड'), findsOneWidget);
       // गिनती "श्लोक" में नहीं — ये श्लोक नहीं, गद्य के खंड हैं
       expect(find.text('7 श्लोक'), findsNothing);
@@ -310,7 +433,7 @@ void main() {
       await tester.tap(find.text('अठारह पुराण — एक-एक'));
       await tester.pumpAndSettle();
       expect(find.byType(PaathScreen), findsOneWidget);
-      expect(find.text('पुराण · भाग 2/2'), findsOneWidget);
+      expect(find.text('वेद और पुराण · भाग 3/3'), findsOneWidget);
 
       // खुला सच — ⓘ के पीछे नहीं (→ D-060)
       expect(find.textContaining('यह परिचय है'), findsOneWidget);
