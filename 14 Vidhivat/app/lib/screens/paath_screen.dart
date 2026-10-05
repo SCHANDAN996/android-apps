@@ -246,6 +246,9 @@ class _PaathReaderState extends State<PaathReader> {
     final anuvak =
         paath.khand.where((k) => k.shirshak.startsWith('अनुवाक')).length;
     if (shlok == 0 && anuvak > 0) return '$anuvak अनुवाक';
+    // यक्ष प्रश्न में हर खंड कई श्लोकों का है ("प्रश्न १ · श्लोक ४५–४६") —
+    // वहाँ "0 श्लोक" लिखना झूठ होता (→ D-112)
+    if (shlok == 0) return '${paath.khandKul} खंड';
     return '$shlok श्लोक';
   }
 
