@@ -590,6 +590,9 @@ app/assets/granth/
 (`"prakar": "saar"`) — गद्य, बिना रोमन और अर्थ के; और `mahabharat_yaksha` — यक्ष प्रश्न का
 **पूरा पाठ** (`"prakar": "granth"`, 48 खंड, 133 श्लोक)।
 
+`puran/` (→ D-113) — `_kram.json` + `puran_parichay` (पुराण क्या हैं, 7 खंड) · `puran_atharah`
+(अठारह पुराण एक-एक, 18 खंड): **सार** — पुराणों की अपनी सूचियों से लिखा परिचय, पाठ नहीं।
+
 ```
 app/assets/paath/saptashati/   सप्तशती यहीं रही (उसकी `_kram.json` में अब `id`)
 
@@ -625,6 +628,8 @@ app/lib/screens/paath_screen.dart         GranthNavigation — नीचे क�
 | `tools/granth_paath/vishnusahasranama/` | `paath/01…03.txt`; `milan/naam_jaanch.py` — हज़ार नाम, क्रम, हर नाम अपने श्लोक में (repo के भीतर से चलता है) (→ D-107) |
 | `tools/granth_paath/mahabharat/` | अठारह पर्वों का **सार** — `"prakar": "saar"`; `paath/*.txt` में शीर्षक + गद्य, `= अर्थ` नहीं; `kaisePadhein` में «⚠ … शब्दशः पाठ नहीं» ज़रूरी (औज़ार इसके बिना रुक जाता है) (→ D-111) |
 | `app/test/mahabharat_test.dart` | 19 जाँचें — बीस पन्ने क्रम में; सार: दोनों गिनतियाँ अंक-दर-अंक, "यह सार है" खुला, "अर्थ दिखाएँ" नहीं; यक्ष प्रश्न: शीर्षकों के श्लोक-अंक 1…133 बिना छेद, हर खंड में उतने ही `॥`, पाँच सुधार, याद वाले श्लोक |
+| `tools/granth_paath/puran/` | अठारह पुराणों का **परिचय** (→ D-113) — `kram.json` और `paath/*.txt` हाथ से नहीं, `milan/puran_likho.py` से; गिनतियाँ `milan/pu_suchi.py` की तालिका में; `milan/pu_jaanch.py` तालिका की हर पंक्ति गवाहों में ढूँढता है |
+| `app/test/puran_test.dart` | 16 जाँचें — दो पन्ने; अठारह खंड क्रम में; हर पुराण की दोनों गिनतियाँ तालिका से हूबहू और जोड़ 4,00,000 / 4,04,800; शिव-या-वायु; «इस ऐप में» की हर पंक्ति उस कथा की फ़ाइल से; "यह परिचय है" खुला |
 | `tools/granth_paath/mahabharat/milan/` | यक्ष प्रश्न: `v313/` (छपी पुस्तक से आँख से पढ़ा पाठ — **यही मूल है**), `yaksha3.py`/`yaksha4.py` (तीन पाठों से मशीन-मिलान), `yaksha_paath.py` (→ `paath/yaksha.txt`; अर्थ इसी में) (→ D-112) |
 | `PaathPrakar.saar` | `vidhi/paath.dart` — गद्य का सार; `paath_screen` में शीर्षक "सार", बटन नहीं, अक्षर `bodyLarge` |
 | `tools/granth_paath/upanishad/` | `paath/*.txt` (खंड `मंत्र N`, तैत्तिरीय में `अनुवाक N`); `kram.json` में तैत्तिरीय पर `gintiNaam`; `milan/` — S को गवाहों और छपी टीका के OCR से कसना, 163 सुधारों की तालिका (→ D-109) |
