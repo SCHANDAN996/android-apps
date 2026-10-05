@@ -4588,3 +4588,7 @@ slider का नियम तारीख़ें बदलकर चलाय
 - «वेद के सूक्त» के परिचय में नए पन्ने का इशारा।
 - **ऐप 1280** (5 नई) · `analyze` साफ़ · `jaancho_granth.py` आठों पर हूबहू।
 - ⚠ तीन गिनतियों का एक ही गवाह; चार वाक्य बिना स्रोत के (D-114 में गिनाए); फ़ोन पर नहीं देखा।
+- पूरी जाँच: इंजन 438 और ऐप 1280 पास, दोनों `analyze` साफ़, `jaancho_granth.py` आठों पर,
+  `jaancho_vrat.py` और `banao_avakahada.py --jaancho` ठीक।
+- release `.aab` 5 अक्टूबर 10:34 को दोबारा बनी (69.7 MB, `1.2.0+6`) — bundle के भीतर
+  `puran_ved.json`, `puran_parichay.json`, `puran_atharah.json` और `mahabharat_yaksha.json` देखकर पक्का किया।
