@@ -3,8 +3,8 @@ import 'package:test/test.dart';
 
 /// त्योहार की तारीख़ों की जाँच।
 ///
-/// **बारह पुरानी तारीख़ें drikpanchang.com से पक्की की हुई हैं** (और
-/// व्रत-पितृ पक्ष वाले आठ नियमों की पाँच-पाँच साल की, → D-087) — हर एक के लिए
+/// **बीसों नियमों की सात-सात साल (2024–2030) की तारीख़ें drikpanchang.com से
+/// पक्की की हुई हैं** (→ D-087, D-117) — हर एक के लिए
 /// उस दिन का पन्ना खोलकर देखा गया कि Drik ख़ुद वहाँ उस त्योहार का नाम
 /// लिखता है या नहीं। पूरा लट्ठा `docs/08_VERIFICATION.md` में।
 ///
@@ -43,67 +43,86 @@ void main() {
     }
   });
 
-  group('व्रत और पितृ पक्ष — पाँच साल, हर तारीख़ संदर्भ-पंचांग से (→ D-087)',
+  group(
+      'व्रत और पितृ पक्ष — सात साल, हर तारीख़ संदर्भ-पंचांग से (→ D-087, D-117)',
       () {
-    // 2024–2028, दिल्ली। हर तारीख़ के लिए संदर्भ-पंचांग का उस दिन वाला
+    // 2024–2030, दिल्ली। (2029 और 2030 आठ अक्टूबर 2026 को जुड़े → D-117;
+    // उसी जाँच में छठ 2030 ग़लत निकला और नियम अपराह्न से सूर्योदय हुआ।)
+    // हर तारीख़ के लिए संदर्भ-पंचांग का उस दिन वाला
     // पन्ना खोलकर देखा कि वो ख़ुद उस दिन यह नाम लिखता है। व्यापिनी वही
-    // रखी जिस पर पाँचों साल मेल खाए (बाक़ी क्यों नहीं — नियम के ऊपर लिखा)।
+    // रखी जिस पर सब साल मेल खाए (बाक़ी क्यों नहीं — नियम के ऊपर लिखा)।
     const verified = {
       'vat_savitri': [
         (2024, 6, 6),
         (2025, 5, 26),
         (2026, 5, 16),
         (2027, 6, 4),
-        (2028, 5, 24)
+        (2028, 5, 24),
+        (2029, 6, 11),
+        (2030, 5, 31)
       ],
       'varalakshmi_vrat': [
         (2024, 8, 16),
         (2025, 8, 8),
         (2026, 8, 28),
         (2027, 8, 13),
-        (2028, 8, 4)
+        (2028, 8, 4),
+        (2029, 8, 24),
+        (2030, 8, 9)
       ],
       'hartalika_teej': [
         (2024, 9, 6),
         (2025, 8, 26),
         (2026, 9, 14),
         (2027, 9, 3),
-        (2028, 8, 22)
+        (2028, 8, 22),
+        (2029, 9, 11), // किनारे का मामला: तृतीया सूर्योदय के 5 मिनट बाद तक
+        (2030, 8, 31)
       ],
       'pitru_paksha_arambh': [
         (2024, 9, 18),
         (2025, 9, 8),
         (2026, 9, 27),
         (2027, 9, 16),
-        (2028, 9, 4)
+        (2028, 9, 4),
+        (2029, 9, 23),
+        (2030, 9, 12)
       ],
       'sarvapitri_amavasya': [
         (2024, 10, 2),
         (2025, 9, 21),
         (2026, 10, 10),
         (2027, 9, 29),
-        (2028, 9, 18)
+        (2028, 9, 18),
+        (2029, 10, 7),
+        (2030, 9, 27)
       ],
       'dussehra': [
         (2024, 10, 12),
         (2025, 10, 2),
         (2026, 10, 20),
         (2027, 10, 9),
-        (2028, 9, 27)
+        (2028, 9, 27),
+        (2029, 10, 16),
+        (2030, 10, 6)
       ],
       'karwa_chauth': [
         (2024, 10, 20),
         (2025, 10, 10),
         (2026, 10, 29),
         (2027, 10, 18),
-        (2028, 10, 7)
+        (2028, 10, 7),
+        (2029, 10, 26),
+        (2030, 10, 15)
       ],
       'chhath': [
         (2024, 11, 7),
         (2025, 10, 27),
         (2026, 11, 15),
         (2027, 11, 4),
-        (2028, 10, 23)
+        (2028, 10, 23),
+        (2029, 11, 11),
+        (2030, 11, 1) // अपराह्न वाला नियम 31 अक्टू देता था — संदर्भ में 1 नव
       ],
     };
 
@@ -165,11 +184,388 @@ void main() {
     });
   });
 
+  group('बारह पुराने त्योहार — सात साल, हर तारीख़ संदर्भ-पंचांग से (→ D-117)',
+      () {
+    // 2024–2030, दिल्ली। 8 अक्टूबर 2026 तक ये बारह सिर्फ़ 2026 पर जँचे थे।
+    // सात साल पर जाँचा तो पाँच नियमों की दस तारीख़ें एक दिन इधर-उधर निकलीं
+    // (नीचे ✎) — उन पाँचों का नियम अब धर्मसिंधु के छपे पन्ने से है।
+    const verified = {
+      'maha_shivaratri': [
+        (2024, 3, 8),
+        (2025, 2, 26),
+        (2026, 2, 15),
+        (2027, 3, 6),
+        (2028, 2, 23),
+        (2029, 2, 11),
+        (2030, 3, 2)
+      ],
+      'holika_dahan': [
+        (2024, 3, 24), // ✎ पहले 25
+        (2025, 3, 13), // ✎ पहले 14
+        (2026, 3, 3),
+        (2027, 3, 21), // ✎ पहले 22
+        (2028, 3, 10),
+        (2029, 2, 28),
+        (2030, 3, 19)
+      ],
+      'rama_navami': [
+        (2024, 4, 17),
+        (2025, 4, 6),
+        (2026, 3, 26),
+        (2027, 4, 15),
+        (2028, 4, 3),
+        (2029, 4, 23), // ✎ पहले 22
+        (2030, 4, 12)
+      ],
+      'raksha_bandhan': [
+        (2024, 8, 19),
+        (2025, 8, 9), // ✎ पहले 8
+        (2026, 8, 28),
+        (2027, 8, 17),
+        (2028, 8, 5),
+        (2029, 8, 23), // ✎ पहले 24
+        (2030, 8, 13)
+      ],
+      'janmashtami': [
+        (2024, 8, 26),
+        (2025, 8, 15), // संदर्भ में 15 «स्मार्त», 16 «इस्कॉन»
+        (2026, 9, 4),
+        (2027, 8, 25), // ✎ पहले 24
+        (2028, 8, 13),
+        (2029, 9, 1), // ✎ पहले 31 अगस्त
+        (2030, 8, 21) // ✎ पहले 20
+      ],
+      'ganesh_chaturthi': [
+        (2024, 9, 7),
+        (2025, 8, 27),
+        (2026, 9, 14),
+        (2027, 9, 4),
+        (2028, 8, 23),
+        (2029, 9, 11),
+        (2030, 9, 1)
+      ],
+      'navratri_ghatasthapana': [
+        (2024, 10, 3),
+        (2025, 9, 22),
+        (2026, 10, 11),
+        (2027, 9, 30),
+        (2028, 9, 19),
+        (2029, 10, 8),
+        (2030, 9, 28)
+      ],
+      'diwali': [
+        (2024, 11, 1), // ✎ पहले 31 अक्टूबर
+        (2025, 10, 20),
+        (2026, 11, 8),
+        (2027, 10, 29),
+        (2028, 10, 17),
+        (2029, 11, 5),
+        (2030, 10, 26)
+      ],
+      'dhanteras': [
+        (2024, 10, 29),
+        (2025, 10, 18),
+        (2026, 11, 6),
+        (2027, 10, 27),
+        (2028, 10, 15),
+        (2029, 11, 4),
+        (2030, 10, 24)
+      ],
+      'govardhan_puja': [
+        (2024, 11, 2),
+        (2025, 10, 22),
+        (2026, 11, 10),
+        (2027, 10, 30),
+        (2028, 10, 18),
+        (2029, 11, 6),
+        (2030, 10, 27)
+      ],
+      'bhai_dooj': [
+        (2024, 11, 3),
+        (2025, 10, 23),
+        (2026, 11, 11),
+        (2027, 10, 31),
+        (2028, 10, 19),
+        (2029, 11, 7),
+        (2030, 10, 28)
+      ],
+      'vasant_panchami': [
+        (2024, 2, 14),
+        (2025, 2, 2),
+        (2026, 1, 23),
+        (2027, 2, 11),
+        (2028, 1, 31),
+        (2029, 1, 19),
+        (2030, 2, 7)
+      ],
+    };
+
+    for (final entry in verified.entries) {
+      final rule = festivalRules.firstWhere((r) => r.id == entry.key);
+      for (final (year, month, day) in entry.value) {
+        test('${rule.name} $year → $day/$month', () {
+          final found = findFestival(rule, year, Place.delhi);
+          expect(found, isNotNull, reason: '${rule.name} मिला ही नहीं');
+          expect(found!.date, DateTime.utc(year, month, day));
+        });
+      }
+    }
+  });
+
+  group('पाँच निर्णय — धर्मसिंधु के छपे नियम (→ D-117)', () {
+    FestivalDate nikalo(String id, int year) => findFestival(
+        festivalRules.firstWhere((r) => r.id == id), year, Place.delhi)!;
+
+    test('पाँचों पर निर्णय लगा है, बाक़ी पंद्रह पर नहीं', () {
+      final nirnayWale = {
+        for (final r in festivalRules)
+          if (r.nirnaya != Nirnaya.vyapini) r.id: r.nirnaya
+      };
+      expect(nirnayWale, {
+        'holika_dahan': Nirnaya.holika,
+        'rama_navami': Nirnaya.ramNavami,
+        'raksha_bandhan': Nirnaya.raksha,
+        'janmashtami': Nirnaya.janmashtami,
+        'diwali': Nirnaya.lakshmiPujan,
+      });
+      for (final r in festivalRules) {
+        final f = findFestival(r, 2027, Place.delhi)!;
+        expect(
+            f.explanation.contains('धर्मसिंधु'), r.nirnaya != Nirnaya.vyapini,
+            reason: r.name);
+      }
+    });
+
+    test('होलिका: भद्रा आधी रात से पहले छूटे तो उसी रात', () {
+      // 2024: भद्रा 23:13 तक; 2025: 23:27 तक — दोनों बार पुराना नियम अगले दिन देता था
+      for (final y in [2024, 2025]) {
+        final f = nikalo('holika_dahan', y);
+        expect(f.shiftedForBhadra, isFalse, reason: '$y');
+        expect(f.explanation, contains('भद्रा आधी रात से पहले छूट जाती है'));
+      }
+    });
+
+    test('होलिका: भद्रा आधी रात के बाद तक — साढ़े तीन प्रहर फ़ैसला करते हैं',
+        () {
+      // 2026: अगले दिन पूर्णिमा 17:07 तक (साढ़े तीन प्रहर ≈ 16:55) → अगले दिन
+      final a = nikalo('holika_dahan', 2026);
+      expect(a.date, DateTime.utc(2026, 3, 3));
+      expect(a.shiftedForBhadra, isTrue);
+      expect(a.explanation, contains('साढ़े तीन प्रहर से ज़्यादा'));
+
+      // 2027: अगले दिन पूर्णिमा 16:13 तक (साढ़े तीन प्रहर ≈ 17:01) → उसी रात
+      final b = nikalo('holika_dahan', 2027);
+      expect(b.date, DateTime.utc(2027, 3, 21));
+      expect(b.shiftedForBhadra, isFalse);
+      expect(b.explanation, contains('साढ़े तीन प्रहर नहीं रहती'));
+    });
+
+    test(
+        'रक्षाबंधन: सूर्योदय के बाद तीन मुहूर्त से कम पूर्णिमा हो तो पिछला दिन',
+        () {
+      // 2029: 24 अगस्त को सूर्योदय 05:55, पूर्णिमा 07:21 तक — डेढ़ घंटे से कम
+      final f = nikalo('raksha_bandhan', 2029);
+      expect(f.date, DateTime.utc(2029, 8, 23));
+      expect(f.shiftedForBhadra, isFalse);
+      expect(f.explanation, contains('तीन मुहूर्त से कम'));
+
+      // 2025: अपराह्न में पूर्णिमा लगते ही भद्रा — अगला दिन
+      final g = nikalo('raksha_bandhan', 2025);
+      expect(g.date, DateTime.utc(2025, 8, 9));
+      expect(g.shiftedForBhadra, isTrue);
+      expect(g.explanation, contains('तीन मुहूर्त से ज़्यादा'));
+    });
+
+    test('रक्षाबंधन के दिन सूर्योदय से प्रदोष तक कहीं पूर्णिमा ज़रूर है', () {
+      final rule = festivalRules.firstWhere((r) => r.id == 'raksha_bandhan');
+      for (var y = 2024; y <= 2040; y++) {
+        final f = findFestival(rule, y, Place.delhi)!;
+        // चुने हुए दिन के सूर्योदय से प्रदोष के अंत तक कहीं न कहीं पूर्णिमा हो
+        final rs =
+            sunriseSunset(f.date.year, f.date.month, f.date.day, Place.delhi);
+        final uday = rs.sunrise!.add(Place.delhi.timeZoneOffset);
+        final pradoshAnt = rs.sunset!
+            .add(Place.delhi.timeZoneOffset)
+            .add(const Duration(hours: 2, minutes: 24));
+        expect(f.tithiStart.isBefore(pradoshAnt) && f.tithiEnd.isAfter(uday),
+            isTrue,
+            reason: '$y — ${f.date}');
+      }
+    });
+
+    test(
+        'राम नवमी: दोनों दिन मध्याह्न हो तो दूसरा दिन, चाहे पहले में ज़्यादा देर',
+        () {
+      // 2029: 22 अप्रैल को 43 मिनट, 23 को 29 मिनट — फिर भी 23
+      final f = nikalo('rama_navami', 2029);
+      expect(f.date, DateTime.utc(2029, 4, 23));
+      expect(f.ambiguous, isFalse);
+      expect(f.explanation, contains('दोनों दिन मध्याह्न'));
+
+      // 2026 और 2028: मध्याह्न सिर्फ़ पहले दिन — पहला दिन
+      expect(nikalo('rama_navami', 2026).date, DateTime.utc(2026, 3, 26));
+      expect(nikalo('rama_navami', 2028).date, DateTime.utc(2028, 4, 3));
+    });
+
+    test('दीपावली: दूसरे दिन प्रदोष में एक घड़ी से ज़्यादा हो तभी दूसरा दिन',
+        () {
+      // 2024: दूसरे दिन सूर्यास्त के बाद 41 मिनट → 1 नवम्बर; दूसरा दावेदार 31 अक्टूबर
+      final a = nikalo('diwali', 2024);
+      expect(a.date, DateTime.utc(2024, 11, 1));
+      expect(a.ambiguous, isTrue);
+      expect(a.otherCandidate, DateTime.utc(2024, 10, 31));
+      expect(a.explanation, contains('एक घड़ी से ज़्यादा'));
+
+      // 2025: दूसरे दिन सिर्फ़ 9 मिनट → 20 अक्टूबर; दूसरा दावेदार 21
+      final b = nikalo('diwali', 2025);
+      expect(b.date, DateTime.utc(2025, 10, 20));
+      expect(b.ambiguous, isTrue);
+      expect(b.otherCandidate, DateTime.utc(2025, 10, 21));
+      expect(b.explanation, contains('एक घड़ी से कम'));
+
+      // 2026: एक ही दावेदार
+      expect(nikalo('diwali', 2026).ambiguous, isFalse);
+    });
+
+    test('जन्माष्टमी: रोहिणी दूसरे दिन जुड़े तो दूसरा दिन, पहला भी दिखता है',
+        () {
+      for (final (y, m, d, dm, dd) in [
+        (2027, 8, 25, 8, 24),
+        (2029, 9, 1, 8, 31),
+        (2030, 8, 21, 8, 20),
+      ]) {
+        final f = nikalo('janmashtami', y);
+        expect(f.date, DateTime.utc(y, m, d), reason: '$y');
+        expect(f.ambiguous, isTrue, reason: '$y');
+        expect(f.otherCandidate, DateTime.utc(y, dm, dd), reason: '$y');
+        expect(f.explanation, contains('रोहिणी —'), reason: '$y');
+        expect(f.explanation, contains('दूसरा दिन ($d/$m)'), reason: '$y');
+      }
+    });
+
+    test('जन्माष्टमी: रोहिणी न हो तो आधी रात की अष्टमी से', () {
+      // 2025: अष्टमी 15 की रात 23:50 पर लगी, 16 को 21:34 तक — रोहिणी नहीं
+      final f = nikalo('janmashtami', 2025);
+      expect(f.date, DateTime.utc(2025, 8, 15));
+      expect(f.otherCandidate, DateTime.utc(2025, 8, 16));
+      expect(f.explanation, contains('रोहिणी नक्षत्र नहीं पड़ता'));
+      expect(f.explanation, contains('आधी रात को अष्टमी सिर्फ़ पहले दिन'));
+
+      // 2024, 2026, 2028: दूसरा कोई दावेदार नहीं
+      for (final y in [2024, 2026, 2028]) {
+        expect(nikalo('janmashtami', y).ambiguous, isFalse, reason: '$y');
+      }
+    });
+
+    test('जन्माष्टमी — आठ और साल, संदर्भ-पंचांग के «स्मार्त» वाले दिन से', () {
+      // आधी रात के योग वाली शाखाएँ 2024–2030 में कम आती हैं, इसलिए पीछे-आगे के
+      // वे साल भी जाँचे जिनमें आती हैं। पन्ने 8 अक्टूबर 2026 को देखे।
+      for (final (y, m, d) in [
+        (2002, 8, 31),
+        (2005, 8, 26),
+        (2007, 9, 3),
+        (2010, 9, 1),
+        (2018, 9, 2),
+        (2021, 8, 30),
+        (2023, 9, 6),
+        (2037, 9, 2),
+      ]) {
+        expect(nikalo('janmashtami', y).date, DateTime.utc(y, m, d),
+            reason: '$y');
+      }
+    });
+
+    test('जन्माष्टमी: जहाँ ग्रंथ और संदर्भ-पंचांग अलग हैं, दोनों दिन दिखते हैं',
+        () {
+      // पहली रात आधी रात को अष्टमी-रोहिणी साथ, और रोहिणी अगली आधी रात तक —
+      // धर्मसिंधु पहला दिन कहता है, संदर्भ-पंचांग दूसरा (28 अगस्त 2032;
+      // मुंबई में 1 सितम्बर 2029)। ऐप पहला दिन देता है और दूसरा साथ दिखाता है।
+      // ⚠️ यह जाँच फ़ैसला याद रखने के लिए है, यह साबित करने के लिए नहीं कि
+      // पहला दिन ही सही है — छपे पंचांग से मिलाना बाक़ी है।
+      final a = nikalo('janmashtami', 2032);
+      expect(a.date, DateTime.utc(2032, 8, 27));
+      expect(a.otherCandidate, DateTime.utc(2032, 8, 28));
+
+      final rule = festivalRules.firstWhere((r) => r.id == 'janmashtami');
+      final b = findFestival(rule, 2029, Place.mumbai)!;
+      expect(b.date, DateTime.utc(2029, 8, 31));
+      expect(b.otherCandidate, DateTime.utc(2029, 9, 1));
+      // दिल्ली में उसी साल रोहिणी आधी रात के 12 मिनट बाद लगती है — दूसरा दिन
+      expect(nikalo('janmashtami', 2029).date, DateTime.utc(2029, 9, 1));
+    });
+
+    test('शहर बदलने से दिन बदलता है — मुंबई के दो पन्ने संदर्भ-पंचांग से मिले',
+        () {
+      FestivalDate mumbai(String id, int year) => findFestival(
+          festivalRules.firstWhere((r) => r.id == id), year, Place.mumbai)!;
+
+      // दीपावली 2024: मुंबई में सूर्यास्त देर से — दूसरे दिन अमावस्या एक घड़ी
+      // नहीं रहती → 31 अक्टूबर (दिल्ली 1 नवम्बर)
+      final d = mumbai('diwali', 2024);
+      expect(d.date, DateTime.utc(2024, 10, 31));
+      expect(d.otherCandidate, DateTime.utc(2024, 11, 1));
+      expect(d.explanation, contains('एक घड़ी से कम'));
+
+      // होलिका 2026: मुंबई में दिन लंबा — साढ़े तीन प्रहर पूरे नहीं होते
+      // → 2 मार्च (दिल्ली 3 मार्च)
+      final h = mumbai('holika_dahan', 2026);
+      expect(h.date, DateTime.utc(2026, 3, 2));
+      expect(h.shiftedForBhadra, isFalse);
+      expect(h.explanation, contains('साढ़े तीन प्रहर नहीं रहती'));
+    });
+
+    test('दूसरा दावेदार हमेशा ठीक एक दिन आगे या पीछे', () {
+      for (final rule in festivalRules) {
+        for (var y = 2024; y <= 2040; y++) {
+          final f = findFestival(rule, y, Place.delhi)!;
+          expect(f.ambiguous, f.otherCandidate != null,
+              reason: '${rule.id} $y');
+          if (f.otherCandidate != null) {
+            expect(f.otherCandidate!.difference(f.date).inDays.abs(), 1,
+                reason: '${rule.id} $y');
+          }
+        }
+      }
+    });
+
+    test('हिसाब में किसी वेबसाइट का नाम या रोमन अक्षर नहीं', () {
+      final roman = RegExp('[A-Za-z]');
+      for (final rule in festivalRules) {
+        for (var y = 2024; y <= 2032; y++) {
+          final f = findFestival(rule, y, Place.delhi)!;
+          expect(roman.hasMatch(f.explanation), isFalse,
+              reason: '${rule.id} $y: ${f.explanation}');
+        }
+      }
+    });
+
+    test('दूसरे शहरों में भी हर साल एक तारीख़ निकलती है', () {
+      // नए नियम सूर्योदय, सूर्यास्त और आधी रात पर टिके हैं — जो शहर से बदलते हैं
+      for (final place in [Place.chennai, Place.delhi]) {
+        for (final rule
+            in festivalRules.where((r) => r.nirnaya != Nirnaya.vyapini)) {
+          for (var y = 2024; y <= 2045; y++) {
+            final f = findFestival(rule, y, place);
+            expect(f, isNotNull, reason: '${rule.id} $y');
+            expect(f!.date.year, y, reason: '${rule.id} $y');
+            // चुना हुआ दिन तिथि से एक दिन से ज़्यादा दूर नहीं
+            final shuru = DateTime.utc(
+                f.tithiStart.year, f.tithiStart.month, f.tithiStart.day);
+            expect(f.date.difference(shuru).inDays, inInclusiveRange(-1, 2),
+                reason: '${rule.id} $y');
+          }
+        }
+      }
+    });
+  });
+
   group('भद्रा वाला नियम', () {
     test('होलिका दहन और रक्षाबंधन दोनों भद्रा की वजह से खिसकते हैं', () {
       // 2026 में दोनों की पूर्णिमा का पहला आधा हिस्सा भद्रा में है, और
       // भद्रा उस दिन के ज़रूरी काल को पूरा ढक लेती है। इसलिए त्योहार
       // अगले दिन चला जाता है — और Drik भी यही कहता है।
+      // (हर साल नहीं: होलिका 2024, 2025 और 2027 में उसी रात रहती है —
+      // ऊपर «पाँच निर्णय» में।)
       for (final id in ['holika_dahan', 'raksha_bandhan']) {
         final rule = festivalRules.firstWhere((r) => r.id == id);
         final found = findFestival(rule, 2026, Place.delhi)!;

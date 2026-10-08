@@ -23,16 +23,22 @@ import 'sunrise.dart';
 ///
 /// अंदाज़े से नहीं — Drik से पक्की की हुई तारीख़ों का असली डेटा निकालकर।
 /// पूरा ब्यौरा `test/festival_notes.md` और `docs/08_VERIFICATION.md` में।
+///
+/// पाँच त्योहारों (होलिका दहन, रक्षाबंधन, राम नवमी, जन्माष्टमी, दीपावली) के
+/// लिए सीधी व्यापिनी काफ़ी नहीं निकली — 2024–2030 की जाँच में उनकी 35 में से
+/// 10 तारीख़ें एक दिन इधर-उधर थीं। उनका नियम अब **धर्मसिंधु** के छपे पन्ने से
+/// है ([Nirnaya], → D-117), और सातों साल संदर्भ-पंचांग से मिलता है।
 
 /// तिथि किस काल में चालू होनी चाहिए।
 enum Vyapini {
-  /// सूर्योदय पर — ज़्यादातर व्रत, एकादशी, नवरात्रि
+  /// सूर्योदय पर — ज़्यादातर व्रत, एकादशी, नवरात्रि; रक्षाबंधन भी
+  /// (तीन मुहूर्त की शर्त के साथ, [Nirnaya.raksha])
   sunrise,
 
   /// मध्याह्न (दिन का तीसरा पंचमांश) — राम नवमी, गणेश चतुर्थी
   madhyahna,
 
-  /// अपराह्न (दिन का चौथा पंचमांश) — श्राद्ध, रक्षाबंधन
+  /// अपराह्न (दिन का चौथा पंचमांश) — श्राद्ध, दशहरा, भाई दूज
   aparahna,
 
   /// प्रदोष (सूर्यास्त से 2 घंटे 24 मिनट) — दीपावली, होलिका दहन
@@ -65,6 +71,38 @@ extension VyapiniName on Vyapini {
       };
 }
 
+/// दिन किस तरह चुना जाए। ज़्यादातर त्योहारों के लिए सीधी व्यापिनी काफ़ी है;
+/// पाँच के लिए छपे निर्णय-ग्रंथ का अपना, लंबा नियम है (→ D-117)।
+enum Nirnaya {
+  /// जिस दिन के काल में तिथि हो — सीधे [Vyapini] से
+  vyapini,
+
+  /// होलिका दहन — प्रदोष, भद्रा कब छूटती है, और साढ़े तीन प्रहर
+  holika,
+
+  /// रक्षाबंधन — सूर्योदय के बाद तीन मुहूर्त से ज़्यादा पूर्णिमा
+  raksha,
+
+  /// राम नवमी — दोनों दिन मध्याह्न हो तो दूसरा दिन
+  ramNavami,
+
+  /// जन्माष्टमी — आधी रात की अष्टमी, और रोहिणी का योग
+  janmashtami,
+
+  /// दीपावली का लक्ष्मी पूजन — दोनों दिन प्रदोष हो तो दूसरा दिन
+  lakshmiPujan,
+}
+
+extension NirnayaName on Nirnaya {
+  /// व्यापिनी के साथ जुड़ने वाली शर्त — हिसाब में दिखाने के लिए।
+  String? get visheshan => switch (this) {
+        Nirnaya.holika => 'भद्रा रहित',
+        Nirnaya.raksha => 'उदय के बाद तीन मुहूर्त से अधिक, भद्रा रहित',
+        Nirnaya.janmashtami => 'रोहिणी का योग देखकर',
+        Nirnaya.vyapini || Nirnaya.ramNavami || Nirnaya.lakshmiPujan => null,
+      };
+}
+
 /// एक त्योहार का नियम। **तारीख़ कभी हाथ से मत भरना** — नियम लिखो, तारीख़
 /// किसी भी साल के लिए अपने आप निकलेगी, 2050 की भी।
 class FestivalRule {
@@ -93,6 +131,9 @@ class FestivalRule {
   /// तो वही दिन। वरलक्ष्मी व्रत = श्रावण पूर्णिमा से पहले का शुक्रवार।
   final int? vaarPehle;
 
+  /// दिन चुनने का तरीक़ा — पाँच त्योहारों का अपना, बाक़ी सबका [Nirnaya.vyapini]।
+  final Nirnaya nirnaya;
+
   const FestivalRule({
     required this.id,
     required this.name,
@@ -103,6 +144,7 @@ class FestivalRule {
     this.avoidBhadra = false,
     this.masaSystem = MasaSystem.purnimanta,
     this.vaarPehle,
+    this.nirnaya = Nirnaya.vyapini,
   });
 
   /// तीस तिथियों वाली गिनती में यह तिथि कहाँ पड़ती है (0 से)।
@@ -138,7 +180,9 @@ class FestivalDate {
   /// "जिस दिन तिथि सबसे ज़्यादा देर रही" वाला नियम लगा।
   final bool missedKaal;
 
-  /// दो दिन दावेदार थे और नियम साफ़ फ़ैसला नहीं कर सका।
+  /// दो दिन दावेदार थे। [date] वह है जो नियम चुनता है; [otherCandidate]
+  /// वह दूसरा दिन, जिसे दूसरी परंपरा या दूसरा पंचांग मानता है (जैसे
+  /// जन्माष्टमी में स्मार्त-वैष्णव, दीपावली 2024)।
   /// ऐसे में ऐप को **दोनों दिन दिखाने चाहिए**, चुपचाप एक मत चुनना।
   final bool ambiguous;
   final DateTime? otherCandidate;
@@ -356,7 +400,14 @@ FestivalDate? findFestival(
         ? _bhadraInterval(rule.tithiIndex, month.newMoonJd, place)
         : null;
 
-    final result = _pickDay(rule, tithi, bhadra, place);
+    final result = switch (rule.nirnaya) {
+      Nirnaya.vyapini => _pickDay(rule, tithi, bhadra, place),
+      Nirnaya.holika => _holika(rule, tithi, bhadra, place),
+      Nirnaya.raksha => _raksha(rule, tithi, bhadra, place),
+      Nirnaya.ramNavami => _ramNavami(rule, tithi, place),
+      Nirnaya.janmashtami => _janmashtami(rule, tithi, place),
+      Nirnaya.lakshmiPujan => _lakshmiPujan(rule, tithi, place),
+    };
     if (result != null) return _vaarPehle(rule, result);
   }
 
@@ -583,25 +634,578 @@ FestivalDate? _prevailingDay(
   );
 }
 
+// ─────────────────────────────────────────────────────────────
+// पाँच त्योहार, जिनका दिन सीधी व्यापिनी से तय नहीं होता (→ D-117)
+// ─────────────────────────────────────────────────────────────
+//
+// नीचे के पाँचों नियम **धर्मसिंधु** (काशीनाथ उपाध्याय) की छपी प्रति के पन्ने
+// आँख से पढ़कर लिखे गए हैं — हर फलन के ऊपर उसका मूल वाक्य और पृष्ठ है — और
+// हर एक 2024–2030 के सातों साल (दिल्ली) संदर्भ-पंचांग से मिलाया गया है।
+// इनसे पहले ये पाँचों `_pickDay` से चलते थे और उन 35 तारीख़ों में से 10
+// ग़लत थीं; लट्ठा `docs/08_VERIFICATION.md` §14 में।
+//
+// ⚠️ यहाँ कोई संख्या अंदाज़े से मत बदलना। "तीन मुहूर्त", "साढ़े तीन प्रहर",
+// "एक घड़ी", "आधी रात" — चारों छपे वाक्य के शब्द हैं।
+
+typedef _Antaral = ({DateTime start, DateTime end});
+
+/// एक हिंदू दिन — सूर्योदय से अगले सूर्योदय तक (सब स्थानीय समय)।
+typedef _Din = ({DateTime din, DateTime uday, DateTime ast, DateTime aglaUday});
+
+/// एक दावेदार दिन, और उसके काल में तिथि कितनी देर रही।
+typedef _Dawedar = ({
+  _Din din,
+  DateTime kaalStart,
+  DateTime kaalEnd,
+  Duration chhua
+});
+
+/// एक घड़ी (घटिका) = 24 मिनट; एक मुहूर्त = दो घड़ी।
+const _ekGhati = Duration(minutes: 24);
+const _ekMuhurt = Duration(minutes: 48);
+
+_Din? _dinKaByora(DateTime tarikh, Place place) {
+  final agla = tarikh.add(const Duration(days: 1));
+  final aaj = sunriseSunset(tarikh.year, tarikh.month, tarikh.day, place);
+  final kal = sunriseSunset(agla.year, agla.month, agla.day, place).sunrise;
+  if (aaj.sunrise == null || aaj.sunset == null || kal == null) return null;
+  return (
+    din: tarikh,
+    uday: aaj.sunrise!.add(place.timeZoneOffset),
+    ast: aaj.sunset!.add(place.timeZoneOffset),
+    aglaUday: kal.add(place.timeZoneOffset),
+  );
+}
+
+/// वह हिंदू दिन जिसमें [pal] पड़ता है — सूर्योदय से पहले का पल पिछले दिन का।
+_Din? _hinduDin(DateTime pal, Place place) {
+  final tarikh = DateTime.utc(pal.year, pal.month, pal.day);
+  final d = _dinKaByora(tarikh, place);
+  if (d == null) return null;
+  if (!pal.isBefore(d.uday)) return d;
+  return _dinKaByora(tarikh.subtract(const Duration(days: 1)), place);
+}
+
+_Din? _aglaDin(_Din d, Place place) =>
+    _dinKaByora(d.din.add(const Duration(days: 1)), place);
+
+/// रात का ठीक बीच। धर्मसिंधु (पृ. 57): «रात्र्यर्धं निशीथपदार्थः»।
+DateTime _aadhiRaat(_Din d) => d.ast.add(d.aglaUday.difference(d.ast) * 0.5);
+
+Duration _chhua(
+    DateTime aStart, DateTime aEnd, DateTime bStart, DateTime bEnd) {
+  final s = aStart.isAfter(bStart) ? aStart : bStart;
+  final e = aEnd.isBefore(bEnd) ? aEnd : bEnd;
+  return e.isAfter(s) ? e.difference(s) : Duration.zero;
+}
+
+/// जिन दिनों की [vyapini] वाली खिड़की को तिथि छूती है — थोड़ा-सा भी।
+List<_Dawedar> _dawedar(Vyapini vyapini, _Antaral tithi, Place place) {
+  final pehla =
+      DateTime.utc(tithi.start.year, tithi.start.month, tithi.start.day);
+  final mile = <_Dawedar>[];
+  for (var k = -1; k <= 2; k++) {
+    final tarikh = pehla.add(Duration(days: k));
+    final d = _dinKaByora(tarikh, place);
+    final kaal =
+        kaalWindow(vyapini, tarikh.year, tarikh.month, tarikh.day, place);
+    if (d == null || kaal == null) continue;
+    final c = _chhua(tithi.start, tithi.end, kaal.start, kaal.end);
+    if (c == Duration.zero) continue;
+    mile.add((din: d, kaalStart: kaal.start, kaalEnd: kaal.end, chhua: c));
+  }
+  return mile;
+}
+
+/// इस तिथि के बाद वाली तिथि कब ख़त्म होती है — "प्रतिपदा बढ़ती हुई है या
+/// घटती हुई" देखने के लिए।
+DateTime _agliTithiKaAnt(FestivalRule rule, _Antaral tithi, Place place) {
+  final endJd = julianDayFromUtc(tithi.end.subtract(place.timeZoneOffset));
+  final jd = findCrossing(
+      elongationAt, ((rule.tithiIndex + 2) * 12.0) % 360.0, endJd + 0.01, 3)!;
+  return utcFromJulianDay(jd).add(place.timeZoneOffset);
+}
+
+/// इस तिथि के साथ पड़ने वाला रोहिणी नक्षत्र (40° से 53°20′) — न पड़े तो null।
+///
+/// खोज तिथि लगने से डेढ़ दिन पहले से: रोहिणी सवा दिन से लंबी नहीं होती,
+/// इसलिए जो उससे पहले लगी वह तिथि तक पहुँच ही नहीं सकती।
+_Antaral? _rohini(_Antaral tithi, Place place) {
+  DateTime local(double jd) => utcFromJulianDay(jd).add(place.timeZoneOffset);
+
+  final startJd = julianDayFromUtc(tithi.start.subtract(place.timeZoneOffset));
+  final r0 = findCrossing(moonSiderealAt, 40.0, startJd - 1.5, 4);
+  if (r0 == null) return null;
+  final r1 = findCrossing(moonSiderealAt, 40.0 + 360.0 / 27.0, r0 + 0.01, 3);
+  if (r1 == null) return null;
+
+  final rohini = (start: local(r0), end: local(r1));
+  if (_chhua(rohini.start, rohini.end, tithi.start, tithi.end) ==
+      Duration.zero) {
+    return null;
+  }
+  return rohini;
+}
+
+String _stamp(DateTime d) =>
+    '${d.day}/${d.month} ${d.hour.toString().padLeft(2, '0')}:'
+    '${d.minute.toString().padLeft(2, '0')}';
+
+String _avadhi(Duration d) {
+  final ghante = d.inHours;
+  final minute = d.inMinutes % 60;
+  if (ghante == 0) return '$minute मिनट';
+  return '$ghante ${ghante == 1 ? 'घंटा' : 'घंटे'} $minute मिनट';
+}
+
+FestivalDate _nirnit(
+  FestivalRule rule,
+  _Antaral tithi,
+  _Antaral? bhadra,
+  Place place, {
+  required DateTime din,
+  required List<String> kyon,
+  bool khiska = false,
+  bool kaalChhuta = false,
+  DateTime? doosra,
+}) {
+  final kaal = kaalWindow(rule.vyapini, din.year, din.month, din.day, place);
+  return FestivalDate(
+    rule: rule,
+    date: din,
+    tithiStart: tithi.start,
+    tithiEnd: tithi.end,
+    kaalStart: kaal?.start ?? tithi.start,
+    kaalEnd: kaal?.end ?? tithi.end,
+    shiftedForBhadra: khiska,
+    missedKaal: kaalChhuta,
+    ambiguous: doosra != null,
+    otherCandidate: doosra,
+    explanation: _explain(rule, tithi, bhadra,
+        shifted: false, missed: false, vishesh: kyon),
+  );
+}
+
+/// **होलिका दहन** — धर्मसिंधु, फाल्गुन मास, होलिकानिर्णय (पृ. 113–114):
+///
+/// «सा प्रदोषव्यापिनी भद्रारहिता ग्राह्या। दिनद्वये प्रदोषव्याप्तौ परदिने
+/// प्रदोषैकदेशव्याप्तौ वा परैव। पूर्वदिने भद्रादोषात्। परदिने प्रदोषस्पर्शाभावे
+/// पूर्वदिने प्रदोषे भद्रासत्त्वे यदि पूर्णिमा परदिने सार्धत्रियामा ततोऽधिका वा,
+/// तत्परदिने च प्रतिपद् वृद्धिगामिनी, तदा परदिने प्रतिपदि प्रदोषव्यापिन्यां
+/// होलिका। उक्तविषये यदि प्रतिपदो ह्रासस्तदा पूर्वदिने … भद्रामुखमात्रं त्यक्त्वा
+/// भद्रायामेव वा। परदिने प्रदोषस्पर्शाभावे पूर्वदिने यदि निशीथात्प्राक्
+/// भद्रासमाप्तिस्तदा भद्रावसानोत्तरमेव होलिकादीपनम्। निशीथोत्तरं भद्रासमाप्तौ
+/// भद्रामुखं त्यक्त्वा भद्रायामेव। … दिनद्वयेऽपि पूर्णिमायाः प्रदोषस्पर्शाभावे
+/// पूर्वदिन एव»
+///
+/// "प्रतिपदा बढ़ती हुई" = प्रतिपदा पूर्णिमा से लंबी (वही ग्रंथ, पृ. 93:
+/// «दर्शापेक्षया प्रतिपद्वृद्धिसत्त्वे»)।
+///
+/// सात साल: 2024 और 2025 में भद्रा आधी रात से पहले छूटी → उसी रात; 2026 में
+/// आधी रात के बाद तक, और अगले दिन साढ़े तीन प्रहर से लगभग 13 मिनट ज़्यादा →
+/// अगले दिन; 2027 में लगभग 48 मिनट कम → उसी रात। पुराना नियम ("भद्रा हो तो अगले दिन")
+/// 2024, 2025 और 2027 तीनों में एक दिन आगे था।
+///
+/// ⚠️ उसी पन्ने का ग्रहण वाला वाक्य («ग्रस्तोदये परदिने प्रदोषे पूर्णिमासत्त्वे
+/// ग्रहणमध्य एव कार्यम्। अन्यथा पूर्वदिने») यहाँ **नहीं** लगाया गया: 2026 में
+/// वह 2 मार्च कहता, संदर्भ-पंचांग 3 मार्च लिखता है। 2027–2030 में फाल्गुन
+/// पूर्णिमा पर भारत में दिखने वाला कोई ग्रहण नहीं है।
+FestivalDate? _holika(
+  FestivalRule rule,
+  _Antaral tithi,
+  _Antaral? bhadra,
+  Place place,
+) {
+  final d = _dawedar(Vyapini.pradosha, tithi, place);
+
+  if (d.length >= 2) {
+    return _nirnit(rule, tithi, bhadra, place, din: d.last.din.din, kyon: [
+      'पूर्णिमा दोनों दिन प्रदोष को छूती है — दूसरा दिन, क्योंकि पहले दिन भद्रा है',
+    ]);
+  }
+
+  if (d.isEmpty) {
+    final pehla = _hinduDin(tithi.start, place);
+    if (pehla == null) return _pickDay(rule, tithi, bhadra, place);
+    return _nirnit(rule, tithi, bhadra, place,
+        din: pehla.din,
+        kaalChhuta: true,
+        kyon: [
+          'पूर्णिमा किसी दिन प्रदोष को नहीं छूती — दहन उसी रात, जिस रात पूर्णिमा लगी',
+        ]);
+  }
+
+  final c = d.single;
+  if (bhadra == null ||
+      _chhua(bhadra.start, bhadra.end, c.kaalStart, c.kaalEnd) ==
+          Duration.zero) {
+    return _nirnit(rule, tithi, bhadra, place, din: c.din.din, kyon: const []);
+  }
+
+  if (bhadra.end.isBefore(_aadhiRaat(c.din))) {
+    return _nirnit(rule, tithi, bhadra, place, din: c.din.din, kyon: [
+      'भद्रा आधी रात से पहले छूट जाती है — दहन उसी रात, भद्रा के बाद',
+    ]);
+  }
+
+  var kami = 'अगले दिन पूर्णिमा साढ़े तीन प्रहर नहीं रहती';
+  final agla = _aglaDin(c.din, place);
+  if (agla != null) {
+    final udayKeBaad = tithi.end.difference(agla.uday);
+    final saadheTeenPrahar = agla.ast.difference(agla.uday) * (3.5 / 4);
+    final purnima = tithi.end.difference(tithi.start);
+    final pratipada = _agliTithiKaAnt(rule, tithi, place).difference(tithi.end);
+
+    if (udayKeBaad >= saadheTeenPrahar && pratipada > purnima) {
+      return _nirnit(rule, tithi, bhadra, place,
+          din: agla.din,
+          khiska: true,
+          kyon: [
+            'भद्रा आधी रात के बाद तक है, और अगले दिन पूर्णिमा साढ़े तीन प्रहर '
+                'से ज़्यादा रहती है — इसलिए दहन अगले दिन प्रदोष में',
+          ]);
+    }
+    if (udayKeBaad >= saadheTeenPrahar) {
+      kami = 'उसके बाद की प्रतिपदा घटती हुई है';
+    }
+  }
+
+  return _nirnit(rule, tithi, bhadra, place, din: c.din.din, kyon: [
+    'भद्रा आधी रात के बाद तक है, पर $kami — दहन उसी रात, भद्रा का मुख छोड़कर',
+  ]);
+}
+
+/// **रक्षाबंधन** — धर्मसिंधु, श्रावण पूर्णिमा (पृ. 56):
+///
+/// «रक्षाबन्धनमस्यामेव पूर्णिमायां भद्रारहितायां त्रिमुहूर्ताधिकोदयव्यापिन्यामपराह्णे
+/// प्रदोषे वा कार्यम्। उदये त्रिमुहूर्तन्यूनत्वे पूर्वेद्युर्भद्रारहिते प्रदोषादिकाले
+/// कार्यम्»
+///
+/// यानी दिन **सूर्योदय** से तय होता है, अपराह्न से नहीं: जिस सूर्योदय के बाद
+/// पूर्णिमा तीन मुहूर्त (दिनमान का पंचमांश) से ज़्यादा बचे, वही दिन। कम बचे
+/// तो पिछला दिन, भद्रा के बाद।
+///
+/// पुराना नियम (अपराह्न + भद्रा) सात में से दो साल ग़लत था: 2025 में 8 अगस्त
+/// देता था (अपराह्न में पूर्णिमा लगते ही भद्रा, फिर भी "रोका नहीं" माना) —
+/// असल 9; 2029 में 24 अगस्त (सूर्योदय के बाद सिर्फ़ 1 घंटा 25 मिनट) — असल 23।
+FestivalDate? _raksha(
+  FestivalRule rule,
+  _Antaral tithi,
+  _Antaral? bhadra,
+  Place place,
+) {
+  final pehla = _hinduDin(tithi.start, place);
+  final agla = pehla == null ? null : _aglaDin(pehla, place);
+  if (pehla == null || agla == null) {
+    return _pickDay(rule, tithi, bhadra, place);
+  }
+
+  // पूर्णिमा अगले सूर्योदय तक पहुँची ही नहीं — एक ही दिन है
+  if (!agla.uday.isBefore(tithi.end)) {
+    return _nirnit(rule, tithi, bhadra, place,
+        din: pehla.din,
+        kaalChhuta: true,
+        kyon: [
+          'पूर्णिमा किसी सूर्योदय पर नहीं है — जिस दिन लगी उसी दिन, भद्रा के बाद',
+        ]);
+  }
+
+  final udayKeBaad = tithi.end.difference(agla.uday);
+  final teenMuhurt = agla.ast.difference(agla.uday) * (3 / 15);
+
+  if (udayKeBaad > teenMuhurt) {
+    // पहले दिन के अपराह्न या प्रदोष में भी पूर्णिमा थी — पर भद्रा के साथ
+    final pehleDinBhi = tithi.start
+        .isBefore(pehla.ast.add(const Duration(hours: 2, minutes: 24)));
+    return _nirnit(rule, tithi, bhadra, place,
+        din: agla.din,
+        khiska: pehleDinBhi,
+        kyon: [
+          if (pehleDinBhi)
+            'पहले दिन पूर्णिमा के साथ भद्रा है — रक्षाबंधन अगले दिन, जब '
+                'सूर्योदय के बाद पूर्णिमा तीन मुहूर्त से ज़्यादा है '
+                '(${_avadhi(udayKeBaad)})'
+          else
+            'सूर्योदय के बाद पूर्णिमा तीन मुहूर्त से ज़्यादा है '
+                '(${_avadhi(udayKeBaad)})',
+        ]);
+  }
+
+  return _nirnit(rule, tithi, bhadra, place, din: pehla.din, kyon: [
+    'अगले दिन सूर्योदय के बाद पूर्णिमा तीन मुहूर्त से कम रहती है '
+        '(${_avadhi(udayKeBaad)}) — इसलिए पहले दिन, भद्रा के बाद',
+  ]);
+}
+
+/// **राम नवमी** — धर्मसिंधु, चैत्र मास, रामनवमीनिर्णय (पृ. 34):
+///
+/// «अस्यां मध्याह्नव्यापिन्यामुपोषणं कार्यम्। पूर्वेद्युरेव मध्याह्ने सत्त्वे सैव
+/// ग्राह्या। दिनद्वये मध्याह्नव्याप्तावव्याप्तौ वा परा। अष्टमीविद्धाया निषेधात्।
+/// अतः पूर्वेद्युः सकलमध्याह्नव्यापिनीमपि त्यक्त्वा मध्याह्नैकदेशव्यापिन्यपि परैव
+/// ग्राह्या»
+///
+/// पुराना नियम दो दावेदारों में "जिस दिन मध्याह्न में ज़्यादा देर" चुनता था —
+/// 2029 में 22 अप्रैल (43 मिनट बनाम 29 मिनट); असल 23।
+FestivalDate? _ramNavami(FestivalRule rule, _Antaral tithi, Place place) {
+  final d = _dawedar(Vyapini.madhyahna, tithi, place);
+
+  if (d.length == 1) {
+    return _nirnit(rule, tithi, null, place,
+        din: d.single.din.din, kyon: const []);
+  }
+
+  if (d.length >= 2) {
+    return _nirnit(rule, tithi, null, place, din: d.last.din.din, kyon: [
+      'नवमी दोनों दिन मध्याह्न को छूती है — दूसरा दिन (अष्टमी से जुड़ी नवमी नहीं ली जाती)',
+    ]);
+  }
+
+  // किसी दिन मध्याह्न नहीं — तब भी दूसरा दिन, यानी जिसके सूर्योदय पर नवमी है
+  final para = _hinduDin(tithi.end.subtract(const Duration(seconds: 1)), place);
+  if (para == null) return _pickDay(rule, tithi, null, place);
+  return _nirnit(rule, tithi, null, place,
+      din: para.din,
+      kaalChhuta: true,
+      kyon: [
+        'नवमी किसी दिन मध्याह्न को नहीं छूती — दूसरा दिन, जिसके सूर्योदय पर नवमी है',
+      ]);
+}
+
+/// **दीपावली (लक्ष्मी पूजन)** — धर्मसिंधु, आश्विन अमावास्या (पृ. 93):
+///
+/// «अथाश्विनामावास्यायां प्रातरभ्यंगः प्रदोषे दीपदानलक्ष्मीपूजनादि विहितम्। तत्र
+/// सूर्योदयं व्याप्यास्तोत्तरं घटिकाधिकरात्रिव्यापिनि दर्शे सति न संदेहः। …
+/// परदिने एव दिनद्वयेऽपि वा प्रदोषव्याप्तौ परा। पूर्वत्रैव प्रदोषव्याप्तौ
+/// लक्ष्मीपूजनादौ पूर्वा। … एवमुभयत्र प्रदोषव्याप्त्यभावेऽपि»
+///
+/// "प्रदोष में है" तभी गिना, जब अमावस्या सूर्यास्त के बाद **एक घड़ी से
+/// ज़्यादा** रहे («घटिकाधिक»)। यही दोनों बँटे हुए साल अलग करता है: 2024 में
+/// दूसरे दिन 41 मिनट → 1 नवम्बर; 2025 में दूसरे दिन 9 मिनट → 20 अक्टूबर।
+/// पुराना नियम ("जिस दिन ज़्यादा देर") 2024 में 31 अक्टूबर देता था।
+///
+/// ⚠️ उसी पन्ने पर पुरुषार्थचिंतामणि का दूसरा मत भी लिखा है (दूसरे दिन
+/// अमावस्या तीन प्रहर से ज़्यादा और प्रतिपदा बढ़ती हुई हो तो दूसरा ही दिन) —
+/// वह 2025 में 21 अक्टूबर कहता; संदर्भ-पंचांग 20 लिखता है। इसलिए दोनों दिन
+/// दावेदार हों तो दूसरा दिन भी `otherCandidate` में जाता है।
+FestivalDate? _lakshmiPujan(FestivalRule rule, _Antaral tithi, Place place) {
+  final d = _dawedar(Vyapini.pradosha, tithi, place);
+  final pakke = d.where((c) => c.chhua > _ekGhati).toList();
+
+  if (pakke.isEmpty) {
+    final pehla = _hinduDin(tithi.start, place);
+    if (pehla == null) return _pickDay(rule, tithi, null, place);
+    return _nirnit(rule, tithi, null, place,
+        din: pehla.din,
+        kaalChhuta: true,
+        kyon: [
+          'अमावस्या किसी दिन प्रदोष में एक घड़ी से ज़्यादा नहीं रहती — '
+              'लक्ष्मी पूजन पहली रात',
+        ]);
+  }
+
+  final chuna = pakke.last;
+  if (d.length < 2) {
+    return _nirnit(rule, tithi, null, place,
+        din: chuna.din.din, kyon: const []);
+  }
+
+  final doosra = d.firstWhere((c) => c.din.din != chuna.din.din);
+  final baadWala = chuna.din.din.isAfter(doosra.din.din);
+  // दूसरा चुना हो और पहले दिन अमावस्या प्रदोष के आख़िरी मिनटों में ही लगी हो,
+  // तो पहला दिन दावेदार नहीं
+  if (baadWala && doosra.chhua <= _ekGhati) {
+    return _nirnit(rule, tithi, null, place,
+        din: chuna.din.din, kyon: const []);
+  }
+  return _nirnit(rule, tithi, null, place,
+      din: chuna.din.din,
+      doosra: doosra.din.din,
+      kyon: [
+        if (baadWala) ...[
+          'अमावस्या दोनों दिन प्रदोष में है (दूसरे दिन सूर्यास्त के बाद '
+              '${_avadhi(chuna.chhua)} — एक घड़ी से ज़्यादा) — इसलिए दूसरा दिन',
+          'पहला दिन भी दिखाया है — उस दिन भी प्रदोष में अमावस्या है',
+        ] else ...[
+          'दूसरे दिन अमावस्या सूर्यास्त के बाद सिर्फ़ ${_avadhi(doosra.chhua)} '
+              'रहती है — एक घड़ी से कम, इसलिए पहला दिन',
+          'दूसरा दिन भी दिखाया है — उस दिन सूर्योदय पर अमावस्या है',
+        ],
+      ]);
+}
+
+/// **जन्माष्टमी** — धर्मसिंधु, जन्माष्टमीव्रत (पृ. 56–59)। आठ-दस पक्षों के बाद
+/// ग्रंथ का अपना निचोड़ (पृ. 58, «संक्षेपेण निर्णयसंग्रहः»):
+///
+/// «शुद्धसमायां शुद्धन्यूनायां वा विद्धसमायां विद्धन्यूनायां वा केवलाष्टम्यां
+/// संदेह एव नास्ति। शुद्धाधिकापि केवलाष्टमी पूर्वैव। विद्धाधिका तु पूर्वदिन एव
+/// निशीथव्याप्तौ पूर्वा। दिनद्वये निशीथव्याप्तावव्याप्तौ वा परैव। अथ रोहिणीयोगे
+/// … शुद्धाधिकायां पूर्वदिने दिनद्वयेऽपि वा रोहिणीयोगे पूर्वैव। शुद्धाधिकायामुत्तरदिन
+/// एव रोहिणीयोगे मुहूर्तमात्रा परैव। विद्धाधिकायां पूर्वदिन एव निशीथात्पूर्वं
+/// निशीथे वा रोहिणीयोगे पूर्वा। दिनद्वयेऽपि परत्रैव वा, निशीथे वा निशीथं विहाय,
+/// रोहिणीयोगे परैव»
+///
+/// और उसी जगह तीन बातें, जिनके बिना ऊपर का वाक्य ग़लत पढ़ा जाएगा:
+/// - निशीथ = रात का ठीक बीच: «रात्र्यर्धं निशीथपदार्थः»। पहले (सप्तमी वाले)
+///   दिन अष्टमी आधी रात तक लग चुकी हो, दूसरे दिन आधी रात के बाद तक चले —
+///   तभी "निशीथव्यापिनी" («सप्तमीयुक्तायां रात्रिपूर्वार्धावसाने कलयाप्यष्टम्याः
+///   सत्त्वे एव निशीथव्यापित्वम्»)। रोहिणी के योग पर भी यही («एवं
+///   वक्ष्यमाणरोहिणीयुक्तभेदेष्वपि ज्ञेयम्»)।
+/// - आधी रात पर अष्टमी-रोहिणी का योग सबसे भारी: सिर्फ़ पहले दिन हो तो पहला
+///   दिन, चाहे दूसरे दिन दिन में रोहिणी बची हो (पृ. 57, पहला पक्ष)।
+/// - पहले दिन आधी रात के **बाद** लगी रोहिणी नहीं गिनी जाती («विद्धायां
+///   निशीथोत्तरं रोहिणीयोगस्याप्रयोजकत्वात्»), और दूसरे दिन अष्टमी एक मुहूर्त से
+///   कम बचे तो वह दिन नहीं («सर्वपक्षेषु यदि परदिने मुहूर्तन्यूना वर्तते तदा सा
+///   न ग्राह्या किंतु पूर्वैव»)।
+///
+/// पुराना नियम सिर्फ़ "निशीथ में अष्टमी" देखता था — 2027, 2029 और 2030 में
+/// एक दिन पहले पड़ा, क्योंकि तीनों साल रोहिणी दूसरे दिन जुड़ती है।
+///
+/// संदर्भ-पंचांग से मिलान (दिल्ली): 2024–2030 के सातों साल, और 2002, 2005,
+/// 2007, 2010, 2018, 2021, 2023, 2037 — पंद्रह में पंद्रह।
+///
+/// ⚠️ **एक जगह ग्रंथ और संदर्भ-पंचांग अलग पड़ते हैं** — जब पहली रात आधी रात
+/// को अष्टमी-रोहिणी साथ हों *और* रोहिणी अगली आधी रात तक चले (तब दूसरे दिन
+/// बची हुई पूरी अष्टमी रोहिणी में है)। ग्रंथ का पहला पक्ष (पृ. 57) पहला दिन
+/// कहता है; संदर्भ-पंचांग दूसरा लिखता है। दिल्ली में यह 2032 और 2056 में
+/// होता है, मुंबई-गुजरात में 2029 में भी (रोहिणी वहाँ की आधी रात से कुछ ही
+/// मिनट पहले लगती है)। यहाँ ग्रंथ रखा है और दूसरा दिन `otherCandidate` में जाता
+/// है — यानी ऐप दोनों दिखाता है। संदर्भ के पीछे जाकर यह शाखा मत बदलना:
+/// छपे पंचांग या पंडित जी से पूछकर ही (→ `docs/08` §20.6)।
+FestivalDate? _janmashtami(FestivalRule rule, _Antaral tithi, Place place) {
+  final v = _hinduDin(tithi.start, place);
+  final e = _hinduDin(tithi.end.subtract(const Duration(seconds: 1)), place);
+  if (v == null || e == null) return _pickDay(rule, tithi, null, place);
+
+  // पूरी अष्टमी एक ही हिंदू दिन में — «संदेह एव नास्ति»
+  if (e.din == v.din) {
+    return _nirnit(rule, tithi, null, place, din: v.din, kyon: const []);
+  }
+
+  final rohini = _rohini(tithi, place);
+  // अष्टमी और रोहिणी साथ-साथ कब से कब
+  final yog = rohini == null
+      ? null
+      : (
+          start: rohini.start.isAfter(tithi.start) ? rohini.start : tithi.start,
+          end: rohini.end.isBefore(tithi.end) ? rohini.end : tithi.end,
+        );
+  final rohiniPankti = rohini == null
+      ? 'अष्टमी के साथ रोहिणी नक्षत्र नहीं पड़ता'
+      : 'रोहिणी — ${_stamp(rohini.start)} से ${_stamp(rohini.end)} तक';
+
+  // शुद्धाधिका: बीच का पूरा दिन अष्टमी, और अगले सूर्योदय के बाद भी बची
+  final shuddha = e.din.difference(v.din).inDays >= 2;
+  final purva = shuddha ? _aglaDin(v, place) : v;
+  final para = e;
+  if (purva == null) return _pickDay(rule, tithi, null, place);
+
+  final paraMein = tithi.end.difference(para.uday);
+  final bool paraChuna;
+  String karan;
+
+  if (shuddha) {
+    // रोहिणी का योग सिर्फ़ दूसरे दिन हो, तभी दूसरा दिन
+    paraChuna = yog != null && !yog.start.isBefore(para.uday);
+    karan = paraChuna
+        ? 'अष्टमी के साथ रोहिणी सिर्फ़ दूसरे दिन है — दूसरा दिन'
+        : 'पहले दिन सूर्योदय से पूरे दिन-रात अष्टमी है — पहला दिन';
+  } else {
+    final ratP = _aadhiRaat(purva);
+    final ratQ = _aadhiRaat(para);
+    final nP = !tithi.start.isAfter(ratP);
+    final nQ = tithi.end.isAfter(ratQ);
+    final nyP =
+        yog != null && !yog.start.isAfter(ratP) && yog.end.isAfter(ratP);
+    final nyQ =
+        yog != null && !yog.start.isAfter(ratQ) && yog.end.isAfter(ratQ);
+
+    if (nyP && !nyQ) {
+      paraChuna = false;
+      karan = 'आधी रात को अष्टमी और रोहिणी साथ सिर्फ़ पहले दिन हैं — पहला दिन';
+    } else if (nyQ) {
+      paraChuna = true;
+      karan = 'आधी रात को अष्टमी और रोहिणी साथ दूसरे दिन हैं — दूसरा दिन';
+    } else if (yog != null && yog.end.isAfter(para.uday)) {
+      paraChuna = true;
+      final kitna =
+          _avadhi(_chhua(yog.start, yog.end, para.uday, para.aglaUday));
+      karan = nP
+          ? 'पहले दिन आधी रात को अष्टमी है, पर रोहिणी का योग दूसरे दिन है '
+              '($kitna) — दूसरा दिन'
+          : 'अष्टमी के साथ रोहिणी दूसरे दिन है ($kitna) — दूसरा दिन';
+    } else if (yog != null && !yog.end.isAfter(ratP)) {
+      paraChuna = false;
+      karan =
+          'अष्टमी के साथ रोहिणी सिर्फ़ पहले दिन है, आधी रात से पहले — पहला दिन';
+    } else if (nP && !nQ) {
+      paraChuna = false;
+      karan = 'आधी रात को अष्टमी सिर्फ़ पहले दिन है — पहला दिन';
+    } else {
+      paraChuna = true;
+      karan = nQ && nP
+          ? 'आधी रात को अष्टमी दोनों दिन है — दूसरा दिन'
+          : nQ
+              ? 'आधी रात को अष्टमी सिर्फ़ दूसरे दिन है — दूसरा दिन'
+              : 'आधी रात को अष्टमी किसी दिन नहीं — दूसरा दिन';
+    }
+  }
+
+  final chunaDin = paraChuna ? para.din : purva.din;
+  karan = '$karan (${chunaDin.day}/${chunaDin.month})';
+
+  // दूसरे दिन अष्टमी एक मुहूर्त भी न बचे तो वह दिन नहीं
+  if (paraChuna && paraMein < _ekMuhurt) {
+    return _nirnit(rule, tithi, null, place, din: purva.din, kyon: [
+      rohiniPankti,
+      'दूसरे दिन सूर्योदय के बाद अष्टमी एक मुहूर्त भी नहीं बचती — पहला दिन '
+          '(${purva.din.day}/${purva.din.month})',
+    ]);
+  }
+
+  if (paraChuna) {
+    // पहले दिन आधी रात को अष्टमी थी — कई पंचांग उसे भी लिखते हैं
+    final pehlaBhi = !tithi.start.isAfter(_aadhiRaat(purva));
+    return _nirnit(rule, tithi, null, place,
+        din: para.din,
+        doosra: pehlaBhi ? purva.din : null,
+        kyon: [
+          rohiniPankti,
+          karan,
+          if (pehlaBhi) 'पहला दिन भी दिखाया है — उस रात आधी रात को अष्टमी है',
+        ]);
+  }
+
+  // शुद्धाधिका में पहला दिन सूर्योदय से ही अष्टमी है — दूसरा कोई दावेदार नहीं
+  final doosraBhi = !shuddha && paraMein >= _ekMuhurt;
+  return _nirnit(rule, tithi, null, place,
+      din: purva.din,
+      doosra: doosraBhi ? para.din : null,
+      kyon: [
+        rohiniPankti,
+        karan,
+        if (doosraBhi) 'दूसरा दिन भी दिखाया है — उस दिन सूर्योदय पर अष्टमी है',
+      ]);
+}
+
 String _explain(
   FestivalRule rule,
   ({DateTime start, DateTime end}) tithi,
   ({DateTime start, DateTime end})? bhadra, {
   required bool shifted,
   required bool missed,
+  List<String> vishesh = const [],
 }) {
-  String stamp(DateTime d) =>
-      '${d.day}/${d.month} ${d.hour.toString().padLeft(2, '0')}:'
-      '${d.minute.toString().padLeft(2, '0')}';
-
+  final visheshan = rule.nirnaya.visheshan;
   final lines = <String>[
     '${rule.masaName} ${rule.pakshaName} ${rule.tithiName}',
-    rule.vyapini.hindi,
-    '${rule.tithiName} — ${stamp(tithi.start)} से ${stamp(tithi.end)} तक',
+    visheshan == null
+        ? rule.vyapini.hindi
+        : '${rule.vyapini.hindi} — $visheshan',
+    '${rule.tithiName} — ${_stamp(tithi.start)} से ${_stamp(tithi.end)} तक',
   ];
 
   if (bhadra != null) {
-    lines.add('भद्रा — ${stamp(bhadra.start)} से ${stamp(bhadra.end)} तक');
+    lines.add('भद्रा — ${_stamp(bhadra.start)} से ${_stamp(bhadra.end)} तक');
   }
   if (shifted) {
     lines.add('भद्रा में यह काम नहीं होता, इसलिए अगले दिन');
@@ -609,6 +1213,10 @@ String _explain(
   if (missed) {
     lines.add('तिथि ${rule.vyapini.kaalName} काल को छू नहीं पाई — '
         'इसलिए जिस दिन तिथि सबसे ज़्यादा देर रही, वही दिन');
+  }
+  lines.addAll(vishesh);
+  if (rule.nirnaya != Nirnaya.vyapini) {
+    lines.add('निर्णय धर्मसिंधु के अनुसार');
   }
 
   lines.add('दृक् गणित · लाहिड़ी अयनांश · '
@@ -624,6 +1232,9 @@ String _explain(
 /// **पहली बारह तारीख़ें drikpanchang.com से पक्की की हुई हैं** (2026, दिल्ली) —
 /// हर एक के लिए उस दिन का पन्ना खोलकर देखा गया कि Drik ख़ुद वहाँ उस
 /// त्योहार का नाम लिखता है या नहीं। लट्ठा `docs/08_VERIFICATION.md` में।
+///
+/// 8 अक्टूबर 2026 को वही जाँच **2024–2030 के सातों साल** पर हुई (→ D-117)।
+/// सात नियम सातों साल मिले; पाँच नहीं — उन पर अब [Nirnaya] लगा है।
 ///
 /// नया त्योहार जोड़ो तो **नियम अंदाज़े से मत लिखना** — Drik या छपे पंचांग
 /// से मिलाकर, और जाँच `test/festival_test.dart` में डालकर।
@@ -644,6 +1255,7 @@ const List<FestivalRule> festivalRules = [
     tithi: 15, // पूर्णिमा
     vyapini: Vyapini.pradosha,
     avoidBhadra: true,
+    nirnaya: Nirnaya.holika,
   ),
   FestivalRule(
     id: 'rama_navami',
@@ -652,6 +1264,7 @@ const List<FestivalRule> festivalRules = [
     paksha: 0,
     tithi: 9,
     vyapini: Vyapini.madhyahna,
+    nirnaya: Nirnaya.ramNavami,
   ),
   FestivalRule(
     id: 'raksha_bandhan',
@@ -659,8 +1272,10 @@ const List<FestivalRule> festivalRules = [
     masa: 4, // श्रावण
     paksha: 0,
     tithi: 15, // पूर्णिमा
-    vyapini: Vyapini.aparahna,
+    // अपराह्न नहीं — धर्मसिंधु का शब्द «त्रिमुहूर्ताधिकोदयव्यापिनी» है
+    vyapini: Vyapini.sunrise,
     avoidBhadra: true,
+    nirnaya: Nirnaya.raksha,
   ),
   FestivalRule(
     id: 'janmashtami',
@@ -669,6 +1284,7 @@ const List<FestivalRule> festivalRules = [
     paksha: 1,
     tithi: 8,
     vyapini: Vyapini.nishitha,
+    nirnaya: Nirnaya.janmashtami,
   ),
   FestivalRule(
     id: 'ganesh_chaturthi',
@@ -693,6 +1309,7 @@ const List<FestivalRule> festivalRules = [
     paksha: 1,
     tithi: 15, // अमावस्या
     vyapini: Vyapini.pradosha,
+    nirnaya: Nirnaya.lakshmiPujan,
   ),
   FestivalRule(
     id: 'dhanteras',
@@ -799,7 +1416,12 @@ const List<FestivalRule> festivalRules = [
     masa: 7, // कार्तिक
     paksha: 0,
     tithi: 6, // षष्ठी — संध्या अर्घ्य का दिन
-    vyapini: Vyapini.aparahna,
+    // सूर्योदय वाली षष्ठी। 2024–2028 में अपराह्न, मध्याह्न और सूर्योदय तीनों
+    // एक ही दिन देते थे, इसलिए पाँच साल की जाँच इन्हें अलग नहीं कर पाई।
+    // 2030 ने किया: षष्ठी 31 अक्टू 10:25 से 1 नव 08:04 तक — अपराह्न 31 देता
+    // है, संदर्भ-पंचांग 1 नवम्बर लिखता है। सात साल (2024–2030) पर सिर्फ़
+    // सूर्योदय ही सातों बार मिला (→ D-117, `tool/vyapini_aazmao.dart`)।
+    vyapini: Vyapini.sunrise,
   ),
 ];
 
