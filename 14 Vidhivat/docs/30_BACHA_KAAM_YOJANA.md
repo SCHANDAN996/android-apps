@@ -264,22 +264,25 @@ ChatGPT में चिपकाने के लिए (हर एक के �
 brick yajna kund with a calm steady flame. Beside it: a bundle of palm-leaf
 manuscript pages tied with red thread (blank leaves, no writing visible),
 a small copper ghee vessel with a wooden ladle, and a few blades of kusha
-grass. Sacred, quiet, early-morning feeling.
+grass. Sacred, quiet, early-morning feeling. Behind it a soft golden
+mandala halo.
 
 2. An elderly Indian rishi with white beard, seated cross-legged in simple
 saffron cloth, one hand raised in a teaching gesture. Facing him sits one
 young disciple with folded hands, listening. Both are imaginary faces, calm
-and dignified. No tree, no hut, no scenery.
+and dignified, in plain cotton cloth with rudraksha beads only — no
+jewellery, no crown. No tree, no hut, no scenery. Behind them a soft
+golden mandala halo.
 
 3. An ornate ancient Indian royal chariot drawn by four white horses, seen
 at a three-quarter angle, with a saffron flag on a tall pole. On the empty
 seat rest a white conch shell and a long bow. No human figures, no weapons
-in use, no battle.
+in use, no battle. Behind it a soft golden mandala halo.
 
 4. A still life of sacred Indian manuscripts, no human figures. Centre: a
 neat stack of palm-leaf books wrapped in red and saffron cloth. In front:
 a lit brass oil lamp and a rudraksha mala. One book lies open showing blank
-palm leaves with no writing.
+palm leaves with no writing. Behind it a soft golden mandala halo.
 ```
 
 ### ७.२ अच्छा हो तो — यहाँ चित्र है, पर किसी और का साझा
