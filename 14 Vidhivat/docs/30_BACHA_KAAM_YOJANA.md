@@ -291,10 +291,10 @@ palm leaves with no writing. Behind it a soft golden mandala halo.
 
 | कहाँ | आज क्या दिखता है | सुझाव (फ़ाइल) |
 |---|---|---|
-| ग्रंथालय → सुंदरकांड | वही हनुमान जो चालीसा पर | समुद्र लाँघते हनुमान (`granth_sundarkand_v1`) |
+| ग्रंथालय → सुंदरकांड | वही हनुमान जो चालीसा पर | मुद्रिका लिए घुटने टेके हनुमान (`granth_sundarkand_v1`) |
 | व्रत → प्रदोष, सोलह सोमवार, मासिक शिवरात्रि | तीनों पर सोमवार वाला शिव | संध्या में शिवलिंग पर दीप और बेलपत्र (`vrat_pradosh_v1`) |
-| व्रत → एकादशी | बृहस्पतिवार वाला विष्णु | तुलसी-दल के साथ शालिग्राम या विष्णु-चरण (`vrat_ekadashi_v1`) |
-| व्रत → संकष्टी, विनायक चतुर्थी | बुधवार वाला गणेश | चंद्र-दर्शन की थाली के साथ गणेश (`vrat_sankashti_v1`) |
+| व्रत → एकादशी | बृहस्पतिवार वाला विष्णु | तुलसी-दल के साथ शालिग्राम, शंख, दीप — कोई आकृति नहीं (`vrat_ekadashi_v1`) |
+| व्रत → संकष्टी (**सिर्फ़ संकष्टी**) | बुधवार वाला गणेश | चंद्र को अर्घ्य की थाली: दूर्वा, मोदक, दीप, ऊपर चंद्रमा — कोई आकृति नहीं (`vrat_sankashti_v1`) |
 | व्रत → पूर्णिमा | सत्यनारायण की वेदी | पूर्ण चंद्र, कलश और दीप — कोई आकृति नहीं (`vrat_purnima_v1`) |
 | व्रत → जन्माष्टमी | कृष्ण पूजा वाला चित्र | झूले में लड्डू गोपाल (`vrat_janmashtami_v1`) |
 
@@ -332,3 +332,74 @@ palm leaves with no writing. Behind it a soft golden mandala halo.
 
 ऑडियो · छपे ठाकुर प्रसाद पंचांग से मिलान · TM search · विवाह मुहूर्त · कथा के पन्नों पर
 चित्र। और `CLAUDE.md` की *"कभी मत बनाना"* वाली सूची जस की तस।
+
+
+---
+
+## १० · जोड़ — §७.२ के छह चित्रों के prompt (8 अक्टूबर, डेवलपर के कहने पर)
+
+> ⚠ **संकष्टी वाला चित्र विनायक चतुर्थी पर नहीं लगेगा।** उसमें चंद्रमा है; और ऐप की अपनी
+> विनायक चतुर्थी की कथा कहती है कि उस दिन चंद्रमा नहीं देखा जाता। विनायक चतुर्थी पर गणेश
+> वाला मौजूदा चित्र ही रहेगा।
+> ⚠ छह में **दो में देव-रूप है** (हनुमान, लड्डू गोपाल) — ऐप में जोड़ने से पहले किसी जानकार
+> को दिखाना (→ `docs/24` §३)। बाक़ी चार में कोई आकृति नहीं।
+> समुद्र लाँघते हनुमान की जगह मुद्रिका वाला रूप इसलिए कि चित्र के पीछे कोई दृश्य नहीं हो
+> सकता (सफ़ेद पृष्ठभूमि का नियम) — बिना समुद्र के छलाँग समझ नहीं आती।
+
+हर prompt के अंत में STYLE जोड़ना है: देव-रूप वाले दो पर `docs/24` §१ का **पूरा** STYLE
+BLOCK; बिना आकृति वाले चार पर वही, पर वस्त्र-गहने-प्रभामंडल वाली पंक्तियाँ हटाकर।
+
+```
+granth_sundarkand_v1 —
+A single figure of Lord Hanuman, full body, kneeling on one knee in a
+humble, devoted pose. In his open right palm he holds out a small gold
+signet ring (plain, no engraving visible). His left hand rests on his
+chest. Calm, gentle monkey face with kind eyes; strong build; long tail
+curving upward behind him; a golden crown, earrings and armlets; saffron
+dhoti; a sacred thread across the chest. His mace (gada) rests on the
+ground beside him. No other figures.
+
+vrat_pradosh_v1 —
+A Shiva linga worship still life, no human or deity figures. Centre: a
+smooth black stone Shiva linga on its round stone base, with three
+horizontal lines of white sacred ash across it, a few green three-leaf
+bilva (bel) leaves and white flowers placed on top. Around it: a ring of
+small lit clay lamps (diyas), a brass water pot (lota), and a rudraksha
+mala. Warm twilight glow. Behind it a soft golden mandala halo.
+
+vrat_ekadashi_v1 —
+A Vishnu worship still life, no human or deity figures. Centre: a smooth
+round black shaligram stone resting on a small brass throne draped in
+yellow silk, with a few fresh green tulsi leaves on top and a garland of
+yellow marigolds around it. Beside it: a white conch shell on a small
+stand, a lit brass ghee lamp, and a small brass bell. Behind it a soft
+golden mandala halo.
+
+vrat_sankashti_v1 —
+A Sankashti Chaturthi evening worship still life, no human or deity
+figures. Centre: a round brass puja plate holding a small lit lamp, a tied
+bundle of fresh green durva grass, a few modak sweets, red hibiscus
+flowers and a little red kumkum. Beside the plate: a small brass water pot
+for offering water to the moon. Above, small and softly glowing: a nearly
+full moon disc. Behind it a soft golden mandala halo.
+
+vrat_purnima_v1 —
+A full-moon night worship still life, no human or deity figures. Centre: a
+polished brass kalash filled with water, its mouth ringed with fresh mango
+leaves and topped with a whole coconut. In front: a lit brass ghee lamp,
+white flowers and a small bowl of white rice. Above, softly glowing: a
+perfectly round full moon disc. Cool silver-white moonlight mixed with
+warm lamp glow. Behind it a soft golden mandala halo.
+
+vrat_janmashtami_v1 —
+A small polished brass idol of infant Krishna (Laddu Gopal) in the
+traditional crawling pose, holding a round laddu in his raised right hand,
+dressed in yellow silk with a tiny peacock-feather crown and a flower
+garland. The idol sits on a small decorated swing (jhula) hung with
+marigold garlands. Beside it: a wooden flute and a small clay pot of white
+butter. It is clearly a metal idol, not a living child. No other figures.
+```
+
+**किस व्रत पर कौन सा लगेगा:** `vrat_pradosh_v1` → प्रदोष, सोलह सोमवार, मासिक शिवरात्रि ·
+`vrat_ekadashi_v1` → एकादशी · `vrat_sankashti_v1` → सिर्फ़ संकष्टी · `vrat_purnima_v1` →
+पूर्णिमा · `vrat_janmashtami_v1` → जन्माष्टमी · `granth_sundarkand_v1` → ग्रंथालय का सुंदरकांड।
