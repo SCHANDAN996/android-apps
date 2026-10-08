@@ -29,6 +29,7 @@ import '../state/settings.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 import 'design_system.dart';
+import 'graha_ast_patti.dart';
 
 /// कितने दिन आगे तक देखें। दो महीने — गृह प्रवेश की तैयारी इतनी ही
 /// पहले शुरू होती है, और इससे ज़्यादा में सूची पढ़ी नहीं जाती।
@@ -44,10 +45,17 @@ class TaalneWaleDinCard extends StatefulWidget {
 class _TaalneWaleDinCardState extends State<TaalneWaleDinCard> {
   late Future<List<TaalneWalaDin>> _din;
 
+  /// गुरु/शुक्र के अस्त-काल — सिर्फ़ तब निकलते हैं जब पट्टी खुली हो (→ D-119)।
+  late Future<List<GrahaAst>> _ast;
+
   @override
   void initState() {
     super.initState();
     _din = _nikalo();
+    _ast = grahaAstPattiKhuli
+        ? Future(
+            () => aaneWaleGrahaAst(DateTime.now(), taalneKeDin, settings.place))
+        : Future.value(const <GrahaAst>[]);
   }
 
   /// ⚠️ साठ दिन का पंचांग सस्ता नहीं है — हर दिन के लिए सूर्योदय,
@@ -123,6 +131,14 @@ class _TaalneWaleDinCardState extends State<TaalneWaleDinCard> {
               const SizedBox(height: VidhivatSpacing.sm),
               _TaalneKiSuchi(sab: sab),
             ],
+            // ── गुरु/शुक्र अस्त (→ D-119) ── अभी बंद; खोलने की शर्त
+            // `graha_ast_patti.dart` के सिर पर और `docs/08` §21 में।
+            if (grahaAstPattiKhuli)
+              FutureBuilder<List<GrahaAst>>(
+                future: _ast,
+                builder: (context, snap) =>
+                    GrahaAstPatti(kaal: snap.data ?? const <GrahaAst>[]),
+              ),
           ],
         );
       },

@@ -137,6 +137,23 @@ sunrise moonrise ayanamsa  moon      │
 `tools/horizons_vrat.py` — उन तारीख़ों की तिथि-सीमाएँ NASA JPL Horizons से;
 नतीजा `engine/test/data/horizons_vrat.json`।
 
+### `lib/src/graha_ast.dart` (→ D-119)
+गुरु और शुक्र का अस्त — सूर्य के पास आ जाने से न दिखना। `graha.dart` के ऊपर बैठती है।
+
+| नाम | क्या |
+|---|---|
+| `enum AstGanana` | `ansh` (देशांतर का अंतर कालांश से कम) · `kalansh` (उदय/अस्त के समय का अंतर; जगह से बदलता है, धीमा) |
+| `astKalansh(g, vakri:)` | गुरु 11, शुक्र 10, वक्री 8 — सूर्यसिद्धांत ९.६–७। **मत बदलना** |
+| `grahaAstKaal(g, se, tak, place, ganana:)` | **मुख्य प्रवेश-द्वार** — खिड़की को छूने वाले अस्त-काल |
+| `GrahaAst` | `ast`, `uday`, दिशा, कालांश; `vardhakDin`/`balyaDin` (मुहूर्त चिंतामणि २७), `vardhakShuru`, `balyaAnt` |
+| `grahaUdayAst(g, y, m, d, place)` | उस दिन सूर्य के आस-पास ग्रह का उदय और अस्त — संदर्भ के 18 पलों से 2 मिनट के भीतर |
+| `grahaSuryaAntar`, `grahaUnchai` | देशांतर का अंतर; ग्रह की ऊँचाई |
+
+⚠ तीसरा तरीक़ा (आँख से दिखने का आधुनिक हिसाब) जान-बूझकर नहीं है। ऐप की ओर:
+`app/lib/widgets/graha_ast_patti.dart` — **बंद** (`grahaAstPattiKhuli`); खोलने की शर्त
+`docs/08` §21.5। औज़ार: `tool/ast_aazmao.dart` (दोनों तरीक़ों की तारीख़ें),
+`tool/ast_byora.dart` (रोज़ का ब्योरा)।
+
 ### `lib/src/muhurta.dart`
 चौघड़िया और होरा। दोनों वार के स्वामी ग्रह से निकलते हैं।
 
