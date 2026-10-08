@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "id": "mahabharat_stavaraj",
+  "naam": "भीष्म स्तवराज",
+  "upnaam": [
+    "भीष्मस्तवराज",
+    "भीष्म स्तुति",
+    "भीष्म की कृष्ण स्तुति",
+    "पंचरत्न गीता",
+    "शांति पर्व"
+  ],
+  "prakar": "granth",
+  "devta": "श्रीकृष्ण (विष्णु)",
+  "rachnakar": "महाभारत, शांति पर्व — महर्षि वेदव्यास",
+  "bhasha": "संस्कृत",
+  "parichay": "युद्ध के बाद की बात है। भीष्म बाणों की शय्या पर पड़े, सूर्य के उत्तरायण होने की राह देख रहे हैं। जब वह समय आया, तो ऋषियों से घिरे भीष्म ने मन को श्रीकृष्ण में लगाकर उनकी स्तुति की — यही भीष्म स्तवराज है। पहले पंद्रह श्लोकों में यह दृश्य है; फिर चौरासी श्लोकों की स्तुति है, जिसके बीच के छियालीस श्लोक एक ही ढंग के हैं — «उस … रूप को नमस्कार»; और अंत के नौ श्लोकों में श्रीकृष्ण युधिष्ठिर और भाइयों के साथ भीष्म के पास चलते हैं।\n\nपरंपरा में यह «पंचरत्न गीता» के पाँच रत्नों में गिना जाता है — गीता, विष्णु सहस्रनाम, भीष्म स्तवराज, अनुस्मृति और गजेन्द्र मोक्ष। पहले दो ग्रंथालय में अलग से हैं।",
+  "kabPadhein": "जब मन हो। पंचरत्न गीता की पुस्तकों में यह गीता और विष्णु सहस्रनाम के साथ छपता है।",
+  "kaisePadhein": "पहले तीन खंड कथा के हैं। स्तुति चौथे खंड से शुरू होती है; बीच के खंडों में हर श्लोक «… आत्मने नमः» पर ख़त्म होता है। हर खंड के शीर्षक में छपी पुस्तक वाले श्लोक-अंक हैं।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर खंड के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "भीष्म शरशय्या पर · श्लोक १–४",
+      "dev": "जनमेजय उवाच ।\nशरतल्पे शयानस्तु भरतानां पितामहः ।\nकथमुत्सृष्टवान् देहं कञ्च योगमधारयत् ॥\nवैशम्पायन उवाच ।\nशृणुष्वावहितो राजञ् शुचिर्भूत्वा समाहितः ।\nभीष्मस्य कुरुशार्दूल देहोत्सर्गं महात्मनः ॥\nनिवृत्तमात्रे त्वयन उत्तरे वै दिवाकरे ।\nसमावेशयदात्मानमात्मन्येव समाहितः ॥\nविकीर्णांशुरिवादित्यो भीष्मः शरशतैश्चितः ।\nशुशुभे परया लक्ष्म्या वृतो ब्राह्मणसत्तमैः ॥",
+      "roman": "janamejaya uvaacha |\nsharatalpe shayaanastu bharataanaam pitaamahah |\nkathamutsrishtavaan deham kancha yogamadhaarayat ||\nvaishampaayana uvaacha |\nshrinushvaavahito raajan shuchirbhootvaa samaahitah |\nbheeshmasya kurushaardoola dehotsargam mahaatmanah ||\nnivrittamaatre tvayana uttare vai divaakare |\nsamaaveshayadaatmaanamaatmanyeva samaahitah ||\nvikeernaamshurivaadityo bheeshmah sharashataishchitah |\nshushubhe parayaa lakshmyaa vrito braahmanasattamaih ||",
+      "arth": "जनमेजय ने पूछा — बाणों की शय्या पर लेटे भरतवंशियों के पितामह भीष्म ने शरीर कैसे छोड़ा, और उस समय किस योग को धारण किया? वैशम्पायन बोले — राजन्! पवित्र और एकाग्र होकर ध्यान से सुनो कि महात्मा भीष्म ने देह कैसे छोड़ी। जैसे ही सूर्य दक्षिण का मार्ग छोड़कर उत्तरायण में आए, भीष्म ने एकाग्र होकर अपने मन को आत्मा में ही लगा दिया। सैकड़ों बाणों से बिंधे भीष्म किरणें बिखेरते सूर्य जैसे लगते थे; श्रेष्ठ ब्राह्मणों से घिरे वे बड़ी शोभा से चमक रहे थे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "ऋषियों के बीच · श्लोक ५–१२",
+      "dev": "व्यासेन वेदविदुषा नारदेन सुरर्षिणा ।\nदेवस्थानेन वात्स्येन तथाश्मकसुमन्तुना ॥\nतथा जैमिनिना चैव पैलेन च महात्मना ।\nशाण्डिल्यदेवलाभ्यां च मैत्रेयेण च धीमता ॥\nअसितेन वशिष्ठेन कौशिकेन महात्मना ।\nहारीतलोमशाभ्यां च तथात्रेयेण धीमता ॥\nबृहस्पतिश्च शुक्रश्च च्यवनश्च महामुनिः ।\nसनत्कुमारः कपिलो वाल्मीकिस्तुम्बुरुः कुरुः ॥\nमौद्गल्यो भार्गवो रामस्तृणबिन्दुर्महामुनिः ।\nपिप्पलादोऽथ वायुश्च संवर्त्तः पुलहः कचः ॥\nकाश्यपश्च पुलस्त्यश्च क्रतुर्दक्षः पराशरः ।\nमरीचिरङ्गिराः काश्यो गौतमो गालवो मुनिः ॥\nधौम्यो विभाण्डो माण्डव्यो धौम्रः कृष्णानुभौतिकः ।\nउलूकः परमो विप्रो मार्कण्डेयो महामुनिः ॥\nभास्करिः पूरणः कृष्णः सूतः परमधार्मिकः ।\nएतैश्चान्यैर्मुनिगणैर्महाभागैर्महात्मभिः ॥",
+      "roman": "vyaasena vedavidushaa naaradena surarshinaa |\ndevasthaanena vaatsyena tathaashmakasumantunaa ||\ntathaa jaimininaa chaiva pailena cha mahaatmanaa |\nshaandilyadevalaabhyaam cha maitreyena cha dheemataa ||\nasitena vashishthena kaushikena mahaatmanaa |\nhaareetalomashaabhyaam cha tathaatreyena dheemataa ||\nbrihaspatishcha shukrashcha chyavanashcha mahaamunih |\nsanatkumaarah kapilo vaalmeekistumburuh kuruh ||\nmaudgalyo bhaargavo raamastrinabindurmahaamunih |\npippalaado'tha vaayushcha samvarttah pulahah kachah ||\nkaashyapashcha pulastyashcha kraturdakshah paraasharah |\nmareechirangiraah kaashyo gautamo gaalavo munih ||\ndhaumyo vibhaando maandavyo dhaumrah krishnaanubhautikah |\nulookah paramo vipro maarkandeyo mahaamunih ||\nbhaaskarih pooranah krishnah sootah paramadhaarmikah |\netaishchaanyairmuniganairmahaabhaagairmahaatmabhih ||",
+      "arth": "उन्हें घेरे हुए थे — वेदों के ज्ञाता व्यास, देवर्षि नारद, देवस्थान, वात्स्य, अश्मक और सुमन्तु; जैमिनि, महात्मा पैल, शाण्डिल्य, देवल और बुद्धिमान मैत्रेय; असित, वसिष्ठ, महात्मा कौशिक, हारीत, लोमश और बुद्धिमान आत्रेय; बृहस्पति, शुक्र, महामुनि च्यवन, सनत्कुमार, कपिल, वाल्मीकि, तुम्बुरु और कुरु; मौद्गल्य, भृगुवंशी परशुराम, महामुनि तृणबिन्दु, पिप्पलाद, वायु, संवर्त, पुलह और कच; काश्यप, पुलस्त्य, क्रतु, दक्ष, पराशर, मरीचि, अंगिरा, काश्य, गौतम और गालव मुनि; धौम्य, विभाण्ड, माण्डव्य, धौम्र, कृष्णानुभौतिक, श्रेष्ठ ब्राह्मण उलूक और महामुनि मार्कण्डेय; भास्करि, पूरण, कृष्ण और परम धार्मिक सूत — ये, और दूसरे भी बहुत से भाग्यशाली महात्मा मुनि।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "स्तुति का आरम्भ · श्लोक १३–१५",
+      "dev": "श्रद्धादमशमोपेतैर्वृतश्चन्द्र इव ग्रहैः ।\nभीष्मस्तु पुरुषव्याघ्रः कर्मणा मनसा गिरा ॥\nशरतल्पगतः कृष्णं प्रदध्यौ प्राञ्जलिः शुचिः ।\nस्वरेण हृष्टपुष्टेन तुष्टाव मधुसूदनम् ॥\nयोगेश्वरं पद्मनाभं विष्णुं जिष्णुं जगत्पतिम् ।\nकृताञ्जलिपुटो भूत्वा वाग्विदां प्रवरः प्रभुः ।\nभीष्मः परमधर्मात्मा वासुदेवमथास्तुवत् ॥",
+      "roman": "shraddhaadamashamopetairvritashchandra iva grahaih |\nbheeshmastu purushavyaaghrah karmanaa manasaa giraa ||\nsharatalpagatah krishnam pradadhyau praanjalih shuchih |\nsvarena hrishtapushtena tushtaava madhusoodanam ||\nyogeshvaram padmanaabham vishnum jishnum jagatpatim |\nkritaanjaliputo bhootvaa vaagvidaam pravarah prabhuh |\nbheeshmah paramadharmaatmaa vaasudevamathaastuvat ||",
+      "arth": "श्रद्धा, संयम और शान्ति वाले इन मुनियों से घिरे भीष्म ऐसे लगते थे जैसे ग्रहों से घिरा चंद्रमा। बाणों की शय्या पर पड़े पुरुषसिंह भीष्म ने पवित्र भाव से हाथ जोड़कर मन, वाणी और कर्म से श्रीकृष्ण का ध्यान किया, और प्रसन्न, भरे हुए स्वर में मधुसूदन की स्तुति करने लगे। बोलने वालों में श्रेष्ठ, परम धर्मात्मा भीष्म ने अंजलि बाँधकर योगेश्वर, पद्मनाभ, सर्वव्यापी, विजयी, जगत् के स्वामी वासुदेव की स्तुति इस प्रकार की।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "शरण · श्लोक १६–१७",
+      "dev": "भीष्म उवाच ।\nआरिराधयिषुः कृष्णं वाचं जिगदिषामि याम् ।\nतया व्याससमासिन्या प्रीयतां पुरुषोत्तमः ॥\nशुचिं शुचिपदं हंसं तत्पदं परमेष्ठिनम् ।\nयुक्त्वा सर्वात्मनात्मानं तं प्रपद्ये प्रजापतिम् ॥",
+      "roman": "bheeshma uvaacha |\naariraadhayishuh krishnam vaacham jigadishaami yaam |\ntayaa vyaasasamaasinyaa preeyataam purushottamah ||\nshuchim shuchipadam hamsam tatpadam parameshthinam |\nyuktvaa sarvaatmanaatmaanam tam prapadye prajaapatim ||",
+      "arth": "भीष्म बोले — श्रीकृष्ण की आराधना की इच्छा से मैं जो वाणी कहना चाहता हूँ, वह विस्तार से हो या थोड़े में, उससे पुरुषोत्तम प्रसन्न हों। जो स्वयं पवित्र हैं, जिन तक पहुँचने का मार्ग पवित्र है, जो हंस हैं, «तत्» पद से कहे जाने वाले परमेष्ठी हैं — अपने को पूरी तरह उन्हीं में लगाकर मैं उन प्रजापति की शरण लेता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "जिन्हें कोई नहीं जानता · श्लोक १८–२१",
+      "dev": "अनाद्यन्तं परं ब्रह्म न देवा नर्षयो विदुः ।\nएको यं वेद भगवान्धाता नारायणो हरिः ॥\nनारायणादृषिगणास्तथा सिद्धमहोरगाः ।\nदेवा देवर्षयश्चैव यं विदुः परमव्ययम् ॥\nदेवदानवगन्धर्वा यक्षराक्षसपन्नगाः ।\nयं न जानन्ति को ह्येष कुतो वा भगवानिति ॥\nयस्मिन्विश्वानि भूतानि तिष्ठन्ति च विशन्ति च ।\nगुणभूतानि भूतेशे सूत्रे मणिगणा इव ॥",
+      "roman": "anaadyantam param brahma na devaa narshayo viduh |\neko yam veda bhagavaandhaataa naaraayano harih ||\nnaaraayanaadrishiganaastathaa siddhamahoragaah |\ndevaa devarshayashchaiva yam viduh paramavyayam ||\ndevadaanavagandharvaa yaksharaakshasapannagaah |\nyam na jaananti ko hyesha kuto vaa bhagavaaniti ||\nyasminvishvaani bhootaani tishthanti cha vishanti cha |\ngunabhootaani bhooteshe sootre maniganaa iva ||",
+      "arth": "उनका न आदि है न अन्त; वे परब्रह्म हैं। उन्हें न देवता जानते हैं, न ऋषि — सबको धारण करने वाले भगवान नारायण हरि ही अकेले उन्हें जानते हैं। नारायण से ही ऋषियों, सिद्धों, बड़े नागों, देवताओं और देवर्षियों ने जाना कि वे अविनाशी परम तत्त्व हैं। देवता, दानव, गन्धर्व, यक्ष, राक्षस और नाग भी यह नहीं जानते कि ये भगवान कौन हैं और कहाँ से आए। उन्हीं में सारे प्राणी रहते हैं और उन्हीं में समा जाते हैं — जैसे धागे में मणियाँ पिरोई रहती हैं, वैसे ही गुणों से बने सब प्राणी उन भूतों के ईश्वर में पिरोए हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "हज़ार सिर, हज़ार चरण · श्लोक २२–२५",
+      "dev": "यस्मिन्नित्ये तते तन्तौ दृढे स्रगिव तिष्ठति ।\nसदसद्ग्रथितं विश्वं विश्वाङ्गे विश्वकर्मणि ॥\nहरिं सहस्रशिरसं सहस्रचरणेक्षणम् ।\nसहस्रबाहुमुकुटं सहस्रवदनोज्ज्वलम् ॥\nप्राहुर्नारायणं देवं यं विश्वस्य परायणम् ।\nअणीयसामणीयांसं स्थविष्ठं च स्थवीयसाम् ॥\nगरीयसां गरिष्ठं च श्रेष्ठं च श्रेयसामपि ॥",
+      "roman": "yasminnitye tate tantau dridhe sragiva tishthati |\nsadasadgrathitam vishvam vishvaange vishvakarmani ||\nharim sahasrashirasam sahasracharanekshanam |\nsahasrabaahumukutam sahasravadanojjvalam ||\npraahurnaaraayanam devam yam vishvasya paraayanam |\naneeyasaamaneeyaamsam sthavishtham cha sthaveeyasaam ||\ngareeyasaam garishtham cha shreshtham cha shreyasaamapi ||",
+      "arth": "वे सदा रहने वाले, तने हुए मज़बूत धागे जैसे हैं; सत् और असत् से गुँथा यह सारा विश्व उसमें माला की तरह टिका है — विश्व उन्हीं का अंग है और वही उसके रचने वाले हैं। उन हरि के हज़ार सिर हैं, हज़ार चरण और हज़ार आँखें; हज़ार भुजाएँ, हज़ार मुकुट और हज़ार चमकते मुख। उन्हीं को नारायण देव कहते हैं — वे विश्व का परम आश्रय हैं; छोटे से भी छोटे और बड़े से भी बड़े; भारी से भी भारी और श्रेष्ठ से भी श्रेष्ठ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "वेद जिन्हें गाते हैं · श्लोक २६–२८",
+      "dev": "यं वाकेष्वनुवाकेषु निषत्सूपनिषत्सु च ।\nगृणन्ति सत्यकर्माणं सत्यं सत्येषु सामसु ॥\nचतुर्भिश्चतुरात्मानं सत्त्वस्थं सात्वतां पतिम् ।\nयं दिव्यैर्देवमर्चन्ति गुह्यैः परमनामभिः ॥\nयस्मिन्नित्यं तपस्तप्तं यदङ्गेष्वनुतिष्ठति ।\nसर्वात्मा सर्ववित् सर्वः सर्वज्ञः सर्वभावनः ॥",
+      "roman": "yam vaakeshvanuvaakeshu nishatsoopanishatsu cha |\ngrinanti satyakarmaanam satyam satyeshu saamasu ||\nchaturbhishchaturaatmaanam sattvastham saatvataam patim |\nyam divyairdevamarchanti guhyaih paramanaamabhih ||\nyasminnityam tapastaptam yadangeshvanutishthati |\nsarvaatmaa sarvavit sarvah sarvajnah sarvabhaavanah ||",
+      "arth": "वाकों और अनुवाकों में, निषदों और उपनिषदों में, और सच कहने वाले साम-मंत्रों में जिन्हें सत्य और सत्य कर्म वाला कहकर गाया जाता है; जो चार रूपों वाले हैं, सत्त्व में स्थित हैं, भक्तों के स्वामी हैं, और जिन देव की पूजा चार दिव्य, गुप्त, उत्तम नामों से की जाती है; जिनमें सदा तप टिका है — जो तप किया जाता है, वह जिनके अंगों में पहुँचता है — वे सबकी आत्मा हैं, सब कुछ जानने वाले, स्वयं सब कुछ, सर्वज्ञ, और सबको उत्पन्न करने वाले।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "देवकी के पुत्र · श्लोक २९–३१",
+      "dev": "यं देवं देवकी देवी वसुदेवादजीजनत् ।\nभौमस्य ब्रह्मणो गुप्त्यै दीप्तमग्निमिवारणिः ॥\nयमनन्यो व्यपेताशीरात्मानं वीतकल्मषम् ।\nदृष्ट्वानन्त्याय गोविन्दं पश्यत्यात्मानमात्मनि ॥\nअतिवाय्विन्द्रकर्माणमतिसूर्यातितेजसम् ।\nअतिबुद्धीन्द्रियात्मानं तं प्रपद्ये प्रजापतिम् ॥",
+      "roman": "yam devam devakee devee vasudevaadajeejanat |\nbhaumasya brahmano guptyai deeptamagnimivaaranih ||\nyamananyo vyapetaasheeraatmaanam veetakalmasham |\ndrishtvaanantyaaya govindam pashyatyaatmaanamaatmani ||\nativaayvindrakarmaanamatisooryaatitejasam |\natibuddheendriyaatmaanam tam prapadye prajaapatim ||",
+      "arth": "जिन देव को देवकी देवी ने वसुदेव से जन्म दिया — जैसे अरणी से धधकती अग्नि प्रकट होती है — ताकि धरती पर ब्रह्म की रक्षा हो; जिन निष्पाप गोविन्द को, सब कामनाएँ छोड़ चुका अनन्य साधक मोक्ष के लिए अपने ही भीतर आत्मा के रूप में देखता है; जिनका कर्म वायु और इन्द्र से बढ़कर है, जिनका तेज सूर्य से भी आगे है, और जो बुद्धि और इन्द्रियों की पहुँच से परे हैं — उन प्रजापति की मैं शरण लेता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "एक, अनेक रूपों में · श्लोक ३२–३४",
+      "dev": "पुराणे पुरुषं प्रोक्तं ब्रह्म प्रोक्तं युगादिषु ।\nक्षये सङ्कर्षणं प्रोक्तं तमुपास्यमुपास्महे ॥\nयमेकं बहुधात्मानं प्रादुर्भूतमधोक्षजम् ।\nनान्यभक्ताः क्रियावन्तो यजन्ते सर्वकामदम् ॥\nयमाहुर्जगतः कोशं यस्मिन् सन्निहिताः प्रजाः ।\nयस्मिँल्लोकाः स्फुरन्तीमे जले शकुनयो यथा ॥",
+      "roman": "puraane purusham proktam brahma proktam yugaadishu |\nkshaye sankarshanam proktam tamupaasyamupaasmahe ||\nyamekam bahudhaatmaanam praadurbhootamadhokshajam |\nnaanyabhaktaah kriyaavanto yajante sarvakaamadam ||\nyamaahurjagatah kosham yasmin sannihitaah prajaah |\nyasminllokaah sphuranteeme jale shakunayo yathaa ||",
+      "arth": "पुराणों में जिन्हें «पुरुष» कहा गया है, युगों के आरम्भ में «ब्रह्म» और प्रलय के समय «संकर्षण» — उन पूजने योग्य की हम उपासना करते हैं। जो एक होकर भी अनेक रूपों में प्रकट हुए हैं, इन्द्रियों की पकड़ से परे हैं, सब कामनाएँ पूरी करते हैं, और जिनका यजन कर्म में लगे अनन्य भक्त करते हैं; जिन्हें जगत् का कोश — भंडार — कहते हैं, जिनमें सारी प्रजाएँ रखी हैं, और जिनमें ये लोक वैसे ही हिलते-डुलते हैं जैसे जल में पक्षी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अविनाशी परम पद · श्लोक ३५–३७",
+      "dev": "ऋतमेकाक्षरं ब्रह्म यत्तत्सदसतोः परम् ।\nअनादिमध्यपर्यन्तं न देवा नर्षयो विदुः ।\nयं सुरासुरगन्धर्वाः सिद्धा ऋषिमहोरगाः ॥\nप्रयता नित्यमर्चन्ति परमं दुःखभेषजम् ।\nअनादिनिधनं देवमात्मयोनिं सनातनम् ॥\nअप्रेक्ष्यमनभिज्ञेयं हरिं नारायणं प्रभुम् ।\nयं वै विश्वस्य कर्तारं जगतस्तस्थुषां पतिम् ।\nवदन्ति जगतोऽध्यक्षमक्षरं परमं पदम् ॥",
+      "roman": "ritamekaaksharam brahma yattatsadasatoh param |\nanaadimadhyaparyantam na devaa narshayo viduh |\nyam suraasuragandharvaah siddhaa rishimahoragaah ||\nprayataa nityamarchanti paramam duhkhabheshajam |\nanaadinidhanam devamaatmayonim sanaatanam ||\naprekshyamanabhijneyam harim naaraayanam prabhum |\nyam vai vishvasya kartaaram jagatastasthushaam patim |\nvadanti jagato'dhyakshamaksharam paramam padam ||",
+      "arth": "जो सत्य हैं, एक अक्षर वाला ब्रह्म हैं, सत् और असत् दोनों से परे हैं; जिनका न आदि है, न मध्य, न अन्त, और जिन्हें न देवता जानते हैं, न ऋषि। देवता, असुर, गन्धर्व, सिद्ध, ऋषि और बड़े नाग संयम से सदा जिनकी पूजा करते हैं; जो दुःख की सबसे बड़ी औषधि हैं; जिनका न जन्म है न अन्त, जो अपने आप से प्रकट, सनातन देव हैं; जिन्हें न देखा जा सकता है, न पूरा जाना जा सकता है — वे हरि, नारायण, प्रभु हैं। उन्हीं को विश्व का रचने वाला, चलने और न चलने वाले सबका स्वामी, जगत् का साक्षी और अविनाशी परम पद कहते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "सूर्य, चंद्रमा, और जानने योग्य · श्लोक ३८–४०",
+      "dev": "हिरण्यवर्णं यं गर्भमदितिर्दैत्यनाशनम् ।\nएकं द्वादशधा जज्ञे तस्मै सूर्यात्मने नमः ॥\nशुक्ले देवान् पितॄन् कृष्णे तर्पयत्यमृतेन यः ।\nयश्च राजा द्विजातीनां तस्मै सोमात्मने नमः ॥\nमहतस्तमसः पारे पुरुषं ह्यतितेजसम् ।\nयं ज्ञात्वा मृत्युमत्येति तस्मै ज्ञेयात्मने नमः ॥",
+      "roman": "hiranyavarnam yam garbhamaditirdaityanaashanam |\nekam dvaadashadhaa jajne tasmai sooryaatmane namah ||\nshukle devaan pitreen krishne tarpayatyamritena yah |\nyashcha raajaa dvijaateenaam tasmai somaatmane namah ||\nmahatastamasah paare purusham hyatitejasam |\nyam jnaatvaa mrityumatyeti tasmai jneyaatmane namah ||",
+      "arth": "सोने जैसे रंग वाले, दैत्यों का नाश करने वाले, जिन्हें अदिति ने गर्भ में धारण किया और जो एक होकर बारह रूपों में जन्मे — उन सूर्य-रूप को नमस्कार। जो शुक्ल पक्ष में देवताओं को और कृष्ण पक्ष में पितरों को अमृत से तृप्त करते हैं, और जो द्विजों के राजा हैं — उन चंद्र-रूप को नमस्कार। जो घोर अंधकार के पार, अत्यन्त तेजस्वी पुरुष हैं, जिन्हें जानकर मनुष्य मृत्यु को पार कर जाता है — उन जानने योग्य रूप को नमस्कार।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "वेद, यज्ञ और होम · श्लोक ४१–४३",
+      "dev": "यं बृहन्तं बृहत्युक्थे यमग्नौ यं महाध्वरे ।\nयं विप्रसङ्घा गायन्ति तस्मै वेदात्मने नमः ॥\nऋग्यजुःसामधामानं दशार्धहविरात्मकम् ।\nयं सप्ततन्तुं तन्वन्ति तस्मै यज्ञात्मने नमः ॥\nचतुर्भिश्च चतुर्भिश्च द्वाभ्यां पञ्चभिरेव च ।\nहूयते च पुनर्द्वाभ्यां तस्मै होमात्मने नमः ॥",
+      "roman": "yam brihantam brihatyukthe yamagnau yam mahaadhvare |\nyam viprasanghaa gaayanti tasmai vedaatmane namah ||\nrigyajuhsaamadhaamaanam dashaardhahaviraatmakam |\nyam saptatantum tanvanti tasmai yajnaatmane namah ||\nchaturbhishcha chaturbhishcha dvaabhyaam panchabhireva cha |\nhooyate cha punardvaabhyaam tasmai homaatmane namah ||",
+      "arth": "बड़े उक्थ में, अग्नि के चयन में और महायज्ञ में ब्राह्मणों के समूह जिन महान् का गान करते हैं — उन वेद-रूप को नमस्कार। ऋक्, यजु और साम जिनके धाम हैं, पाँच तरह की हवि जिनका स्वरूप है, और सात तंतुओं वाले जिस यज्ञ को लोग फैलाते हैं — उन यज्ञ-रूप को नमस्कार। चार, चार, दो, पाँच और फिर दो — इन सत्रह अक्षरों से जिन्हें आहुति दी जाती है — उन होम-रूप को नमस्कार।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "स्तोत्र, हंस और वाणी · श्लोक ४४–४६",
+      "dev": "यः सुपर्णो यजुर्नाम छन्दोगात्रस्त्रिवृच्छिराः ।\nरथन्तरं बृहत्साम तस्मै स्तोत्रात्मने नमः ॥\nयः सहस्रसमे सत्रे जज्ञे विश्वसृजामृषिः ।\nहिरण्यपक्षः शकुनिस्तस्मै हंसात्मने नमः ॥\nपदाङ्गसन्धिपर्वाणं स्वरव्यञ्जनभूषणम् ।\nयमाहुरक्षरं दिव्यं तस्मै वागात्मने नमः ॥",
+      "roman": "yah suparno yajurnaama chhandogaatrastrivrichchhiraah |\nrathantaram brihatsaama tasmai stotraatmane namah ||\nyah sahasrasame satre jajne vishvasrijaamrishih |\nhiranyapakshah shakunistasmai hamsaatmane namah ||\npadaangasandhiparvaanam svaravyanjanabhooshanam |\nyamaahuraksharam divyam tasmai vaagaatmane namah ||",
+      "arth": "जो «यजु» नाम के सुन्दर पंखों वाले पक्षी हैं — छंद जिनके अंग हैं, त्रिवृत् जिनका सिर है, और रथन्तर तथा बृहत् जिनके साम हैं — उन स्तोत्र-रूप को नमस्कार। जो ऋषि, विश्व रचने वालों के हज़ार वर्ष चलने वाले यज्ञ में, सोने के पंखों वाले पक्षी के रूप में प्रकट हुए — उन हंस-रूप को नमस्कार। पद जिनके अंग हैं, संधियाँ जिनके जोड़ हैं, स्वर और व्यंजन जिनके आभूषण हैं, और जिन्हें दिव्य अक्षर कहा जाता है — उन वाणी-रूप को नमस्कार।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "वराह, शेष की शय्या, और सत्य · श्लोक ४७–४९",
+      "dev": "यज्ञाङ्गो यो वराहो वै भूत्वा गामुज्जहार ह ।\nलोकत्रयहितार्थाय तस्मै वीर्यात्मने नमः ॥\nयः शेते योगमास्थाय पर्यङ्के नागभूषिते ।\nफणासहस्ररचिते तस्मै निद्रात्मने नमः ॥\nयस्तनोति सतां सेतुमृतेनामृतयोनिना ।\nधर्मार्थव्यवहाराङ्गैस्तस्मै सत्यात्मने नमः ॥",
+      "roman": "yajnaango yo varaaho vai bhootvaa gaamujjahaara ha |\nlokatrayahitaarthaaya tasmai veeryaatmane namah ||\nyah shete yogamaasthaaya paryanke naagabhooshite |\nphanaasahasrarachite tasmai nidraatmane namah ||\nyastanoti sataam setumritenaamritayoninaa |\ndharmaarthavyavahaaraangaistasmai satyaatmane namah ||",
+      "arth": "जिन्होंने यज्ञ के अंगों वाले वराह बनकर तीनों लोकों के हित के लिए पृथ्वी को ऊपर उठाया — उन पराक्रम-रूप को नमस्कार। जो योग का सहारा लेकर, हज़ार फनों से बने, नाग से सजे पलंग पर सोते हैं — उन निद्रा-रूप को नमस्कार। जो अमृत के स्रोत सत्य से, और धर्म, अर्थ तथा व्यवहार के अंगों से, सज्जनों की मर्यादा का पुल बाँधते हैं — उन सत्य-रूप को नमस्कार।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "धर्म, काम और क्षेत्र · श्लोक ५०–५२",
+      "dev": "यं पृथग्धर्मचरणाः पृथग्धर्मफलैषिणः ।\nपृथग्धर्मैः समर्चन्ति तस्मै धर्मात्मने नमः ॥\nयतः सर्वे प्रसूयन्ते ह्यनङ्गात्माङ्गदेहिनः ।\nउन्मादः सर्वभूतानां तस्मै कामात्मने नमः ॥\nयं च व्यक्तस्थमव्यक्तं विचिन्वन्ति महर्षयः ।\nक्षेत्रे क्षेत्रज्ञमासीनं तस्मै क्षेत्रात्मने नमः ॥",
+      "roman": "yam prithagdharmacharanaah prithagdharmaphalaishinah |\nprithagdharmaih samarchanti tasmai dharmaatmane namah ||\nyatah sarve prasooyante hyanangaatmaangadehinah |\nunmaadah sarvabhootaanaam tasmai kaamaatmane namah ||\nyam cha vyaktasthamavyaktam vichinvanti maharshayah |\nkshetre kshetrajnamaaseenam tasmai kshetraatmane namah ||",
+      "arth": "अलग-अलग धर्मों पर चलने वाले, अलग-अलग फल चाहने वाले लोग अपने-अपने धर्म से जिनकी पूजा करते हैं — उन धर्म-रूप को नमस्कार। जिस अनंग — बिना देह वाले — से सब देहधारी जन्म लेते हैं, और जो सब प्राणियों को उन्मत्त कर देता है — उन काम-रूप को नमस्कार। महर्षि जिस अव्यक्त को व्यक्त जगत् के भीतर ढूँढते हैं, जो हर क्षेत्र — शरीर — में उसे जानने वाला क्षेत्रज्ञ बनकर बैठा है — उन क्षेत्र-रूप को नमस्कार।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "सांख्य, योग और मोक्ष · श्लोक ५३–५५",
+      "dev": "यं त्रिधात्मानमात्मस्थं वृतं षोडशभिर्गुणैः ।\nप्राहुः सप्तदशं सांख्यास्तस्मै सांख्यात्मने नमः ॥\nयं विनिद्रा जितश्वासाः सत्त्वस्थाः संयतेन्द्रियाः ।\nज्योतिः पश्यन्ति युञ्जानास्तस्मै योगात्मने नमः ॥\nअपुण्यपुण्योपरमे यं पुनर्भवनिर्भयाः ।\nशान्ताः संन्यासिनो यान्ति तस्मै मोक्षात्मने नमः ॥",
+      "roman": "yam tridhaatmaanamaatmastham vritam shodashabhirgunaih |\npraahuh saptadasham saamkhyaastasmai saamkhyaatmane namah ||\nyam vinidraa jitashvaasaah sattvasthaah samyatendriyaah |\njyotih pashyanti yunjaanaastasmai yogaatmane namah ||\napunyapunyoparame yam punarbhavanirbhayaah |\nshaantaah samnyaasino yaanti tasmai mokshaatmane namah ||",
+      "arth": "जो तीन रूपों में दिखते हुए भी अपने में ही स्थित हैं, सोलह गुणों से घिरे हैं, और जिन्हें सांख्य के जानकार सत्रहवाँ कहते हैं — उन सांख्य-रूप को नमस्कार। नींद को जीत चुके, साँस को साध चुके, सत्त्व में स्थित, इन्द्रियों को वश में रखने वाले योगी, योग में लगकर जिन्हें ज्योति के रूप में देखते हैं — उन योग-रूप को नमस्कार। पाप और पुण्य दोनों के चुक जाने पर, फिर जन्म लेने के भय से छूटे शान्त संन्यासी जिन्हें पाते हैं — उन मोक्ष-रूप को नमस्कार।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "प्रलय की आग, बालक, और कमल · श्लोक ५६–५८",
+      "dev": "योऽसौ युगसहस्रान्ते प्रदीप्तार्चिर्विभावसुः ।\nसंभक्षयति भूतानि तस्मै घोरात्मने नमः ॥\nसंभक्ष्य सर्वभूतानि कृत्वा चैकार्णवं जगत् ।\nबालः स्वपिति यश्चैकस्तस्मै मायात्मने नमः ॥\nतद्यस्य नाभ्यां संभूतं यस्मिन् विश्वं प्रतिष्ठितम् ।\nपुष्करे पुष्कराक्षस्य तस्मै पद्मात्मने नमः ॥",
+      "roman": "yo'sau yugasahasraante pradeeptaarchirvibhaavasuh |\nsambhakshayati bhootaani tasmai ghoraatmane namah ||\nsambhakshya sarvabhootaani kritvaa chaikaarnavam jagat |\nbaalah svapiti yashchaikastasmai maayaatmane namah ||\ntadyasya naabhyaam sambhootam yasmin vishvam pratishthitam |\npushkare pushkaraakshasya tasmai padmaatmane namah ||",
+      "arth": "जो हज़ार युगों के अन्त में धधकती लपटों वाली आग बनकर सब प्राणियों को खा जाते हैं — उन घोर-रूप को नमस्कार। जो सब प्राणियों को खाकर, जगत् को एक समुद्र बनाकर, अकेले बालक के रूप में सोते हैं — उन माया-रूप को नमस्कार। जिन कमलनयन की नाभि से वह कमल निकला जिस पर यह विश्व टिका है — उन कमल-रूप को नमस्कार।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "योगनिद्रा, जल और कारण · श्लोक ५९–६१",
+      "dev": "सहस्रशिरसे चैव पुरुषायामितात्मने ।\nचतुःसमुद्रपर्याययोगनिद्रात्मने नमः ॥\nयस्य केशेषु जीमूता नद्यः सर्वाङ्गसन्धिषु ।\nकुक्षौ समुद्राश्चत्वारस्तस्मै तोयात्मने नमः ॥\nयस्मात् सर्वाः प्रसूयन्ते सर्गप्रलयविक्रियाः ।\nयस्मिंश्चैव प्रलीयन्ते तस्मै हेत्वात्मने नमः ॥",
+      "roman": "sahasrashirase chaiva purushaayaamitaatmane |\nchatuhsamudraparyaayayoganidraatmane namah ||\nyasya kesheshu jeemootaa nadyah sarvaangasandhishu |\nkukshau samudraashchatvaarastasmai toyaatmane namah ||\nyasmaat sarvaah prasooyante sargapralayavikriyaah |\nyasmimshchaiva praleeyante tasmai hetvaatmane namah ||",
+      "arth": "जिनके हज़ार सिर हैं, जो असीम पुरुष हैं, और जो चारों समुद्रों के एक हो जाने पर योगनिद्रा में सोते हैं — उन योगनिद्रा-रूप को नमस्कार। जिनके केशों में बादल हैं, शरीर के जोड़ों में नदियाँ और पेट में चारों समुद्र — उन जल-रूप को नमस्कार। जिनसे सृष्टि और प्रलय के सारे बदलाव पैदा होते हैं और जिनमें ही सब लीन हो जाते हैं — उन कारण-रूप को नमस्कार।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "देखने वाले, कर्म, और परशुराम · श्लोक ६२–६४",
+      "dev": "यो निषण्णो भवेद्रात्रौ दिवा भवति विष्ठितः ।\nइष्टानिष्टस्य च द्रष्टा तस्मै द्रष्ट्रात्मने नमः ॥\nअकुण्ठं सर्वकार्येषु धर्मकार्यार्थमुद्यतम् ।\nवैकुण्ठस्य च तद्रूपं तस्मै कार्यात्मने नमः ॥\nत्रिःसप्तकृत्वो यः क्षत्रं धर्मव्युत्क्रान्तगौरवम् ।\nक्रुद्धो निजघ्ने समरे तस्मै क्रौर्यात्मने नमः ॥",
+      "roman": "yo nishanno bhavedraatrau divaa bhavati vishthitah |\nishtaanishtasya cha drashtaa tasmai drashtraatmane namah ||\nakuntham sarvakaaryeshu dharmakaaryaarthamudyatam |\nvaikunthasya cha tadroopam tasmai kaaryaatmane namah ||\ntrihsaptakritvo yah kshatram dharmavyutkraantagauravam |\nkruddho nijaghne samare tasmai krauryaatmane namah ||",
+      "arth": "जो रात में बैठे रहते हैं और दिन में खड़े — यानी हर समय जागते हैं — और भले-बुरे सबको देखते रहते हैं — उन द्रष्टा-रूप को नमस्कार। जो किसी काम में नहीं रुकते, धर्म के काम के लिए सदा तैयार रहते हैं, और जो वैकुण्ठ का ही रूप हैं — उन कर्म-रूप को नमस्कार। जिन्होंने क्रोध में भरकर, धर्म की मर्यादा लाँघ चुके क्षत्रियों को युद्ध में इक्कीस बार मारा — उन कठोर-रूप को नमस्कार।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "वायु, काल और चार वर्ण · श्लोक ६५–६७",
+      "dev": "विभज्य पञ्चधात्मानं वायुर्भूत्वा शरीरगः ।\nयश्चेष्टयति भूतानि तस्मै वाय्वात्मने नमः ॥\nयुगेष्वावर्तते योगैर्मासर्त्वयनहायनैः ।\nसर्गप्रलययोः कर्ता तस्मै कालात्मने नमः ॥\nब्रह्म वक्त्रं भुजौ क्षत्रं कृत्स्नमूरूदरं विशः ।\nपादौ यस्याश्रिताः शूद्रास्तस्मै वर्णात्मने नमः ॥",
+      "roman": "vibhajya panchadhaatmaanam vaayurbhootvaa shareeragah |\nyashcheshtayati bhootaani tasmai vaayvaatmane namah ||\nyugeshvaavartate yogairmaasartvayanahaayanaih |\nsargapralayayoh kartaa tasmai kaalaatmane namah ||\nbrahma vaktram bhujau kshatram kritsnamooroodaram vishah |\npaadau yasyaashritaah shoodraastasmai varnaatmane namah ||",
+      "arth": "जो अपने को पाँच भागों में बाँटकर, वायु बनकर शरीर में रहते हैं और प्राणियों से चेष्टा कराते हैं — उन वायु-रूप को नमस्कार। जो महीनों, ऋतुओं, अयनों और वर्षों के मेल से युग-युग में लौटते रहते हैं, और सृष्टि तथा प्रलय करते हैं — उन काल-रूप को नमस्कार। ब्राह्मण जिनका मुख हैं, क्षत्रिय भुजाएँ, वैश्य जाँघें और पेट, और शूद्र जिनके चरणों में आश्रित हैं — उन वर्ण-रूप को नमस्कार।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "लोक, विश्व और रक्षक · श्लोक ६८–७०",
+      "dev": "यस्याग्निरास्यं द्यौर्मूर्द्धा खं नाभिश्चरणौ क्षितिः ।\nसूर्यश्चक्षुर्दिशः श्रोत्रे तस्मै लोकात्मने नमः ॥\nपरः कालात् परो यज्ञात्परात्परतरश्च यः ।\nअनादिरादिर्विश्वस्य तस्मै विश्वात्मने नमः ॥\nविषये वर्तमानानां यं तं वैशेषिकैर्गुणैः ।\nप्राहुर्विषयगोप्तारं तस्मै गोप्त्रात्मने नमः ॥",
+      "roman": "yasyaagniraasyam dyaurmoorddhaa kham naabhishcharanau kshitih |\nsooryashchakshurdishah shrotre tasmai lokaatmane namah ||\nparah kaalaat paro yajnaatparaatparatarashcha yah |\nanaadiraadirvishvasya tasmai vishvaatmane namah ||\nvishaye vartamaanaanaam yam tam vaisheshikairgunaih |\npraahurvishayagoptaaram tasmai goptraatmane namah ||",
+      "arth": "अग्नि जिनका मुख है, द्युलोक सिर, आकाश नाभि, पृथ्वी चरण, सूर्य आँख और दिशाएँ कान — उन लोक-रूप को नमस्कार। जो काल से परे हैं, यज्ञ से परे हैं, परे से भी परे हैं; जिनका अपना आदि नहीं, पर जो विश्व के आदि हैं — उन विश्व-रूप को नमस्कार। विषयों के बीच रहने वालों के लिए, विशेष गुणों के कारण, जिन्हें विषयों का रक्षक कहा जाता है — उन रक्षक-रूप को नमस्कार।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "प्राण, पेट की आग, और नरसिंह · श्लोक ७१–७३",
+      "dev": "अन्नपानेन्धनमयो रसप्राणविवर्धनः ।\nयो धारयति भूतानि तस्मै प्राणात्मने नमः ॥\nप्राणानां धारणार्थाय योऽन्नं भुङ्क्ते चतुर्विधम् ।\nअन्तर्भूतः पचत्यग्निस्तस्मै पाकात्मने नमः ॥\nपिङ्गेक्षणसटं यस्य रूपं दंष्ट्रानखायुधम् ।\nदानवेन्द्रान्तकरणं तस्मै दृप्तात्मने नमः ॥",
+      "roman": "annapaanendhanamayo rasapraanavivardhanah |\nyo dhaarayati bhootaani tasmai praanaatmane namah ||\npraanaanaam dhaaranaarthaaya yo'nnam bhunkte chaturvidham |\nantarbhootah pachatyagnistasmai paakaatmane namah ||\npingekshanasatam yasya roopam damshtraanakhaayudham |\ndaanavendraantakaranam tasmai driptaatmane namah ||",
+      "arth": "जो अन्न, जल और ईंधन से बने हैं, रस और प्राण को बढ़ाते हैं, और प्राणियों को धारण करते हैं — उन प्राण-रूप को नमस्कार। जो प्राणों को बनाए रखने के लिए चार तरह का अन्न खाते हैं, और भीतर रहकर अग्नि के रूप में उसे पचाते हैं — उन पाक-रूप को नमस्कार। जिस रूप में आँखें और अयाल पीले थे, दाढ़ें और नाखून ही हथियार थे, और जिसने दानवों के राजा का अन्त किया — उन दर्प से भरे रूप को नमस्कार।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "सूक्ष्म, अनन्त नाग, और मोह · श्लोक ७४–७६",
+      "dev": "यं न देवा न गन्धर्वा न दैत्या न च दानवाः ।\nतत्त्वतो हि विजानन्ति तस्मै सूक्ष्मात्मने नमः ॥\nरसातलगतः श्रीमाननन्तो भगवान् विभुः ।\nजगद्धारयते कृत्स्नं तस्मै वीर्यात्मने नमः ॥\nयो मोहयति भूतानि स्नेहपाशानुबन्धनैः ।\nसर्गस्य रक्षणार्थाय तस्मै मोहात्मने नमः ॥",
+      "roman": "yam na devaa na gandharvaa na daityaa na cha daanavaah |\ntattvato hi vijaananti tasmai sookshmaatmane namah ||\nrasaatalagatah shreemaanananto bhagavaan vibhuh |\njagaddhaarayate kritsnam tasmai veeryaatmane namah ||\nyo mohayati bhootaani snehapaashaanubandhanaih |\nsargasya rakshanaarthaaya tasmai mohaatmane namah ||",
+      "arth": "जिन्हें न देवता, न गन्धर्व, न दैत्य और न दानव ठीक-ठीक जान पाते हैं — उन सूक्ष्म-रूप को नमस्कार। जो श्रीमान्, सर्वव्यापी भगवान अनन्त बनकर रसातल में रहते हैं और सारे जगत् को धारण करते हैं — उन बल-रूप को नमस्कार। जो सृष्टि को चलाए रखने के लिए प्राणियों को स्नेह के फंदों में बाँधकर मोह में रखते हैं — उन मोह-रूप को नमस्कार।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "ज्ञान, दिव्य रूप, और ब्रह्मा · श्लोक ७७–७९",
+      "dev": "आत्मज्ञानमिदं ज्ञानं ज्ञात्वा पञ्चस्ववस्थितम् ।\nयं ज्ञानेनाभिगच्छन्ति तस्मै ज्ञानात्मने नमः ॥\nअप्रमेयशरीराय सर्वतोबुद्धिचक्षुषे ।\nअनन्तपरिमेयाय तस्मै दिव्यात्मने नमः ॥\nजटिने दण्डिने नित्यं लम्बोदरशरीरिणे ।\nकमण्डलुनिषङ्गाय तस्मै ब्रह्मात्मने नमः ॥",
+      "roman": "aatmajnaanamidam jnaanam jnaatvaa panchasvavasthitam |\nyam jnaanenaabhigachchhanti tasmai jnaanaatmane namah ||\naprameyashareeraaya sarvatobuddhichakshushe |\nanantaparimeyaaya tasmai divyaatmane namah ||\njatine dandine nityam lambodarashareerine |\nkamandalunishangaaya tasmai brahmaatmane namah ||",
+      "arth": "पाँचों के भीतर स्थित आत्मा का यह ज्ञान पाकर, ज्ञान के द्वारा लोग जिन तक पहुँचते हैं — उन ज्ञान-रूप को नमस्कार। जिनका शरीर नापा नहीं जा सकता, जिनकी बुद्धि और आँखें सब ओर हैं, जो अनन्त हैं और जिनकी थाह नहीं — उन दिव्य-रूप को नमस्कार। जो जटा और दण्ड धारण करते हैं, जिनका पेट बड़ा है, और कमण्डलु ही जिनका तरकश है — उन ब्रह्मा-रूप को नमस्कार।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "रुद्र, शान्त, और सब कुछ · श्लोक ८०–८३",
+      "dev": "शूलिने त्रिदशेशाय त्र्यम्बकाय महात्मने ।\nभस्मदिग्धोर्ध्वलिङ्गाय तस्मै रुद्रात्मने नमः ॥\nचन्द्रार्द्धकृतशीर्षाय व्यालयज्ञोपवीतिने ।\nपिनाकशूलहस्ताय तस्मै उग्रात्मने नमः ॥\nसर्वभूतात्मभूताय भूतादिनिधनाय च ।\nअक्रोधद्रोहमोहाय तस्मै शान्तात्मने नमः ॥\nयस्मिन् सर्वं यतः सर्वं यः सर्वं सर्वतश्च यः ।\nयश्च सर्वमयो नित्यं तस्मै सर्वात्मने नमः ॥",
+      "roman": "shooline tridasheshaaya tryambakaaya mahaatmane |\nbhasmadigdhordhvalingaaya tasmai rudraatmane namah ||\nchandraarddhakritasheershaaya vyaalayajnopaveetine |\npinaakashoolahastaaya tasmai ugraatmane namah ||\nsarvabhootaatmabhootaaya bhootaadinidhanaaya cha |\nakrodhadrohamohaaya tasmai shaantaatmane namah ||\nyasmin sarvam yatah sarvam yah sarvam sarvatashcha yah |\nyashcha sarvamayo nityam tasmai sarvaatmane namah ||",
+      "arth": "जो त्रिशूल धारण करते हैं, देवताओं के स्वामी हैं, तीन नेत्रों वाले महात्मा हैं, और जिनका शरीर भस्म से लिपा है — उन रुद्र-रूप को नमस्कार। जिनके सिर पर आधा चंद्रमा है, साँप जिनका जनेऊ है, और जिनके हाथ में पिनाक धनुष और त्रिशूल है — उन उग्र-रूप को नमस्कार। जो सब प्राणियों की आत्मा हैं, प्राणियों के आदि और अन्त हैं, जिनमें न क्रोध है, न द्रोह, न मोह — उन शान्त-रूप को नमस्कार। जिनमें सब कुछ है, जिनसे सब कुछ है, जो स्वयं सब कुछ हैं और सब ओर हैं, जो सदा सर्वमय हैं — उन सर्व-रूप को नमस्कार।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "आपको नमस्कार · श्लोक ८४–८६",
+      "dev": "विश्वकर्मन्नमस्तेऽस्तु विश्वात्मन् विश्वसम्भव ।\nअपवर्गस्थभूतानां पञ्चानां परतःस्थित ॥\nनमस्ते त्रिषु लोकेषु नमस्ते परतस्त्रिषु ।\nनमस्ते दिक्षु सर्वासु त्वं हि सर्वमयो निधिः ॥\nनमस्ते भगवन् विष्णो लोकानां प्रभवाप्यय ।\nत्वं हि कर्ता हृषीकेश संहर्ता चापराजितः ॥",
+      "roman": "vishvakarmannamaste'stu vishvaatman vishvasambhava |\napavargasthabhootaanaam panchaanaam paratahsthita ||\nnamaste trishu lokeshu namaste paratastrishu |\nnamaste dikshu sarvaasu tvam hi sarvamayo nidhih ||\nnamaste bhagavan vishno lokaanaam prabhavaapyaya |\ntvam hi kartaa hrisheekesha samhartaa chaaparaajitah ||",
+      "arth": "हे विश्व को रचने वाले, विश्व की आत्मा, विश्व को जन्म देने वाले! आपको नमस्कार। आप पाँचों भूतों से परे, मोक्ष में स्थित हैं। तीनों लोकों में आपको नमस्कार, तीनों से परे आपको नमस्कार; सब दिशाओं में आपको नमस्कार — आप ही सब कुछ से भरे भंडार हैं। हे भगवान विष्णु, लोकों को उत्पन्न करने और समेट लेने वाले! आपको नमस्कार। हे हृषीकेश! आप ही रचने वाले हैं, आप ही संहार करने वाले; आपको कोई जीत नहीं सकता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "सनातन रूप · श्लोक ८७–८९",
+      "dev": "न हि पश्यामि ते भावं दिव्यं हि त्रिषु वर्त्मसु ।\nत्वां तु पश्यामि तत्त्वेन यत्ते रूपं सनातनम् ॥\nदिवं ते शिरसा व्याप्तं पद्भ्यां देवी वसुन्धरा ।\nविक्रमेण त्रयो लोकाः पुरुषोऽसि सनातनः ॥\nदिशो भुजा रविश्चक्षुर्वीर्ये शुक्रः प्रतिष्ठितः ।\nसप्त मार्गा निरुद्धास्ते वायोरमिततेजसः ॥",
+      "roman": "na hi pashyaami te bhaavam divyam hi trishu vartmasu |\ntvaam tu pashyaami tattvena yatte roopam sanaatanam ||\ndivam te shirasaa vyaaptam padbhyaam devee vasundharaa |\nvikramena trayo lokaah purusho'si sanaatanah ||\ndisho bhujaa ravishchakshurveerye shukrah pratishthitah |\nsapta maargaa niruddhaaste vaayoramitatejasah ||",
+      "arth": "तीनों लोकों में आपका दिव्य भाव मुझे दिखाई नहीं देता; पर तत्त्व से मैं आपका वह रूप देखता हूँ जो सनातन है। स्वर्ग आपके सिर से भरा है, धरती देवी आपके चरणों से, और तीनों लोक आपके डग से — आप सनातन पुरुष हैं। दिशाएँ आपकी भुजाएँ हैं, सूर्य आपकी आँख; आपके बल में शुक्र टिका है; और अपार तेज वाले वायु के सातों मार्ग आपके थामे हुए हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "एक प्रणाम · श्लोक ९०–९२",
+      "dev": "अतसीपुष्पसङ्काशं पीतवाससमच्युतम् ।\nये नमस्यन्ति गोविन्दं न तेषां विद्यते भयम् ॥\nएकोऽपि कृष्णस्य कृतः प्रणामो\nदशाश्वमेधावभृथेन तुल्यः ।\nदशाश्वमेधी पुनरेति जन्म\nकृष्णप्रणामी न पुनर्भवाय ॥\nकृष्णव्रताः कृष्णमनुस्मरन्तो\nरात्रौ च कृष्णं पुनरुत्थिता ये ।\nते कृष्णदेहाः प्रविशन्ति कृष्णमाज्यं यथा मन्त्रहुतं हुताशे ॥",
+      "roman": "ataseepushpasankaasham peetavaasasamachyutam |\nye namasyanti govindam na teshaam vidyate bhayam ||\neko'pi krishnasya kritah pranaamo\ndashaashvamedhaavabhrithena tulyah |\ndashaashvamedhee punareti janma\nkrishnapranaamee na punarbhavaaya ||\nkrishnavrataah krishnamanusmaranto\nraatrau cha krishnam punarutthitaa ye |\nte krishnadehaah pravishanti krishnamaajyam yathaa mantrahutam hutaashe ||",
+      "arth": "अलसी के फूल जैसे रंग वाले, पीले वस्त्र पहने अच्युत गोविन्द को जो नमस्कार करते हैं, उन्हें कोई भय नहीं रहता। कृष्ण को किया गया एक प्रणाम भी दस अश्वमेध यज्ञों के अन्त के स्नान के बराबर है; पर दस अश्वमेध करने वाला फिर जन्म लेता है, और कृष्ण को प्रणाम करने वाला फिर जन्म नहीं लेता। जिनका व्रत कृष्ण हैं, जो कृष्ण को याद करते हुए सोते हैं और रात में उठकर फिर कृष्ण को ही याद करते हैं — वे कृष्ण-रूप होकर कृष्ण में ऐसे समा जाते हैं जैसे मंत्र पढ़कर डाला गया घी आग में।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "हरि — दो अक्षर · श्लोक ९३–९५",
+      "dev": "नमो नरकसन्त्रासरक्षामण्डलकारिणे ।\nसंसारनिम्नगावर्ततरिकाष्ठाय विष्णवे ॥\nनमो ब्रह्मण्यदेवाय गोब्राह्मणहिताय च ।\nजगद्धिताय कृष्णाय गोविन्दाय नमो नमः ॥\nप्राणकान्तारपाथेयं संसारोच्छेदभेषजम् ।\nदुःखशोकपरित्राणं हरिरित्यक्षरद्वयम् ॥",
+      "roman": "namo narakasantraasarakshaamandalakaarine |\nsamsaaranimnagaavartatarikaashthaaya vishnave ||\nnamo brahmanyadevaaya gobraahmanahitaaya cha |\njagaddhitaaya krishnaaya govindaaya namo namah ||\npraanakaantaarapaatheyam samsaarochchhedabheshajam |\nduhkhashokaparitraanam harirityaksharadvayam ||",
+      "arth": "नरक के भय से बचाने के लिए रक्षा का घेरा बनाने वाले, और संसार-रूपी नदी के भँवर से पार उतारने वाली काठ की नाव जैसे विष्णु को नमस्कार। ब्राह्मणों के हितैषी देव, गायों और ब्राह्मणों का भला करने वाले, जगत् का हित करने वाले कृष्ण, गोविन्द को बार-बार नमस्कार। «हरि» — ये दो अक्षर प्राणों की कठिन राह का पाथेय हैं, संसार के रोग को जड़ से काटने वाली औषधि हैं, और दुःख तथा शोक से बचाने वाले हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अन्तिम प्रार्थना · श्लोक ९६–९९",
+      "dev": "यथा विष्णुमयं सत्यं यथा विष्णुमयं जगत् ।\nयथा विष्णुमयं सर्वं पाप्मा मे नश्यतां तथा ॥\nत्वां प्रपन्नाय भक्ताय गतिमिष्टां जिगीषवे ।\nयच्छ्रेयः पुण्डरीकाक्ष तद्ध्यायस्व सुरोत्तम ॥\nइति विद्यातपोयोनिरयोनिर्विष्णुरीडितः ।\nवाग्यज्ञेनार्चितो देवः प्रीयतां मे जनार्दनः ॥\nनारायणः परं ब्रह्म नारायणपरं तपः ।\nनारायणपरो देवः सर्वं नारायणः सदा ॥",
+      "roman": "yathaa vishnumayam satyam yathaa vishnumayam jagat |\nyathaa vishnumayam sarvam paapmaa me nashyataam tathaa ||\ntvaam prapannaaya bhaktaaya gatimishtaam jigeeshave |\nyachchhreyah pundareekaaksha taddhyaayasva surottama ||\niti vidyaatapoyonirayonirvishnureeditah |\nvaagyajnenaarchito devah preeyataam me janaardanah ||\nnaaraayanah param brahma naaraayanaparam tapah |\nnaaraayanaparo devah sarvam naaraayanah sadaa ||",
+      "arth": "जैसे सत्य विष्णुमय है, जैसे जगत् विष्णुमय है, जैसे सब कुछ विष्णुमय है — वैसे ही मेरा पाप नष्ट हो जाए। हे कमलनयन, देवताओं में श्रेष्ठ! मैं आपकी शरण आया भक्त हूँ और मनचाही गति पाना चाहता हूँ; मेरे लिए जो भला हो, वह आप ही सोचिए। जो विद्या और तप के जन्मस्थान हैं और जिनका स्वयं कोई जन्म देने वाला नहीं, उन विष्णु की मैंने इस तरह स्तुति की; वाणी के इस यज्ञ से पूजे गए भगवान जनार्दन मुझ पर प्रसन्न हों। नारायण ही परब्रह्म हैं, नारायण ही परम तप हैं; नारायण ही परम देव हैं, और सदा सब कुछ नारायण ही हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "स्तुति के बाद · श्लोक १००–१०३",
+      "dev": "वैशम्पायन उवाच ।\nएतावदुक्त्वा वचनं भीष्मस्तद्गतमानसः ।\nनम इत्येव कृष्णाय प्रणाममकरोत्तदा ॥\nअभिगम्य तु योगेन भक्तिं भीष्मस्य माधवः ।\nत्रैलोक्यदर्शनं ज्ञानं दिव्यं दत्त्वा ययौ हरिः ॥\nतस्मिन्नुपरते शब्दे ततस्ते ब्रह्मवादिनः ।\nभीष्मं वाग्भिर्बाष्पकण्ठास्तमानर्चुर्महामतिम् ॥\nते स्तुवन्तश्च विप्राग्र्याः केशवं पुरुषोत्तमम् ।\nभीष्मं च शनकैः सर्वे प्रशशंसुः पुनः पुनः ॥",
+      "roman": "vaishampaayana uvaacha |\netaavaduktvaa vachanam bheeshmastadgatamaanasah |\nnama ityeva krishnaaya pranaamamakarottadaa ||\nabhigamya tu yogena bhaktim bheeshmasya maadhavah |\ntrailokyadarshanam jnaanam divyam dattvaa yayau harih ||\ntasminnuparate shabde tataste brahmavaadinah |\nbheeshmam vaagbhirbaashpakanthaastamaanarchurmahaamatim ||\nte stuvantashcha vipraagryaah keshavam purushottamam |\nbheeshmam cha shanakaih sarve prashashamsuh punah punah ||",
+      "arth": "वैशम्पायन बोले — इतना कहकर, मन को उन्हीं में लगाए भीष्म ने «कृष्ण को नमस्कार» कहकर प्रणाम किया। भगवान माधव ने योग से भीष्म की भक्ति जान ली, और उन्हें तीनों लोकों को दिखाने वाला दिव्य ज्ञान देकर हरि चले गए। जब भीष्म की वाणी थम गई, तो वहाँ बैठे ब्रह्म के जानकार मुनियों ने भरे गले से महाबुद्धिमान भीष्म की प्रशंसा की। वे श्रेष्ठ ब्राह्मण पुरुषोत्तम केशव की स्तुति करते हुए, धीरे-धीरे भीष्म की बार-बार सराहना करते रहे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्रीकृष्ण भीष्म के पास चले · श्लोक १०४–१०८",
+      "dev": "विदित्वा भक्तियोगं तु भीष्मस्य पुरुषोत्तमः ।\nसहसोत्थाय संहृष्टो यानमेवान्वपद्यत ॥\nकेशवः सात्यकिश्चापि रथेनैकेन जग्मतुः ।\nअपरेण महात्मानौ युधिष्ठिरधनञ्जयौ ॥\nभीमसेनो यमौ चोभौ रथमेकं समाश्रिताः ।\nकृपो युयुत्सुः सूतश्च सञ्जयश्च परन्तपः ॥\nते रथैर्नगराकारैः प्रयाताः पुरुषर्षभाः ।\nनेमिघोषेण महता कम्पयन्तो वसुन्धराम् ॥\nततो गिरः पुरुषवरस्तवान्विता\nद्विजेरिताः पथि सुमनाः स शुश्रुवे ।\nकृताञ्जलिं प्रणतमथापरं जनं\nस केशिहा मुदितमनाभ्यनन्दत ॥",
+      "roman": "viditvaa bhaktiyogam tu bheeshmasya purushottamah |\nsahasotthaaya samhrishto yaanamevaanvapadyata ||\nkeshavah saatyakishchaapi rathenaikena jagmatuh |\naparena mahaatmaanau yudhishthiradhananjayau ||\nbheemaseno yamau chobhau rathamekam samaashritaah |\nkripo yuyutsuh sootashcha sanjayashcha parantapah ||\nte rathairnagaraakaaraih prayaataah purusharshabhaah |\nnemighoshena mahataa kampayanto vasundharaam ||\ntato girah purushavarastavaanvitaa\ndvijeritaah pathi sumanaah sa shushruve |\nkritaanjalim pranatamathaaparam janam\nsa keshihaa muditamanaabhyanandata ||",
+      "arth": "भीष्म के भक्ति-योग को जानकर पुरुषोत्तम प्रसन्न हुए और सहसा उठकर रथ की ओर चले। केशव और सात्यकि एक रथ से चले; दूसरे से महात्मा युधिष्ठिर और अर्जुन; भीमसेन और दोनों जुड़वाँ भाई एक रथ पर बैठे; कृपाचार्य, युयुत्सु और शत्रुओं को तपाने वाले सूत संजय भी साथ थे। वे पुरुषश्रेष्ठ नगर जैसे विशाल रथों से, पहियों की भारी गड़गड़ाहट से धरती को कँपाते हुए चले। रास्ते में ब्राह्मणों के मुँह से पुरुषोत्तम की स्तुति भरी वाणी श्रीकृष्ण ने प्रसन्न मन से सुनी; और जो दूसरे लोग हाथ जोड़े झुके खड़े थे, केशी को मारने वाले उन भगवान ने प्रसन्न होकर उनका अभिनन्दन किया।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, शांति पर्व (राजधर्मानुशासन पर्व) — छपी पुस्तकों का अध्याय ४७, श्लोक १–१०८",
+    "kshetra": "सब जगह",
+    "note": "पाठ छपी पुस्तकों वाला है — शांति पर्व का सैंतालीसवाँ अध्याय, एक सौ आठ श्लोक। एक छपी पुस्तिका के चौदह पन्ने आँख से पढ़े गए, फिर हर पंक्ति मशीन से तीन और पाठों से मिलाई गई; ग्यारह जगह उस पुस्तिका की छपाई की भूल दूसरे पाठों से ठीक हुई।\n\nपुणे का समीक्षित संस्करण इस अध्याय में बहत्तर श्लोक ही रखता है, और दक्षिण के एक पाठ में एक सौ पैंतालीस हैं। आपकी पुस्तक में कुछ श्लोक कम-ज़्यादा या शब्द अलग मिलें, तो वह दूसरी पाठ-परंपरा है, भूल नहीं।\n\nसड़सठवाँ श्लोक समाज के चारों वर्गों को एक ही पुरुष के अंग कहता है — वही बात जो पुरुष सूक्त में है। अर्थ अपने शब्दों में है, शब्दशः अनुवाद नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

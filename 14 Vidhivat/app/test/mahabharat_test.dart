@@ -13,7 +13,8 @@ import 'package:vidhivat/vidhi/paath.dart';
 
 /// महाभारत — अठारह पर्वों का **सार** (→ D-111): पाठ नहीं, गद्य; आधार महाभारत
 /// का अपना पर्वसंग्रह। और **यक्ष प्रश्न** पूरे पाठ में (→ D-112): छपी पुस्तकों
-/// वाला अध्याय ३१३, 133 श्लोक। स्रोत `docs/18_SROT_PANJI.md` अध्याय २७।
+/// वाला अध्याय ३१३, 133 श्लोक। और **भीष्म स्तवराज** (→ D-115): शांति पर्व
+/// का अध्याय ४७, 108 श्लोक। स्रोत `docs/18_SROT_PANJI.md` अध्याय २७।
 void main() {
   const dir = 'assets/granth/mahabharat';
   const ank = '०१२३४५६७८९';
@@ -30,6 +31,7 @@ void main() {
   late List<Paath> parv; // p01 … p18, क्रम में
   late List<Paath> saar; // परिचय + अठारह पर्व — गद्य वाले
   late Paath yaksha;
+  late Paath stavaraj;
 
   setUpAll(() {
     kram = GranthKram.parse(
@@ -45,6 +47,7 @@ void main() {
     ];
     saar = [paath['mahabharat_parichay']!, ...parv];
     yaksha = paath['mahabharat_yaksha']!;
+    stavaraj = paath['mahabharat_stavaraj']!;
   });
 
   group('ढाँचा', () {
@@ -61,6 +64,7 @@ void main() {
         for (var i = 1; i <= 18; i++)
           'mahabharat_p${i.toString().padLeft(2, '0')}',
         'mahabharat_yaksha',
+        'mahabharat_stavaraj',
       ]);
       expect(kram.kram.map((p) => p.naam).skip(1).take(18), [
         'आदि पर्व', 'सभा पर्व', 'वन पर्व', 'विराट पर्व', 'उद्योग पर्व',
@@ -99,6 +103,7 @@ void main() {
       }
       // यक्ष प्रश्न पूरा पाठ है — उस पर यह पंक्ति लगना झूठ होता
       expect(yaksha.saavdhani, isEmpty);
+      expect(stavaraj.saavdhani, isEmpty);
     });
   });
 
@@ -314,6 +319,124 @@ void main() {
     });
   });
 
+  group('भीष्म स्तवराज — पूरा पाठ', () {
+    const ank = '०१२३४५६७८९';
+    int dev(String s) =>
+        int.parse(s.split('').map((c) => ank.indexOf(c).toString()).join());
+    final shirshak = RegExp(r'^(.+) · श्लोक ([०-९]+)(?:–([०-९]+))?$');
+    String khand(String s) =>
+        stavaraj.khand.singleWhere((k) => k.shirshak.endsWith(s)).dev;
+
+    test('32 खंड; शीर्षकों के श्लोक-अंक 1 से 108 तक, बिना छेद', () {
+      expect(stavaraj.prakar, PaathPrakar.granth);
+      expect(stavaraj.bhasha, 'संस्कृत');
+      expect(stavaraj.khand, hasLength(32));
+      var agla = 1;
+      for (final k in stavaraj.khand) {
+        final m = shirshak.firstMatch(k.shirshak);
+        expect(m, isNotNull, reason: k.shirshak);
+        final a = dev(m!.group(2)!);
+        final b = m.group(3) == null ? a : dev(m.group(3)!);
+        expect(a, agla, reason: k.shirshak);
+        // खंड में उतने ही श्लोक हैं जितने शीर्षक कहता है
+        expect('॥'.allMatches(k.dev).length, b - a + 1, reason: k.shirshak);
+        agla = b + 1;
+      }
+      expect(agla - 1, 108);
+    });
+
+    test('हर खंड में पाठ, रोमन और अर्थ; देवनागरी में अंग्रेज़ी अक्षर नहीं', () {
+      final latin = RegExp(r'[A-Za-z0-9]');
+      for (final k in stavaraj.khand) {
+        expect(k.dev, isNotEmpty, reason: k.shirshak);
+        expect(k.roman, isNotEmpty, reason: k.shirshak);
+        expect(k.arth.split(' ').length, greaterThan(8), reason: k.shirshak);
+        expect(latin.hasMatch(k.dev), isFalse, reason: k.shirshak);
+        expect(latin.hasMatch(k.arth), isFalse, reason: k.shirshak);
+      }
+    });
+
+    test('🔑 श्लोक ३८ से ८३ — छियालीस बार "…आत्मने नमः", और अर्थ में उतने ही नमस्कार', () {
+      final beech = stavaraj.khand.where((k) {
+        final a = dev(shirshak.firstMatch(k.shirshak)!.group(2)!);
+        return a >= 38 && a <= 83;
+      }).toList();
+      expect(beech, hasLength(15));
+      var kul = 0;
+      for (final k in beech) {
+        // संधि में «आ» मात्रा बन जाता है (सूर्यात्मने) — इसलिए मात्रा से ढूँढो
+        final n = 'ात्मने नमः'.allMatches(k.dev).length;
+        expect(n, '॥'.allMatches(k.dev).length, reason: k.shirshak);
+        expect('को नमस्कार।'.allMatches(k.arth).length, n, reason: k.shirshak);
+        kul += n;
+      }
+      expect(kul, 46);
+      // बाक़ी खंडों में यह टेक नहीं है
+      for (final k in stavaraj.khand.where((k) => !beech.contains(k))) {
+        expect(k.dev, isNot(contains('त्मने नमः')), reason: k.shirshak);
+      }
+    });
+
+    test('जो श्लोक सबको याद हैं, वे अपनी जगह हैं', () {
+      expect(stavaraj.khand.first.dev, startsWith('जनमेजय उवाच'));
+      expect(stavaraj.khand.first.dev, contains('शरतल्पे शयानस्तु भरतानां पितामहः'));
+      expect(khand('श्लोक १६–१७'), startsWith('भीष्म उवाच'));
+      expect(khand('श्लोक १६–१७'), contains('आरिराधयिषुः कृष्णं'));
+      final ek = khand('श्लोक ९०–९२');
+      for (final pankti in [
+        'अतसीपुष्पसङ्काशं पीतवाससमच्युतम्',
+        'एकोऽपि कृष्णस्य कृतः प्रणामो',
+        'दशाश्वमेधावभृथेन तुल्यः',
+        'कृष्णप्रणामी न पुनर्भवाय',
+        // छपाई में पाद के बीच टूटा शब्द जोड़कर
+        'ते कृष्णदेहाः प्रविशन्ति कृष्णमाज्यं यथा मन्त्रहुतं हुताशे',
+      ]) {
+        expect(ek, contains(pankti), reason: pankti);
+      }
+      expect(khand('श्लोक ९३–९५'), contains('नमो ब्रह्मण्यदेवाय गोब्राह्मणहिताय च'));
+      expect(khand('श्लोक ९३–९५'), contains('हरिरित्यक्षरद्वयम्'));
+      expect(khand('श्लोक ९६–९९'), contains('नारायणः परं ब्रह्म नारायणपरं तपः'));
+      expect(stavaraj.khand.last.dev, contains('स केशिहा मुदितमनाभ्यनन्दत'));
+    });
+
+    test('छपी पुस्तिका की ग्यारह भूलें — दूसरे पाठों वाला रूप लिया गया (→ D-115)', () {
+      final sab = stavaraj.khand.map((k) => k.dev).join('\n');
+      for (final (liya, chhapa) in [
+        ('पुरुषव्याघ्रः कर्मणा', 'पुरुषव्याघ्र कर्मणा'),
+        ('युक्त्वा सर्वात्मनात्मानं', 'मुक्त्वा सर्वात्मनात्मानं'),
+        ('यदङ्गेष्वनुतिष्ठति', 'मदङ्गेष्वनुतिष्ठति'),
+        ('एकं द्वादशधा जज्ञे', 'द्वादशधा यज्ञे'),
+        ('उन्मादः सर्वभूतानां', 'उन्मादाः सर्वभूतानां'),
+        ('क्षेत्रे क्षेत्रज्ञमासीनं', 'क्षेत्रक्षेत्रज्ञमासीनं'),
+        ('युगसहस्रान्ते प्रदीप्तार्चिर्विभावसुः', 'सहस्रान्तप्रदीप्तार्चि'),
+        ('सर्गप्रलयविक्रियाः', 'सर्वप्रलयविक्रियाः'),
+        ('धर्मव्युत्क्रान्तगौरवम्', 'धर्मवित् क्रान्तगौरवम्'),
+        ('तस्मै दृप्तात्मने नमः', 'दृप्त्यात्मने'),
+        ('पथि सुमनाः स शुश्रुवे', 'पथि सुमना स शुश्रुवे'),
+      ]) {
+        expect(sab, contains(liya), reason: liya);
+        expect(sab, isNot(contains(chhapa)), reason: chhapa);
+      }
+    });
+
+    test('ⓘ: कौन सा पाठ है, दूसरे पाठों में कितने श्लोक, और सड़सठवें श्लोक की बात', () {
+      final note = stavaraj.strot.note;
+      expect(note, contains('एक सौ आठ श्लोक'));
+      expect(note, contains('बहत्तर श्लोक'));
+      expect(note, contains('एक सौ पैंतालीस'));
+      expect(note, contains('दूसरी पाठ-परंपरा है, भूल नहीं'));
+      expect(note, contains('वही बात जो पुरुष सूक्त में है'));
+      expect(note, contains('अर्थ अपने शब्दों में है'));
+      expect(khand('श्लोक ६५–६७'), contains('ब्रह्म वक्त्रं भुजौ क्षत्रं'));
+      expect(stavaraj.parichay, contains('पंचरत्न गीता'));
+      // परिचय की गिनती पाठ से मिलती है: 15 + 84 + 9 = 108
+      expect(stavaraj.parichay, contains('पहले पंद्रह श्लोकों'));
+      expect(stavaraj.parichay, contains('चौरासी'));
+      expect(stavaraj.parichay, contains('छियालीस श्लोक'));
+      expect(stavaraj.parichay, contains('अंत के नौ श्लोकों'));
+    });
+  });
+
   group('स्क्रीन पर', () {
     setUp(() async {
       SharedPreferences.setMockInitialValues({});
@@ -367,7 +490,7 @@ void main() {
       await tester.tap(find.text('भीष्म पर्व'));
       await tester.pumpAndSettle();
       expect(find.byType(PaathScreen), findsOneWidget);
-      expect(find.text('महाभारत · भाग 7/20'), findsOneWidget);
+      expect(find.text('महाभारत · भाग 7/21'), findsOneWidget);
 
       // खुला सच — ⓘ के पीछे नहीं (→ D-060)
       expect(find.textContaining('यह सार है'), findsOneWidget);
@@ -403,7 +526,7 @@ void main() {
       await tester.tap(yp);
       await tester.pumpAndSettle();
       expect(find.byType(PaathScreen), findsOneWidget);
-      expect(find.text('महाभारत · भाग 20/20'), findsOneWidget);
+      expect(find.text('महाभारत · भाग 20/21'), findsOneWidget);
       expect(find.text('पाठ'), findsOneWidget);
       expect(find.text('48 खंड'), findsOneWidget);
       expect(find.textContaining('यह सार है'), findsNothing);
@@ -413,6 +536,30 @@ void main() {
       await tester.tap(find.text('अर्थ दिखाएँ'));
       await tester.pumpAndSettle();
       expect(find.textContaining('युधिष्ठिर ने अपने भाइयों को'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('भीष्म स्तवराज खुलता है: "32 खंड" और अर्थ का बटन', (tester) async {
+      await granthKholo(tester);
+      final bs = find.text('भीष्म स्तवराज');
+      await tester.scrollUntilVisible(bs, 300,
+          scrollable: find.byType(Scrollable).first);
+      await tester.pumpAndSettle();
+      expect(find.text('32 खंड'), findsOneWidget);
+
+      await tester.tap(bs);
+      await tester.pumpAndSettle();
+      expect(find.byType(PaathScreen), findsOneWidget);
+      expect(find.text('महाभारत · भाग 21/21'), findsOneWidget);
+      expect(find.text('पाठ'), findsOneWidget);
+      expect(find.text('32 खंड'), findsOneWidget);
+      expect(find.textContaining('यह सार है'), findsNothing);
+      expect(find.text('भीष्म शरशय्या पर · श्लोक १–४'), findsOneWidget);
+
+      expect(find.textContaining('जनमेजय ने पूछा'), findsNothing);
+      await tester.tap(find.text('अर्थ दिखाएँ'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('जनमेजय ने पूछा'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 

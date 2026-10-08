@@ -586,9 +586,10 @@ app/assets/granth/
         _mandukya · _tait_1…3 (अनुवाक) · _aitareya_1…3 · _shveta_1…6 · _shanti
 ```
 
-`mahabharat/` (→ D-111, D-112) — `_kram.json` + `mahabharat_parichay` · `_p01 … _p18`: **सार**
-(`"prakar": "saar"`) — गद्य, बिना रोमन और अर्थ के; और `mahabharat_yaksha` — यक्ष प्रश्न का
-**पूरा पाठ** (`"prakar": "granth"`, 48 खंड, 133 श्लोक)।
+`mahabharat/` (→ D-111, D-112, D-115) — `_kram.json` + `mahabharat_parichay` · `_p01 … _p18`: **सार**
+(`"prakar": "saar"`) — गद्य, बिना रोमन और अर्थ के; और दो **पूरे पाठ** (`"prakar": "granth"`):
+`mahabharat_yaksha` — यक्ष प्रश्न (48 खंड, 133 श्लोक) · `mahabharat_stavaraj` — भीष्म स्तवराज
+(32 खंड, 108 श्लोक)।
 
 `puran/` (→ D-113, D-114) — ग्रंथ «वेद और पुराण — परिचय»: `_kram.json` + `puran_ved` (चार वेद,
 7 खंड) · `puran_parichay` (पुराण क्या हैं, 7 खंड) · `puran_atharah` (अठारह पुराण एक-एक, 18 खंड):
@@ -628,10 +629,10 @@ app/lib/screens/paath_screen.dart         GranthNavigation — नीचे क�
 | `tools/granth_paath/sundarkand/` | `kram.json` (`"lipi": "hindi"`), `paath/01…12.txt`; `milan/sk_mool.py` — आधार से 108 सुधारों की तालिका (→ D-106) |
 | `tools/granth_paath/vishnusahasranama/` | `paath/01…03.txt`; `milan/naam_jaanch.py` — हज़ार नाम, क्रम, हर नाम अपने श्लोक में (repo के भीतर से चलता है) (→ D-107) |
 | `tools/granth_paath/mahabharat/` | अठारह पर्वों का **सार** — `"prakar": "saar"`; `paath/*.txt` में शीर्षक + गद्य, `= अर्थ` नहीं; `kaisePadhein` में «⚠ … शब्दशः पाठ नहीं» ज़रूरी (औज़ार इसके बिना रुक जाता है) (→ D-111) |
-| `app/test/mahabharat_test.dart` | 19 जाँचें — बीस पन्ने क्रम में; सार: दोनों गिनतियाँ अंक-दर-अंक, "यह सार है" खुला, "अर्थ दिखाएँ" नहीं; यक्ष प्रश्न: शीर्षकों के श्लोक-अंक 1…133 बिना छेद, हर खंड में उतने ही `॥`, पाँच सुधार, याद वाले श्लोक |
+| `app/test/mahabharat_test.dart` | 26 जाँचें — इक्कीस पन्ने क्रम में; भीष्म स्तवराज: श्लोक-अंक 1…108 बिना छेद, 46 «…आत्मने नमः» और अर्थ में उतने ही नमस्कार, ग्यारह सुधार; सार: दोनों गिनतियाँ अंक-दर-अंक, "यह सार है" खुला, "अर्थ दिखाएँ" नहीं; यक्ष प्रश्न: शीर्षकों के श्लोक-अंक 1…133 बिना छेद, हर खंड में उतने ही `॥`, पाँच सुधार, याद वाले श्लोक |
 | `tools/granth_paath/puran/` | **वेद और पुराण — परिचय** (→ D-113, D-114) — `kram.json` और `paath/*.txt` हाथ से नहीं, `milan/puran_likho.py` से; गिनतियाँ `milan/pu_suchi.py` (पुराण) और `milan/ved_suchi.py` (वेद) की तालिकाओं में; `pu_jaanch.py` / `ved_jaanch.py` उन्हें गवाहों और डिजिटल पाठों पर दोबारा जाँचते हैं |
 | `app/test/puran_test.dart` | 21 जाँचें — तीन पन्ने; चार वेद: ऋग्वेद की मण्डल-वार गिनती और जोड़, बाक़ी तीन की गिनतियाँ, «इस ऐप में» सत्रह फ़ाइलों से; अठारह खंड क्रम में; हर पुराण की दोनों गिनतियाँ तालिका से हूबहू और जोड़ 4,00,000 / 4,04,800; शिव-या-वायु; «इस ऐप में» की हर पंक्ति उस कथा की फ़ाइल से; "यह परिचय है" खुला |
-| `tools/granth_paath/mahabharat/milan/` | यक्ष प्रश्न: `v313/` (छपी पुस्तक से आँख से पढ़ा पाठ — **यही मूल है**), `yaksha3.py`/`yaksha4.py` (तीन पाठों से मशीन-मिलान), `yaksha_paath.py` (→ `paath/yaksha.txt`; अर्थ इसी में) (→ D-112) |
+| `tools/granth_paath/mahabharat/milan/` | भीष्म स्तवराज: `v47/` (**मूल**), `bs_k.py`/`bs3.py` (तीन पाठों से मशीन-मिलान), `stavaraj_paath.py` (→ `paath/stavaraj.txt`; अर्थ इसी में) (→ D-115) · यक्ष प्रश्न: `v313/` (छपी पुस्तक से आँख से पढ़ा पाठ — **यही मूल है**), `yaksha3.py`/`yaksha4.py` (तीन पाठों से मशीन-मिलान), `yaksha_paath.py` (→ `paath/yaksha.txt`; अर्थ इसी में) (→ D-112) |
 | `PaathPrakar.saar` | `vidhi/paath.dart` — गद्य का सार; `paath_screen` में शीर्षक "सार", बटन नहीं, अक्षर `bodyLarge` |
 | `tools/granth_paath/upanishad/` | `paath/*.txt` (खंड `मंत्र N`, तैत्तिरीय में `अनुवाक N`); `kram.json` में तैत्तिरीय पर `gintiNaam`; `milan/` — S को गवाहों और छपी टीका के OCR से कसना, 163 सुधारों की तालिका (→ D-109) |
 | `app/test/upanishad_test.dart` | 34 पाठों की गिनती (460 मंत्र + 31 अनुवाक + 8); हर उपनिषद का शांति पाठ = शांति मंत्रों वाला; बँटे हुए पाठ और उनका ⓘ; तैत्तिरीय "अनुवाक" में |
