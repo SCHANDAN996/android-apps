@@ -37,6 +37,10 @@ flutter run
 
 For Vidhivat, the Flutter app is in `14 Vidhivat/app` and its local Dart package is in `14 Vidhivat/engine`. Read [its project guide](14%20Vidhivat/README.md) for package-specific commands. Run a project's tests from its own directory with `flutter test` (or `dart test` for the pure-Dart engine).
 
+## Web project
+
+**[EbookCart](https://ebookcart.in/)** is Chandan Singh's self-initiated digital-book website. It presents Hindi and English ebooks through a searchable catalogue, individual book pages, free samples and account/library pages. The product is designed around a browsing, purchase and reading/download journey.
+
 ## Contact
 
 **Chandan Singh** · [GitHub profile](https://github.com/SCHANDAN996) · [Email](mailto:all.chandansingh@gmail.com)
