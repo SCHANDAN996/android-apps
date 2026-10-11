@@ -1,6 +1,6 @@
 # 31 — दूसरी जाँच: किसी और AI से, सख़्ती से
 
-> **यह क्या है:** 5–11 अक्टूबर 2026 के काम (D-112 से D-121) को ChatGPT जैसे किसी दूसरे AI से
+> **यह क्या है:** 5–11 अक्टूबर 2026 के काम (D-112 से D-122) को ChatGPT जैसे किसी दूसरे AI से
 > जँचवाने का तैयार सामान — कौन-सी फ़ाइल देनी है और क्या पूछना है।
 > **क्यों:** यह सारा काम एक ही AI ने किया और उसी ने जाँचा। संस्कृत के छपे पन्ने उसी ने पढ़े,
 > अर्थ उसी ने लिखे। दूसरी आँख वही ग़लती पकड़ सकती है जो पहली को दिखी ही नहीं।
@@ -11,8 +11,8 @@
    करता है, और याद से "सुधार" देता है। इसलिए नीचे के prompt में उससे **सबूत** माँगा गया है।
    वह जो बताए, उसे ऐप में तभी बदला जाएगा जब छपे पन्ने से मिल जाए।
 2. **जो वह नहीं कर सकता:** ऐप चलाना, जाँचें चलाना, फ़ोन पर देखना। वे यहीं हो चुकी हैं
-   (इंजन 589, ऐप 1312 पास) — पर फ़ोन पर देखना आपका काम है और अब भी बाक़ी है।
-3. **एक बार में एक गठरी।** सब कुछ एक साथ देने पर वह ऊपर-ऊपर से पढ़ता है। नीचे छह गठरियाँ
+   (इंजन 589, ऐप 1323 पास) — पर फ़ोन पर देखना आपका काम है और अब भी बाक़ी है।
+3. **एक बार में एक गठरी।** सब कुछ एक साथ देने पर वह ऊपर-ऊपर से पढ़ता है। नीचे सात गठरियाँ
    हैं; हर एक अलग बातचीत में दीजिए।
 
 ## हर गठरी के साथ यह prompt (पहले यही चिपकाइए)
@@ -156,6 +156,35 @@ B. Meanings: every place where the Hindi says something the Sanskrit does
    57 and 72, and deliberately left two words untranslated (first word of
    51; अब्रह्मण्य in 60). Is "अब्रह्मण्य" here a cry for help, or a
    misprint for "सुब्रह्मण्य"? Give your evidence.
+```
+
+## गठरी ७ — अनुस्मृति (D-122)
+
+**फ़ाइल:** `tools/granth_paath/mahabharat/paath/anusmriti.txt`
+(हर खंड: `# शीर्षक`, फिर श्लोक की पंक्तियाँ, फिर `= अर्थ`)
+
+```
+This is the "Anusmriti" as printed in the Pancharatna Gita booklets (102
+verses; frame: Shatanika - Shaunaka - Yudhishthira - Bhishma - Narada -
+Narayana). The colophon says Mahabharata, Anushasana Parva; the same hymn is
+found in the Southern recension of the Shanti Parva (Kumbakonam 12.210) and
+in the Vishnudharma (ch. 70), both with different wording. Compare the
+Sanskrit ONLY with a Pancharatna Gita edition; use the other two only to
+judge the sense. The Hindi meanings were written by an AI.
+A. Sanskrit: typos, wrong sandhi, missing half-verses. Look hardest at
+   verses 21, 36, 47, 50, 51, 67, 74 and the ORDER of verses 87-88.
+B. Meanings: where does the Hindi say something the Sanskrit does not, or
+   leave something out? The author left these words untranslated on
+   purpose: 21 (महर्षेः सत्त्वभावनम्), 29 (अक्रियाकरणे कार्ये), 36 (संगमनः
+   पार्थो, पञ्च), 51 (च नानन्यं), 70 (आत्मबुद्धीन्द्रियं) - what do they
+   mean HERE? And was unsure of 35, 43, 50, 59, 73 and above all 93.
+C. Verse 31 (शमीगर्भस्य यो गर्भः…) is a riddle the author did not solve.
+   What is the traditional solution? Cite a commentary.
+D. Verse 68 (अहं भगवतस्तस्य मम वासः सनातनः): is this the devotee's last
+   line of the prayer, or the Lord speaking (the Southern text has
+   "श्रीभगवानुवाच" here)? The Hindi takes it as the devotee's.
+E. Verses 80 and 98 have श्वपाक / श्वपच; the Hindi paraphrases instead of
+   translating the word. Is the paraphrase faithful?
 ```
 
 ## जवाब आए तो
