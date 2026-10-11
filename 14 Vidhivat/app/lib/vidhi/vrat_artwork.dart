@@ -8,9 +8,6 @@ abstract final class VratArtwork {
   static const _ganesha = DevotionalArtwork(
       assetPath: 'assets/images/devotional/ganesha.webp',
       semanticLabel: 'श्रीगणेश का सजावटी चित्र');
-  static const _satyanarayan = DevotionalArtwork(
-      assetPath: 'assets/images/devotional/satyanarayan_v1.webp',
-      semanticLabel: 'सत्यनारायण पूजा का सजावटी चित्र');
   static const _shraadh = DevotionalArtwork(
       assetPath: 'assets/images/devotional/shraadh.webp',
       semanticLabel: 'पितृ तर्पण का सजावटी चित्र');
@@ -51,6 +48,21 @@ abstract final class VratArtwork {
   static const _anantSutra = DevotionalArtwork(
       assetPath: 'assets/images/devotional/vrat_anant_sutra_v2.webp',
       semanticLabel: 'अनंत चतुर्दशी का चौदह गांठ वाला अनंत सूत्र');
+  static const _pradosh = DevotionalArtwork(
+      assetPath: 'assets/images/devotional/vrat_pradosh_v2.webp',
+      semanticLabel: 'प्रदोष में शिवलिंग पूजन का सजावटी चित्र');
+  static const _ekadashi = DevotionalArtwork(
+      assetPath: 'assets/images/devotional/vrat_ekadashi_v2.webp',
+      semanticLabel: 'एकादशी में शालिग्राम और तुलसी का सजावटी चित्र');
+  static const _sankashti = DevotionalArtwork(
+      assetPath: 'assets/images/devotional/vrat_sankashti_v2.webp',
+      semanticLabel: 'संकष्टी में चंद्रमा और गणेश पूजन की सामग्री का सजावटी चित्र');
+  static const _purnima = DevotionalArtwork(
+      assetPath: 'assets/images/devotional/vrat_purnima_v2.webp',
+      semanticLabel: 'पूर्णिमा में चंद्रमा और कलश का सजावटी चित्र');
+  static const _janmashtami = DevotionalArtwork(
+      assetPath: 'assets/images/devotional/vrat_janmashtami_v2.webp',
+      semanticLabel: 'जन्माष्टमी में लड्डू गोपाल का सजावटी चित्र');
 
   static const Map<String, DevotionalArtwork> _byVratId = {
     'somvar': DevotionalAssets.shiva,
@@ -60,16 +72,16 @@ abstract final class VratArtwork {
     'budhvar': _ganesha,
     'shukravar': _santoshi,
     'shanivar': _shanivarHanuman,
-    'solah_somvar': DevotionalAssets.shiva,
-    'ekadashi': _vishnu,
-    'pradosh': DevotionalAssets.shiva,
-    'sankashti': _ganesha,
-    'purnima': _satyanarayan,
+    'solah_somvar': _pradosh,
+    'ekadashi': _ekadashi,
+    'pradosh': _pradosh,
+    'sankashti': _sankashti,
+    'purnima': _purnima,
     'amavasya': _shraadh,
-    'masik_shivratri': DevotionalAssets.shiva,
+    'masik_shivratri': _pradosh,
     'vinayak_chaturthi': _ganesha,
     'masik_durgashtami': DevotionalAssets.navratriParv,
-    'ekadashi_varsh': _vishnu,
+    'ekadashi_varsh': _ekadashi,
     'hartalika': _hartalika,
     'karwa_chauth': DevotionalAssets.karwaChauth,
     'vat_savitri': _vatSavitri,
@@ -77,7 +89,7 @@ abstract final class VratArtwork {
     'varalakshmi': _varalakshmi,
     'navratri': DevotionalAssets.navratriParv,
     'mahashivratri': DevotionalAssets.rudrabhishek,
-    'janmashtami': DevotionalAssets.krishna,
+    'janmashtami': _janmashtami,
     'ahoi_ashtami': _ahoi,
     'jivitputrika': _jivitputrika,
     'gangaur': _gangaur,

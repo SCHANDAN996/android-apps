@@ -82,8 +82,27 @@ abstract final class PaathAssets {
   static const Map<String, DevotionalArtwork> _byGranthId = {
     'gita': krishna,
     'saptashati': durga,
-    'sundarkand': hanuman,
+    'sundarkand': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/granth_sundarkand_v2.webp',
+      semanticLabel: 'सुंदरकांड में हनुमान जी का सजावटी चित्र',
+    ),
     'vishnusahasranama': vishnu,
+    'sukta': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/granth_ved_sukta_v2.webp',
+      semanticLabel: 'वेद सूक्त की पूजा सामग्री का सजावटी चित्र',
+    ),
+    'upanishad': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/granth_upanishad_v2.webp',
+      semanticLabel: 'गुरु-शिष्य संवाद का सजावटी चित्र',
+    ),
+    'mahabharat': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/granth_mahabharat_v2.webp',
+      semanticLabel: 'महाभारत के रथ का सजावटी चित्र',
+    ),
+    'puran': DevotionalArtwork(
+      assetPath: 'assets/images/devotional/granth_ved_puran_v2.webp',
+      semanticLabel: 'वेद और पुराण की पोथियों का सजावटी चित्र',
+    ),
   };
 
   static DevotionalArtwork forGranthId(String id) =>

@@ -33,5 +33,15 @@ void main() {
         'assets/images/devotional/diya.webp',
       );
     });
+
+    test('ग्रंथालय के नए चित्र मौजूद हैं और अलग-अलग हैं', () {
+      const ids = ['sukta', 'upanishad', 'mahabharat', 'puran', 'sundarkand'];
+      final paths = ids.map((id) => PaathAssets.forGranthId(id).assetPath).toList();
+      expect(paths.toSet(), hasLength(ids.length));
+      for (final path in paths) {
+        expect(path, endsWith('_v2.webp'));
+        expect(File(path).existsSync(), isTrue, reason: path);
+      }
+    });
   });
 }

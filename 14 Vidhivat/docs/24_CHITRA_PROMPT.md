@@ -346,3 +346,17 @@ python tools/banao_chitra.py "C:/path/to/downloaded.png" vishwakarma_v1 900
 फिर `devotional_assets.dart` में `vishwakarma` की entry (`semanticLabel:
 'भगवान विश्वकर्मा का सजावटी चित्र'`), `_byVidhiId` में
 `'vishwakarma_pooja': vishwakarma`, और `chitraBaaki` से नाम हटाइए।
+
+
+---
+
+## जोड़ — 11 अक्टूबर 2026: दस चित्र लगे (→ D-120)
+
+`docs/30` §७ और §१० के prompt से बने दस चित्र ऐप में हैं; फ़ाइलों के नाम `_v2` पर हैं
+(`granth_ved_sukta_v2`, `granth_upanishad_v2`, `granth_mahabharat_v2`, `granth_ved_puran_v2`,
+`granth_sundarkand_v2`, `vrat_pradosh_v2`, `vrat_ekadashi_v2`, `vrat_sankashti_v2`,
+`vrat_purnima_v2`, `vrat_janmashtami_v2`)। कहाँ लगे — `01_DECISIONS` D-120।
+
+⚠ `vrat_sankashti_v2` में चाँद पतली कला का बना है, जबकि prompt में लगभग पूरा चाँद माँगा गया
+था। दोबारा बनवाएँ तो prompt में यह वाक्य और कस दीजिए: *"a large, almost completely round
+waning moon — NOT a crescent"*।
