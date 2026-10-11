@@ -11,7 +11,8 @@ import 'package:vidhivat/vidhi/bhandar.dart';
 import 'package:vidhivat/vidhi/granth.dart';
 import 'package:vidhivat/vidhi/paath.dart';
 
-/// वेद और पुराण — **परिचय**। पाठ नहीं, गद्य।
+/// वेद और पुराण — **परिचय**। पाठ नहीं, गद्य — एक अंश को छोड़कर:
+/// वामन पुराण का गजेन्द्र मोक्ष पूरे पाठ के साथ है (→ D-121; नीचे का आख़िरी समूह)।
 ///
 /// अठारह पुराण (→ D-113): आधार पुराणों की अपनी सूचियाँ — मत्स्य ५३, भागवत
 /// १२.७ और १२.१३, विष्णु ३.६ (`docs/18_SROT_PANJI.md` अध्याय २८)।
@@ -61,6 +62,7 @@ void main() {
   late Paath parichay;
   late Paath atharah;
   late Paath ved;
+  late Paath gajendra;
 
   setUpAll(() {
     kram = GranthKram.parse(
@@ -70,20 +72,22 @@ void main() {
     parichay = padho('puran_parichay');
     atharah = padho('puran_atharah');
     ved = padho('puran_ved');
+    gajendra = padho('puran_gajendra');
   });
 
   group('ढाँचा', () {
-    test('ग्रंथालय की सूची में है; तीन पन्ने, क्रम में', () {
+    test('ग्रंथालय की सूची में है; चार पन्ने, क्रम में', () {
       final sab = GranthSuchiEntry.parseAll(GranthBhandar.suchiPath,
           File(GranthBhandar.suchiPath).readAsStringSync());
       final g = sab.singleWhere((g) => g.id == 'puran');
       expect(g.naam, 'वेद और पुराण — परिचय');
       expect(g.gintiNaam, 'खंड');
-      // सूची की पंक्ति में ही लिखा है कि यह पाठ नहीं है
-      expect(g.ekLine, contains('परिचय है, पाठ नहीं'));
+      // सूची की पंक्ति में ही लिखा है कि क्या परिचय है और क्या पूरा पाठ
+      expect(g.ekLine, contains('चार वेद और अठारह पुराण का परिचय'));
+      expect(g.ekLine, contains('गजेन्द्र मोक्ष — पूरा पाठ'));
       expect(GranthBhandar.granthIds, contains('puran'));
       expect(kram.kram.map((p) => p.id),
-          ['puran_ved', 'puran_parichay', 'puran_atharah']);
+          ['puran_ved', 'puran_parichay', 'puran_atharah', 'puran_gajendra']);
     });
 
     test('तीनों पन्ने "सार" हैं — गद्य भरा, रोमन और अर्थ ख़ाली, अंग्रेज़ी अक्षर नहीं', () {
@@ -216,6 +220,9 @@ void main() {
         'ब्रह्मवैवर्त पुराण': [
           ('assets/katha/chhath_shashthi.json', ['ब्रह्मवैवर्त पुराण']),
         ],
+        'वामन पुराण': [
+          ('assets/granth/puran/puran_gajendra.json', ['वामन पुराण', 'अध्याय ८५']),
+        ],
         'स्कन्द पुराण': [
           ('assets/katha/satyanarayan.json', ['स्कंद पुराण', 'रेवा खंड']),
           ('assets/katha/pradosh_vrat.json', ['स्कंद पुराण', 'ब्रह्मोत्तर खंड']),
@@ -268,10 +275,140 @@ void main() {
       expect(parichay.khand[5].dev, contains('नारसिंह, नन्दी और साम्ब'));
     });
 
-    test('"इस ऐप में" साफ़ कहता है कि यहाँ पुराणों का पाठ नहीं है', () {
+    test('"इस ऐप में" साफ़ कहता है कि ये पन्ने पाठ नहीं हैं — और कौन सा एक अंश पाठ है', () {
       final k = parichay.khand.last.dev;
-      expect(k, contains('यहाँ पुराणों का पाठ नहीं है'));
+      expect(k, contains('पुराणों का परिचय है, पाठ नहीं'));
+      expect(k, contains('पूरे पाठ के साथ एक ही अंश है — वामन पुराण का गजेन्द्र मोक्ष'));
       expect(k, contains('दुर्गा सप्तशती मार्कण्डेय पुराण का हिस्सा है'));
+    });
+  });
+
+  group('गजेन्द्र मोक्ष — पूरा पाठ', () {
+    const ank = '०१२३४५६७८९';
+    int dev(String s) =>
+        int.parse(s.split('').map((c) => ank.indexOf(c).toString()).join());
+    final shirshak = RegExp(r'^(.+) · श्लोक ([०-९]+)(?:–([०-९]+))?$');
+    // औज़ार एक दण्ड «।» से पहले न टूटने वाली जगह लगाता है — मिलान के लिए सादी जगह
+    String saaf(String s) => s.replaceAll(' ', ' ');
+    String khand(String s) =>
+        saaf(gajendra.khand.singleWhere((k) => k.shirshak.endsWith(s)).dev);
+    String sab() => saaf(gajendra.khand.map((k) => k.dev).join('\n'));
+
+    test('23 खंड; शीर्षकों के श्लोक-अंक 1 से 84 तक, बिना छेद', () {
+      expect(gajendra.prakar, PaathPrakar.granth);
+      expect(gajendra.bhasha, 'संस्कृत');
+      expect(gajendra.khand, hasLength(23));
+      var agla = 1;
+      for (final k in gajendra.khand) {
+        final m = shirshak.firstMatch(k.shirshak);
+        expect(m, isNotNull, reason: k.shirshak);
+        final a = dev(m!.group(2)!);
+        final b = m.group(3) == null ? a : dev(m.group(3)!);
+        expect(a, agla, reason: k.shirshak);
+        // खंड में उतने ही श्लोक हैं जितने शीर्षक कहता है
+        expect('॥'.allMatches(k.dev).length, b - a + 1, reason: k.shirshak);
+        agla = b + 1;
+      }
+      expect(agla - 1, 84);
+    });
+
+    test('हर खंड में पाठ, रोमन और अर्थ; देवनागरी में अंग्रेज़ी अक्षर नहीं', () {
+      final latin = RegExp(r'[A-Za-z0-9]');
+      final nagari = RegExp(r'[\u0900-\u097F]');
+      for (final k in gajendra.khand) {
+        expect(k.dev, isNotEmpty, reason: k.shirshak);
+        expect(k.roman, isNotEmpty, reason: k.shirshak);
+        expect(nagari.hasMatch(k.roman), isFalse, reason: k.shirshak);
+        expect(k.arth.split(' ').length, greaterThan(8), reason: k.shirshak);
+        expect(latin.hasMatch(k.dev), isFalse, reason: k.shirshak);
+        expect(latin.hasMatch(k.arth), isFalse, reason: k.shirshak);
+      }
+    });
+
+    test('कौन बोल रहा है — छह जगह; स्तुति बत्तीसवें से साठवें श्लोक तक', () {
+      expect('वाच ।\n'.allMatches(sab()), hasLength(6));
+      expect(saaf(gajendra.khand.first.dev),
+          startsWith('नारद उवाच ।\nयाञ्जप्यान्भगवद्भक्त्या प्रह्लादो दानवोऽजपत्'));
+      expect(khand('श्लोक ३२–३५'),
+          startsWith('गजेन्द्र उवाच ।\nॐ नमो मूलप्रकृतये अजिताय महात्मने'));
+      expect(khand('श्लोक ६१–६४'), startsWith('पुलस्त्य उवाच ।\nभक्तिं तस्यानुसञ्चिन्त्य'));
+      expect(khand('श्लोक ६९–७३'), startsWith('श्रीभगवानुवाच ।\nये मां त्वां च सरश्चेदं'));
+      // परिचय और «कैसे पढ़ें» की गिनती पाठ से मिलती है
+      expect(gajendra.parichay, contains('बत्तीसवें से साठवें श्लोक तक'));
+      expect(gajendra.kaisePadhein, contains('पहले आठ खंड कथा के हैं'));
+      expect(gajendra.kaisePadhein, contains('स्तुति नौवें खंड से शुरू'));
+      expect(gajendra.kaisePadhein, contains('सत्रहवें पर पूरी'));
+      expect(gajendra.khand[8].shirshak, endsWith('श्लोक ३२–३५'));
+      expect(gajendra.khand[16].shirshak, endsWith('श्लोक ५७–६०'));
+    });
+
+    test('जानी-पहचानी पंक्तियाँ अपनी जगह हैं', () {
+      expect(khand('श्लोक ४–७'), contains('सर्वरत्नमयः श्रीमांस्त्रिकूटो नाम पर्वतः'));
+      expect(khand('श्लोक २४–२७'), contains('गज आकर्षते तीरं ग्राह आकर्षते जलम्'));
+      expect(khand('श्लोक २४–२७'), contains('मनसाचिन्तयद्धरिम्'));
+      expect(khand('श्लोक २८–३१'), contains('आपद्विमोक्षमन्विच्छन्गजः स्तोत्रमुदीरयत्'));
+      expect(khand('श्लोक ३९–४१'), contains('नमोऽस्तु तस्मै पुरुषोत्तमाय'));
+      // छपाई में पाद के बीच टूटा शब्द जोड़कर
+      expect(khand('श्लोक ४५–४७'), contains('चारुविचित्रमौलिमज्ञेयमग्र्यं'));
+      expect(khand('श्लोक ४८–५०'), contains('महार्हनिष्कैर्मण्युत्तमालङ्कृतसर्वगात्रम्'));
+      expect(khand('श्लोक ८१–८४'), contains('बहुपापबन्धनाल्लभेत मोक्षं द्विरदो नु यद्वत्'));
+      expect(gajendra.khand.last.dev, endsWith('वन्दाम्यहं लोकपतिं वरेण्यम् ॥'));
+    });
+
+    test('🔑 पाठ पुस्तिका वाला है — पुराण के दूसरे छपे पाठ के शब्द इसमें नहीं मिले', () {
+      final s = sab();
+      for (final (yahan, vahan) in [
+        ('यैरुक्तैः संस्मृतैः श्रुतैः', 'संश्रुतैः स्मृतैः'),
+        ('सिद्धचारणगुह्यकैः', 'सिद्धचारणपन्नगैः'),
+        ('तथा रत्नचयोपमम्', 'तुषारचय'),
+        ('निगूढोऽन्तर्जलेशयः', 'विरूपोऽन्तर्जलेशयः'),
+        ('दुराधर्षो महाबलः', 'रिपुराकेकरेक्षणः'),
+        ('नम आद्याय वामाय आर्षायादिप्रवर्तिने', 'आर्षेयाय प्रवर्तिने'),
+        ('सांख्ययोगोद्भवाय च', 'नमो योगोद्भवाय च'),
+        ('नमः सर्वमहाय च', 'सर्वसहाय'),
+        ('अब्रह्मण्य नमस्तेऽस्तु', 'सुब्रह्मण्य'),
+        ('जलस्थं दारयामास', 'स्थलस्थं दारयामास'),
+        ('एवं हि देवशापेन', 'देवलशापेन'),
+        ('लभेत मोक्षं द्विरदो नु यद्वत्', 'द्विरदेन यद्वत्'),
+      ]) {
+        expect(s, contains(yahan), reason: yahan);
+        expect(s, isNot(contains(vahan)), reason: vahan);
+      }
+    });
+
+    test('पुस्तिका की एक छपाई-भूल — तीन और पाठों वाला रूप लिया गया (श्लोक ९)', () {
+      final s = sab();
+      expect(s, contains('तथान्यैर्विविधैर्वृक्षैः सर्वतः समलङ्कृतः'));
+      expect(s, isNot(contains('यथान्यैर्विविधैर्वृक्षैः')));
+    });
+
+    test('जहाँ दोनों पुस्तकों का शब्द अर्थ में पक्का नहीं, वहाँ अर्थ उसे गढ़ता नहीं', () {
+      final a = gajendra.khand.map((k) => k.arth).join(' ');
+      for (final w in ['अब्रह्मण्य', 'सुब्रह्मण्य', 'नारोद्भव']) {
+        expect(a, isNot(contains(w)), reason: w);
+      }
+    });
+
+    test('ⓘ: कौन सा पाठ, कैसे पढ़ा गया, और दूसरे पाठ', () {
+      expect(gajendra.strot.paddhati, contains('वामन पुराण'));
+      expect(gajendra.strot.paddhati, contains('अध्याय ८५'));
+      final note = gajendra.strot.note;
+      expect(note.length, lessThanOrEqualTo(600));
+      expect(note, contains('चौरासी श्लोक'));
+      expect(note, contains('दो छपी पुस्तकें आँख से पढ़ी गईं'));
+      expect(note, contains('एक जगह उसकी छपाई की भूल ठीक हुई'));
+      expect(note, contains('«अब्रह्मण्य»'));
+      expect(note, contains('«सुब्रह्मण्य»'));
+      expect(note, contains('भागवत के आठवें स्कंध की गजेन्द्र-स्तुति अलग पाठ है'));
+      expect(note, contains('दूसरी परंपरा है, भूल नहीं'));
+      expect(note, contains('अर्थ अपने शब्दों में है'));
+      expect(gajendra.parichay, contains('पंचरत्न गीता'));
+    });
+
+    test('🔑 पाठ का फल ग्रंथ के शब्द हैं — ऐप का दावा नहीं', () {
+      expect(gajendra.kaisePadhein, contains('वह ग्रंथ के अपने शब्द हैं, ऐप का दावा नहीं'));
+      expect(gajendra.kabPadhein, contains('पाठ के अपने शब्दों में'));
+      expect(gajendra.khand.last.shirshak, startsWith('पाठ का फल'));
     });
   });
 
@@ -412,7 +549,7 @@ void main() {
       await tester.pumpAndSettle();
     }
 
-    testWidgets('ग्रंथ का पन्ना — दो हिस्से, तीन पन्ने, गिनती "खंड" में', (tester) async {
+    testWidgets('ग्रंथ का पन्ना — तीन हिस्से, चार पन्ने, गिनती "खंड" में', (tester) async {
       await granthKholo(tester);
       expect(find.text('चार वेद'), findsOneWidget);
       expect(find.text('अठारह पुराण'), findsOneWidget);
@@ -421,6 +558,9 @@ void main() {
       expect(find.text('अठारह पुराण — एक-एक'), findsOneWidget);
       expect(find.text('7 खंड'), findsNWidgets(2));
       expect(find.text('18 खंड'), findsOneWidget);
+      expect(find.text('पुराण से — पूरा पाठ'), findsOneWidget);
+      expect(find.text('गजेन्द्र मोक्ष'), findsOneWidget);
+      expect(find.text('23 खंड'), findsOneWidget);
       // गिनती "श्लोक" में नहीं — ये श्लोक नहीं, गद्य के खंड हैं
       expect(find.text('7 श्लोक'), findsNothing);
       expect(find.text('18 श्लोक'), findsNothing);
@@ -433,7 +573,7 @@ void main() {
       await tester.tap(find.text('अठारह पुराण — एक-एक'));
       await tester.pumpAndSettle();
       expect(find.byType(PaathScreen), findsOneWidget);
-      expect(find.text('वेद और पुराण · भाग 3/3'), findsOneWidget);
+      expect(find.text('वेद और पुराण · भाग 3/4'), findsOneWidget);
 
       // खुला सच — ⓘ के पीछे नहीं (→ D-060)
       expect(find.textContaining('यह परिचय है'), findsOneWidget);
@@ -445,6 +585,32 @@ void main() {
       expect(find.text('अर्थ दिखाएँ'), findsNothing);
       expect(find.text('रोमन दिखाएँ'), findsNothing);
       expect(find.text('१ · ब्रह्म पुराण'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('गजेन्द्र मोक्ष खुलता है: "23 खंड", अर्थ का बटन, और परिचय वाली पंक्ति नहीं',
+        (tester) async {
+      await granthKholo(tester);
+      final gm = find.text('गजेन्द्र मोक्ष');
+      await tester.scrollUntilVisible(gm, 300,
+          scrollable: find.byType(Scrollable).first);
+      await tester.pumpAndSettle();
+      expect(find.text('23 खंड'), findsOneWidget);
+
+      await tester.tap(gm);
+      await tester.pumpAndSettle();
+      expect(find.byType(PaathScreen), findsOneWidget);
+      expect(find.text('वेद और पुराण · भाग 4/4'), findsOneWidget);
+      expect(find.text('पाठ'), findsOneWidget);
+      expect(find.text('23 खंड'), findsOneWidget);
+      // यह पन्ना परिचय नहीं है — वह पंक्ति यहाँ नहीं दिखनी चाहिए
+      expect(find.textContaining('यह परिचय है'), findsNothing);
+      expect(find.text('नारद का प्रश्न · श्लोक १–३'), findsOneWidget);
+
+      expect(find.textContaining('नारद ने पूछा'), findsNothing);
+      await tester.tap(find.text('अर्थ दिखाएँ'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('नारद ने पूछा'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 

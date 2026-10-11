@@ -1,6 +1,6 @@
 # 31 — दूसरी जाँच: किसी और AI से, सख़्ती से
 
-> **यह क्या है:** 5–11 अक्टूबर 2026 के काम (D-112 से D-120) को ChatGPT जैसे किसी दूसरे AI से
+> **यह क्या है:** 5–11 अक्टूबर 2026 के काम (D-112 से D-121) को ChatGPT जैसे किसी दूसरे AI से
 > जँचवाने का तैयार सामान — कौन-सी फ़ाइल देनी है और क्या पूछना है।
 > **क्यों:** यह सारा काम एक ही AI ने किया और उसी ने जाँचा। संस्कृत के छपे पन्ने उसी ने पढ़े,
 > अर्थ उसी ने लिखे। दूसरी आँख वही ग़लती पकड़ सकती है जो पहली को दिखी ही नहीं।
@@ -11,8 +11,8 @@
    करता है, और याद से "सुधार" देता है। इसलिए नीचे के prompt में उससे **सबूत** माँगा गया है।
    वह जो बताए, उसे ऐप में तभी बदला जाएगा जब छपे पन्ने से मिल जाए।
 2. **जो वह नहीं कर सकता:** ऐप चलाना, जाँचें चलाना, फ़ोन पर देखना। वे यहीं हो चुकी हैं
-   (इंजन 589, ऐप 1302 पास) — पर फ़ोन पर देखना आपका काम है और अब भी बाक़ी है।
-3. **एक बार में एक गठरी।** सब कुछ एक साथ देने पर वह ऊपर-ऊपर से पढ़ता है। नीचे पाँच गठरियाँ
+   (इंजन 589, ऐप 1312 पास) — पर फ़ोन पर देखना आपका काम है और अब भी बाक़ी है।
+3. **एक बार में एक गठरी।** सब कुछ एक साथ देने पर वह ऊपर-ऊपर से पढ़ता है। नीचे छह गठरियाँ
    हैं; हर एक अलग बातचीत में दीजिए।
 
 ## हर गठरी के साथ यह prompt (पहले यही चिपकाइए)
@@ -133,6 +133,29 @@ B. The Veda numbers (Rigveda mandalas / suktas / mantras, Yajurveda
    recension is each number from, and is it stated correctly?
 C. Any statement about a Veda or Purana that is wrong, or that is tradition
    presented as fact.
+```
+
+## गठरी ६ — गजेन्द्र मोक्ष (D-121)
+
+**फ़ाइल:** `tools/granth_paath/puran/paath/gajendra.txt`
+(हर खंड: `# शीर्षक`, फिर श्लोक की पंक्तियाँ, फिर `= अर्थ`)
+
+```
+This is the Gajendra Moksha of the Vamana Purana (chapter 85 in the
+Venkateshwar Press edition; 84 verses) as printed in the Gita Press
+"Pancharatna Gita" booklet, with Hindi meanings written by an AI.
+IMPORTANT: this is NOT the Bhagavata 8.3 stuti, and it is NOT the text of
+the Gita Press Vamana Purana / critical edition (chapter 84 / 58), which
+reads differently in dozens of places. Compare ONLY with an edition of the
+same recension (Venkateshwar Press / Khemraj, or a Pancharatna Gita).
+A. Sanskrit: typos, wrong sandhi, missing half-verses. Look hardest at
+   verse 9 (तथान्यै), 12, 13, 33, 51 (first word), 57 (सर्वमहाय), 60
+   (अब्रह्मण्य), 62 (तपोधन), 69 (वेणूनां). Cite the edition and page.
+B. Meanings: every place where the Hindi says something the Sanskrit does
+   not, or leaves something out. The author was unsure of verses 33, 44,
+   57 and 72, and deliberately left two words untranslated (first word of
+   51; अब्रह्मण्य in 60). Is "अब्रह्मण्य" here a cry for help, or a
+   misprint for "सुब्रह्मण्य"? Give your evidence.
 ```
 
 ## जवाब आए तो

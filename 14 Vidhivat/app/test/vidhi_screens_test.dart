@@ -266,6 +266,19 @@ void main() {
       await tester.pumpWidget(app(const HomeShell()));
       await tester.pumpAndSettle();
 
+      // यह जाँच आज की तारीख़ पर चलती है। नवरात्रि के दिनों में पहला पत्ता पर्व
+      // का होता है और पर्व का पन्ना खोलता है (तारीख़ देकर यह `parv_home_test`
+      // जाँचता है) — उन दिनों नीचे वाली खोज अगले, परदे से बाहर के पत्ते का
+      // बटन पकड़ लेती थी और जाँच गिर जाती थी (11 अक्टूबर 2026 को गिरी)।
+      final navratri = find.text('नवरात्रि देखें');
+      if (navratri.evaluate().isNotEmpty) {
+        await tester.tap(navratri.first);
+        await tester.pumpAndSettle();
+        expect(find.byType(ParvScreen), findsOneWidget);
+        expect(tester.takeException(), isNull);
+        return;
+      }
+
       // पहले पत्ते पर जो बटन है — उनमें से कोई एक होगा।
       final bulawa = [
         find.text('पूजा जारी रखें'),
