@@ -17,6 +17,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.environ.get('VIDHIVAT_REPO') or os.path.abspath(os.path.join(HERE, '..', '..', '..', '..'))
 sys.path.insert(0, os.path.join(REPO, 'tools'))
 from lipi import dev_ank, khula  # noqa: E402
+sys.path.insert(0, HERE)
+import granth_parichay  # noqa: E402
 
 VDIR = os.path.join(HERE, 'v47') if os.path.isdir(os.path.join(HERE, 'v47')) else HERE
 DST = os.path.join(REPO, 'tools', 'granth_paath', 'mahabharat')
@@ -295,10 +297,7 @@ NOTE = ('पाठ छपी पुस्तकों वाला है — �
 def kram(n_khand):
     p = os.path.join(DST, 'kram.json')
     k = json.loads(io.open(p, encoding='utf-8').read())
-    k['parichay'] = ('अठारह पर्वों का सार — किस पर्व में कौन सी कथा है, और वह कहाँ तक पहुँचती है; और तीन अंश '
-                     'पूरे पाठ और अर्थ के साथ: वन पर्व का यक्ष प्रश्न, शांति पर्व का भीष्म स्तवराज, और अनुस्मृति। यह '
-                     'पूरा ग्रंथ नहीं है: महाभारत बहुत बड़ा है। गीता और विष्णु सहस्रनाम, जो इसी के हिस्से हैं, '
-                     'ग्रंथालय में पूरे पाठ के साथ अलग से हैं।')  # ← anusmriti_paath.GRANTH_PARICHAY जैसा ही रखो
+    k['parichay'] = granth_parichay.parichay(k)   # वाक्य granth_parichay.py में
     k['strot']['stavaraj'] = {
         'paddhati': 'महाभारत, शांति पर्व (राजधर्मानुशासन पर्व) — छपी पुस्तकों का अध्याय ४७, श्लोक १–१०८',
         'kshetra': 'सब जगह',

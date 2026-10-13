@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "id": "mahabharat_ss2",
+  "naam": "सनत्सुजातीय २ — मौन, तप और सत्य",
+  "upnaam": [
+    "सनत्सुजातीय",
+    "सनत्सुजात पर्व",
+    "सनत्सुजात",
+    "धृतराष्ट्र और सनत्सुजात",
+    "उद्योग पर्व"
+  ],
+  "prakar": "granth",
+  "devta": "ब्रह्म — परमात्मा",
+  "rachnakar": "महाभारत, उद्योग पर्व — महर्षि वेदव्यास",
+  "bhasha": "संस्कृत",
+  "parichay": "मौन किसका नाम है; क्या वेद पढ़ लेना पाप से बचा लेता है; बिना मैल का तप क्या है। फिर गिनतियाँ हैं — बारह दोष, तेरह क्रूर स्वभाव, ब्राह्मण के बारह व्रत, संयम के अठारह गुण, छह तरह का त्याग, प्रमाद न करने के आठ गुण। अंत में: वेद कितने भी पढ़े हों, ब्राह्मण वही जो सत्य से न हटे।",
+  "kabPadhein": "जब मन हो। यह पूजा का पाठ नहीं है — उपदेश है; धीरे-धीरे, अर्थ के साथ पढ़ने की चीज़।",
+  "kaisePadhein": "पाँच पन्ने, पाँच अध्याय — क्रम से पढ़िए: मृत्यु और प्रमाद; मौन, तप और सत्य; ब्रह्मचर्य; दोष और व्रत; और अंत में वह अध्याय जिसकी टेक है «योगिनस्तं प्रपश्यन्ति भगवन्तं सनातनम्»। यह कठिन पाठ है; कई श्लोक पहेली जैसे हैं। अर्थ शब्दों का दिया गया है — रूपकों का खुलासा नहीं किया गया। हर खंड के शीर्षक में छपी पुस्तक वाले श्लोक-अंक हैं।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर खंड के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "मौन किसका नाम है · श्लोक १–२",
+      "dev": "धृतराष्ट्र उवाच ।\nकस्यैष मौनः कतरन्नु मौनं\nप्रब्रूहि विद्वन्निह मौनभावम् ।\nमौनेन विद्वानुत याति मौनं\nकथं मुने मौनमिहाचरन्ति ॥\nसनत्सुजात उवाच ।\nयतो न वेदा मनसा सहैनमनुप्रविशन्ति ततोऽथ मौनम् ।\nयत्रोत्थितो वेदशब्दस्तथायं\nस तन्मयत्वेन विभाति राजन् ॥",
+      "roman": "dhritaraashtra uvaacha |\nkasyaisha maunah katarannu maunam\nprabroohi vidvanniha maunabhaavam |\nmaunena vidvaanuta yaati maunam\nkatham mune maunamihaacharanti ||\nsanatsujaata uvaacha |\nyato na vedaa manasaa sahainamanupravishanti tato'tha maunam |\nyatrotthito vedashabdastathaayam\nsa tanmayatvena vibhaati raajan ||",
+      "arth": "धृतराष्ट्र बोले — यह मौन किसका नाम है? दोनों में मौन कौन-सा है? हे विद्वन्! यहाँ मौन का भाव समझाइए। क्या ज्ञानी मौन से ही मौन को पाता है? हे मुनि! लोग यहाँ मौन का आचरण कैसे करते हैं? सनत्सुजात बोले — जहाँ वेद, मन के साथ भी, पहुँच नहीं पाते — वही मौन है। जहाँ से वेद का शब्द उठा है और यह दूसरा शब्द भी, हे राजन्! वह उसी में तन्मय हो जाने से प्रकाशित होता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "क्या वेद पाप से बचा लेते हैं · श्लोक ३–६",
+      "dev": "धृतराष्ट्र उवाच ।\nऋचो यजूंषि यो वेद सामवेदं च वेद यः ।\nपापानि कुर्वन् पापेन लिप्यते किं न लिप्यते ॥\nसनत्सुजात उवाच ।\nनैनं सामान्यृचो वापि न यजूंष्यविचक्षणम् ।\nत्रायन्ते कर्मणः पापान्न ते मिथ्या ब्रवीम्यहम् ॥\nनच्छन्दांसि वृजिनात् तारयन्ति\nमायाविनं मायया वर्तमानम् ।\nनीडं शकुन्ता इव जातपक्षाश्छन्दांस्येनं प्रजहत्यन्तकाले ॥\nधृतराष्ट्र उवाच ।\nन चेद् वेदा विना धर्मं त्रातुं शक्ता विचक्षण ।\nअथ कस्मात् प्रलापोऽयं ब्राह्मणानां सनातनः ॥",
+      "roman": "dhritaraashtra uvaacha |\nricho yajoomshi yo veda saamavedam cha veda yah |\npaapaani kurvan paapena lipyate kim na lipyate ||\nsanatsujaata uvaacha |\nnainam saamaanyricho vaapi na yajoomshyavichakshanam |\ntraayante karmanah paapaanna te mithyaa braveemyaham ||\nnachchhandaamsi vrijinaat taarayanti\nmaayaavinam maayayaa vartamaanam |\nneedam shakuntaa iva jaatapakshaashchhandaamsyenam prajahatyantakaale ||\ndhritaraashtra uvaacha |\nna ched vedaa vinaa dharmam traatum shaktaa vichakshana |\natha kasmaat pralaapo'yam braahmanaanaam sanaatanah ||",
+      "arth": "धृतराष्ट्र बोले — जो ऋचाएँ और यजु जानता है, और सामवेद भी जानता है — वह पाप करे तो पाप उसे लगता है या नहीं? सनत्सुजात बोले — उस नासमझ को न साम बचाते हैं, न ऋचाएँ, न यजु; मैं तुमसे झूठ नहीं कहता। जो छल से जीता है, उस कपटी को वेद पाप से पार नहीं लगाते। जैसे पंख निकल आने पर पक्षी घोंसला छोड़ देते हैं, वैसे ही अन्त समय वेद उसे छोड़ देते हैं। धृतराष्ट्र बोले — हे ज्ञानी! यदि धर्म के बिना वेद बचा नहीं सकते, तो ब्राह्मणों की यह सदा से चली आती बात किसलिए है?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "तप और यज्ञ किसलिए · श्लोक ७–१०",
+      "dev": "सनत्सुजात उवाच ।\nतस्यैव नामादिविशेषरूपैरिदं जगद् भाति महानुभाव ।\nनिर्दिश्य सम्यक् प्रवदन्ति वेदास्तद् विश्ववैरूप्यमुदाहरन्ति ॥\nतदर्थमुक्तं तप एतदिज्या\nताभ्यामसौ पुण्यमुपैति विद्वान् ।\nपुण्येन पापं विनिहत्य पश्चात्\nसंजायते ज्ञानविदीपितात्मा ॥\nज्ञानेन चात्मानमुपैति विद्वानथान्यथा वर्गफलानुकाङ्क्षी ।\nअस्मिन् कृतं तत् परिगृह्य सर्वममुत्र भुङ्क्त्वा पुनरेति मार्गम् ॥\nअस्मिँल्लोके तपस्तप्तं फलमन्यत्र भुज्यते ।\nब्राह्मणानामिमे लोका ऋद्धे तपसि तिष्ठताम् ॥",
+      "roman": "sanatsujaata uvaacha |\ntasyaiva naamaadivishesharoopairidam jagad bhaati mahaanubhaava |\nnirdishya samyak pravadanti vedaastad vishvavairoopyamudaaharanti ||\ntadarthamuktam tapa etadijyaa\ntaabhyaamasau punyamupaiti vidvaan |\npunyena paapam vinihatya pashchaat\nsamjaayate jnaanavideepitaatmaa ||\njnaanena chaatmaanamupaiti vidvaanathaanyathaa vargaphalaanukaankshee |\nasmin kritam tat parigrihya sarvamamutra bhunktvaa punareti maargam ||\nasminlloke tapastaptam phalamanyatra bhujyate |\nbraahmanaanaamime lokaa riddhe tapasi tishthataam ||",
+      "arth": "सनत्सुजात बोले — हे महानुभाव! उसी के नाम आदि अलग-अलग रूपों से यह जगत् दिखाई देता है। वेद यह बात ठीक से बताकर कहते हैं; और यह भी कहते हैं कि वह इस विश्व से निराला है। उसी के लिए यह तप और यज्ञ कहे गए हैं। इन दोनों से ज्ञानी पुण्य पाता है; पुण्य से पाप को मिटाने के बाद उसका अन्तःकरण ज्ञान से जगमगा उठता है। ज्ञान से ज्ञानी आत्मा को पा लेता है। और जो ऐसा न करके धर्म, अर्थ और काम के फल चाहता है, वह यहाँ का किया सब साथ ले जाकर परलोक में भोगता है और फिर इसी राह पर लौट आता है। इस लोक में किए तप का फल दूसरी जगह भोगा जाता है; पर जो ब्राह्मण बढ़े-चढ़े तप में टिके हैं, उन्हें फल यहीं मिलता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "बिना मैल का तप · श्लोक ११–१४",
+      "dev": "धृतराष्ट्र उवाच ।\nकथं समृद्धमसमृद्धं तपो भवति केवलम् ।\nसनत्सुजात तद् ब्रूहि यथा विद्याम तद् वयम् ॥\nसनत्सुजात उवाच ।\nनिष्कल्मषं तपस्त्वेतत् केवलं परिचक्षते ।\nएतत् समृद्धमप्यृद्धं तपो भवति केवलम् ॥\nतपोमूलमिदं सर्वं यन्मां पृच्छसि क्षत्रिय ।\nतपसा वेदविद्वांसः परं त्वमृतमाप्नुयुः ॥\nधृतराष्ट्र उवाच ।\nकल्मषं तपसो ब्रूहि श्रुतं निष्कल्मषं तपः ।\nसनत्सुजात येनेदं विद्यां गुह्यं सनातनम् ॥",
+      "roman": "dhritaraashtra uvaacha |\nkatham samriddhamasamriddham tapo bhavati kevalam |\nsanatsujaata tad broohi yathaa vidyaama tad vayam ||\nsanatsujaata uvaacha |\nnishkalmasham tapastvetat kevalam parichakshate |\netat samriddhamapyriddham tapo bhavati kevalam ||\ntapomoolamidam sarvam yanmaam prichchhasi kshatriya |\ntapasaa vedavidvaamsah param tvamritamaapnuyuh ||\ndhritaraashtra uvaacha |\nkalmasham tapaso broohi shrutam nishkalmasham tapah |\nsanatsujaata yenedam vidyaam guhyam sanaatanam ||",
+      "arth": "धृतराष्ट्र बोले — शुद्ध तप कैसे बढ़ा-चढ़ा होता है, और कैसे नहीं? सनत्सुजात! वह कहिए, जिससे हम उसे समझ लें। सनत्सुजात बोले — जिस तप में कोई मैल नहीं, उसी को शुद्ध कहते हैं; वही बढ़ा-चढ़ा, बहुत समृद्ध तप होता है। हे क्षत्रिय! तुम जो कुछ मुझसे पूछ रहे हो, उस सबकी जड़ तप है। वेद के जानकार तप से ही परम अमृत पाते हैं। धृतराष्ट्र बोले — बिना मैल का तप मैंने सुन लिया। अब तप का मैल बताइए, सनत्सुजात! जिससे मैं इस गूढ़, सनातन तत्त्व को जान सकूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "बारह दोष और तेरह क्रूर स्वभाव · श्लोक १५–१९",
+      "dev": "सनत्सुजात उवाच ।\nक्रोधादयो द्वादश यस्य दोषास्तथा नृशंसानि दशत्रि राजन् ।\nधर्मादयो द्वादशैते पितॄणां\nशास्त्रे गुणा ये विदिता द्विजानाम् ॥\nक्रोधः कामो लोभमोहौ विधित्सा\nकृपासूये मानशोकौ स्पृहा च ।\nईर्ष्या जुगुप्सा च मनुष्यदोषा\nवर्ज्याः सदा द्वादशैते नराणाम् ॥\nएकैकः पर्युपास्ते ह मनुष्यान् मनुजर्षभ ।\nलिप्समानोऽन्तरं तेषां मृगाणामिव लुब्धकः ॥\nविकत्थनः स्पृहयालुर्मनस्वी\nबिभ्रत् कोपं चपलोऽरक्षणश्च ।\nएतान् पापाः षण्नराः पापधर्मान्\nप्रकुर्वते नो त्रसन्तः सुदुर्गे ॥\nसम्भोगसंविद् विषमोऽतिमानी\nदत्तानुतापी कृपणो बलीयान् ।\nवर्गप्रशंसी वनितासु द्वेष्टा\nएते परे सप्त नृशंसवर्गाः ॥",
+      "roman": "sanatsujaata uvaacha |\nkrodhaadayo dvaadasha yasya doshaastathaa nrishamsaani dashatri raajan |\ndharmaadayo dvaadashaite pitreenaam\nshaastre gunaa ye viditaa dvijaanaam ||\nkrodhah kaamo lobhamohau vidhitsaa\nkripaasooye maanashokau sprihaa cha |\neershyaa jugupsaa cha manushyadoshaa\nvarjyaah sadaa dvaadashaite naraanaam ||\nekaikah paryupaaste ha manushyaan manujarshabha |\nlipsamaano'ntaram teshaam mrigaanaamiva lubdhakah ||\nvikatthanah sprihayaalurmanasvee\nbibhrat kopam chapalo'rakshanashcha |\netaan paapaah shannaraah paapadharmaan\nprakurvate no trasantah sudurge ||\nsambhogasamvid vishamo'timaanee\ndattaanutaapee kripano baleeyaan |\nvargaprashamsee vanitaasu dveshtaa\nete pare sapta nrishamsavargaah ||",
+      "arth": "सनत्सुजात बोले — राजन्! क्रोध आदि बारह उसके दोष हैं, और तेरह क्रूर स्वभाव; और धर्म आदि बारह गुण हैं, जो पुरखों के शास्त्र में द्विजों के लिए प्रसिद्ध हैं। क्रोध, काम, लोभ, मोह, कुछ-न-कुछ करते रहने की चाह, निर्दयता, दूसरे के गुण में दोष देखना, अभिमान, शोक, लालसा, ईर्ष्या और निन्दा — मनुष्यों के ये बारह दोष सदा छोड़ने योग्य हैं। हे नरश्रेष्ठ! इनमें से एक-एक मनुष्यों के पीछे लगा रहता है, उनकी कमज़ोरी ढूँढ़ता हुआ — जैसे शिकारी हिरणों की। अपनी डींग हाँकने वाला, लालची, घमंडी, क्रोध पाले रहने वाला, चंचल, और रक्षा न करने वाला — ये छह पापी हैं; कठिन संकट में भी ये इन पाप के कामों को बिना डरे करते हैं। भोग में ही मन रखने वाला, भेद-भाव बरतने वाला, बहुत अभिमानी, देकर पछताने वाला, बहुत कंजूस, धर्म-अर्थ-काम की बड़ाई करने वाला, और स्त्रियों से द्वेष रखने वाला — ये सात और; यही क्रूरों का समूह है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "ब्राह्मण के बारह व्रत · श्लोक २०–२२",
+      "dev": "धर्मश्च सत्यं च दमस्तपश्च\nअमात्सर्यं ह्रीस्तितिक्षानसूया ।\nयज्ञश्च दानं च धृतिः श्रुतं च\nव्रतानि वै द्वादश ब्राह्मणस्य ॥\nयस्त्वेतेभ्यः प्रभवेद् द्वादशभ्यः\nसर्वामपीमां पृथिवीं स शिष्यात् ।\nत्रिभिर्द्वाभ्यामेकतो वार्थितो यस्तस्य स्वमस्तीति स वेदितव्यः ॥\nदमस्त्यागोऽप्रमादश्च एतेष्वमृतमाहितम् ।\nतानि सत्यमुखान्याहुर्ब्राह्मणा ये मनीषिणः ॥",
+      "roman": "dharmashcha satyam cha damastapashcha\namaatsaryam hreestitikshaanasooyaa |\nyajnashcha daanam cha dhritih shrutam cha\nvrataani vai dvaadasha braahmanasya ||\nyastvetebhyah prabhaved dvaadashabhyah\nsarvaamapeemaam prithiveem sa shishyaat |\ntribhirdvaabhyaamekato vaarthito yastasya svamasteeti sa veditavyah ||\ndamastyaago'pramaadashcha eteshvamritamaahitam |\ntaani satyamukhaanyaahurbraahmanaa ye maneeshinah ||",
+      "arth": "धर्म, सत्य, इन्द्रियों का संयम, तप, डाह न करना, लज्जा, सहनशीलता, दोष न ढूँढ़ना, यज्ञ, दान, धैर्य और शास्त्र का ज्ञान — ये ब्राह्मण के बारह व्रत हैं। जो इन बारहों पर अधिकार पा ले, वह इस सारी पृथ्वी पर शासन कर सकता है। जो इनमें से तीन, दो या एक से भी युक्त है, उसके पास अपना धन है — ऐसा जानना चाहिए। संयम, त्याग और प्रमाद न करना — इन तीनों में अमृत रखा है। जो समझदार ब्राह्मण हैं, वे कहते हैं कि इनका मुख सत्य की ओर है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "संयम के अठारह गुण · श्लोक २३–२७",
+      "dev": "दमो ह्यष्टादशगुणः प्रतिकूलं कृताकृते ।\nअनृतं चाभ्यसूया च कामार्थौ च तथा स्पृहा ॥\nक्रोधः शोकस्तथा तृष्णा लोभः पैशुन्यमेव च ।\nमत्सरश्च विहिंसा च परितापस्तथारतिः ॥\nअपस्मारश्चातिवादस्तथा सम्भावनाऽऽत्मनि ।\nएतैर्विमुक्तो दोषैर्यः स दान्तः सद्भिरुच्यते ॥\nमदोऽष्टादशदोषः स्यात् त्यागो भवति षड्विधः ।\nविपर्ययाः स्मृता एते मददोषा उदाहृताः ॥\nश्रेयांस्तु षड्विधस्त्यागस्तृतीयो दुष्करो भवेत् ।\nतेन दुःखं तरत्येव भिन्नं तस्मिन् जितं कृते ॥",
+      "roman": "damo hyashtaadashagunah pratikoolam kritaakrite |\nanritam chaabhyasooyaa cha kaamaarthau cha tathaa sprihaa ||\nkrodhah shokastathaa trishnaa lobhah paishunyameva cha |\nmatsarashcha vihimsaa cha paritaapastathaaratih ||\napasmaarashchaativaadastathaa sambhaavanaa''tmani |\netairvimukto doshairyah sa daantah sadbhiruchyate ||\nmado'shtaadashadoshah syaat tyaago bhavati shadvidhah |\nviparyayaah smritaa ete madadoshaa udaahritaah ||\nshreyaamstu shadvidhastyaagastriteeyo dushkaro bhavet |\ntena duhkham taratyeva bhinnam tasmin jitam krite ||",
+      "arth": "संयम के अठारह गुण हैं — इन अठारह से बचना: करने और न करने में उलटा चलना, झूठ, दूसरे के गुण में दोष देखना, काम, धन की चाह, लालसा, क्रोध, शोक, तृष्णा, लोभ, चुग़ली, डाह, हिंसा, संताप, किसी चीज़ में मन न लगना, भूल जाना, बहुत बोलना, और अपने को बड़ा समझना। जो इन दोषों से छूट गया है, उसे सज्जन संयमी कहते हैं। मद में अठारह दोष होते हैं — ये ही उलटे होकर मद के दोष कहे गए हैं। त्याग छह तरह का होता है। छहों तरह का त्याग उत्तम है; पर तीसरा कठिन है। उसी से मनुष्य दुःख को पार कर जाता है; वह सध जाए तो सब जीत लिया।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "छह तरह का त्याग · श्लोक २८–३३",
+      "dev": "श्रेयांस्तु षड्विधस्त्यागः श्रियं प्राप्य न हृष्यति ।\nइष्टापूर्ते द्वितीयं स्यान्नित्यवैराग्ययोगतः ॥\nकामत्यागश्च राजेन्द्र स तृतीय इति स्मृतः ।\nअप्यवाच्यं वदन्त्येतं स तृतीयो गुणः स्मृतः ॥\nत्यक्तैर्द्रव्यैर्यद् भवति नोपयुक्तैश्च कामतः ।\nन च द्रव्यैस्तद् भवति नोपयुक्तैश्च कामतः ॥\nन च कर्मस्वसिद्धेषु दुःखं तेन च न ग्लपेत् ।\nसर्वैरेव गुणैर्युक्तो द्रव्यवानपि यो भवेत् ॥\nअप्रिये च समुत्पन्ने व्यथां जातु न गच्छति ।\nइष्टान् पुत्रांश्च दारांश्च न याचेत कदाचन ॥\nअर्हते याचमानाय प्रदेयं तच्छुभं भवेत् ।\nअप्रमादी भवेदेतैः स चाप्यष्टगुणो भवेत् ॥",
+      "roman": "shreyaamstu shadvidhastyaagah shriyam praapya na hrishyati |\nishtaapoorte dviteeyam syaannityavairaagyayogatah ||\nkaamatyaagashcha raajendra sa triteeya iti smritah |\napyavaachyam vadantyetam sa triteeyo gunah smritah ||\ntyaktairdravyairyad bhavati nopayuktaishcha kaamatah |\nna cha dravyaistad bhavati nopayuktaishcha kaamatah ||\nna cha karmasvasiddheshu duhkham tena cha na glapet |\nsarvaireva gunairyukto dravyavaanapi yo bhavet ||\napriye cha samutpanne vyathaam jaatu na gachchhati |\nishtaan putraamshcha daaraamshcha na yaacheta kadaachana ||\narhate yaachamaanaaya pradeyam tachchhubham bhavet |\napramaadee bhavedetaih sa chaapyashtaguno bhavet ||",
+      "arth": "छह तरह का उत्तम त्याग यह है। लक्ष्मी पाकर फूल न जाना — पहला। यज्ञ और परोपकार के कामों में लगाना — दूसरा। हे राजेन्द्र! सदा वैराग्य के साथ कामना का त्याग — यह तीसरा माना गया है; इसे «कहा न जा सकने वाला» भी कहते हैं; यही तीसरा गुण है। चीज़ों को छोड़ देने से जो मिलता है, वह उन्हें मन-भर भोगने से नहीं मिलता; वह न चीज़ों से मिलता है, न उन्हें मन-भर भोगने से। जो सब गुणों से युक्त और धनवान भी हो, वह काम सिद्ध न होने पर दुखी न हो, और उससे टूटे नहीं। कोई अप्रिय बात हो जाए तो कभी व्यथित न हो। प्रिय पुत्र और पत्नी भी किसी से कभी न माँगे। योग्य माँगने वाले को दे — वह शुभ है। इनसे मनुष्य प्रमाद से बचा रहता है; और प्रमाद न करने के भी आठ गुण हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "प्रमाद न करने के आठ गुण · श्लोक ३४–३७",
+      "dev": "सत्यं ध्यानं समाधानं चोद्यं वैराग्यमेव च ।\nअस्तेयं ब्रह्मचर्यं च तथा संग्रहमेव च ॥\nएवं दोषा मदस्योक्तास्तान् दोषान् परिवर्जयेत् ।\nतथा त्यागोऽप्रमादश्च स चाप्यष्टगुणो मतः ॥\nअष्टौ दोषाः प्रमादस्य तान् दोषान् परिवर्जयेत् ।\nइन्द्रियेभ्यश्च पञ्चभ्यो मनसश्चैव भारत ।\nअतीतानागतेभ्यश्च मुक्त्युपेतः सुखी भवेत् ॥\nसत्यात्मा भव राजेन्द्र सत्ये लोकाः प्रतिष्ठिताः ।\nतांस्तु सत्यमुखानाहुः सत्ये ह्यमृतमाहितम् ॥",
+      "roman": "satyam dhyaanam samaadhaanam chodyam vairaagyameva cha |\nasteyam brahmacharyam cha tathaa samgrahameva cha ||\nevam doshaa madasyoktaastaan doshaan parivarjayet |\ntathaa tyaago'pramaadashcha sa chaapyashtaguno matah ||\nashtau doshaah pramaadasya taan doshaan parivarjayet |\nindriyebhyashcha panchabhyo manasashchaiva bhaarata |\nateetaanaagatebhyashcha muktyupetah sukhee bhavet ||\nsatyaatmaa bhava raajendra satye lokaah pratishthitaah |\ntaamstu satyamukhaanaahuh satye hyamritamaahitam ||",
+      "arth": "सत्य, ध्यान, मन का ठहराव, जिज्ञासा, वैराग्य, चोरी न करना, ब्रह्मचर्य और संग्रह न करना। इस तरह मद के दोष कहे गए; उन दोषों को छोड़ देना चाहिए। और त्याग तथा प्रमाद न करना — वह भी आठ गुणों वाला माना गया है। प्रमाद के आठ दोष हैं; उन्हें छोड़ देना चाहिए। हे भारत! जो पाँचों इन्द्रियों से और मन से, और बीते हुए तथा आने वाले से छूट गया, वह सुखी होता है। हे राजेन्द्र! सत्य-स्वरूप बनो; लोक सत्य पर ही टिके हैं। उन गुणों का मुख सत्य की ओर कहा गया है; सत्य में ही अमृत रखा है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "तप का सार · श्लोक ३८–४०",
+      "dev": "निवृत्तेनैव दोषेण तपोव्रतमिहाचरेत् ।\nएतद् धातृकृतं वृत्तं सत्यमेव सतां व्रतम् ॥\nदोषैरेतैर्वियुक्तस्तु गुणैरेतैः समन्वितः ।\nएतत् समृद्धमत्यर्थं तपो भवति केवलम् ॥\nयन्मां पृच्छसि राजेन्द्र संक्षेपात् प्रब्रवीमि ते ।\nएतत् पापहरं पुण्यं जन्ममृत्युजरापहम् ॥",
+      "roman": "nivrittenaiva doshena tapovratamihaacharet |\netad dhaatrikritam vrittam satyameva sataam vratam ||\ndoshairetairviyuktastu gunairetaih samanvitah |\netat samriddhamatyartham tapo bhavati kevalam ||\nyanmaam prichchhasi raajendra samkshepaat prabraveemi te |\netat paapaharam punyam janmamrityujaraapaham ||",
+      "arth": "दोषों को हटाकर ही यहाँ तप और व्रत करे — यह विधाता का बनाया नियम है; सत्य ही सज्जनों का व्रत है। इन दोषों से छूटा हुआ और इन गुणों से युक्त तप ही बहुत समृद्ध, शुद्ध तप होता है। हे राजेन्द्र! तुमने जो पूछा, वह मैंने थोड़े में कह दिया। यह पाप हरने वाला, पवित्र, और जन्म, मृत्यु तथा बुढ़ापे को दूर करने वाला है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "कितने वेद, और कौन ब्राह्मण · श्लोक ४१–४४",
+      "dev": "धृतराष्ट्र उवाच ।\nआख्यानपञ्चमैर्वेदैर्भूयिष्ठं कथ्यते जनः ।\nतथा चान्ये चतुर्वेदास्त्रिवेदाश्च तथा परे ॥\nद्विवेदाश्चैकवेदाश्चाप्यनृचश्च तथा परे ।\nतेषां तु कतरः स स्याद् यमहं वेद वै द्विजम् ॥\nसनत्सुजात उवाच ।\nएकस्य वेदस्याज्ञानाद् वेदास्ते बहवः कृताः ।\nसत्यस्यैकस्य राजेन्द्र सत्ये कश्चिदवस्थितः ॥\nएवं वेदमविज्ञाय प्राज्ञोऽहमिति मन्यते ।\nदानमध्ययनं यज्ञो लोभादेतत् प्रवर्तते ॥",
+      "roman": "dhritaraashtra uvaacha |\naakhyaanapanchamairvedairbhooyishtham kathyate janah |\ntathaa chaanye chaturvedaastrivedaashcha tathaa pare ||\ndvivedaashchaikavedaashchaapyanrichashcha tathaa pare |\nteshaam tu katarah sa syaad yamaham veda vai dvijam ||\nsanatsujaata uvaacha |\nekasya vedasyaajnaanaad vedaaste bahavah kritaah |\nsatyasyaikasya raajendra satye kashchidavasthitah ||\nevam vedamavijnaaya praajno'hamiti manyate |\ndaanamadhyayanam yajno lobhaadetat pravartate ||",
+      "arth": "धृतराष्ट्र बोले — आख्यान जिनमें पाँचवाँ है, उन वेदों के कारण कुछ लोग बड़े कहे जाते हैं; कुछ चार वेद वाले हैं, कुछ तीन वेद वाले; कुछ दो वेद वाले, कुछ एक वेद वाले, और कुछ बिना ऋचा वाले। इनमें वह कौन है जिसे मैं सचमुच ब्राह्मण जानूँ? सनत्सुजात बोले — एक वेद को न जानने से ही वे वेद बहुत से कर दिए गए। हे राजेन्द्र! उस एक सत्य में कोई-कोई ही टिका है। इस तरह वेद को जाने बिना ही मनुष्य अपने को ज्ञानी मान बैठता है; दान, अध्ययन और यज्ञ — यह सब लोभ से चलता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "जो सत्य से नहीं हटता · श्लोक ४५–४९",
+      "dev": "सत्यात् प्रच्यवमानानां संकल्पश्च तथा भवेत् ।\nततो यज्ञः प्रतायेत सत्यस्यैवावधारणात् ॥\nमनसान्यस्य भवति वाचान्यस्याथ कर्मणा ।\nसंकल्पसिद्धः पुरुषः संकल्पानधितिष्ठति ॥\nअनैभृत्येन चैतस्य दीक्षितव्रतमाचरेत् ।\nनामैतद् धातुनिर्वृत्तं सत्यमेव सतां परम् ॥\nज्ञानं वै नाम प्रत्यक्षं परोक्षं जायते तपः ।\nविद्याद् बहु पठन्तं तु द्विजं वै बहुपाठिनम् ॥\nतस्मात् क्षत्रिय मा मंस्था जल्पितेनैव वै द्विजम् ।\nय एव सत्यान्नापैति स ज्ञेयो ब्राह्मणस्त्वया ॥",
+      "roman": "satyaat prachyavamaanaanaam samkalpashcha tathaa bhavet |\ntato yajnah prataayeta satyasyaivaavadhaaranaat ||\nmanasaanyasya bhavati vaachaanyasyaatha karmanaa |\nsamkalpasiddhah purushah samkalpaanadhitishthati ||\nanaibhrityena chaitasya deekshitavratamaacharet |\nnaamaitad dhaatunirvrittam satyameva sataam param ||\njnaanam vai naama pratyaksham paroksham jaayate tapah |\nvidyaad bahu pathantam tu dvijam vai bahupaathinam ||\ntasmaat kshatriya maa mamsthaa jalpitenaiva vai dvijam |\nya eva satyaannaapaiti sa jneyo braahmanastvayaa ||",
+      "arth": "जो सत्य से हट गए हैं, उन्हीं का संकल्प ऐसा होता है; फिर सत्य को ही प्रमाण मानकर यज्ञ फैलाया जाता है। किसी का यज्ञ मन से होता है, किसी का वाणी से, किसी का कर्म से। जिसका संकल्प सिद्ध है, वह पुरुष अपने संकल्पों का स्वामी होता है। जब तक वह स्थिर न हो, दीक्षा का व्रत निभाता रहे। «दीक्षित» नाम धातु से बना है; सज्जनों के लिए सबसे ऊँचा सत्य ही है। ज्ञान का फल सामने दिखता है; तप का फल परोक्ष होता है। बहुत पढ़ने वाले द्विज को बस बहुत पढ़ने वाला जानो। इसलिए हे क्षत्रिय! बोलने भर से किसी को ब्राह्मण मत मान लेना। जो सत्य से कभी हटता नहीं, उसी को तुम ब्राह्मण जानो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "वेद और जो जानने योग्य है · श्लोक ५०–५५",
+      "dev": "छन्दांसि नाम क्षत्रिय तान्यथर्वा\nपुरा जगौ महर्षिसङ्घ एषः ।\nछन्दोविदस्ते य उत नाधीतवेदा\nन वेदवेद्यस्य विदुर्हि तत्त्वम् ॥\nछन्दांसि नाम द्विपदां वरिष्ठ\nस्वच्छन्दयोगेन भवन्ति तत्र ।\nछन्दोविदस्तेन च तानधीत्य\nगता न वेदस्य न वेद्यमार्याः ॥\nन वेदानां वेदिता कश्चिदस्ति\nकश्चित् त्वेतान् बुध्यते वापि राजन् ।\nयो वेद वेदान् न स वेद वेद्यं\nसत्ये स्थितो यस्तु स वेद वेद्यम् ॥\nन वेदानां वेदिता कश्चिदस्ति\nवेद्येन वेदं न विदुर्न वेद्यम् ।\nयो वेद वेदं स च वेद वेद्यं\nयो वेद वेद्यं न स वेद सत्यम् ॥\nयो वेद वेदान् स च वेद वेद्यं\nन तं विदुर्वेदविदो न वेदाः ।\nतथापि वेदेन विदन्ति वेदं\nये ब्राह्मणा वेदविदो भवन्ति ॥\nधामांशभागस्य तथा हि वेदा\nयथा च शाखा हि महीरुहस्य ।\nसंवेदने चैव यथाऽऽमनन्ति\nतस्मिन् हि सत्ये परमात्मनोऽर्थे ॥",
+      "roman": "chhandaamsi naama kshatriya taanyatharvaa\npuraa jagau maharshisangha eshah |\nchhandovidaste ya uta naadheetavedaa\nna vedavedyasya vidurhi tattvam ||\nchhandaamsi naama dvipadaam varishtha\nsvachchhandayogena bhavanti tatra |\nchhandovidastena cha taanadheetya\ngataa na vedasya na vedyamaaryaah ||\nna vedaanaam veditaa kashchidasti\nkashchit tvetaan budhyate vaapi raajan |\nyo veda vedaan na sa veda vedyam\nsatye sthito yastu sa veda vedyam ||\nna vedaanaam veditaa kashchidasti\nvedyena vedam na vidurna vedyam |\nyo veda vedam sa cha veda vedyam\nyo veda vedyam na sa veda satyam ||\nyo veda vedaan sa cha veda vedyam\nna tam vidurvedavido na vedaah |\ntathaapi vedena vidanti vedam\nye braahmanaa vedavido bhavanti ||\ndhaamaamshabhaagasya tathaa hi vedaa\nyathaa cha shaakhaa hi maheeruhasya |\nsamvedane chaiva yathaa''mananti\ntasmin hi satye paramaatmano'rthe ||",
+      "arth": "हे क्षत्रिय! छन्द वे हैं जिन्हें पहले अथर्वा ने और ऋषियों के समूह ने गाया। पर जो वेद पढ़कर भी उस तत्त्व को नहीं जानते जो वेदों से जानने योग्य है, वे छन्द के जानकार नहीं। हे मनुष्यों में श्रेष्ठ! छन्द उसमें अपने-आप टिके हैं; इसी से छन्द के जानकार श्रेष्ठ जन उन्हें पढ़कर उस तक पहुँचे जो जानने योग्य है। वेदों को सचमुच जानने वाला कोई नहीं; या हे राजन्! कोई-कोई ही इन्हें समझता है। जो केवल वेदों को जानता है, वह जानने योग्य को नहीं जानता; जो सत्य में टिका है, वही उसे जानता है। वेदों को जानने वाला कोई नहीं; जानी जा सकने वाली चीज़ों से न वेद जाना जाता है, न वह जो जानने योग्य है। जो वेद को जानता है, वह जानी जा सकने वाली चीज़ों को ही जानता है; और जो उन्हीं को जानता है, वह सत्य को नहीं जानता। जो वेदों को जानता है, वह जानने योग्य को भी जानता है; पर उसे न वेद जानने वाले जानते हैं, न वेद। फिर भी जो ब्राह्मण वेद के जानकार होते हैं, वे वेद से ही वेद को जान लेते हैं। जैसे चाँद की पतली कला दिखाने के लिए पेड़ की डाल की ओर इशारा किया जाता है, वैसे ही उस सत्य — परमात्मा — को जताने के लिए वेद हैं; ऐसा माना गया है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "उसे कहाँ खोजें · श्लोक ५६–५९",
+      "dev": "अभिजानामि ब्राह्मणं व्याख्यातारं विचक्षणम् ।\nयश्छिन्नविचिकित्सः स व्याचष्टे सर्वसंशयान् ॥\nनास्य पर्येषणं गच्छेत् प्राचीनं नोत दक्षिणम् ।\nनार्वाचीनं कुतस्तिर्यङ् नादिशं तु कथञ्चन ॥\nतस्य पर्येषणं गच्छेत् प्रत्यर्थिषु कथञ्चन ।\nअविचिन्वन्निमं वेदे तपः पश्यति तं प्रभुम् ॥\nतूष्णीम्भूत उपासीत न चेष्टेन्मनसापि च ।\nउपावर्तस्व तद् ब्रह्म अन्तरात्मनि विश्रुतम् ॥",
+      "roman": "abhijaanaami braahmanam vyaakhyaataaram vichakshanam |\nyashchhinnavichikitsah sa vyaachashte sarvasamshayaan ||\nnaasya paryeshanam gachchhet praacheenam nota dakshinam |\nnaarvaacheenam kutastiryan naadisham tu kathanchana ||\ntasya paryeshanam gachchhet pratyarthishu kathanchana |\navichinvannimam vede tapah pashyati tam prabhum ||\ntooshneembhoota upaaseeta na cheshtenmanasaapi cha |\nupaavartasva tad brahma antaraatmani vishrutam ||",
+      "arth": "मैं उसी को ब्राह्मण जानता हूँ जो समझाने वाला और निपुण हो; जिसके अपने संदेह कट चुके हों, और जो सब संशयों को खोलकर समझा दे। उसकी खोज में न पूरब जाए, न दक्खिन, न इधर की किसी दिशा में; तिरछी दिशाओं में तो कहाँ — और जहाँ दिशा ही नहीं, वहाँ भी किसी तरह नहीं। उसे उन चीज़ों में तो खोजे ही नहीं जो वह नहीं है; वेद में भी न टटोलकर, तप से उस प्रभु को देखे। चुप होकर उपासना करे, मन से भी कोई हलचल न करे। उस ब्रह्म की ओर लौटो, जो अन्तरात्मा में ही प्रसिद्ध है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मुनि कौन, सब जानने वाला कौन · श्लोक ६०–६३",
+      "dev": "मौनान्न स मुनिर्भवति नारण्यवसनान्मुनिः ।\nस्वलक्षणं तु यो वेद स मुनिः श्रेष्ठ उच्यते ॥\nसर्वार्थानां व्याकरणाद् वैयाकरण उच्यते ।\nतन्मूलतो व्याकरणं व्याकरोतीति तत् तथा ॥\nप्रत्यक्षदर्शी लोकानां सर्वदर्शी भवेन्नरः ।\nसत्ये वै ब्राह्मणस्तिष्ठंस्तद् विद्वान् सर्वविद् भवेत् ॥\nधर्मादिषु स्थितोऽप्येवं क्षत्रिय ब्रह्म पश्यति ।\nवेदानां चानुपूर्व्येण एतद् बुद्ध्या ब्रवीमि ते ॥",
+      "roman": "maunaanna sa munirbhavati naaranyavasanaanmunih |\nsvalakshanam tu yo veda sa munih shreshtha uchyate ||\nsarvaarthaanaam vyaakaranaad vaiyaakarana uchyate |\ntanmoolato vyaakaranam vyaakaroteeti tat tathaa ||\npratyakshadarshee lokaanaam sarvadarshee bhavennarah |\nsatye vai braahmanastishthamstad vidvaan sarvavid bhavet ||\ndharmaadishu sthito'pyevam kshatriya brahma pashyati |\nvedaanaam chaanupoorvyena etad buddhyaa braveemi te ||",
+      "arth": "चुप रहने से कोई मुनि नहीं होता, न वन में रहने से। जो अपने स्वरूप को जानता है, वही श्रेष्ठ मुनि कहलाता है। सब अर्थों को खोलकर प्रकट करने से कोई «वैयाकरण» कहलाता है। यह खोलना मूल से ही होता है; जो ऐसे खोलता है, वही वैसा है। लोकों को सामने देख लेने वाला मनुष्य «सब देखने वाला» हो सकता है; पर जो ब्राह्मण सत्य में टिका है और उसे जानता है, वही «सब जानने वाला» होता है। हे क्षत्रिय! धर्म आदि में टिका हुआ भी इसी तरह ब्रह्म को देखता है, और वेदों को क्रम से पढ़ने वाला भी — यह मैं सोच-समझकर तुमसे कहता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, उद्योग पर्व (सनत्सुजात पर्व) — छपी पुस्तकों के अध्याय ४२–४६, कुल १९२ श्लोक",
+    "kshetra": "सब जगह",
+    "note": "पाठ छपी पुस्तकों वाला है — उद्योग पर्व के पाँच अध्याय, बयालीसवें से छियालीसवें तक, एक सौ बानवे श्लोक। एक छपे महाभारत के बीस पन्ने आँख से पढ़े गए; फिर हर पंक्ति मशीन से उसी के एक टंकित रूप, एक दूसरी छपी पुस्तक और एक और टंकित पाठ से मिलाई गई। दो जगह छपाई की भूल ठीक हुई।\n\nपुणे के समीक्षित संस्करण में यही उपदेश चार अध्यायों में है और श्लोक कम हैं; शंकराचार्य के भाष्य वाली पुस्तकों में भी चार ही अध्याय छपते हैं। आपकी पुस्तक में फ़र्क़ मिले, तो वह दूसरी परंपरा है, भूल नहीं।\n\nयह कठिन पाठ है। अर्थ अपने शब्दों में है, एक छपे हिंदी अनुवाद से समझ मिलाकर; रूपक खोले नहीं गए, और कुछ कठिन शब्द छोड़े गए हैं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

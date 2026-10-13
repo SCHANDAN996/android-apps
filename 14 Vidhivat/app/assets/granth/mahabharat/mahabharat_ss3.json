@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "id": "mahabharat_ss3",
+  "naam": "सनत्सुजातीय ३ — ब्रह्मचर्य",
+  "upnaam": [
+    "सनत्सुजातीय",
+    "सनत्सुजात पर्व",
+    "सनत्सुजात",
+    "धृतराष्ट्र और सनत्सुजात",
+    "उद्योग पर्व"
+  ],
+  "prakar": "granth",
+  "devta": "ब्रह्म — परमात्मा",
+  "rachnakar": "महाभारत, उद्योग पर्व — महर्षि वेदव्यास",
+  "bhasha": "संस्कृत",
+  "parichay": "ब्रह्म की विद्या उतावली से नहीं मिलती; वह ब्रह्मचर्य से मिलती है। आचार्य से दूसरा जन्म, ब्रह्मचर्य के चार पाद, गुरु के घर रहने का ढंग। फिर धृतराष्ट्र पूछते हैं कि ब्रह्म का रूप कैसा है — सफ़ेद, लाल, काला? उत्तर: वह किसी में नहीं दिखता, और सब उसी में टिका है।",
+  "kabPadhein": "जब मन हो। यह पूजा का पाठ नहीं है — उपदेश है; धीरे-धीरे, अर्थ के साथ पढ़ने की चीज़।",
+  "kaisePadhein": "पाँच पन्ने, पाँच अध्याय — क्रम से पढ़िए: मृत्यु और प्रमाद; मौन, तप और सत्य; ब्रह्मचर्य; दोष और व्रत; और अंत में वह अध्याय जिसकी टेक है «योगिनस्तं प्रपश्यन्ति भगवन्तं सनातनम्»। यह कठिन पाठ है; कई श्लोक पहेली जैसे हैं। अर्थ शब्दों का दिया गया है — रूपकों का खुलासा नहीं किया गया। हर खंड के शीर्षक में छपी पुस्तक वाले श्लोक-अंक हैं।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर खंड के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "उतावली से नहीं मिलता · श्लोक १–३",
+      "dev": "धृतराष्ट्र उवाच ।\nसनत्सुजात यामिमां परां त्वं\nब्राह्मीं वाचं वदसे विश्वरूपाम् ।\nपरां हि कामेन सुदुर्लभां कथां\nप्रब्रूहि मे वाक्यमिदं कुमार ॥\nसनत्सुजात उवाच ।\nनैतद् ब्रह्म त्वरमाणेन लभ्यं\nयन्मां पृच्छन्नतिहृष्यस्यतीव ।\nबुद्धौ विलीने मनसि प्रचिन्त्या\nविद्या हि सा ब्रह्मचर्येण लभ्या ॥\nधृतराष्ट्र उवाच ।\nअत्यन्तविद्यामिति यत् सनातनीं\nब्रवीषि त्वं ब्रह्मचर्येण सिद्धाम् ।\nअनारभ्यां वसतीह कार्यकाले\nकथं ब्राह्मण्यममृतत्वं लभेत ॥",
+      "roman": "dhritaraashtra uvaacha |\nsanatsujaata yaamimaam paraam tvam\nbraahmeem vaacham vadase vishvaroopaam |\nparaam hi kaamena sudurlabhaam kathaam\nprabroohi me vaakyamidam kumaara ||\nsanatsujaata uvaacha |\nnaitad brahma tvaramaanena labhyam\nyanmaam prichchhannatihrishyasyateeva |\nbuddhau vileene manasi prachintyaa\nvidyaa hi saa brahmacharyena labhyaa ||\ndhritaraashtra uvaacha |\natyantavidyaamiti yat sanaataneem\nbraveeshi tvam brahmacharyena siddhaam |\nanaarabhyaam vasateeha kaaryakaale\nkatham braahmanyamamritatvam labheta ||",
+      "arth": "धृतराष्ट्र बोले — सनत्सुजात! आप ब्रह्म की जो यह सबसे ऊँची, सब रूपों वाली वाणी कह रहे हैं — कामना वाले के लिए यह बात बहुत दुर्लभ है। हे कुमार! मेरी यही विनती है कि इसे कहिए। सनत्सुजात बोले — यह ब्रह्म उतावली करने वाले को नहीं मिलता; और तुम मुझसे पूछते हुए बहुत ही उमंग में आ जाते हो। मन जब बुद्धि में लीन हो जाए, तब जो जानी जाती है — वह विद्या ब्रह्मचर्य से मिलती है। धृतराष्ट्र बोले — जिस सनातन, परम विद्या को आप ब्रह्मचर्य से सिद्ध होने वाली कहते हैं, जो किसी कर्म से शुरू नहीं होती और काम के समय भी यहीं बनी रहती है — तो उस ब्रह्म वाले अमृत को कोई कैसे पाए?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पुरानी विद्या · श्लोक ४–५",
+      "dev": "सनत्सुजात उवाच ।\nअव्यक्तविद्यामभिधास्ये पुराणीं\nबुद्ध्या च तेषां ब्रह्मचर्येण सिद्धाम् ।\nयां प्राप्यैनं मर्त्यलोकं त्यजन्ति\nया वै विद्या गुरुवृद्धेषु नित्या ॥\nधृतराष्ट्र उवाच ।\nब्रह्मचर्येण या विद्या शक्या वेदितुमञ्जसा ।\nतत् कथं ब्रह्मचर्यं स्यादेतद् ब्रह्मन् ब्रवीहि मे ॥",
+      "roman": "sanatsujaata uvaacha |\navyaktavidyaamabhidhaasye puraaneem\nbuddhyaa cha teshaam brahmacharyena siddhaam |\nyaam praapyainam martyalokam tyajanti\nyaa vai vidyaa guruvriddheshu nityaa ||\ndhritaraashtra uvaacha |\nbrahmacharyena yaa vidyaa shakyaa veditumanjasaa |\ntat katham brahmacharyam syaadetad brahman braveehi me ||",
+      "arth": "सनत्सुजात बोले — मैं अव्यक्त की वह पुरानी विद्या कहूँगा जो बुद्धि और ब्रह्मचर्य से सिद्ध होती है; जिसे पाकर लोग इस मर्त्यलोक को छोड़ देते हैं; और जो विद्या बड़े-बूढ़े गुरुओं में सदा रहती है। धृतराष्ट्र बोले — हे ब्रह्मन्! जो विद्या ब्रह्मचर्य से सहज ही जानी जा सकती है — वह ब्रह्मचर्य कैसा होता है, यह मुझे बताइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "आचार्य से दूसरा जन्म · श्लोक ६–९",
+      "dev": "सनत्सुजात उवाच ।\nआचार्ययोनिमिह ये प्रविश्य\nभूत्वा गर्भे ब्रह्मचर्यं चरन्ति ।\nइहैव ते शास्त्रकारा भवन्ति\nप्रहाय देहं परमं यान्ति योगम् ॥\nअस्मिँल्लोके वै जयन्तीह कामान्\nब्राह्मीं स्थितिं ह्यनुतितिक्षमाणाः ।\nत आत्मानं निर्हरन्तीह देहान्मुञ्जादिषीकामिव सत्त्वसंस्थाः ॥\nशरीरमेतौ कुरुतः पिता माता च भारत ।\nआचार्यशास्ता या जातिः सा पुण्या साजरामरा ॥\nयः प्रावृणोत्यवितथेन वर्णानृतं कुर्वन्नमृतं सम्प्रयच्छन् ।\nतं मन्येत पितरं मातरं च\nतस्मै न द्रुह्येत् कृतमस्य जानन् ॥",
+      "roman": "sanatsujaata uvaacha |\naachaaryayonimiha ye pravishya\nbhootvaa garbhe brahmacharyam charanti |\nihaiva te shaastrakaaraa bhavanti\nprahaaya deham paramam yaanti yogam ||\nasminlloke vai jayanteeha kaamaan\nbraahmeem sthitim hyanutitikshamaanaah |\nta aatmaanam nirharanteeha dehaanmunjaadisheekaamiva sattvasamsthaah ||\nshareerametau kurutah pitaa maataa cha bhaarata |\naachaaryashaastaa yaa jaatih saa punyaa saajaraamaraa ||\nyah praavrinotyavitathena varnaanritam kurvannamritam samprayachchhan |\ntam manyeta pitaram maataram cha\ntasmai na druhyet kritamasya jaanan ||",
+      "arth": "सनत्सुजात बोले — जो यहाँ आचार्य की शरण में वैसे रहते हैं जैसे गर्भ में, और ब्रह्मचर्य का पालन करते हैं — वे यहीं शास्त्र के जानकार बन जाते हैं, और देह छोड़कर परम योग को पाते हैं। जो इस लोक में कामनाओं को जीत लेते हैं और ब्रह्म वाली स्थिति के लिए सब कुछ सहते हैं, वे सत्त्व में टिके हुए यहीं आत्मा को देह से ऐसे अलग निकाल लेते हैं जैसे मूँज से सींक। हे भारत! यह शरीर तो माता और पिता, ये दोनों बनाते हैं; पर आचार्य के उपदेश से जो जन्म होता है, वह पवित्र है, वह न बूढ़ा होता है न मरता है। जो सच्चे उपदेश से सबको ढककर बचाते हैं, सत्य को प्रकट करते और अमृत देते हैं — उन्हीं को पिता और माता माने; और उनका किया जानते हुए उनसे कभी द्रोह न करे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "ब्रह्मचर्य के चार पाद · श्लोक १०–१५",
+      "dev": "गुरुं शिष्यो नित्यमभिवादयीत\nस्वाध्यायमिच्छेच्छुचिरप्रमत्तः ।\nमानं न कुर्यान्नादधीत रोषमेष प्रथमो ब्रह्मचर्यस्य पादः ॥\nशिष्यवृत्तिक्रमेणैव विद्यामाप्नोति यः शुचिः ।\nब्रह्मचर्यव्रतस्यास्य प्रथमः पाद उच्यते ॥\nआचार्यस्य प्रियं कुर्यात् प्राणैरपि धनैरपि ।\nकर्मणा मनसा वाचा द्वितीयः पाद उच्यते ॥\nसमा गुरौ यथा वृत्तिर्गुरुपत्न्यां तथाऽऽचरेत् ।\nतत्पुत्रे च तथा कुर्वन् द्वितीयः पाद उच्यते ॥\nआचार्येणात्मकृतं विजानन्\nज्ञात्वा चार्थं भावितोऽस्मीत्यनेन ।\nयन्मन्यते तं प्रति हृष्टबुद्धिः\nस वै तृतीयो ब्रह्मचर्यस्य पादः ॥\nनाचार्यस्यानपाकृत्य प्रवासं\nप्राज्ञः कुर्वीत नैतदहं करोमि ।\nइतीव मन्येत न भाषयेत\nस वै चतुर्थो ब्रह्मचर्यस्य पादः ॥",
+      "roman": "gurum shishyo nityamabhivaadayeeta\nsvaadhyaayamichchhechchhuchirapramattah |\nmaanam na kuryaannaadadheeta roshamesha prathamo brahmacharyasya paadah ||\nshishyavrittikramenaiva vidyaamaapnoti yah shuchih |\nbrahmacharyavratasyaasya prathamah paada uchyate ||\naachaaryasya priyam kuryaat praanairapi dhanairapi |\nkarmanaa manasaa vaachaa dviteeyah paada uchyate ||\nsamaa gurau yathaa vrittirgurupatnyaam tathaa''charet |\ntatputre cha tathaa kurvan dviteeyah paada uchyate ||\naachaaryenaatmakritam vijaanan\njnaatvaa chaartham bhaavito'smeetyanena |\nyanmanyate tam prati hrishtabuddhih\nsa vai triteeyo brahmacharyasya paadah ||\nnaachaaryasyaanapaakritya pravaasam\npraajnah kurveeta naitadaham karomi |\niteeva manyeta na bhaashayeta\nsa vai chaturtho brahmacharyasya paadah ||",
+      "arth": "शिष्य रोज़ गुरु को प्रणाम करे; पवित्र और सावधान रहकर स्वाध्याय में लगे; अभिमान न करे, क्रोध को जगह न दे — यह ब्रह्मचर्य का पहला पाद है। जो पवित्र रहकर, शिष्य के ढंग से ही विद्या पाता है — यह भी इस व्रत का पहला पाद कहलाता है। प्राणों से भी और धन से भी — कर्म, मन और वाणी से — आचार्य का प्रिय करे; यह दूसरा पाद कहलाता है। गुरु के साथ जैसा बर्ताव हो, वैसा ही गुरु की पत्नी के साथ रखे, और उनके पुत्र के साथ भी — यह भी दूसरा पाद कहलाता है। आचार्य ने मेरे लिए क्या किया, यह जानते हुए और उससे मिला लाभ समझते हुए, प्रसन्न मन से जो यह माने कि «इन्होंने ही मुझे बनाया है» — वह ब्रह्मचर्य का तीसरा पाद है। आचार्य का बदला चुकाए बिना समझदार शिष्य कहीं दूर न जाए; और «यह मैं कर रहा हूँ» — ऐसा न मन में लाए, न मुँह से कहे; वह ब्रह्मचर्य का चौथा पाद है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "गुरु के घर रहना · श्लोक १६–१९",
+      "dev": "कालेन पादं लभते तथार्थं\nततश्च पादं गुरुयोगतश्च ।\nउत्साहयोगेन च पादमृच्छेच्छास्त्रेण पादं च ततोऽभियाति ॥\nधर्मादयो द्वादश यस्य रूपमन्यानि चाङ्गानि तथा बलं च ।\nआचार्ययोगे फलतीति चाहुर्ब्रह्मार्थयोगेन च ब्रह्मचर्यम् ॥\nएवं प्रवृत्तो यदुपालभेत वै\nधनमाचार्याय तदनुप्रयच्छेत् ।\nसतां वृत्तिं बहुगुणामेवमेति\nगुरोः पुत्रे भवति च वृत्तिरेषा ॥\nएवं वसन् सर्वतो वर्धतीह\nबहून् पुत्राँल्लभते च प्रतिष्ठाम् ।\nवर्षन्ति चास्मै प्रदिशो दिशश्च\nवसन्त्यस्मिन् ब्रह्मचर्ये जनाश्च ॥",
+      "roman": "kaalena paadam labhate tathaartham\ntatashcha paadam guruyogatashcha |\nutsaahayogena cha paadamrichchhechchhaastrena paadam cha tato'bhiyaati ||\ndharmaadayo dvaadasha yasya roopamanyaani chaangaani tathaa balam cha |\naachaaryayoge phalateeti chaahurbrahmaarthayogena cha brahmacharyam ||\nevam pravritto yadupaalabheta vai\ndhanamaachaaryaaya tadanuprayachchhet |\nsataam vrittim bahugunaamevameti\nguroh putre bhavati cha vrittireshaa ||\nevam vasan sarvato vardhateeha\nbahoon putraanllabhate cha pratishthaam |\nvarshanti chaasmai pradisho dishashcha\nvasantyasmin brahmacharye janaashcha ||",
+      "arth": "विद्या का एक पाद मनुष्य समय से पाता है, एक गुरु के संग से, एक अपने उत्साह से, और एक शास्त्र से। धर्म आदि बारह जिसका रूप हैं, और दूसरे अंग तथा बल भी — वह ब्रह्मचर्य आचार्य के संग से और वेद के अर्थ से जुड़ने पर फलता है; ऐसा कहते हैं। इस तरह रहते हुए उसे जो भी धन मिले, वह आचार्य को दे दे। इसी से वह सज्जनों का बहुत गुणों वाला बर्ताव पाता है; और गुरु के पुत्र के साथ भी यही बर्ताव रखे। इस तरह रहने वाला यहाँ हर ओर से बढ़ता है; बहुत से पुत्र और प्रतिष्ठा पाता है; दिशाएँ और उनके बीच की दिशाएँ उस पर बरसती हैं; और लोग उसके पास ब्रह्मचर्य के लिए आकर रहते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "ब्रह्मचर्य का बल · श्लोक २०–२४",
+      "dev": "एतेन ब्रह्मचर्येण देवा देवत्वमाप्नुवन् ।\nऋषयश्च महाभागा ब्रह्मलोकं मनीषिणः ॥\nगन्धर्वाणामनेनैव रूपमप्सरसामभूत् ।\nएतेन ब्रह्मचर्येण सूर्योऽप्यह्नाय जायते ॥\nआकाङ्क्ष्यार्थस्य संयोगाद् रसभेदार्थिनामिव ।\nएवं ह्येते समाज्ञाय तादृग्भावं गता इमे ॥\nय आश्रयेत् पावयेच्चापि राजन्\nसर्वं शरीरं तपसा तप्यमानः ।\nएतेन वै बाल्यमभ्येति विद्वान्\nमृत्युं तथा स जयत्यन्तकाले ॥\nअन्तवतः क्षत्रिय ते जयन्ति\nलोकान् जनाः कर्मणा निर्मलेन ।\nब्रह्मैव विद्वांस्तेन चाभ्येति सर्वं\nनान्यः पन्था अयनाय विद्यते ॥",
+      "roman": "etena brahmacharyena devaa devatvamaapnuvan |\nrishayashcha mahaabhaagaa brahmalokam maneeshinah ||\ngandharvaanaamanenaiva roopamapsarasaamabhoot |\netena brahmacharyena sooryo'pyahnaaya jaayate ||\naakaankshyaarthasya samyogaad rasabhedaarthinaamiva |\nevam hyete samaajnaaya taadrigbhaavam gataa ime ||\nya aashrayet paavayechchaapi raajan\nsarvam shareeram tapasaa tapyamaanah |\netena vai baalyamabhyeti vidvaan\nmrityum tathaa sa jayatyantakaale ||\nantavatah kshatriya te jayanti\nlokaan janaah karmanaa nirmalena |\nbrahmaiva vidvaamstena chaabhyeti sarvam\nnaanyah panthaa ayanaaya vidyate ||",
+      "arth": "इसी ब्रह्मचर्य से देवताओं ने देवत्व पाया, और बड़भागी, मनीषी ऋषियों ने ब्रह्मलोक। इसी से गन्धर्वों और अप्सराओं को रूप मिला; इसी ब्रह्मचर्य से सूर्य भी दिन करने को उगता है। जैसे चाही हुई वस्तु से जुड़ने पर चाहने वालों का काम बन जाता है — ऐसा जानकर ये सब उस-उस भाव को पहुँचे। हे राजन्! जो इसका सहारा लेता है और तप से तपता हुआ अपने सारे शरीर को पवित्र कर लेता है — वह ज्ञानी इससे बालक जैसा हो जाता है, और अन्त समय मृत्यु को जीत लेता है। हे क्षत्रिय! लोग निर्मल कर्म से जिन लोकों को जीतते हैं, उनका अन्त है। पर जो ब्रह्म को जानता है, वह उसी से सब कुछ पा लेता है; जाने का दूसरा कोई रास्ता नहीं है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "उसका रूप कैसा है · श्लोक २५–२८",
+      "dev": "धृतराष्ट्र उवाच ।\nआभाति शुक्लमिव लोहितमिवाथो\nकृष्णमथाञ्जनं काद्रवं वा ।\nसद्ब्रह्मणः पश्यति योऽत्र विद्वान्\nकथं रूपं तदमृतमक्षरं पदम् ॥\nसनत्सुजात उवाच ।\nआभाति शुक्लमिव लोहितमिवाथो\nकृष्णमायसमर्कवर्णम् ।\nन पृथिव्यां तिष्ठति नान्तरिक्षे\nनैतत् समुद्रे सलिलं बिभर्ति ॥\nन तारकासु न च विद्युदाश्रितं\nन चाभ्रेषु दृश्यते रूपमस्य ।\nन चापि वायौ न च देवतासु\nनैतच्चन्द्रे दृश्यते नोत सूर्ये ॥\nनैवर्क्षु तन्न यजुष्षु नाप्यथर्वसु\nन दृश्यते वै विमलेषु सामसु ।\nरथन्तरे बार्हद्रथे वापि राजन्\nमहाव्रते नैव दृश्येद् ध्रुवं तत् ॥",
+      "roman": "dhritaraashtra uvaacha |\naabhaati shuklamiva lohitamivaatho\nkrishnamathaanjanam kaadravam vaa |\nsadbrahmanah pashyati yo'tra vidvaan\nkatham roopam tadamritamaksharam padam ||\nsanatsujaata uvaacha |\naabhaati shuklamiva lohitamivaatho\nkrishnamaayasamarkavarnam |\nna prithivyaam tishthati naantarikshe\nnaitat samudre salilam bibharti ||\nna taarakaasu na cha vidyudaashritam\nna chaabhreshu drishyate roopamasya |\nna chaapi vaayau na cha devataasu\nnaitachchandre drishyate nota soorye ||\nnaivarkshu tanna yajushshu naapyatharvasu\nna drishyate vai vimaleshu saamasu |\nrathantare baarhadrathe vaapi raajan\nmahaavrate naiva drishyed dhruvam tat ||",
+      "arth": "धृतराष्ट्र बोले — जो ज्ञानी यहाँ ब्रह्म के उस अमृत, अविनाशी पद को देखता है — उसका रूप कैसा है? क्या वह सफ़ेद-सा दिखता है, या लाल-सा, या काला, काजल जैसा, या पीला-सा? सनत्सुजात बोले — वह सफ़ेद-सा, लाल-सा, काला, लोहे जैसा और सूर्य के रंग का दिखता है; पर वह न पृथ्वी पर टिका है, न अन्तरिक्ष में; न समुद्र का जल उसे धारण करता है। वह न तारों में है, न बिजली के सहारे; न बादलों में उसका रूप दिखता है; न वायु में, न देवताओं में; न वह चन्द्रमा में दिखता है, न सूर्य में। वह न ऋचाओं में है, न यजुओं में, न अथर्व के मंत्रों में; न निर्मल सामों में दिखता है; हे राजन्! न रथन्तर में, न बार्हद्रथ में, न महाव्रत में — वह अटल कहीं दिखता ही नहीं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "छुरे की धार से बारीक, पर्वतों से बड़ा · श्लोक २९–३१",
+      "dev": "अपारणीयं तमसः परस्तात्\nतदन्तकोऽप्येति विनाशकाले ।\nअणीयो रूपं क्षुरधारया समं\nमहच्च रूपं तद् वै पर्वतेभ्यः ॥\nसा प्रतिष्ठा तदमृतं लोकास्तद् ब्रह्म तद् यशः ।\nभूतानि जज्ञिरे तस्मात् प्रलयं यान्ति तत्र हि ॥\nअनामयं तन्महदुद्यतं यशो\nवाचो विकारं कवयो वदन्ति ।\nयस्मिन् जगत् सर्वमिदं प्रतिष्ठितं\nये तद् विदुरमृतास्ते भवन्ति ॥",
+      "roman": "apaaraneeyam tamasah parastaat\ntadantako'pyeti vinaashakaale |\naneeyo roopam kshuradhaarayaa samam\nmahachcha roopam tad vai parvatebhyah ||\nsaa pratishthaa tadamritam lokaastad brahma tad yashah |\nbhootaani jajnire tasmaat pralayam yaanti tatra hi ||\nanaamayam tanmahadudyatam yasho\nvaacho vikaaram kavayo vadanti |\nyasmin jagat sarvamidam pratishthitam\nye tad viduramritaaste bhavanti ||",
+      "arth": "उसका पार नहीं पाया जा सकता; वह अँधेरे से परे है; प्रलय के समय सबका अन्त करने वाला भी उसी में समा जाता है। उसका रूप छुरे की धार जैसा बारीक है, और वही रूप पर्वतों से भी बड़ा। वही आधार है, वही अमृत, वही लोक, वही ब्रह्म, वही यश। सब प्राणी उसी से जन्मे, और उसी में लीन होते हैं। वह रोग-शोक से रहित है, महान है, उसका यश ऊँचा उठा हुआ है; ज्ञानी कहते हैं कि बाक़ी सब वाणी का विकार भर है। जिसमें यह सारा जगत् टिका है — उसे जो जानते हैं, वे अमर हो जाते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, उद्योग पर्व (सनत्सुजात पर्व) — छपी पुस्तकों के अध्याय ४२–४६, कुल १९२ श्लोक",
+    "kshetra": "सब जगह",
+    "note": "पाठ छपी पुस्तकों वाला है — उद्योग पर्व के पाँच अध्याय, बयालीसवें से छियालीसवें तक, एक सौ बानवे श्लोक। एक छपे महाभारत के बीस पन्ने आँख से पढ़े गए; फिर हर पंक्ति मशीन से उसी के एक टंकित रूप, एक दूसरी छपी पुस्तक और एक और टंकित पाठ से मिलाई गई। दो जगह छपाई की भूल ठीक हुई।\n\nपुणे के समीक्षित संस्करण में यही उपदेश चार अध्यायों में है और श्लोक कम हैं; शंकराचार्य के भाष्य वाली पुस्तकों में भी चार ही अध्याय छपते हैं। आपकी पुस्तक में फ़र्क़ मिले, तो वह दूसरी परंपरा है, भूल नहीं।\n\nयह कठिन पाठ है। अर्थ अपने शब्दों में है, एक छपे हिंदी अनुवाद से समझ मिलाकर; रूपक खोले नहीं गए, और कुछ कठिन शब्द छोड़े गए हैं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

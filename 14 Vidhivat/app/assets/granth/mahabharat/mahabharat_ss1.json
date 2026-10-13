@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "id": "mahabharat_ss1",
+  "naam": "सनत्सुजातीय १ — मृत्यु और प्रमाद",
+  "upnaam": [
+    "सनत्सुजातीय",
+    "सनत्सुजात पर्व",
+    "सनत्सुजात",
+    "धृतराष्ट्र और सनत्सुजात",
+    "उद्योग पर्व"
+  ],
+  "prakar": "granth",
+  "devta": "ब्रह्म — परमात्मा",
+  "rachnakar": "महाभारत, उद्योग पर्व — महर्षि वेदव्यास",
+  "bhasha": "संस्कृत",
+  "parichay": "युद्ध से पहले की एक रात। धृतराष्ट्र विदुर से और सुनना चाहते हैं; विदुर सनातन ऋषि सनत्सुजात का स्मरण करते हैं, और वे आ जाते हैं। यहाँ से पाँच अध्यायों में धृतराष्ट्र पूछते हैं और सनत्सुजात उत्तर देते हैं — इसी को सनत्सुजातीय कहते हैं। इस पहले अध्याय में प्रश्न है: मृत्यु है या नहीं? उत्तर: प्रमाद ही मृत्यु है। फिर कर्म से मिलने वाले लोक, धर्म और पाप, और यह कि सच्चा ब्राह्मण किसे कहें।",
+  "kabPadhein": "जब मन हो। यह पूजा का पाठ नहीं है — उपदेश है; धीरे-धीरे, अर्थ के साथ पढ़ने की चीज़।",
+  "kaisePadhein": "पाँच पन्ने, पाँच अध्याय — क्रम से पढ़िए: मृत्यु और प्रमाद; मौन, तप और सत्य; ब्रह्मचर्य; दोष और व्रत; और अंत में वह अध्याय जिसकी टेक है «योगिनस्तं प्रपश्यन्ति भगवन्तं सनातनम्»। यह कठिन पाठ है; कई श्लोक पहेली जैसे हैं। अर्थ शब्दों का दिया गया है — रूपकों का खुलासा नहीं किया गया। हर खंड के शीर्षक में छपी पुस्तक वाले श्लोक-अंक हैं।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर खंड के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "धृतराष्ट्र का प्रश्न · श्लोक १–३",
+      "dev": "वैशम्पायन उवाच ।\nततो राजा धृतराष्ट्रो मनीषी\nसम्पूज्य वाक्यं विदुरेरितं तत् ।\nसनत्सुजातं रहिते महात्मा\nपप्रच्छ बुद्धिं परमां बुभूषन् ॥\nधृतराष्ट्र उवाच ।\nसनत्सुजात यदिदं शृणोमि\nन मृत्युरस्तीति तव प्रवादम् ।\nदेवासुरा ह्याचरन् ब्रह्मचर्यममृत्यवे तत् कतरन्नु सत्यम् ॥\nसनत्सुजात उवाच ।\nअमृत्युः कर्मणा केचिन्मृत्युर्नास्तीति चापरे ।\nशृणु मे ब्रुवतो राजन् यथैतन्मा विशङ्किथाः ॥",
+      "roman": "vaishampaayana uvaacha |\ntato raajaa dhritaraashtro maneeshee\nsampoojya vaakyam vidureritam tat |\nsanatsujaatam rahite mahaatmaa\npaprachchha buddhim paramaam bubhooshan ||\ndhritaraashtra uvaacha |\nsanatsujaata yadidam shrinomi\nna mrityurasteeti tava pravaadam |\ndevaasuraa hyaacharan brahmacharyamamrityave tat katarannu satyam ||\nsanatsujaata uvaacha |\namrityuh karmanaa kechinmrityurnaasteeti chaapare |\nshrinu me bruvato raajan yathaitanmaa vishankithaah ||",
+      "arth": "वैशम्पायन बोले — तब बुद्धिमान, बड़े मन वाले राजा धृतराष्ट्र ने विदुर की कही उस बात का आदर किया, और सबसे ऊँचा ज्ञान पाने की इच्छा से एकान्त में सनत्सुजात से पूछा। धृतराष्ट्र बोले — सनत्सुजात! मैं सुनता हूँ कि आपका कहना है: मृत्यु है ही नहीं। पर देवताओं और असुरों ने तो मृत्यु से बचने के लिए ब्रह्मचर्य का पालन किया था। इन दोनों में सच क्या है? सनत्सुजात बोले — कुछ कहते हैं कि कर्म से मृत्यु टल जाती है, और कुछ कहते हैं कि मृत्यु है ही नहीं। राजन्! बात जैसी है, मैं कहता हूँ — सुनो, और इसमें शंका मत करना।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "प्रमाद ही मृत्यु है · श्लोक ४–६",
+      "dev": "उभे सत्ये क्षत्रियैतस्य विद्धि\nमोहान्मृत्युः सम्मतोऽयं कवीनाम् ।\nप्रमादं वै मृत्युमहं ब्रवीमि\nतथाप्रमादममृतत्वं ब्रवीमि ॥\nप्रमादाद् वै असुराः पराभवन्नप्रमादाद् ब्रह्मभूताः सुराश्च ।\nनैव मृत्युर्व्याघ्र इवात्ति जन्तून्\nन ह्यस्य रूपमुपलभ्यते हि ॥\nयमं त्वेके मृत्युमतोऽन्यमाहुरात्मावसन्नममृतं ब्रह्मचर्यम् ।\nपितृलोके राज्यमनुशास्ति देवः\nशिवः शिवानामशिवोऽशिवानाम् ॥",
+      "roman": "ubhe satye kshatriyaitasya viddhi\nmohaanmrityuh sammato'yam kaveenaam |\npramaadam vai mrityumaham braveemi\ntathaapramaadamamritatvam braveemi ||\npramaadaad vai asuraah paraabhavannapramaadaad brahmabhootaah suraashcha |\nnaiva mrityurvyaaghra ivaatti jantoon\nna hyasya roopamupalabhyate hi ||\nyamam tveke mrityumato'nyamaahuraatmaavasannamamritam brahmacharyam |\npitriloke raajyamanushaasti devah\nshivah shivaanaamashivo'shivaanaam ||",
+      "arth": "हे क्षत्रिय! इस बात के दोनों पहलू सच समझो। ज्ञानी मानते हैं कि यह मृत्यु मोह के कारण ही है। मैं तो प्रमाद को — चूक जाने को — ही मृत्यु कहता हूँ, और प्रमाद न करने को अमृत। प्रमाद से ही असुर हारे, और प्रमाद न करने से देवता ब्रह्म-रूप हुए। मृत्यु बाघ की तरह प्राणियों को खा नहीं जाती; उसका तो कोई रूप ही दिखाई नहीं देता। कुछ लोग इससे अलग, यम को मृत्यु कहते हैं, और मन में दृढ़ टिके ब्रह्मचर्य को अमृत। वे देव पितृलोक में राज्य करते हैं — भलों के लिए भले, और बुरों के लिए कठोर।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "क्रोध, प्रमाद और लोभ · श्लोक ७–९",
+      "dev": "अस्यादेशान्निःसरते नराणां\nक्रोधः प्रमादो लोभरूपश्च मृत्युः ।\nअहंगतेनैव चरन् विमार्गान्\nन चात्मनो योगमुपैति कश्चित् ॥\nते मोहितास्तद्वशे वर्तमाना\nइतः प्रेतास्तत्र पुनः पतन्ति ।\nततस्तान् देवा अनुविप्लवन्ते\nअतो मृत्युर्मरणाख्यामुपैति ॥\nकर्मोदये कर्मफलानुरागास्तत्रानुयान्ति न तरन्ति मृत्युम् ।\nसदर्थयोगानवगमात् समन्तात्\nप्रवर्तते भोगयोगेन देही ॥",
+      "roman": "asyaadeshaannihsarate naraanaam\nkrodhah pramaado lobharoopashcha mrityuh |\nahamgatenaiva charan vimaargaan\nna chaatmano yogamupaiti kashchit ||\nte mohitaastadvashe vartamaanaa\nitah pretaastatra punah patanti |\ntatastaan devaa anuviplavante\nato mrityurmaranaakhyaamupaiti ||\nkarmodaye karmaphalaanuraagaastatraanuyaanti na taranti mrityum |\nsadarthayogaanavagamaat samantaat\npravartate bhogayogena dehee ||",
+      "arth": "उन्हीं की आज्ञा से मनुष्यों के लिए मृत्यु क्रोध, प्रमाद और लोभ का रूप लेकर निकलती है। अहंकार के बस होकर ग़लत राहों पर चलता हुआ कोई भी मनुष्य आत्मा से जुड़ नहीं पाता। वे मोह में पड़े, उसी के बस में रहते हुए, यहाँ से जाकर फिर वहीं गिरते हैं। तब देव भी उनके पीछे-पीछे चले जाते हैं; इसी से मृत्यु «मरण» कहलाती है। कर्म का फल उदय होने पर, फल से लगाव रखने वाले उसी के पीछे चलते हैं और मृत्यु को पार नहीं कर पाते। सच्ची वस्तु से जुड़ने की राह न जानने के कारण देहधारी भोगों के फेर में चारों ओर भटकता रहता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "विषयों का चिन्तन · श्लोक १०–१२",
+      "dev": "तद् वै महामोहनमिन्द्रियाणां\nमिथ्यार्थयोगस्य गतिर्हि नित्या ।\nमिथ्यार्थयोगाभिहतान्तरात्मा\nस्मरन्नुपास्ते विषयान् समन्तात् ॥\nअभिध्या वै प्रथमं हन्ति लोकान्\nकामक्रोधावनुगृह्याशु पश्चात् ।\nएते बालान् मृत्यवे प्रापयन्ति\nधीरास्तु धैर्येण तरन्ति मृत्युम् ॥\nसोऽभिध्यायन्नुत्पतितान् निहन्यादनादरेणाप्रतिबुध्यमानः ।\nनैनं मृत्युर्मृत्युरिवात्ति भूत्वा\nएवं विद्वान् यो विनिहन्ति कामान् ॥",
+      "roman": "tad vai mahaamohanamindriyaanaam\nmithyaarthayogasya gatirhi nityaa |\nmithyaarthayogaabhihataantaraatmaa\nsmarannupaaste vishayaan samantaat ||\nabhidhyaa vai prathamam hanti lokaan\nkaamakrodhaavanugrihyaashu pashchaat |\nete baalaan mrityave praapayanti\ndheeraastu dhairyena taranti mrityum ||\nso'bhidhyaayannutpatitaan nihanyaadanaadarenaapratibudhyamaanah |\nnainam mrityurmrityurivaatti bhootvaa\nevam vidvaan yo vinihanti kaamaan ||",
+      "arth": "इन्द्रियों को सबसे बड़े मोह में डालने वाली चीज़ यही है; झूठी वस्तुओं से जुड़ाव का सिलसिला चलता ही रहता है। झूठी वस्तुओं के जुड़ाव से जिसका अन्तःकरण मारा गया है, वह चारों ओर विषयों को ही याद करता और उन्हीं में लगा रहता है। पहले विषयों की चाह लोगों को मारती है; फिर तुरंत ही काम और क्रोध को साथ ले लेती है। ये ही नासमझों को मृत्यु तक पहुँचाते हैं; पर धीर पुरुष धैर्य से मृत्यु को पार कर जाते हैं। वह धीर पुरुष ध्यान में लगा रहे, और जो कामनाएँ उठें उन्हें — कुछ न गिनते हुए, उनकी ओर ध्यान दिए बिना — वहीं मार दे। जो ज्ञानी इस तरह कामनाओं को मार देता है, उसे मृत्यु, मृत्यु बनकर नहीं खाती।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "कामना और मृत्यु · श्लोक १३–१६",
+      "dev": "कामानुसारी पुरुषः कामाननु विनश्यति ।\nकामान् व्युदस्य धुनुते यत् किंचित् पुरुषो रजः ॥\nतमोऽप्रकाशो भूतानां नरकोऽयं प्रदृश्यते ।\nमुह्यन्त इव धावन्ति गच्छन्तः श्वभ्रवत् सुखम् ॥\nअमूढवृत्तेः पुरुषस्येह कुर्यात्\nकिं वै मृत्युस्तार्ण इवास्य व्याघ्रः ।\nअमन्यमानः क्षत्रिय किंचिदन्यन्नाधीयीत निर्णुदन्निवास्य चायुः ॥\nस क्रोधलोभौ मोहवानन्तरात्मा\nस वै मृत्युस्त्वच्छरीरे य एषः ।\nएवं मृत्युं जायमानं विदित्वा\nज्ञाने तिष्ठन् न बिभेतीह मृत्योः ।\nविनश्यते विषये तस्य मृत्युर्मृत्योर्यथा विषयं प्राप्य मर्त्यः ॥",
+      "roman": "kaamaanusaaree purushah kaamaananu vinashyati |\nkaamaan vyudasya dhunute yat kimchit purusho rajah ||\ntamo'prakaasho bhootaanaam narako'yam pradrishyate |\nmuhyanta iva dhaavanti gachchhantah shvabhravat sukham ||\namoodhavritteh purushasyeha kuryaat\nkim vai mrityustaarna ivaasya vyaaghrah |\namanyamaanah kshatriya kimchidanyannaadheeyeeta nirnudannivaasya chaayuh ||\nsa krodhalobhau mohavaanantaraatmaa\nsa vai mrityustvachchhareere ya eshah |\nevam mrityum jaayamaanam viditvaa\njnaane tishthan na bibheteeha mrityoh |\nvinashyate vishaye tasya mrityurmrityoryathaa vishayam praapya martyah ||",
+      "arth": "कामनाओं के पीछे चलने वाला मनुष्य कामनाओं के साथ ही नष्ट होता है; और कामनाओं को छोड़कर मनुष्य अपना सारा मैल झाड़ देता है। यह कामना प्राणियों के लिए वह अँधेरा है जिसमें कुछ सूझता नहीं; यही नरक जैसा दिखता है। लोग नशे में हों जैसे, उसी की ओर दौड़ते हैं — सुख समझकर गड्ढे की ओर। जिसका मन मोह में नहीं पड़ा, उसका मृत्यु यहाँ क्या बिगाड़ लेगी? उसके लिए वह घास-फूस का बना बाघ है। इसलिए हे क्षत्रिय! दूसरी किसी चीज़ को कुछ न गिने, और उसका चिन्तन न करे। तुम्हारे शरीर के भीतर जो यह अन्तरात्मा है, मोह में पड़कर वही क्रोध और लोभ बनता है — वही मृत्यु है। मृत्यु इस तरह पैदा होती है, यह जानकर जो ज्ञान में टिक जाता है, वह यहाँ मृत्यु से नहीं डरता। उसकी पहुँच में आकर मृत्यु वैसे ही मिट जाती है जैसे मृत्यु की पहुँच में आकर मनुष्य।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "कर्म से मिलने वाले लोक · श्लोक १७–१९",
+      "dev": "धृतराष्ट्र उवाच ।\nयानेवाहुरिज्यया साधुलोकान्\nद्विजातीनां पुण्यतमान् सनातनान् ।\nतेषां परार्थं कथयन्तीह वेदा\nएतद् विद्वान् नोपैति कथं नु कर्म ॥\nसनत्सुजात उवाच ।\nएवं ह्यविद्वानुपयाति तत्र\nतत्रार्थजातं च वदन्ति वेदाः ।\nअनीह आयाति परं परात्मा\nप्रयाति मार्गेण निहत्य मार्गान् ॥\nधृतराष्ट्र उवाच ।\nकोऽसौ नियुङ्क्ते तमजं पुराणं\nस चेदिदं सर्वमनुक्रमेण ।\nकिं वास्य कार्यमथवा सुखं च\nतन्मे विद्वन् ब्रूहि सर्वं यथावत् ॥",
+      "roman": "dhritaraashtra uvaacha |\nyaanevaahurijyayaa saadhulokaan\ndvijaateenaam punyatamaan sanaatanaan |\nteshaam paraartham kathayanteeha vedaa\netad vidvaan nopaiti katham nu karma ||\nsanatsujaata uvaacha |\nevam hyavidvaanupayaati tatra\ntatraarthajaatam cha vadanti vedaah |\naneeha aayaati param paraatmaa\nprayaati maargena nihatya maargaan ||\ndhritaraashtra uvaacha |\nko'sau niyunkte tamajam puraanam\nsa chedidam sarvamanukramena |\nkim vaasya kaaryamathavaa sukham cha\ntanme vidvan broohi sarvam yathaavat ||",
+      "arth": "धृतराष्ट्र बोले — यज्ञ से द्विजों को जो उत्तम, सबसे पवित्र, सनातन लोक मिलते बताए गए हैं, वेद यहाँ उन्हीं को परम प्रयोजन कहते हैं। यह जानने वाला कर्म की ओर क्यों न जाए? सनत्सुजात बोले — उन लोकों में इस तरह वही जाता है जो जानता नहीं; और वेद वहाँ के बहुत से फल भी बताते हैं। पर जो कुछ नहीं चाहता, वह स्वयं परमात्मा होकर परम को पाता है; वह एक ही राह से जाता है, और बाक़ी सब राहें पीछे छोड़ देता है। धृतराष्ट्र बोले — अगर वही अजन्मा, पुरातन पुरुष एक-एक करके यह सब बनता है, तो उसे इसमें लगाता कौन है? इसमें उसका क्या काम है, या क्या सुख? हे विद्वन्! यह सब मुझे ठीक-ठीक बताइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "एक ही से यह सब · श्लोक २०–२१",
+      "dev": "सनत्सुजात उवाच ।\nदोषो महानत्र विभेदयोगे\nह्यनादियोगेन भवन्ति नित्याः ।\nतथास्य नाधिक्यमपैति किंचिदनादियोगेन भवन्ति पुंसः ॥\nय एतद् वा भगवान् स नित्यो\nविकारयोगेन करोति विश्वम् ।\nतथा च तच्छक्तिरिति स्म मन्यते\nतथार्थयोगे च भवन्ति वेदाः ॥",
+      "roman": "sanatsujaata uvaacha |\ndosho mahaanatra vibhedayoge\nhyanaadiyogena bhavanti nityaah |\ntathaasya naadhikyamapaiti kimchidanaadiyogena bhavanti pumsah ||\nya etad vaa bhagavaan sa nityo\nvikaarayogena karoti vishvam |\ntathaa cha tachchhaktiriti sma manyate\ntathaarthayoge cha bhavanti vedaah ||",
+      "arth": "सनत्सुजात बोले — यहाँ दोनों को अलग-अलग मान लेने में बड़ा दोष है। जिसका कोई आरम्भ नहीं, उसी के संयोग से ये जीव सदा होते रहते हैं; और इससे उस परमात्मा की बड़ाई कुछ भी घटती नहीं। वे जो नित्य भगवान हैं, वही बदलाव के संयोग से इस विश्व को रचते हैं; और यह उन्हीं की शक्ति मानी गई है। इस बात में वेद भी प्रमाण हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "धर्म और पाप · श्लोक २२–२६",
+      "dev": "धृतराष्ट्र उवाच ।\nयेऽस्मिन् धर्मान् नाचरन्तीह केचित्\nतथा धर्मान् केचिदिहाचरन्ति ।\nधर्मः पापेन प्रतिहन्यते स्विदुताहो धर्मः प्रतिहन्ति पापम् ॥\nसनत्सुजात उवाच ।\nउभयमेव तत्रोपयुज्यते फलं धर्मस्यैवेतरस्य च ॥\nतस्मिन् स्थितो वाप्युभयं हि नित्यं\nज्ञानेन विद्वान् प्रतिहन्ति सिद्धम् ।\nतथान्यथा पुण्यमुपैति देही\nतथागतं पापमुपैति सिद्धम् ॥\nगत्वोभयं कर्मणा युज्यतेऽस्थिरं\nशुभस्य पापस्य स चापि कर्मणा ।\nधर्मेण पापं प्रणुदतीह विद्वान्\nधर्मो बलीयानिति तस्य सिद्धिः ॥\nधृतराष्ट्र उवाच ।\nयानिहाहुः स्वस्य धर्मस्य लोकान्\nद्विजातीनां पुण्यकृतां सनातनान् ।\nतेषां क्रमान् कथय ततोऽपि चान्यान्\nनैतद् विद्वन् वेत्तुमिच्छामि कर्म ॥",
+      "roman": "dhritaraashtra uvaacha |\nye'smin dharmaan naacharanteeha kechit\ntathaa dharmaan kechidihaacharanti |\ndharmah paapena pratihanyate svidutaaho dharmah pratihanti paapam ||\nsanatsujaata uvaacha |\nubhayameva tatropayujyate phalam dharmasyaivetarasya cha ||\ntasmin sthito vaapyubhayam hi nityam\njnaanena vidvaan pratihanti siddham |\ntathaanyathaa punyamupaiti dehee\ntathaagatam paapamupaiti siddham ||\ngatvobhayam karmanaa yujyate'sthiram\nshubhasya paapasya sa chaapi karmanaa |\ndharmena paapam pranudateeha vidvaan\ndharmo baleeyaaniti tasya siddhih ||\ndhritaraashtra uvaacha |\nyaanihaahuh svasya dharmasya lokaan\ndvijaateenaam punyakritaam sanaatanaan |\nteshaam kramaan kathaya tato'pi chaanyaan\nnaitad vidvan vettumichchhaami karma ||",
+      "arth": "धृतराष्ट्र बोले — यहाँ कुछ लोग धर्म का आचरण नहीं करते, और कुछ करते हैं। तो धर्म पाप से दब जाता है, या धर्म पाप को दबा देता है? सनत्सुजात बोले — वहाँ दोनों का ही फल भोगना पड़ता है — धर्म का भी, और दूसरे का भी। पर जो ज्ञानी उस परमात्मा में टिका है, वह ज्ञान से दोनों को मिटा देता है — यह पक्की बात है। ऐसा न हो, तो देहधारी पुण्य भी पाता है और वैसे ही आया हुआ पाप भी। दोनों के न टिकने वाले फल भोगकर वह फिर कर्म से बँध जाता है। पर जानकार मनुष्य यहीं धर्म से पाप को हटा देता है; धर्म ही अधिक बलवान है — इसी से उसकी सिद्धि है। धृतराष्ट्र बोले — पुण्य करने वाले द्विजों को अपने-अपने धर्म से जो सनातन लोक मिलते बताए गए हैं, उनका क्रम बताइए, और उनसे अलग जो दूसरे हैं, वे भी। हे विद्वन्! कर्म की बात अब मैं नहीं जानना चाहता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "होड़ किस बात की · श्लोक २७–३०",
+      "dev": "सनत्सुजात उवाच ।\nयेषां व्रतेऽथ विस्पर्धा बले बलवतामिव ।\nते ब्राह्मणा इतः प्रेत्य ब्रह्मलोकप्रकाशकाः ॥\nयेषां धर्मे च विस्पर्धा तेषां तज्ज्ञानसाधनम् ।\nते ब्राह्मणा इतो मुक्ताः स्वर्गं यान्ति त्रिविष्टपम् ॥\nतस्य सम्यक् समाचारमाहुर्वेदविदो जनाः ।\nनैनं मन्येत भूयिष्ठं बाह्यमाभ्यन्तरं जनम् ॥\nयत्र मन्येत भूयिष्ठं प्रावृषीव तृणोपलम् ।\nअन्नं पानं ब्राह्मणस्य तज्जीवेन्नानुसंज्वरेत् ॥",
+      "roman": "sanatsujaata uvaacha |\nyeshaam vrate'tha vispardhaa bale balavataamiva |\nte braahmanaa itah pretya brahmalokaprakaashakaah ||\nyeshaam dharme cha vispardhaa teshaam tajjnaanasaadhanam |\nte braahmanaa ito muktaah svargam yaanti trivishtapam ||\ntasya samyak samaachaaramaahurvedavido janaah |\nnainam manyeta bhooyishtham baahyamaabhyantaram janam ||\nyatra manyeta bhooyishtham praavrisheeva trinopalam |\nannam paanam braahmanasya tajjeevennaanusamjvaret ||",
+      "arth": "सनत्सुजात बोले — जैसे बलवानों में बल की होड़ होती है, वैसे जिनकी होड़ व्रत में है, वे ब्राह्मण यहाँ से जाकर ब्रह्मलोक में प्रकाशित होते हैं। जिनकी होड़ धर्म में है, उनके लिए वह ज्ञान का साधन है; वे ब्राह्मण यहाँ से छूटकर स्वर्ग को जाते हैं। वेद जानने वाले ऐसे ब्राह्मण के ठीक आचरण की बड़ाई करते हैं। जो बाहर की ओर लगा है, उसे बड़ा न माने; जो भीतर की ओर मुड़ा है, उसे माने। जहाँ ब्राह्मण के लिए खाने-पीने की चीज़ें वैसे ही बहुत हों जैसे बरसात में घास, वहीं रहकर निर्वाह करे; अपने को कष्ट में न डाले।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अपनी बड़ाई नहीं · श्लोक ३१–३४",
+      "dev": "यत्राकथयमानस्य प्रयच्छत्यशिवं भयम् ।\nअतिरिक्तमिवाकुर्वन् स श्रेयान् नेतरो जनः ॥\nयो वा कथयमानस्य ह्यात्मानं नानुसंज्वरेत् ।\nब्रह्मस्वं नोपभुञ्जीत तदन्नं सम्मतं सताम् ॥\nयथा स्वं वान्तमश्नाति श्वा वै नित्यमभूतये ।\nएवं ते वान्तमश्नन्ति स्ववीर्यस्योपसेवनात् ॥\nनित्यमज्ञातचर्या मे इति मन्येत ब्राह्मणः ।\nज्ञातीनां तु वसन् मध्ये तं विदुर्ब्राह्मणं बुधाः ॥",
+      "roman": "yatraakathayamaanasya prayachchhatyashivam bhayam |\natiriktamivaakurvan sa shreyaan netaro janah ||\nyo vaa kathayamaanasya hyaatmaanam naanusamjvaret |\nbrahmasvam nopabhunjeeta tadannam sammatam sataam ||\nyathaa svam vaantamashnaati shvaa vai nityamabhootaye |\nevam te vaantamashnanti svaveeryasyopasevanaat ||\nnityamajnaatacharyaa me iti manyeta braahmanah |\njnaateenaam tu vasan madhye tam vidurbraahmanam budhaah ||",
+      "arth": "जहाँ अपनी बड़ाई न बताने पर अमंगल और भय मिलता हो, वहाँ भी जो अपने को बढ़ाकर नहीं दिखाता, वही श्रेष्ठ है; दूसरा नहीं। जो किसी को अपनी बड़ाई करते देखकर जलता नहीं, और ब्राह्मण का धन नहीं भोगता — उसका अन्न लेना सज्जनों को मान्य है। जैसे कुत्ता अपनी ही उगली हुई चीज़ खा लेता है, वैसे ही वे उगला हुआ खाते हैं जो अपना प्रभाव दिखाकर जीविका चलाते हैं; और इससे सदा उनका अहित ही होता है। जो कुटुम्बियों के बीच रहते हुए भी यही चाहे कि «मेरी साधना किसी को कभी पता न चले» — उसी को ज्ञानी ब्राह्मण मानते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "आत्मा का चोर · श्लोक ३५–३७",
+      "dev": "को ह्यनन्तरमात्मानं ब्राह्मणो हन्तुमर्हति ।\nनिर्लिङ्गमचलं शुद्धं सर्वद्वैतविवर्जितम् ॥\nतस्माद्धि क्षत्रियस्यापि ब्रह्मावसति पश्यति ॥\nयोऽन्यथा सन्तमात्मानमन्यथा प्रतिपद्यते ।\nकिं तेन न कृतं पापं चौरेणात्मापहारिणा ॥",
+      "roman": "ko hyanantaramaatmaanam braahmano hantumarhati |\nnirlingamachalam shuddham sarvadvaitavivarjitam ||\ntasmaaddhi kshatriyasyaapi brahmaavasati pashyati ||\nyo'nyathaa santamaatmaanamanyathaa pratipadyate |\nkim tena na kritam paapam chaurenaatmaapahaarinaa ||",
+      "arth": "जो आत्मा भेद से रहित है, बिना किसी चिह्न की, अचल, शुद्ध और हर तरह के द्वैत से परे है — कौन ब्राह्मण उसे गिराना चाहेगा? इसलिए ऐसे जीने वाला क्षत्रिय भी ब्रह्म को देखता है और उसी में बसता है। आत्मा जैसी है, उसे जो उससे उलटा समझता है — आत्मा को चुराने वाले उस चोर ने कौन-सा पाप नहीं किया?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "ब्रह्म को जानने वाला · श्लोक ३८–४०",
+      "dev": "अश्रान्तः स्यादनादाता सम्मतो निरुपद्रवः ।\nशिष्टो न शिष्टवत् स स्याद् ब्राह्मणो ब्रह्मवित् कविः ॥\nअनाढ्या मानुषे वित्ते आढ्या दैवे तथा क्रतौ ।\nते दुर्धर्षा दुष्प्रकम्प्यास्तान् विद्याद् ब्रह्मणस्तनुम् ॥\nसर्वान् स्विष्टकृतो देवान् विद्याद् य इह कश्चन ।\nन समानो ब्राह्मणस्य तस्मिन् प्रयतते स्वयम् ॥",
+      "roman": "ashraantah syaadanaadaataa sammato nirupadravah |\nshishto na shishtavat sa syaad braahmano brahmavit kavih ||\nanaadhyaa maanushe vitte aadhyaa daive tathaa kratau |\nte durdharshaa dushprakampyaastaan vidyaad brahmanastanum ||\nsarvaan svishtakrito devaan vidyaad ya iha kashchana |\nna samaano braahmanasya tasmin prayatate svayam ||",
+      "arth": "जो थकता नहीं, किसी से कुछ लेता नहीं, सम्मानित है और किसी को सताता नहीं; जो शिष्ट होकर भी शिष्ट होने का दिखावा नहीं करता — वही ब्राह्मण ब्रह्म को जानने वाला ज्ञानी है। जो मनुष्यों वाले धन में धनी नहीं, पर दैवी धन और यज्ञ में धनी हैं — उन्हें दबाया नहीं जा सकता, डिगाया नहीं जा सकता; उन्हें ब्रह्म का ही शरीर जानो। यहाँ जो कोई मनचाहा देने वाले सब देवताओं को जान ले, वह भी ब्रह्म को जानने वाले ब्राह्मण के बराबर नहीं; क्योंकि वह तो उसी फल के लिए जतन कर रहा है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मान, मौन और छह द्वार · श्लोक ४१–४६",
+      "dev": "यमप्रयतमानं तु मानयन्ति स मानितः ।\nन मान्यमानो मन्येत न मान्यमभिसंज्वरेत् ॥\nलोकः स्वभाववृत्तिर्हि निमेषोन्मेषवत् सदा ।\nविद्वांसो मानयन्तीह इति मन्येत मानितः ॥\nअधर्मनिपुणा मूढा लोके मायाविशारदाः ।\nन मान्यं मानयिष्यन्ति मान्यानामवमानिनः ॥\nन वै मानं च मौनं च सहितौ वसतः सदा ।\nअयं हि लोको मानस्य असौ मौनस्य तद् विदुः ॥\nश्रीः सुखस्येह संवासः सा चापि परिपन्थिनी ।\nब्राह्मी सुदुर्लभा श्रीर्हि प्रज्ञाहीनेन क्षत्रिय ॥\nद्वाराणि तस्येह वदन्ति सन्तो\nबहुप्रकाराणि दुराधराणि ।\nसत्यार्जवे ह्रीर्दमशौचविद्या\nयथा न मोहप्रतिबोधनानि ॥",
+      "roman": "yamaprayatamaanam tu maanayanti sa maanitah |\nna maanyamaano manyeta na maanyamabhisamjvaret ||\nlokah svabhaavavrittirhi nimeshonmeshavat sadaa |\nvidvaamso maanayanteeha iti manyeta maanitah ||\nadharmanipunaa moodhaa loke maayaavishaaradaah |\nna maanyam maanayishyanti maanyaanaamavamaaninah ||\nna vai maanam cha maunam cha sahitau vasatah sadaa |\nayam hi loko maanasya asau maunasya tad viduh ||\nshreeh sukhasyeha samvaasah saa chaapi paripanthinee |\nbraahmee sudurlabhaa shreerhi prajnaaheenena kshatriya ||\ndvaaraani tasyeha vadanti santo\nbahuprakaaraani duraadharaani |\nsatyaarjave hreerdamashauchavidyaa\nyathaa na mohapratibodhanaani ||",
+      "arth": "जिसे बिना जतन किए ही लोग मान दें, वही सम्मानित है। मान पाकर घमंड न करे, और मान पाने वाले को देखकर जले नहीं। मान पाने वाला यह समझे कि लोग अपने स्वभाव से ही चलते हैं — जैसे पलकें अपने-आप झपकती और खुलती हैं; ज्ञानी लोग यहाँ मान देते ही हैं। और जो मूढ़ हैं, अधर्म में निपुण और छल में चतुर, माननीयों का अपमान करने वाले — वे मान के योग्य को भी मान नहीं देंगे। मान और मौन कभी साथ नहीं रहते; यह लोक मान का है, और वह लोक मौन का — ऐसा जानकार जानते हैं। हे क्षत्रिय! यहाँ लक्ष्मी सुख का घर है, पर वह भी राह रोकने वाली है; और ब्रह्म वाली लक्ष्मी उसे मिलनी बहुत कठिन है जिसमें प्रज्ञा नहीं। संत यहाँ उसके कई तरह के द्वार बताते हैं, जिन्हें साधना कठिन है — सत्य, सरलता, लज्जा, संयम, पवित्रता और विद्या; ये मोह को जगाने वाले नहीं हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, उद्योग पर्व (सनत्सुजात पर्व) — छपी पुस्तकों के अध्याय ४२–४६, कुल १९२ श्लोक",
+    "kshetra": "सब जगह",
+    "note": "पाठ छपी पुस्तकों वाला है — उद्योग पर्व के पाँच अध्याय, बयालीसवें से छियालीसवें तक, एक सौ बानवे श्लोक। एक छपे महाभारत के बीस पन्ने आँख से पढ़े गए; फिर हर पंक्ति मशीन से उसी के एक टंकित रूप, एक दूसरी छपी पुस्तक और एक और टंकित पाठ से मिलाई गई। दो जगह छपाई की भूल ठीक हुई।\n\nपुणे के समीक्षित संस्करण में यही उपदेश चार अध्यायों में है और श्लोक कम हैं; शंकराचार्य के भाष्य वाली पुस्तकों में भी चार ही अध्याय छपते हैं। आपकी पुस्तक में फ़र्क़ मिले, तो वह दूसरी परंपरा है, भूल नहीं।\n\nयह कठिन पाठ है। अर्थ अपने शब्दों में है, एक छपे हिंदी अनुवाद से समझ मिलाकर; रूपक खोले नहीं गए, और कुछ कठिन शब्द छोड़े गए हैं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

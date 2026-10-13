@@ -18,6 +18,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.environ.get('VIDHIVAT_REPO') or os.path.abspath(os.path.join(HERE, '..', '..', '..', '..'))
 sys.path.insert(0, os.path.join(REPO, 'tools'))
 from lipi import dev_ank, khula  # noqa: E402
+sys.path.insert(0, HERE)
+import granth_parichay  # noqa: E402
 
 VDIR = os.path.join(HERE, 'vanu')
 DST = os.path.join(REPO, 'tools', 'granth_paath', 'mahabharat')
@@ -250,12 +252,6 @@ def likho():
     return len(KHAND)
 
 
-# ग्रंथ का परिचय तीन scripts लिखते हैं (yaksha_paath, stavaraj_paath, यह) — तीनों में यही शब्द रहें।
-GRANTH_PARICHAY = ('अठारह पर्वों का सार — किस पर्व में कौन सी कथा है, और वह कहाँ तक पहुँचती है; और तीन अंश '
-                   'पूरे पाठ और अर्थ के साथ: वन पर्व का यक्ष प्रश्न, शांति पर्व का भीष्म स्तवराज, और अनुस्मृति। यह '
-                   'पूरा ग्रंथ नहीं है: महाभारत बहुत बड़ा है। गीता और विष्णु सहस्रनाम, जो इसी के हिस्से हैं, '
-                   'ग्रंथालय में पूरे पाठ के साथ अलग से हैं।')
-
 NOTE = ('पाठ पंचरत्न गीता की पुस्तकों वाला है — एक सौ दो श्लोक। दो अलग प्रकाशकों की छपी पुस्तकें आँख से पढ़ी '
         'गईं और मशीन से पंक्ति-दर-पंक्ति मिलाई गईं; जहाँ अक्षर अलग निकला, पन्ने दोबारा देखे गए। पाठ में कोई '
         'सुधार नहीं किया गया।\n\n'
@@ -269,7 +265,7 @@ NOTE = ('पाठ पंचरत्न गीता की पुस्तक�
 def kram(n_khand):
     p = os.path.join(DST, 'kram.json')
     k = json.loads(io.open(p, encoding='utf-8').read())
-    k['parichay'] = GRANTH_PARICHAY
+    k['parichay'] = granth_parichay.parichay(k)   # वाक्य granth_parichay.py में
     k['strot']['anusmriti'] = {
         'paddhati': 'पंचरत्न गीता की पुस्तकों का पाठ, श्लोक १–१०२ · महाभारत, शांति पर्व — दक्षिण के पाठ में',
         'kshetra': 'सब जगह',

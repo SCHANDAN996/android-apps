@@ -1,6 +1,6 @@
 # 31 — दूसरी जाँच: किसी और AI से, सख़्ती से
 
-> **यह क्या है:** 5–11 अक्टूबर 2026 के काम (D-112 से D-122) को ChatGPT जैसे किसी दूसरे AI से
+> **यह क्या है:** 5–12 अक्टूबर 2026 के काम (D-112 से D-123) को ChatGPT जैसे किसी दूसरे AI से
 > जँचवाने का तैयार सामान — कौन-सी फ़ाइल देनी है और क्या पूछना है।
 > **क्यों:** यह सारा काम एक ही AI ने किया और उसी ने जाँचा। संस्कृत के छपे पन्ने उसी ने पढ़े,
 > अर्थ उसी ने लिखे। दूसरी आँख वही ग़लती पकड़ सकती है जो पहली को दिखी ही नहीं।
@@ -11,8 +11,8 @@
    करता है, और याद से "सुधार" देता है। इसलिए नीचे के prompt में उससे **सबूत** माँगा गया है।
    वह जो बताए, उसे ऐप में तभी बदला जाएगा जब छपे पन्ने से मिल जाए।
 2. **जो वह नहीं कर सकता:** ऐप चलाना, जाँचें चलाना, फ़ोन पर देखना। वे यहीं हो चुकी हैं
-   (इंजन 589, ऐप 1323 पास) — पर फ़ोन पर देखना आपका काम है और अब भी बाक़ी है।
-3. **एक बार में एक गठरी।** सब कुछ एक साथ देने पर वह ऊपर-ऊपर से पढ़ता है। नीचे सात गठरियाँ
+   (इंजन 589, ऐप 1333 पास) — पर फ़ोन पर देखना आपका काम है और अब भी बाक़ी है।
+3. **एक बार में एक गठरी।** सब कुछ एक साथ देने पर वह ऊपर-ऊपर से पढ़ता है। नीचे आठ गठरियाँ
    हैं; हर एक अलग बातचीत में दीजिए।
 
 ## हर गठरी के साथ यह prompt (पहले यही चिपकाइए)
@@ -185,6 +185,30 @@ D. Verse 68 (अहं भगवतस्तस्य मम वासः सन
    "श्रीभगवानुवाच" here)? The Hindi takes it as the devotee's.
 E. Verses 80 and 98 have श्वपाक / श्वपच; the Hindi paraphrases instead of
    translating the word. Is the paraphrase faithful?
+```
+
+## गठरी ८ — सनत्सुजातीय (D-123) · अर्थ का जोखिम सबसे ज़्यादा
+
+**फ़ाइलें:** `tools/granth_paath/mahabharat/paath/ss1.txt` … `ss5.txt`
+(हर खंड: `# शीर्षक`, फिर श्लोक की पंक्तियाँ, फिर `= अर्थ`) — पाँच अलग बातचीत में दीजिए, एक-एक।
+
+```
+This is one chapter of the Sanatsujatiya (Mahabharata, Udyoga Parva,
+chapters 42-46 of the VULGATE as printed by Gita Press; NOT the critical
+edition, NOT the four-chapter text commented on by Shankara - both read
+differently). The Hindi meanings were written by an AI, deliberately
+literal: metaphors are NOT explained (river "of twelve groups", the
+horses, the golden-leaved ashvattha, the swan are left as images).
+A. Sanskrit: typos, wrong sandhi, missing half-verses. Compare only with a
+   vulgate edition (Gita Press / Chitrashala with Nilakantha). Cite page.
+   Two readings were corrected: 43.15 नृशंसानि, 44.2 …हृष्यस्यतीव.
+B. Meanings: where does the Hindi say something the Sanskrit does not say,
+   or leave something out, or get the syntax wrong? Look hardest at:
+   42.4, 42.8, 42.15, 42.20, 42.29-30, 42.36, 43.10, 43.27, 43.34,
+   43.45-47, 43.51 (second half - two negations), 43.53, 43.55, 43.58,
+   44.22, 45.3, 45.12-14, 45.17, 46.3, 46.15, 46.19, 46.21, 46.24.
+C. Do NOT ask for the metaphors to be explained - only say where the
+   literal rendering itself is wrong. Quote Nilakantha's gloss if you use it.
 ```
 
 ## जवाब आए तो
