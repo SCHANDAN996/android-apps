@@ -74,7 +74,8 @@ ANK = '०१२३४५६७८९'
 DEV = re.compile('[ऀ-ॿ]')
 AKSHAR = 'ऄ-हक़-ॡॐ'
 ANT = re.compile(r'\s*[।|॥]+\s*([०-९]+(?:\s*[-–]+\s*[०-९]+)?)?[\s।|॥\.]*$')
-VAKTA = re.compile(r'^(\S+(?:\s\S+)?)\s*उवाच\s*।?$')
+# «धृतराष्ट्र उवाच» — और संधि से जुड़े «केशिन्युवाच», «सुधन्वोवाच» भी
+VAKTA = re.compile(r'^(\S+(?:\s\S+)?\s*उवाच|\S+(?:युवाच|ोवाच))\s*।?$')
 SWAR = re.compile('ai|au|[aāiīuūṛṝḷeo]')
 
 
@@ -692,23 +693,29 @@ def dikhao(adhyay, naya=False):
 def hath_lagao(adhyay, naya=False):
     """मसौदा + `vvn/hath_<अध्याय>.py` (SIR = शीर्ष की टिप्पणियाँ; HATH = {(श्लोक, पंक्ति): 'पाठ' | ('पाठ', 'टिप्पणी')};
     पाठ में पंक्ति-अंत (\\n) हो तो वहाँ एक से ज़्यादा पंक्तियाँ — OCR की छोड़ी हुई पंक्ति इसी तरह जुड़ती है)
-    → `vvn/vvn_<अध्याय>.txt`। जिस पंक्ति पर फ़ैसला नहीं, उसकी «#?» टिप्पणी फ़ाइल में रह जाती है।"""
+    → `vvn/vvn_<अध्याय>.txt`। जिस पंक्ति पर फ़ैसला नहीं, उसकी «#?» टिप्पणी फ़ाइल में रह जाती है।
+    वक्ता का नाम OCR में बिगड़ा हो तो hath फ़ाइल में VAKTA = {'जैसा पढ़ा गया': 'जैसा छपा है'}।"""
     sys.path.insert(0, VDIR)
     H = importlib.import_module('hath_%d' % adhyay)
-    out, lage = [], set()
+    vakta = getattr(H, 'VAKTA', {})
+    out, lage, vakta_lage = [], set(), set()
     for x in _masauda_rakha(adhyay, naya):
         if x[0] == '@':
+            if x[1] in vakta:
+                vakta_lage.add(x[1])
+                x = ('@', vakta[x[1]])
             out.append(x)
         elif (x[1], x[2]) in H.HATH:
             f = H.HATH[(x[1], x[2])]
             text, tip = (f, None) if isinstance(f, str) else f
             # कई पंक्तियाँ = OCR में छूटी पंक्ति यहीं जोड़ी गई
             for j, pankti in enumerate(text.split('\n')):
-                out.append(('s', x[1], x[2], pankti, [tip] if tip and not j else []))
+                out.append(('s', x[1], x[2], pankti, [tip] if tip else []))
             lage.add((x[1], x[2]))
         else:
             out.append(('s', x[1], x[2], x[3], [t for t in x[4] if t.startswith('#?') or t.startswith('#  ')]))
     assert lage == set(H.HATH), 'ये फ़ैसले किसी पंक्ति पर नहीं लगे: %s' % sorted(set(H.HATH) - lage)
+    assert vakta_lage == set(vakta), 'ये वक्ता-नाम कहीं नहीं मिले: %s' % sorted(set(vakta) - vakta_lage)
     os.makedirs(VDIR, exist_ok=True)
     with io.open(os.path.join(VDIR, 'vvn_%d.txt' % adhyay), 'w', encoding='utf-8', newline='\n') as f:
         f.write('\n'.join(H.SIR + [''] + likho(out)) + '\n')
