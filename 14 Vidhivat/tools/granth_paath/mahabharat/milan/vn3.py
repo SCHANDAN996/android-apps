@@ -76,6 +76,12 @@ AKSHAR = 'ऄ-हक़-ॡॐ'
 ANT = re.compile(r'\s*[।|॥]+\s*([०-९]+(?:\s*[-–]+\s*[०-९]+)?)?[\s।|॥\.]*$')
 VAKTA = re.compile(r'^(\S+(?:\s\S+)?)\s*उवाच\s*।?$')
 SWAR = re.compile('ai|au|[aāiīuūṛṝḷeo]')
+
+
+def akshar(text):
+    """पंक्ति के अक्षर (syllable) — शब्द-दर-शब्द गिनकर; पूरी पंक्ति की जुड़ी कुंजी में «श्रेष्ठ इति»
+    का a + i एक «ai» बनकर एक गिना जाता।"""
+    return sum(len(SWAR.findall(kunji_dev(w))) for w in text.split())
 # एक सधा हुआ अक्षर: (व्यंजन + हलंत)* व्यंजन [मात्रा] [अनुस्वार] [विसर्ग] | स्वर … | अवग्रह | शब्द के अंत का हलंत
 ROOP = re.compile('^(?:(?:[क-ह]्)*[क-ह][ा-ौ]?[ंँ]?ः?|[अ-औॠ][ंँ]?ः?|ऽ|[क-ह]्(?= |-|$)| |-$)+$')
 OCR = ('G', 'A', 'P', 'C')
@@ -137,6 +143,7 @@ def _colophon_se(t, shuru, ant):
     b = t.find(ant, a + 1000) if ant else len(t)
     assert 0 <= a < b, (shuru, a, b)
     out, cur, n = {}, [], 0
+    samapan = 0         # समापन-वाक्य कई पंक्तियों में टूटा होता है — «…ऽध्यायः ॥ ३३ ॥» तक की पंक्तियाँ उसी की हैं
     for l in t[a:b].split('\n'):
         l = l.strip()
         if not l or 'Digitized by' in l:
@@ -144,6 +151,10 @@ def _colophon_se(t, shuru, ant):
         if l.startswith('इति श्री') and n < len(ADHYAY):
             out[ADHYAY[n]] = cur
             cur, n = [], n + 1
+            samapan = 0 if 'ध्यायः' in l else 3
+            continue
+        if samapan:
+            samapan = 0 if 'ध्यायः' in l else samapan - 1
             continue
         cur.append(l)
     assert n == len(ADHYAY), (shuru, n)
@@ -419,12 +430,12 @@ def jaanch(k, g, pehle='', baad=''):
     return out
 
 
-def chhand_bura(k, g):
+def chhand_bura(text, g):
     """पंक्ति में अक्षर (syllable) उतने नहीं जितने चाहिए? हलंत गिरने से एक अक्षर बढ़ जाता है, और तीन OCR
     एक-सी भूल करें («षड जीवलोकस्य») तो खिड़की वाली कसौटी उसे नहीं पकड़ती। ठीक तब, जब गिनती किसी
     टंकित पाठ की उसी पंक्ति जितनी हो, या 16 (अनुष्टुप् का आधा श्लोक) / 11 (त्रिष्टुप् का पाद) हो।"""
-    n = len(SWAR.findall(k))
-    tankit = [len(SWAR.findall(g[m][2])) for m in TANKIT if g[m][1] and g[m][0] >= 0.8 and g[m][3] == 1]
+    n = akshar(text)
+    tankit = [akshar(g[m][1]) for m in TANKIT if g[m][1] and g[m][0] >= 0.8 and g[m][3] == 1]
     if n in tankit or n in (11, 16):
         return ''
     return 'अक्षर %d%s' % (n, (' (टंकित में %s)' % '/'.join(str(x) for x in sorted(set(tankit)))) if tankit else '')
@@ -490,7 +501,7 @@ def avagraha_fark(text, g):
 def khot(text, g, pehle='', baad=''):
     """पंक्ति की सारी खोट एक जगह — (कसौटी {जगह: वजह}, अक्षरों की बनावट, छंद की गिनती); तीनों ख़ाली = खरी।"""
     k = kunji_dev(text)
-    return jaanch(k, g, pehle, baad), roop_bura(text), chhand_bura(k, g)
+    return jaanch(k, g, pehle, baad), roop_bura(text), chhand_bura(text, g)
 
 
 # ───────────────────────── banao ─────────────────────────
@@ -516,7 +527,7 @@ def poonch_do(panktiyan, n):
     for i, text in enumerate(panktiyan):
         if i == len(panktiyan) - 1:
             out.append(' ॥%s॥' % int2dev(n))
-        elif len(SWAR.findall(kunji_dev(text))) >= 15:          # आधा श्लोक एक पंक्ति में
+        elif akshar(text) >= 15:          # आधा श्लोक एक पंक्ति में
             out.append(' ।')
             pad = 0
         else:                                                   # एक पंक्ति = एक पाद
@@ -565,7 +576,10 @@ def masauda(adhyay):
     # दूसरा फेरा: हर पंक्ति कसौटी पर
     for i, x in enumerate(sanskrit):
         if x[0] == '@':
-            assert not shlok, (x, shlok)
+            if shlok:           # वक्ता बदला और श्लोक खुला है — उसका अंक OCR में नहीं पढ़ा गया
+                shlok[-1][1].append('#! अगली पंक्ति वक्ता की है और श्लोक का अंक नहीं पढ़ा गया — यहीं बंद माना (%d)' % agla)
+                band(agla)
+                agla += 1
             out.append(x)
             continue
         _, l, text, ank, dohra, k, g = x
@@ -676,7 +690,8 @@ def dikhao(adhyay, naya=False):
 
 
 def hath_lagao(adhyay, naya=False):
-    """मसौदा + `vvn/hath_<अध्याय>.py` (SIR = शीर्ष की टिप्पणियाँ; HATH = {(श्लोक, पंक्ति): 'पाठ' | ('पाठ', 'टिप्पणी')})
+    """मसौदा + `vvn/hath_<अध्याय>.py` (SIR = शीर्ष की टिप्पणियाँ; HATH = {(श्लोक, पंक्ति): 'पाठ' | ('पाठ', 'टिप्पणी')};
+    पाठ में पंक्ति-अंत (\\n) हो तो वहाँ एक से ज़्यादा पंक्तियाँ — OCR की छोड़ी हुई पंक्ति इसी तरह जुड़ती है)
     → `vvn/vvn_<अध्याय>.txt`। जिस पंक्ति पर फ़ैसला नहीं, उसकी «#?» टिप्पणी फ़ाइल में रह जाती है।"""
     sys.path.insert(0, VDIR)
     H = importlib.import_module('hath_%d' % adhyay)
@@ -687,7 +702,9 @@ def hath_lagao(adhyay, naya=False):
         elif (x[1], x[2]) in H.HATH:
             f = H.HATH[(x[1], x[2])]
             text, tip = (f, None) if isinstance(f, str) else f
-            out.append(('s', x[1], x[2], text, [tip] if tip else []))
+            # कई पंक्तियाँ = OCR में छूटी पंक्ति यहीं जोड़ी गई
+            for j, pankti in enumerate(text.split('\n')):
+                out.append(('s', x[1], x[2], pankti, [tip] if tip and not j else []))
             lage.add((x[1], x[2]))
         else:
             out.append(('s', x[1], x[2], x[3], [t for t in x[4] if t.startswith('#?') or t.startswith('#  ')]))
@@ -720,6 +737,17 @@ def v_padho(adhyay):
     return out
 
 
+def shlok_akshar(V):
+    """{श्लोक: उसकी सब पंक्तियों के अक्षर (syllable)} — अनुष्टुप् में 32, त्रिष्टुप् में 44 के आसपास।"""
+    out, ruka = defaultdict(int), []
+    for text, n, _ in V:
+        ruka.append(akshar(text))
+        if n is not None:
+            out[n] += sum(ruka)
+            ruka = []
+    return out
+
+
 def sahara(adhyay):
     K = kosh(adhyay)
     V = v_padho(adhyay)
@@ -729,6 +757,11 @@ def sahara(adhyay):
     if ank != list(range(1, SHLOK[adhyay] + 1)):
         bure_kul += 1
         print('%d  श्लोक-अंक क्रम में नहीं: %s' % (adhyay, [n for i, n in enumerate(ank) if n != i + 1][:10]))
+    # OCR पूरी पंक्ति छोड़ दे तो हर बची पंक्ति अपने आप में खरी होती है — श्लोक के अक्षर गिनकर पकड़ो
+    for n, kul in shlok_akshar(V).items():
+        if kul < 32:
+            bure_kul += 1
+            print('%d  श्लोक %d में कुल %d अक्षर — कोई पंक्ति छूटी?' % (adhyay, n, kul))
     kunjiyan = [kunji_dev(x[0]) for x in V]
     for i, (text, _, chhoot) in enumerate(V):
         ginti['पंक्तियाँ'] += 1
