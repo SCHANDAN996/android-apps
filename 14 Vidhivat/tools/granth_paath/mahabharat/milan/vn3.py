@@ -70,12 +70,14 @@ VDIR = os.path.join(HERE, 'vvn')
 ADHYAY = list(range(33, 41))
 # पुस्तिका (G) में हर अध्याय के श्लोक
 SHLOK = {33: 128, 34: 86, 35: 77, 36: 74, 37: 64, 38: 47, 39: 85, 40: 32}
+# जिन अध्यायों में महाभारत वाले रूप (A) के श्लोक-अंक पुस्तिका जैसे ही हैं
+A_GINTI_SAMAN = set(range(34, 41))
 ANK = '०१२३४५६७८९'
 DEV = re.compile('[ऀ-ॿ]')
 AKSHAR = 'ऄ-हक़-ॡॐ'
 ANT = re.compile(r'\s*[।|॥]+\s*([०-९]+(?:\s*[-–]+\s*[०-९]+)?)?[\s।|॥\.]*$')
 # «धृतराष्ट्र उवाच» — और संधि से जुड़े «केशिन्युवाच», «सुधन्वोवाच» भी
-VAKTA = re.compile(r'^(\S+(?:\s\S+)?\s*उवाच|\S+(?:युवाच|ोवाच))\s*।?$')
+VAKTA = re.compile(r'^(\S+(?:\s\S+)?\s*(?:उवाच|ऊचुः)|\S+(?:युवाच|ोवाच))\s*।?$')
 SWAR = re.compile('ai|au|[aāiīuūṛṝḷeo]')
 
 
@@ -225,6 +227,7 @@ class Kosh:
 
     def __init__(self, lines, katne=kato):
         self.t = [katne(x)[0] for x in lines]
+        self.n = [katne(x)[1] for x in lines]     # पंक्ति के अंत का श्लोक-अंक (हो तो)
         self.k = [kunji_dev(x) for x in self.t]
         self._jod = {}
         self.idx = defaultdict(set)
@@ -551,6 +554,24 @@ def masauda(adhyay):
             out.append(('s', n, i, text, tip))
         del shlok[:]
 
+    def bant(pehla, aakhri):
+        """रुकी पंक्तियाँ श्लोक `pehla`…`aakhri` में — अक्षरों के हिसाब से लगभग बराबर।"""
+        kitne = aakhri - pehla + 1
+        akshar_ = [akshar(x[0]) for x in shlok]
+        kul = float(sum(akshar_))
+        katan, jod = [], 0
+        for i, a in enumerate(akshar_[:-1]):
+            jod += a
+            if len(katan) < kitne - 1 and jod >= kul * (len(katan) + 1) / kitne - 2 and len(shlok) - i - 1 >= kitne - len(katan) - 1:
+                katan.append(i + 1)
+        while len(katan) < kitne - 1:          # पंक्तियाँ कम पड़ीं — बचे श्लोक एक-एक पंक्ति के
+            katan.append(min(len(shlok) - 1, (katan[-1] + 1) if katan else 1))
+        sab = list(shlok)
+        sima = [0] + katan + [len(sab)]
+        for j in range(kitne):
+            shlok[:] = sab[sima[j]:sima[j + 1]]
+            band(pehla + j)
+
     # पहला फेरा: G की कौन-सी पंक्तियाँ संस्कृत की हैं (बाक़ी हिंदी अनुवाद है)
     sanskrit = []
     for l in G:
@@ -565,7 +586,12 @@ def masauda(adhyay):
         g = gawah(k, K)
         # संस्कृत की पंक्ति तभी, जब कोई संस्कृत-ही वाला पाठ (D, C, B) उसे पहचाने; हिंदी अनुवाद A में भी है
         if max(g[n][0] for n in ('D', 'C', 'B')) >= 0.72:
-            sanskrit.append(('s', l, text, ank, dohra, k, g))
+            # उसी प्रकाशक के महाभारत (A) में यही पंक्ति श्लोक के अंत पर हो तो उसका अंक — G का अंक OCR में छूटे तो
+            # वही काम आता है (अध्याय ३३ में A की गिनती पाँच कम है, इसलिए वहाँ नहीं)
+            r, s, jd = K['A'].paas(k)
+            a_ank = K['A'].n[s + jd - 1] if (adhyay in A_GINTI_SAMAN and s is not None and r >= 0.85) else ''
+            a_ank = re.findall('[०-९]+', a_ank)[-1] if a_ank else ''
+            sanskrit.append(('s', l, text, ank, dohra, k, g, a_ank))
     kunjiyan = [x[5] if x[0] == 's' else None for x in sanskrit]
 
     def pados(i, kadam):
@@ -583,7 +609,7 @@ def masauda(adhyay):
                 agla += 1
             out.append(x)
             continue
-        _, l, text, ank, dohra, k, g = x
+        _, l, text, ank, dohra, k, g, a_ank = x
         pehle, baad = pados(i, -1), pados(i, 1)
         ginti['पंक्तियाँ'] += 1
         tip = []
@@ -618,19 +644,31 @@ def masauda(adhyay):
                            % (sorted(extra) or '—', sorted(chhoote) or '—', g['D'][1][:90]))
         kunjiyan[i] = kunji_dev(chuna)
         shlok.append([chuna, tip])
-        # श्लोक का अंत? अंक OCR में बिगड़ते हैं, इसलिए क्रम से मिलाकर
+        # श्लोक का अंत? अंक OCR में बिगड़ते हैं, इसलिए क्रम से मिलाकर; A का अंक गवाह
+        apeksha = int2dev(agla)
+        a_haan = bool(a_ank) and dev2int(a_ank) == agla
+        a_naa = bool(a_ank) and dev2int(a_ank) != agla
         if ank:
             n = dev2int(ank)
-            apeksha = int2dev(agla)
             ek_ank = len(ank) == len(apeksha) and sum(1 for a, b in zip(ank, apeksha) if a != b) <= 1
-            if n == agla or ek_ank or ank.startswith(apeksha):
+            if n == agla or a_haan or ((ek_ank or ank.startswith(apeksha)) and not a_naa):
                 if n != agla:
-                    tip.append('#! अंक «%s» छपा पढ़ा गया; क्रम से %s' % (ank, apeksha))
+                    tip.append('#! अंक «%s» छपा पढ़ा गया; क्रम से %s%s' % (ank, apeksha, ' (A में भी)' if a_haan else ''))
                 band(agla)
                 agla += 1
+            elif adhyay in A_GINTI_SAMAN and agla < n <= agla + 3 and (n == agla + 1 or (a_ank and dev2int(a_ank) == n)):
+                # बीच के श्लोक(ओं) का अंक OCR में छूटा — रुकी पंक्तियों को अक्षर गिनकर बराबर बाँटो, और पन्ने से जाँचो
+                tip.append('#! अंक «%s» पढ़ा गया, क्रम से %s चाहिए था — बीच का अंक छूटा; पंक्तियाँ अक्षर गिनकर %d '
+                           'श्लोकों में बाँटीं (पन्ने से जाँचो)' % (ank, apeksha, n - agla + 1))
+                bant(agla, n)
+                agla = n + 1
             else:
                 tip.append('#! यहाँ «%s» पढ़ा गया, क्रम से %s चाहिए — श्लोक का अंत नहीं माना' % (ank, apeksha))
-        elif dohra:
+        elif a_haan:
+            tip.append('#! अंक OCR में नहीं पढ़ा गया — A में यहाँ श्लोक %s ख़त्म होता है' % apeksha)
+            band(agla)
+            agla += 1
+        elif dohra and not a_naa:
             tip.append('#! दोहरा दंड, अंक नहीं — श्लोक का अंत माना (%d)' % agla)
             band(agla)
             agla += 1
