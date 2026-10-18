@@ -86,7 +86,8 @@ def akshar(text):
     का a + i एक «ai» बनकर एक गिना जाता।"""
     return sum(len(SWAR.findall(kunji_dev(w))) for w in text.split())
 # एक सधा हुआ अक्षर: (व्यंजन + हलंत)* व्यंजन [मात्रा] [अनुस्वार] [विसर्ग] | स्वर … | अवग्रह | शब्द के अंत का हलंत
-ROOP = re.compile('^(?:(?:[क-ह]्)*[क-ह][ा-ौ]?[ंँ]?ः?|[अ-औॠ][ंँ]?ः?|ऽ|[क-ह]्(?= |-|$)| |-$)+$')
+# (या ऋ से पहले का — «निर्ऋतिं»)
+ROOP = re.compile('^(?:(?:[क-ह]्)*[क-ह][ा-ौ]?[ंँ]?ः?|[अ-औॠ][ंँ]?ः?|ऽ|[क-ह]्(?= |-|$|ऋ)| |-$)+$')
 OCR = ('G', 'A', 'P', 'C')
 TANKIT = ('D', 'B')
 SAB = OCR + TANKIT
@@ -525,6 +526,23 @@ def _milao(wg, wa, g, ant_hyphen, pehle, baad):
     return None
 
 
+HINDI = {'है', 'हैं', 'के', 'की', 'में', 'और', 'से', 'भी', 'ने', 'नहीं', 'था', 'थे', 'यह', 'वह', 'जो', 'लिये', 'करते', 'करता',
+         'सकता', 'सकते', 'जाता', 'जाते', 'होता', 'होते', 'उसका', 'उसके', 'उनके', 'जिसके', 'जिसका'}
+
+
+def hindi_shabd(text):
+    """पंक्ति हिंदी की लगती है? — हिंदी का कोई अलग शब्द (कि / का / को नहीं गिने: संस्कृत में भी आते हैं, और OCR
+    «किं» को «कि» पढ़ता है); या शब्द के अंत में «ें» (गीताप्रेस का हिंदी «राजासे», «चिन्तामें» जोड़कर लिखता है —
+    संस्कृत में शब्द «ें» पर ख़त्म नहीं होता); या ड़ / ढ़ / नुक़्ता; या संवाद का «--»।"""
+    if '--' in text or '—' in text or re.search('[ड़ढ़़]', text):
+        return True
+    for w in text.split():
+        w = w.strip('।॥,;!?-—')
+        if w in HINDI or w.endswith('ें') or w in ('हुए', 'हुआ', 'गया', 'गये', 'दिया', 'करके', 'जाकर'):
+            return True
+    return False
+
+
 def poonch_do(panktiyan, n):
     """श्लोक `n` की पंक्तियों के अंत के दंड — पंक्तियों की बनावट से (OCR के दंड भरोसे के नहीं)।"""
     out, pad = [], 0
@@ -573,25 +591,40 @@ def masauda(adhyay):
             band(pehla + j)
 
     # पहला फेरा: G की कौन-सी पंक्तियाँ संस्कृत की हैं (बाक़ी हिंदी अनुवाद है)
-    sanskrit = []
+    sanskrit, haal = [], []         # haal: G की हर पंक्ति का हाल क्रम से — 'pakki' | 'A' | 'nahi' | '@'
     for l in G:
         m = VAKTA.match(l)
         if m and len(l) < 40:
             sanskrit.append(('@', re.sub(r'\s+', ' ', l.rstrip('।').strip())))
+            haal.append('@')
             continue
         text, ank, dohra, poonch = g_kato(l)
         if len(DEV.findall(text)) < 6:
             continue
         k = kunji_dev(text)
         g = gawah(k, K)
-        # संस्कृत की पंक्ति तभी, जब कोई संस्कृत-ही वाला पाठ (D, C, B) उसे पहचाने; हिंदी अनुवाद A में भी है
+        # संस्कृत की पंक्ति तभी, जब कोई संस्कृत-ही वाला पाठ (D, C, B) उसे पहचाने — या, जो पंक्ति सिर्फ़ छपी
+        # परंपरा में है (टंकित में नहीं; चित्रशाला का OCR कमज़ोर), जब उसी प्रकाशक का A उसे ठीक पहचाने, उसमें
+        # हिंदी का निशान न हो, और उसके ठीक बाद की पंक्ति पक्की संस्कृत हो (नीचे) — हिंदी अनुवाद A में भी है
         if max(g[n][0] for n in ('D', 'C', 'B')) >= 0.72:
+            haal.append('pakki')
+        elif g['A'][0] >= 0.9 and akshar(text) >= 8 and not hindi_shabd(text):
+            haal.append('A')
+        else:
+            haal.append('nahi')
+            continue
+        if True:
             # उसी प्रकाशक के महाभारत (A) में यही पंक्ति श्लोक के अंत पर हो तो उसका अंक — G का अंक OCR में छूटे तो
             # वही काम आता है (अध्याय ३३ में A की गिनती पाँच कम है, इसलिए वहाँ नहीं)
             r, s, jd = K['A'].paas(k)
             a_ank = K['A'].n[s + jd - 1] if (adhyay in A_GINTI_SAMAN and s is not None and r >= 0.85) else ''
             a_ank = re.findall('[०-९]+', a_ank)[-1] if a_ank else ''
             sanskrit.append(('s', l, text, ank, dohra, k, g, a_ank))
+            sanskrit[-1] = sanskrit[-1] + (len(haal) - 1,)
+    # सिर्फ़ A से पहचानी पंक्ति तभी रहे जब उसके ठीक बाद की पंक्ति पक्की संस्कृत हो
+    sanskrit = [x for x in sanskrit
+                if x[0] == '@' or haal[x[8]] == 'pakki' or (x[8] + 1 < len(haal) and haal[x[8] + 1] == 'pakki')]
+    sanskrit = [x if x[0] == '@' else x[:8] for x in sanskrit]
     kunjiyan = [x[5] if x[0] == 's' else None for x in sanskrit]
 
     def pados(i, kadam):
@@ -783,12 +816,12 @@ def v_padho(adhyay):
 
 
 def shlok_akshar(V):
-    """{श्लोक: उसकी सब पंक्तियों के अक्षर (syllable)} — अनुष्टुप् में 32, त्रिष्टुप् में 44 के आसपास।"""
-    out, ruka = defaultdict(int), []
+    """{श्लोक: (उसकी सब पंक्तियों के अक्षर, कितनी पंक्तियाँ पाद भर की)} — अनुष्टुप् में 32, त्रिष्टुप् में 44 के आसपास।"""
+    out, ruka = {}, []
     for text, n, _ in V:
         ruka.append(akshar(text))
         if n is not None:
-            out[n] += sum(ruka)
+            out[n] = (sum(ruka), sum(1 for a in ruka if a < 15))
             ruka = []
     return out
 
@@ -802,11 +835,12 @@ def sahara(adhyay):
     if ank != list(range(1, SHLOK[adhyay] + 1)):
         bure_kul += 1
         print('%d  श्लोक-अंक क्रम में नहीं: %s' % (adhyay, [n for i, n in enumerate(ank) if n != i + 1][:10]))
-    # OCR पूरी पंक्ति छोड़ दे तो हर बची पंक्ति अपने आप में खरी होती है — श्लोक के अक्षर गिनकर पकड़ो
-    for n, kul in shlok_akshar(V).items():
-        if kul < 32:
+    # OCR पूरी पंक्ति छोड़ दे तो हर बची पंक्ति अपने आप में खरी होती है — श्लोक के अक्षर गिनकर पकड़ो:
+    # अनुष्टुप् का श्लोक 32 से कम नहीं, और पाद-पाद वाली पंक्तियाँ (त्रिष्टुप्) जोड़ी में
+    for n, (kul, paad) in shlok_akshar(V).items():
+        if kul < 32 or paad % 2:
             bure_kul += 1
-            print('%d  श्लोक %d में कुल %d अक्षर — कोई पंक्ति छूटी?' % (adhyay, n, kul))
+            print('%d  श्लोक %d — कुल %d अक्षर, पाद वाली पंक्तियाँ %d — कोई पंक्ति छूटी?' % (adhyay, n, kul, paad))
     kunjiyan = [kunji_dev(x[0]) for x in V]
     for i, (text, _, chhoot) in enumerate(V):
         ginti['पंक्तियाँ'] += 1
