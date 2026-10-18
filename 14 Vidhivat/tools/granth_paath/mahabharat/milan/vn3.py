@@ -72,6 +72,8 @@ ADHYAY = list(range(33, 41))
 SHLOK = {33: 128, 34: 86, 35: 77, 36: 74, 37: 64, 38: 47, 39: 85, 40: 32}
 # जिन अध्यायों में महाभारत वाले रूप (A) के श्लोक-अंक पुस्तिका जैसे ही हैं
 A_GINTI_SAMAN = set(range(34, 41))
+# पुस्तिका में जो श्लोक आधा ही छपा है (एक पंक्ति) — पन्ने पर देखा हुआ; इन पर «पंक्ति छूटी?» की टोक नहीं
+AADHA = {(39, 78)}       # «अनाम्नायमला वेदा ब्राह्मणस्याव्रतं मलम्» — पृ. ११७; BORI में इसके बाद सीधा «कौतूहलमला…», बीच की «मलं पृथिव्या…» पंक्ति छपी परंपरा की
 ANK = '०१२३४५६७८९'
 DEV = re.compile('[ऀ-ॿ]')
 AKSHAR = 'ऄ-हक़-ॡॐ'
@@ -593,20 +595,29 @@ def masauda(adhyay):
 
     # पहला फेरा: G की कौन-सी पंक्तियाँ संस्कृत की हैं (बाक़ी हिंदी अनुवाद है)
     sanskrit, haal = [], []         # haal: G की हर पंक्ति का हाल क्रम से — 'pakki' | 'A' | 'nahi' | '@'
+    ant_par = []                    # उसी क्रम से: पंक्ति के अंत पर अंक या दोहरा दंड है?
     for l in G:
         m = VAKTA.match(l)
         if m and len(l) < 40:
             sanskrit.append(('@', re.sub(r'\s+', ' ', l.rstrip('।').strip())))
             haal.append('@')
+            ant_par.append(False)
             continue
         text, ank, dohra, poonch = g_kato(l)
         if len(DEV.findall(text)) < 6:
             continue
+        ant_par.append(bool(ank) or dohra)
         k = kunji_dev(text)
         g = gawah(k, K)
         # संस्कृत की पंक्ति तभी, जब कोई संस्कृत-ही वाला पाठ (D, C, B) उसे पहचाने — या, जो पंक्ति सिर्फ़ छपी
         # परंपरा में है (टंकित में नहीं; चित्रशाला का OCR कमज़ोर), जब उसी प्रकाशक का A उसे ठीक पहचाने, उसमें
-        # हिंदी का निशान न हो, और उसके ठीक बाद की पंक्ति पक्की संस्कृत हो (नीचे) — हिंदी अनुवाद A में भी है
+        # हिंदी का निशान न हो, और उसके ठीक बाद की पंक्ति पक्की संस्कृत हो (नीचे) — हिंदी अनुवाद A में भी है।
+        # अनुवाद का छोटा टुकड़ा («कुलकी वृद्धि करें», ३९.१९) टंकित पाठ से भी मिल जाता है — हिंदी के निशान वाली
+        # और आठ अक्षर से छोटी पंक्ति (संस्कृत का कोई पाद आठ से छोटा नहीं) किसी रास्ते से नहीं। सिर्फ़ हिंदी-निशान
+        # पर नहीं रोकते: OCR के शोर से असली संस्कृत पंक्तियों में भी «से», «ें» जैसे टुकड़े आ जाते हैं
+        if hindi_shabd(text) and akshar(text) < 8:
+            haal.append('nahi')
+            continue
         if max(g[n][0] for n in ('D', 'C', 'B')) >= 0.72:
             haal.append('pakki')
         elif g['A'][0] >= 0.9 and akshar(text) >= 8 and not hindi_shabd(text):
@@ -622,9 +633,16 @@ def masauda(adhyay):
             a_ank = re.findall('[०-९]+', a_ank)[-1] if a_ank else ''
             sanskrit.append(('s', l, text, ank, dohra, k, g, a_ank))
             sanskrit[-1] = sanskrit[-1] + (len(haal) - 1,)
-    # सिर्फ़ A से पहचानी पंक्ति तभी रहे जब उसके ठीक बाद की पंक्ति पक्की संस्कृत हो
-    sanskrit = [x for x in sanskrit
-                if x[0] == '@' or haal[x[8]] == 'pakki' or (x[8] + 1 < len(haal) and haal[x[8] + 1] == 'pakki')]
+    # सिर्फ़ A से पहचानी पंक्ति तभी रहे जब उसके ठीक बाद की पंक्ति पक्की संस्कृत हो — या वह श्लोक की आख़िरी
+    # पंक्ति हो (अंत पर अंक / दोहरा दंड) और उसके ठीक पहले की पंक्ति पक्की संस्कृत हो जिस पर श्लोक अभी खुला है।
+    # (३९.३९ की «धर्मार्थौ वेदितुं शक्यौ…» टंकित में नहीं, और उसके बाद अनुवाद है।) एक पंक्ति के अनुवाद से पहले
+    # वाली संस्कृत पंक्ति पर वही अंक होता है — इसलिए अनुवाद इस रास्ते से नहीं आता।
+    def rahe(i):
+        if haal[i] == 'pakki' or (i + 1 < len(haal) and haal[i + 1] == 'pakki'):
+            return True
+        return ant_par[i] and i > 0 and haal[i - 1] == 'pakki' and not ant_par[i - 1]
+    assert len(ant_par) == len(haal)
+    sanskrit = [x for x in sanskrit if x[0] == '@' or rahe(x[8])]
     sanskrit = [x if x[0] == '@' else x[:8] for x in sanskrit]
     kunjiyan = [x[5] if x[0] == 's' else None for x in sanskrit]
 
@@ -839,6 +857,8 @@ def sahara(adhyay):
     # OCR पूरी पंक्ति छोड़ दे तो हर बची पंक्ति अपने आप में खरी होती है — श्लोक के अक्षर गिनकर पकड़ो:
     # अनुष्टुप् का श्लोक 32 से कम नहीं, और पाद-पाद वाली पंक्तियाँ (त्रिष्टुप्) जोड़ी में
     for n, (kul, paad) in shlok_akshar(V).items():
+        if (adhyay, n) in AADHA and kul >= 15 and not paad % 2:
+            continue
         if kul < 32 or paad % 2:
             bure_kul += 1
             print('%d  श्लोक %d — कुल %d अक्षर, पाद वाली पंक्तियाँ %d — कोई पंक्ति छूटी?' % (adhyay, n, kul, paad))
