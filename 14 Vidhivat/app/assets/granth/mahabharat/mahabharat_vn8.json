@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "id": "mahabharat_vn8",
+  "naam": "विदुर नीति ८ — धर्म न छोड़े",
+  "upnaam": [
+    "विदुर नीति",
+    "विदुरनीति",
+    "विदुर और धृतराष्ट्र",
+    "प्रजागर पर्व",
+    "उद्योग पर्व"
+  ],
+  "prakar": "granth",
+  "devta": "धर्म और नीति",
+  "rachnakar": "महाभारत, उद्योग पर्व — महर्षि वेदव्यास",
+  "bhasha": "संस्कृत",
+  "parichay": "आख़िरी अध्याय। विद्यार्थी के सात दोष; घर में रखने की मंगल वस्तुएँ; और सबसे ऊपर की बात — काम, भय, लोभ, या जीवन बचाने के लिए भी धर्म न छोड़े। फिर यह कि मृत्यु के बाद केवल अपना किया कर्म साथ जाता है; आत्मा एक नदी है; और चारों वर्णों का धर्म। अंत में धृतराष्ट्र मानते हैं कि विदुर ठीक कहते हैं, पर दुर्योधन से मिलते ही उनकी बुद्धि पलट जाती है — भाग्य को कोई नहीं लाँघ सकता।",
+  "kabPadhein": "जब मन हो। यह पूजा का पाठ नहीं है — नीति की बातें हैं, जो घर में मिलकर पढ़ने और सुनाने लायक़ हैं।",
+  "kaisePadhein": "आठ पन्ने, आठ अध्याय — युद्ध से पहले की एक रात, जब धृतराष्ट्र को नींद नहीं आती और विदुर उन्हें नीति सुनाते हैं। क्रम से पढ़िए, या कोई भी पन्ना खोलिए — ज़्यादातर खंड अपने आप में पूरे हैं। हर खंड के शीर्षक में छपी पुस्तिका वाले श्लोक-अंक हैं; जहाँ पुस्तिका का अंक श्लोक के बीच पड़ता है, वहाँ खंड बड़ा है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर खंड के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "सज्जनों का आदर, और जो ब्रह्महत्या के बराबर · श्लोक १–४",
+      "dev": "विदुर उवाच ।\nयोऽभ्यर्चितः सद्भिरसज्जमानः\nकरोत्यर्थं शक्तिमहापयित्वा ।\nक्षिप्रं यशस्तं समुपैति सन्तमलं प्रसन्ना हि सुखाय सन्तः ॥\nमहान्तमप्यर्थमधर्मयुक्तं\nयः संत्यजत्यनपाकृष्ट एव ।\nसुखं सुदुःखान्यवमुच्य शेते\nजीर्णां त्वचं सर्प इवावमुच्य ॥\nअनृते च समुत्कर्षो राजगामि च पैशुनम् ।\nगुरोश्चालीकनिर्बन्धः समानि ब्रह्महत्यया ॥\nअसूयैकपदं मृत्युरतिवादः श्रियो वधः ।\nअशुश्रूषा त्वरा श्लाघा विद्यायाः शत्रवस्त्रयः ॥",
+      "roman": "vidura uvaacha |\nyo'bhyarchitah sadbhirasajjamaanah\nkarotyartham shaktimahaapayitvaa |\nkshipram yashastam samupaiti santamalam prasannaa hi sukhaaya santah ||\nmahaantamapyarthamadharmayuktam\nyah samtyajatyanapaakrishta eva |\nsukham suduhkhaanyavamuchya shete\njeernaam tvacham sarpa ivaavamuchya ||\nanrite cha samutkarsho raajagaami cha paishunam |\nguroshchaaleekanirbandhah samaani brahmahatyayaa ||\nasooyaikapadam mrityurativaadah shriyo vadhah |\nashushrooshaa tvaraa shlaaghaa vidyaayaah shatravastrayah ||",
+      "arth": "विदुर बोले — जो सज्जनों से आदर पाकर, आसक्ति छोड़कर, अपनी शक्ति भर अर्थ-साधन करता है, उस श्रेष्ठ पुरुष को जल्दी ही यश मिलता है; क्योंकि संत जिस पर प्रसन्न हों, उसे वे भरपूर सुख देते हैं। जो अधर्म से जुड़े बड़े धन को भी, उसकी ओर खिंचे बिना ही छोड़ देता है, वह जैसे साँप पुरानी केंचुल छोड़ देता है, वैसे ही दुखों से छूटकर सुख से सोता है। झूठ बोलकर आगे बढ़ना, राजा तक चुगली पहुँचाना, और गुरु से झूठा हठ करना — ये तीनों ब्रह्महत्या के बराबर हैं। गुणों में दोष देखना एकदम मृत्यु है, कठोर बोलना लक्ष्मी का वध है; और सेवा न करना, उतावली और अपनी बड़ाई — ये तीन विद्या के शत्रु हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "विद्यार्थी के दोष, और जो कभी नहीं अघाते · श्लोक ५–७",
+      "dev": "आलस्यं मदमोहौ च चापलं गोष्ठिरेव च ।\nस्तब्धता चाभिमानित्वं तथात्यागित्वमेव च ।\nएते वै सप्त दोषाः स्युः सदा विद्यार्थिनां मताः ॥\nसुखार्थिनः कुतो विद्या नास्ति विद्यार्थिनः सुखम् ।\nसुखार्थी वा त्यजेद् विद्यां विद्यार्थी वा त्यजेत् सुखम् ॥\nनाग्निस्तृप्यति काष्ठानां नापगानां महोदधिः ।\nनान्तकः सर्वभूतानां न पुंसां वामलोचना ॥",
+      "roman": "aalasyam madamohau cha chaapalam goshthireva cha |\nstabdhataa chaabhimaanitvam tathaatyaagitvameva cha |\nete vai sapta doshaah syuh sadaa vidyaarthinaam mataah ||\nsukhaarthinah kuto vidyaa naasti vidyaarthinah sukham |\nsukhaarthee vaa tyajed vidyaam vidyaarthee vaa tyajet sukham ||\nnaagnistripyati kaashthaanaam naapagaanaam mahodadhih |\nnaantakah sarvabhootaanaam na pumsaam vaamalochanaa ||",
+      "arth": "आलस्य, मद और मोह, चंचलता, गपशप की मंडली, उद्दंडता, अभिमान, और त्याग न करना — ये सात विद्यार्थियों के लिए सदा दोष माने गए हैं। सुख चाहने वाले को विद्या कहाँ, और विद्या चाहने वाले को सुख कहाँ; सुख चाहे तो विद्या छोड़े, विद्या चाहे तो सुख छोड़े। आग ईंधन से, समुद्र नदियों से, मृत्यु सब प्राणियों से, और कुलटा स्त्री पुरुषों से कभी नहीं अघाती।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "किससे किसका नाश, और घर में क्या रखें · श्लोक ८–११",
+      "dev": "आशा धृतिं हन्ति समृद्धिमन्तकः\nक्रोधः श्रियं हन्ति यशः कदर्यता ।\nअपालनं हन्ति पशूंश्च राजन्नेकः क्रुद्धो ब्राह्मणो हन्ति राष्ट्रम् ॥\nअजाश्च कांस्यं रजतं च नित्यं\nमध्वाकर्षः शकुनिः श्रोत्रियश्च ।\nवृद्धो ज्ञातिरवसन्नः कुलीन\nएतानि ते सन्तु गृहे सदैव ॥\nअजोक्षा चन्दनं वीणा आदर्शो मधुसर्पिषी ।\nविषमौदुम्बरं शङ्खः स्वर्णनाभोऽथ रोचना ॥\nगृहे स्थापयितव्यानि धन्यानि मनुरब्रवीत् ।\nदेवब्राह्मणपूजार्थमतिथीनां च भारत ॥",
+      "roman": "aashaa dhritim hanti samriddhimantakah\nkrodhah shriyam hanti yashah kadaryataa |\napaalanam hanti pashoomshcha raajannekah kruddho braahmano hanti raashtram ||\najaashcha kaamsyam rajatam cha nityam\nmadhvaakarshah shakunih shrotriyashcha |\nvriddho jnaatiravasannah kuleena\netaani te santu grihe sadaiva ||\najokshaa chandanam veenaa aadarsho madhusarpishee |\nvishamaudumbaram shankhah svarnanaabho'tha rochanaa ||\ngrihe sthaapayitavyaani dhanyaani manurabraveet |\ndevabraahmanapoojaarthamatitheenaam cha bhaarata ||",
+      "arth": "आशा धीरज को मारती है, यमराज समृद्धि को, क्रोध लक्ष्मी को, कंजूसी यश को, और देखभाल न करना पशुओं को; और राजन्, एक ही ब्राह्मण क्रुद्ध हो जाए तो पूरे राष्ट्र का नाश कर देता है। बकरियाँ, काँसा, चाँदी, मधु, मधु निकालने का यंत्र, पक्षी, वेद जानने वाला ब्राह्मण, बूढ़ा जाति-भाई और विपत्ति में पड़ा कुलीन — ये सदा आपके घर में रहें। भारत! मनु ने कहा है कि देवता, ब्राह्मण और अतिथियों की पूजा के लिए बकरी, बैल, चंदन, वीणा, दर्पण, मधु, घी, जल, ताँबे के बर्तन, शंख, शालग्राम और गोरोचन — ये मंगल वस्तुएँ घर में रखनी चाहिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "धर्म न छोड़े · श्लोक १२–१३",
+      "dev": "इदं च त्वां सर्वपरं ब्रवीमि\nपुण्यं पदं तात महाविशिष्टम् ।\nन जातु कामान्न भयान्न लोभाद्\nधर्मं जह्याज्जीवितस्यापि हेतोः ॥\nनित्यो धर्मः सुखदुःखे त्वनित्ये\nजीवो नित्यो हेतुरस्य त्वनित्यः ।\nत्यक्त्वानित्यं प्रतितिष्ठस्व नित्ये\nसंतुष्य त्वं तोषपरो हि लाभः ॥",
+      "roman": "idam cha tvaam sarvaparam braveemi\npunyam padam taata mahaavishishtam |\nna jaatu kaamaanna bhayaanna lobhaad\ndharmam jahyaajjeevitasyaapi hetoh ||\nnityo dharmah sukhaduhkhe tvanitye\njeevo nityo heturasya tvanityah |\ntyaktvaanityam pratitishthasva nitye\nsamtushya tvam toshaparo hi laabhah ||",
+      "arth": "तात! अब मैं तुम्हें सबसे ऊपर की, बहुत बड़ी पुण्य की बात कहता हूँ — काम से, भय से, लोभ से, और जीवन बचाने के लिए भी कभी धर्म न छोड़े। धर्म नित्य है, सुख और दुख अनित्य; जीव नित्य है, पर उसका (बंधन का) कारण अनित्य। अनित्य को छोड़कर नित्य में टिकिए, और संतोष धारण कीजिए; क्योंकि संतोष ही सबसे बड़ा लाभ है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मृत्यु के बाद क्या साथ जाता है · श्लोक १४–१८",
+      "dev": "महाबलान् पश्य महानुभावान्\nप्रशास्य भूमिं धनधान्यपूर्णाम् ।\nराज्यानि हित्वा विपुलांश्च भोगान्\nगतान्नरेन्द्रान् वशमन्तकस्य ॥\nमृतं पुत्रं दुःखपुष्टं मनुष्या\nउत्क्षिप्य राजन् स्वगृहान्निर्हरन्ति ।\nतं मुक्तकेशाः करुणं रुदन्ति\nचितामध्ये काष्ठमिव क्षिपन्ति ॥\nअन्यो धनं प्रेतगतस्य भुङ्क्ते\nवयांसि चाग्निश्च शरीरधातून् ।\nद्वाभ्यामयं सह गच्छत्यमुत्र\nपुण्येन पापेन च वेष्ट्यमानः ॥\nउत्सृज्य विनिवर्तन्ते ज्ञातयः सुहृदः सुताः ।\nअपुष्पानफलान् वृक्षान् यथा तात पतत्रिणः ॥\nअग्नौ प्रास्तं तु पुरुषं कर्मान्वेति स्वयंकृतम् ।\nतस्मात्तु पुरुषो यत्नाद् धर्मं संचिनुयाच्छनैः ॥",
+      "roman": "mahaabalaan pashya mahaanubhaavaan\nprashaasya bhoomim dhanadhaanyapoornaam |\nraajyaani hitvaa vipulaamshcha bhogaan\ngataannarendraan vashamantakasya ||\nmritam putram duhkhapushtam manushyaa\nutkshipya raajan svagrihaannirharanti |\ntam muktakeshaah karunam rudanti\nchitaamadhye kaashthamiva kshipanti ||\nanyo dhanam pretagatasya bhunkte\nvayaamsi chaagnishcha shareeradhaatoon |\ndvaabhyaamayam saha gachchhatyamutra\npunyena paapena cha veshtyamaanah ||\nutsrijya vinivartante jnaatayah suhridah sutaah |\napushpaanaphalaan vrikshaan yathaa taata patatrinah ||\nagnau praastam tu purusham karmaanveti svayamkritam |\ntasmaattu purusho yatnaad dharmam samchinuyaachchhanaih ||",
+      "arth": "धन-धान्य से भरी पृथ्वी पर शासन करके, राज्य और बड़े-बड़े भोग छोड़कर यमराज के वश में चले गए बड़े बलवान और महानुभाव राजाओं को देखिए। राजन्! जिस पुत्र को बड़े कष्ट से पाला-पोसा था, वह मर जाता है तो लोग उसे उठाकर घर से बाहर ले जाते हैं; बाल बिखेरकर करुण स्वर में रोते हैं, और फिर उसे साधारण काठ की तरह चिता में डाल देते हैं। मरे हुए का धन दूसरे भोगते हैं, उसके शरीर की धातुओं को पक्षी खाते हैं या आग जलाती है; यह जीव पुण्य और पाप से बँधा, इन्हीं दोनों के साथ परलोक जाता है। तात! जैसे फूल और फल से ख़ाली पेड़ को पक्षी छोड़ देते हैं, वैसे ही जाति-भाई, मित्र और पुत्र उसे छोड़कर लौट आते हैं। आग में डाले गए उस पुरुष के पीछे केवल उसका अपना किया कर्म जाता है; इसलिए पुरुष यत्न से, धीरे-धीरे धर्म का संचय करे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मोह का अंधकार · श्लोक १९–२०",
+      "dev": "अस्माल्लोकादूर्ध्वममुष्य चाधो\nमहत्तमस्तिष्ठति ह्यन्धकारम् ।\nतद् वै महामोहनमिन्द्रियाणां\nबुध्यस्व मा त्वां प्रलभेत राजन् ॥\nइदं वचः शक्ष्यसि चेद् यथावन्निशम्य सर्वं प्रतिपत्तुमेव ।\nयशः परं प्राप्स्यसि जीवलोके\nभयं न चामुत्र न चेह तेऽस्ति ॥",
+      "roman": "asmaallokaadoordhvamamushya chaadho\nmahattamastishthati hyandhakaaram |\ntad vai mahaamohanamindriyaanaam\nbudhyasva maa tvaam pralabheta raajan ||\nidam vachah shakshyasi ched yathaavannishamya sarvam pratipattumeva |\nyashah param praapsyasi jeevaloke\nbhayam na chaamutra na cheha te'sti ||",
+      "arth": "इस लोक के ऊपर और परलोक के नीचे तक महान अंधकार (अज्ञान) फैला है; वह इंद्रियों को भारी मोह में डालने वाला है। राजन्! इसे पहचान लीजिए, ताकि यह आपको छू न सके। यदि आप मेरी यह बात ठीक-ठीक सुनकर पूरी तरह अपना सकें, तो इस लोक में आपको बड़ा यश मिलेगा, और न यहाँ आपको भय रहेगा, न परलोक में।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "आत्मा की नदी · श्लोक २१–२४",
+      "dev": "आत्मा नदी भारत पुण्यतीर्था\nसत्योदका धृतिकूला दयोर्मिः ।\nतस्यां स्नातः पूयते पुण्यकर्मा\nपुण्यो ह्यात्मा नित्यमलोभ एव ॥\nकामक्रोधग्राहवतीं पञ्चेन्द्रियजलां नदीम् ।\nनावं धृतिमयीं कृत्वा जन्मदुर्गाणि संतर ॥\nप्रज्ञावृद्धं धर्मवृद्धं स्वबन्धुं\nविद्यावृद्धं वयसा चापि वृद्धम् ।\nकार्याकार्ये पूजयित्वा प्रसाद्य\nयः सम्पृच्छेन्न स मुह्येत् कदाचित् ॥\nधृत्या शिश्नोदरं रक्षेत् पाणिपादं च चक्षुषा ।\nचक्षुःश्रोत्रे च मनसा मनो वाचं च कर्मणा ॥",
+      "roman": "aatmaa nadee bhaarata punyateerthaa\nsatyodakaa dhritikoolaa dayormih |\ntasyaam snaatah pooyate punyakarmaa\npunyo hyaatmaa nityamalobha eva ||\nkaamakrodhagraahavateem panchendriyajalaam nadeem |\nnaavam dhritimayeem kritvaa janmadurgaani samtara ||\nprajnaavriddham dharmavriddham svabandhum\nvidyaavriddham vayasaa chaapi vriddham |\nkaaryaakaarye poojayitvaa prasaadya\nyah samprichchhenna sa muhyet kadaachit ||\ndhrityaa shishnodaram rakshet paanipaadam cha chakshushaa |\nchakshuhshrotre cha manasaa mano vaacham cha karmanaa ||",
+      "arth": "भारत! आत्मा एक नदी है — पुण्य उसका तीर्थ है, सत्य उसका जल, धीरज उसके किनारे, और दया उसकी लहरें; पुण्य कर्म करने वाला उसमें नहाकर पवित्र होता है, क्योंकि लोभ से रहित आत्मा सदा पवित्र ही है। काम और क्रोध रूपी मगरमच्छों से भरी, पाँच इंद्रियों के जल वाली इस संसार-नदी में धीरज की नाव बनाकर जन्म-मरण के दुर्गम भँवरों को पार कीजिए। जो बुद्धि में, धर्म में, विद्या में और आयु में बड़े अपने बंधु का आदर करके, उसे प्रसन्न करके, करने और न करने योग्य के बारे में पूछता है, वह कभी मोह में नहीं पड़ता। धीरज से शिश्न और पेट की रक्षा करे, आँखों से हाथ-पैरों की, मन से आँख और कान की, और अच्छे कर्मों से मन और वाणी की।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चारों वर्णों का धर्म · श्लोक २५–२९",
+      "dev": "नित्योदकी नित्ययज्ञोपवीती\nनित्यस्वाध्यायी पतितान्नवर्जी ।\nसत्यं ब्रुवन् गुरवे कर्म कुर्वन्\nन ब्राह्मणश्च्यवते ब्रह्मलोकात् ॥\nअधीत्य वेदान् परिसंस्तीर्य चाग्नीनिष्ट्वा यज्ञैः पालयित्वा प्रजाश्च ।\nगोब्राह्मणार्थं शस्त्रपूतान्तरात्मा\nहतः संग्रामे क्षत्रियः स्वर्गमेति ॥\nवैश्योऽधीत्य ब्राह्मणान् क्षत्रियांश्च\nधनैः काले संविभज्याश्रितांश्च ।\nत्रेतापूतं धूममाघ्राय पुण्यं\nप्रेत्य स्वर्गे दिव्यसुखानि भुङ्क्ते ॥\nब्रह्म क्षत्रं वैश्यवर्णं च शूद्रः\nक्रमेणैतान्न्यायतः पूजयानः ।\nतुष्टेष्वेतेष्वव्यथो दग्धपापस्त्यक्त्वा देहं स्वर्गसुखानि भुङ्क्ते ॥\nचातुर्वर्ण्यस्यैष धर्मस्तवोक्तो\nहेतुं चानुब्रुवतो मे निबोध ।\nक्षात्राद् धर्माद्धीयते पाण्डुपुत्रस्तं त्वं राजन् राजधर्मे नियुङ्क्ष्व ॥",
+      "roman": "nityodakee nityayajnopaveetee\nnityasvaadhyaayee patitaannavarjee |\nsatyam bruvan gurave karma kurvan\nna braahmanashchyavate brahmalokaat ||\nadheetya vedaan parisamsteerya chaagneenishtvaa yajnaih paalayitvaa prajaashcha |\ngobraahmanaartham shastrapootaantaraatmaa\nhatah samgraame kshatriyah svargameti ||\nvaishyo'dheetya braahmanaan kshatriyaamshcha\ndhanaih kaale samvibhajyaashritaamshcha |\ntretaapootam dhoomamaaghraaya punyam\npretya svarge divyasukhaani bhunkte ||\nbrahma kshatram vaishyavarnam cha shoodrah\nkramenaitaannyaayatah poojayaanah |\ntushteshveteshvavyatho dagdhapaapastyaktvaa deham svargasukhaani bhunkte ||\nchaaturvarnyasyaisha dharmastavokto\nhetum chaanubruvato me nibodha |\nkshaatraad dharmaaddheeyate paanduputrastam tvam raajan raajadharme niyunkshva ||",
+      "arth": "जो रोज़ जल से स्नान-संध्या करता है, सदा यज्ञोपवीत पहने रहता है, रोज़ स्वाध्याय करता है, पतितों का अन्न नहीं खाता, सच बोलता है और गुरु की सेवा करता है — वह ब्राह्मण कभी ब्रह्मलोक से नहीं गिरता। वेद पढ़कर, अग्नियों के चारों ओर कुश बिछाकर, यज्ञों से यजन करके और प्रजा का पालन करके, गौ और ब्राह्मण के लिए युद्ध में मारा गया, शस्त्र से पवित्र मन वाला क्षत्रिय स्वर्ग जाता है। वैश्य वेद पढ़कर, समय-समय पर ब्राह्मणों, क्षत्रियों और आश्रितों को धन बाँटकर, और तीनों अग्नियों का पवित्र धुआँ सूँघकर, मरने के बाद स्वर्ग में दिव्य सुख भोगता है। शूद्र ब्राह्मण, क्षत्रिय और वैश्य की क्रम से, न्याय से सेवा करके, उन्हें संतुष्ट करके, बिना व्यथा के, पापों से जलकर (छूटकर), देह छोड़ने पर स्वर्ग का सुख भोगता है। महाराज! यह मैंने आपसे चारों वर्णों का धर्म कहा; इसे कहने का कारण भी सुनिए — आपके कारण पाण्डु के पुत्र (युधिष्ठिर) क्षत्रिय-धर्म से गिर रहे हैं; राजन्, आप उन्हें फिर राजधर्म में लगाइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "धृतराष्ट्र की विवशता · श्लोक ३०–३२",
+      "dev": "धृतराष्ट्र उवाच ।\nएवमेतद् यथा त्वं मामनुशाससि नित्यदा ।\nममापि च मतिः सौम्य भवत्येवं यथाऽऽत्थ माम् ॥\nसा तु बुद्धिः कृताप्येवं पाण्डवान् प्रति मे सदा ।\nदुर्योधनं समासाद्य पुनर्विपरिवर्तते ॥\nन दिष्टमभ्यतिक्रान्तुं शक्यं भूतेन केनचित् ।\nदिष्टमेव ध्रुवं मन्ये पौरुषं तु निरर्थकम् ॥",
+      "roman": "dhritaraashtra uvaacha |\nevametad yathaa tvam maamanushaasasi nityadaa |\nmamaapi cha matih saumya bhavatyevam yathaa''ttha maam ||\nsaa tu buddhih kritaapyevam paandavaan prati me sadaa |\nduryodhanam samaasaadya punarviparivartate ||\nna dishtamabhyatikraantum shakyam bhootena kenachit |\ndishtameva dhruvam manye paurusham tu nirarthakam ||",
+      "arth": "धृतराष्ट्र बोले — सौम्य! तुम मुझे रोज़ जैसा उपदेश देते हो, वह ठीक वैसा ही है; और तुम जो कहते हो, मेरी भी मति ऐसी ही होती है। पाण्डवों के प्रति मेरी बुद्धि सदा ऐसी ही बनी रहती है, पर दुर्योधन से मिलते ही वह फिर पलट जाती है। प्रारब्ध को कोई भी प्राणी लाँघ नहीं सकता; मैं तो प्रारब्ध को ही अटल मानता हूँ, उसके आगे पुरुषार्थ व्यर्थ है।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, उद्योग पर्व (प्रजागर पर्व) — छपी पुस्तकों के अध्याय ३३–४०, कुल ५९३ श्लोक",
+    "kshetra": "सब जगह",
+    "note": "पाठ छपी पुस्तकों वाला है — उद्योग पर्व के आठ अध्याय, तैंतीसवें से चालीसवें तक, पाँच सौ तिरानवे श्लोक। एक छपी पुस्तिका के सब पन्ने आँख से पढ़े गए; फिर हर पंक्ति मशीन से पाँच और पाठों से मिलाई गई — उसी प्रकाशक के छपे महाभारत की दो प्रतियाँ, एक दूसरी छपी पुस्तक, और दो टंकित पाठ। सोलह जगह पुस्तिका की छपाई की भूल उसी प्रकाशक के महाभारत के पन्ने से ठीक हुई।\n\nपुणे के समीक्षित संस्करण में इन्हीं आठ अध्यायों में पाँच सौ तीस श्लोक हैं। आपकी पुस्तक में श्लोक कम-ज़्यादा या शब्द अलग मिलें, तो वह दूसरी पाठ-परंपरा है, भूल नहीं।\n\nअर्थ अपने शब्दों में है, पुस्तिका के छपे हिंदी अनुवाद से समझ मिलाकर।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

@@ -270,9 +270,16 @@ void main() {
       // का होता है और पर्व का पन्ना खोलता है (तारीख़ देकर यह `parv_home_test`
       // जाँचता है) — उन दिनों नीचे वाली खोज अगले, परदे से बाहर के पत्ते का
       // बटन पकड़ लेती थी और जाँच गिर जाती थी (11 अक्टूबर 2026 को गिरी)।
-      final navratri = find.text('नवरात्रि देखें');
-      if (navratri.evaluate().isNotEmpty) {
-        await tester.tap(navratri.first);
+      //
+      // और जिस दिन अष्टमी-नवमी एक साथ हों (19 अक्टूबर 2026), पर्व के पत्ते का
+      // बटन «दोनों पूजाएँ देखें» होता है — तब भी जाँच गिरी। इसलिए अब सिर्फ़ परदे
+      // पर दिख रहे (hitTestable) बटन गिने जाते हैं, और पर्व के तीनों शब्द।
+      Finder dikhta(String t) => find.text(t).hitTestable();
+      final parv = ['नवरात्रि देखें', 'दोनों पूजाएँ देखें', 'पर्व देखें']
+          .map(dikhta)
+          .where((f) => f.evaluate().isNotEmpty);
+      if (parv.isNotEmpty) {
+        await tester.tap(parv.first.first);
         await tester.pumpAndSettle();
         expect(find.byType(ParvScreen), findsOneWidget);
         expect(tester.takeException(), isNull);
@@ -281,9 +288,9 @@ void main() {
 
       // पहले पत्ते पर जो बटन है — उनमें से कोई एक होगा।
       final bulawa = [
-        find.text('पूजा जारी रखें'),
-        find.text('पूजा शुरू करें'),
-        find.text('विधि देखें'),
+        dikhta('पूजा जारी रखें'),
+        dikhta('पूजा शुरू करें'),
+        dikhta('विधि देखें'),
       ].firstWhere((f) => f.evaluate().isNotEmpty);
 
       await tester.tap(bulawa.first);

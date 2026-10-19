@@ -1,6 +1,6 @@
 # 31 — दूसरी जाँच: किसी और AI से, सख़्ती से
 
-> **यह क्या है:** 5–12 अक्टूबर 2026 के काम (D-112 से D-123) को ChatGPT जैसे किसी दूसरे AI से
+> **यह क्या है:** 5–19 अक्टूबर 2026 के काम (D-112 से D-125) को ChatGPT जैसे किसी दूसरे AI से
 > जँचवाने का तैयार सामान — कौन-सी फ़ाइल देनी है और क्या पूछना है।
 > **क्यों:** यह सारा काम एक ही AI ने किया और उसी ने जाँचा। संस्कृत के छपे पन्ने उसी ने पढ़े,
 > अर्थ उसी ने लिखे। दूसरी आँख वही ग़लती पकड़ सकती है जो पहली को दिखी ही नहीं।
@@ -11,8 +11,8 @@
    करता है, और याद से "सुधार" देता है। इसलिए नीचे के prompt में उससे **सबूत** माँगा गया है।
    वह जो बताए, उसे ऐप में तभी बदला जाएगा जब छपे पन्ने से मिल जाए।
 2. **जो वह नहीं कर सकता:** ऐप चलाना, जाँचें चलाना, फ़ोन पर देखना। वे यहीं हो चुकी हैं
-   (इंजन 589, ऐप 1333 पास) — पर फ़ोन पर देखना आपका काम है और अब भी बाक़ी है।
-3. **एक बार में एक गठरी।** सब कुछ एक साथ देने पर वह ऊपर-ऊपर से पढ़ता है। नीचे आठ गठरियाँ
+   (इंजन 589, ऐप 1340 पास) — पर फ़ोन पर देखना आपका काम है और अब भी बाक़ी है।
+3. **एक बार में एक गठरी।** सब कुछ एक साथ देने पर वह ऊपर-ऊपर से पढ़ता है। नीचे नौ गठरियाँ
    हैं; हर एक अलग बातचीत में दीजिए।
 
 ## हर गठरी के साथ यह prompt (पहले यही चिपकाइए)
@@ -209,6 +209,33 @@ B. Meanings: where does the Hindi say something the Sanskrit does not say,
    44.22, 45.3, 45.12-14, 45.17, 46.3, 46.15, 46.19, 46.21, 46.24.
 C. Do NOT ask for the metaphors to be explained - only say where the
    literal rendering itself is wrong. Quote Nilakantha's gloss if you use it.
+```
+
+## गठरी ९ — विदुर नीति (D-124, D-125) · पाठ लंबा, अर्थ अपने शब्दों में
+
+**फ़ाइलें:** `tools/granth_paath/mahabharat/paath/vn1.txt` … `vn8.txt` (हर खंड: `# शीर्षक`, फिर श्लोक की
+पंक्तियाँ, फिर `= अर्थ`) — आठ अलग बातचीत में, एक-एक अध्याय। साथ में `milan/vidur_paath.py` का `SUDHAR`।
+
+```
+This is one chapter of the Vidura Niti (Mahabharata, Udyoga Parva,
+chapters 33-40 of the VULGATE, as printed in a Gita Press booklet
+"Viduraniti" - 593 verses; NOT the critical edition, which has 530).
+The verse numbers are the booklet's own; in chapters 38 and 39 the
+booklet puts some numbers in the middle of a verse - that is deliberate.
+Sixteen printing errors of the booklet were corrected from the Gita Press
+Mahabharata (list: SUDHAR in vidur_paath.py). The Hindi meanings were
+written by an AI, close to the words.
+A. Sanskrit: typos, wrong sandhi, missing or extra half-verses. Compare
+   only with a vulgate edition (Gita Press Mahabharata vol. 3, or
+   Chitrashala with Nilakantha). Cite page.
+B. Meanings: where does the Hindi say something the Sanskrit does not say,
+   leave something out, or get the syntax wrong? Look hardest at:
+   33.20, 33.39, 33.44, 33.72, 33.78, 38.4 (the Hindi translation in the
+   booklet reads it the other way round), 38.12-21, 39.34, 39.70, 40.3,
+   40.13.
+C. Do not "improve" the readings that differ from the critical edition
+   (e.g. 35.6, 36.11 third pada, 39.39, 39.79) - only say if the vulgate
+   itself reads differently.
 ```
 
 ## जवाब आए तो

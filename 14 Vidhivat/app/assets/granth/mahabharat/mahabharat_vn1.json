@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "id": "mahabharat_vn1",
+  "naam": "विदुर नीति १ — पण्डित और मूढ़",
+  "upnaam": [
+    "विदुर नीति",
+    "विदुरनीति",
+    "विदुर और धृतराष्ट्र",
+    "प्रजागर पर्व",
+    "उद्योग पर्व"
+  ],
+  "prakar": "granth",
+  "devta": "धर्म और नीति",
+  "rachnakar": "महाभारत, उद्योग पर्व — महर्षि वेदव्यास",
+  "bhasha": "संस्कृत",
+  "parichay": "युद्ध से पहले की एक रात। संजय धृतराष्ट्र को बुरा-भला कह गया है, और युधिष्ठिर की बात कल सभा में सुनाएगा; धृतराष्ट्र को नींद नहीं आती, और वे विदुर को बुलवाते हैं। विदुर पहले बताते हैं कि नींद किसकी उड़ती है, फिर पण्डित और मूढ़ के लक्षण गिनाते हैं, और फिर एक से दस तक की गिनतियों में नीति — दो-दो, तीन-तीन, छह-छह की बातें। अंत में सलाह: पाण्डवों को उनका राज्य दे दीजिए।",
+  "kabPadhein": "जब मन हो। यह पूजा का पाठ नहीं है — नीति की बातें हैं, जो घर में मिलकर पढ़ने और सुनाने लायक़ हैं।",
+  "kaisePadhein": "आठ पन्ने, आठ अध्याय — युद्ध से पहले की एक रात, जब धृतराष्ट्र को नींद नहीं आती और विदुर उन्हें नीति सुनाते हैं। क्रम से पढ़िए, या कोई भी पन्ना खोलिए — ज़्यादातर खंड अपने आप में पूरे हैं। हर खंड के शीर्षक में छपी पुस्तिका वाले श्लोक-अंक हैं; जहाँ पुस्तिका का अंक श्लोक के बीच पड़ता है, वहाँ खंड बड़ा है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर खंड के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "धृतराष्ट्र विदुर को बुलवाते हैं · श्लोक १–३",
+      "dev": "वैशम्पायन उवाच ।\nद्वाःस्थं प्राह महाप्राज्ञो धृतराष्ट्रो महीपतिः ।\nविदुरं द्रष्टुमिच्छामि तमिहानय मा चिरम् ॥\nप्रहितो धृतराष्ट्रेण दूतः क्षत्तारमब्रवीत् ।\nईश्वरस्त्वां महाराजो महाप्राज्ञ दिदृक्षति ॥\nएवमुक्तस्तु विदुरः प्राप्य राजनिवेशनम् ।\nअब्रवीद् धृतराष्ट्राय द्वाःस्थ मां प्रतिवेदय ॥",
+      "roman": "vaishampaayana uvaacha |\ndvaahstham praaha mahaapraajno dhritaraashtro maheepatih |\nviduram drashtumichchhaami tamihaanaya maa chiram ||\nprahito dhritaraashtrena dootah kshattaaramabraveet |\neeshvarastvaam mahaaraajo mahaapraajna didrikshati ||\nevamuktastu vidurah praapya raajaniveshanam |\nabraveed dhritaraashtraaya dvaahstha maam prativedaya ||",
+      "arth": "वैशम्पायन बोले — बड़ी बुद्धि वाले राजा धृतराष्ट्र ने द्वारपाल से कहा: मैं विदुर से मिलना चाहता हूँ; उन्हें यहाँ ले आओ, देर मत करना। धृतराष्ट्र का भेजा हुआ दूत विदुर से बोला: बड़ी बुद्धि वाले विदुर जी! हमारे स्वामी महाराज आपसे मिलना चाहते हैं। यह सुनकर विदुर राजमहल पहुँचे और बोले: द्वारपाल! धृतराष्ट्र को मेरे आने की ख़बर दो।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "विदुर का आना · श्लोक ४–८",
+      "dev": "द्वाःस्थ उवाच ।\nविदुरोऽयमनुप्राप्तो राजेन्द्र तव शासनात् ।\nद्रष्टुमिच्छति ते पादौ किं करोतु प्रशाधि माम् ॥\nधृतराष्ट्र उवाच ।\nप्रवेशय महाप्राज्ञं विदुरं दीर्घदर्शिनम् ।\nअहं हि विदुरस्यास्य नाकल्पो जातु दर्शने ॥\nद्वाःस्थ उवाच ।\nप्रविशान्तःपुरं क्षत्तर्महाराजस्य धीमतः ।\nन हि ते दर्शनेऽकल्पो जातु राजाब्रवीद्धि माम् ॥\nवैशम्पायन उवाच ।\nततः प्रविश्य विदुरो धृतराष्ट्रनिवेशनम् ।\nअब्रवीत् प्राञ्जलिर्वाक्यं चिन्तयानं नराधिपम् ॥\nविदुरोऽहं महाप्राज्ञ सम्प्राप्तस्तव शासनात् ।\nयदि किञ्चन कर्तव्यमयमस्मि प्रशाधि माम् ॥",
+      "roman": "dvaahstha uvaacha |\nviduro'yamanupraapto raajendra tava shaasanaat |\ndrashtumichchhati te paadau kim karotu prashaadhi maam ||\ndhritaraashtra uvaacha |\npraveshaya mahaapraajnam viduram deerghadarshinam |\naham hi vidurasyaasya naakalpo jaatu darshane ||\ndvaahstha uvaacha |\npravishaantahpuram kshattarmahaaraajasya dheematah |\nna hi te darshane'kalpo jaatu raajaabraveeddhi maam ||\nvaishampaayana uvaacha |\ntatah pravishya viduro dhritaraashtraniveshanam |\nabraveet praanjalirvaakyam chintayaanam naraadhipam ||\nviduro'ham mahaapraajna sampraaptastava shaasanaat |\nyadi kinchana kartavyamayamasmi prashaadhi maam ||",
+      "arth": "द्वारपाल बोला — महाराज! आपकी आज्ञा से विदुर आ गए हैं। वे आपके चरणों के दर्शन करना चाहते हैं। मुझे आज्ञा दीजिए, वे क्या करें? धृतराष्ट्र बोले — बड़ी बुद्धि वाले, दूर तक देखने वाले विदुर को भीतर ले आओ। इन विदुर से मिलने में मुझे कभी कोई रुकावट नहीं। द्वारपाल बोला — विदुर जी! बुद्धिमान महाराज के भीतरी महल में चलिए। राजा ने मुझसे कहा है कि आपसे मिलने में उन्हें कभी कोई रुकावट नहीं। वैशम्पायन बोले — तब विदुर धृतराष्ट्र के महल में गए, और चिन्ता में डूबे राजा से हाथ जोड़कर बोले: बड़ी बुद्धि वाले महाराज! मैं विदुर हूँ, आपकी आज्ञा से आया हूँ। कोई काम हो तो मैं यहाँ हूँ — आज्ञा दीजिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "धृतराष्ट्र की बेचैनी · श्लोक ९–१२",
+      "dev": "धृतराष्ट्र उवाच ।\nसञ्जयो विदुर प्राज्ञो गर्हयित्वा च मां गतः ।\nअजातशत्रोः श्वो वाक्यं सभामध्ये स वक्ष्यति ॥\nतस्याद्य कुरुवीरस्य न विज्ञातं वचो मया ।\nतन्मे दहति गात्राणि तदकार्षीत् प्रजागरम् ॥\nजाग्रतो दह्यमानस्य श्रेयो यदनुपश्यसि ।\nतद् ब्रूहि त्वं हि नस्तात धर्मार्थकुशलो ह्यसि ॥\nयतः प्राप्तः सञ्जयः पाण्डवेभ्यो\nन मे यथावन्मनसः प्रशान्तिः ।\nसर्वेन्द्रियाण्यप्रकृतिं गतानि\nकिं वक्ष्यतीत्येव मेऽद्य प्रचिन्ता ॥",
+      "roman": "dhritaraashtra uvaacha |\nsanjayo vidura praajno garhayitvaa cha maam gatah |\najaatashatroh shvo vaakyam sabhaamadhye sa vakshyati ||\ntasyaadya kuruveerasya na vijnaatam vacho mayaa |\ntanme dahati gaatraani tadakaarsheet prajaagaram ||\njaagrato dahyamaanasya shreyo yadanupashyasi |\ntad broohi tvam hi nastaata dharmaarthakushalo hyasi ||\nyatah praaptah sanjayah paandavebhyo\nna me yathaavanmanasah prashaantih |\nsarvendriyaanyaprakritim gataani\nkim vakshyateetyeva me'dya prachintaa ||",
+      "arth": "धृतराष्ट्र बोले — विदुर! बुद्धिमान संजय आया था, और मुझे बुरा-भला कहकर चला गया। अजातशत्रु (युधिष्ठिर) की बात वह कल सभा में सुनाएगा। उस कुरुवीर ने क्या कहलाया है, यह मैं आज जान नहीं पाया — यही बात मेरे अंगों को जला रही है, इसी ने मेरी नींद उड़ा दी है। मैं जाग रहा हूँ और जल रहा हूँ। तात! ऐसे में जो तुम्हें भला दिखे, वह कहो; हम लोगों में धर्म और अर्थ की समझ तुम्हीं को है। जब से संजय पाण्डवों के पास से लौटा है, मेरे मन को ठीक से चैन नहीं। सारी इन्द्रियाँ बेहाल हैं। वह क्या कहेगा — आज मुझे बस यही बड़ी चिन्ता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "नींद किसकी उड़ती है · श्लोक १३–१५",
+      "dev": "विदुर उवाच ।\nअभियुक्तं बलवता दुर्बलं हीनसाधनम् ।\nहृतस्वं कामिनं चोरमाविशन्ति प्रजागराः ॥\nकच्चिदेतैर्महादोषैर्न स्पृष्टोऽसि नराधिप ।\nकच्चिच्च परवित्तेषु गृध्यन्न परितप्यसे ॥\nधृतराष्ट्र उवाच ।\nश्रोतुमिच्छामि ते धर्म्यं परं नैःश्रेयसं वचः ।\nअस्मिन् राजर्षिवंशे हि त्वमेकः प्राज्ञसम्मतः ॥",
+      "roman": "vidura uvaacha |\nabhiyuktam balavataa durbalam heenasaadhanam |\nhritasvam kaaminam choramaavishanti prajaagaraah ||\nkachchidetairmahaadoshairna sprishto'si naraadhipa |\nkachchichcha paravitteshu gridhyanna paritapyase ||\ndhritaraashtra uvaacha |\nshrotumichchhaami te dharmyam param naihshreyasam vachah |\nasmin raajarshivamshe hi tvamekah praajnasammatah ||",
+      "arth": "विदुर बोले — नींद उसकी उड़ती है जिस कमज़ोर और साधनहीन पर किसी बलवान ने चढ़ाई की हो; जिसका सब कुछ छिन गया हो; जो कामी हो; या जो चोर हो। महाराज! कहीं ये बड़े दोष आपको भी तो नहीं छू गए? कहीं पराए धन के लालच में तो आप नहीं जल रहे? धृतराष्ट्र बोले — मैं तुमसे धर्म की, सबसे बढ़कर भला करने वाली बात सुनना चाहता हूँ। राजर्षियों के इस वंश में एक तुम्हीं हो जिसे ज्ञानी भी मानते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "युधिष्ठिर के साथ जो हुआ · श्लोक १६–१९",
+      "dev": "विदुर उवाच ।\nराजा लक्षणसम्पन्नस्त्रैलोक्यस्याधिपो भवेत् ।\nप्रेष्यस्ते प्रेषितश्चैव धृतराष्ट्र युधिष्ठिरः ॥\nविपरीततरश्च त्वं भागधेये न सम्मतः ।\nअर्चिषां प्रक्षयाच्चैव धर्मात्मा धर्मकोविदः ॥\nआनृशंस्यादनुक्रोशाद् धर्मात् सत्यात् पराक्रमात् ।\nगुरुत्वात् त्वयि सम्प्रेक्ष्य बहून् क्लेशांस्तितिक्षते ॥\nदुर्योधने सौबले च कर्णे दुःशासने तथा ।\nएतेष्वैश्वर्यमाधाय कथं त्वं भूतिमिच्छसि ॥",
+      "roman": "vidura uvaacha |\nraajaa lakshanasampannastrailokyasyaadhipo bhavet |\npreshyaste preshitashchaiva dhritaraashtra yudhishthirah ||\nvipareetatarashcha tvam bhaagadheye na sammatah |\narchishaam prakshayaachchaiva dharmaatmaa dharmakovidah ||\naanrishamsyaadanukroshaad dharmaat satyaat paraakramaat |\ngurutvaat tvayi samprekshya bahoon kleshaamstitikshate ||\nduryodhane saubale cha karne duhshaasane tathaa |\neteshvaishvaryamaadhaaya katham tvam bhootimichchhasi ||",
+      "arth": "विदुर बोले — अच्छे लक्षणों वाला राजा तीनों लोकों का स्वामी हो सकता है। धृतराष्ट्र! युधिष्ठिर आपकी आज्ञा में चलने वाले थे, और उन्हीं को आपने निकाल भेजा। आप धर्मात्मा हैं, धर्म जानते हैं; फिर भी, आँखों की ज्योति न होने से, आप उनके बिलकुल उलटे पड़ गए और उन्हें उनका हिस्सा देने को राज़ी न हुए। उनमें क्रूरता नहीं है; दया है, धर्म है, सत्य है, पराक्रम है; और आपको वे बड़ा मानते हैं — इसी से, सब देखते-समझते हुए, वे बहुत से कष्ट सह रहे हैं। दुर्योधन, शकुनि, कर्ण और दुःशासन — इनके हाथ में राज सौंपकर आप भलाई की आशा कैसे करते हैं?",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पण्डित कौन — पहली छह बातें · श्लोक २०–२५",
+      "dev": "आत्मज्ञानं समारम्भस्तितिक्षा धर्मनित्यता ।\nयमर्थान्नापकर्षन्ति स वै पण्डित उच्यते ॥\nनिषेवते प्रशस्तानि निन्दितानि न सेवते ।\nअनास्तिकः श्रद्दधान एतत् पण्डितलक्षणम् ॥\nक्रोधो हर्षश्च दर्पश्च ह्रीः स्तम्भो मान्यमानिता ।\nयमर्थान्नापकर्षन्ति स वै पण्डित उच्यते ॥\nयस्य कृत्यं न जानन्ति मन्त्रं वा मन्त्रितं परे ।\nकृतमेवास्य जानन्ति स वै पण्डित उच्यते ॥\nयस्य कृत्यं न विघ्नन्ति शीतमुष्णं भयं रतिः ।\nसमृद्धिरसमृद्धिर्वा स वै पण्डित उच्यते ॥\nयस्य संसारिणी प्रज्ञा धर्मार्थावनुवर्तते ।\nकामादर्थं वृणीते यः स वै पण्डित उच्यते ॥",
+      "roman": "aatmajnaanam samaarambhastitikshaa dharmanityataa |\nyamarthaannaapakarshanti sa vai pandita uchyate ||\nnishevate prashastaani ninditaani na sevate |\nanaastikah shraddadhaana etat panditalakshanam ||\nkrodho harshashcha darpashcha hreeh stambho maanyamaanitaa |\nyamarthaannaapakarshanti sa vai pandita uchyate ||\nyasya krityam na jaananti mantram vaa mantritam pare |\nkritamevaasya jaananti sa vai pandita uchyate ||\nyasya krityam na vighnanti sheetamushnam bhayam ratih |\nsamriddhirasamriddhirvaa sa vai pandita uchyate ||\nyasya samsaarinee prajnaa dharmaarthaavanuvartate |\nkaamaadartham vrineete yah sa vai pandita uchyate ||",
+      "arth": "अपने को जानना, उद्यम, सहनशीलता और धर्म में सदा टिके रहना — ये जिसे उसके लक्ष्य से नहीं डिगाते, वही पण्डित कहलाता है। जो सराहे गए काम करता है, निन्दित कामों से दूर रहता है, नास्तिक नहीं है और श्रद्धा रखता है — यह पण्डित की पहचान है। क्रोध, हर्ष, घमंड, लज्जा, अकड़ और अपने को पूज्य मानना — ये जिसे उसके लक्ष्य से नहीं डिगाते, वही पण्डित कहलाता है। जिसका इरादा, जिसकी सलाह और जो तय हुआ, यह दूसरे पहले से नहीं जान पाते — काम हो चुकने पर ही जानते हैं — वही पण्डित कहलाता है। सर्दी, गर्मी, डर, मोह, अमीरी या ग़रीबी — जिसके काम में ये रुकावट नहीं डालते, वही पण्डित कहलाता है। जिसकी दुनियादारी वाली बुद्धि धर्म और अर्थ के पीछे चलती है, और जो काम की जगह अर्थ को चुनता है, वही पण्डित कहलाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पण्डित कौन — बुद्धि और काम · श्लोक २६–३०",
+      "dev": "यथाशक्ति चिकीर्षन्ति यथाशक्ति च कुर्वते ।\nन किञ्चिदवमन्यन्ते नराः पण्डितबुद्धयः ॥\nक्षिप्रं विजानाति चिरं शृणोति\nविज्ञाय चार्थं भजते न कामात् ।\nनासम्पृष्टो व्युपयुङ्क्ते परार्थे\nतत् प्रज्ञानं प्रथमं पण्डितस्य ॥\nनाप्राप्यमभिवाञ्छन्ति नष्टं नेच्छन्ति शोचितुम् ।\nआपत्सु च न मुह्यन्ति नराः पण्डितबुद्धयः ॥\nनिश्चित्य यः प्रक्रमते नान्तर्वसति कर्मणः ।\nअबन्ध्यकालो वश्यात्मा स वै पण्डित उच्यते ॥\nआर्यकर्मणि रज्यन्ते भूतिकर्माणि कुर्वते ।\nहितं च नाभ्यसूयन्ति पण्डिता भरतर्षभ ॥",
+      "roman": "yathaashakti chikeershanti yathaashakti cha kurvate |\nna kinchidavamanyante naraah panditabuddhayah ||\nkshipram vijaanaati chiram shrinoti\nvijnaaya chaartham bhajate na kaamaat |\nnaasamprishto vyupayunkte paraarthe\ntat prajnaanam prathamam panditasya ||\nnaapraapyamabhivaanchhanti nashtam nechchhanti shochitum |\naapatsu cha na muhyanti naraah panditabuddhayah ||\nnishchitya yah prakramate naantarvasati karmanah |\nabandhyakaalo vashyaatmaa sa vai pandita uchyate ||\naaryakarmani rajyante bhootikarmaani kurvate |\nhitam cha naabhyasooyanti panditaa bharatarshabha ||",
+      "arth": "पण्डितों जैसी बुद्धि वाले लोग उतना ही करना चाहते हैं जितनी उनकी शक्ति है, और उतना करते भी हैं; और किसी भी चीज़ को तुच्छ नहीं समझते। वह जल्दी समझ लेता है, पर देर तक सुनता है; बात समझकर ही काम में लगता है, मन की चाह से नहीं; और बिना पूछे दूसरे के मामले में नहीं बोलता — यह पण्डित की पहली पहचान है। पण्डितों जैसी बुद्धि वाले लोग जो मिल नहीं सकता उसे चाहते नहीं, जो खो गया उसका शोक करना नहीं चाहते, और विपत्ति में घबराते नहीं। जो पहले निश्चय करता है, फिर काम शुरू करता है; काम के बीच में रुकता नहीं; समय को बेकार नहीं जाने देता, और अपने मन को बस में रखता है — वही पण्डित कहलाता है। भरतश्रेष्ठ! पण्डित भले लोगों वाले कामों में मन लगाते हैं, उन्नति के काम करते हैं, और हित की बात में दोष नहीं निकालते।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पण्डित कौन — मन और वाणी · श्लोक ३१–३४",
+      "dev": "न हृष्यत्यात्मसम्माने नावमानेन तप्यते ।\nगाङ्गो ह्रद इवाक्षोभ्यो यः स पण्डित उच्यते ॥\nतत्त्वज्ञः सर्वभूतानां योगज्ञः सर्वकर्मणाम् ।\nउपायज्ञो मनुष्याणां नरः पण्डित उच्यते ॥\nप्रवृत्तवाक्चित्रकथ ऊहवान् प्रतिभानवान् ।\nआशु ग्रन्थस्य वक्ता च यः स पण्डित उच्यते ॥\nश्रुतं प्रज्ञानुगं यस्य प्रज्ञा चैव श्रुतानुगा ।\nअसम्भिन्नार्यमर्यादः पण्डिताख्यां लभेत सः ॥",
+      "roman": "na hrishyatyaatmasammaane naavamaanena tapyate |\ngaango hrada ivaakshobhyo yah sa pandita uchyate ||\ntattvajnah sarvabhootaanaam yogajnah sarvakarmanaam |\nupaayajno manushyaanaam narah pandita uchyate ||\npravrittavaakchitrakatha oohavaan pratibhaanavaan |\naashu granthasya vaktaa cha yah sa pandita uchyate ||\nshrutam prajnaanugam yasya prajnaa chaiva shrutaanugaa |\nasambhinnaaryamaryaadah panditaakhyaam labheta sah ||",
+      "arth": "जो अपना सम्मान होने पर फूलता नहीं, अपमान से जलता नहीं, और गंगा के गहरे कुंड की तरह जिसे कुछ हिला नहीं पाता — वह पण्डित कहलाता है। जो सब प्राणियों की असलियत जानता है, सब कामों को करने का ढंग जानता है, और मनुष्यों के बीच उपाय जानता है — वह मनुष्य पण्डित कहलाता है। जिसकी वाणी रुकती नहीं, जो बात को तरह-तरह से कह सकता है, तर्क कर सकता है, सूझ वाला है, और ग्रंथ का अर्थ झट बता देता है — वह पण्डित कहलाता है। जिसकी पढ़ाई बुद्धि के पीछे चलती है और बुद्धि पढ़ाई के पीछे, और जो भले लोगों की मर्यादा नहीं तोड़ता — «पण्डित» नाम वही पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मूढ़ कौन — पहली पाँच बातें · श्लोक ३५–३९",
+      "dev": "अश्रुतश्च समुन्नद्धो दरिद्रश्च महामनाः ।\nअर्थांश्चाकर्मणा प्रेप्सुर्मूढ इत्युच्यते बुधैः ॥\nस्वमर्थं यः परित्यज्य परार्थमनुतिष्ठति ।\nमिथ्या चरति मित्रार्थे यश्च मूढः स उच्यते ॥\nअकामान् कामयति यः कामयानान् परित्यजेत् ।\nबलवन्तं च यो द्वेष्टि तमाहुर्मूढचेतसम् ॥\nअमित्रं कुरुते मित्रं मित्रं द्वेष्टि हिनस्ति च ।\nकर्म चारभते दुष्टं तमाहुर्मूढचेतसम् ॥\nसंसारयति कृत्यानि सर्वत्र विचिकित्सते ।\nचिरं करोति क्षिप्रार्थे स मूढो भरतर्षभ ॥",
+      "roman": "ashrutashcha samunnaddho daridrashcha mahaamanaah |\narthaamshchaakarmanaa prepsurmoodha ityuchyate budhaih ||\nsvamartham yah parityajya paraarthamanutishthati |\nmithyaa charati mitraarthe yashcha moodhah sa uchyate ||\nakaamaan kaamayati yah kaamayaanaan parityajet |\nbalavantam cha yo dveshti tamaahurmoodhachetasam ||\namitram kurute mitram mitram dveshti hinasti cha |\nkarma chaarabhate dushtam tamaahurmoodhachetasam ||\nsamsaarayati krityaani sarvatra vichikitsate |\nchiram karoti kshipraarthe sa moodho bharatarshabha ||",
+      "arth": "जो बिना पढ़े घमंड करता है, ग़रीब होकर बड़े-बड़े मनसूबे रखता है, और बिना काम किए धन पाना चाहता है — उसे समझदार लोग मूढ़ कहते हैं। जो अपना काम छोड़कर दूसरे का काम करने लगता है, और जो मित्र के काम में झूठा बर्ताव करता है — वह मूढ़ कहलाता है। जो उन्हें चाहता है जो उसे नहीं चाहते, जो चाहने वालों को छोड़ देता है, और जो अपने से बलवान से बैर रखता है — उसे मूढ़ मन वाला कहते हैं। जो शत्रु को मित्र बनाता है, मित्र से बैर रखता और उसे चोट पहुँचाता है, और बुरा काम शुरू करता है — उसे मूढ़ मन वाला कहते हैं। भरतश्रेष्ठ! जो अपने कामों को फैलाता जाता है, हर बात में संदेह करता है, और जल्दी होने वाले काम में देर लगाता है — वह मूढ़ है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मूढ़ कौन — पाँच और · श्लोक ४०–४४",
+      "dev": "श्राद्धं पितृभ्यो न ददाति दैवतानि न चार्चति ।\nसुहृन्मित्रं न लभते तमाहुर्मूढचेतसम् ॥\nअनाहूतः प्रविशति अपृष्टो बहु भाषते ।\nअविश्वस्ते विश्वसिति मूढचेता नराधमः ॥\nपरं क्षिपति दोषेण वर्तमानः स्वयं तथा ।\nयश्च क्रुध्यत्यनीशानः स च मूढतमो नरः ॥\nआत्मनो बलमज्ञाय धर्मार्थपरिवर्जितम् ।\nअलभ्यमिच्छन्नैष्कर्म्यान्मूढबुद्धिरिहोच्यते ॥\nअशिष्यं शास्ति यो राजन् यश्च शून्यमुपासते ।\nकदर्यं भजते यश्च तमाहुर्मूढचेतसम् ॥",
+      "roman": "shraaddham pitribhyo na dadaati daivataani na chaarchati |\nsuhrinmitram na labhate tamaahurmoodhachetasam ||\nanaahootah pravishati aprishto bahu bhaashate |\navishvaste vishvasiti moodhachetaa naraadhamah ||\nparam kshipati doshena vartamaanah svayam tathaa |\nyashcha krudhyatyaneeshaanah sa cha moodhatamo narah ||\naatmano balamajnaaya dharmaarthaparivarjitam |\nalabhyamichchhannaishkarmyaanmoodhabuddhirihochyate ||\nashishyam shaasti yo raajan yashcha shoonyamupaasate |\nkadaryam bhajate yashcha tamaahurmoodhachetasam ||",
+      "arth": "जो पितरों को श्राद्ध नहीं देता, देवताओं की पूजा नहीं करता, और जिसे कोई सच्चा मित्र नहीं मिलता — उसे मूढ़ मन वाला कहते हैं। जो बिना बुलाए भीतर चला आता है, बिना पूछे बहुत बोलता है, और भरोसे के अयोग्य पर भरोसा करता है — वह मूढ़ मन वाला, नीच मनुष्य है। जो ख़ुद वैसा ही करते हुए दूसरे पर दोष लगाता है, और जो कुछ कर न सकने पर भी क्रोध करता है — वह सबसे बड़ा मूढ़ है। जो अपना बल जाने बिना, बिना काम किए, ऐसी चीज़ चाहता है जिसमें न धर्म है न अर्थ, और जो मिल भी नहीं सकती — वह यहाँ मूढ़ बुद्धि वाला कहलाता है। राजन्! जो उसे सिखाता है जो सीखने योग्य नहीं, जो शून्य की उपासना करता है, और जो कंजूस का आसरा लेता है — उसे मूढ़ मन वाला कहते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "अकेले खाना, अकेले पाप · श्लोक ४५–४८",
+      "dev": "अर्थं महान्तमासाद्य विद्यामैश्वर्यमेव वा ।\nविचरत्यसमुन्नद्धो यः स पण्डित उच्यते ॥\nएकः सम्पन्नमश्नाति वस्ते वासश्च शोभनम् ।\nयोऽसंविभज्य भृत्येभ्यः को नृशंसतरस्ततः ॥\nएकः पापानि कुरुते फलं भुङ्क्ते महाजनः ।\nभोक्तारो विप्रमुच्यन्ते कर्ता दोषेण लिप्यते ॥\nएकं हन्यान्न वा हन्यादिषुर्मुक्तो धनुष्मता ।\nबुद्धिर्बुद्धिमतोत्सृष्टा हन्याद् राष्ट्रं सराजकम् ॥",
+      "roman": "artham mahaantamaasaadya vidyaamaishvaryameva vaa |\nvicharatyasamunnaddho yah sa pandita uchyate ||\nekah sampannamashnaati vaste vaasashcha shobhanam |\nyo'samvibhajya bhrityebhyah ko nrishamsatarastatah ||\nekah paapaani kurute phalam bhunkte mahaajanah |\nbhoktaaro vipramuchyante kartaa doshena lipyate ||\nekam hanyaanna vaa hanyaadishurmukto dhanushmataa |\nbuddhirbuddhimatotsrishtaa hanyaad raashtram saraajakam ||",
+      "arth": "जो बहुत धन, विद्या या ऐश्वर्य पाकर भी बिना अकड़ के चलता-फिरता है — वह पण्डित कहलाता है। जो अपने आश्रितों को बाँटे बिना अकेला बढ़िया खाता और अच्छे कपड़े पहनता है — उससे बढ़कर क्रूर कौन होगा? पाप एक करता है, और उसका फल बहुत से लोग भोगते हैं; भोगने वाले तो छूट जाते हैं, दोष करने वाले को ही लगता है। धनुर्धर का छोड़ा बाण एक को मारे, या शायद उसे भी न मारे; पर बुद्धिमान की चलाई बुद्धि राजा समेत पूरे राष्ट्र को मार सकती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "एक से सात तक; और एक सत्य · श्लोक ४९–५२",
+      "dev": "एकया द्वे विनिश्चित्य त्रींश्चतुर्भिर्वशे कुरु ।\nपञ्च जित्वा विदित्वा षट् सप्त हित्वा सुखी भव ॥\nएकं विषरसो हन्ति शस्त्रेणैकश्च वध्यते ।\nसराष्ट्रं सप्रजं हन्ति राजानं मन्त्रविप्लवः ॥\nएकः स्वादु न भुञ्जीत एकश्चार्थान्न चिन्तयेत् ।\nएको न गच्छेदध्वानं नैकः सुप्तेषु जागृयात् ॥\nएकमेवाद्वितीयं तद् यद् राजन्नावबुध्यसे ।\nसत्यं स्वर्गस्य सोपानं पारावारस्य नौरिव ॥",
+      "roman": "ekayaa dve vinishchitya treemshchaturbhirvashe kuru |\npancha jitvaa viditvaa shat sapta hitvaa sukhee bhava ||\nekam visharaso hanti shastrenaikashcha vadhyate |\nsaraashtram saprajam hanti raajaanam mantraviplavah ||\nekah svaadu na bhunjeeta ekashchaarthaanna chintayet |\neko na gachchhedadhvaanam naikah supteshu jaagriyaat ||\nekamevaadviteeyam tad yad raajannaavabudhyase |\nsatyam svargasya sopaanam paaraavaarasya nauriva ||",
+      "arth": "एक से दो का निश्चय करके, चार से तीन को बस में कीजिए; पाँच को जीतकर, छह को जानकर, सात को छोड़कर सुखी हो जाइए। (टीकाकार इन गिनतियों को यों खोलते हैं: एक — बुद्धि; दो — करने योग्य और न करने योग्य; तीन — मित्र, शत्रु और उदासीन; चार — साम, दान, भेद और दण्ड; पाँच — इन्द्रियाँ; छह — राजनीति के छह गुण, संधि और विग्रह आदि; सात — वही सात दोष जो इसी अध्याय में आगे गिनाए गए हैं।) विष का रस एक को मारता है, और शस्त्र से भी एक ही मारा जाता है; पर गुप्त सलाह का खुल जाना राष्ट्र और प्रजा समेत राजा को मार डालता है। अकेले स्वादिष्ट भोजन न करे; अकेले किसी बात का निश्चय न करे; अकेले रास्ता न चले; और जहाँ सब सोए हों, वहाँ अकेला न जागे। राजन्! वह एक ही है, उसका दूसरा नहीं — जिसे आप समझ नहीं रहे: सत्य स्वर्ग की सीढ़ी है, जैसे समुद्र के पार जाने के लिए नाव।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "क्षमा · श्लोक ५३–५७",
+      "dev": "एकः क्षमावतां दोषो द्वितीयो नोपपद्यते ।\nयदेनं क्षमया युक्तमशक्तं मन्यते जनः ॥\nसोऽस्य दोषो न मन्तव्यः क्षमा हि परमं बलम् ।\nक्षमा गुणो ह्यशक्तानां शक्तानां भूषणं क्षमा ॥\nक्षमा वशीकृतिर्लोके क्षमया किं न साध्यते ।\nशान्तिखड्गः करे यस्य किं करिष्यति दुर्जनः ॥\nअतृणे पतितो वह्निः स्वयमेवोपशाम्यति ।\nअक्षमावान् परं दोषैरात्मानं चैव योजयेत् ॥\nएको धर्मः परं श्रेयः क्षमैका शान्तिरुत्तमा ।\nविद्यैका परमा तृप्तिरहिंसैका सुखावहा ॥",
+      "roman": "ekah kshamaavataam dosho dviteeyo nopapadyate |\nyadenam kshamayaa yuktamashaktam manyate janah ||\nso'sya dosho na mantavyah kshamaa hi paramam balam |\nkshamaa guno hyashaktaanaam shaktaanaam bhooshanam kshamaa ||\nkshamaa vasheekritirloke kshamayaa kim na saadhyate |\nshaantikhadgah kare yasya kim karishyati durjanah ||\natrine patito vahnih svayamevopashaamyati |\nakshamaavaan param doshairaatmaanam chaiva yojayet ||\neko dharmah param shreyah kshamaikaa shaantiruttamaa |\nvidyaikaa paramaa triptirahimsaikaa sukhaavahaa ||",
+      "arth": "क्षमा करने वालों में एक ही दोष है, दूसरा नहीं मिलता — कि क्षमा करने वाले को लोग कमज़ोर समझ लेते हैं। पर उसे दोष नहीं मानना चाहिए, क्योंकि क्षमा बहुत बड़ा बल है। क्षमा कमज़ोरों का गुण है, और समर्थों का गहना। संसार में क्षमा सबको बस में कर लेती है; क्षमा से क्या नहीं सधता? जिसके हाथ में शान्ति की तलवार है, उसका दुर्जन क्या बिगाड़ लेगा? जहाँ घास-फूस नहीं, वहाँ गिरी आग अपने आप बुझ जाती है। जिसमें क्षमा नहीं, वह दूसरे को भी और अपने को भी दोषों में डालता है। एक धर्म ही सबसे बड़ा कल्याण है; एक क्षमा ही सबसे उत्तम शान्ति है; एक विद्या ही सबसे बड़ी तृप्ति है; और एक अहिंसा ही सुख देने वाली है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दो-दो की बातें · श्लोक ५८–६२",
+      "dev": "द्वाविमौ ग्रसते भूमिः सर्पो विलशयानिव ।\nराजानं चाविरोद्धारं ब्राह्मणं चाप्रवासिनम् ॥\nद्वे कर्मणी नरः कुर्वन्नस्मिँल्लोके विरोचते ।\nअब्रुवन् परुषं किञ्चिदसतोऽनर्चयंस्तथा ॥\nद्वाविमौ पुरुषव्याघ्र परप्रत्ययकारिणौ ।\nस्त्रियः कामितकामिन्यो लोकः पूजितपूजकः ॥\nद्वाविमौ कण्टकौ तीक्ष्णौ शरीरपरिशोषिणौ ।\nयश्चाधनः कामयते यश्च कुप्यत्यनीश्वरः ॥\nद्वावेव न विराजेते विपरीतेन कर्मणा ।\nगृहस्थश्च निरारम्भः कार्यवांश्चैव भिक्षुकः ॥",
+      "roman": "dvaavimau grasate bhoomih sarpo vilashayaaniva |\nraajaanam chaaviroddhaaram braahmanam chaapravaasinam ||\ndve karmanee narah kurvannasminlloke virochate |\nabruvan parusham kinchidasato'narchayamstathaa ||\ndvaavimau purushavyaaghra parapratyayakaarinau |\nstriyah kaamitakaaminyo lokah poojitapoojakah ||\ndvaavimau kantakau teekshnau shareeraparishoshinau |\nyashchaadhanah kaamayate yashcha kupyatyaneeshvarah ||\ndvaaveva na viraajete vipareetena karmanaa |\ngrihasthashcha niraarambhah kaaryavaamshchaiva bhikshukah ||",
+      "arth": "इन दो को धरती वैसे ही निगल जाती है जैसे साँप बिल में रहने वालों को: शत्रु का सामना न करने वाले राजा को, और परदेस न जाने वाले ब्राह्मण को। दो काम करने वाला मनुष्य इस लोक में चमकता है: ज़रा भी कठोर बात न कहना, और बुरे लोगों का आदर न करना। पुरुषों में सिंह! ये दो दूसरों के भरोसे पर चलते हैं: स्त्रियाँ, जो उसी को चाहने लगती हैं जिसे दूसरी स्त्री चाहती है; और लोग, जो उसी को पूजने लगते हैं जिसे दूसरे पूजते हैं। ये दो तीखे काँटे हैं जो शरीर को सुखा देते हैं: बिना धन के चाह रखना, और बिना सामर्थ्य के क्रोध करना। दो ही अपने उलटे काम से शोभा नहीं पाते: कुछ न करने वाला गृहस्थ, और काम-धंधे में लगा भिक्षु।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "दो-दो की बातें — आगे · श्लोक ६३–६६",
+      "dev": "द्वाविमौ पुरुषौ राजन् स्वर्गस्योपरि तिष्ठतः ।\nप्रभुश्च क्षमया युक्तो दरिद्रश्च प्रदानवान् ॥\nन्यायागतस्य द्रव्यस्य बोद्धव्यौ द्वावतिक्रमौ ।\nअपात्रे प्रतिपत्तिश्च पात्रे चाप्रतिपादनम् ॥\nद्वावम्भसि निवेष्टव्यौ गले बध्वा दृढां शिलाम् ।\nधनवन्तमदातारं दरिद्रं चातपस्विनम् ॥\nद्वाविमौ पुरुषव्याघ्र सूर्यमण्डलभेदिनौ ।\nपरिव्राड्योगयुक्तश्च रणे चाभिमुखो हतः ॥",
+      "roman": "dvaavimau purushau raajan svargasyopari tishthatah |\nprabhushcha kshamayaa yukto daridrashcha pradaanavaan ||\nnyaayaagatasya dravyasya boddhavyau dvaavatikramau |\napaatre pratipattishcha paatre chaapratipaadanam ||\ndvaavambhasi niveshtavyau gale badhvaa dridhaam shilaam |\ndhanavantamadaataaram daridram chaatapasvinam ||\ndvaavimau purushavyaaghra sooryamandalabhedinau |\nparivraadyogayuktashcha rane chaabhimukho hatah ||",
+      "arth": "राजन्! ये दो पुरुष स्वर्ग से भी ऊपर रहते हैं: सामर्थ्य होते हुए क्षमा करने वाला, और ग़रीब होते हुए दान देने वाला। न्याय से कमाए धन के दो दुरुपयोग समझने चाहिए: अपात्र को देना, और पात्र को न देना। इन दो को गले में मज़बूत पत्थर बाँधकर पानी में डुबो देना चाहिए: धनी, जो देता नहीं; और ग़रीब, जो तप नहीं करता। पुरुषों में सिंह! ये दो सूर्यमंडल को भेदकर ऊपर जाते हैं: योग में लगा संन्यासी, और युद्ध में सामने लड़ते हुए मारा गया योद्धा।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "तीन-तीन की बातें · श्लोक ६७–७३",
+      "dev": "त्रयो न्याया मनुष्याणां श्रूयन्ते भरतर्षभ ।\nकनीयान्मध्यमः श्रेष्ठ इति वेदविदो विदुः ॥\nत्रिविधाः पुरुषा राजन्नुत्तमाधममध्यमाः ।\nनियोजयेद् यथावत् तांस्त्रिविधेष्वेव कर्मसु ॥\nत्रय एवाधना राजन् भार्या दासस्तथा सुतः ।\nयत्ते समधिगच्छन्ति यस्य ते तस्य तद्धनम् ॥\nहरणं च परस्वानां परदाराभिमर्शनम् ।\nसुहृदश्च परित्यागस्त्रयो दोषाः क्षयावहाः ॥\nत्रिविधं नरकस्येदं द्वारं नाशनमात्मनः ।\nकामः क्रोधस्तथा लोभस्तस्मादेतत्त्रयं त्यजेत् ॥\nवरप्रदानं राज्यं च पुत्रजन्म च भारत ।\nशत्रोश्च मोक्षणं कृच्छ्रात् त्रीणि चैकं च तत्समम् ॥\nभक्तं च भजमानं च तवास्मीति च वादिनम् ।\nत्रीनेतांश्छरणं प्राप्तान् विषमेऽपि न संत्यजेत् ॥",
+      "roman": "trayo nyaayaa manushyaanaam shrooyante bharatarshabha |\nkaneeyaanmadhyamah shreshtha iti vedavido viduh ||\ntrividhaah purushaa raajannuttamaadhamamadhyamaah |\nniyojayed yathaavat taamstrividheshveva karmasu ||\ntraya evaadhanaa raajan bhaaryaa daasastathaa sutah |\nyatte samadhigachchhanti yasya te tasya taddhanam ||\nharanam cha parasvaanaam paradaaraabhimarshanam |\nsuhridashcha parityaagastrayo doshaah kshayaavahaah ||\ntrividham narakasyedam dvaaram naashanamaatmanah |\nkaamah krodhastathaa lobhastasmaadetattrayam tyajet ||\nvarapradaanam raajyam cha putrajanma cha bhaarata |\nshatroshcha mokshanam krichchhraat treeni chaikam cha tatsamam ||\nbhaktam cha bhajamaanam cha tavaasmeeti cha vaadinam |\ntreenetaamshchharanam praaptaan vishame'pi na samtyajet ||",
+      "arth": "भरतश्रेष्ठ! मनुष्यों के तीन ढंग सुने जाते हैं — छोटा, बीच का और उत्तम; ऐसा वेद जानने वाले जानते हैं। राजन्! पुरुष तीन तरह के हैं — उत्तम, अधम और मध्यम; इन्हें ठीक-ठीक तीन तरह के कामों में ही लगाना चाहिए। राजन्! तीन ही बिना धन के कहे गए हैं — पत्नी, दास और पुत्र; ये जो कमाते हैं, वह उसी का धन होता है जिसके ये हैं। दूसरे का धन छीनना, दूसरे की स्त्री से संबंध, और सच्चे मित्र को छोड़ देना — ये तीन दोष नाश लाने वाले हैं। काम, क्रोध और लोभ — यह नरक का तीन तरह का दरवाज़ा है, जो अपना ही नाश करता है; इसलिए इन तीनों को छोड़ दे। भारत! वरदान मिलना, राज्य मिलना और पुत्र का जन्म — ये तीन; और शत्रु के संकट से छूट जाना — यह एक, उन तीनों के बराबर है। भक्त, सेवा करने वाला, और «मैं तुम्हारा हूँ» कहने वाला — शरण में आए इन तीन को संकट में भी नहीं छोड़ना चाहिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "चार-चार की बातें · श्लोक ७४–७८",
+      "dev": "चत्वारि राज्ञा तु महाबलेन\nवर्ज्यान्याहुः पण्डितस्तानि विद्यात् ।\nअल्पप्रज्ञैः सह मन्त्रं न कुर्यान्न दीर्घसूत्रै रभसैश्चारणैश्च ॥\nचत्वारि ते तात गृहे वसन्तु\nश्रियाभिजुष्टस्य गृहस्थधर्मे ।\nवृद्धो ज्ञातिरवसन्नः कुलीनः\nसखा दरिद्रो भगिनी चानपत्या ॥\nचत्वार्याह महाराज साद्यस्कानि बृहस्पतिः ।\nपृच्छते त्रिदशेन्द्राय तानीमानि निबोध मे ॥\nदेवतानां च सङ्कल्पमनुभावं च धीमताम् ।\nविनयं कृतविद्यानां विनाशं पापकर्मणाम् ॥\nचत्वारि कर्माण्यभयङ्कराणि\nभयं प्रयच्छन्त्ययथाकृतानि ।\nमानाग्निहोत्रमुत मानमौनं\nमानेनाधीतमुत मानयज्ञः ॥",
+      "roman": "chatvaari raajnaa tu mahaabalena\nvarjyaanyaahuh panditastaani vidyaat |\nalpaprajnaih saha mantram na kuryaanna deerghasootrai rabhasaishchaaranaishcha ||\nchatvaari te taata grihe vasantu\nshriyaabhijushtasya grihasthadharme |\nvriddho jnaatiravasannah kuleenah\nsakhaa daridro bhaginee chaanapatyaa ||\nchatvaaryaaha mahaaraaja saadyaskaani brihaspatih |\nprichchhate tridashendraaya taaneemaani nibodha me ||\ndevataanaam cha sankalpamanubhaavam cha dheemataam |\nvinayam kritavidyaanaam vinaasham paapakarmanaam ||\nchatvaari karmaanyabhayankaraani\nbhayam prayachchhantyayathaakritaani |\nmaanaagnihotramuta maanamaunam\nmaanenaadheetamuta maanayajnah ||",
+      "arth": "थोड़ी बुद्धि वालों, काम लटकाने वालों, उतावलों और बड़ाई करने वाले चारणों के साथ सलाह न करे — बड़े बल वाले राजा के लिए ये चार छोड़ने योग्य कहे गए हैं; समझदार इन्हें पहचान ले। तात! गृहस्थ-धर्म में रहते हुए, लक्ष्मी से भरे आपके घर में ये चार रहने चाहिए: अपने कुटुंब का बूढ़ा, संकट में पड़ा कुलीन, ग़रीब मित्र, और संतानहीन बहन। महाराज! देवराज इन्द्र के पूछने पर बृहस्पति ने चार बातें बताई थीं जो तुरंत फल देती हैं; उन्हें मुझसे सुनिए — देवताओं का संकल्प, बुद्धिमानों का प्रभाव, विद्या पाए हुओं की विनम्रता, और पाप करने वालों का विनाश। चार कर्म भय हटाने वाले हैं, पर ठीक ढंग से न किए जाएँ तो वही भय देते हैं — अग्निहोत्र, मौन, अध्ययन और यज्ञ, जब «मान» से किए जाएँ। («मान» के दो अर्थ लिए गए हैं — आदर, या अपनी बड़ाई की चाह। पहले अर्थ में: आदर से किए जाएँ तो ये भय हटाते हैं। दूसरे में: बड़ाई के लिए किए जाएँ तो ये ही भय देते हैं।)",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पाँच-पाँच की बातें · श्लोक ७९–८२",
+      "dev": "पञ्चाग्नयो मनुष्येण परिचर्याः प्रयत्नतः ।\nपिता माताग्निरात्मा च गुरुश्च भरतर्षभ ॥\nपञ्चैव पूजयँल्लोके यशः प्राप्नोति केवलम् ।\nदेवान् पितॄन् मनुष्यांश्च भिक्षूनतिथिपञ्चमान् ॥\nपञ्च त्वानुगमिष्यन्ति यत्र यत्र गमिष्यसि ।\nमित्राण्यमित्रा मध्यस्था उपजीव्योपजीविनः ॥\nपञ्चेन्द्रियस्य मर्त्यस्यच्छिद्रं चेदेकमिन्द्रियम् ।\nततोऽस्य स्रवति प्रज्ञा दृतेः पात्रादिवोदकम् ॥",
+      "roman": "panchaagnayo manushyena paricharyaah prayatnatah |\npitaa maataagniraatmaa cha gurushcha bharatarshabha ||\npanchaiva poojayanlloke yashah praapnoti kevalam |\ndevaan pitreen manushyaamshcha bhikshoonatithipanchamaan ||\npancha tvaanugamishyanti yatra yatra gamishyasi |\nmitraanyamitraa madhyasthaa upajeevyopajeevinah ||\npanchendriyasya martyasyachchhidram chedekamindriyam |\ntato'sya sravati prajnaa driteh paatraadivodakam ||",
+      "arth": "भरतश्रेष्ठ! मनुष्य को पाँच अग्नियों की जतन से सेवा करनी चाहिए — पिता, माता, अग्नि, आत्मा और गुरु। देवता, पितर, मनुष्य, भिक्षु और अतिथि — इन पाँच को पूजने वाला संसार में निर्मल यश पाता है। आप जहाँ-जहाँ जाएँगे, ये पाँच आपके पीछे चलेंगे — मित्र, शत्रु, बीच वाले, जिनके सहारे आप हैं, और जो आपके सहारे हैं। पाँच इन्द्रियों वाले मनुष्य की एक भी इन्द्रिय में छेद हो, तो उसी से उसकी बुद्धि वैसे ही बह जाती है जैसे चमड़े की मशक से पानी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "छह-छह की बातें · श्लोक ८३–८८",
+      "dev": "षड् दोषाः पुरुषेणेह हातव्या भूतिमिच्छता ।\nनिद्रा तन्द्रा भयं क्रोध आलस्यं दीर्घसूत्रता ॥\nषडिमान् पुरुषो जह्याद् भिन्नां नावमिवार्णवे ।\nअप्रवक्तारमाचार्यमनधीयानमृत्विजम् ॥\nअरक्षितारं राजानं भार्यां चाप्रियवादिनीम् ।\nग्रामकामं च गोपालं वनकामं च नापितम् ॥\nषडेव तु गुणाः पुंसा न हातव्याः कदाचन ।\nसत्यं दानमनालस्यमनसूया क्षमा धृतिः ॥\nअर्थागमो नित्यमरोगिता च\nप्रिया च भार्या प्रियवादिनी च ।\nवश्यश्च पुत्रोऽर्थकरी च विद्या\nषड् जीवलोकस्य सुखानि राजन् ॥\nषण्णामात्मनि नित्यानामैश्वर्यं योऽधिगच्छति ।\nन स पापैः कुतोऽनर्थैर्युज्यते विजितेन्द्रियः ॥",
+      "roman": "shad doshaah purusheneha haatavyaa bhootimichchhataa |\nnidraa tandraa bhayam krodha aalasyam deerghasootrataa ||\nshadimaan purusho jahyaad bhinnaam naavamivaarnave |\napravaktaaramaachaaryamanadheeyaanamritvijam ||\narakshitaaram raajaanam bhaaryaam chaapriyavaadineem |\ngraamakaamam cha gopaalam vanakaamam cha naapitam ||\nshadeva tu gunaah pumsaa na haatavyaah kadaachana |\nsatyam daanamanaalasyamanasooyaa kshamaa dhritih ||\narthaagamo nityamarogitaa cha\npriyaa cha bhaaryaa priyavaadinee cha |\nvashyashcha putro'rthakaree cha vidyaa\nshad jeevalokasya sukhaani raajan ||\nshannaamaatmani nityaanaamaishvaryam yo'dhigachchhati |\nna sa paapaih kuto'narthairyujyate vijitendriyah ||",
+      "arth": "उन्नति चाहने वाले पुरुष को ये छह दोष छोड़ देने चाहिए — नींद, ऊँघ, डर, क्रोध, आलस्य और काम को लटकाना। इन छह को मनुष्य वैसे छोड़ दे जैसे समुद्र में टूटी नाव को — न सिखाने वाला आचार्य, बिना पढ़ा ऋत्विज, रक्षा न करने वाला राजा, कड़वा बोलने वाली पत्नी, गाँव में रहना चाहने वाला ग्वाला, और वन में रहना चाहने वाला नाई। पुरुष को ये छह गुण कभी नहीं छोड़ने चाहिए — सत्य, दान, आलस्य न करना, दूसरों में दोष न ढूँढना, क्षमा और धैर्य। राजन्! इस जीव-लोक के छह सुख हैं — धन की आमद, सदा नीरोग रहना, प्यारी पत्नी, उसका मीठा बोलना, कहने में रहने वाला पुत्र, और कमाई कराने वाली विद्या। जो अपने भीतर सदा रहने वाले छह पर अधिकार पा लेता है, वह जितेन्द्रिय पुरुष पापों से नहीं जुड़ता; फिर अनर्थों से कैसे जुड़ेगा? (परंपरा में ये छह काम, क्रोध, लोभ, मोह, मद और मत्सर माने जाते हैं।)",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "छह-छह की बातें — आगे · श्लोक ८९–९५",
+      "dev": "षडिमे षट्सु जीवन्ति सप्तमो नोपलभ्यते ।\nचौराः प्रमत्ते जीवन्ति व्याधितेषु चिकित्सकाः ॥\nप्रमदाः कामयानेषु यजमानेषु याजकाः ।\nराजा विवदमानेषु नित्यं मूर्खेषु पण्डिताः ॥\nषडिमानि विनश्यन्ति मुहूर्तमनवेक्षणात् ।\nगावः सेवा कृषिर्भार्या विद्या वृषलसंगतिः ॥\nषडेते ह्यवमन्यन्ते नित्यं पूर्वोपकारिणम् ।\nआचार्यं शिक्षिताः शिष्याः कृतदाराश्च मातरम् ॥\nनारीं विगतकामास्तु कृतार्थाश्च प्रयोजकम् ।\nनावं निस्तीर्णकान्तारा आतुराश्च चिकित्सकम् ॥\nआरोग्यमानृण्यमविप्रवासः\nसद्भिर्मनुष्यैः सह सम्प्रयोगः ।\nस्वप्रत्यया वृत्तिरभीतवासः\nषड् जीवलोकस्य सुखानि राजन् ॥\nईर्ष्यी घृणी न सन्तुष्टः क्रोधनो नित्यशङ्कितः ।\nपरभाग्योपजीवी च षडेते नित्यदुःखिताः ॥",
+      "roman": "shadime shatsu jeevanti saptamo nopalabhyate |\nchauraah pramatte jeevanti vyaadhiteshu chikitsakaah ||\npramadaah kaamayaaneshu yajamaaneshu yaajakaah |\nraajaa vivadamaaneshu nityam moorkheshu panditaah ||\nshadimaani vinashyanti muhoortamanavekshanaat |\ngaavah sevaa krishirbhaaryaa vidyaa vrishalasamgatih ||\nshadete hyavamanyante nityam poorvopakaarinam |\naachaaryam shikshitaah shishyaah kritadaaraashcha maataram ||\nnaareem vigatakaamaastu kritaarthaashcha prayojakam |\nnaavam nisteernakaantaaraa aaturaashcha chikitsakam ||\naarogyamaanrinyamavipravaasah\nsadbhirmanushyaih saha samprayogah |\nsvapratyayaa vrittirabheetavaasah\nshad jeevalokasya sukhaani raajan ||\neershyee ghrinee na santushtah krodhano nityashankitah |\nparabhaagyopajeevee cha shadete nityaduhkhitaah ||",
+      "arth": "ये छह दूसरे छह के सहारे जीते हैं; सातवाँ कोई नहीं मिलता — चोर असावधान के सहारे, वैद्य रोगियों के सहारे, स्त्रियाँ कामियों के सहारे, यज्ञ कराने वाले यजमानों के सहारे, राजा झगड़ने वालों के सहारे, और पण्डित सदा मूर्खों के सहारे। घड़ी भर न देखने से ये छह नष्ट हो जाते हैं — गायें, सेवा, खेती, पत्नी, विद्या, और वृषल से मेल। ये छह अपने पहले के उपकारी का सदा अनादर करते हैं — पढ़ चुके शिष्य आचार्य का, ब्याह हो जाने पर पुत्र माता का, काम-वासना बीत जाने पर पुरुष स्त्री का, काम बन जाने पर लोग काम बनाने वाले का, दुर्गम पार कर चुके लोग नाव का, और रोगी वैद्य का। राजन्! इस जीव-लोक के छह सुख हैं — नीरोग रहना, क़र्ज़ न होना, परदेस में न रहना, भले लोगों का साथ, अपने भरोसे की रोज़ी, और बिना डर के रहना। ईर्ष्या करने वाला, घृणा करने वाला, असंतोषी, क्रोधी, सदा शंका करने वाला, और दूसरे के भाग्य पर जीने वाला — ये छह सदा दुखी रहते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "सात दोष, और नाश के आठ लक्षण · श्लोक ९६–१००",
+      "dev": "सप्त दोषाः सदा राज्ञा हातव्या व्यसनोदयाः ।\nप्रायशो यैर्विनश्यन्ति कृतमूला अपीश्वराः ॥\nस्त्रियोऽक्षा मृगया पानं वाक्पारुष्यं च पञ्चमम् ।\nमहच्च दण्डपारुष्यमर्थदूषणमेव च ॥\nअष्टौ पूर्वनिमित्तानि नरस्य विनशिष्यतः ।\nब्राह्मणान् प्रथमं द्वेष्टि ब्राह्मणैश्च विरुध्यते ॥\nब्राह्मणस्वानि चादत्ते ब्राह्मणांश्च जिघांसति ।\nरमते निन्दया चैषां प्रशंसां नाभिनन्दति ॥\nनैनान् स्मरति कृत्येषु याचितश्चाभ्यसूयति ।\nएतान् दोषान्नरः प्राज्ञो बुध्येद् बुद्ध्वा विसर्जयेत् ॥",
+      "roman": "sapta doshaah sadaa raajnaa haatavyaa vyasanodayaah |\npraayasho yairvinashyanti kritamoolaa apeeshvaraah ||\nstriyo'kshaa mrigayaa paanam vaakpaarushyam cha panchamam |\nmahachcha dandapaarushyamarthadooshanameva cha ||\nashtau poorvanimittaani narasya vinashishyatah |\nbraahmanaan prathamam dveshti braahmanaishcha virudhyate ||\nbraahmanasvaani chaadatte braahmanaamshcha jighaamsati |\nramate nindayaa chaishaam prashamsaam naabhinandati ||\nnainaan smarati krityeshu yaachitashchaabhyasooyati |\netaan doshaannarah praajno budhyed buddhvaa visarjayet ||",
+      "arth": "राजा को ये सात दोष सदा छोड़ देने चाहिए, जिनसे विपत्ति उठती है और जिनसे जड़ जमाए हुए राजा भी प्रायः नष्ट हो जाते हैं — स्त्रियाँ, जुआ, शिकार, मदिरा, पाँचवाँ कठोर वचन, बहुत कठोर दण्ड, और धन का दुरुपयोग। जिसका नाश होने वाला है, उस मनुष्य के आठ लक्षण पहले से दिखते हैं — पहले वह ब्राह्मणों से द्वेष करता है; ब्राह्मणों से उसका विरोध होता है; वह ब्राह्मणों का धन ले लेता है; ब्राह्मणों को मारना चाहता है; उनकी निन्दा में रस लेता है; उनकी प्रशंसा उसे नहीं सुहाती; कामों में उन्हें याद नहीं करता; और माँगने पर उनमें दोष निकालता है। समझदार मनुष्य इन दोषों को पहचाने, और पहचानकर छोड़ दे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "हर्ष के आठ सार, और आठ गुण · श्लोक १०१–१०४",
+      "dev": "अष्टाविमानि हर्षस्य नवनीतानि भारत ।\nवर्तमानानि दृश्यन्ते तान्येव स्वसुखान्यपि ॥\nसमागमश्च सखिभिर्महांश्चैव धनागमः ।\nपुत्रेण च परिष्वङ्गः संनिपातश्च मैथुने ॥\nसमये च प्रियालापः स्वयूथ्येषु समुन्नतिः ।\nअभिप्रेतस्य लाभश्च पूजा च जनसंसदि ॥\nअष्टौ गुणाः पुरुषं दीपयन्ति\nप्रज्ञा च कौल्यं च दमः श्रुतं च ।\nपराक्रमश्चाबहुभाषिता च\nदानं यथाशक्ति कृतज्ञता च ॥",
+      "roman": "ashtaavimaani harshasya navaneetaani bhaarata |\nvartamaanaani drishyante taanyeva svasukhaanyapi ||\nsamaagamashcha sakhibhirmahaamshchaiva dhanaagamah |\nputrena cha parishvangah samnipaatashcha maithune ||\nsamaye cha priyaalaapah svayoothyeshu samunnatih |\nabhipretasya laabhashcha poojaa cha janasamsadi ||\nashtau gunaah purusham deepayanti\nprajnaa cha kaulyam cha damah shrutam cha |\nparaakramashchaabahubhaashitaa cha\ndaanam yathaashakti kritajnataa cha ||",
+      "arth": "भारत! ये आठ हर्ष का मक्खन हैं; ये यहीं मौजूद दिखते हैं, और अपने सुख भी यही हैं — मित्रों से मिलना, बहुत धन की आमद, पुत्र को गले लगाना, मैथुन में मिलन, समय पर प्यारी बातचीत, अपने लोगों में ऊँचा उठना, चाही हुई चीज़ का मिलना, और लोगों की सभा में सम्मान। आठ गुण पुरुष को चमकाते हैं — बुद्धि, कुलीनता, संयम, पढ़ाई, पराक्रम, कम बोलना, शक्ति भर दान, और कृतज्ञता।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "नौ दरवाज़ों का घर; दस जो धर्म नहीं जानते · श्लोक १०५–१०८",
+      "dev": "नवद्वारमिदं वेश्म त्रिस्थूणं पञ्चसाक्षिकम् ।\nक्षेत्रज्ञाधिष्ठितं विद्वान् यो वेद स परः कविः ॥\nदश धर्मं न जानन्ति धृतराष्ट्र निबोध तान् ।\nमत्तः प्रमत्त उन्मत्तः श्रान्तः क्रुद्धो बुभुक्षितः ॥\nत्वरमाणश्च लुब्धश्च भीतः कामी च ते दश ।\nतस्मादेतेषु सर्वेषु न प्रसज्जेत पण्डितः ॥\nअत्रैवोदाहरन्तीममितिहासं पुरातनम् ।\nपुत्रार्थमसुरेन्द्रेण गीतं चैव सुधन्वना ॥",
+      "roman": "navadvaaramidam veshma tristhoonam panchasaakshikam |\nkshetrajnaadhishthitam vidvaan yo veda sa parah kavih ||\ndasha dharmam na jaananti dhritaraashtra nibodha taan |\nmattah pramatta unmattah shraantah kruddho bubhukshitah ||\ntvaramaanashcha lubdhashcha bheetah kaamee cha te dasha |\ntasmaadeteshu sarveshu na prasajjeta panditah ||\natraivodaaharanteemamitihaasam puraatanam |\nputraarthamasurendrena geetam chaiva sudhanvanaa ||",
+      "arth": "नौ दरवाज़ों वाला, तीन खंभों वाला, पाँच साक्षियों वाला यह घर, जिसमें क्षेत्रज्ञ रहता है — जो विद्वान इसे जानता है, वह सबसे बड़ा ज्ञानी है। (घर से मतलब शरीर है।) धृतराष्ट्र! दस लोग धर्म को नहीं जानते; उन्हें सुनिए — नशे में चूर, असावधान, पागल, थका हुआ, क्रोधी, भूखा, उतावला, लोभी, डरा हुआ और कामी; ये दस। इसलिए समझदार को इन सब में नहीं फँसना चाहिए। इसी बात पर एक पुराना इतिहास सुनाया जाता है, जो असुरों के राजा ने सुधन्वा के साथ अपने पुत्र के लिए गाया था।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "राजा और धीर पुरुष · श्लोक १०९–११३",
+      "dev": "यः काममन्यू प्रजहाति राजा\nपात्रे प्रतिष्ठापयते धनं च ।\nविशेषविच्छ्रुतवान् क्षिप्रकारी\nतं सर्वलोकः कुरुते प्रमाणम् ॥\nजानाति विश्वासयितुं मनुष्यान्\nविज्ञातदोषेषु दधाति दण्डम् ।\nजानाति मात्रां च तथा क्षमां च\nतं तादृशं श्रीर्जुषते समग्रा ॥\nसुदुर्बलं नावजानाति कञ्चिद्\nयुक्तो रिपुं सेवते बुद्धिपूर्वम् ।\nन विग्रहं रोचयते बलस्थैः\nकाले च यो विक्रमते स धीरः ॥\nप्राप्यापदं न व्यथते कदाचिदुद्योगमन्विच्छति चाप्रमत्तः ।\nदुःखं च काले सहते महात्मा\nधुरन्धरस्तस्य जिताः सपत्नाः ॥\nअनर्थकं विप्रवासं गृहेभ्यः\nपापैः सन्धिं परदाराभिमर्शम् ।\nदम्भं स्तैन्यं पैशुनं मद्यपानं\nन सेवते यश्च सुखी सदैव ॥",
+      "roman": "yah kaamamanyoo prajahaati raajaa\npaatre pratishthaapayate dhanam cha |\nvisheshavichchhrutavaan kshiprakaaree\ntam sarvalokah kurute pramaanam ||\njaanaati vishvaasayitum manushyaan\nvijnaatadosheshu dadhaati dandam |\njaanaati maatraam cha tathaa kshamaam cha\ntam taadrisham shreerjushate samagraa ||\nsudurbalam naavajaanaati kanchid\nyukto ripum sevate buddhipoorvam |\nna vigraham rochayate balasthaih\nkaale cha yo vikramate sa dheerah ||\npraapyaapadam na vyathate kadaachidudyogamanvichchhati chaapramattah |\nduhkham cha kaale sahate mahaatmaa\ndhurandharastasya jitaah sapatnaah ||\nanarthakam vipravaasam grihebhyah\npaapaih sandhim paradaaraabhimarsham |\ndambham stainyam paishunam madyapaanam\nna sevate yashcha sukhee sadaiva ||",
+      "arth": "जो राजा काम और क्रोध को छोड़ देता है, धन सुपात्र को देता है, भेद पहचानता है, पढ़ा हुआ है और काम झट करता है — उसे सारा संसार प्रमाण मानता है। जो लोगों में भरोसा जगाना जानता है, जिनका दोष जान लिया गया उन्हीं को दण्ड देता है, दण्ड की मात्रा जानता है और क्षमा भी — ऐसे की सेवा पूरी लक्ष्मी करती है। जो बहुत कमज़ोर को भी हल्का नहीं समझता, सावधान रहकर शत्रु से सोच-समझकर बरतता है, बलवानों से झगड़ा पसंद नहीं करता, और समय आने पर पराक्रम दिखाता है — वही धीर है। जो विपत्ति आने पर कभी घबराता नहीं, सावधान रहकर उद्यम में लगा रहता है, और समय पर दुख सह लेता है — उस बोझ उठाने वाले, बड़े मन के पुरुष के शत्रु हारे हुए ही हैं। जो बेकार में घर छोड़कर परदेस रहना, पापियों से मेल, पराई स्त्री से संबंध, पाखंड, चोरी, चुग़ली और मदिरा पीना — इनसे दूर रहता है, वह सदा सुखी रहता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "भले स्वभाव वाला पुरुष · श्लोक ११४–११८",
+      "dev": "न संरम्भेणारभते त्रिवर्गमाकारितः शंसति तत्त्वमेव ।\nन मित्रार्थे रोचयते विवादं\nनापूजितः कुप्यति चाप्यमूढः ॥\nन योऽभ्यसूयत्यनुकम्पते च\nन दुर्बलः प्रातिभाव्यं करोति ।\nनात्याह किञ्चित्क्षमते विवादं\nसर्वत्र तादृग् लभते प्रशंसाम् ॥\nयो नोद्धतं कुरुते जातु वेषं\nन पौरुषेणापि विकत्थतेऽन्यान् ।\nन मूर्च्छितः कटुकान्याह किञ्चित्\nप्रियं सदा तं कुरुते जनो हि ॥\nन वैरमुद्दीपयति प्रशान्तं\nन दर्पमारोहति नास्तमेति ।\nन दुर्गतोऽस्मीति करोत्यकार्यं\nतमार्यशीलं परमाहुरार्याः ॥\nन स्वे सुखे वै कुरुते प्रहर्षं\nनान्यस्य दुःखे भवति प्रहृष्टः ।\nदत्त्वा न पश्चात्कुरुतेऽनुतापं\nस कथ्यते सत्पुरुषार्यशीलः ॥",
+      "roman": "na samrambhenaarabhate trivargamaakaaritah shamsati tattvameva |\nna mitraarthe rochayate vivaadam\nnaapoojitah kupyati chaapyamoodhah ||\nna yo'bhyasooyatyanukampate cha\nna durbalah praatibhaavyam karoti |\nnaatyaaha kinchitkshamate vivaadam\nsarvatra taadrig labhate prashamsaam ||\nyo noddhatam kurute jaatu vesham\nna paurushenaapi vikatthate'nyaan |\nna moorchchhitah katukaanyaaha kinchit\npriyam sadaa tam kurute jano hi ||\nna vairamuddeepayati prashaantam\nna darpamaarohati naastameti |\nna durgato'smeeti karotyakaaryam\ntamaaryasheelam paramaahuraaryaah ||\nna sve sukhe vai kurute praharsham\nnaanyasya duhkhe bhavati prahrishtah |\ndattvaa na pashchaatkurute'nutaapam\nsa kathyate satpurushaaryasheelah ||",
+      "arth": "जो धर्म, अर्थ और काम को तैश में आकर शुरू नहीं करता; बुलाकर पूछा जाए तो सच ही बताता है; मित्र के लिए भी झगड़ा पसंद नहीं करता; आदर न मिलने पर क्रोध नहीं करता, और मूढ़ नहीं है; जो दूसरों में दोष नहीं ढूँढता, दया करता है; कमज़ोर होते हुए किसी की ज़मानत नहीं लेता; बढ़-चढ़कर कुछ नहीं कहता, और झगड़े को सह लेता है — ऐसा मनुष्य हर जगह प्रशंसा पाता है। जो कभी भड़कीला वेश नहीं बनाता, अपने पराक्रम की भी दूसरों के सामने डींग नहीं मारता, और आपे से बाहर होकर भी कोई कड़वी बात नहीं कहता — उसे लोग सदा प्यारा मानते हैं। जो बुझे हुए बैर को फिर नहीं भड़काता, घमंड पर नहीं चढ़ता, और हिम्मत हारकर डूबता भी नहीं; «मैं बुरे हाल में हूँ» सोचकर न करने योग्य काम नहीं करता — उसे भले लोग सबसे उत्तम स्वभाव वाला कहते हैं। जो अपने सुख में बहुत नहीं फूलता, दूसरे के दुख में ख़ुश नहीं होता, और देकर बाद में पछताता नहीं — वह सज्जनों में भले स्वभाव वाला कहा जाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "श्रेष्ठ पुरुष के लक्षण · श्लोक ११९–१२३",
+      "dev": "देशाचारान् समयाञ्जातिधर्मान्\nबुभूषते यः स परावरज्ञः ।\nस यत्र तत्राभिगतः सदैव\nमहाजनस्याधिपत्यं करोति ॥\nदम्भं मोहं मत्सरं पापकृत्यं\nराजद्विष्टं पैशुनं पूगवैरम् ।\nमत्तोन्मत्तैर्दुर्जनैश्चापि वादं\nयः प्रज्ञावान् वर्जयेत् स प्रधानः ॥\nदानं होमं दैवतं मङ्गलानि\nप्रायश्चित्तान् विविधाँल्लोकवादान् ।\nएतानि यः कुरुते नैत्यकानि\nतस्योत्थानं देवता राधयन्ति ॥\nसमैर्विवाहं कुरुते न हीनैः\nसमैः सख्यं व्यवहारं कथां च ।\nगुणैर्विशिष्टांश्च पुरो दधाति\nविपश्चितस्तस्य नयाः सुनीताः ॥\nमितं भुङ्क्ते संविभज्याश्रितेभ्यो\nमितं स्वपित्यमितं कर्म कृत्वा ।\nददात्यमित्रेष्वपि याचितः संस्तमात्मवन्तं प्रजहत्यनर्थाः ॥",
+      "roman": "deshaachaaraan samayaanjaatidharmaan\nbubhooshate yah sa paraavarajnah |\nsa yatra tatraabhigatah sadaiva\nmahaajanasyaadhipatyam karoti ||\ndambham moham matsaram paapakrityam\nraajadvishtam paishunam poogavairam |\nmattonmattairdurjanaishchaapi vaadam\nyah prajnaavaan varjayet sa pradhaanah ||\ndaanam homam daivatam mangalaani\npraayashchittaan vividhaanllokavaadaan |\netaani yah kurute naityakaani\ntasyotthaanam devataa raadhayanti ||\nsamairvivaaham kurute na heenaih\nsamaih sakhyam vyavahaaram kathaam cha |\ngunairvishishtaamshcha puro dadhaati\nvipashchitastasya nayaah suneetaah ||\nmitam bhunkte samvibhajyaashritebhyo\nmitam svapityamitam karma kritvaa |\ndadaatyamitreshvapi yaachitah samstamaatmavantam prajahatyanarthaah ||",
+      "arth": "जो देश के चलन, रीति-रिवाज और जातियों के धर्म जानना चाहता है, वह ऊँच-नीच सब समझने वाला है; वह जहाँ कहीं भी जाए, सदा बड़े जन-समूह पर अपना अधिकार जमा लेता है। जो बुद्धिमान पाखंड, मोह, डाह, पाप के काम, राजा से द्रोह, चुग़ली, समूह से बैर, और नशे में चूर, पागल तथा दुर्जन लोगों से बहस — इन सबको छोड़ देता है, वही श्रेष्ठ है। दान, होम, देवताओं की पूजा, मंगल के काम, प्रायश्चित्त और लोक की तरह-तरह की रीतियाँ — जो इन्हें नित्य के काम की तरह करता है, उसकी उन्नति देवता सिद्ध करते हैं। जो बराबर वालों से ब्याह करता है, हीन से नहीं; बराबर वालों से ही मित्रता, व्यवहार और बातचीत रखता है; और गुणों में बढ़े हुओं को आगे रखता है — उस विद्वान की नीतियाँ अच्छी तरह चलाई हुई हैं। जो अपने आश्रितों में बाँटकर थोड़ा खाता है, बहुत काम करके थोड़ा सोता है, और माँगने पर शत्रुओं को भी देता है — ऐसे अपने को बस में रखने वाले को अनर्थ छोड़ देते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "गुप्त सलाह, साफ़ मन, और अपने से लजाना · श्लोक १२४–१२६",
+      "dev": "चिकीर्षितं विप्रकृतं च यस्य\nनान्ये जनाः कर्म जानन्ति किञ्चित् ।\nमन्त्रे गुप्ते सम्यगनुष्ठिते च\nनाल्पोऽप्यस्य च्यवते कश्चिदर्थः ॥\nयः सर्वभूतप्रशमे निविष्टः\nसत्यो मृदुर्मानकृच्छुद्धभावः ।\nअतीव स ज्ञायते ज्ञातिमध्ये\nमहामणिर्जात्य इव प्रसन्नः ॥\nय आत्मनापत्रपते भृशं नरः\nस सर्वलोकस्य गुरुर्भवत्युत ।\nअनन्ततेजाः सुमनाः समाहितः\nस तेजसा सूर्य इवावभासते ॥",
+      "roman": "chikeershitam viprakritam cha yasya\nnaanye janaah karma jaananti kinchit |\nmantre gupte samyaganushthite cha\nnaalpo'pyasya chyavate kashchidarthah ||\nyah sarvabhootaprashame nivishtah\nsatyo mridurmaanakrichchhuddhabhaavah |\nateeva sa jnaayate jnaatimadhye\nmahaamanirjaatya iva prasannah ||\nya aatmanaapatrapate bhrisham narah\nsa sarvalokasya gururbhavatyuta |\nanantatejaah sumanaah samaahitah\nsa tejasaa soorya ivaavabhaasate ||",
+      "arth": "जिसका सोचा हुआ काम, और दूसरों के विरुद्ध किया हुआ काम — कुछ भी दूसरे लोग नहीं जान पाते; सलाह गुप्त रहने और उस पर ठीक से अमल होने के कारण उसका छोटा-सा काम भी नहीं बिगड़ता। जो सब प्राणियों को शान्ति देने में लगा है, सच्चा है, कोमल है, दूसरों को मान देता है और साफ़ मन का है — वह अपने कुटुंबियों के बीच वैसे ही ख़ूब जाना जाता है जैसे अच्छी खान का, निर्मल, बड़ा मणि। जो मनुष्य अपने आप से ही बहुत लजाता है, वह सारे संसार का गुरु हो जाता है। अपार तेज वाला, अच्छे मन वाला, एकाग्र — वह अपने तेज से सूर्य की तरह चमकता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "विदुर की सलाह — पाण्डवों को उनका राज्य · श्लोक १२७–१२८",
+      "dev": "वने जाताः शापदग्धस्य राज्ञः\nपाण्डोः पुत्राः पञ्च पञ्चेन्द्रकल्पाः ।\nत्वयैव बाला वर्धिताः शिक्षिताश्च\nतवादेशं पालयन्त्याम्बिकेय ॥\nप्रदायैषामुचितं तात राज्यं\nसुखी पुत्रैः सहितो मोदमानः ।\nन देवानां नापि च मानुषाणां\nभविष्यसि त्वं तर्कणीयो नरेन्द्र ॥",
+      "roman": "vane jaataah shaapadagdhasya raajnah\npaandoh putraah pancha panchendrakalpaah |\ntvayaiva baalaa vardhitaah shikshitaashcha\ntavaadesham paalayantyaambikeya ||\npradaayaishaamuchitam taata raajyam\nsukhee putraih sahito modamaanah |\nna devaanaam naapi cha maanushaanaam\nbhavishyasi tvam tarkaneeyo narendra ||",
+      "arth": "अम्बिका के पुत्र! शाप से जले राजा पाण्डु के वन में जन्मे पाँच पुत्र पाँच इन्द्रों जैसे हैं। बचपन से उन्हें आपने ही पाला और सिखाया है, और वे आपकी आज्ञा मानते हैं। तात! इन्हें इनका उचित राज्य देकर आप अपने पुत्रों के साथ सुख से आनंद कीजिए। नरेन्द्र! तब न देवता आप पर उँगली उठाएँगे, न मनुष्य।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, उद्योग पर्व (प्रजागर पर्व) — छपी पुस्तकों के अध्याय ३३–४०, कुल ५९३ श्लोक",
+    "kshetra": "सब जगह",
+    "note": "पाठ छपी पुस्तकों वाला है — उद्योग पर्व के आठ अध्याय, तैंतीसवें से चालीसवें तक, पाँच सौ तिरानवे श्लोक। एक छपी पुस्तिका के सब पन्ने आँख से पढ़े गए; फिर हर पंक्ति मशीन से पाँच और पाठों से मिलाई गई — उसी प्रकाशक के छपे महाभारत की दो प्रतियाँ, एक दूसरी छपी पुस्तक, और दो टंकित पाठ। सोलह जगह पुस्तिका की छपाई की भूल उसी प्रकाशक के महाभारत के पन्ने से ठीक हुई।\n\nपुणे के समीक्षित संस्करण में इन्हीं आठ अध्यायों में पाँच सौ तीस श्लोक हैं। आपकी पुस्तक में श्लोक कम-ज़्यादा या शब्द अलग मिलें, तो वह दूसरी पाठ-परंपरा है, भूल नहीं।\n\nअर्थ अपने शब्दों में है, पुस्तिका के छपे हिंदी अनुवाद से समझ मिलाकर।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

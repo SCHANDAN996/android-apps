@@ -33,6 +33,7 @@ void main() {
   late Paath yaksha;
   late Paath stavaraj;
   late Paath anusmriti;
+  late List<Paath> vn; // विदुर नीति के आठ पन्ने, क्रम में
   late List<Paath> ss; // सनत्सुजातीय के पाँच पन्ने, क्रम में
 
   setUpAll(() {
@@ -51,6 +52,7 @@ void main() {
     yaksha = paath['mahabharat_yaksha']!;
     stavaraj = paath['mahabharat_stavaraj']!;
     anusmriti = paath['mahabharat_anusmriti']!;
+    vn = [for (var i = 1; i <= 8; i++) paath['mahabharat_vn$i']!];
     ss = [for (var i = 1; i <= 5; i++) paath['mahabharat_ss$i']!];
   });
 
@@ -70,6 +72,7 @@ void main() {
         'mahabharat_yaksha',
         'mahabharat_stavaraj',
         'mahabharat_anusmriti',
+        for (var i = 1; i <= 8; i++) 'mahabharat_vn$i',
         for (var i = 1; i <= 5; i++) 'mahabharat_ss$i',
       ]);
       expect(kram.kram.map((p) => p.naam).skip(1).take(18), [
@@ -111,7 +114,7 @@ void main() {
       expect(yaksha.saavdhani, isEmpty);
       expect(stavaraj.saavdhani, isEmpty);
       expect(anusmriti.saavdhani, isEmpty);
-      for (final p in ss) {
+      for (final p in [...vn, ...ss]) {
         expect(p.saavdhani, isEmpty, reason: p.id);
       }
     });
@@ -606,6 +609,151 @@ void main() {
     });
   });
 
+  group('विदुर नीति — उद्योग पर्व के आठ अध्याय (→ D-124, D-125)', () {
+    const ank = '०१२३४५६७८९';
+    int dev(String s) =>
+        int.parse(s.split('').map((c) => ank.indexOf(c).toString()).join());
+    final shirshak = RegExp(r'^(.+) · श्लोक ([०-९]+)(?:–([०-९]+))?$');
+    // औज़ार एक दण्ड «।» से पहले न टूटने वाली जगह लगाता है — मिलान के लिए सादी जगह
+    String saaf(String s) => s.replaceAll(' ', ' ');
+    String sab(Paath p) => saaf(p.khand.map((k) => k.dev).join('\n'));
+    String sabKuchh() => vn.map(sab).join('\n');
+
+    test('आठ पन्ने: खंड 28 · 17 · 16 · 14 · 22 · 16 · 18 · 9; कुल 593 श्लोक — हर पन्ने पर 1 से, बिना छेद', () {
+      expect(vn.map((p) => p.khand.length), [28, 17, 16, 14, 22, 16, 18, 9]);
+      const shlok = [128, 86, 77, 74, 64, 47, 85, 32];
+      for (var i = 0; i < 8; i++) {
+        final p = vn[i];
+        expect(p.prakar, PaathPrakar.granth, reason: p.id);
+        expect(p.bhasha, 'संस्कृत', reason: p.id);
+        expect(p.naam, startsWith('विदुर नीति ${ank[i + 1]} — '));
+        expect(kram.kram.singleWhere((e) => e.id == p.id).ekLine, contains('अध्याय ${['३३', '३४', '३५', '३६', '३७', '३८', '३९', '४०'][i]}'),
+            reason: p.id);
+        var agla = 1;
+        for (final k in p.khand) {
+          final m = shirshak.firstMatch(k.shirshak);
+          expect(m, isNotNull, reason: k.shirshak);
+          // स्क्रीन की गिनती शीर्षक के पहले शब्द से तय होती है (→ D-122)
+          for (final w in ['श्लोक', 'मंत्र', 'अनुवाक', 'चौपाई', 'दोहा']) {
+            expect(k.shirshak.startsWith(w), isFalse, reason: k.shirshak);
+          }
+          final a = dev(m!.group(2)!);
+          final b = m.group(3) == null ? a : dev(m.group(3)!);
+          expect(a, agla, reason: '${p.id} ${k.shirshak}');
+          expect('॥'.allMatches(k.dev).length, b - a + 1,
+              reason: '${p.id} ${k.shirshak}');
+          agla = b + 1;
+        }
+        expect(agla - 1, shlok[i], reason: p.id);
+      }
+      expect(shlok.reduce((a, b) => a + b), 593);
+    });
+
+    test('हर खंड में पाठ, रोमन और अर्थ; देवनागरी में अंग्रेज़ी अक्षर नहीं', () {
+      final latin = RegExp(r'[A-Za-z0-9]');
+      final nagari = RegExp(r'[ऀ-ॿ]');
+      for (final p in vn) {
+        for (final k in p.khand) {
+          final kahan = '${p.id} ${k.shirshak}';
+          expect(k.dev, isNotEmpty, reason: kahan);
+          expect(k.roman, isNotEmpty, reason: kahan);
+          expect(nagari.hasMatch(k.roman), isFalse, reason: kahan);
+          expect(k.arth.split(' ').length, greaterThan(8), reason: kahan);
+          expect(latin.hasMatch(k.dev), isFalse, reason: kahan);
+          expect(latin.hasMatch(k.arth), isFalse, reason: kahan);
+        }
+      }
+    });
+
+    test('कौन बोल रहा है — हर अध्याय में, जैसा पुस्तिका में छपा है', () {
+      Map<String, int> vakta(Paath p) {
+        final m = <String, int>{};
+        for (final x in RegExp(r'^(.+(?:वाच|ऊचुः)) ।$', multiLine: true)
+            .allMatches(sab(p))) {
+          m[x.group(1)!] = (m[x.group(1)!] ?? 0) + 1;
+        }
+        return m;
+      }
+
+      expect(vakta(vn[0]), {
+        'वैशम्पायन उवाच': 2, 'द्वाःस्थ उवाच': 2, 'धृतराष्ट्र उवाच': 3,
+        'विदुर उवाच': 2,
+      });
+      expect(vakta(vn[1]), {'धृतराष्ट्र उवाच': 1, 'विदुर उवाच': 1});
+      expect(vakta(vn[2]), {
+        'धृतराष्ट्र उवाच': 1, 'विदुर उवाच': 4, 'केशिन्युवाच': 2,
+        'विरोचन उवाच': 6, 'सुधन्वोवाच': 8, 'प्रह्लाद उवाच': 5,
+      });
+      expect(vakta(vn[3]), {
+        'धृतराष्ट्र उवाच': 2, 'विदुर उवाच': 3, 'साध्या ऊचुः': 1,
+        'हंस उवाच': 1,
+      });
+      expect(vakta(vn[4]), {'धृतराष्ट्र उवाच': 1, 'विदुर उवाच': 2});
+      expect(vakta(vn[5]), {'विदुर उवाच': 1});
+      expect(vakta(vn[6]), {'धृतराष्ट्र उवाच': 2, 'विदुर उवाच': 2});
+      expect(vakta(vn[7]), {'धृतराष्ट्र उवाच': 1, 'विदुर उवाच': 1});
+    });
+
+    test('🔑 OCR या मसौदे से छूटी पंक्तियाँ — पन्ने से जोड़ी हुई, अपनी जगह', () {
+      expect(sab(vn[1]), contains('कर्णिनालीकनाराचान्निर्हरन्ति शरीरतः'));
+      expect(sab(vn[2]), contains('स्वयंवरे स्थिता कन्या केशिनी नाम नामतः'));
+      expect(sab(vn[3]), contains('हन्तुं च यो नेच्छति पापकं वै'));
+      expect(sab(vn[6]), contains('धर्मार्थौ वेदितुं शक्यौ बृहस्पतिसमैरपि'));
+      expect(sab(vn[6]), contains('चौरे कृतघ्ने विश्वासो न कार्यो न च नास्तिके'));
+      // अनुवाद का कोई टुकड़ा श्लोक बनकर नहीं घुसा
+      for (final w in ['कुलकी वृद्धि', 'अपनी स्थिति बतावे', ' है ', ' हैं ']) {
+        expect(sabKuchh(), isNot(contains(w)), reason: w);
+      }
+    });
+
+    test('🔑 पुस्तिका की सोलह छपाई-भूलें ठीक — छपा रूप ऐप में नहीं', () {
+      const theek = {
+        'वह्निः': 'बह्निः',
+        'स्रवति प्रज्ञा': 'स्त्रवति',
+        'नियन्तेन्द्रियाण्यस्य': 'नियतेन्द्रियाण्यस्य',
+        'प्राह्लादिं': 'प्रह्लादिं',
+        'बहिर्द्वारे': 'बहिद्वरि',
+        'सर्वान्गुणानेष': 'सर्वान्गुणानेषु',
+        'न सा सभा': 'न स सभा',
+        'स्रवते बुद्धिरस्य': 'स्त्रवते',
+        'बहुत्वादायासान्': 'बहूत्वाद',
+        'यश्चापि लब्ध्वा': 'यश्चापि लब्धा',
+        'हरति हि धैर्यमाशा': 'हरति धैर्यमाशा',
+        'विशेषा हि प्रसङ्गिनः': 'प्रसंङ्गिनः',
+        'बुद्ध्या सम्पाद्य': 'वुद्ध्या',
+        'समानि ब्रह्महत्यया': 'समानि ब्रह्महत्या ',
+        'यथा तात पतत्रिणः': 'तात्त',
+      };
+      final s = '${sabKuchh()} ';
+      theek.forEach((sahi, chhapa) {
+        expect(s, contains(sahi), reason: sahi);
+        expect(s, isNot(contains(chhapa)), reason: chhapa);
+      });
+      expect(s, contains('राजानं'));
+      expect(s, isNot(contains('राजांनं')));
+    });
+
+    test('ⓘ: कौन सा पाठ, कैसे पढ़ा गया, समीक्षित में कितने श्लोक', () {
+      final note = vn.first.strot.note;
+      expect(note.length, lessThanOrEqualTo(600));
+      expect(vn.first.strot.paddhati, contains('अध्याय ३३–४०'));
+      expect(note, contains('पाँच सौ तिरानवे श्लोक'));
+      expect(note, contains('सब पन्ने आँख से पढ़े गए'));
+      expect(note, contains('सोलह जगह पुस्तिका की छपाई की भूल'));
+      expect(note, contains('पाँच सौ तीस श्लोक'));
+      expect(note, contains('दूसरी पाठ-परंपरा है, भूल नहीं'));
+      // प्रकाशक या जगह का नाम ऐप में नहीं (पते docs/18 §३६ में)
+      for (final w in ['गीताप्रेस', 'गीता प्रेस', 'archive', 'चित्रशाला', 'भण्डारकर']) {
+        expect(note, isNot(contains(w)), reason: w);
+      }
+      for (final p in vn) {
+        expect(p.strot.note, note, reason: p.id);
+        expect(p.kabPadhein, contains('पूजा का पाठ नहीं है'), reason: p.id);
+      }
+      expect(kram.parichay, contains('उद्योग पर्व की विदुर नीति और सनत्सुजातीय'));
+    });
+  });
+
   group('सनत्सुजातीय — उद्योग पर्व के पाँच अध्याय', () {
     const ank = '०१२३४५६७८९';
     int dev(String s) =>
@@ -617,7 +765,7 @@ void main() {
     String arth(Paath p) => p.khand.map((k) => k.arth).join(' ');
 
     test('पाँच पन्ने: खंड 13 · 15 · 8 · 6 · 8; श्लोक 46 · 63 · 31 · 21 · 31 — हर पन्ने पर 1 से, बिना छेद', () {
-      expect(kram.kram.length, 27);
+      expect(kram.kram.length, 35);
       expect(ss.map((p) => p.khand.length), [13, 15, 8, 6, 8]);
       const shlok = [46, 63, 31, 21, 31];
       for (var i = 0; i < 5; i++) {
@@ -759,9 +907,9 @@ void main() {
       for (final p in ss) {
         expect(p.strot.note, note, reason: p.id);
       }
-      // ग्रंथ का परिचय चारों अंश गिनाता है
-      expect(kram.parichay, contains('चार अंश'));
-      expect(kram.parichay, contains('उद्योग पर्व का सनत्सुजातीय'));
+      // ग्रंथ का परिचय पाँचों अंश गिनाता है (विदुर नीति जुड़ने के बाद, → D-125)
+      expect(kram.parichay, contains('पाँच अंश'));
+      expect(kram.parichay, contains('उद्योग पर्व की विदुर नीति और सनत्सुजातीय'));
     });
   });
 
@@ -927,7 +1075,8 @@ void main() {
       await tester.tap(p1);
       await tester.pumpAndSettle();
       expect(find.byType(PaathScreen), findsOneWidget);
-      expect(find.text('महाभारत · भाग 23/${kram.kram.length}'), findsOneWidget);
+      // परिचय + अठारह पर्व + तीन अंश + विदुर नीति के आठ = 30; यह 31वाँ
+      expect(find.text('महाभारत · भाग 31/${kram.kram.length}'), findsOneWidget);
       expect(find.text('पाठ'), findsOneWidget);
       expect(find.text('13 खंड'), findsOneWidget);
       expect(find.textContaining('यह सार है'), findsNothing);
@@ -937,6 +1086,30 @@ void main() {
       await tester.tap(find.text('अर्थ दिखाएँ'));
       await tester.pumpAndSettle();
       expect(find.textContaining('वैशम्पायन बोले'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('विदुर नीति का पहला पन्ना खुलता है: "28 खंड", भाग 23, और अर्थ का बटन', (tester) async {
+      await granthKholo(tester);
+      final p1 = find.text('विदुर नीति १ — पण्डित और मूढ़');
+      await tester.scrollUntilVisible(p1, 300,
+          scrollable: find.byType(Scrollable).first);
+      await tester.pumpAndSettle();
+      expect(find.text('विदुर नीति — उद्योग पर्व से'), findsOneWidget);
+      expect(find.text('28 खंड'), findsOneWidget);
+
+      await tester.tap(p1);
+      await tester.pumpAndSettle();
+      expect(find.byType(PaathScreen), findsOneWidget);
+      expect(find.text('महाभारत · भाग 23/${kram.kram.length}'), findsOneWidget);
+      expect(find.text('28 खंड'), findsOneWidget);
+      expect(find.textContaining('यह सार है'), findsNothing);
+      expect(find.text('धृतराष्ट्र विदुर को बुलवाते हैं · श्लोक १–३'), findsOneWidget);
+
+      expect(find.textContaining('द्वारपाल से कहा'), findsNothing);
+      await tester.tap(find.text('अर्थ दिखाएँ'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('द्वारपाल से कहा'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 

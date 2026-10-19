@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "id": "mahabharat_vn3",
+  "naam": "विदुर नीति ३ — केशिनी का प्रश्न",
+  "upnaam": [
+    "विदुर नीति",
+    "विदुरनीति",
+    "विदुर और धृतराष्ट्र",
+    "प्रजागर पर्व",
+    "उद्योग पर्व"
+  ],
+  "prakar": "granth",
+  "devta": "धर्म और नीति",
+  "rachnakar": "महाभारत, उद्योग पर्व — महर्षि वेदव्यास",
+  "bhasha": "संस्कृत",
+  "parichay": "धृतराष्ट्र और सुनना चाहते हैं। विदुर सरलता को सब तीर्थों के बराबर बताते हैं, और फिर एक पुराना इतिहास सुनाते हैं — केशिनी के लिए असुर विरोचन और ब्राह्मण सुधन्वा का विवाद, जिसमें दोनों ने प्राणों की बाज़ी लगाई और निर्णय प्रह्लाद पर छोड़ा; प्रह्लाद ने अपने ही पुत्र के विरुद्ध सच कहा। फिर झूठे निर्णायक की दशा, धर्म के आठ मार्ग, सभा और सत्य, और पाप-पुण्य की बढ़त।",
+  "kabPadhein": "जब मन हो। यह पूजा का पाठ नहीं है — नीति की बातें हैं, जो घर में मिलकर पढ़ने और सुनाने लायक़ हैं।",
+  "kaisePadhein": "आठ पन्ने, आठ अध्याय — युद्ध से पहले की एक रात, जब धृतराष्ट्र को नींद नहीं आती और विदुर उन्हें नीति सुनाते हैं। क्रम से पढ़िए, या कोई भी पन्ना खोलिए — ज़्यादातर खंड अपने आप में पूरे हैं। हर खंड के शीर्षक में छपी पुस्तिका वाले श्लोक-अंक हैं; जहाँ पुस्तिका का अंक श्लोक के बीच पड़ता है, वहाँ खंड बड़ा है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर खंड के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "सरलता — सब तीर्थों के बराबर · श्लोक १–४",
+      "dev": "धृतराष्ट्र उवाच ।\nब्रूहि भूयो महाबुद्धे धर्मार्थसहितं वचः ।\nशृण्वतो नास्ति मे तृप्तिर्विचित्राणीह भाषसे ॥\nविदुर उवाच ।\nसर्वतीर्थेषु वा स्नानं सर्वभूतेषु चार्जवम् ।\nउभे त्वेते समे स्यातामार्जवं वा विशिष्यते ॥\nआर्जवं प्रतिपद्यस्व पुत्रेषु सततं विभो ।\nइह कीर्तिं परां प्राप्य प्रेत्य स्वर्गमवाप्स्यसि ॥\nयावत् कीर्तिर्मनुष्यस्य पुण्या लोके प्रगीयते ।\nतावत् स पुरुषव्याघ्र स्वर्गलोके महीयते ॥",
+      "roman": "dhritaraashtra uvaacha |\nbroohi bhooyo mahaabuddhe dharmaarthasahitam vachah |\nshrinvato naasti me triptirvichitraaneeha bhaashase ||\nvidura uvaacha |\nsarvateertheshu vaa snaanam sarvabhooteshu chaarjavam |\nubhe tvete same syaataamaarjavam vaa vishishyate ||\naarjavam pratipadyasva putreshu satatam vibho |\niha keertim paraam praapya pretya svargamavaapsyasi ||\nyaavat keertirmanushyasya punyaa loke prageeyate |\ntaavat sa purushavyaaghra svargaloke maheeyate ||",
+      "arth": "धृतराष्ट्र बोले — बड़ी बुद्धि वाले विदुर! धर्म और अर्थ से भरी बातें और कहो; सुनते हुए मेरा मन नहीं भरता, तुम यहाँ अनोखी बातें कहते हो। विदुर बोले — सब तीर्थों में स्नान, और सब प्राणियों के साथ सरलता — ये दोनों बराबर हैं; या फिर सरलता ही बढ़कर है। विभो! अपने पुत्रों के साथ सदा सरलता बरतिए; इस लोक में ऊँची कीर्ति पाकर मरने के बाद आप स्वर्ग पाएँगे। पुरुषों में सिंह! जब तक मनुष्य की पवित्र कीर्ति संसार में गाई जाती है, तब तक वह स्वर्ग-लोक में सम्मान पाता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "केशिनी का प्रश्न · श्लोक ५–११",
+      "dev": "अत्राप्युदाहरन्तीममितिहासं पुरातनम् ।\nविरोचनस्य संवादं केशिन्यर्थे सुधन्वना ॥\nस्वयंवरे स्थिता कन्या केशिनी नाम नामतः ।\nरूपेणाप्रतिमा राजन् विशिष्टपतिकाम्यया ॥\nविरोचनोऽथ दैतेयस्तदा तत्राजगाम ह ।\nप्राप्तुमिच्छंस्ततस्तत्र दैत्येन्द्रं प्राह केशिनी ॥\nकेशिन्युवाच ।\nकिं ब्राह्मणाः स्विच्छ्रेयांसो दितिजाः स्विद्विरोचन ।\nअथ केन स्म पर्यङ्कं सुधन्वा नाधिरोहति ॥\nविरोचन उवाच ।\nप्राजापत्यास्तु वै श्रेष्ठा वयं केशिनि सत्तमाः ।\nअस्माकं खल्विमे लोकाः के देवाः के द्विजातयः ॥\nकेशिन्युवाच ।\nइहैवावां प्रतीक्षाव उपस्थाने विरोचन ।\nसुधन्वा प्रातरागन्ता पश्येयं वां समागतौ ॥\nविरोचन उवाच ।\nतथा भद्रे करिष्यामि यथा त्वं भीरु भाषसे ।\nसुधन्वानं च मां चैव प्रातर्द्रष्टासि संगतौ ॥",
+      "roman": "atraapyudaaharanteemamitihaasam puraatanam |\nvirochanasya samvaadam keshinyarthe sudhanvanaa ||\nsvayamvare sthitaa kanyaa keshinee naama naamatah |\nroopenaapratimaa raajan vishishtapatikaamyayaa ||\nvirochano'tha daiteyastadaa tatraajagaama ha |\npraaptumichchhamstatastatra daityendram praaha keshinee ||\nkeshinyuvaacha |\nkim braahmanaah svichchhreyaamso ditijaah svidvirochana |\natha kena sma paryankam sudhanvaa naadhirohati ||\nvirochana uvaacha |\npraajaapatyaastu vai shreshthaa vayam keshini sattamaah |\nasmaakam khalvime lokaah ke devaah ke dvijaatayah ||\nkeshinyuvaacha |\nihaivaavaam prateekshaava upasthaane virochana |\nsudhanvaa praataraagantaa pashyeyam vaam samaagatau ||\nvirochana uvaacha |\ntathaa bhadre karishyaami yathaa tvam bheeru bhaashase |\nsudhanvaanam cha maam chaiva praatardrashtaasi samgatau ||",
+      "arth": "इस पर एक पुराना इतिहास सुनाया जाता है — केशिनी के लिए विरोचन का सुधन्वा के साथ विवाद। राजन्! केशिनी नाम की एक अनुपम रूप वाली कन्या सबसे श्रेष्ठ पति पाने की इच्छा से स्वयंवर में खड़ी थी। तभी दैत्य विरोचन उसे पाने की इच्छा से वहाँ आया, और केशिनी ने दैत्यराज से कहा। केशिनी बोली — विरोचन! ब्राह्मण श्रेष्ठ हैं, या दिति के पुत्र? और किस कारण सुधन्वा (मेरे) पलंग पर न चढ़े? विरोचन बोला — केशिनी! हम प्रजापति की संतानें ही श्रेष्ठ हैं, सबसे उत्तम हैं। ये सारे लोक हमारे ही हैं; देवता कौन, और ब्राह्मण कौन? केशिनी बोली — विरोचन! हम दोनों यहीं प्रतीक्षा करें; सुधन्वा सवेरे आएगा, तब मैं तुम दोनों को साथ देखूँगी। विरोचन बोला — कल्याणी! जैसा तुम कहती हो, वैसा ही करूँगा। भीरु! सवेरे तुम सुधन्वा को और मुझे साथ देखोगी।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "आसन का झगड़ा · श्लोक १२–१७",
+      "dev": "विदुर उवाच ।\nअतीतायां च शर्वर्यामुदिते सूर्यमण्डले ।\nअथाजगाम तं देशं सुधन्वा राजसत्तम ।\nविरोचनो यत्र विभो केशिन्या सहितः स्थितः ॥\nसुधन्वा च समागच्छत् प्राह्लादिं केशिनीं तथा ।\nसमागतं द्विजं दृष्ट्वा केशिनी भरतर्षभ ।\nप्रत्युत्थायासनं तस्मै पाद्यमर्घ्यं ददौ पुनः ॥\nसुधन्वोवाच ।\nअन्वालभे हिरण्मयं प्राह्लादे ते वरासनम् ।\nएकत्वमुपसम्पन्नो न त्वासेऽहं त्वया सह ॥\nविरोचन उवाच ।\nतवार्हते तु फलकं कूर्चं वाप्यथवा बृसी ।\nसुधन्वन्न त्वमर्होऽसि मया सह समासनम् ॥\nसुधन्वोवाच ।\nपितापुत्रौ सहासीतां द्वौ विप्रौ क्षत्रियावपि ।\nवृद्धौ वैश्यौ च शूद्रौ च न त्वन्यावितरेतरम् ॥\nपिता हि ते समासीनमुपासीतैव मामधः ।\nबालः सुखैधितो गेहे न त्वं किंचन बुध्यसे ॥",
+      "roman": "vidura uvaacha |\nateetaayaam cha sharvaryaamudite sooryamandale |\nathaajagaama tam desham sudhanvaa raajasattama |\nvirochano yatra vibho keshinyaa sahitah sthitah ||\nsudhanvaa cha samaagachchhat praahlaadim keshineem tathaa |\nsamaagatam dvijam drishtvaa keshinee bharatarshabha |\npratyutthaayaasanam tasmai paadyamarghyam dadau punah ||\nsudhanvovaacha |\nanvaalabhe hiranmayam praahlaade te varaasanam |\nekatvamupasampanno na tvaase'ham tvayaa saha ||\nvirochana uvaacha |\ntavaarhate tu phalakam koorcham vaapyathavaa brisee |\nsudhanvanna tvamarho'si mayaa saha samaasanam ||\nsudhanvovaacha |\npitaaputrau sahaaseetaam dvau viprau kshatriyaavapi |\nvriddhau vaishyau cha shoodrau cha na tvanyaavitaretaram ||\npitaa hi te samaaseenamupaaseetaiva maamadhah |\nbaalah sukhaidhito gehe na tvam kimchana budhyase ||",
+      "arth": "विदुर बोले — राजाओं में श्रेष्ठ! रात बीती और सूर्यमंडल उगा, तब सुधन्वा उस जगह आया जहाँ, विभो, विरोचन केशिनी के साथ खड़ा था। भरतश्रेष्ठ! सुधन्वा प्रह्लाद के पुत्र और केशिनी के पास आया; ब्राह्मण को आया देख केशिनी उठी, और उसे आसन, पाद्य और अर्घ्य दिया। सुधन्वा बोला — प्रह्लाद के पुत्र! तुम्हारे इस सोने के सुंदर आसन को मैं छू भर लेता हूँ; तुम्हारी बराबरी पर आकर मैं तुम्हारे साथ नहीं बैठूँगा। विरोचन बोला — सुधन्वा! तुम्हारे योग्य तो पीढ़ा, कुश का आसन या चटाई है; तुम मेरे साथ बराबर के आसन के योग्य नहीं। सुधन्वा बोला — पिता और पुत्र साथ बैठ सकते हैं; दो ब्राह्मण, दो क्षत्रिय, दो बूढ़े, दो वैश्य और दो शूद्र भी; पर कोई दूसरे दो आपस में नहीं। तुम्हारे पिता तो, मैं बैठा होऊँ तो, नीचे बैठकर ही मेरी सेवा करते हैं। तुम बालक हो, घर में सुख से पले हो; तुम कुछ नहीं जानते।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "प्राणों की बाज़ी · श्लोक १८–२२",
+      "dev": "विरोचन उवाच ।\nहिरण्यं च गवाश्वं च यद्वित्तमसुरेषु नः ।\nसुधन्वन् विपणे तेन प्रश्नं पृच्छाव ये विदुः ॥\nसुधन्वोवाच ।\nहिरण्यं च गवाश्वं च तवैवास्तु विरोचन ।\nप्राणयोस्तु पणं कृत्वा प्रश्नं पृच्छाव ये विदुः ॥\nविरोचन उवाच ।\nआवां कुत्र गमिष्यावः प्राणयोर्विपणे कृते ।\nन तु देवेष्वहं स्थाता न मनुष्येषु कर्हिचित् ॥\nसुधन्वोवाच ।\nपितरं ते गमिष्यावः प्राणयोर्विपणे कृते ।\nपुत्रस्यापि स हेतोर्हि प्रह्लादो नानृतं वदेत् ॥\nविदुर उवाच ।\nएवं कृतपणौ क्रुद्धौ तत्राभिजग्मतुस्तदा ।\nविरोचनसुधन्वानौ प्रह्लादो यत्र तिष्ठति ॥",
+      "roman": "virochana uvaacha |\nhiranyam cha gavaashvam cha yadvittamasureshu nah |\nsudhanvan vipane tena prashnam prichchhaava ye viduh ||\nsudhanvovaacha |\nhiranyam cha gavaashvam cha tavaivaastu virochana |\npraanayostu panam kritvaa prashnam prichchhaava ye viduh ||\nvirochana uvaacha |\naavaam kutra gamishyaavah praanayorvipane krite |\nna tu deveshvaham sthaataa na manushyeshu karhichit ||\nsudhanvovaacha |\npitaram te gamishyaavah praanayorvipane krite |\nputrasyaapi sa hetorhi prahlaado naanritam vadet ||\nvidura uvaacha |\nevam kritapanau kruddhau tatraabhijagmatustadaa |\nvirochanasudhanvaanau prahlaado yatra tishthati ||",
+      "arth": "विरोचन बोला — सुधन्वा! हम असुरों के पास जो सोना, गायें, घोड़े और धन है, उसे दाँव पर रखकर हम उनसे पूछें जो जानते हैं। सुधन्वा बोला — विरोचन! सोना, गायें और घोड़े तुम्हारे ही रहें; हम दोनों प्राणों का दाँव लगाकर जानने वालों से पूछें। विरोचन बोला — प्राणों का दाँव लग जाने पर हम दोनों कहाँ जाएँगे? मैं न देवताओं के पास जाऊँगा, न कभी मनुष्यों के पास। सुधन्वा बोला — प्राणों का दाँव लग जाने पर हम तुम्हारे पिता के पास चलेंगे; प्रह्लाद अपने पुत्र के लिए भी झूठ नहीं बोलेंगे। विदुर बोले — इस तरह दाँव लगाकर, क्रोध में भरे विरोचन और सुधन्वा वहाँ गए जहाँ प्रह्लाद थे।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "प्रह्लाद के सामने · श्लोक २३–२९",
+      "dev": "प्रह्लाद उवाच ।\nइमौ तौ सम्प्रदृश्येते याभ्यां न चरितं सह ।\nआशीविषाविव क्रुद्धावेकमार्गाविहागतौ ॥\nकिं वै सहैवं चरथो न पुरा चरथः सह ।\nविरोचनैतत् पृच्छामि किं ते सख्यं सुधन्वना ॥\nविरोचन उवाच ।\nन मे सुधन्वना सख्यं प्राणयोर्विपणावहे ।\nप्रह्लाद तत्त्वं पृच्छामि मा प्रश्नमनृतं वदेः ॥\nप्रह्लाद उवाच ।\nउदकं मधुपर्कं वाप्यानयन्तु सुधन्वने ।\nब्रह्मन्नभ्यर्चनीयोऽसि श्वेता गौः पीवरी कृता ॥\nसुधन्वोवाच ।\nउदकं मधुपर्कं च पथिष्वेवार्पितं मम ।\nप्रह्लाद त्वं तु मे तथ्यं प्रश्नं प्रब्रूहि पृच्छतः ।\nकिं ब्राह्मणाः स्विच्छ्रेयांस उताहो स्विद् विरोचनः ॥\nप्रह्लाद उवाच ।\nपुत्र एको मम ब्रह्मंस्त्वं च साक्षादिहास्थितः ।\nतयोर्विवदतोः प्रश्नं कथमस्मद्विधो वदेत् ॥\nसुधन्वोवाच ।\nगां प्रदद्यास्त्वौरसाय यद्वान्यत् स्यात् प्रियं धनम् ।\nद्वयोर्विवदतोस्तथ्यं वाच्यं च मतिमंस्त्वया ॥",
+      "roman": "prahlaada uvaacha |\nimau tau sampradrishyete yaabhyaam na charitam saha |\naasheevishaaviva kruddhaavekamaargaavihaagatau ||\nkim vai sahaivam charatho na puraa charathah saha |\nvirochanaitat prichchhaami kim te sakhyam sudhanvanaa ||\nvirochana uvaacha |\nna me sudhanvanaa sakhyam praanayorvipanaavahe |\nprahlaada tattvam prichchhaami maa prashnamanritam vadeh ||\nprahlaada uvaacha |\nudakam madhuparkam vaapyaanayantu sudhanvane |\nbrahmannabhyarchaneeyo'si shvetaa gauh peevaree kritaa ||\nsudhanvovaacha |\nudakam madhuparkam cha pathishvevaarpitam mama |\nprahlaada tvam tu me tathyam prashnam prabroohi prichchhatah |\nkim braahmanaah svichchhreyaamsa utaaho svid virochanah ||\nprahlaada uvaacha |\nputra eko mama brahmamstvam cha saakshaadihaasthitah |\ntayorvivadatoh prashnam kathamasmadvidho vadet ||\nsudhanvovaacha |\ngaam pradadyaastvaurasaaya yadvaanyat syaat priyam dhanam |\ndvayorvivadatostathyam vaachyam cha matimamstvayaa ||",
+      "arth": "प्रह्लाद बोले — ये वे दोनों दिख रहे हैं जो कभी साथ नहीं चले; दो क्रोधित साँपों जैसे, एक ही राह से यहाँ आए हैं। क्या अब तुम दोनों ऐसे साथ चलते हो? पहले तो साथ नहीं चलते थे। विरोचन! यह तुमसे पूछता हूँ — क्या सुधन्वा से तुम्हारी मित्रता हो गई है? विरोचन बोला — सुधन्वा से मेरी मित्रता नहीं; हम दोनों ने प्राणों का दाँव लगाया है। प्रह्लाद! मैं आपसे सच पूछता हूँ — प्रश्न का झूठा उत्तर मत देना। प्रह्लाद बोले — सुधन्वा के लिए जल और मधुपर्क लाओ। ब्रह्मन्! तुम पूजने योग्य हो; (तुम्हारे लिए) सफ़ेद गाय मोटी-ताज़ी की हुई है। सुधन्वा बोला — जल और मधुपर्क तो मुझे रास्ते में ही मिल गया। प्रह्लाद! मैं जो पूछ रहा हूँ उसका सच्चा उत्तर दो — ब्राह्मण श्रेष्ठ हैं, या विरोचन? प्रह्लाद बोले — ब्रह्मन्! मेरा एक ही पुत्र है, और सामने तुम स्वयं खड़े हो; तुम दोनों के विवाद में मुझ जैसा कोई कैसे उत्तर दे? सुधन्वा बोला — मतिमान्! गाय, और जो भी दूसरा प्यारा धन हो, अपने औरस पुत्र को दे दो; पर हम दोनों के विवाद में सच तुम्हें कहना ही चाहिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "झूठे निर्णायक की दशा · श्लोक ३०–३४",
+      "dev": "प्रह्लाद उवाच ।\nअथ यो नैव प्रब्रूयात् सत्यं वा यदि वानृतम् ।\nएतत् सुधन्वन् पृच्छामि दुर्विवक्ता स्म किं वसेत् ॥\nसुधन्वोवाच ।\nयां रात्रिमधिविन्ना स्त्री यां चैवाक्षपराजितः ।\nयां च भाराभितप्ताङ्गो दुर्विवक्ता स्म तां वसेत् ॥\nनगरे प्रतिरुद्धः सन् बहिर्द्वारे बुभुक्षितः ।\nअमित्रान् भूयसः पश्येद् यः साक्ष्यमनृतं वदेत् ॥\nपञ्च पश्वनृते हन्ति दश हन्ति गवानृते ।\nशतमश्वानृते हन्ति सहस्रं पुरुषानृते ॥\nहन्ति जातानजातांश्च हिरण्यार्थेऽनृतं वदन् ।\nसर्वं भूम्यनृते हन्ति मा स्म भूम्यनृतं वदेः ॥",
+      "roman": "prahlaada uvaacha |\natha yo naiva prabrooyaat satyam vaa yadi vaanritam |\netat sudhanvan prichchhaami durvivaktaa sma kim vaset ||\nsudhanvovaacha |\nyaam raatrimadhivinnaa stree yaam chaivaakshaparaajitah |\nyaam cha bhaaraabhitaptaango durvivaktaa sma taam vaset ||\nnagare pratiruddhah san bahirdvaare bubhukshitah |\namitraan bhooyasah pashyed yah saakshyamanritam vadet ||\npancha pashvanrite hanti dasha hanti gavaanrite |\nshatamashvaanrite hanti sahasram purushaanrite ||\nhanti jaataanajaataamshcha hiranyaarthe'nritam vadan |\nsarvam bhoomyanrite hanti maa sma bhoomyanritam vadeh ||",
+      "arth": "प्रह्लाद बोले — सुधन्वा! अब मैं तुमसे यह पूछता हूँ: जो न सच कहे, न झूठ — ऐसा बुरा निर्णायक किस दशा में रहता है? सुधन्वा बोला — जिस रात में वह स्त्री रहती है जिसके पति ने दूसरा ब्याह कर लिया, जिस रात में जुए में हारा आदमी, और जिस रात में बोझ से दुखते अंगों वाला — उसी रात में बुरा निर्णायक रहता है। जो साक्ष्य में झूठ बोलता है, वह नगर में घिरकर, बाहरी दरवाज़े पर भूखा, बहुत से शत्रुओं को देखता है। पशु के लिए झूठ बोलने वाला पाँच (पीढ़ियों) को मारता है, गाय के लिए दस को, घोड़े के लिए सौ को, और मनुष्य के लिए हज़ार को। सोने के लिए झूठ बोलने वाला जन्मे और अजन्मे — सबको मारता है; भूमि के लिए झूठ बोलने वाला सबको मारता है — इसलिए भूमि के लिए कभी झूठ मत बोलना।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "प्रह्लाद का निर्णय; विदुर की सीख · श्लोक ३५–३९",
+      "dev": "प्रह्लाद उवाच ।\nमत्तः श्रेयानङ्गिरा वै सुधन्वा त्वद्विरोचन ।\nमातास्य श्रेयसी मातुस्तस्मात्त्वं तेन वै जितः ॥\nविरोचन सुधन्वायं प्राणानामीश्वरस्तव ।\nसुधन्वन् पुनरिच्छामि त्वया दत्तं विरोचनम् ॥\nसुधन्वोवाच ।\nयद्धर्ममवृणीथास्त्वं न कामादनृतं वदीः ।\nपुनर्ददामि ते पुत्रं यस्मात् प्रह्लाद दुर्लभम् ॥\nएष प्रह्लाद पुत्रस्ते मया दत्तो विरोचनः ।\nपादप्रक्षालनं कुर्यात् कुमार्याः संनिधौ मम ॥\nविदुर उवाच ।\nतस्माद् राजेन्द्र भूम्यर्थे नानृतं वक्तुमर्हसि ।\nमा गमः ससुतामात्यो नाशं पुत्रार्थमब्रुवन् ॥",
+      "roman": "prahlaada uvaacha |\nmattah shreyaanangiraa vai sudhanvaa tvadvirochana |\nmaataasya shreyasee maatustasmaattvam tena vai jitah ||\nvirochana sudhanvaayam praanaanaameeshvarastava |\nsudhanvan punarichchhaami tvayaa dattam virochanam ||\nsudhanvovaacha |\nyaddharmamavrineethaastvam na kaamaadanritam vadeeh |\npunardadaami te putram yasmaat prahlaada durlabham ||\nesha prahlaada putraste mayaa datto virochanah |\npaadaprakshaalanam kuryaat kumaaryaah samnidhau mama ||\nvidura uvaacha |\ntasmaad raajendra bhoomyarthe naanritam vaktumarhasi |\nmaa gamah sasutaamaatyo naasham putraarthamabruvan ||",
+      "arth": "प्रह्लाद बोले — विरोचन! सुधन्वा के पिता अंगिरा मुझसे श्रेष्ठ हैं, सुधन्वा तुमसे श्रेष्ठ है, इसकी माता तुम्हारी माता से श्रेष्ठ है; इसलिए तुम इससे हार गए। विरोचन! अब सुधन्वा तुम्हारे प्राणों का स्वामी है। सुधन्वा! मैं चाहता हूँ कि तुम विरोचन को मुझे फिर दे दो। सुधन्वा बोला — प्रह्लाद! तुमने धर्म को चुना, स्वार्थ से झूठ नहीं बोला; इसलिए यह दुर्लभ पुत्र मैं तुम्हें फिर देता हूँ। प्रह्लाद! यह रहा तुम्हारा पुत्र विरोचन, मैंने दे दिया; पर यह कुमारी के सामने मेरे पैर धोए। विदुर बोले — इसलिए राजेन्द्र! भूमि के लिए झूठ बोलना आपको उचित नहीं। पुत्र के लिए सच न कहकर, पुत्रों और मंत्रियों समेत नाश को मत जाइए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "देवता बुद्धि देते हैं · श्लोक ४०–४२",
+      "dev": "न देवा दण्डमादाय रक्षन्ति पशुपालवत् ।\nयं तु रक्षितुमिच्छन्ति बुद्ध्या संविभजन्ति तम् ॥\nयथा यथा हि पुरुषः कल्याणे कुरुते मनः ।\nतथा तथास्य सर्वार्थाः सिद्ध्यन्ते नात्र संशयः ॥\nनैनं छन्दांसि वृजिनात् तारयन्ति\nमायाविनं मायया वर्तमानम् ।\nनीडं शकुन्ता इव जातपक्षाश्छन्दांस्येनं प्रजहत्यन्तकाले ॥",
+      "roman": "na devaa dandamaadaaya rakshanti pashupaalavat |\nyam tu rakshitumichchhanti buddhyaa samvibhajanti tam ||\nyathaa yathaa hi purushah kalyaane kurute manah |\ntathaa tathaasya sarvaarthaah siddhyante naatra samshayah ||\nnainam chhandaamsi vrijinaat taarayanti\nmaayaavinam maayayaa vartamaanam |\nneedam shakuntaa iva jaatapakshaashchhandaamsyenam prajahatyantakaale ||",
+      "arth": "देवता ग्वाले की तरह डंडा लेकर रक्षा नहीं करते; जिसकी रक्षा करना चाहते हैं, उसे बुद्धि से जोड़ देते हैं। मनुष्य जैसे-जैसे कल्याण में मन लगाता है, वैसे-वैसे उसके सब काम सिद्ध होते हैं — इसमें संशय नहीं। छल से बरतने वाले मायावी को वेद के मंत्र पाप से नहीं तारते; जैसे पंख निकल आने पर पक्षी घोंसला छोड़ देते हैं, वैसे ही अंत समय में वेद के मंत्र उसे छोड़ देते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "छोड़ने योग्य बातें, और जो गवाह न बनें · श्लोक ४३–४५",
+      "dev": "मद्यपानं कलहं पूगवैरं\nभार्यापत्योरन्तरं ज्ञातिभेदम् ।\nराजद्विष्टं स्त्रीपुंसयोर्विवादं\nवर्ज्यान्याहुर्यश्च पन्थाः प्रदुष्टः ॥\nसामुद्रिकं वणिजं चोरपूर्वं\nशलाकधूर्तं च चिकित्सकं च ।\nअरिं च मित्रं च कुशीलवं च\nनैतान् साक्ष्ये त्वधिकुर्वीत सप्त ॥\nमानाग्निहोत्रमुत मानमौनं\nमानेनाधीतमुत मानयज्ञः ।\nएतानि चत्वार्यभयंकराणि\nभयं प्रयच्छन्त्ययथाकृतानि ॥",
+      "roman": "madyapaanam kalaham poogavairam\nbhaaryaapatyorantaram jnaatibhedam |\nraajadvishtam streepumsayorvivaadam\nvarjyaanyaahuryashcha panthaah pradushtah ||\nsaamudrikam vanijam chorapoorvam\nshalaakadhoortam cha chikitsakam cha |\narim cha mitram cha kusheelavam cha\nnaitaan saakshye tvadhikurveeta sapta ||\nmaanaagnihotramuta maanamaunam\nmaanenaadheetamuta maanayajnah |\netaani chatvaaryabhayamkaraani\nbhayam prayachchhantyayathaakritaani ||",
+      "arth": "मदिरा पीना, कलह, समूह से बैर, पति-पत्नी में भेद डालना, कुटुंब में फूट, राजा से द्वेष, स्त्री-पुरुष का झगड़ा, और बुरा रास्ता — इन्हें छोड़ने योग्य कहा गया है। हस्तरेखा देखने वाला, पहले चोर रहा व्यापारी, पासों में छल करने वाला, वैद्य, शत्रु, मित्र और नट — इन सात को गवाही में न रखे। अग्निहोत्र, मौन, अध्ययन और यज्ञ — «मान» से किए गए ये चार कर्म भय हटाने वाले हैं, पर ठीक ढंग से न किए जाएँ तो भय देते हैं। (यही बात पहले अध्याय में भी आई है; «मान» के दोनों अर्थ — आदर, या अपनी बड़ाई की चाह — वहाँ लिखे हैं।)",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "जो ब्रह्महत्यारे के समान हैं · श्लोक ४६–४८",
+      "dev": "अगारदाही गरदः कुण्डाशी सोमविक्रयी ।\nपर्वकारश्च सूची च मित्रध्रुक् पारदारिकः ॥\nभ्रूणहा गुरुतल्पी च यश्च स्यात् पानपो द्विजः ।\nअतितीक्ष्णश्च काकश्च नास्तिको वेदनिन्दकः ॥\nस्रुवप्रग्रहणो व्रात्यः कीनाशश्चात्मवानपि ।\nरक्षेत्युक्तश्च यो हिंस्यात् सर्वे ब्रह्महभिः समाः ॥",
+      "roman": "agaaradaahee garadah kundaashee somavikrayee |\nparvakaarashcha soochee cha mitradhruk paaradaarikah ||\nbhroonahaa gurutalpee cha yashcha syaat paanapo dvijah |\natiteekshnashcha kaakashcha naastiko vedanindakah ||\nsruvapragrahano vraatyah keenaashashchaatmavaanapi |\nrakshetyuktashcha yo himsyaat sarve brahmahabhih samaah ||",
+      "arth": "घर में आग लगाने वाला, विष देने वाला, कुण्डाशी, सोमरस बेचने वाला, पर्वकार, सूची, मित्र से द्रोह करने वाला, पराई स्त्री के पीछे जाने वाला; गर्भ की हत्या करने वाला, गुरु की शय्या पर जाने वाला, और ब्राह्मण होकर मदिरा पीने वाला; बहुत तीखे स्वभाव वाला, कौए जैसा, नास्तिक, वेद की निन्दा करने वाला; स्रुवप्रग्रहण, व्रात्य, कीनाश, और समर्थ होते हुए भी जो «रक्षा करो» कहने वाले को मारे — ये सब ब्रह्महत्यारों के समान हैं। (कुण्डाशी, पर्वकार, सूची, स्रुवप्रग्रहण, कीनाश — छपे अनुवाद में इनके अर्थ: जारज संतान की कमाई खाने वाला, शस्त्र बनाने वाला, चुगली करने वाला, गाँव का पुरोहित, क्रूर।)",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "परख, हानि, और लक्ष्मी · श्लोक ४९–५१",
+      "dev": "तृणोल्कया ज्ञायते जातरूपं\nवृत्तेन भद्रो व्यवहारेण साधुः ।\nशूरो भयेष्वर्थकृच्छ्रेषु धीरः\nकृच्छ्रेष्वापत्सु सुहृदश्चारयश्च ॥\nजरा रूपं हरति हि धैर्यमाशा\nमृत्युः प्राणान् धर्मचर्यामसूया ।\nक्रोधः श्रियं शीलमनार्यसेवा\nह्रियं कामः सर्वमेवाभिमानः ॥\nश्रीर्मङ्गलात् प्रभवति प्रागल्भ्यात् सम्प्रवर्धते ।\nदाक्ष्यात्तु कुरुते मूलं संयमात् प्रतितिष्ठति ॥",
+      "roman": "trinolkayaa jnaayate jaataroopam\nvrittena bhadro vyavahaarena saadhuh |\nshooro bhayeshvarthakrichchhreshu dheerah\nkrichchhreshvaapatsu suhridashchaarayashcha ||\njaraa roopam harati hi dhairyamaashaa\nmrityuh praanaan dharmacharyaamasooyaa |\nkrodhah shriyam sheelamanaaryasevaa\nhriyam kaamah sarvamevaabhimaanah ||\nshreermangalaat prabhavati praagalbhyaat sampravardhate |\ndaakshyaattu kurute moolam samyamaat pratitishthati ||",
+      "arth": "घास की जलती लौ से सोने की पहचान होती है, आचरण से भले की, व्यवहार से साधु की; भय में शूर की, धन के संकट में धीर की, और कठिन विपत्ति में मित्र और शत्रु की। बुढ़ापा रूप को हर लेता है, आशा धीरज को, मृत्यु प्राणों को, दोष ढूँढना धर्म के आचरण को, क्रोध लक्ष्मी को, नीचों की सेवा शील को, काम लज्जा को, और अभिमान सब कुछ को। लक्ष्मी मंगल से उत्पन्न होती है, साहस से बढ़ती है, चतुराई से जड़ जमाती है, और संयम से टिकी रहती है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "आठ गुण, और स्वर्ग की पहचान · श्लोक ५२–५५",
+      "dev": "अष्टौ गुणाः पुरुषं दीपयन्ति\nप्रज्ञा च कौल्यं च दमः श्रुतं च ।\nपराक्रमश्चाबहुभाषिता च\nदानं यथाशक्ति कृतज्ञता च ॥\nएतान् गुणांस्तात महानुभावानेको गुणः संश्रयते प्रसह्य ।\nराजा यदा सत्कुरुते मनुष्यं\nसर्वान्गुणानेष गुणो विभाति ॥\nअष्टौ नृपेमानि मनुष्यलोके\nस्वर्गस्य लोकस्य निदर्शनानि ।\nचत्वार्येषामन्ववेतानि सद्भिश्चत्वारि चैषामनुयान्ति सन्तः ॥\nयज्ञो दानमध्ययनं तपश्च\nचत्वार्येतान्यन्ववेतानि सद्भिः ।\nदमः सत्यमार्जवमानृशंस्यं\nचत्वार्येतान्यनुयान्ति सन्तः ॥",
+      "roman": "ashtau gunaah purusham deepayanti\nprajnaa cha kaulyam cha damah shrutam cha |\nparaakramashchaabahubhaashitaa cha\ndaanam yathaashakti kritajnataa cha ||\netaan gunaamstaata mahaanubhaavaaneko gunah samshrayate prasahya |\nraajaa yadaa satkurute manushyam\nsarvaangunaanesha guno vibhaati ||\nashtau nripemaani manushyaloke\nsvargasya lokasya nidarshanaani |\nchatvaaryeshaamanvavetaani sadbhishchatvaari chaishaamanuyaanti santah ||\nyajno daanamadhyayanam tapashcha\nchatvaaryetaanyanvavetaani sadbhih |\ndamah satyamaarjavamaanrishamsyam\nchatvaaryetaanyanuyaanti santah ||",
+      "arth": "आठ गुण पुरुष को चमकाते हैं — बुद्धि, कुलीनता, संयम, पढ़ाई, पराक्रम, कम बोलना, शक्ति भर दान, और कृतज्ञता। तात! इन बड़े प्रभाव वाले गुणों पर एक गुण ज़बरदस्ती अधिकार कर लेता है: जब राजा किसी मनुष्य का सत्कार करता है, तब यही गुण सब गुणों से बढ़कर चमकता है। राजन्! मनुष्य-लोक में ये आठ स्वर्ग-लोक की पहचान हैं; इनमें चार सज्जनों के साथ सदा जुड़े रहते हैं, और चार के पीछे संत चलते हैं। यज्ञ, दान, अध्ययन और तप — ये चार सज्जनों के साथ जुड़े रहते हैं; और संयम, सत्य, सरलता और कोमलता — इन चार के पीछे संत चलते हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "धर्म के आठ मार्ग; सभा और सत्य · श्लोक ५६–५९",
+      "dev": "इज्याध्ययनदानानि तपः सत्यं क्षमा घृणा ।\nअलोभ इति मार्गोऽयं धर्मस्याष्टविधः स्मृतः ॥\nतत्र पूर्वचतुर्वर्गो दम्भार्थमपि सेव्यते ।\nउत्तरश्च चतुर्वर्गो नामहात्मसु तिष्ठति ॥\nन सा सभा यत्र न सन्ति वृद्धा\nन ते वृद्धा ये न वदन्ति धर्मम् ।\nनासौ धर्मो यत्र न सत्यमस्ति\nन तत् सत्यं यच्छलेनाभ्युपेतम् ॥\nसत्यं रूपं श्रुतं विद्या कौल्यं शीलं बलं धनम् ।\nशौर्यं च चित्रभाष्यं च दशेमे स्वर्गयोनयः ॥",
+      "roman": "ijyaadhyayanadaanaani tapah satyam kshamaa ghrinaa |\nalobha iti maargo'yam dharmasyaashtavidhah smritah ||\ntatra poorvachaturvargo dambhaarthamapi sevyate |\nuttarashcha chaturvargo naamahaatmasu tishthati ||\nna saa sabhaa yatra na santi vriddhaa\nna te vriddhaa ye na vadanti dharmam |\nnaasau dharmo yatra na satyamasti\nna tat satyam yachchhalenaabhyupetam ||\nsatyam roopam shrutam vidyaa kaulyam sheelam balam dhanam |\nshauryam cha chitrabhaashyam cha dasheme svargayonayah ||",
+      "arth": "यज्ञ, अध्ययन, दान, तप, सत्य, क्षमा, दया और लोभ न होना — धर्म का यह आठ तरह का मार्ग कहा गया है। इनमें पहले चार का सेवन दिखावे के लिए भी किया जाता है; पर पिछले चार उनमें नहीं टिकते जो महात्मा नहीं। वह सभा नहीं जिसमें बूढ़े न हों; वे बूढ़े नहीं जो धर्म की बात न कहें; वह धर्म नहीं जिसमें सत्य न हो; और वह सत्य नहीं जो छल से भरा हो। सत्य, रूप, शास्त्र का ज्ञान, विद्या, कुलीनता, शील, बल, धन, शूरता और अनोखी बात कहना — ये दस स्वर्ग के कारण हैं।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पाप और पुण्य की बढ़त · श्लोक ६०–६६",
+      "dev": "पापं कुर्वन् पापकीर्तिः पापमेवाश्नुते फलम् ।\nपुण्यं कुर्वन् पुण्यकीर्तिः पुण्यमत्यन्तमश्नुते ॥\nतस्मात् पापं न कुर्वीत पुरुषः शंसितव्रतः ।\nपापं प्रज्ञां नाशयति क्रियमाणं पुनः पुनः ॥\nनष्टप्रज्ञः पापमेव नित्यमारभते नरः ।\nपुण्यं प्रज्ञां वर्धयति क्रियमाणं पुनः पुनः ॥\nवृद्धप्रज्ञः पुण्यमेव नित्यमारभते नरः ।\nपुण्यं कुर्वन् पुण्यकीर्तिः पुण्यं स्थानं स्म गच्छति ।\nतस्मात् पुण्यं निषेवेत पुरुषः सुसमाहितः ॥\nअसूयको दन्दशूको निष्ठुरो वैरकृच्छठः ।\nस कृच्छ्रं महदाप्नोति न चिरात् पापमाचरन् ॥\nअनसूयुः कृतप्रज्ञः शोभनान्याचरन् सदा ।\nन कृच्छ्रं महदाप्नोति सर्वत्र च विरोचते ॥\nप्रज्ञामेवागमयति यः प्राज्ञेभ्यः स पण्डितः ।\nप्राज्ञो ह्यवाप्य धर्मार्थौ शक्नोति सुखमेधितुम् ॥",
+      "roman": "paapam kurvan paapakeertih paapamevaashnute phalam |\npunyam kurvan punyakeertih punyamatyantamashnute ||\ntasmaat paapam na kurveeta purushah shamsitavratah |\npaapam prajnaam naashayati kriyamaanam punah punah ||\nnashtaprajnah paapameva nityamaarabhate narah |\npunyam prajnaam vardhayati kriyamaanam punah punah ||\nvriddhaprajnah punyameva nityamaarabhate narah |\npunyam kurvan punyakeertih punyam sthaanam sma gachchhati |\ntasmaat punyam nisheveta purushah susamaahitah ||\nasooyako dandashooko nishthuro vairakrichchhathah |\nsa krichchhram mahadaapnoti na chiraat paapamaacharan ||\nanasooyuh kritaprajnah shobhanaanyaacharan sadaa |\nna krichchhram mahadaapnoti sarvatra cha virochate ||\nprajnaamevaagamayati yah praajnebhyah sa panditah |\npraajno hyavaapya dharmaarthau shaknoti sukhamedhitum ||",
+      "arth": "पाप करने वाला पाप की कीर्ति पाता है, और पाप का ही फल भोगता है; पुण्य करने वाला पुण्य की कीर्ति पाता है, और अत्यंत पुण्य भोगता है। इसलिए उत्तम व्रत वाला पुरुष पाप न करे; बार-बार किया गया पाप बुद्धि को नष्ट करता है। बुद्धि नष्ट हो जाने पर मनुष्य सदा पाप ही शुरू करता है। बार-बार किया गया पुण्य बुद्धि को बढ़ाता है; बढ़ी हुई बुद्धि वाला मनुष्य सदा पुण्य ही शुरू करता है; पुण्य करता हुआ वह पुण्य की कीर्ति पाकर पुण्य के स्थान को जाता है। इसलिए मनुष्य एकाग्र होकर पुण्य का ही सेवन करे। दोष ढूँढने वाला, डसने वाला, निष्ठुर, बैर करने वाला और शठ — पाप करता हुआ जल्दी ही बड़े कष्ट में पड़ता है। दोष न ढूँढने वाला, समझ वाला, सदा अच्छे काम करता हुआ — बड़े कष्ट में नहीं पड़ता, और हर जगह शोभा पाता है। जो समझदारों से समझ पाता है, वही पण्डित है; क्योंकि समझदार ही धर्म और अर्थ पाकर सुख से बढ़ सकता है।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "पहले से तैयारी; और कुछ बातें · श्लोक ६७–७२",
+      "dev": "दिवसेनैव तत् कुर्याद् येन रात्रौ सुखं वसेत् ।\nअष्टमासेन तत् कुर्याद् येन वर्षाः सुखं वसेत् ॥\nपूर्वे वयसि तत् कुर्याद् येन वृद्धः सुखं वसेत् ।\nयावज्जीवेन तत् कुर्याद् येन प्रेत्य सुखं वसेत् ॥\nजीर्णमन्नं प्रशंसन्ति भार्यां च गतयौवनाम् ।\nशूरं विजितसंग्रामं गतपारं तपस्विनम् ॥\nधनेनाधर्मलब्धेन यच्छिद्रमपिधीयते ।\nअसंवृतं तद् भवति ततोऽन्यदवदीर्यते ॥\nगुरुरात्मवतां शास्ता शास्ता राजा दुरात्मनाम् ।\nअथ प्रच्छन्नपापानां शास्ता वैवस्वतो यमः ॥\nऋषीणां च नदीनां च कुलानां च महात्मनाम् ।\nप्रभवो नाधिगन्तव्यः स्त्रीणां दुश्चरितस्य च ॥",
+      "roman": "divasenaiva tat kuryaad yena raatrau sukham vaset |\nashtamaasena tat kuryaad yena varshaah sukham vaset ||\npoorve vayasi tat kuryaad yena vriddhah sukham vaset |\nyaavajjeevena tat kuryaad yena pretya sukham vaset ||\njeernamannam prashamsanti bhaaryaam cha gatayauvanaam |\nshooram vijitasamgraamam gatapaaram tapasvinam ||\ndhanenaadharmalabdhena yachchhidramapidheeyate |\nasamvritam tad bhavati tato'nyadavadeeryate ||\ngururaatmavataam shaastaa shaastaa raajaa duraatmanaam |\natha prachchhannapaapaanaam shaastaa vaivasvato yamah ||\nrisheenaam cha nadeenaam cha kulaanaam cha mahaatmanaam |\nprabhavo naadhigantavyah streenaam dushcharitasya cha ||",
+      "arth": "दिन में ही वह काम कर ले जिससे रात सुख से बीते; आठ महीनों में वह कर ले जिससे वर्षा के दिन सुख से बीतें। पहली उम्र में वह करे जिससे बुढ़ापे में सुख से रहे; और जीवन भर वह करे जिससे मरने के बाद सुख से रहे। पचे हुए अन्न की प्रशंसा करते हैं, जवानी बीत चुकी पत्नी की, युद्ध जीत चुके शूर की, और पार पहुँच चुके तपस्वी की। अधर्म से कमाए धन से जो छेद ढका जाता है, वह ढका नहीं रहता; उससे दूसरा और खुल जाता है। मन को बस में रखने वालों के शासक गुरु हैं, दुरात्माओं के शासक राजा, और छिपकर पाप करने वालों के शासक सूर्यपुत्र यम। ऋषियों, नदियों, महात्माओं के कुलों, और स्त्रियों के दुराचार का मूल नहीं खोजना चाहिए।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "सोने के फूलों वाली धरती; और पाण्डव · श्लोक ७३–७७",
+      "dev": "द्विजातिपूजाभिरतो दाता ज्ञातिषु चार्जवी ।\nक्षत्रियः शीलभाग् राजंश्चिरं पालयते महीम् ॥\nसुवर्णपुष्पां पृथिवीं चिन्वन्ति पुरुषास्त्रयः ।\nशूरश्च कृतविद्यश्च यश्च जानाति सेवितुम् ॥\nबुद्धिश्रेष्ठानि कर्माणि बाहुमध्यानि भारत ।\nतानि जङ्घाजघन्यानि भारप्रत्यवराणि च ॥\nदुर्योधनेऽथ शकुनौ मूढे दुःशासने तथा ।\nकर्णे चैश्वर्यमाधाय कथं त्वं भूतिमिच्छसि ॥\nसर्वैर्गुणैरुपेतास्तु पाण्डवा भरतर्षभ ।\nपितृवत् त्वयि वर्तन्ते तेषु वर्तस्व पुत्रवत् ॥",
+      "roman": "dvijaatipoojaabhirato daataa jnaatishu chaarjavee |\nkshatriyah sheelabhaag raajamshchiram paalayate maheem ||\nsuvarnapushpaam prithiveem chinvanti purushaastrayah |\nshoorashcha kritavidyashcha yashcha jaanaati sevitum ||\nbuddhishreshthaani karmaani baahumadhyaani bhaarata |\ntaani janghaajaghanyaani bhaarapratyavaraani cha ||\nduryodhane'tha shakunau moodhe duhshaasane tathaa |\nkarne chaishvaryamaadhaaya katham tvam bhootimichchhasi ||\nsarvairgunairupetaastu paandavaa bharatarshabha |\npitrivat tvayi vartante teshu vartasva putravat ||",
+      "arth": "राजन्! ब्राह्मणों की पूजा में लगा, दानी, कुटुंबियों के साथ सरल, और शीलवान क्षत्रिय देर तक धरती का पालन करता है। सोने के फूलों वाली धरती से तीन पुरुष फूल चुनते हैं — शूर, विद्वान, और जो सेवा करना जानता है। भारत! बुद्धि से किए कर्म श्रेष्ठ हैं, भुजाओं से किए मध्यम, जाँघों से किए नीचे, और बोझ ढोने के सबसे नीचे। राजन्! दुर्योधन, शकुनि, मूढ़ दुःशासन और कर्ण पर ऐश्वर्य रखकर आप भलाई कैसे चाहते हैं? भरतश्रेष्ठ! पाण्डव सब गुणों से युक्त हैं और आपके साथ पिता जैसा बर्ताव करते हैं; आप भी उनके साथ पुत्र जैसा बर्ताव कीजिए।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "महाभारत, उद्योग पर्व (प्रजागर पर्व) — छपी पुस्तकों के अध्याय ३३–४०, कुल ५९३ श्लोक",
+    "kshetra": "सब जगह",
+    "note": "पाठ छपी पुस्तकों वाला है — उद्योग पर्व के आठ अध्याय, तैंतीसवें से चालीसवें तक, पाँच सौ तिरानवे श्लोक। एक छपी पुस्तिका के सब पन्ने आँख से पढ़े गए; फिर हर पंक्ति मशीन से पाँच और पाठों से मिलाई गई — उसी प्रकाशक के छपे महाभारत की दो प्रतियाँ, एक दूसरी छपी पुस्तक, और दो टंकित पाठ। सोलह जगह पुस्तिका की छपाई की भूल उसी प्रकाशक के महाभारत के पन्ने से ठीक हुई।\n\nपुणे के समीक्षित संस्करण में इन्हीं आठ अध्यायों में पाँच सौ तीस श्लोक हैं। आपकी पुस्तक में श्लोक कम-ज़्यादा या शब्द अलग मिलें, तो वह दूसरी पाठ-परंपरा है, भूल नहीं।\n\nअर्थ अपने शब्दों में है, पुस्तिका के छपे हिंदी अनुवाद से समझ मिलाकर।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}
