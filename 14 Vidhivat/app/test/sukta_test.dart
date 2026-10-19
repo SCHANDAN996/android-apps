@@ -52,15 +52,16 @@ void main() {
       expect(GranthBhandar.granthIds, contains('sukta'));
     });
 
-    test('चार पाठ: सोलह, सोलह, सात और पंद्रह मंत्र', () {
+    test('पाँच पाठ: सोलह, सोलह, बारह, सात और पंद्रह मंत्र', () {
       expect(kram.kram.map((p) => p.id), [
         'sukta_purusha',
         'sukta_purusha_yv',
+        'sukta_narayana',
         'sukta_nasadiya',
         'sukta_shri',
       ]);
       expect([for (final p in kram.kram) mantra(paath[p.id]!).length],
-          [16, 16, 7, 15]);
+          [16, 16, 12, 7, 15]);
       for (final k in kram.kram) {
         final p = paath[k.id]!;
         expect(k.shlok, mantra(p).length, reason: k.id);
@@ -142,6 +143,27 @@ void main() {
       expect(paath['sukta_shri']!.khand.last.shirshak, 'फलश्रुति');
     });
 
+    // → D-127: तैत्तिरीय आरण्यक का द्रविड़ पाठ, आनन्दाश्रम के छपे पन्नों से आँख से
+    test('नारायण सूक्त: बारह मंत्र, और साथ बोले जाने वाले दो', () {
+      final p = paath['sukta_narayana']!;
+      expect(s('sukta_narayana', 'मंत्र १'), startsWith('सहस्रशीर्षं देवं विश्वाक्षं'));
+      expect(s('sukta_narayana', 'मंत्र १२'), contains('स ब्रह्म स शिवः स हरिः सेन्द्रः'));
+      expect(p.khand.map((k) => k.shirshak).skip(12),
+          ['ऋतं सत्यम् — नमस्कार', 'नारायण गायत्री']);
+      expect(p.khand.last.dev, contains('नारायणाय विद्महे वासुदेवाय धीमहि'));
+      // जहाँ एक टंकित संग्रह अलग था — छपी पुस्तक और दूसरे संग्रह वाला रूप
+      expect(s('sukta_narayana', 'मंत्र ७'), contains('वितस्त्यान्ते'));
+      expect(s('sukta_narayana', 'मंत्र ७'), contains('भाती विश्वस्यायतनं'));
+      expect(s('sukta_narayana', 'मंत्र ९'), contains('महानग्निर्विश्वार्चि'));
+      expect(s('sukta_narayana', 'मंत्र ४'), contains('नारायण परं ब्रह्मतत्त्वं'));
+      // आंध्र पाठ के शब्द नहीं घुसे
+      for (final w in ['परमं प्रभुम्', 'वितस्त्यां तु', 'स ब्रह्मा स']) {
+        expect(p.khand.map((k) => k.dev).join(' '), isNot(contains(w)), reason: w);
+      }
+      expect(p.strot.note, contains('दूसरी परंपरा है'));
+      expect(p.strot.note, contains('आंध्र पाठ'));
+    });
+
     test('ⓘ: लंबाई; वर्ण वाले मंत्र और समृद्धि वाले सूक्त पर खुली बात', () {
       final web = RegExp(r'https?://|www\.|\.com\b|\.org\b|\.in\b');
       for (final p in paath.values) {
@@ -216,7 +238,8 @@ void main() {
       await tester.tap(find.text('श्री सूक्त'));
       await tester.pumpAndSettle();
       expect(find.byType(PaathScreen), findsOneWidget);
-      expect(find.text('सूक्त · सूक्त 4/4'), findsOneWidget);
+      // पुरुष (दो पाठ), नारायण, नासदीय, श्री — श्री पाँचवाँ
+      expect(find.text('सूक्त · सूक्त 5/5'), findsOneWidget);
       expect(find.text('15 मंत्र'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
