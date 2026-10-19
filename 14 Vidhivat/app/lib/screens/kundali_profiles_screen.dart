@@ -360,13 +360,11 @@ class _KundaliFormState extends State<KundaliForm> {
                         ? ''
                         : '${_shahar!.name}, ${_shahar!.state}'),
                 optionsBuilder: (value) {
-                  final query = value.text.trim().toLowerCase();
-                  if (query.isEmpty) return const Iterable<City>.empty();
-                  return indianCities
-                      .where((city) =>
-                          city.name.toLowerCase().contains(query) ||
-                          city.state.toLowerCase().contains(query))
-                      .take(12);
+                  // अंग्रेज़ी में लिखा नाम भी ("Delhi") — → shaharKhojo
+                  if (value.text.trim().isEmpty) {
+                    return const Iterable<City>.empty();
+                  }
+                  return shaharKhojo(value.text).take(12);
                 },
                 onSelected: (city) => setState(() => _shahar = city),
                 fieldViewBuilder: (context, controller, focus, submit) =>
@@ -379,7 +377,7 @@ class _KundaliFormState extends State<KundaliForm> {
                   },
                   decoration: const InputDecoration(
                     labelText: 'जन्म की जगह *',
-                    helperText: 'नाम लिखना शुरू करें और सूची से शहर चुनें। गाँव '
+                    helperText: 'नाम लिखना शुरू करें (हिंदी या अंग्रेज़ी में) और सूची से शहर चुनें। गाँव '
                         'न मिले तो पास का ज़िला चुनें।',
                     helperMaxLines: 3,
                   ),

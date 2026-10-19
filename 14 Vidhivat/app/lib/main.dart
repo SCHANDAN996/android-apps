@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart'
     show TargetPlatform, defaultTargetPlatform;
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'services/dakshina_service.dart';
 import 'services/device_location_service.dart';
@@ -105,6 +106,11 @@ class _VidhivatAppState extends State<VidhivatApp> {
       builder: (context, _) => MaterialApp(
         title: 'विधिवत',
         navigatorKey: _navigatorKey,
+        // Flutter के अपने डिब्बे भी हिंदी में — जन्म की तारीख़ और समय चुनते हुए
+        // पहले "Mon, Jan 1 … Cancel / OK" आता था (फ़ोन पर पकड़ा, 18 अक्टूबर 2026)।
+        locale: const Locale('hi', 'IN'),
+        supportedLocales: const [Locale('hi', 'IN')],
+        localizationsDelegates: GlobalMaterialLocalizations.delegates,
         debugShowCheckedModeBanner: false,
         theme: VidhivatTheme.light(),
         darkTheme: VidhivatTheme.dark(),

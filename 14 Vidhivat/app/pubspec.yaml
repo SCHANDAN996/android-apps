@@ -10,6 +10,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # Flutter के अपने डिब्बे (तारीख़/समय चुनना, "ठीक है/रद्द करें") हिंदी में —
+  # SDK के साथ आता है, बाहर से कुछ नहीं (→ main.dart, 19 अक्टूबर 2026)
+  flutter_localizations:
+    sdk: flutter
   # cupertino_icons हटा दिया — ऐप में कहीं इस्तेमाल नहीं था, पर उसका
   # CupertinoIcons.ttf (260 KB) हर build में जाता था (→ D-043)।
   shared_preferences: ^2.2.2

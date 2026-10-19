@@ -144,6 +144,123 @@ double _coordinateDistanceSquared(
   return latitudeDelta * latitudeDelta + longitudeDelta * longitudeDelta;
 }
 
+/// ── शहर खोजना — देवनागरी में भी, अंग्रेज़ी अक्षरों में भी ─────────────
+///
+/// सूची के नाम देवनागरी में हैं, पर बहुत लोग फ़ोन पर अंग्रेज़ी कीबोर्ड से
+/// "Delhi" लिखते हैं — पहले उससे कुछ नहीं मिलता था (डेवलपर के फ़ोन पर,
+/// कुंडली बनाते हुए पकड़ा, 18 अक्टूबर 2026)। पाँच सौ नामों की अंग्रेज़ी
+/// वर्तनी याद से लिखना भूल का घर है, इसलिए दोनों तरफ़ एक ढीला **ढाँचा**
+/// बनता है: सिर्फ़ व्यंजनों के वर्ग — स्वर, ह, य, व गिराकर, दोहरे एक करके।
+/// «दिल्ली» और "Delhi" दोनों → `dl`; «बेंगलुरु» और "Bangalore" → `bnglr`;
+/// «कोलकाता» और "Calcutta" → `klkt`।
+///
+/// ढीला है, इसलिए एक ढाँचे पर कई शहर आ सकते हैं: पूरा मेल पहले, फिर
+/// शुरुआत का मेल, फिर बीच का; बराबरी पर सूची का अपना क्रम (बड़े शहर ऊपर)।
+///
+/// खोज ख़ाली हो तो पूरी [suchi] लौटती है।
+List<City> shaharKhojo(String khoj, [List<City> suchi = indianCities]) {
+  final q = khoj.trim();
+  if (q.isEmpty) return suchi;
+
+  // देवनागरी में लिखा — पहले जैसा, सीधा मेल
+  if (_devanagari.hasMatch(q)) {
+    return suchi
+        .where((c) => c.name.contains(q) || c.state.contains(q))
+        .toList(growable: false);
+  }
+
+  final k = romanDhancha(q);
+  if (k.isEmpty) return const [];
+  final milan = <(int, int, City)>[];
+  for (var i = 0; i < suchi.length; i++) {
+    final city = suchi[i];
+    final dhanche = devDhanche(city.name);
+    int? darja;
+    if (dhanche.contains(k)) {
+      darja = 0;
+    } else if (dhanche.any((d) => d.startsWith(k))) {
+      darja = 1;
+    } else if (k.length >= 3 && dhanche.any((d) => d.contains(k))) {
+      darja = 2;
+    } else if (k.length >= 3 &&
+        devDhanche(city.state).any((d) => d.startsWith(k))) {
+      darja = 3;
+    }
+    if (darja != null) milan.add((darja, i, city));
+  }
+  milan.sort((a, b) => a.$1 != b.$1 ? a.$1 - b.$1 : a.$2 - b.$2);
+  return [for (final m in milan) m.$3];
+}
+
+final _devanagari = RegExp(r'[ऀ-ॿ]');
+
+/// अंग्रेज़ी अक्षरों में लिखे नाम का ढाँचा — [devDhanche] के वर्गों में।
+String romanDhancha(String s) {
+  var t = s.toLowerCase().replaceAll(RegExp(r'[^a-z]'), '');
+  t = t
+      .replaceAll('ck', 'k')
+      .replaceAll('ch', 'C') // च — बाक़ी c नीचे k बनेगा
+      .replaceAll('sh', 's')
+      .replaceAll('ph', 'p')
+      .replaceAll('x', 'ks')
+      .replaceAll('q', 'k')
+      .replaceAll('z', 'j')
+      .replaceAll('f', 'p')
+      .replaceAll('c', 'k')
+      .replaceAll('C', 'c')
+      .replaceAll('m', 'n')
+      .replaceAll(RegExp(r'[aeiouyhwv]'), '');
+  return _dohraEk(t);
+}
+
+/// देवनागरी नाम के ढाँचे। ड़/ढ़ अंग्रेज़ी में कभी r लिखा जाता है (Chandigarh),
+/// कभी d (Vijayawada) — इसलिए ऐसे नाम के दो ढाँचे।
+List<String> devDhanche(String naam) {
+  final r = naam.runes.toList();
+  var dhanche = <String>[''];
+  for (var i = 0; i < r.length; i++) {
+    final c = r[i];
+    final nuqta = i + 1 < r.length && r[i + 1] == 0x093C;
+    List<String> varg;
+    if ((c == 0x0921 || c == 0x0922) && nuqta || c == 0x095C || c == 0x095D) {
+      varg = const ['r', 'd']; // ड़ ढ़
+    } else {
+      final v = _devVarg[c];
+      if (v == null || v.isEmpty) continue;
+      varg = [v];
+    }
+    dhanche = [
+      for (final d in dhanche)
+        for (final v in varg) d + v,
+    ];
+  }
+  return [for (final d in dhanche) _dohraEk(d)];
+}
+
+String _dohraEk(String s) {
+  final b = StringBuffer();
+  for (var i = 0; i < s.length; i++) {
+    if (i == 0 || s[i] != s[i - 1]) b.write(s[i]);
+  }
+  return b.toString();
+}
+
+/// व्यंजन → वर्ग। '' = गिराना (य, व, ह — अंग्रेज़ी में भी y, v, w, h गिरते हैं)।
+/// स्वर और मात्राएँ यहाँ हैं ही नहीं, यानी गिरती हैं — सिवाय ऋ/ृ (r) और
+/// अनुस्वार/चंद्रबिंदु (n: «राँची» → Ranchi)।
+const Map<int, String> _devVarg = {
+  0x0901: 'n', 0x0902: 'n', 0x090B: 'r', 0x0943: 'r',
+  0x0915: 'k', 0x0916: 'k', 0x0917: 'g', 0x0918: 'g', 0x0919: 'n',
+  0x091A: 'c', 0x091B: 'c', 0x091C: 'j', 0x091D: 'j', 0x091E: 'n',
+  0x091F: 't', 0x0920: 't', 0x0921: 'd', 0x0922: 'd', 0x0923: 'n',
+  0x0924: 't', 0x0925: 't', 0x0926: 'd', 0x0927: 'd', 0x0928: 'n',
+  0x092A: 'p', 0x092B: 'p', 0x092C: 'b', 0x092D: 'b', 0x092E: 'n',
+  0x092F: '', 0x0930: 'r', 0x0932: 'l', 0x0933: 'l', 0x0935: '',
+  0x0936: 's', 0x0937: 's', 0x0938: 's', 0x0939: '',
+  0x0958: 'k', 0x0959: 'k', 0x095A: 'g', 0x095B: 'j', 0x095E: 'p',
+  0x095F: '',
+};
+
 /// शहरों की सूची — देशांतर के साथ, ताकि सूर्योदय सही निकले।
 ///
 /// ⚠️ सूर्योदय जगह पर निर्भर करता है, और **तिथि सूर्योदय पर तय होती है** —

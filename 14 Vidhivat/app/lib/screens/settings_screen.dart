@@ -367,13 +367,8 @@ class _ManualCityPickerState extends State<_ManualCityPicker> {
 
   @override
   Widget build(BuildContext context) {
-    final query = _search.text.trim();
-    final cities = indianCities
-        .where((city) =>
-            query.isEmpty ||
-            city.name.contains(query) ||
-            city.state.contains(query))
-        .toList(growable: false);
+    // ख़ाली हो तो पूरी सूची; अंग्रेज़ी में लिखा नाम भी ("Delhi") — → shaharKhojo
+    final cities = shaharKhojo(_search.text);
 
     return ListView(
       controller: widget.controller,
@@ -395,7 +390,7 @@ class _ManualCityPickerState extends State<_ManualCityPicker> {
           decoration: const InputDecoration(
             prefixIcon: Icon(Icons.search),
             labelText: 'शहर खोजें',
-            hintText: 'जैसे — पटना, दिल्ली, पुणे',
+            hintText: 'जैसे — पटना, दिल्ली, Pune',
             border: OutlineInputBorder(),
           ),
         ),

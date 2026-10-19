@@ -266,13 +266,11 @@ class _AncestorFormState extends State<_AncestorForm> {
                 displayStringForOption: (city) => '${city.name}, ${city.state}',
                 initialValue: TextEditingValue(text: _deathPlace.name),
                 optionsBuilder: (value) {
-                  final query = value.text.trim().toLowerCase();
-                  if (query.isEmpty) return const Iterable<City>.empty();
-                  return indianCities
-                      .where((city) =>
-                          city.name.toLowerCase().contains(query) ||
-                          city.state.toLowerCase().contains(query))
-                      .take(12);
+                  // अंग्रेज़ी में लिखा नाम भी ("Delhi") — → shaharKhojo
+                  if (value.text.trim().isEmpty) {
+                    return const Iterable<City>.empty();
+                  }
+                  return shaharKhojo(value.text).take(12);
                 },
                 onSelected: (city) => setState(() {
                   _deathPlace = city.place;

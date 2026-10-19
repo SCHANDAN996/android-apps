@@ -380,6 +380,36 @@ void main() {
       expect(find.text('अपना स्थान पहचानने दें?'), findsNothing);
       expect(tester.takeException(), isNull);
     });
+
+    // 18 अक्टूबर 2026, फ़ोन पर: जन्म की तारीख़ चुनते हुए Flutter का अपना डिब्बा
+    // "Mon, Jan 1 … Cancel / OK" दिखाता था — ऐप में भाषा तय ही नहीं थी।
+    testWidgets('Flutter के अपने डिब्बे हिंदी में — तारीख़ चुनना', (tester) async {
+      SharedPreferences.setMockInitialValues({});
+      await settings.load();
+      await settings.markLocationPermissionPromptSeen();
+
+      phoneNaap(tester);
+      await tester.pumpWidget(const VidhivatApp());
+      await tester.pumpAndSettle();
+
+      final ctx = tester.element(find.byType(HomeShell));
+      expect(Localizations.localeOf(ctx).languageCode, 'hi');
+      final shabd = MaterialLocalizations.of(ctx);
+      expect(shabd.okButtonLabel, isNot('OK'));
+
+      showDatePicker(
+        context: ctx,
+        initialDate: DateTime(1990),
+        firstDate: DateTime(1900),
+        lastDate: DateTime(2030),
+      );
+      await tester.pumpAndSettle();
+      expect(find.text('Cancel'), findsNothing);
+      expect(find.text('OK'), findsNothing);
+      expect(find.text(shabd.cancelButtonLabel), findsOneWidget);
+      expect(find.textContaining('January'), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
   });
 
   group('नीचे की पट्टी — चार मुख्य पन्ने', () {
