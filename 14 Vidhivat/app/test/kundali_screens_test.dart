@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vidhivat/screens/kundali_profiles_screen.dart';
 import 'package:vidhivat/screens/kundali_screen.dart';
 import 'package:vidhivat/screens/more_screen.dart';
+import 'package:vidhivat/services/device_location_service.dart';
 import 'package:vidhivat/state/kundali_profiles.dart';
 import 'package:vidhivat/state/settings.dart';
 import 'package:vidhivat/theme.dart';
@@ -195,6 +196,43 @@ void main() {
       )));
       await tester.pumpAndSettle();
       expect(find.textContaining('घड़ी एक घंटा आगे रखी गई'), findsOneWidget);
+    });
+
+    // → D-128: जन्म-स्थान फ़ोन की अभी की जगह से
+    Future<void> jagahDabao(WidgetTester tester, DeviceLocationResult r) async {
+      phone(tester);
+      await tester.pumpWidget(app(KundaliForm(jagahLo: () async => r)));
+      await tester.pumpAndSettle();
+      final batan = find.byKey(const Key('phone_ki_jagah'));
+      await tester.scrollUntilVisible(batan, 300,
+          scrollable: find.byType(Scrollable).first);
+      await tester.tap(batan);
+      await tester.pumpAndSettle();
+    }
+
+    testWidgets('फ़ोन की जगह से अक्षांश-देशांतर भरते हैं, नाम में पास का शहर',
+        (tester) async {
+      await jagahDabao(tester, const DeviceLocationResult.position(25.61, 85.15));
+      expect(find.widgetWithText(TextField, '25.6100'), findsOneWidget);
+      expect(find.widgetWithText(TextField, '85.1500'), findsOneWidget);
+      expect(find.widgetWithText(TextField, 'पटना के पास'), findsOneWidget);
+      expect(find.textContaining('फ़ोन से बाहर नहीं जाता'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('भारत के बाहर की जगह — कुछ नहीं भरता, साफ़ बताता है', (tester) async {
+      await jagahDabao(tester, const DeviceLocationResult.position(51.5, -0.12));
+      expect(find.textContaining('भारत के बाहर'), findsOneWidget);
+      expect(find.text('अक्षांश (उत्तर)'), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('अनुमति न मिले — कुछ नहीं भरता, सूची का रास्ता बताता है', (tester) async {
+      await jagahDabao(tester, const DeviceLocationResult.failed(
+          DeviceLocationFailure.permissionDenied));
+      expect(find.textContaining('अनुमति नहीं मिली'), findsOneWidget);
+      expect(find.text('अक्षांश (उत्तर)'), findsNothing);
+      expect(tester.takeException(), isNull);
     });
 
     testWidgets('कुंडली: चारों पट्टियाँ खुलती हैं, और चित्र में नौ ग्रह हैं',

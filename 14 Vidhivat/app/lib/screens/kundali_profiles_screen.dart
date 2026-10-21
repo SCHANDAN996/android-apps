@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:panchang_engine/panchang_engine.dart';
 
+import '../services/device_location_service.dart';
 import '../state/kundali_profiles.dart';
 import '../state/settings.dart';
 import '../theme.dart';
@@ -170,9 +171,18 @@ class _KundaliProfilesScreenState extends State<KundaliProfilesScreen> {
 }
 
 /// जन्म का ब्यौरा भरने का पन्ना।
+///
+/// जन्म की जगह तीन तरह से: सूची से शहर (हिंदी या अंग्रेज़ी नाम), अक्षांश-देशांतर
+/// हाथ से, या **फ़ोन की अभी की जगह** — उनके लिए जो जन्म वाले गाँव-शहर में ही बैठे
+/// हैं (डेवलपर की माँग, 21 अक्टूबर 2026; → D-128)। जगह एक बार ली जाती है और फ़ोन
+/// से बाहर नहीं जाती।
 class KundaliForm extends StatefulWidget {
   final KundaliProfile? existing;
-  const KundaliForm({super.key, this.existing});
+
+  /// फ़ोन की जगह लेने वाला — जाँच में नक़ली दिया जाता है
+  final Future<DeviceLocationResult> Function()? jagahLo;
+
+  const KundaliForm({super.key, this.existing, this.jagahLo});
 
   @override
   State<KundaliForm> createState() => _KundaliFormState();
@@ -187,6 +197,7 @@ class _KundaliFormState extends State<KundaliForm> {
   TimeOfDay? _samay;
   City? _shahar;
   bool _khudBharein = false;
+  bool _jagahDhoondhRahe = false;
 
   @override
   void initState() {
@@ -244,6 +255,40 @@ class _KundaliFormState extends State<KundaliForm> {
 
   void _kaho(String baat) => ScaffoldMessenger.of(context)
       .showSnackBar(SnackBar(content: Text(baat)));
+
+  /// फ़ोन की अभी की जगह → अक्षांश-देशांतर वाले खाने, नाम में पास का शहर।
+  Future<void> _phoneKiJagah() async {
+    setState(() => _jagahDhoondhRahe = true);
+    final lo = widget.jagahLo ??
+        () => const DeviceLocationService().getCurrentLocation();
+    final r = await lo();
+    if (!mounted) return;
+    setState(() => _jagahDhoondhRahe = false);
+
+    if (!r.hasPosition) {
+      return _kaho(switch (r.failure) {
+        DeviceLocationFailure.serviceDisabled =>
+          'फ़ोन में स्थान की सुविधा बंद है। शहर सूची से चुन सकते हैं।',
+        DeviceLocationFailure.permissionDenied =>
+          'स्थान की अनुमति नहीं मिली। शहर सूची से चुन सकते हैं।',
+        _ => 'स्थान नहीं मिल पाया। शहर सूची से चुन सकते हैं।',
+      });
+    }
+    final a = r.latitude!, d = r.longitude!;
+    if (a < 6 || a > 37.5 || d < 68 || d > 97.5) {
+      return _kaho('यह जगह भारत के बाहर की है — अभी सिर्फ़ भारत में हुए जन्म।');
+    }
+    final paas = nearestIndianCity(a, d);
+    setState(() {
+      _khudBharein = true;
+      _shahar = null;
+      _lat.text = a.toStringAsFixed(4);
+      _lon.text = d.toStringAsFixed(4);
+      _sthanNaam.text = '${paas.name} के पास';
+    });
+    _kaho('फ़ोन की जगह भर दी (${paas.name} के पास)। '
+        'नाम में अपने गाँव का नाम लिख सकते हैं।');
+  }
 
   void _save() {
     final naam = _naam.text.trim();
@@ -429,6 +474,23 @@ class _KundaliFormState extends State<KundaliForm> {
                     : 'अक्षांश-देशांतर ख़ुद भरें'),
               ),
             ),
+            VidhivatButton(
+              key: const Key('phone_ki_jagah'),
+              label: _jagahDhoondhRahe
+                  ? 'जगह ढूँढ रहे हैं…'
+                  : 'फ़ोन से अभी की जगह लें',
+              icon: Icons.my_location_outlined,
+              onPressed: _jagahDhoondhRahe ? null : _phoneKiJagah,
+              variant: VidhivatButtonVariant.secondary,
+              fullWidth: true,
+            ),
+            const SizedBox(height: VidhivatSpacing.xs),
+            Text(
+              'तभी, जब आप अभी उसी गाँव या शहर में हों जहाँ जन्म हुआ था। '
+              'स्थान सिर्फ़ यहाँ भरने के लिए लिया जाता है, और वह फ़ोन से बाहर नहीं जाता।',
+              style: type.bodySmall.copyWith(color: colors.textSecondary),
+            ),
+            const SizedBox(height: VidhivatSpacing.sm),
             Text(
               'पास का शहर काफ़ी है: सौ किलोमीटर की दूरी लग्न को लगभग एक अंश '
               'खिसकाती है। अभी सिर्फ़ भारत में हुए जन्म।',
