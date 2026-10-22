@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../services/osm_khoj.dart';
 import '../state/gaon.dart';
 import '../state/shahar.dart';
 import '../theme.dart';
@@ -77,6 +78,40 @@ class _JagahKhojSheetState extends State<JagahKhojSheet> {
   List<JagahMila> _gaon = const [];
   int _khojKram = 0;
 
+  /// इंटरनेट से (OpenStreetMap, → D-129) — सिर्फ़ यूज़र के कहने पर; `null` = अभी नहीं खोजा
+  List<OsmJagah>? _online;
+  bool _onlineChal = false;
+  String? _onlineHaal;
+  String _onlineKhoj = '';
+  bool _band = false;
+
+  Future<void> _onlineKhojo() async {
+    final q = _search.text.trim();
+    if (q.length < 2 || _onlineChal) return;
+    setState(() {
+      _onlineChal = true;
+      _onlineHaal = null;
+      _onlineKhoj = q;
+    });
+    try {
+      final mile = await osmKhoj.khojo(
+        q,
+        haal: (h) {
+          if (mounted) setState(() => _onlineHaal = h);
+        },
+        // पन्ना बंद हुआ या खोज का शब्द बदल गया — यह खोज छोड़ो
+        radd: () => _band || _search.text.trim() != q,
+      );
+      if (!mounted) return;
+      setState(() {
+        _online = mile;
+        _onlineChal = false;
+      });
+    } on OsmRadd {
+      if (mounted && !_band) setState(() => _onlineChal = false);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -93,6 +128,7 @@ class _JagahKhojSheetState extends State<JagahKhojSheet> {
 
   @override
   void dispose() {
+    _band = true;
     _search.dispose();
     super.dispose();
   }
@@ -122,8 +158,13 @@ class _JagahKhojSheetState extends State<JagahKhojSheet> {
           key: const Key('jagah_khoj'),
           controller: _search,
           autofocus: !widget.khaaliParSab,
+          textInputAction: TextInputAction.search,
+          // keyboard का «खोज» — इंटरनेट पर भी (Nominatim हर अक्षर पर खोज मना करता है)
+          onSubmitted: (_) => _onlineKhojo(),
           onChanged: (v) {
-            setState(() {});
+            setState(() {
+              if (v.trim() != _onlineKhoj) _online = null;
+            });
             _gaonKhojo(v);
           },
           decoration: const InputDecoration(
@@ -160,6 +201,60 @@ class _JagahKhojSheetState extends State<JagahKhojSheet> {
               subtitle: Text(m.city.state),
               onTap: () => Navigator.of(context).pop(m.city),
             ),
+        ],
+        if (_search.text.trim().length >= 2) ...[
+          const SizedBox(height: VidhivatSpacing.md),
+          if (_onlineChal)
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: VidhivatSpacing.sm),
+              child: Row(
+                children: [
+                  const SizedBox(
+                    width: 18,
+                    height: 18,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  ),
+                  const SizedBox(width: VidhivatSpacing.sm),
+                  Expanded(child: Text(_onlineHaal ?? 'इंटरनेट पर खोज रहे हैं…')),
+                ],
+              ),
+            )
+          else if (_online == null)
+            VidhivatButton(
+              key: const Key('online_khoj'),
+              label: 'इंटरनेट पर भी खोजें',
+              icon: Icons.public,
+              variant: VidhivatButtonVariant.secondary,
+              onPressed: _onlineKhojo,
+              fullWidth: true,
+            )
+          else ...[
+            const VidhivatSectionHeader(
+              title: 'इंटरनेट से',
+              supportingText: 'खोज का शब्द इंटरनेट पर जाता है; आपकी जगह नहीं',
+            ),
+            if (_online!.isEmpty)
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: VidhivatSpacing.sm),
+                child: Text('इंटरनेट पर भी नहीं मिला — दूसरी वर्तनी, या «गाँव, ज़िला» लिखकर देखें।'),
+              ),
+            for (final o in _online!)
+              ListTile(
+                leading: const Icon(Icons.public),
+                title: Text(o.naam),
+                subtitle: Text(o.pata.isEmpty ? 'भारत' : o.pata),
+                onTap: () => Navigator.of(context).pop(City(
+                    o.naam, o.pata.isEmpty ? 'भारत' : o.pata, o.latitude, o.longitude)),
+              ),
+            // ODbL लाइसेंस की शर्त — जहाँ OpenStreetMap का डेटा दिखे, वहीं श्रेय
+            Padding(
+              padding: const EdgeInsets.only(top: VidhivatSpacing.xs),
+              child: Text(
+                'जगहों का डेटा © OpenStreetMap contributors',
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ),
+          ],
         ],
       ],
     );

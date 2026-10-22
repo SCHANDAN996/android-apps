@@ -4856,3 +4856,12 @@ slider का नियम तारीख़ें बदलकर चलाय
 - `tools/banao_gaon.py` → `assets/jagah/gaon.txt.gz` (5,42,290 जगहें, 3.7 MB); `state/gaon.dart` (खोज),
   `widgets/jagah_khoj.dart`; कुंडली और सेटिंग (संकल्प/पंचांग) की खोज में गाँव; संकल्प के लिए देवनागरी नाम।
 - सेटिंग में «लाइसेंस»। नक़्शा नहीं (ऑफ़लाइन नीति) — कारण D-128 में।
+
+### 22 अक्टूबर 2026 — जगह की खोज इंटरनेट पर भी (→ D-129)
+
+- `services/osm_khoj.dart` — OpenStreetMap (Nominatim) की खोज, एक क़तार: 1.1 सेकंड का फ़ासला, नाकामी पर इंतज़ार
+  करके दोबारा जवाब आने तक, छोड़ना, याद। `test/osm_khoj_test.dart` (6)।
+- खोज-पन्ने (`widgets/jagah_khoj.dart`) में «इंटरनेट पर भी खोजें» + keyboard का «खोज»; इंतज़ार की बात दिखती है;
+  OpenStreetMap का श्रेय।
+- `AndroidManifest.xml` में INTERNET; privacy policy §4 (दोनों प्रतियाँ); `docs/19` §6 में Data safety का नया
+  सुझाव; CLAUDE.md की नेटवर्क पंक्ति।

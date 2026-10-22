@@ -237,6 +237,9 @@ void main() {
       await tester.enterText(find.byKey(const Key('jagah_khoj')), 'Delhi');
       await tester.pumpAndSettle();
       expect(find.widgetWithText(ListTile, 'दिल्ली'), findsWidgets);
+      // → D-129: इंटरनेट वाली खोज सिर्फ़ कहने पर — लिखते ही नहीं चलती, बटन रहता है
+      expect(find.byKey(const Key('online_khoj')), findsOneWidget);
+      expect(find.text('इंटरनेट से'), findsNothing);
       expect(tester.takeException(), isNull);
     });
 

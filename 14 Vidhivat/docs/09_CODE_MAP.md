@@ -721,7 +721,8 @@ app/lib/screens/paath_screen.dart         GranthNavigation — नीचे क�
 | `app/lib/state/kundali_profiles.dart` | `KundaliProfile` (नाम, जन्म की घड़ी, जगह) — सिर्फ़ फ़ोन में; `place` में घड़ी का अंतर अपने आप |
 | `app/lib/screens/kundali_profiles_screen.dart` | सूची + `KundaliForm` (ब्यौरा भरना, घड़ी वाली चेतावनियाँ; जन्म-स्थान: शहर/गाँव की खोज, फ़ोन की जगह, या अक्षांश-देशांतर — → D-128) |
 | `app/lib/state/gaon.dart` | `GaonSuchi` — साढ़े पाँच लाख गाँव-क़स्बे (`assets/jagah/gaon.txt.gz`, `tools/banao_gaon.py` से); byte-पंक्तियों में, अलग isolate में खुलती है; `khojo("गाँव, ज़िला")` (→ D-128) |
-| `app/lib/widgets/jagah_khoj.dart` | `jagahKhojo` — ऐप के ~500 शहर पहले, फिर गाँव; कुंडली और सेटिंग दोनों में |
+| `app/lib/widgets/jagah_khoj.dart` | `jagahKhojo` — ऐप के ~500 शहर पहले, फिर गाँव; `JagahKhojSheet` / `jagahChuno` — कुंडली और सेटिंग दोनों का खोज-पन्ना, नीचे «इंटरनेट पर भी खोजें» (→ D-129) |
+| `app/lib/services/osm_khoj.dart` | `OsmKhoj` — OpenStreetMap (Nominatim) से जगह; एक क़तार, दो requests में ≥1.1 सेकंड, नाकामी पर इंतज़ार करके दोबारा (2→30 सेकंड, `Retry-After`) जवाब आने तक; `radd` से छोड़ना; याद (cache)। पूरे ऐप का एक `osmKhoj` (→ D-129) |
 | `app/lib/screens/kundali_screen.dart` | चार पट्टियाँ: कुंडली · ग्रह · दशा · पंचांग; चित्र PNG बनकर भेजना; ⓘ "यह गणना कैसे हुई" |
 | `app/lib/widgets/kundali_chitra.dart` | उत्तर भारतीय चित्र (`CustomPainter`); `bhavVibhag()` — लग्न / चंद्र / नवमांश का बँटवारा |
 | `app/test/kundali_screens_test.dart` | 17 जाँचें — छोटे फ़ोन, बड़े अक्षर, और वर्जित शब्द |

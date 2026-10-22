@@ -30,6 +30,13 @@ Future<void> main() async {
       'Creative Commons Attribution 4.0 लाइसेंस के अंतर्गत। ऐप में सूची छोटी करके '
       'और बदले हुए ढाँचे में रखी गई है।',
     );
+    // → D-129: «इंटरनेट पर भी खोजें» के नतीजे
+    yield const LicenseEntryWithLineBreaks(
+      ['इंटरनेट पर जगह की खोज'],
+      'जगहों का डेटा © OpenStreetMap contributors, Open Database License (ODbL) '
+      'के अंतर्गत (openstreetmap.org/copyright)। खोज OpenStreetMap Foundation की '
+      'Nominatim सेवा से — सिर्फ़ आपके कहने पर, और सिर्फ़ खोजा हुआ शब्द जाता है।',
+    );
   });
   await settings.load();
   await ancestorProfiles.load();

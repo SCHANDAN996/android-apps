@@ -2974,3 +2974,16 @@ PPLH (ऐतिहासिक), PPLW (नष्ट) — 8,974; एक ज़ि
 (बिना चिह्न), ज़िले के नाम से भी चिह्न हटाए।
 **सीमा:** स्रोत में गाँवों के अक्षांश-देशांतर हर जगह एक-से पक्के नहीं; पंचांग और लग्न के लिए कुछ किलोमीटर का
 फ़र्क़ मायने नहीं रखता (सौ किलोमीटर ≈ लग्न में एक अंश)।
+
+
+---
+
+## ३८. इंटरनेट पर जगह की खोज (22 अक्टूबर 2026, → D-129)
+
+| क्या | पता |
+|---|---|
+| Nominatim (OpenStreetMap की खोज-सेवा) — ऐप यहीं पूछता है | `https://nominatim.openstreetmap.org/search` |
+| इस्तेमाल की नीति (एक सेकंड में एक, autocomplete मना, User-Agent ज़रूरी, श्रेय) | `https://operations.osmfoundation.org/policies/nominatim/` |
+| डेटा का लाइसेंस — ODbL, श्रेय «© OpenStreetMap contributors» | `https://www.openstreetmap.org/copyright` |
+| OSM Foundation की privacy policy (यूज़र की privacy policy §4 में इसी का पता) | `https://osmfoundation.org/wiki/Privacy_Policy` |
+| खाने: `format=jsonv2`, `countrycodes=in`, `featureType=settlement`, `addressdetails=1`, `accept-language=hi,en` | `https://nominatim.org/release-docs/latest/api/Search/` |
