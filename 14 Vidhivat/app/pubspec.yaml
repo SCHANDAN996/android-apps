@@ -70,3 +70,5 @@ flutter:
     - assets/vrat/
     - assets/parv/
     - assets/images/devotional/
+    # गाँव-क़स्बों की सूची (→ D-128) — tools/banao_gaon.py से
+    - assets/jagah/

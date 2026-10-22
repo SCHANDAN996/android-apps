@@ -7,6 +7,7 @@ import '../state/settings.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
+import '../widgets/jagah_khoj.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -168,6 +169,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 'विधिवत · संस्करण $appVersion',
                 style: theme.textTheme.bodySmall,
               ),
+              // खुले स्रोत के लाइसेंस — Flutter के पैकेज, और गाँवों की सूची का
+              // श्रेय (CC BY 4.0 की शर्त; → D-128)। ऐप के पाठ में किसी का नाम नहीं।
+              Align(
+                alignment: Alignment.centerLeft,
+                child: TextButton(
+                  onPressed: () => showLicensePage(
+                    context: context,
+                    applicationName: 'विधिवत',
+                    applicationVersion: appVersion,
+                  ),
+                  child: const Text('लाइसेंस'),
+                ),
+              ),
             ],
           ),
         ),
@@ -239,15 +253,82 @@ class _SettingsScreenState extends State<SettingsScreen> {
       builder: (context) => DraggableScrollableSheet(
         expand: false,
         initialChildSize: 0.85,
-        builder: (context, controller) => _ManualCityPicker(
+        builder: (context, controller) => JagahKhojSheet(
           controller: controller,
           selectedCity: settings.city,
         ),
       ),
     );
 
-    if (chosen != null) await settings.setCity(chosen);
+    if (chosen == null) {
+      if (mounted) setState(() {});
+      return;
+    }
+    // गाँवों की सूची से आई जगह का नाम अंग्रेज़ी अक्षरों में है — संकल्प संस्कृत में
+    // बोला जाता है, इसलिए देवनागरी नाम पूछो (→ D-128)
+    final angrezi = !RegExp(r'[ऀ-ॿ]').hasMatch(chosen.name);
+    if (!angrezi) {
+      await settings.setCity(chosen);
+    } else {
+      final dev = await _devanagariNaam(chosen.name);
+      if (dev != null && dev.trim().isNotEmpty) {
+        await settings.setCity(City(dev.trim(), chosen.state, chosen.latitude,
+            chosen.longitude, naamKhudLikha: true));
+      } else {
+        // नाम नहीं लिखा — पास के शहर का नाम, गणित इसी गाँव का
+        final paas = nearestIndianCity(chosen.latitude, chosen.longitude);
+        await settings.setCity(
+            City(paas.name, paas.state, chosen.latitude, chosen.longitude));
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text('पंचांग ${chosen.name} का; संकल्प में अभी '
+                  '«${paas.name}» बोला जाएगा — «अपनी जगह का नाम» से बदल सकते हैं।')));
+        }
+      }
+    }
     if (mounted) setState(() {});
+  }
+
+  /// गाँव का नाम देवनागरी में — संकल्प के लिए।
+  Future<String?> _devanagariNaam(String angrezi) async {
+    final c = TextEditingController();
+    final naya = await showDialog<String>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('संकल्प में बोला जाने वाला नाम'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('«$angrezi» को देवनागरी में लिखिए — संकल्प संस्कृत में बोला '
+                'जाता है। पंचांग इसी जगह के सूर्योदय से बनेगा।'),
+            const SizedBox(height: VidhivatSpacing.md),
+            TextField(
+              controller: c,
+              autofocus: true,
+              decoration: const InputDecoration(
+                labelText: 'जगह का नाम',
+                hintText: 'जैसे — रामपुर',
+                border: OutlineInputBorder(),
+              ),
+              onSubmitted: (v) => Navigator.of(context).pop(v),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: const Text('बाद में'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(c.text),
+            child: const Text('रख लीजिए'),
+          ),
+        ],
+      ),
+    );
+    c.dispose();
+    return naya;
   }
 
   Future<void> _detectDeviceLocation() async {
@@ -343,71 +424,3 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 }
 
-class _ManualCityPicker extends StatefulWidget {
-  final ScrollController controller;
-  final City selectedCity;
-
-  const _ManualCityPicker({
-    required this.controller,
-    required this.selectedCity,
-  });
-
-  @override
-  State<_ManualCityPicker> createState() => _ManualCityPickerState();
-}
-
-class _ManualCityPickerState extends State<_ManualCityPicker> {
-  final _search = TextEditingController();
-
-  @override
-  void dispose() {
-    _search.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // ख़ाली हो तो पूरी सूची; अंग्रेज़ी में लिखा नाम भी ("Delhi") — → shaharKhojo
-    final cities = shaharKhojo(_search.text);
-
-    return ListView(
-      controller: widget.controller,
-      padding: const EdgeInsets.fromLTRB(
-        VidhivatSpacing.lg,
-        0,
-        VidhivatSpacing.lg,
-        VidhivatSpacing.xxl,
-      ),
-      children: [
-        const VidhivatSectionHeader(
-          title: 'शहर हाथ से चुनें',
-          supportingText: 'अनुमति न दें, तब भी पंचांग सही रहेगा',
-        ),
-        const SizedBox(height: VidhivatSpacing.sm),
-        TextField(
-          controller: _search,
-          onChanged: (_) => setState(() {}),
-          decoration: const InputDecoration(
-            prefixIcon: Icon(Icons.search),
-            labelText: 'शहर खोजें',
-            hintText: 'जैसे — पटना, दिल्ली, Pune',
-            border: OutlineInputBorder(),
-          ),
-        ),
-        const SizedBox(height: VidhivatSpacing.sm),
-        if (cities.isEmpty)
-          const VidhivatSurfaceCard(
-            child: Text('इस नाम का शहर सूची में नहीं है। दूसरा नाम खोजें।'),
-          ),
-        for (final city in cities)
-          ListTile(
-            title: Text(city.name),
-            subtitle: Text(city.state),
-            selected: city.name == widget.selectedCity.name &&
-                !widget.selectedCity.isDeviceDetected,
-            onTap: () => Navigator.of(context).pop(city),
-          ),
-      ],
-    );
-  }
-}

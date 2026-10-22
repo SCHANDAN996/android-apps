@@ -220,6 +220,26 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
+    // → D-128: जन्म-स्थान का पूरा खोज-पन्ना — ऐप के शहर और गाँव-क़स्बे
+    // गाँव वाली सूची (isolate + asset) widget-test में अटकती है — उसकी जाँच gaon_test में
+    testWidgets('जन्म-स्थान: खोज-पन्ना खुलता है; «Delhi» से शहर सुझाता है',
+        (tester) async {
+      phone(tester);
+      await tester.pumpWidget(app(const KundaliForm()));
+      await tester.pumpAndSettle();
+      final khaana = find.byKey(const Key('janm_sthan'));
+      await tester.scrollUntilVisible(khaana, 300,
+          scrollable: find.byType(Scrollable).first);
+      await tester.tap(khaana);
+      await tester.pumpAndSettle();
+      expect(find.byKey(const Key('jagah_khoj')), findsOneWidget);
+
+      await tester.enterText(find.byKey(const Key('jagah_khoj')), 'Delhi');
+      await tester.pumpAndSettle();
+      expect(find.widgetWithText(ListTile, 'दिल्ली'), findsWidgets);
+      expect(tester.takeException(), isNull);
+    });
+
     testWidgets('भारत के बाहर की जगह — कुछ नहीं भरता, साफ़ बताता है', (tester) async {
       await jagahDabao(tester, const DeviceLocationResult.position(51.5, -0.12));
       expect(find.textContaining('भारत के बाहर'), findsOneWidget);

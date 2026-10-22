@@ -5,6 +5,8 @@
 /// न टूटें, इसलिए `settings.dart` इसे आगे export करती है।
 library;
 
+import 'dart:typed_data';
+
 import 'package:panchang_engine/panchang_engine.dart';
 
 /// एक शहर — नाम, राज्य, और उसका अक्षांश-देशांतर।
@@ -196,21 +198,10 @@ final _devanagari = RegExp(r'[ऀ-ॿ]');
 
 /// अंग्रेज़ी अक्षरों में लिखे नाम का ढाँचा — [devDhanche] के वर्गों में।
 String romanDhancha(String s) {
-  var t = s.toLowerCase().replaceAll(RegExp(r'[^a-z]'), '');
-  t = t
-      .replaceAll('ck', 'k')
-      .replaceAll('ch', 'C') // च — बाक़ी c नीचे k बनेगा
-      .replaceAll('sh', 's')
-      .replaceAll('ph', 'p')
-      .replaceAll('x', 'ks')
-      .replaceAll('q', 'k')
-      .replaceAll('z', 'j')
-      .replaceAll('f', 'p')
-      .replaceAll('c', 'k')
-      .replaceAll('C', 'c')
-      .replaceAll('m', 'n')
-      .replaceAll(RegExp(r'[aeiouyhwv]'), '');
-  return _dohraEk(t);
+  // देवनागरी या चिह्न वाले अक्षर (ā) गिर जाते हैं — सिर्फ़ a–z गिना जाता है
+  final b = Uint8List.fromList([for (final c in s.codeUnits) c > 255 ? 32 : c]);
+  final out = Uint8List(b.length * 2 + 1);
+  return String.fromCharCodes(out, 0, dhanchaBytes(b, 0, b.length, out));
 }
 
 /// देवनागरी नाम के ढाँचे। ड़/ढ़ अंग्रेज़ी में कभी r लिखा जाता है (Chandigarh),
@@ -760,3 +751,71 @@ const List<City> indianCities = [
   City('अनंतनाग', 'जम्मू और कश्मीर', 33.7311, 75.1487),
   City('बारामूला', 'जम्मू और कश्मीर', 34.1980, 74.3640),
 ];
+
+/// छोटे अक्षर, सिर्फ़ a–z
+int saafKaro(Uint8List b, int s, int e, Uint8List out) {
+  var n = 0;
+  for (var i = s; i < e && n < out.length; i++) {
+    var c = b[i];
+    if (c >= 65 && c <= 90) c += 32;
+    if (c >= 97 && c <= 122) out[n++] = c;
+  }
+  return n;
+}
+
+/// अंग्रेज़ी अक्षरों का व्यंजन-ढाँचा, bytes पर — [romanDhancha] और गाँवों की सूची
+/// (`gaon.dart`, साढ़े पाँच लाख नाम) दोनों इसी पर चलते हैं।
+///
+/// ck→k · ch→c (च) · sh→s · ph→p · x→ks · q→k · z→j · f→p · c→k · m→n ·
+/// स्वर, y, h, w, v गिरते हैं · लगातार दोहराव एक।
+int dhanchaBytes(Uint8List b, int s, int e, Uint8List out) {
+  // पहले सिर्फ़ छोटे a–z
+  final t = Uint8List(e - s);
+  final m = saafKaro(b, s, e, t);
+  var n = 0, prev = -1;
+  void dalo(int c) {
+    if (c != prev && n < out.length) {
+      out[n++] = c;
+      prev = c;
+    }
+  }
+
+  for (var i = 0; i < m; i++) {
+    final c = t[i];
+    final agla = i + 1 < m ? t[i + 1] : 0;
+    if (c == 99 /*c*/ && agla == 107 /*k*/) {
+      dalo(107);
+      i++;
+    } else if (c == 99 && agla == 104 /*h*/) {
+      dalo(99);
+      i++;
+    } else if (c == 115 /*s*/ && agla == 104) {
+      dalo(115);
+      i++;
+    } else if (c == 112 /*p*/ && agla == 104) {
+      dalo(112);
+      i++;
+    } else {
+      switch (c) {
+        case 120: // x
+          dalo(107);
+          dalo(115);
+        case 113: // q
+          dalo(107);
+        case 122: // z
+          dalo(106);
+        case 102: // f
+          dalo(112);
+        case 99: // c
+          dalo(107);
+        case 109: // m
+          dalo(110);
+        case 97 || 101 || 105 || 111 || 117 || 121 || 104 || 119 || 118:
+          break; // a e i o u y h w v
+        default:
+          dalo(c);
+      }
+    }
+  }
+  return n;
+}

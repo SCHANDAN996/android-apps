@@ -1,5 +1,9 @@
 import 'package:flutter/foundation.dart'
-    show TargetPlatform, defaultTargetPlatform;
+    show
+        LicenseEntryWithLineBreaks,
+        LicenseRegistry,
+        TargetPlatform,
+        defaultTargetPlatform;
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -17,6 +21,16 @@ import 'widgets/design_system.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // गाँव-क़स्बों की सूची (assets/jagah) का श्रेय — उसके लाइसेंस की शर्त (→ D-128)।
+  // सिर्फ़ सेटिंग → लाइसेंस वाले पन्ने पर; ऐप के पाठ में कहीं नहीं।
+  LicenseRegistry.addLicense(() async* {
+    yield const LicenseEntryWithLineBreaks(
+      ['गाँव और क़स्बों की सूची'],
+      'भारत की बसी जगहों के नाम और अक्षांश-देशांतर: GeoNames (geonames.org), '
+      'Creative Commons Attribution 4.0 लाइसेंस के अंतर्गत। ऐप में सूची छोटी करके '
+      'और बदले हुए ढाँचे में रखी गई है।',
+    );
+  });
   await settings.load();
   await ancestorProfiles.load();
   // केवल पहले से opt-in किए reminder दोबारा तय होते हैं; अनुमति नहीं माँगी जाती।

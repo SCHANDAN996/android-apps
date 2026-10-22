@@ -8,6 +8,7 @@ import '../state/settings.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
+import '../widgets/jagah_khoj.dart';
 import 'gun_milan_screen.dart';
 import 'kundali_screen.dart';
 
@@ -256,6 +257,17 @@ class _KundaliFormState extends State<KundaliForm> {
   void _kaho(String baat) => ScaffoldMessenger.of(context)
       .showSnackBar(SnackBar(content: Text(baat)));
 
+  Future<void> _jagahChuno() async {
+    final c = await jagahChuno(
+      context,
+      selectedCity: _shahar,
+      shirshak: 'जन्म की जगह',
+      upShirshak: 'गाँव, क़स्बा या शहर — हिंदी या अंग्रेज़ी में लिखिए',
+      khaaliParSab: false,
+    );
+    if (c != null && mounted) setState(() => _shahar = c);
+  }
+
   /// फ़ोन की अभी की जगह → अक्षांश-देशांतर वाले खाने, नाम में पास का शहर।
   Future<void> _phoneKiJagah() async {
     setState(() => _jagahDhoondhRahe = true);
@@ -398,34 +410,19 @@ class _KundaliFormState extends State<KundaliForm> {
             ],
             const SizedBox(height: VidhivatSpacing.lg),
             if (!_khudBharein)
-              Autocomplete<City>(
-                displayStringForOption: (city) => '${city.name}, ${city.state}',
-                initialValue: TextEditingValue(
-                    text: _shahar == null
-                        ? ''
-                        : '${_shahar!.name}, ${_shahar!.state}'),
-                optionsBuilder: (value) {
-                  // अंग्रेज़ी में लिखा नाम भी ("Delhi") — → shaharKhojo
-                  if (value.text.trim().isEmpty) {
-                    return const Iterable<City>.empty();
-                  }
-                  return shaharKhojo(value.text).take(12);
-                },
-                onSelected: (city) => setState(() => _shahar = city),
-                fieldViewBuilder: (context, controller, focus, submit) =>
-                    TextField(
-                  controller: controller,
-                  focusNode: focus,
-                  onChanged: (_) {
-                    // लिखा हुआ बदला — पुराना चुनाव अब मान्य नहीं
-                    if (_shahar != null) setState(() => _shahar = null);
-                  },
-                  decoration: const InputDecoration(
-                    labelText: 'जन्म की जगह *',
-                    helperText: 'नाम लिखना शुरू करें (हिंदी या अंग्रेज़ी में) और सूची से शहर चुनें। गाँव '
-                        'न मिले तो पास का ज़िला चुनें।',
-                    helperMaxLines: 3,
-                  ),
+              // पूरा खोज-पन्ना — Autocomplete में keyboard के ऊपर एक ही सुझाव दिखता था
+              // (फ़ोन पर पकड़ा, 21 अक्टूबर 2026; → D-128)
+              VidhivatSurfaceCard(
+                padding: EdgeInsets.zero,
+                child: ListTile(
+                  key: const Key('janm_sthan'),
+                  leading: const Icon(Icons.location_on_outlined),
+                  title: Text(_shahar == null ? 'जन्म की जगह चुनें *' : _shahar!.name),
+                  subtitle: Text(_shahar == null
+                      ? 'गाँव, क़स्बा या शहर — हिंदी या अंग्रेज़ी में खोजें'
+                      : _shahar!.state),
+                  trailing: const Icon(Icons.search),
+                  onTap: _jagahChuno,
                 ),
               )
             else ...[
