@@ -11,6 +11,10 @@ class PitruReminders {
       FlutterLocalNotificationsPlugin();
   bool _ready = false;
 
+  /// notification दबाकर ऐप सामने आया — `main.dart` यहाँ विनती की बही को ख़बर
+  /// देता है, ताकि उस बैठक में दक्षिणा की पट्टी न उठे (→ D-132)।
+  void Function()? notificationDabaya;
+
   bool get supported =>
       !kIsWeb &&
       (defaultTargetPlatform == TargetPlatform.android ||
@@ -28,8 +32,26 @@ class PitruReminders {
           requestSoundPermission: false,
         ),
       ),
+      onDidReceiveNotificationResponse: (_) => notificationDabaya?.call(),
     );
     _ready = true;
+  }
+
+  /// यह बैठक किसी स्मरण-notification को दबाकर खुली? (→ D-132)
+  ///
+  /// कोई स्मरण चालू ही न हो तो notification हो ही नहीं सकता — तब plugin को
+  /// छूते भी नहीं। कुछ भी अटके तो `false`: ऐप का खुलना इस पर कभी नहीं रुकेगा।
+  Future<bool> notificationSeKhula() async {
+    if (!supported || !ancestorProfiles.items.any((p) => p.reminder)) {
+      return false;
+    }
+    try {
+      await _init();
+      final d = await _plugin.getNotificationAppLaunchDetails();
+      return d?.didNotificationLaunchApp ?? false;
+    } catch (_) {
+      return false;
+    }
   }
 
   /// केवल यूज़र के switch दबाने पर सिस्टम अनुमति माँगें।

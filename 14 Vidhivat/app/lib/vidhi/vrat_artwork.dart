@@ -60,6 +60,10 @@ abstract final class VratArtwork {
   static const _purnima = DevotionalArtwork(
       assetPath: 'assets/images/devotional/vrat_purnima_v2.webp',
       semanticLabel: 'पूर्णिमा में चंद्रमा और कलश का सजावटी चित्र');
+  static const _sharadPurnima = DevotionalArtwork(
+      assetPath: 'assets/images/devotional/vrat_sharad_purnima_v1.webp',
+      semanticLabel:
+          'शरद पूर्णिमा में पूरे चाँद के नीचे खीर, दीपक और कमल का सजावटी चित्र');
   static const _janmashtami = DevotionalArtwork(
       assetPath: 'assets/images/devotional/vrat_janmashtami_v2.webp',
       semanticLabel: 'जन्माष्टमी में लड्डू गोपाल का सजावटी चित्र');
@@ -77,8 +81,7 @@ abstract final class VratArtwork {
     'pradosh': _pradosh,
     'sankashti': _sankashti,
     'purnima': _purnima,
-    // अपना चित्र बनने तक पूर्णिमा वाला — चाँद और कलश (→ D-130)
-    'sharad_purnima': _purnima,
+    'sharad_purnima': _sharadPurnima, // → D-130
     'amavasya': _shraadh,
     'masik_shivratri': _pradosh,
     'vinayak_chaturthi': _ganesha,

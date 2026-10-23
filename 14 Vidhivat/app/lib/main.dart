@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart'
     show
         LicenseEntryWithLineBreaks,
@@ -10,6 +12,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'services/dakshina_service.dart';
 import 'services/device_location_service.dart';
 import 'services/pitru_reminders.dart';
+import 'services/vinati_service.dart';
 import 'screens/calendar_screen.dart';
 import 'screens/home_dashboard_screen.dart';
 import 'screens/more_screen.dart';
@@ -18,6 +21,7 @@ import 'state/settings.dart';
 import 'state/ancestor_profiles.dart';
 import 'theme.dart';
 import 'widgets/design_system.dart';
+import 'widgets/vinati_sheet.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,6 +48,17 @@ Future<void> main() async {
   pitruReminders.refresh();
   await dakshina.load();
 
+  // ── दक्षिणा की विनती की गिनती (→ D-132) ──
+  // ऐप का ठंडा खुलना = एक बैठक। notification दबाकर खुला हो तो उस बैठक में
+  // विनती नहीं (आदमी स्मरण के लिए आया है)।
+  await vinati.load();
+  await vinati.baithakShuru(DateTime.now());
+  pitruReminders.notificationDabaya =
+      () => vinati.notificationSeAaya(DateTime.now());
+  if (await pitruReminders.notificationSeKhula()) {
+    vinati.notificationSeAaya(DateTime.now());
+  }
+
   // दक्षिणा का द्वार — PayU का पन्ना बाहर खुलता है (→ D-090)। सिर्फ़
   // फ़ोन पर; desktop पर चलाने/जाँचने में कोई पन्ना नहीं खुलना चाहिए।
   if (defaultTargetPlatform == TargetPlatform.android ||
@@ -61,7 +76,14 @@ class VidhivatApp extends StatefulWidget {
   State<VidhivatApp> createState() => _VidhivatAppState();
 }
 
-class _VidhivatAppState extends State<VidhivatApp> {
+/// होम पर लौटना पहचानने के लिए — दक्षिणा की विनती सिर्फ़ तभी (→ D-132)।
+///
+/// सिर्फ़ **पन्ने** (`PageRoute`) — dialog या नीचे की पट्टी बंद होना "लौटना" नहीं
+/// (पहली बार वाला स्थान-अनुमति dialog बंद होते ही विनती का timer बन जाता था)।
+final vinatiRouteObserver = RouteObserver<PageRoute<dynamic>>();
+
+class _VidhivatAppState extends State<VidhivatApp>
+    with WidgetsBindingObserver {
   /// ⚠️ यह key इसलिए चाहिए कि पहली बार वाला dialog **MaterialApp के नीचे**
   /// से खुले।
   ///
@@ -79,8 +101,28 @@ class _VidhivatAppState extends State<VidhivatApp> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     WidgetsBinding.instance
         .addPostFrameCallback((_) => _requestInitialLocation());
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  /// आधे घंटे से ज़्यादा पीछे पड़ा रहकर सामने आया = नई बैठक (→ D-132)।
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    switch (state) {
+      case AppLifecycleState.paused:
+        vinati.peechhe(DateTime.now());
+      case AppLifecycleState.resumed:
+        vinati.saamne(DateTime.now());
+      default:
+        break;
+    }
   }
 
   Future<void> _requestInitialLocation() async {
@@ -127,6 +169,7 @@ class _VidhivatAppState extends State<VidhivatApp> {
       builder: (context, _) => MaterialApp(
         title: 'विधिवत',
         navigatorKey: _navigatorKey,
+        navigatorObservers: [vinatiRouteObserver],
         // Flutter के अपने डिब्बे भी हिंदी में — जन्म की तारीख़ और समय चुनते हुए
         // पहले "Mon, Jan 1 … Cancel / OK" आता था (फ़ोन पर पकड़ा, 18 अक्टूबर 2026)।
         locale: const Locale('hi', 'IN'),
@@ -154,9 +197,48 @@ class HomeShell extends StatefulWidget {
   State<HomeShell> createState() => _HomeShellState();
 }
 
-class _HomeShellState extends State<HomeShell> {
+class _HomeShellState extends State<HomeShell> with RouteAware {
   int _index = 0;
   final Set<int> _visitedTabs = {0};
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final route = ModalRoute.of(context);
+    if (route is PageRoute) vinatiRouteObserver.subscribe(this, route);
+  }
+
+  Timer? _vinatiTimer;
+
+  @override
+  void dispose() {
+    _vinatiTimer?.cancel();
+    vinatiRouteObserver.unsubscribe(this);
+    super.dispose();
+  }
+
+  /// किसी पन्ने से लौटकर मुख्य पन्ने पर आए — काम पूरा करके (→ D-132)।
+  ///
+  /// ⛔ ऐप खुलते ही नहीं (यह सिर्फ़ लौटने पर चलता है), notification वाली बैठक में
+  /// नहीं, पूजा-पूर्ण का डिब्बा देख चुकी बैठक में नहीं — नियम `VinatiBahi` में।
+  /// दो सेकंड रुककर, और तभी जब ऊपर कोई और पन्ना या dialog न हो।
+  @override
+  void didPopNext() {
+    // पहले सस्ती जाँच — लगभग हर बार यहीं ख़त्म, कोई timer नहीं बनता
+    if (!vinati.dakshinaPoochhen(DateTime.now(),
+        kabhiDiThi: dakshina.kabhiDiThi)) {
+      return;
+    }
+    _vinatiTimer?.cancel();
+    _vinatiTimer = Timer(const Duration(seconds: 2), () async {
+      if (!mounted || ModalRoute.of(context)?.isCurrent != true) return;
+      final ab = DateTime.now();
+      if (!vinati.dakshinaPoochhen(ab, kabhiDiThi: dakshina.kabhiDiThi)) return;
+      await vinati.dakshinaPoochhi(ab);
+      if (!mounted) return;
+      await dakshinaVinatiDikhao(context);
+    });
+  }
 
   void _onTabSelected(int i) {
     setState(() {

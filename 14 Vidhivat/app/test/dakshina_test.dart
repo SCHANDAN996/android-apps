@@ -422,6 +422,7 @@ void main() {
         'lib/services/dakshina_service.dart',
         'lib/widgets/dakshina_card.dart',
         'lib/screens/dakshina_screen.dart',
+        'lib/widgets/vinati_sheet.dart', // → D-132
       ];
 
       final manahi = <RegExp, String>{

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../services/dakshina_service.dart';
+import '../services/vinati_service.dart';
 import '../theme.dart';
 import 'design_system.dart';
 
@@ -107,6 +108,14 @@ class _DakshinaChunavState extends State<DakshinaChunav> {
   /// PayU का पन्ना बाहर खुल चुका — लौटने पर "दे दी?" पूछना है।
   DakshinaRaashi? _baharKhula;
   String? _gadbad;
+
+  @override
+  void initState() {
+    super.initState();
+    // राशियाँ इस बैठक में दिख चुकीं (पूर्ण-पन्ना, «अधिक → दक्षिणा», या पट्टी से
+    // खुला पन्ना) — अब लौटते हुए पट्टी नहीं (→ D-132)
+    vinati.dakshinaDibbaDikha();
+  }
 
   Future<void> _do() async {
     final raashi = _chuni;
@@ -322,6 +331,8 @@ class _DakshinaCardState extends State<DakshinaCard> {
     // दिखना ही वो चीज़ है जिसकी हद बाँधनी है। तीन बार के बाद तीस दिन
     // चुप्पी — यह गिनती वहीं से चलती है।
     dakshina.dikhaayiGayi(DateTime.now());
+    // इसी बैठक में होम पर लौटते हुए दोबारा पट्टी नहीं (→ D-132)
+    vinati.dakshinaDibbaDikha();
   }
 
   @override

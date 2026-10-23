@@ -556,6 +556,9 @@ app/lib/screens/
 | `app/lib/vidhi/bhandar.dart` | `vratBhandar` — सूची, पन्ना, एकादशियाँ |
 | `app/lib/screens/vrat_panna_screen.dart` | `VratPannaScreen`, `KathaScreen`, `EkadashiVarshScreen`; साल के व्रत पर `_TyoharKaDin` — इंजन के त्योहार-नियम से अगली तारीख़ (→ D-130) |
 | `app/lib/screens/festival_destination.dart` | त्योहार दबाने पर क्या खुले — विधि (`tyoharKiPuja`), नहीं तो व्रत-पन्ना (`tyoharKaVrat`, → D-130) |
+| `app/lib/services/vinati_service.dart` | `VinatiBahi` — बैठक गिनना (ठंडा खुलना / 30 मिनट बाद सामने), दक्षिणा की विनती कब (10वीं बैठक, 7 दिन, कभी न दी, फिर +20/+40, कुल 3) (→ D-132) |
+| `app/lib/widgets/vinati_sheet.dart` | `dakshinaVinatiDikhao` — नीचे की पट्टी; पैसा नहीं, बस `DakshinaScreen` खोलती है |
+| `app/lib/main.dart` → `HomeShell.didPopNext` | पट्टी उठने की इकलौती जगह — किसी पन्ने से लौटने पर, दो सेकंड बाद |
 | `engine/tool/kojagar_aazmao.dart` | शरद पूर्णिमा — हर साल पूर्णिमा, आधी रातें, प्रदोष और चुना दिन (संदर्भ से मिलाने को) |
 | `app/lib/widgets/katha_khand.dart` | `KathaKhand` — प्लेयर और कथा-पन्ना दोनों |
 | `app/lib/widgets/mantra_khand.dart` | `MantraKhand`, `PaathKeBaareMein` |
