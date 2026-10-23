@@ -171,14 +171,84 @@ class _JagahKhojSheetState extends State<JagahKhojSheet> {
             prefixIcon: Icon(Icons.search),
             labelText: 'शहर खोजें',
             hintText: 'शहर, क़स्बा या गाँव — जैसे पटना, Pune, Rampur',
-            helperText: 'एक नाम के कई गाँव हों तो «गाँव, ज़िला» लिखें',
+            helperText: 'लिखकर keyboard का «खोज» दबाएँ — पहले इंटरनेट पर खोजेगा',
             border: OutlineInputBorder(),
           ),
         ),
         const SizedBox(height: VidhivatSpacing.sm),
-        if (cities.isEmpty && _gaon.isEmpty && _search.text.trim().isNotEmpty)
+
+        // ── पहले इंटरनेट (डेवलपर, 23 अक्टूबर: "इंटरनेट हो तो पहली कोशिश इंटरनेट से,
+        // ऑफ़लाइन बाद में" — → D-133) ──
+        // OpenStreetMap की नीति हर अक्षर पर अपने-आप खोज मना करती है, इसलिए खोज
+        // keyboard के «खोज» या इस बटन पर चलती है; उसके नतीजे सबसे ऊपर। ऐप की अपनी सूची
+        // (शहर, गाँव) नीचे — इंटरनेट न हो या कुछ न मिले तो वही काम आती है।
+        if (_search.text.trim().length >= 2) ...[
+          if (_onlineChal)
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: VidhivatSpacing.sm),
+              child: Row(
+                children: [
+                  const SizedBox(
+                    width: 18,
+                    height: 18,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  ),
+                  const SizedBox(width: VidhivatSpacing.sm),
+                  Expanded(child: Text(_onlineHaal ?? 'इंटरनेट पर खोज रहे हैं…')),
+                ],
+              ),
+            )
+          else if (_online == null)
+            VidhivatButton(
+              key: const Key('online_khoj'),
+              label: 'इंटरनेट पर खोजें',
+              icon: Icons.public,
+              onPressed: _onlineKhojo,
+              fullWidth: true,
+            )
+          else ...[
+            const VidhivatSectionHeader(
+              title: 'इंटरनेट से',
+              supportingText: 'खोज का शब्द इंटरनेट पर जाता है; आपकी जगह नहीं',
+            ),
+            if (_online!.isEmpty)
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: VidhivatSpacing.sm),
+                child: Text('इंटरनेट पर नहीं मिला — नीचे ऐप की सूची देखें, या दूसरी वर्तनी '
+                    'और «गाँव, ज़िला» लिखकर खोजें।'),
+              ),
+            for (final o in _online!)
+              ListTile(
+                leading: const Icon(Icons.public),
+                title: Text(o.naam),
+                subtitle: Text(o.pata.isEmpty ? 'भारत' : o.pata),
+                onTap: () => Navigator.of(context).pop(City(
+                    o.naam, o.pata.isEmpty ? 'भारत' : o.pata, o.latitude, o.longitude)),
+              ),
+            // ODbL लाइसेंस की शर्त — जहाँ OpenStreetMap का डेटा दिखे, वहीं श्रेय
+            Padding(
+              padding: const EdgeInsets.only(top: VidhivatSpacing.xs),
+              child: Text(
+                'जगहों का डेटा © OpenStreetMap contributors',
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ),
+          ],
+          const SizedBox(height: VidhivatSpacing.md),
+          if (cities.isNotEmpty || _gaon.isNotEmpty)
+            const VidhivatSectionHeader(
+              title: 'ऐप की सूची से',
+              supportingText: 'बिना इंटरनेट भी',
+            ),
+        ],
+        if (cities.isEmpty &&
+            _gaon.isEmpty &&
+            _search.text.trim().isNotEmpty &&
+            !_onlineChal &&
+            (_online?.isEmpty ?? true))
           const VidhivatSurfaceCard(
-            child: Text('इस नाम की कोई जगह नहीं मिली। दूसरी वर्तनी या पास का क़स्बा खोजें।'),
+            child: Text('ऐप की सूची में इस नाम की कोई जगह नहीं मिली। ऊपर «इंटरनेट पर खोजें» '
+                'दबाएँ, या दूसरी वर्तनी / पास का क़स्बा खोजें।'),
           ),
         for (final city in cities)
           ListTile(
@@ -201,60 +271,6 @@ class _JagahKhojSheetState extends State<JagahKhojSheet> {
               subtitle: Text(m.city.state),
               onTap: () => Navigator.of(context).pop(m.city),
             ),
-        ],
-        if (_search.text.trim().length >= 2) ...[
-          const SizedBox(height: VidhivatSpacing.md),
-          if (_onlineChal)
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: VidhivatSpacing.sm),
-              child: Row(
-                children: [
-                  const SizedBox(
-                    width: 18,
-                    height: 18,
-                    child: CircularProgressIndicator(strokeWidth: 2),
-                  ),
-                  const SizedBox(width: VidhivatSpacing.sm),
-                  Expanded(child: Text(_onlineHaal ?? 'इंटरनेट पर खोज रहे हैं…')),
-                ],
-              ),
-            )
-          else if (_online == null)
-            VidhivatButton(
-              key: const Key('online_khoj'),
-              label: 'इंटरनेट पर भी खोजें',
-              icon: Icons.public,
-              variant: VidhivatButtonVariant.secondary,
-              onPressed: _onlineKhojo,
-              fullWidth: true,
-            )
-          else ...[
-            const VidhivatSectionHeader(
-              title: 'इंटरनेट से',
-              supportingText: 'खोज का शब्द इंटरनेट पर जाता है; आपकी जगह नहीं',
-            ),
-            if (_online!.isEmpty)
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: VidhivatSpacing.sm),
-                child: Text('इंटरनेट पर भी नहीं मिला — दूसरी वर्तनी, या «गाँव, ज़िला» लिखकर देखें।'),
-              ),
-            for (final o in _online!)
-              ListTile(
-                leading: const Icon(Icons.public),
-                title: Text(o.naam),
-                subtitle: Text(o.pata.isEmpty ? 'भारत' : o.pata),
-                onTap: () => Navigator.of(context).pop(City(
-                    o.naam, o.pata.isEmpty ? 'भारत' : o.pata, o.latitude, o.longitude)),
-              ),
-            // ODbL लाइसेंस की शर्त — जहाँ OpenStreetMap का डेटा दिखे, वहीं श्रेय
-            Padding(
-              padding: const EdgeInsets.only(top: VidhivatSpacing.xs),
-              child: Text(
-                'जगहों का डेटा © OpenStreetMap contributors',
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-            ),
-          ],
         ],
       ],
     );

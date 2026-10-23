@@ -7,6 +7,7 @@ import '../state/settings.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
+import '../widgets/jagah_khoj.dart';
 
 class AncestorProfilesScreen extends StatefulWidget {
   const AncestorProfilesScreen({super.key});
@@ -160,6 +161,9 @@ class _AncestorFormState extends State<_AncestorForm> {
   late bool _showName;
   late String _source;
   late Place _deathPlace;
+
+  /// खोज-पन्ने से चुनी जगह का ज़िला/राज्य — सिर्फ़ दिखाने को
+  String? _deathPlacePata;
   DateTime? _deathLocal;
 
   @override
@@ -181,6 +185,25 @@ class _AncestorFormState extends State<_AncestorForm> {
     _relation.dispose();
     _name.dispose();
     super.dispose();
+  }
+
+  /// मृत्यु की जगह — वही खोज-पन्ना जो कुंडली और सेटिंग में है: ऐप के शहर,
+  /// साढ़े पाँच लाख गाँव-क़स्बे, और इंटरनेट (→ D-128, D-129, D-133)।
+  Future<void> _jagahChuno() async {
+    final c = await jagahChuno(
+      context,
+      shirshak: 'मृत्यु की जगह',
+      upShirshak: 'गाँव, क़स्बा या शहर — तिथि उसी जगह के पंचांग से निकलती है',
+      khaaliParSab: false,
+    );
+    if (c == null || !mounted) return;
+    setState(() {
+      _deathPlace = c.place;
+      _deathPlacePata = c.state;
+      if (_deathLocal != null && _source == 'calculated') {
+        _tithi = AncestorProfile.tithiAtDeath(_deathLocal!, _deathPlace);
+      }
+    });
   }
 
   Future<void> _pickDeath() async {
@@ -262,32 +285,19 @@ class _AncestorFormState extends State<_AncestorForm> {
                 maxLength: 60,
                 decoration: const InputDecoration(labelText: 'नाम (वैकल्पिक)'),
               ),
-              Autocomplete<City>(
-                displayStringForOption: (city) => '${city.name}, ${city.state}',
-                initialValue: TextEditingValue(text: _deathPlace.name),
-                optionsBuilder: (value) {
-                  // अंग्रेज़ी में लिखा नाम भी ("Delhi") — → shaharKhojo
-                  if (value.text.trim().isEmpty) {
-                    return const Iterable<City>.empty();
-                  }
-                  return shaharKhojo(value.text).take(12);
-                },
-                onSelected: (city) => setState(() {
-                  _deathPlace = city.place;
-                  if (_deathLocal != null && _source == 'calculated') {
-                    _tithi =
-                        AncestorProfile.tithiAtDeath(_deathLocal!, _deathPlace);
-                  }
-                }),
-                fieldViewBuilder: (context, controller, focus, submit) =>
-                    TextField(
-                  controller: controller,
-                  focusNode: focus,
-                  decoration: const InputDecoration(
-                    labelText: 'मृत्यु का मूल शहर',
-                    helperText:
-                        'सूची से शहर चुनें; अलग हो तो तिथि हाथ से चुनें',
-                  ),
+              // पहले `Autocomplete` था — सिर्फ़ ~500 शहर, और फ़ोन पर keyboard खुलते ही
+              // एक ही सुझाव दिखता था। अब कुंडली वाला पूरा खोज-पन्ना (→ D-133)।
+              VidhivatSurfaceCard(
+                padding: EdgeInsets.zero,
+                child: ListTile(
+                  key: const Key('mrityu_sthan'),
+                  leading: const Icon(Icons.location_on_outlined),
+                  title: Text(_deathPlace.name),
+                  subtitle: Text(_deathPlacePata == null
+                      ? 'मृत्यु की जगह — गाँव, क़स्बा या शहर खोजें'
+                      : '$_deathPlacePata · बदलने के लिए दबाएँ'),
+                  trailing: const Icon(Icons.search),
+                  onTap: _jagahChuno,
                 ),
               ),
               const SizedBox(height: VidhivatSpacing.md),
@@ -302,7 +312,7 @@ class _AncestorFormState extends State<_AncestorForm> {
               const SizedBox(height: VidhivatSpacing.xs),
               Text(
                   'गणना की जगह: ${_deathPlace.name}. '
-                  'सही शहर सूची में न मिले तो तिथि हाथ से चुनें। समय न पता हो तो अनुमान न लगाएँ।',
+                  'सही जगह न मिले तो तिथि हाथ से चुनें। समय न पता हो तो अनुमान न लगाएँ।',
                   style: VidhivatTheme.typographyOf(context).bodySmall),
               const SizedBox(height: VidhivatSpacing.md),
               DropdownButtonFormField<int>(

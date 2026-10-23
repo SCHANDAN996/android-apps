@@ -7,6 +7,7 @@ import 'package:vidhivat/screens/vidhi_screen.dart';
 import 'package:vidhivat/screens/vidhi_player_screen.dart';
 import 'package:vidhivat/screens/pitru_schedule_screen.dart';
 import 'package:vidhivat/screens/ancestor_profiles_screen.dart';
+import 'package:vidhivat/widgets/jagah_khoj.dart';
 import 'package:vidhivat/screens/aaj_screen.dart';
 import 'package:vidhivat/screens/festival_destination.dart';
 import 'package:vidhivat/state/ancestor_profiles.dart';
@@ -261,6 +262,48 @@ void main() {
     await tester.tap(find.text('परिजन की तिथि जोड़ें'));
     await tester.pumpAndSettle();
     expect(find.text('सम्बन्ध *'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  // → D-133: पूर्वज की जगह भी वही खोज-पन्ना — शहर, गाँव, इंटरनेट
+  // (गाँव वाली सूची isolate में खुलती है, widget-test में अटकती है — उसकी जाँच gaon_test में)
+  testWidgets('मृत्यु की जगह: खोज-पन्ना खुलता है; «Delhi» से दिल्ली चुनी जाती है',
+      (tester) async {
+    tester.view.physicalSize = const Size(400, 900);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    await tester.pumpWidget(app(const AncestorProfilesScreen()));
+    await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(find.text('परिजन की तिथि जोड़ें'), 200);
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('परिजन की तिथि जोड़ें'));
+    await tester.pumpAndSettle();
+
+    final khaana = find.byKey(const Key('mrityu_sthan'));
+    await tester.scrollUntilVisible(khaana, 200,
+        scrollable: find.byType(Scrollable).first);
+    await tester.tap(khaana);
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('jagah_khoj')), findsOneWidget);
+    // इंटरनेट वाली खोज सबसे ऊपर, पर सिर्फ़ कहने पर
+    await tester.enterText(find.byKey(const Key('jagah_khoj')), 'Delhi');
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('online_khoj')), findsOneWidget);
+    expect(find.text('इंटरनेट से'), findsNothing);
+
+    // फ़ॉर्म का अपना खाना भी पहले से «दिल्ली» दिखाता है — पत्ता पन्ने के अंदर से
+    await tester.tap(find
+        .descendant(
+            of: find.byType(JagahKhojSheet),
+            matching: find.widgetWithText(ListTile, 'दिल्ली'))
+        .first);
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('jagah_khoj')), findsNothing);
+    expect(
+        find.descendant(
+            of: khaana, matching: find.textContaining('बदलने के लिए दबाएँ')),
+        findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 
