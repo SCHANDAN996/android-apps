@@ -172,6 +172,8 @@ class _JagahKhojSheetState extends State<JagahKhojSheet> {
             labelText: 'शहर खोजें',
             hintText: 'शहर, क़स्बा या गाँव — जैसे पटना, Pune, Rampur',
             helperText: 'लिखकर keyboard का «खोज» दबाएँ — पहले इंटरनेट पर खोजेगा',
+            // फ़ोन पर एक लाइन में कटकर «…इंटरनेट पर खो…» दिखता था
+            helperMaxLines: 2,
             border: OutlineInputBorder(),
           ),
         ),

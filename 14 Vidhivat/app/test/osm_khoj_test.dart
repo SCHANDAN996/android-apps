@@ -98,6 +98,19 @@ void main() {
     expect(doosri, isNotEmpty);
   });
 
+  test('एक ही बस्ती की दो प्रविष्टियाँ — एक बार (फ़ोन पर «Bihta» दो बार दिखा था)', () {
+    const do_ = '''[
+      {"lat":"25.5640","lon":"84.8700","name":"Bihta",
+       "address":{"state_district":"पटना जिला","state":"बिहार"}},
+      {"lat":"25.5600","lon":"84.8750","name":"Bihta",
+       "address":{"state_district":"पटना जिला","state":"बिहार"}},
+      {"lat":"24.4200","lon":"80.9800","name":"Bihta",
+       "address":{"county":"सतना","state":"मध्य प्रदेश"}}
+    ]''';
+    final mile = OsmKhoj.padho(do_);
+    expect(mile.map((j) => j.pata), ['पटना जिला, बिहार', 'सतना, मध्य प्रदेश']);
+  });
+
   test('ख़ाली खोज — कोई request नहीं', () async {
     final k = banao([const OsmJawab(200, jawab)]);
     expect(await k.khojo('   '), isEmpty);

@@ -170,20 +170,30 @@ class OsmKhoj {
       final a = double.tryParse('${x['lat']}');
       final o = double.tryParse('${x['lon']}');
       if (a == null || o == null || a < 6 || a > 37.5 || o < 68 || o > 97.5) continue;
-      final pata = (x['address'] is Map) ? x['address'] as Map : const {};
+      final pataMap = (x['address'] is Map) ? x['address'] as Map : const {};
       final naam = '${x['name'] ?? ''}'.trim().isNotEmpty
           ? '${x['name']}'.trim()
           : '${x['display_name'] ?? ''}'.split(',').first.trim();
       if (naam.isEmpty) continue;
       final hisse = <String>[
         for (final k in ['state_district', 'county', 'state'])
-          if (pata[k] is String && (pata[k] as String).trim().isNotEmpty) (pata[k] as String).trim(),
+          if (pataMap[k] is String && (pataMap[k] as String).trim().isNotEmpty)
+            (pataMap[k] as String).trim(),
       ];
       final saaf = <String>[];
       for (final h in hisse) {
         if (h != naam && !saaf.contains(h)) saaf.add(h);
       }
-      out.add(OsmJagah(naam, saaf.join(', '), a, o));
+      final pata = saaf.join(', ');
+      // OpenStreetMap में एक ही बस्ती की दो प्रविष्टियाँ भी होती हैं (गाँव का बिंदु
+      // और उसकी सीमा) — फ़ोन पर «Bihta, पटना ज़िला» दो बार दिखा। वही नाम, वही पता,
+      // और 5 किलोमीटर के भीतर = एक।
+      final dohra = out.any((j) =>
+          j.naam == naam &&
+          j.pata == pata &&
+          (j.latitude - a).abs() < 0.05 &&
+          (j.longitude - o).abs() < 0.05);
+      if (!dohra) out.add(OsmJagah(naam, pata, a, o));
     }
     return out;
   }
