@@ -360,3 +360,66 @@ python tools/banao_chitra.py "C:/path/to/downloaded.png" vishwakarma_v1 900
 ⚠ `vrat_sankashti_v2` में चाँद पतली कला का बना है, जबकि prompt में लगभग पूरा चाँद माँगा गया
 था। दोबारा बनवाएँ तो prompt में यह वाक्य और कस दीजिए: *"a large, almost completely round
 waning moon — NOT a crescent"*।
+
+
+---
+
+## ९ · शरद पूर्णिमा (23 अक्टूबर 2026 · → D-130)
+
+**फ़ाइल:** `vrat_sharad_purnima_v1.webp` · ऐप में **900 × 900**, पारदर्शी · लगेगा: व्रत-पन्ना «शरद पूर्णिमा»,
+होम और पूजा-सूची की «आने वाली» पट्टी। आज वहाँ पूर्णिमा वाला चित्र (चाँद + कलश) है।
+
+**ChatGPT से क्या माँगना है:** चौकोर **1024 × 1024 PNG**, **पारदर्शी पृष्ठभूमि** (सबसे बड़ी नाप में डाउनलोड)।
+900 × 900 WebP बनाना AI का काम है (`python tools/banao_chitra.py <png> vrat_sharad_purnima_v1 900`)।
+
+⚠️ **इस चित्र में सफ़ेद पृष्ठभूमि ख़तरनाक है** — `banao_chitra.py` लगभग-सफ़ेद हर रंग को पारदर्शी कर देता है, और यहाँ
+खीर और चाँद ख़ुद सफ़ेद-से हैं; उनमें छेद हो जाएँगे। इसलिए prompt पारदर्शी माँगता है, और खीर «क्रीम/हाथी-दाँत»,
+चाँद «हल्का चाँदी-सुनहरा» रखता है। ChatGPT पारदर्शी न दे तो दूसरी बार यह जोड़कर माँगें: *"Use a flat solid pure
+green (#00FF00) background instead"* — हरा AI हटा देगा।
+
+**पूर्णिमा वाले चित्र से अलग क्यों दिखे:** उसमें कलश और नारियल है — यहाँ **कलश, नारियल नहीं**; बीच में खीर का कटोरा।
+
+```
+A devotional still-life illustration for the Hindu festival of Sharad Purnima
+(Kojagari Purnima), as a clean cut-out object group on a TRANSPARENT
+background (PNG with alpha channel). Square 1:1 canvas, 1024 x 1024 pixels.
+
+COMPOSITION (centred, symmetrical, everything inside the central 85% of the
+canvas with clear empty margin on all four sides; nothing touches or is cut
+by the edges):
+- BACK, upper centre: a large luminous full moon disc, pale silver-gold
+  (not pure white), with soft visible lunar craters and a gentle cool glow.
+  Around the moon an ornate golden mandala / sun-ray halo ring with fine
+  filigree petals, like a temple aureole.
+- FRONT, centre (the hero object): a wide, shallow, polished brass urli bowl
+  filled to the brim with creamy ivory rice kheer (warm cream colour, not
+  pure white), garnished with saffron strands, slivered almonds, green
+  pistachio flakes and a few green cardamom pods. A soft silvery moonlight
+  sheen glows on the surface of the kheer. A thin, translucent cream muslin
+  cloth is draped over one side of the bowl rim, half covering it, so the
+  kheer is still clearly visible.
+- Around the bowl, in a low symmetrical arc: three to five small lit brass
+  diyas with calm, steady golden flames; two or three fresh pink lotus
+  flowers in full bloom and one lotus bud; a small brass plate with a neat
+  heap of unbroken rice grains (akshat); a few orange marigolds and fresh
+  green leaves forming a base under the arrangement.
+
+LIGHTING AND MOOD: calm, sacred night feeling. Cool silvery-blue moonlight
+falling from above, balanced by the warm golden glow of the diyas. Soft
+golden rim light on the brass. Peaceful, auspicious, abundant.
+
+STYLE: Devotional Indian religious illustration, photorealistic 3D render
+blended with classical Indian calendar-art sensibility. Rich warm palette of
+gold, saffron, marigold orange and lotus pink, with moonlit silver accents.
+Ultra detailed, crisp clean edges suitable for cut-out, consistent with a
+set of festival icons.
+
+STRICTLY AVOID: any background scene, sky, stars, clouds, rooftop, courtyard,
+floor, table, wall, or shadow cast onto a surface; any human or deity figure,
+hands or faces; kalash or coconut; any text, letters, numbers, watermark,
+signature or border frame; anything scary.
+```
+
+**बनने के बाद देखें:** (१) पीछे सचमुच पारदर्शी है (चेकर-बोर्ड दिखे) — सफ़ेद या धूसर नहीं; (२) कहीं कोई अक्षर
+या चिह्न नहीं; (३) चाँद, खीर और दीयों के किनारे साफ़ हैं, कोई चीज़ किनारे से कटी नहीं; (४) PNG सबसे बड़ी नाप में
+उतारें और फ़ाइल का नाम बताकर भेजें।

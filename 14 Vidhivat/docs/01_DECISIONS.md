@@ -6708,11 +6708,9 @@ release में थी ही नहीं), privacy policy §4 (दोनो�
 जाता है → «अगला: 2 दिन बाद · 25 अक्टू» (पहले यह खाना JSON में था पर ऐप पढ़ता ही नहीं था) — करवा चौथ, जन्माष्टमी,
 महाशिवरात्रि और नवरात्रि के पन्नों पर भी।
 
-**(४) चित्र:** अपना बनने तक पूर्णिमा वाला (`vrat_purnima_v2`, चाँद और कलश)। डेवलपर के लिए prompt (`docs/24` का STYLE
-BLOCK अंत में): *A full moon high in a clear night sky over a simple Indian courtyard rooftop. On a low wooden stool: a
-brass bowl of white rice kheer covered with a thin muslin cloth, a lit brass diya, a few lotus flowers and a small heap of
-rice grains. No human figures, no text. Calm, silvery moonlight with warm diya glow; soft golden mandala halo behind
-the moon.* फ़ाइल `vrat_sharad_purnima_v1`, 900×900, `tools/banao_chitra.py` से।
+**(४) चित्र:** अपना बनने तक पूर्णिमा वाला (`vrat_purnima_v2`, चाँद और कलश)। डेवलपर के लिए पूरा prompt `docs/24`
+§९ में — कट-आउट, पारदर्शी, बिना दृश्य (पहले यहाँ छत और आकाश वाला prompt लिखा था; वह `docs/24` §१ के नियम के ख़िलाफ़
+था, डेवलपर के पूछने पर सुधरा)। फ़ाइल `vrat_sharad_purnima_v1`, 900×900, `tools/banao_chitra.py` से।
 
 **(५) करवा चौथ की समीक्षा:** तारीख़ (29 अक्टूबर 2026) सात साल पर जँची हुई — ठीक। दो पुरानी बातें ग़लत थीं और सुधरीं:
 विधि का नोट «आगे क्या आ रहा है वाली सूची में नहीं आती» (D-087 से आती है); व्रत-पन्ना «पंचांग से नहीं गिना जाता,
