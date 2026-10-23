@@ -3,15 +3,23 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vidhivat/services/osm_khoj.dart';
 
-/// इंटरनेट वाली खोज की क़तार (→ D-129) — नक़ली सर्वर, नक़ली घड़ी।
+/// इंटरनेट वाली खोज की क़तार (→ D-129, D-134) — नक़ली सर्वर (Photon का GeoJSON), नक़ली घड़ी।
 void main() {
-  const jawab = '''[
-    {"lat":"25.6093","lon":"85.1235","name":"पटना","display_name":"पटना, बिहार, भारत",
-     "address":{"state_district":"पटना","state":"बिहार","country_code":"in"}},
-    {"lat":"27.4770","lon":"77.7260","name":"Rawai","display_name":"Rawai, Mathura, Uttar Pradesh",
-     "address":{"county":"Mathura","state":"उत्तर प्रदेश"}},
-    {"lat":"51.5","lon":"-0.12","name":"London","display_name":"London"}
-  ]''';
+  // Photon के असली जवाब जैसा (23 अक्टूबर 2026 को «bihta» पर देखा): [देशांतर, अक्षांश],
+  // `county` में तहसील/ज़िला, राज्य अंग्रेज़ी में और कभी चिह्नों के साथ («Haryāna»)
+  const jawab = '''{"type":"FeatureCollection","features":[
+    {"geometry":{"type":"Point","coordinates":[84.871,25.559]},
+     "properties":{"name":"Bihta","osm_key":"place","osm_value":"village",
+       "county":"Bihta","state":"Bihar","countrycode":"IN"}},
+    {"geometry":{"type":"Point","coordinates":[76.953,30.276]},
+     "properties":{"name":"Bihta","osm_key":"place","osm_value":"village",
+       "county":"Saha","state":"Haryāna","countrycode":"IN"}},
+    {"geometry":{"type":"Point","coordinates":[85.31,27.71]},
+     "properties":{"name":"Bihi","osm_key":"place","osm_value":"hamlet",
+       "county":"गोरखा","state":"गण्डकी प्रदेश","countrycode":"NP"}},
+    {"geometry":{"type":"Point","coordinates":[85.5,25.5]},
+     "properties":{"name":"Bihar","osm_key":"place","osm_value":"state","countrycode":"IN"}}
+  ]}''';
 
   /// नक़ली घड़ी: `ruko` घड़ी आगे बढ़ाता है, असल में रुकता नहीं
   late DateTime ghadi;
@@ -39,14 +47,14 @@ void main() {
     );
   }
 
-  test('जवाब से जगहें: हिंदी नाम, ज़िला-राज्य; भारत के बाहर वाली छूटती है', () {
+  test('जवाब से जगहें: ज़िला, राज्य हिंदी में; नेपाल और «राज्य» जैसी इकाई छूटती है', () {
     final mile = OsmKhoj.padho(jawab);
     expect(mile, hasLength(2));
-    expect(mile[0].naam, 'पटना');
+    expect(mile[0].naam, 'Bihta');
     expect(mile[0].pata, 'बिहार'); // नाम जैसा ज़िला दोबारा नहीं
-    expect(mile[1].naam, 'Rawai');
-    expect(mile[1].pata, 'Mathura, उत्तर प्रदेश');
-    expect(mile[1].latitude, closeTo(27.477, 1e-6));
+    expect(mile[0].latitude, closeTo(25.559, 1e-6));
+    expect(mile[0].longitude, closeTo(84.871, 1e-6));
+    expect(mile[1].pata, 'Saha, हरियाणा'); // «Haryāna» → हरियाणा
   });
 
   test('🔑 फ़ेल नहीं होती: इंटरनेट न हो, सर्वर व्यस्त हो — इंतज़ार करके दोबारा, जवाब तक', () async {
@@ -58,7 +66,7 @@ void main() {
     ]);
     final shuru = ghadi;
     final mile = await k.khojo('Rawai', haal: haal.add);
-    expect(mile.map((j) => j.naam), ['पटना', 'Rawai']);
+    expect(mile.map((j) => j.pata), ['बिहार', 'Saha, हरियाणा']);
     expect(kabPucha, hasLength(4));
     expect(haal, hasLength(3));
     expect(haal[0], contains('इंटरनेट नहीं मिला'));
@@ -68,7 +76,7 @@ void main() {
     expect(ghadi.difference(shuru), const Duration(seconds: 15));
   });
 
-  test('दो खोजों के बीच कम से कम 1.1 सेकंड — Nominatim की नीति', () async {
+  test('दो खोजों के बीच कम से कम फ़ासला — सेवा पर बोझ नहीं', () async {
     final k = banao([const OsmJawab(200, jawab)]);
     await Future.wait([k.khojo('Patna'), k.khojo('Gaya'), k.khojo('Ara')]);
     expect(kabPucha, hasLength(3));
@@ -99,16 +107,17 @@ void main() {
   });
 
   test('एक ही बस्ती की दो प्रविष्टियाँ — एक बार (फ़ोन पर «Bihta» दो बार दिखा था)', () {
-    const do_ = '''[
-      {"lat":"25.5640","lon":"84.8700","name":"Bihta",
-       "address":{"state_district":"पटना जिला","state":"बिहार"}},
-      {"lat":"25.5600","lon":"84.8750","name":"Bihta",
-       "address":{"state_district":"पटना जिला","state":"बिहार"}},
-      {"lat":"24.4200","lon":"80.9800","name":"Bihta",
-       "address":{"county":"सतना","state":"मध्य प्रदेश"}}
-    ]''';
+    const do_ = '''{"features":[
+      {"geometry":{"coordinates":[84.870,25.564]},
+       "properties":{"name":"Bihta","osm_value":"village","county":"Patna","state":"Bihar","countrycode":"IN"}},
+      {"geometry":{"coordinates":[84.875,25.560]},
+       "properties":{"name":"Bihta","osm_value":"town","county":"Patna","state":"Bihar","countrycode":"IN"}},
+      {"geometry":{"coordinates":[80.98,24.42]},
+       "properties":{"name":"Bihta","osm_value":"village","county":"Unchahara Tahsil","state":"Madhya Pradesh","countrycode":"IN"}}
+    ]}''';
     final mile = OsmKhoj.padho(do_);
-    expect(mile.map((j) => j.pata), ['पटना जिला, बिहार', 'सतना, मध्य प्रदेश']);
+    expect(mile.map((j) => j.pata),
+        ['Patna, बिहार', 'Unchahara Tahsil, मध्य प्रदेश']);
   });
 
   test('ख़ाली खोज — कोई request नहीं', () async {

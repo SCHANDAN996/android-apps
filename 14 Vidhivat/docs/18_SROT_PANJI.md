@@ -3003,3 +3003,17 @@ PPLH (ऐतिहासिक), PPLW (नष्ट) — 8,974; एक ज़ि
 - **संदर्भ-पंचांग:** दिन-पन्ने `https://www.drikpanchang.com/panchang/day-panchang.html?geoname-id=1273294&date=DD/MM/YYYY`
   (दिल्ली), 2024–2030 — हर पन्ने की अपनी पर्व-सूची में «Kojagara Puja» और «Sharad Purnima» उसी दिन।
 - करवा चौथ का चंद्रोदय (29/10/2026, दिल्ली): वही पन्ना 08:17 PM; इंजन 20:12 (→ `docs/08` §5.5)।
+
+
+---
+
+## ४०. इंटरनेट पर जगह की खोज — Photon (23 अक्टूबर 2026, → D-134; §३८ की जगह)
+
+| क्या | पता |
+|---|---|
+| Photon — OpenStreetMap डेटा पर search-as-you-type (komoot) | `https://photon.komoot.io/api/?q=…&bbox=68,6,97.5,37.5&osm_tag=place&limit=12` |
+| शर्तें (उसी पन्ने पर «Terms of Use»: be fair, throttled, no guarantee) | `https://photon.komoot.io/` |
+| komoot की privacy policy (यूज़र की privacy policy §4 में इसी का पता) | `https://www.komoot.com/privacy` |
+| डेटा का लाइसेंस — ODbL, श्रेय «© OpenStreetMap contributors» | `https://www.openstreetmap.org/copyright` |
+
+§३८ (Nominatim) अब ऐप में नहीं — उसकी नीति autocomplete मना करती है।

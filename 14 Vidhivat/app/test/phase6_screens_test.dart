@@ -10,12 +10,15 @@ import 'package:vidhivat/screens/calendar_screen.dart';
 import 'package:vidhivat/screens/muhurta_screen.dart';
 import 'package:vidhivat/screens/sankalp_screen.dart';
 import 'package:vidhivat/screens/settings_screen.dart';
+import 'package:vidhivat/services/osm_khoj.dart';
 import 'package:vidhivat/state/settings.dart';
 import 'package:vidhivat/theme.dart';
 import 'package:vidhivat/widgets/common.dart';
 
 void main() {
   setUp(() async {
+    // जगह की खोज लिखते ही इंटरनेट पर जाती है (→ D-134) — जाँच में नक़ली सर्वर
+    osmKhoj = OsmKhoj(laao: (_) async => const OsmJawab(200, '{"features":[]}'));
     SharedPreferences.setMockInitialValues({});
     await settings.load();
     await settings.setYajman(name: 'चन्दन', gotra: 'कश्यप');
@@ -278,16 +281,18 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets(
-      'Settings में auto-location और manual city search दोनों दिखते हैं',
+  // → D-134: सेटिंग में जगह का एक ही खाना; उसी पन्ने में फ़ोन की जगह और नाम से खोज
+  testWidgets('Settings: जगह का एक खाना — दबाओ तो फ़ोन की जगह और खोज, दोनों',
       (tester) async {
     phone(tester, 412);
     await tester.pumpWidget(app(const SettingsScreen()));
 
-    expect(find.text('मेरी जगह अपने आप पहचानें'), findsOneWidget);
-    await tester.tap(find.text('शहर हाथ से चुनें'));
+    expect(find.text('मेरी जगह अपने आप पहचानें'), findsNothing);
+    expect(find.text('शहर हाथ से चुनें'), findsNothing);
+    await tester.tap(find.byKey(const Key('meri_jagah')));
     await tester.pumpAndSettle();
-    expect(find.text('शहर खोजें'), findsOneWidget);
+    expect(find.text('फ़ोन की अभी की जगह लें'), findsOneWidget);
+    expect(find.byKey(const Key('jagah_khoj')), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 

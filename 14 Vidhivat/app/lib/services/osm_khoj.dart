@@ -1,19 +1,23 @@
-/// इंटरनेट पर जगह की खोज — OpenStreetMap (Nominatim) से (→ D-129)।
+/// इंटरनेट पर जगह की खोज — OpenStreetMap के डेटा पर, **Photon** सेवा से (→ D-129, D-134)।
 ///
-/// डेवलपर (22 अक्टूबर 2026): *"OpenStreetMap use कर लो, और ऐसा करो कि कोई भी request
-/// fail नहीं होनी चाहिए — waiting में लगाकर काम कर लेना।"*
+/// डेवलपर (22 अक्टूबर 2026): *"कोई भी request fail नहीं होनी चाहिए — waiting में लगाकर
+/// काम कर लेना।"* और (23 अक्टूबर): *"लिखने से इंटरनेट से auto search होता रहे — बटन दबाकर न
+/// खोजना पड़े।"*
 ///
-/// इसलिए हर खोज एक **क़तार** में जाती है:
-/// - दो requests के बीच कम से कम [kamSeKamFasla] (Nominatim की नीति: एक सेकंड में एक);
+/// **Photon क्यों, Nominatim क्यों नहीं (D-134):** Nominatim की नीति लिखते-लिखते खोज
+/// (autocomplete) साफ़ मना करती है — इसलिए D-129 में बटन/«खोज» दबाना पड़ता था। Photon
+/// (komoot की सेवा, वही OpenStreetMap डेटा) बना ही "search-as-you-type" के लिए है। फिर भी
+/// शिष्टता से: लिखना रुकने के बाद ही (`jagah_khoj.dart` में ठहराव), दो requests में
+/// कम से कम [kamSeKamFasla], और शब्द बदलते ही पुरानी खोज छूट जाती है।
+///
+/// हर खोज एक **क़तार** में:
 /// - इंटरनेट न हो, सर्वर व्यस्त हो (429/5xx), या समय निकल जाए — तो इंतज़ार करके दोबारा,
 ///   2 → 4 → 8 → 16 → 30 सेकंड, फिर हर 30 सेकंड; सर्वर `Retry-After` बताए तो उतना;
 /// - **हार मानकर कभी नहीं लौटती** — जवाब मिलने तक, या जब तक पूछने वाला ख़ुद रद्द न करे
-///   (खोज का पन्ना बंद हुआ)। हर इंतज़ार [haal] से बताया जाता है;
+///   (पन्ना बंद हुआ, या शब्द बदल गया)। हर इंतज़ार [haal] से बताया जाता है;
 /// - एक ही खोज दोबारा हो तो जवाब याद से (कोई request नहीं)।
 ///
-/// ⚠ Nominatim की नीति हर अक्षर पर अपने-आप खोज (autocomplete) मना करती है — यह खोज
-/// सिर्फ़ यूज़र के कहने पर चलती है (keyboard का «खोज» या बटन)। जाता है सिर्फ़ लिखा हुआ
-/// शब्द; फ़ोन की जगह नहीं।
+/// जाता है सिर्फ़ लिखा हुआ शब्द; फ़ोन की जगह नहीं।
 library;
 
 import 'dart:async';
@@ -59,10 +63,13 @@ class OsmKhoj {
         _ab = ab ?? DateTime.now,
         _ruko = ruko ?? ((d) => Future<void>.delayed(d));
 
-  static const kamSeKamFasla = Duration(milliseconds: 1100);
+  static const kamSeKamFasla = Duration(milliseconds: 600);
   static const jawabKaSamay = Duration(seconds: 20);
 
-  Future<void> _qatar = Future.value();
+  /// क़तार की पूँछ। ⚠ पहली खोज के वक़्त बनती है, constructor में नहीं: पहले यहाँ
+  /// `Future.value()` था — `OsmKhoj` किसी और zone में बना हो (जाँच का `setUp`) तो
+  /// उसके `.then` कभी चलते ही नहीं थे, और खोज चुपचाप अटकी रहती।
+  Future<void>? _qatar;
   DateTime? _pichhli;
   final _yaad = <String, List<OsmJagah>>{};
 
@@ -79,7 +86,8 @@ class OsmKhoj {
     final yaad = _yaad[kunji];
     if (yaad != null) return Future.value(yaad);
 
-    final kaam = _qatar.then((_) => _chalao(q, kunji, haal, radd ?? () => false));
+    final kaam = (_qatar ?? Future<void>.value())
+        .then((_) => _chalao(q, kunji, haal, radd ?? () => false));
     // पिछला काम कैसे भी ख़त्म हो, क़तार आगे चले
     _qatar = kaam.then((_) {}, onError: (_) {});
     return kaam;
@@ -93,19 +101,17 @@ class OsmKhoj {
   ) async {
     final yaad = _yaad[kunji]; // क़तार में रहते किसी और ने यही खोज ली हो
     if (yaad != null) return yaad;
-    final uri = Uri.https('nominatim.openstreetmap.org', '/search', {
+    // भारत का चौखटा, और सिर्फ़ बस्तियाँ (place=* — शहर, क़स्बा, गाँव, टोला)
+    final uri = Uri.https('photon.komoot.io', '/api/', {
       'q': q,
-      'format': 'jsonv2',
-      'countrycodes': 'in',
-      'addressdetails': '1',
-      'featureType': 'settlement',
-      'limit': '10',
-      'accept-language': 'hi,en',
+      'limit': '12',
+      'bbox': '68,6,97.5,37.5',
+      'osm_tag': 'place',
     });
 
     for (var koshish = 0;; koshish++) {
       if (radd()) throw const OsmRadd();
-      // Nominatim: एक सेकंड में एक से ज़्यादा नहीं
+      // दो requests के बीच फ़ासला — सेवा पर बोझ न बने
       final pichhli = _pichhli;
       if (pichhli != null) {
         final bacha = kamSeKamFasla - _ab().difference(pichhli);
@@ -160,34 +166,48 @@ class OsmKhoj {
     }
   }
 
-  /// Nominatim `jsonv2` → जगहें। भारत के बाहर की, और बिना अक्षांश वाली, छूटती हैं।
+  /// Photon का GeoJSON → जगहें। भारत के बाहर की (चौखटे में नेपाल भी आता है), और
+  /// राज्य/देश जैसी बड़ी इकाइयाँ, छूटती हैं; एक ही बस्ती दो बार नहीं।
   static List<OsmJagah> padho(String body) {
     final d = jsonDecode(body);
-    if (d is! List) return const [];
+    final features = d is Map ? d['features'] : null;
+    if (features is! List) return const [];
     final out = <OsmJagah>[];
-    for (final x in d) {
-      if (x is! Map) continue;
-      final a = double.tryParse('${x['lat']}');
-      final o = double.tryParse('${x['lon']}');
+    for (final f in features) {
+      if (f is! Map) continue;
+      final p = f['properties'];
+      final g = f['geometry'];
+      if (p is! Map || g is! Map) continue;
+      if ('${p['countrycode'] ?? ''}'.toUpperCase() != 'IN') continue;
+      if (const {'state', 'country', 'region', 'province', 'continent'}
+          .contains(p['osm_value'])) {
+        continue;
+      }
+      final c = g['coordinates'];
+      if (c is! List || c.length < 2) continue;
+      final o = (c[0] as num?)?.toDouble();
+      final a = (c[1] as num?)?.toDouble();
       if (a == null || o == null || a < 6 || a > 37.5 || o < 68 || o > 97.5) continue;
-      final pataMap = (x['address'] is Map) ? x['address'] as Map : const {};
-      final naam = '${x['name'] ?? ''}'.trim().isNotEmpty
-          ? '${x['name']}'.trim()
-          : '${x['display_name'] ?? ''}'.split(',').first.trim();
+      final naam = '${p['name'] ?? ''}'.trim();
       if (naam.isEmpty) continue;
-      final hisse = <String>[
-        for (final k in ['state_district', 'county', 'state'])
-          if (pataMap[k] is String && (pataMap[k] as String).trim().isNotEmpty)
-            (pataMap[k] as String).trim(),
-      ];
+
+      final hisse = <String>[];
+      for (final k in ['county', 'district', 'city']) {
+        final v = p[k];
+        if (v is String && v.trim().isNotEmpty) {
+          hisse.add(saafRoman(v.trim()));
+          break; // ज़िला/तहसील — एक काफ़ी
+        }
+      }
+      final rajya = p['state'];
+      if (rajya is String && rajya.trim().isNotEmpty) hisse.add(rajyaHindi(rajya));
       final saaf = <String>[];
       for (final h in hisse) {
         if (h != naam && !saaf.contains(h)) saaf.add(h);
       }
       final pata = saaf.join(', ');
-      // OpenStreetMap में एक ही बस्ती की दो प्रविष्टियाँ भी होती हैं (गाँव का बिंदु
-      // और उसकी सीमा) — फ़ोन पर «Bihta, पटना ज़िला» दो बार दिखा। वही नाम, वही पता,
-      // और 5 किलोमीटर के भीतर = एक।
+      // एक ही बस्ती की दो प्रविष्टियाँ (गाँव का बिंदु और उसकी सीमा) — फ़ोन पर «Bihta,
+      // पटना» दो बार दिखा था। वही नाम, वही पता, 5 किलोमीटर के भीतर = एक।
       final dohra = out.any((j) =>
           j.naam == naam &&
           j.pata == pata &&
@@ -197,9 +217,69 @@ class OsmKhoj {
     }
     return out;
   }
+
+  /// «Haryāna» जैसे चिह्न हटाओ — बाक़ी ऐप में बिना चिह्न के नाम हैं।
+  static String saafRoman(String s) {
+    const badal = {
+      'ā': 'a', 'ī': 'i', 'ū': 'u', 'ē': 'e', 'ō': 'o', 'ṛ': 'r', 'ṝ': 'r',
+      'ṇ': 'n', 'ñ': 'n', 'ṅ': 'n', 'ṭ': 't', 'ḍ': 'd', 'ś': 's', 'ṣ': 's',
+      'ḥ': 'h', 'ṃ': 'm', 'Ā': 'A', 'Ī': 'I', 'Ū': 'U', 'Ś': 'S', 'Ṣ': 'S',
+    };
+    final b = StringBuffer();
+    for (final ch in s.split('')) {
+      b.write(badal[ch] ?? ch);
+    }
+    return b.toString();
+  }
+
+  /// राज्य का नाम हिंदी में — ऐप की बाक़ी सूचियों जैसा।
+  static String rajyaHindi(String angrezi) {
+    final k = saafRoman(angrezi.trim()).toLowerCase();
+    return _rajya[k] ?? saafRoman(angrezi.trim());
+  }
+
+  static const _rajya = {
+    'andhra pradesh': 'आंध्र प्रदेश',
+    'arunachal pradesh': 'अरुणाचल प्रदेश',
+    'assam': 'असम',
+    'bihar': 'बिहार',
+    'chhattisgarh': 'छत्तीसगढ़',
+    'goa': 'गोवा',
+    'gujarat': 'गुजरात',
+    'haryana': 'हरियाणा',
+    'himachal pradesh': 'हिमाचल प्रदेश',
+    'jharkhand': 'झारखंड',
+    'karnataka': 'कर्नाटक',
+    'kerala': 'केरल',
+    'madhya pradesh': 'मध्य प्रदेश',
+    'maharashtra': 'महाराष्ट्र',
+    'manipur': 'मणिपुर',
+    'meghalaya': 'मेघालय',
+    'mizoram': 'मिज़ोरम',
+    'nagaland': 'नागालैंड',
+    'odisha': 'ओडिशा',
+    'punjab': 'पंजाब',
+    'rajasthan': 'राजस्थान',
+    'sikkim': 'सिक्किम',
+    'tamil nadu': 'तमिलनाडु',
+    'telangana': 'तेलंगाना',
+    'tripura': 'त्रिपुरा',
+    'uttar pradesh': 'उत्तर प्रदेश',
+    'uttarakhand': 'उत्तराखंड',
+    'west bengal': 'पश्चिम बंगाल',
+    'andaman and nicobar islands': 'अंडमान और निकोबार',
+    'chandigarh': 'चंडीगढ़',
+    'dadra and nagar haveli and daman and diu': 'दादरा नगर हवेली और दमन दीव',
+    'delhi': 'दिल्ली',
+    'national capital territory of delhi': 'दिल्ली',
+    'jammu and kashmir': 'जम्मू और कश्मीर',
+    'ladakh': 'लद्दाख',
+    'lakshadweep': 'लक्षद्वीप',
+    'puducherry': 'पुडुचेरी',
+  };
 }
 
-/// असली HTTP — Nominatim की नीति के मुताबिक़ ऐप का नाम User-Agent में।
+/// असली HTTP — ऐप का नाम User-Agent में, ताकि सेवा चलाने वाले पहचान सकें।
 Future<OsmJawab> _httpLaao(Uri uri) async {
   final c = HttpClient()..connectionTimeout = const Duration(seconds: 15);
   try {
@@ -216,5 +296,6 @@ Future<OsmJawab> _httpLaao(Uri uri) async {
   }
 }
 
-/// पूरे ऐप की एक क़तार — ताकि अलग-अलग पन्नों की खोजें भी एक सेकंड का फ़ासला रखें।
-final osmKhoj = OsmKhoj();
+/// पूरे ऐप की एक क़तार — ताकि अलग-अलग पन्नों की खोजें भी फ़ासला रखें।
+/// (जाँचों में नक़ली सर्वर वाली क़तार से बदली जाती है — असली इंटरनेट नहीं।)
+OsmKhoj osmKhoj = OsmKhoj();

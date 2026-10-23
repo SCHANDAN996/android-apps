@@ -6,6 +6,7 @@ import 'package:vidhivat/screens/kundali_profiles_screen.dart';
 import 'package:vidhivat/screens/kundali_screen.dart';
 import 'package:vidhivat/screens/more_screen.dart';
 import 'package:vidhivat/services/device_location_service.dart';
+import 'package:vidhivat/services/osm_khoj.dart';
 import 'package:vidhivat/state/kundali_profiles.dart';
 import 'package:vidhivat/state/settings.dart';
 import 'package:vidhivat/theme.dart';
@@ -19,6 +20,8 @@ import 'package:vidhivat/widgets/kundali_chitra.dart';
 /// राशिफल, दोष, उपाय।
 void main() {
   setUp(() async {
+    // जगह की खोज लिखते ही इंटरनेट पर जाती है (→ D-134) — जाँच में नक़ली सर्वर
+    osmKhoj = OsmKhoj(laao: (_) async => const OsmJawab(200, '{"features":[]}'));
     SharedPreferences.setMockInitialValues({});
     await settings.load();
     await kundaliProfiles.load();
@@ -198,25 +201,27 @@ void main() {
       expect(find.textContaining('घड़ी एक घंटा आगे रखी गई'), findsOneWidget);
     });
 
-    // → D-128: जन्म-स्थान फ़ोन की अभी की जगह से
+    // → D-128 / D-134: जन्म-स्थान फ़ोन की अभी की जगह से — अब जगह वाले पन्ने के अंदर,
+    // सबसे ऊपर की पंक्ति (पहले फ़ॉर्म में अलग बटन था)
     Future<void> jagahDabao(WidgetTester tester, DeviceLocationResult r) async {
       phone(tester);
       await tester.pumpWidget(app(KundaliForm(jagahLo: () async => r)));
       await tester.pumpAndSettle();
-      final batan = find.byKey(const Key('phone_ki_jagah'));
-      await tester.scrollUntilVisible(batan, 300,
+      final khaana = find.byKey(const Key('janm_sthan'));
+      await tester.scrollUntilVisible(khaana, 300,
           scrollable: find.byType(Scrollable).first);
-      await tester.tap(batan);
+      await tester.tap(khaana);
+      await tester.pumpAndSettle();
+      expect(find.textContaining('फ़ोन से बाहर नहीं जाती'), findsOneWidget);
+      await tester.tap(find.byKey(const Key('phone_ki_jagah')));
       await tester.pumpAndSettle();
     }
 
-    testWidgets('फ़ोन की जगह से अक्षांश-देशांतर भरते हैं, नाम में पास का शहर',
+    testWidgets('फ़ोन की जगह — एक टैप में भर जाती है, नाम में पास का शहर',
         (tester) async {
       await jagahDabao(tester, const DeviceLocationResult.position(25.61, 85.15));
-      expect(find.widgetWithText(TextField, '25.6100'), findsOneWidget);
-      expect(find.widgetWithText(TextField, '85.1500'), findsOneWidget);
-      expect(find.widgetWithText(TextField, 'पटना के पास'), findsOneWidget);
-      expect(find.textContaining('फ़ोन से बाहर नहीं जाता'), findsOneWidget);
+      expect(find.byKey(const Key('jagah_khoj')), findsNothing, reason: 'पन्ना बंद');
+      expect(find.text('पटना के पास'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
 
@@ -235,10 +240,11 @@ void main() {
       expect(find.byKey(const Key('jagah_khoj')), findsOneWidget);
 
       await tester.enterText(find.byKey(const Key('jagah_khoj')), 'Delhi');
+      await tester.pump(const Duration(seconds: 1)); // लिखना रुका — इंटरनेट-खोज (नक़ली)
       await tester.pumpAndSettle();
       expect(find.widgetWithText(ListTile, 'दिल्ली'), findsWidgets);
-      // → D-129: इंटरनेट वाली खोज सिर्फ़ कहने पर — लिखते ही नहीं चलती, बटन रहता है
-      expect(find.byKey(const Key('online_khoj')), findsOneWidget);
+      // → D-134: कोई बटन, कोई अलग हिस्सा नहीं — एक ही सूची
+      expect(find.byKey(const Key('online_khoj')), findsNothing);
       expect(find.text('इंटरनेट से'), findsNothing);
       expect(tester.takeException(), isNull);
     });
@@ -246,7 +252,7 @@ void main() {
     testWidgets('भारत के बाहर की जगह — कुछ नहीं भरता, साफ़ बताता है', (tester) async {
       await jagahDabao(tester, const DeviceLocationResult.position(51.5, -0.12));
       expect(find.textContaining('भारत के बाहर'), findsOneWidget);
-      expect(find.text('अक्षांश (उत्तर)'), findsNothing);
+      expect(find.byKey(const Key('jagah_khoj')), findsOneWidget, reason: 'पन्ना खुला रहे');
       expect(tester.takeException(), isNull);
     });
 
@@ -254,7 +260,7 @@ void main() {
       await jagahDabao(tester, const DeviceLocationResult.failed(
           DeviceLocationFailure.permissionDenied));
       expect(find.textContaining('अनुमति नहीं मिली'), findsOneWidget);
-      expect(find.text('अक्षांश (उत्तर)'), findsNothing);
+      expect(find.byKey(const Key('jagah_khoj')), findsOneWidget, reason: 'पन्ना खुला रहे');
       expect(tester.takeException(), isNull);
     });
 

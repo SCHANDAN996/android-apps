@@ -198,7 +198,6 @@ class _KundaliFormState extends State<KundaliForm> {
   TimeOfDay? _samay;
   City? _shahar;
   bool _khudBharein = false;
-  bool _jagahDhoondhRahe = false;
 
   @override
   void initState() {
@@ -262,44 +261,14 @@ class _KundaliFormState extends State<KundaliForm> {
       context,
       selectedCity: _shahar,
       shirshak: 'जन्म की जगह',
-      upShirshak: 'गाँव, क़स्बा या शहर — हिंदी या अंग्रेज़ी में लिखिए',
-      khaaliParSab: false,
+      phoneKiJagah: 'तभी, जब आप अभी जन्म की जगह पर ही हों · फ़ोन से बाहर नहीं जाती',
+      jagahLo: widget.jagahLo,
     );
-    if (c != null && mounted) setState(() => _shahar = c);
-  }
-
-  /// फ़ोन की अभी की जगह → अक्षांश-देशांतर वाले खाने, नाम में पास का शहर।
-  Future<void> _phoneKiJagah() async {
-    setState(() => _jagahDhoondhRahe = true);
-    final lo = widget.jagahLo ??
-        () => const DeviceLocationService().getCurrentLocation();
-    final r = await lo();
-    if (!mounted) return;
-    setState(() => _jagahDhoondhRahe = false);
-
-    if (!r.hasPosition) {
-      return _kaho(switch (r.failure) {
-        DeviceLocationFailure.serviceDisabled =>
-          'फ़ोन में स्थान की सुविधा बंद है। शहर सूची से चुन सकते हैं।',
-        DeviceLocationFailure.permissionDenied =>
-          'स्थान की अनुमति नहीं मिली। शहर सूची से चुन सकते हैं।',
-        _ => 'स्थान नहीं मिल पाया। शहर सूची से चुन सकते हैं।',
-      });
-    }
-    final a = r.latitude!, d = r.longitude!;
-    if (a < 6 || a > 37.5 || d < 68 || d > 97.5) {
-      return _kaho('यह जगह भारत के बाहर की है — अभी सिर्फ़ भारत में हुए जन्म।');
-    }
-    final paas = nearestIndianCity(a, d);
-    setState(() {
-      _khudBharein = true;
-      _shahar = null;
-      _lat.text = a.toStringAsFixed(4);
-      _lon.text = d.toStringAsFixed(4);
-      _sthanNaam.text = '${paas.name} के पास';
-    });
-    _kaho('फ़ोन की जगह भर दी (${paas.name} के पास)। '
-        'नाम में अपने गाँव का नाम लिख सकते हैं।');
+    if (c == null || !mounted) return;
+    // फ़ोन की जगह — नाम में पास का शहर, «के पास» के साथ (ठीक वही शहर नहीं)
+    setState(() => _shahar = c.isDeviceDetected
+        ? City('${c.name} के पास', c.state, c.latitude, c.longitude)
+        : c);
   }
 
   void _save() {
@@ -419,8 +388,8 @@ class _KundaliFormState extends State<KundaliForm> {
                   leading: const Icon(Icons.location_on_outlined),
                   title: Text(_shahar == null ? 'जन्म की जगह चुनें *' : _shahar!.name),
                   subtitle: Text(_shahar == null
-                      ? 'गाँव, क़स्बा या शहर — हिंदी या अंग्रेज़ी में खोजें'
-                      : _shahar!.state),
+                      ? 'गाँव या शहर का नाम लिखें, या फ़ोन की जगह लें'
+                      : '${_shahar!.state} · बदलने के लिए दबाएँ'),
                   trailing: const Icon(Icons.search),
                   onTap: _jagahChuno,
                 ),
@@ -471,26 +440,8 @@ class _KundaliFormState extends State<KundaliForm> {
                     : 'अक्षांश-देशांतर ख़ुद भरें'),
               ),
             ),
-            VidhivatButton(
-              key: const Key('phone_ki_jagah'),
-              label: _jagahDhoondhRahe
-                  ? 'जगह ढूँढ रहे हैं…'
-                  : 'फ़ोन से अभी की जगह लें',
-              icon: Icons.my_location_outlined,
-              onPressed: _jagahDhoondhRahe ? null : _phoneKiJagah,
-              variant: VidhivatButtonVariant.secondary,
-              fullWidth: true,
-            ),
-            const SizedBox(height: VidhivatSpacing.xs),
             Text(
-              'तभी, जब आप अभी उसी गाँव या शहर में हों जहाँ जन्म हुआ था। '
-              'स्थान सिर्फ़ यहाँ भरने के लिए लिया जाता है, और वह फ़ोन से बाहर नहीं जाता।',
-              style: type.bodySmall.copyWith(color: colors.textSecondary),
-            ),
-            const SizedBox(height: VidhivatSpacing.sm),
-            Text(
-              'पास का शहर काफ़ी है: सौ किलोमीटर की दूरी लग्न को लगभग एक अंश '
-              'खिसकाती है। अभी सिर्फ़ भारत में हुए जन्म।',
+              'गाँव न मिले तो पास का क़स्बा भी चलेगा।',
               style: type.bodySmall.copyWith(color: colors.textSecondary),
             ),
             const SizedBox(height: VidhivatSpacing.xl),

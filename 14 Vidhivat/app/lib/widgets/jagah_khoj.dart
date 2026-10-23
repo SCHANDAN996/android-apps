@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../services/device_location_service.dart';
 import '../services/osm_khoj.dart';
 import '../state/gaon.dart';
 import '../state/shahar.dart';
@@ -43,28 +44,39 @@ class JagahMila {
   const JagahMila(this.city, this.gaonSuchiSe);
 }
 
-/// जगह खोजने का पन्ना (नीचे से खुलता है) — कुंडली के जन्म-स्थान और सेटिंग (संकल्प,
-/// पंचांग) दोनों में यही (→ D-128)। चुनी जगह `Navigator.pop` से [City] बनकर लौटती है।
-/// गाँवों की सूची से आई जगह का नाम अंग्रेज़ी अक्षरों में होता है।
+/// जगह चुनने का **एक** पन्ना — सेटिंग (संकल्प, पंचांग), कुंडली का जन्म-स्थान और
+/// पूर्वज की जगह, तीनों में यही (→ D-128, D-129, D-134)। चुनी जगह `Navigator.pop` से
+/// [City] बनकर लौटती है।
 ///
-/// (पहले कुंडली में `Autocomplete` था — फ़ोन पर keyboard खुलते ही सुझावों की सूची में
-/// एक ही नाम दिखता था; इसलिए पूरा पन्ना।)
+/// ## सीधा रखा है — जान-बूझकर (D-134)
+/// डेवलपर (23 अक्टूबर 2026): *"एक सिंपल सी चीज़ location — तुम इसको इतना complicated बना
+/// चुके हो कि यूज़र परेशान हो जाए, फिर भी सही location न add कर सके।"* पहले यहाँ तीन
+/// हिस्से थे (इंटरनेट से / ऐप की सूची से / गाँव और क़स्बे), हर एक का शीर्षक और समझाइश,
+/// एक बड़ा बटन, और गाँव चुनने पर एक और dialog। अब:
+/// 1. सबसे ऊपर «फ़ोन की अभी की जगह लें» (जहाँ यह काम का है) — एक टैप में काम ख़त्म;
+/// 2. एक खोज-डिब्बा, उसके नीचे **एक ही सूची** — लिखते ही ऐप की अपनी सूची (शहर, फिर
+///    गाँव), और लिखना ज़रा रुकते ही **अपने-आप इंटरनेट से भी** (कोई बटन नहीं — डेवलपर:
+///    *"लिखने से इंटरनेट से auto search होता रहे, बटन दबाकर न खोजना पड़े"*); इंटरनेट
+///    वाले नतीजे उसी सूची में सबसे ऊपर।
 class JagahKhojSheet extends StatefulWidget {
   final ScrollController controller;
   final City? selectedCity;
   final String shirshak;
-  final String upShirshak;
 
-  /// ख़ाली खोज पर ऐप के सारे शहर दिखें (सेटिंग) या कुछ नहीं (कुंडली)
-  final bool khaaliParSab;
+  /// «फ़ोन की अभी की जगह लें» के नीचे की छोटी लाइन; `null` = वह पंक्ति ही नहीं
+  /// (पूर्वज की जगह — वहाँ फ़ोन की अभी की जगह का कोई मतलब नहीं)।
+  final String? phoneKiJagah;
+
+  /// जाँचों के लिए — असली फ़ोन पर `DeviceLocationService`।
+  final Future<DeviceLocationResult> Function()? jagahLo;
 
   const JagahKhojSheet({
     super.key,
     required this.controller,
     this.selectedCity,
-    this.shirshak = 'शहर हाथ से चुनें',
-    this.upShirshak = 'अनुमति न दें, तब भी पंचांग सही रहेगा',
-    this.khaaliParSab = true,
+    this.shirshak = 'जगह चुनें',
+    this.phoneKiJagah,
+    this.jagahLo,
   });
 
   @override
@@ -74,24 +86,48 @@ class JagahKhojSheet extends StatefulWidget {
 class _JagahKhojSheetState extends State<JagahKhojSheet> {
   final _search = TextEditingController();
 
-  /// गाँवों की सूची से (→ D-128) — ऐप के शहरों के नीचे
+  /// गाँवों की सूची से (→ D-128)
   List<JagahMila> _gaon = const [];
   int _khojKram = 0;
 
-  /// इंटरनेट से (OpenStreetMap, → D-129) — सिर्फ़ यूज़र के कहने पर; `null` = अभी नहीं खोजा
+  /// इंटरनेट से (→ D-129) — `null` = इस शब्द पर अभी नहीं खोजा
   List<OsmJagah>? _online;
   bool _onlineChal = false;
   String? _onlineHaal;
   String _onlineKhoj = '';
   bool _band = false;
 
+  bool _gpsChal = false;
+  String? _gpsGalti;
+
+  /// लिखना रुकने का इंतज़ार — हर अक्षर पर इंटरनेट नहीं, ठहराव पर एक बार
+  Timer? _thahrav;
+  static const _thahravKaSamay = Duration(milliseconds: 700);
+
+  @override
+  void initState() {
+    super.initState();
+    jagahKhojTaiyar();
+  }
+
+  @override
+  void dispose() {
+    _band = true;
+    _thahrav?.cancel();
+    _search.dispose();
+    super.dispose();
+  }
+
   Future<void> _onlineKhojo() async {
     final q = _search.text.trim();
-    if (q.length < 2 || _onlineChal) return;
+    if (q.length < 3) return;
+    // यही शब्द पहले से खोजा जा रहा है, या उसका जवाब आ चुका
+    if (q == _onlineKhoj && (_onlineChal || _online != null)) return;
     setState(() {
       _onlineChal = true;
       _onlineHaal = null;
       _onlineKhoj = q;
+      _online = null;
     });
     try {
       final mile = await osmKhoj.khojo(
@@ -102,20 +138,17 @@ class _JagahKhojSheetState extends State<JagahKhojSheet> {
         // पन्ना बंद हुआ या खोज का शब्द बदल गया — यह खोज छोड़ो
         radd: () => _band || _search.text.trim() != q,
       );
-      if (!mounted) return;
+      if (!mounted || _search.text.trim() != q) return;
       setState(() {
         _online = mile;
         _onlineChal = false;
       });
     } on OsmRadd {
-      if (mounted && !_band) setState(() => _onlineChal = false);
+      // शब्द बदल गया — नई खोज अपना हाल ख़ुद दिखाएगी
+      if (mounted && !_band && _onlineKhoj == q) {
+        setState(() => _onlineChal = false);
+      }
     }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    jagahKhojTaiyar();
   }
 
   Future<void> _gaonKhojo(String q) async {
@@ -126,19 +159,90 @@ class _JagahKhojSheetState extends State<JagahKhojSheet> {
     if (mounted && kram == _khojKram) setState(() => _gaon = mile);
   }
 
-  @override
-  void dispose() {
-    _band = true;
-    _search.dispose();
-    super.dispose();
+  Future<void> _phoneKiJagah() async {
+    setState(() {
+      _gpsChal = true;
+      _gpsGalti = null;
+    });
+    final lo = widget.jagahLo ??
+        () => const DeviceLocationService().getCurrentLocation();
+    final r = await lo();
+    if (!mounted) return;
+    if (!r.hasPosition) {
+      setState(() {
+        _gpsChal = false;
+        _gpsGalti = switch (r.failure) {
+          DeviceLocationFailure.serviceDisabled =>
+            'फ़ोन में स्थान (GPS) बंद है — चालू करें, या नीचे नाम लिखकर खोजें।',
+          DeviceLocationFailure.permissionDenied =>
+            'स्थान की अनुमति नहीं मिली — नीचे नाम लिखकर खोजें।',
+          _ => 'जगह नहीं मिल पाई — नीचे नाम लिखकर खोजें।',
+        };
+      });
+      return;
+    }
+    final a = r.latitude!, d = r.longitude!;
+    if (a < 6 || a > 37.5 || d < 68 || d > 97.5) {
+      setState(() {
+        _gpsChal = false;
+        _gpsGalti = 'यह जगह भारत के बाहर की है — नीचे नाम लिखकर खोजें।';
+      });
+      return;
+    }
+    Navigator.of(context).pop(City.fromDeviceLocation(a, d));
+  }
+
+  /// एक सूची: इंटरनेट वाले पहले, फिर ऐप के शहर, फिर गाँव — एक ही जगह दोबारा नहीं।
+  List<City> _sab() {
+    final q = _search.text.trim();
+    if (q.isEmpty) return const [];
+    final out = <City>[];
+    bool dohra(City c) => out.any((o) =>
+        (o.latitude - c.latitude).abs() < 0.05 &&
+        (o.longitude - c.longitude).abs() < 0.05 &&
+        (o.name == c.name ||
+            devDhanche(o.name).contains(romanDhancha(c.name)) ||
+            devDhanche(c.name).contains(romanDhancha(o.name))));
+    void jodo(City c) {
+      if (!dohra(c)) out.add(c);
+    }
+
+    if (q == _onlineKhoj) {
+      for (final o in _online ?? const <OsmJagah>[]) {
+        jodo(City(o.naam, o.pata.isEmpty ? 'भारत' : o.pata, o.latitude,
+            o.longitude));
+      }
+    }
+    shaharKhojo(q).forEach(jodo);
+    for (final g in _gaon) {
+      jodo(g.city);
+    }
+    // इंटरनेट-सेवा मिलते-जुलते नाम भी देती है («Bihta» पर Bihla, Birta, Bhita) — फ़ोन पर
+    // वे ऐप की सूची के असली «Bihta» गाँवों से ऊपर दिखे। इसलिए क्रम: हूबहू नाम, फिर
+    // शुरुआत मिले, फिर बाक़ी; बराबरी पर पहले जैसा (इंटरनेट, शहर, गाँव)।
+    final chhota = q.toLowerCase();
+    int darja(City c) {
+      final n = c.name.toLowerCase();
+      if (n == chhota) return 0;
+      if (n.startsWith(chhota)) return 1;
+      return 2;
+    }
+
+    final kram = {for (var i = 0; i < out.length; i++) out[i]: i};
+    out.sort((x, y) {
+      final d = darja(x).compareTo(darja(y));
+      return d != 0 ? d : kram[x]!.compareTo(kram[y]!);
+    });
+    return out;
   }
 
   @override
   Widget build(BuildContext context) {
-    // ख़ाली हो तो पूरी सूची (सेटिंग में); अंग्रेज़ी में लिखा नाम भी ("Delhi") — → shaharKhojo
-    final cities = (!widget.khaaliParSab && _search.text.trim().isEmpty)
-        ? const <City>[]
-        : shaharKhojo(_search.text);
+    final type = VidhivatTheme.typographyOf(context);
+    final colors = VidhivatTheme.colorsOf(context);
+    final likha = _search.text.trim();
+    final sab = _sab();
+    final onlineDikhe = likha == _onlineKhoj && (_online?.isNotEmpty ?? false);
 
     return ListView(
       controller: widget.controller,
@@ -149,131 +253,97 @@ class _JagahKhojSheetState extends State<JagahKhojSheet> {
         VidhivatSpacing.xxl,
       ),
       children: [
-        VidhivatSectionHeader(
-          title: widget.shirshak,
-          supportingText: widget.upShirshak,
-        ),
-        const SizedBox(height: VidhivatSpacing.sm),
+        Text(widget.shirshak, style: type.sectionTitle),
+        const SizedBox(height: VidhivatSpacing.md),
+
+        // ── १ · फ़ोन की अभी की जगह ──
+        if (widget.phoneKiJagah != null) ...[
+          VidhivatSurfaceCard(
+            padding: EdgeInsets.zero,
+            child: ListTile(
+              key: const Key('phone_ki_jagah'),
+              leading: _gpsChal
+                  ? const SizedBox(
+                      width: 24,
+                      height: 24,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
+                  : Icon(Icons.my_location, color: colors.primary),
+              title: const Text('फ़ोन की अभी की जगह लें'),
+              subtitle: Text(widget.phoneKiJagah!),
+              onTap: _gpsChal ? null : _phoneKiJagah,
+            ),
+          ),
+          if (_gpsGalti != null)
+            Padding(
+              padding: const EdgeInsets.only(top: VidhivatSpacing.xs),
+              child: Text(_gpsGalti!,
+                  style: type.bodySmall.copyWith(color: colors.textSecondary)),
+            ),
+          const SizedBox(height: VidhivatSpacing.md),
+        ],
+
+        // ── २ · नाम से खोज ──
         TextField(
           key: const Key('jagah_khoj'),
           controller: _search,
-          autofocus: !widget.khaaliParSab,
+          autofocus: widget.phoneKiJagah == null,
           textInputAction: TextInputAction.search,
-          // keyboard का «खोज» — इंटरनेट पर भी (Nominatim हर अक्षर पर खोज मना करता है)
-          onSubmitted: (_) => _onlineKhojo(),
+          onSubmitted: (_) {
+            _thahrav?.cancel();
+            _onlineKhojo();
+          },
           onChanged: (v) {
             setState(() {
-              if (v.trim() != _onlineKhoj) _online = null;
+              if (v.trim() != _onlineKhoj) _onlineChal = false;
             });
             _gaonKhojo(v);
+            _thahrav?.cancel();
+            _thahrav = Timer(_thahravKaSamay, _onlineKhojo);
           },
           decoration: const InputDecoration(
             prefixIcon: Icon(Icons.search),
-            labelText: 'शहर खोजें',
-            hintText: 'शहर, क़स्बा या गाँव — जैसे पटना, Pune, Rampur',
-            helperText: 'लिखकर keyboard का «खोज» दबाएँ — पहले इंटरनेट पर खोजेगा',
-            // फ़ोन पर एक लाइन में कटकर «…इंटरनेट पर खो…» दिखता था
-            helperMaxLines: 2,
+            hintText: 'गाँव या शहर का नाम लिखें',
             border: OutlineInputBorder(),
           ),
         ),
+        if (_onlineChal) ...[
+          const SizedBox(height: VidhivatSpacing.xs),
+          const LinearProgressIndicator(minHeight: 2),
+          // सिर्फ़ इंतज़ार हो तभी लाइन — "इंटरनेट नहीं मिला — 8 सेकंड में फिर कोशिश…"
+          if (_onlineHaal != null)
+            Padding(
+              padding: const EdgeInsets.only(top: VidhivatSpacing.xxs),
+              child: Text(_onlineHaal!,
+                  style: type.bodySmall.copyWith(color: colors.textSecondary)),
+            ),
+        ],
         const SizedBox(height: VidhivatSpacing.sm),
 
-        // ── पहले इंटरनेट (डेवलपर, 23 अक्टूबर: "इंटरनेट हो तो पहली कोशिश इंटरनेट से,
-        // ऑफ़लाइन बाद में" — → D-133) ──
-        // OpenStreetMap की नीति हर अक्षर पर अपने-आप खोज मना करती है, इसलिए खोज
-        // keyboard के «खोज» या इस बटन पर चलती है; उसके नतीजे सबसे ऊपर। ऐप की अपनी सूची
-        // (शहर, गाँव) नीचे — इंटरनेट न हो या कुछ न मिले तो वही काम आती है।
-        if (_search.text.trim().length >= 2) ...[
-          if (_onlineChal)
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: VidhivatSpacing.sm),
-              child: Row(
-                children: [
-                  const SizedBox(
-                    width: 18,
-                    height: 18,
-                    child: CircularProgressIndicator(strokeWidth: 2),
-                  ),
-                  const SizedBox(width: VidhivatSpacing.sm),
-                  Expanded(child: Text(_onlineHaal ?? 'इंटरनेट पर खोज रहे हैं…')),
-                ],
-              ),
-            )
-          else if (_online == null)
-            VidhivatButton(
-              key: const Key('online_khoj'),
-              label: 'इंटरनेट पर खोजें',
-              icon: Icons.public,
-              onPressed: _onlineKhojo,
-              fullWidth: true,
-            )
-          else ...[
-            const VidhivatSectionHeader(
-              title: 'इंटरनेट से',
-              supportingText: 'खोज का शब्द इंटरनेट पर जाता है; आपकी जगह नहीं',
-            ),
-            if (_online!.isEmpty)
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: VidhivatSpacing.sm),
-                child: Text('इंटरनेट पर नहीं मिला — नीचे ऐप की सूची देखें, या दूसरी वर्तनी '
-                    'और «गाँव, ज़िला» लिखकर खोजें।'),
-              ),
-            for (final o in _online!)
-              ListTile(
-                leading: const Icon(Icons.public),
-                title: Text(o.naam),
-                subtitle: Text(o.pata.isEmpty ? 'भारत' : o.pata),
-                onTap: () => Navigator.of(context).pop(City(
-                    o.naam, o.pata.isEmpty ? 'भारत' : o.pata, o.latitude, o.longitude)),
-              ),
-            // ODbL लाइसेंस की शर्त — जहाँ OpenStreetMap का डेटा दिखे, वहीं श्रेय
-            Padding(
-              padding: const EdgeInsets.only(top: VidhivatSpacing.xs),
-              child: Text(
-                'जगहों का डेटा © OpenStreetMap contributors',
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-            ),
-          ],
-          const SizedBox(height: VidhivatSpacing.md),
-          if (cities.isNotEmpty || _gaon.isNotEmpty)
-            const VidhivatSectionHeader(
-              title: 'ऐप की सूची से',
-              supportingText: 'बिना इंटरनेट भी',
-            ),
-        ],
-        if (cities.isEmpty &&
-            _gaon.isEmpty &&
-            _search.text.trim().isNotEmpty &&
-            !_onlineChal &&
-            (_online?.isEmpty ?? true))
-          const VidhivatSurfaceCard(
-            child: Text('ऐप की सूची में इस नाम की कोई जगह नहीं मिली। ऊपर «इंटरनेट पर खोजें» '
-                'दबाएँ, या दूसरी वर्तनी / पास का क़स्बा खोजें।'),
-          ),
-        for (final city in cities)
+        // ── ३ · एक ही सूची ──
+        for (final c in sab)
           ListTile(
-            title: Text(city.name),
-            subtitle: Text(city.state),
-            selected: city.name == widget.selectedCity?.name &&
-                !(widget.selectedCity?.isDeviceDetected ?? true),
-            onTap: () => Navigator.of(context).pop(city),
+            contentPadding: EdgeInsets.zero,
+            leading: const Icon(Icons.place_outlined),
+            title: Text(c.name),
+            subtitle: Text(c.state),
+            selected: c.name == widget.selectedCity?.name &&
+                c.state == widget.selectedCity?.state,
+            onTap: () => Navigator.of(context).pop(c),
           ),
-        if (_gaon.isNotEmpty) ...[
-          const SizedBox(height: VidhivatSpacing.md),
-          const VidhivatSectionHeader(
-            title: 'गाँव और क़स्बे',
-            supportingText: 'नाम अंग्रेज़ी अक्षरों में, जैसे सूची में हैं',
+        if (sab.isEmpty && likha.length >= 3 && likha == _onlineKhoj && !_onlineChal)
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: VidhivatSpacing.sm),
+            child: Text(
+                'इस नाम की जगह नहीं मिली — दूसरी वर्तनी, या पास का क़स्बा लिखें।'),
           ),
-          for (final m in _gaon)
-            ListTile(
-              leading: const Icon(Icons.place_outlined),
-              title: Text(m.city.name),
-              subtitle: Text(m.city.state),
-              onTap: () => Navigator.of(context).pop(m.city),
-            ),
-        ],
+        // ODbL लाइसेंस की शर्त — जहाँ OpenStreetMap का डेटा दिखे, वहीं श्रेय (→ D-129)
+        if (onlineDikhe)
+          Padding(
+            padding: const EdgeInsets.only(top: VidhivatSpacing.xs),
+            child: Text('कुछ जगहों का डेटा © OpenStreetMap contributors',
+                style: type.caption.copyWith(color: colors.textTertiary)),
+          ),
       ],
     );
   }
@@ -283,9 +353,9 @@ class _JagahKhojSheetState extends State<JagahKhojSheet> {
 Future<City?> jagahChuno(
   BuildContext context, {
   City? selectedCity,
-  String shirshak = 'शहर हाथ से चुनें',
-  String upShirshak = 'अनुमति न दें, तब भी पंचांग सही रहेगा',
-  bool khaaliParSab = true,
+  String shirshak = 'जगह चुनें',
+  String? phoneKiJagah,
+  Future<DeviceLocationResult> Function()? jagahLo,
 }) =>
     showModalBottomSheet<City>(
       context: context,
@@ -299,8 +369,8 @@ Future<City?> jagahChuno(
           controller: controller,
           selectedCity: selectedCity,
           shirshak: shirshak,
-          upShirshak: upShirshak,
-          khaaliParSab: khaaliParSab,
+          phoneKiJagah: phoneKiJagah,
+          jagahLo: jagahLo,
         ),
       ),
     );

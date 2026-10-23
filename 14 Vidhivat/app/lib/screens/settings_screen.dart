@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:panchang_engine/panchang_engine.dart';
 
 import '../app_version.dart';
-import '../services/device_location_service.dart';
 import '../state/settings.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
@@ -17,7 +16,6 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  bool _isFindingLocation = false;
 
   @override
   Widget build(BuildContext context) {
@@ -37,54 +35,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   title: 'स्थान',
                   supportingText: 'तिथि सूर्योदय पर तय होती है'),
               const SizedBox(height: VidhivatSpacing.sm),
+              // ── एक खाना, एक पन्ना (→ D-134) ──
+              // पहले यहाँ चार चीज़ें थीं — यह खाना, «मेरी जगह अपने आप पहचानें», «शहर हाथ
+              // से चुनें» और «अपनी जगह का नाम»। डेवलपर: "इतना complicated कि यूज़र
+              // परेशान हो जाए"। अब फ़ोन की जगह भी उसी पन्ने में सबसे ऊपर है।
               VidhivatSurfaceCard(
                 padding: EdgeInsets.zero,
                 child: ListTile(
+                  key: const Key('meri_jagah'),
                   leading: Icon(
                     settings.city.isDeviceDetected
                         ? Icons.my_location_outlined
                         : Icons.location_on_outlined,
                   ),
                   title: Text(settings.city.name),
-                  subtitle: Text(settings.city.locationSourceLabel),
+                  subtitle: Text('${settings.city.state} · बदलने के लिए दबाएँ'),
                   trailing: const Icon(Icons.chevron_right),
                   onTap: _chooseCity,
                 ),
               ),
-              const SizedBox(height: VidhivatSpacing.sm),
-              VidhivatButton(
-                label: _isFindingLocation
-                    ? 'स्थान पहचाना जा रहा है…'
-                    : 'मेरी जगह अपने आप पहचानें',
-                icon: Icons.my_location_outlined,
-                variant: VidhivatButtonVariant.secondary,
-                onPressed: _isFindingLocation ? null : _detectDeviceLocation,
-                fullWidth: true,
-              ),
               const SizedBox(height: VidhivatSpacing.xs),
-              TextButton.icon(
-                onPressed: _chooseCity,
-                icon: const Icon(Icons.edit_location_alt_outlined),
-                label: const Text('शहर हाथ से चुनें'),
-              ),
-              const SizedBox(height: VidhivatSpacing.md),
-
-              // ── अपनी जगह का नाम (→ D-058) ───────────────────
-              //
-              // सूची में 480 शहर हैं, फिर भी गाँव उसमें कभी नहीं आएगा —
-              // भारत में छह लाख से ज़्यादा गाँव हैं। और संकल्प में जगह का
-              // नाम बोला जाता है, इसलिए वहाँ नज़दीकी शहर का नाम बोलना
-              // सच नहीं होता।
-              VidhivatSurfaceCard(
-                padding: EdgeInsets.zero,
-                child: ListTile(
-                  leading: const Icon(Icons.drive_file_rename_outline),
-                  title: const Text('अपनी जगह का नाम'),
-                  subtitle: Text(settings.city.naamKhudLikha
-                      ? 'संकल्प में यही बोला जाएगा · बदलने के लिए दबाएँ'
-                      : 'गाँव या क़स्बे का नाम ख़ुद लिखिए · पंचांग वैसा ही रहेगा'),
-                  trailing: const Icon(Icons.chevron_right),
-                  onTap: _editSthanNaam,
+              // संकल्प में बोला जाने वाला नाम (→ D-058) — जगह चुनने से अलग, छोटी कड़ी
+              Align(
+                alignment: Alignment.centerLeft,
+                child: TextButton(
+                  onPressed: _editSthanNaam,
+                  child: Text(RegExp(r'[ऀ-ॿ]').hasMatch(settings.city.name)
+                      ? 'संकल्प में जगह का नाम बदलें'
+                      : 'संकल्प के लिए जगह का नाम हिंदी में लिखें'),
                 ),
               ),
               const SizedBox(height: VidhivatSpacing.xxl),
@@ -198,7 +176,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final naya = await showDialog<String>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('अपनी जगह का नाम'),
+        title: const Text('संकल्प में जगह का नाम'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -244,123 +222,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
     }
   }
 
+  /// जगह चुनना — फ़ोन की अभी की जगह, या नाम से खोज (→ D-134)। गाँव का नाम अंग्रेज़ी
+  /// अक्षरों में हो तो वैसा ही रखा जाता है; संकल्प के लिए हिंदी नाम ऊपर वाली छोटी कड़ी से
+  /// (पहले यहाँ हर बार एक dialog पूछता था — एक और रुकावट)।
   Future<void> _chooseCity() async {
-    final chosen = await showModalBottomSheet<City>(
-      context: context,
-      isScrollControlled: true,
-      useSafeArea: true,
-      showDragHandle: true,
-      builder: (context) => DraggableScrollableSheet(
-        expand: false,
-        initialChildSize: 0.85,
-        builder: (context, controller) => JagahKhojSheet(
-          controller: controller,
-          selectedCity: settings.city,
-        ),
-      ),
+    final chosen = await jagahChuno(
+      context,
+      selectedCity: settings.city,
+      shirshak: 'अपनी जगह चुनें',
+      phoneKiJagah: 'स्थान सिर्फ़ पंचांग के लिए — फ़ोन से बाहर नहीं जाता',
     );
-
-    if (chosen == null) {
-      if (mounted) setState(() {});
-      return;
-    }
-    // गाँवों की सूची से आई जगह का नाम अंग्रेज़ी अक्षरों में है — संकल्प संस्कृत में
-    // बोला जाता है, इसलिए देवनागरी नाम पूछो (→ D-128)
-    final angrezi = !RegExp(r'[ऀ-ॿ]').hasMatch(chosen.name);
-    if (!angrezi) {
-      await settings.setCity(chosen);
-    } else {
-      final dev = await _devanagariNaam(chosen.name);
-      if (dev != null && dev.trim().isNotEmpty) {
-        await settings.setCity(City(dev.trim(), chosen.state, chosen.latitude,
-            chosen.longitude, naamKhudLikha: true));
-      } else {
-        // नाम नहीं लिखा — पास के शहर का नाम, गणित इसी गाँव का
-        final paas = nearestIndianCity(chosen.latitude, chosen.longitude);
-        await settings.setCity(
-            City(paas.name, paas.state, chosen.latitude, chosen.longitude));
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text('पंचांग ${chosen.name} का; संकल्प में अभी '
-                  '«${paas.name}» बोला जाएगा — «अपनी जगह का नाम» से बदल सकते हैं।')));
-        }
-      }
-    }
+    if (chosen != null) await settings.setCity(chosen);
     if (mounted) setState(() {});
-  }
-
-  /// गाँव का नाम देवनागरी में — संकल्प के लिए।
-  Future<String?> _devanagariNaam(String angrezi) async {
-    final c = TextEditingController();
-    final naya = await showDialog<String>(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('संकल्प में बोला जाने वाला नाम'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('«$angrezi» को देवनागरी में लिखिए — संकल्प संस्कृत में बोला '
-                'जाता है। पंचांग इसी जगह के सूर्योदय से बनेगा।'),
-            const SizedBox(height: VidhivatSpacing.md),
-            TextField(
-              controller: c,
-              autofocus: true,
-              decoration: const InputDecoration(
-                labelText: 'जगह का नाम',
-                hintText: 'जैसे — रामपुर',
-                border: OutlineInputBorder(),
-              ),
-              onSubmitted: (v) => Navigator.of(context).pop(v),
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text('बाद में'),
-          ),
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(c.text),
-            child: const Text('रख लीजिए'),
-          ),
-        ],
-      ),
-    );
-    c.dispose();
-    return naya;
-  }
-
-  Future<void> _detectDeviceLocation() async {
-    setState(() => _isFindingLocation = true);
-    final result = await const DeviceLocationService().getCurrentLocation();
-    if (!mounted) return;
-    setState(() => _isFindingLocation = false);
-
-    if (result.hasPosition) {
-      await settings.setCityFromDeviceLocation(
-        latitude: result.latitude!,
-        longitude: result.longitude!,
-      );
-      if (!mounted) return;
-      setState(() {});
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-            content:
-                Text('${settings.city.name} के पास का स्थान चुन लिया गया')),
-      );
-      return;
-    }
-
-    final message = switch (result.failure) {
-      DeviceLocationFailure.serviceDisabled =>
-        'फ़ोन में स्थान की सुविधा बंद है। नीचे से शहर हाथ से चुन सकते हैं।',
-      DeviceLocationFailure.permissionDenied =>
-        'स्थान की अनुमति नहीं मिली। नीचे से शहर हाथ से चुन सकते हैं।',
-      _ => 'स्थान नहीं मिल पाया। नीचे से शहर हाथ से चुन सकते हैं।',
-    };
-    ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Text(message)));
   }
 
   Future<void> _editYajman() async {

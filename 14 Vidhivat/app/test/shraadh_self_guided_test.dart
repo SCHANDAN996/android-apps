@@ -8,6 +8,7 @@ import 'package:vidhivat/screens/vidhi_player_screen.dart';
 import 'package:vidhivat/screens/pitru_schedule_screen.dart';
 import 'package:vidhivat/screens/ancestor_profiles_screen.dart';
 import 'package:vidhivat/widgets/jagah_khoj.dart';
+import 'package:vidhivat/services/osm_khoj.dart';
 import 'package:vidhivat/screens/aaj_screen.dart';
 import 'package:vidhivat/screens/festival_destination.dart';
 import 'package:vidhivat/state/ancestor_profiles.dart';
@@ -29,6 +30,8 @@ void main() {
   });
 
   setUp(() async {
+    // जगह की खोज लिखते ही इंटरनेट पर जाती है (→ D-134) — जाँच में नक़ली सर्वर
+    osmKhoj = OsmKhoj(laao: (_) async => const OsmJawab(200, '{"features":[]}'));
     SharedPreferences.setMockInitialValues({});
     await settings.load();
   });
@@ -286,11 +289,11 @@ void main() {
     await tester.tap(khaana);
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('jagah_khoj')), findsOneWidget);
-    // इंटरनेट वाली खोज सबसे ऊपर, पर सिर्फ़ कहने पर
+    // पूर्वज की जगह में «फ़ोन की अभी की जगह» नहीं — उसका यहाँ कोई मतलब नहीं
+    expect(find.byKey(const Key('phone_ki_jagah')), findsNothing);
     await tester.enterText(find.byKey(const Key('jagah_khoj')), 'Delhi');
+    await tester.pump(const Duration(seconds: 1)); // लिखना रुका — इंटरनेट-खोज (नक़ली)
     await tester.pumpAndSettle();
-    expect(find.byKey(const Key('online_khoj')), findsOneWidget);
-    expect(find.text('इंटरनेट से'), findsNothing);
 
     // फ़ॉर्म का अपना खाना भी पहले से «दिल्ली» दिखाता है — पत्ता पन्ने के अंदर से
     await tester.tap(find

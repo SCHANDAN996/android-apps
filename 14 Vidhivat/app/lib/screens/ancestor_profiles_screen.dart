@@ -190,12 +190,7 @@ class _AncestorFormState extends State<_AncestorForm> {
   /// मृत्यु की जगह — वही खोज-पन्ना जो कुंडली और सेटिंग में है: ऐप के शहर,
   /// साढ़े पाँच लाख गाँव-क़स्बे, और इंटरनेट (→ D-128, D-129, D-133)।
   Future<void> _jagahChuno() async {
-    final c = await jagahChuno(
-      context,
-      shirshak: 'मृत्यु की जगह',
-      upShirshak: 'गाँव, क़स्बा या शहर — तिथि उसी जगह के पंचांग से निकलती है',
-      khaaliParSab: false,
-    );
+    final c = await jagahChuno(context, shirshak: 'मृत्यु की जगह');
     if (c == null || !mounted) return;
     setState(() {
       _deathPlace = c.place;

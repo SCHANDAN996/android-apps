@@ -38,8 +38,8 @@ Future<void> main() async {
     yield const LicenseEntryWithLineBreaks(
       ['इंटरनेट पर जगह की खोज'],
       'जगहों का डेटा © OpenStreetMap contributors, Open Database License (ODbL) '
-      'के अंतर्गत (openstreetmap.org/copyright)। खोज OpenStreetMap Foundation की '
-      'Nominatim सेवा से — सिर्फ़ आपके कहने पर, और सिर्फ़ खोजा हुआ शब्द जाता है।',
+      'के अंतर्गत (openstreetmap.org/copyright)। खोज komoot की Photon सेवा से — '
+      'सिर्फ़ लिखा हुआ नाम जाता है।',
     );
   });
   await settings.load();
