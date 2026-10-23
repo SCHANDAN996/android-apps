@@ -379,6 +379,30 @@ void main() {
       }
     });
 
+    // → D-131: "हर पूजा पूरी करने के बाद ठीक से आना चाहिए"
+    testWidgets('दे चुके को पूरी माँग नहीं, पर धन्यवाद और फिर देने का रास्ता',
+        (tester) async {
+      await dakshina.mili(abhi);
+      expect(dakshina.dikhega(abhi.add(const Duration(days: 1))), isFalse);
+
+      await tester.pumpWidget(app(const DakshinaDhanyavaadCard()));
+      expect(find.text(DakshinaShabd.deChuke), findsOneWidget);
+      expect(find.text(DakshinaShabd.vaikalpik), findsOneWidget);
+      expect(find.byType(DakshinaChunav), findsNothing);
+
+      await tester.tap(find.byKey(const Key('dakshina_phir_se')));
+      await tester.pumpAndSettle();
+      expect(find.byType(DakshinaChunav), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    test('पूर्ण-पन्ने पर दक्षिणा का हिस्सा हर बार — दे चुके हों तब भी', () {
+      final poorn =
+          File('lib/screens/puja_completion_screen.dart').readAsStringSync();
+      expect(poorn.contains('DakshinaDhanyavaadCard'), isTrue,
+          reason: 'दे चुके हों तो धन्यवाद-डिब्बा; हिस्सा ग़ायब नहीं होता');
+    });
+
     test('दक्षिणा सिर्फ़ पूजा पूरी होने वाले पन्ने से खुलती है', () {
       final poorn =
           File('lib/screens/puja_completion_screen.dart').readAsStringSync();

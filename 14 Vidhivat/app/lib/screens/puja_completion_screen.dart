@@ -88,15 +88,22 @@ class PujaCompletionScreen extends StatelessWidget {
                       // पूरा एक कार्ड था — ठीक उस जगह जो इस पन्ने की सबसे शांत
                       // होनी चाहिए (→ D-056)।
 
+                      // ── दक्षिणा का हिस्सा हर पूजा के बाद (→ D-131) ──────
+                      //
                       // घड़ी का नियम बही में है (→ `dakshina_service.dart`):
-                      // दे चुके हैं तो छह महीने चुप, तीन बार दिख चुका तो
-                      // तीस दिन। यहाँ सिर्फ़ पूछा जाता है, तय नहीं होता।
-                      if (dakshina.dikhega(DateTime.now())) ...[
-                        const SizedBox(height: VidhivatSpacing.xxl),
+                      // दे चुके हैं तो छह महीने पूरी माँग नहीं। पहले उन छह
+                      // महीनों में यहाँ कुछ भी नहीं दिखता था — डेवलपर को लगा
+                      // "कुछ पूजाओं के बाद दक्षिणा आती ही नहीं"। अब उस बीच
+                      // छोटा धन्यवाद-डिब्बा, जिसमें फिर देने का रास्ता है।
+                      const SizedBox(height: VidhivatSpacing.xxl),
+                      if (dakshina.dikhega(DateTime.now()))
                         DakshinaCard(
                           onVistaar: () => _kholoDakshinaPanna(context),
+                        )
+                      else
+                        DakshinaDhanyavaadCard(
+                          onVistaar: () => _kholoDakshinaPanna(context),
                         ),
-                      ],
                     ],
                   ),
                 ),

@@ -70,6 +70,12 @@ abstract final class DakshinaShabd {
   static const phirKholo = 'पन्ना फिर से खोलें';
 
   static const kuchhAtka = 'कुछ अटक गया। दोबारा कोशिश कर सकते हैं।';
+
+  /// दे चुके यूज़र को पूजा के बाद — पूरी माँग नहीं, धन्यवाद (→ D-131)।
+  static const deChuke = 'आप दक्षिणा दे चुके हैं — धन्यवाद! आपकी दक्षिणा '
+      'से ही अगली पूजा जुड़ती है।';
+
+  static const phirSe = 'फिर से दक्षिणा दें';
 }
 
 /// राशि चुनने और देने वाला हिस्सा — डिब्बे और पूरे पन्ने, दोनों में यही।
@@ -352,6 +358,87 @@ class _DakshinaCardState extends State<DakshinaCard> {
                 // का बटन सिर्फ़ इसी हाल में label को `Flexible` में रखता
                 // है; बिना इसके 320 dp और 1.5x अक्षरों पर यह पंक्ति
                 // **दायीं तरफ़ 60 pixel बाहर निकल जाती थी**।
+                VidhivatButton(
+                  label: DakshinaShabd.vistaar,
+                  variant: VidhivatButtonVariant.text,
+                  onPressed: widget.onVistaar,
+                  fullWidth: true,
+                ),
+              ],
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// दे चुके यूज़र के लिए पूजा-पूर्ण पन्ने का छोटा डिब्बा (→ D-131)।
+///
+/// डेवलपर (23 अक्टूबर 2026): *"हर पूजा पूरी करने के बाद यह ठीक से आना
+/// चाहिए।"* पहले «हाँ, दक्षिणा दे दी» दबाते ही छह महीने तक पूर्ण-पन्ने पर
+/// दक्षिणा का कोई हिस्सा नहीं दिखता था — फ़ोन पर यही "कभी-कभी दिखता ही
+/// नहीं" बनकर पकड़ा गया (`docs/32` §9)। अब हिस्सा हर बार है; दे चुके से
+/// पूरी माँग नहीं, धन्यवाद और फिर देने का रास्ता — पीछा नहीं (D-063 वैसा)।
+class DakshinaDhanyavaadCard extends StatefulWidget {
+  final VoidCallback? onVistaar;
+
+  const DakshinaDhanyavaadCard({super.key, this.onVistaar});
+
+  @override
+  State<DakshinaDhanyavaadCard> createState() =>
+      _DakshinaDhanyavaadCardState();
+}
+
+class _DakshinaDhanyavaadCardState extends State<DakshinaDhanyavaadCard> {
+  bool _khula = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final type = VidhivatTheme.typographyOf(context);
+    final colors = VidhivatTheme.colorsOf(context);
+    return Column(
+      key: const Key('dakshina_dhanyavaad_card'),
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const VidhivatSectionHeader(title: DakshinaShabd.upsheershak),
+        const SizedBox(height: VidhivatSpacing.md),
+        VidhivatSurfaceCard(
+          variant: VidhivatCardVariant.elevated,
+          padding: const EdgeInsets.all(VidhivatSpacing.lg),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(DakshinaShabd.shirshak, style: type.cardTitle),
+              const SizedBox(height: VidhivatSpacing.sm),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  VidhivatDiyaIcon(bhara: true, color: colors.primary),
+                  const SizedBox(width: VidhivatSpacing.sm),
+                  Expanded(
+                    child: Text(DakshinaShabd.deChuke, style: type.bodyMedium),
+                  ),
+                ],
+              ),
+              const SizedBox(height: VidhivatSpacing.md),
+              if (_khula)
+                const DakshinaChunav()
+              else
+                VidhivatButton(
+                  key: const Key('dakshina_phir_se'),
+                  label: DakshinaShabd.phirSe,
+                  variant: VidhivatButtonVariant.secondary,
+                  onPressed: () => setState(() => _khula = true),
+                  fullWidth: true,
+                ),
+              const SizedBox(height: VidhivatSpacing.md),
+              Text(
+                DakshinaShabd.vaikalpik,
+                style: type.caption.copyWith(color: colors.textSecondary),
+              ),
+              if (widget.onVistaar != null) ...[
+                const SizedBox(height: VidhivatSpacing.xs),
                 VidhivatButton(
                   label: DakshinaShabd.vistaar,
                   variant: VidhivatButtonVariant.text,
