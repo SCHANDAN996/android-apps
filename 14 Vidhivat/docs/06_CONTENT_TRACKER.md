@@ -278,3 +278,9 @@ UI बाक़ी है। जाँच: `python tools/jaancho_vrat.py`।
 
 🔑 ग्रंथ की JSON **हाथ से नहीं** — `tools/granth_paath/<id>/` बदलो, फिर
 `python tools/banao_granth.py <id>`।
+
+
+### शरद पूर्णिमा (23 अक्टूबर 2026, → D-130)
+
+✍️ ड्राफ़्ट — `vrat/sharad_purnima` (साल का व्रत), कोई "पास" नहीं। मंत्र «ॐ लक्ष्म्यै नमः» (धर्मसिंधु); चंद्र-अर्घ्य
+का श्लोक करवा चौथ विधि वाला। कथा नहीं (कारण `kathaKyonNahi` में)। बाक़ी: अपना चित्र (`vrat_sharad_purnima_v1`)।

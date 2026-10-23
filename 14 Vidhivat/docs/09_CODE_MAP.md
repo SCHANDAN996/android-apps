@@ -109,13 +109,13 @@ sunrise moonrise ayanamsa  moon      │
 | नाम | क्या |
 |---|---|
 | `enum Vyapini` | सूर्योदय · मध्याह्न · अपराह्न · प्रदोष · निशीथ · चंद्रोदय |
-| `enum Nirnaya` | दिन चुनने का तरीक़ा: `vyapini` (सीधी व्यापिनी — पंद्रह नियम) या पाँच में से एक छपा निर्णय: `holika` · `raksha` · `ramNavami` · `janmashtami` · `lakshmiPujan` (→ D-117) |
+| `enum Nirnaya` | दिन चुनने का तरीक़ा: `vyapini` (सीधी व्यापिनी — पंद्रह नियम) या छह में से एक छपा निर्णय: `holika` · `raksha` · `ramNavami` · `janmashtami` · `lakshmiPujan` (→ D-117) · `kojagara` (शरद पूर्णिमा, → D-130) |
 | `FestivalRule` | एक त्योहार का नियम (मास, पक्ष, तिथि, व्यापिनी, भद्रा, `vaarPehle`, `nirnaya`) |
 | `FestivalDate` | निकाली हुई तारीख़ **+ `explanation`** (हिसाब खोलकर) |
 | `kaalWindow(...)` | किसी दिन की काल-खिड़की |
 | `findFestival(rule, year, place)` | **मुख्य प्रवेश-द्वार** |
 | `festivalsInYear(year, place)` | पूरे साल के त्योहार |
-| `festivalRules` | 20 नियम — सब सात साल (2024–2030) पर संदर्भ-पंचांग से जाँचे हुए (`08` §14, §20) |
+| `festivalRules` | 21 नियम — सब सात साल (2024–2030) पर संदर्भ-पंचांग से जाँचे हुए (`08` §14, §20, §22) |
 
 **झंडियाँ:** `shiftedForBhadra` · `missedKaal` · `ambiguous` (+ `otherCandidate`)
 
@@ -342,7 +342,8 @@ app/
     ├── widgets/dakshina_card.dart
     │                         स्क्रीन पर छपने वाले शब्द (`DakshinaShabd`),
     │                         राशि चुनने वाला हिस्सा, और पूजा पूरी होने
-    │                         वाले पन्ने का शांत डिब्बा (→ D-053)
+    │                         वाले पन्ने का शांत डिब्बा (→ D-053); दे चुके के लिए
+│                         `DakshinaDhanyavaadCard` (→ D-131)
     ├── services/dakshina_service.dart
     │                         दक्षिणा की बही — घड़ी का नियम + Play Billing
     │                         का द्वार। ⛔ यहाँ कोई `unlock`/`isPro` झंडा
@@ -553,7 +554,9 @@ app/lib/screens/
 | `app/assets/vrat/_ekadashi_varsh.json` | साल की 26 एकादशियाँ |
 | `app/lib/vidhi/vrat_panna.dart` | `VratPanna`, `VratSuchiEntry`, `EkadashiVarsh`, `VratSamuh` |
 | `app/lib/vidhi/bhandar.dart` | `vratBhandar` — सूची, पन्ना, एकादशियाँ |
-| `app/lib/screens/vrat_panna_screen.dart` | `VratPannaScreen`, `KathaScreen`, `EkadashiVarshScreen` |
+| `app/lib/screens/vrat_panna_screen.dart` | `VratPannaScreen`, `KathaScreen`, `EkadashiVarshScreen`; साल के व्रत पर `_TyoharKaDin` — इंजन के त्योहार-नियम से अगली तारीख़ (→ D-130) |
+| `app/lib/screens/festival_destination.dart` | त्योहार दबाने पर क्या खुले — विधि (`tyoharKiPuja`), नहीं तो व्रत-पन्ना (`tyoharKaVrat`, → D-130) |
+| `engine/tool/kojagar_aazmao.dart` | शरद पूर्णिमा — हर साल पूर्णिमा, आधी रातें, प्रदोष और चुना दिन (संदर्भ से मिलाने को) |
 | `app/lib/widgets/katha_khand.dart` | `KathaKhand` — प्लेयर और कथा-पन्ना दोनों |
 | `app/lib/widgets/mantra_khand.dart` | `MantraKhand`, `PaathKeBaareMein` |
 | `tools/jaancho_vrat.py` | कंटेंट की जाँच, बिना Flutter |

@@ -91,6 +91,10 @@ enum Nirnaya {
 
   /// दीपावली का लक्ष्मी पूजन — दोनों दिन प्रदोष हो तो दूसरा दिन
   lakshmiPujan,
+
+  /// शरद पूर्णिमा (कोजागर व्रत) — आधी रात की पूर्णिमा; दोनों दिन हो या किसी दिन
+  /// न हो तो दूसरा दिन (→ D-130)
+  kojagara,
 }
 
 extension NirnayaName on Nirnaya {
@@ -99,7 +103,11 @@ extension NirnayaName on Nirnaya {
         Nirnaya.holika => 'भद्रा रहित',
         Nirnaya.raksha => 'उदय के बाद तीन मुहूर्त से अधिक, भद्रा रहित',
         Nirnaya.janmashtami => 'रोहिणी का योग देखकर',
-        Nirnaya.vyapini || Nirnaya.ramNavami || Nirnaya.lakshmiPujan => null,
+        Nirnaya.vyapini ||
+        Nirnaya.ramNavami ||
+        Nirnaya.lakshmiPujan ||
+        Nirnaya.kojagara =>
+          null,
       };
 }
 
@@ -407,6 +415,7 @@ FestivalDate? findFestival(
       Nirnaya.ramNavami => _ramNavami(rule, tithi, place),
       Nirnaya.janmashtami => _janmashtami(rule, tithi, place),
       Nirnaya.lakshmiPujan => _lakshmiPujan(rule, tithi, place),
+      Nirnaya.kojagara => _kojagara(rule, tithi, place),
     };
     if (result != null) return _vaarPehle(rule, result);
   }
@@ -1033,6 +1042,59 @@ FestivalDate? _lakshmiPujan(FestivalRule rule, _Antaral tithi, Place place) {
       ]);
 }
 
+/// **शरद पूर्णिमा (कोजागर व्रत)** — धर्मसिंधु, द्वितीय परिच्छेद, कोजागरव्रत
+/// (पृ. 89; पन्ना आँख से पढ़ा, → D-130):
+///
+/// «आश्विनपौर्णमास्यां कोजागरव्रतम्। सा पूर्वत्रैव निशीथव्याप्तौ पूर्वा। उत्तरदिने
+/// एव दिनद्वयेऽपि वा निशीथव्याप्तौ दिनद्वये निशीथास्पर्शे वोत्तरैव।
+/// केचित्पूर्वदिने निशीथव्याप्तिरेव परदिने प्रदोषव्याप्तिरेव तदा परेत्याहुः।»
+///
+/// - निशीथ = रात का ठीक बीच — उसी ग्रंथ की परिभाषा (पृ. 57, «रात्र्यर्धं
+///   निशीथपदार्थः»), जैसी जन्माष्टमी में।
+/// - "पहला दिन" = वह हिंदू दिन (सूर्योदय से सूर्योदय) जिसमें पूर्णिमा लगती है;
+///   "दूसरा" = उसके बाद वाला।
+/// - «केचित्» वाला मत ग्रंथ ने दूसरों के नाम से लिखा है — इसलिए वह दिन चुना नहीं
+///   जाता, `otherCandidate` में दिखता है।
+FestivalDate? _kojagara(FestivalRule rule, _Antaral tithi, Place place) {
+  final pehla = _hinduDin(tithi.start, place);
+  final doosra = pehla == null ? null : _aglaDin(pehla, place);
+  if (pehla == null || doosra == null) {
+    return _pickDay(rule, tithi, null, place);
+  }
+
+  bool aadhiRaatKo(_Din d) {
+    final r = _aadhiRaat(d);
+    return !r.isBefore(tithi.start) && r.isBefore(tithi.end);
+  }
+
+  final pehleDin = aadhiRaatKo(pehla);
+  final doosreDin = aadhiRaatKo(doosra);
+
+  if (pehleDin && !doosreDin) {
+    final p = kaalWindow(Vyapini.pradosha, doosra.din.year, doosra.din.month,
+        doosra.din.day, place);
+    final pradoshMein = p != null &&
+        _chhua(tithi.start, tithi.end, p.start, p.end) > Duration.zero;
+    return _nirnit(rule, tithi, null, place,
+        din: pehla.din,
+        doosra: pradoshMein ? doosra.din : null,
+        kyon: [
+          'आधी रात को पूर्णिमा सिर्फ़ पहले दिन है — इसलिए पहला दिन',
+          if (pradoshMein)
+            'दूसरा दिन भी दिखाया है — उस शाम प्रदोष में पूर्णिमा है, और कुछ '
+                'आचार्य तब दूसरा दिन मानते हैं',
+        ]);
+  }
+  return _nirnit(rule, tithi, null, place, din: doosra.din, kyon: [
+    if (pehleDin)
+      'आधी रात को पूर्णिमा दोनों दिन है — इसलिए दूसरा दिन'
+    else if (doosreDin)
+      'आधी रात को पूर्णिमा सिर्फ़ दूसरे दिन है'
+    else
+      'आधी रात को पूर्णिमा किसी दिन नहीं — ऐसे में दूसरा दिन',
+  ]);
+}
+
 /// **जन्माष्टमी** — धर्मसिंधु, जन्माष्टमीव्रत (पृ. 56–59)। आठ-दस पक्षों के बाद
 /// ग्रंथ का अपना निचोड़ (पृ. 58, «संक्षेपेण निर्णयसंग्रहः»):
 ///
@@ -1400,6 +1462,16 @@ const List<FestivalRule> festivalRules = [
     tithi: 10,
     // सूर्योदय वाला नियम 2024 में 13 अक्टू देता — असल 12 अक्टू
     vyapini: Vyapini.aparahna,
+  ),
+  FestivalRule(
+    id: 'sharad_purnima',
+    name: 'शरद पूर्णिमा',
+    masa: 6, // आश्विन
+    paksha: 0,
+    tithi: 15, // पूर्णिमा
+    // कोजागर व्रत — रात को लक्ष्मी पूजन और जागरण; धर्मसिंधु का नियम (→ D-130)
+    vyapini: Vyapini.nishitha,
+    nirnaya: Nirnaya.kojagara,
   ),
   FestivalRule(
     id: 'karwa_chauth',

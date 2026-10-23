@@ -106,6 +106,18 @@ void main() {
         (2029, 10, 16),
         (2030, 10, 6)
       ],
+      // → D-130: संदर्भ-पंचांग के दिन-पन्ने, सातों साल «Kojagara Puja» और
+      // «Sharad Purnima» उसी दिन। 2027 और 2028 में दूसरे दिन शाम को भी
+      // पूर्णिमा है («केचित्» वाला मत) — पन्ना पहला दिन लिखता है, ग्रंथ भी।
+      'sharad_purnima': [
+        (2024, 10, 16),
+        (2025, 10, 6),
+        (2026, 10, 25),
+        (2027, 10, 14),
+        (2028, 10, 2),
+        (2029, 10, 21),
+        (2030, 10, 10)
+      ],
       'karwa_chauth': [
         (2024, 10, 20),
         (2025, 10, 10),
@@ -316,7 +328,7 @@ void main() {
     FestivalDate nikalo(String id, int year) => findFestival(
         festivalRules.firstWhere((r) => r.id == id), year, Place.delhi)!;
 
-    test('पाँचों पर निर्णय लगा है, बाक़ी पंद्रह पर नहीं', () {
+    test('छहों पर निर्णय लगा है (पाँच D-117, शरद पूर्णिमा D-130), बाक़ी पंद्रह पर नहीं', () {
       final nirnayWale = {
         for (final r in festivalRules)
           if (r.nirnaya != Nirnaya.vyapini) r.id: r.nirnaya
@@ -327,6 +339,7 @@ void main() {
         'raksha_bandhan': Nirnaya.raksha,
         'janmashtami': Nirnaya.janmashtami,
         'diwali': Nirnaya.lakshmiPujan,
+        'sharad_purnima': Nirnaya.kojagara,
       });
       for (final r in festivalRules) {
         final f = findFestival(r, 2027, Place.delhi)!;
@@ -659,6 +672,7 @@ void main() {
       'dussehra': [9, 10],
       'karwa_chauth': [10, 11],
       'chhath': [10, 11],
+      'sharad_purnima': [9, 10, 11],
     };
 
     for (var year = 2024; year <= 2032; year++) {

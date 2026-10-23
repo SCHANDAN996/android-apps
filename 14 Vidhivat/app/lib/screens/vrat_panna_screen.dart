@@ -117,6 +117,9 @@ class _Panna extends StatelessWidget {
         if (panna.engine != null) ...[
           chhota,
           _AglaDin(engineId: panna.engine!),
+        ] else if (panna.festival != null) ...[
+          chhota,
+          _TyoharKaDin(festivalId: panna.festival!),
         ],
         beech,
 
@@ -332,6 +335,57 @@ class _AglaDinState extends State<_AglaDin> {
           tone: d.kitneDinBaad == 0
               ? VidhivatStatusTone.success
               : VidhivatStatusTone.info,
+        );
+      },
+    );
+  }
+}
+
+/// साल के व्रत की अगली तारीख़ — इंजन के त्योहार-नियम से (→ D-130)।
+/// नियम दो दिन दावेदार बताए तो दूसरा दिन भी।
+class _TyoharKaDin extends StatefulWidget {
+  final String festivalId;
+
+  const _TyoharKaDin({required this.festivalId});
+
+  @override
+  State<_TyoharKaDin> createState() => _TyoharKaDinState();
+}
+
+class _TyoharKaDinState extends State<_TyoharKaDin> {
+  late final Future<FestivalDate?> _agla = () async {
+    final ab = DateTime.now();
+    final aaj = DateTime.utc(ab.year, ab.month, ab.day);
+    for (final saal in [ab.year, ab.year + 1]) {
+      for (final f in festivalsInYear(saal, settings.place)) {
+        if (f.rule.id == widget.festivalId && !f.date.isBefore(aaj)) return f;
+      }
+    }
+    return null;
+  }();
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<FestivalDate?>(
+      future: _agla,
+      builder: (context, snap) {
+        final f = snap.data;
+        if (f == null) return const SizedBox.shrink();
+        final ab = DateTime.now();
+        final baad =
+            f.date.difference(DateTime.utc(ab.year, ab.month, ab.day)).inDays;
+        final kab = switch (baad) {
+          0 => 'आज',
+          1 => 'कल',
+          2 => 'परसों',
+          _ => '$baad दिन बाद',
+        };
+        final doosra = f.otherCandidate;
+        return VidhivatStatusChip(
+          label: 'अगला: $kab · ${tarikhChhoti(f.date)}'
+              '${doosra == null ? '' : ' (कुछ पंचांगों में ${tarikhChhoti(doosra)})'}',
+          icon: Icons.event_outlined,
+          tone: baad == 0 ? VidhivatStatusTone.success : VidhivatStatusTone.info,
         );
       },
     );

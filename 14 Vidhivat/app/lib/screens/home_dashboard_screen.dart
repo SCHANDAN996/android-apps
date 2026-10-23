@@ -10,6 +10,7 @@ import '../vidhi/parv.dart';
 import '../vidhi/parv_aaj.dart';
 import '../vidhi/parv_home.dart';
 import '../vidhi/vidhi.dart';
+import '../vidhi/vrat_artwork.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
 import 'muhurta_screen.dart';
@@ -19,6 +20,7 @@ import 'parv_kholo.dart';
 import 'sankalp_screen.dart';
 import 'settings_screen.dart';
 import 'vidhi_screen.dart';
+import 'vrat_panna_screen.dart';
 import 'vrat_screen.dart';
 
 /// The four-tab shell's starting point. It composes only real catalogue,
@@ -277,12 +279,19 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
         upar: avsar.kabLikha,
         naam: avsar.naam,
         neeche: avsar.kyon,
-        artwork: DevotionalAssets.forVidhiId(avsar.pujaId).assetPath,
+        artwork: avsar.vratKhulega
+            ? VratArtwork.forVratId(avsar.vratId).assetPath
+            : DevotionalAssets.forVidhiId(avsar.pujaId).assetPath,
         pujaId: avsar.khulSaktiHai ? avsar.pujaId : null,
+        vratId: avsar.vratKhulega ? avsar.vratId : null,
         samayAurCharan: vidhi == null
             ? null
             : '${vidhi.samayLikha}  •  ${vidhi.charan.length} चरण',
-        bulawa: avsar.khulSaktiHai ? 'विधि देखें' : 'विधि अभी नहीं',
+        bulawa: avsar.khulSaktiHai
+            ? 'विधि देखें'
+            : avsar.vratKhulega
+                ? 'व्रत देखें'
+                : 'विधि अभी नहीं',
       ));
     }
     if (navratriPatta != null) patte.add(navratriPatta);
@@ -691,7 +700,8 @@ class _PujaPatta extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = VidhivatTheme.colorsOf(context);
     final type = VidhivatTheme.typographyOf(context);
-    final khulSaktaHai = patta.pujaId != null || patta.parvId != null;
+    final khulSaktaHai =
+        patta.pujaId != null || patta.parvId != null || patta.vratId != null;
 
     return Semantics(
       container: true,
@@ -825,7 +835,14 @@ class _PujaPatta extends StatelessWidget {
                               semanticLabel: '${patta.naam} — ${patta.bulawa}',
                               onPressed: () => patta.parvId != null
                                   ? onParvOpen(patta.parvId!)
-                                  : onOpen(patta.pujaId!),
+                                  : patta.vratId != null
+                                      ? Navigator.of(context).push(
+                                          MaterialPageRoute<void>(
+                                            builder: (_) => VratPannaScreen(
+                                                id: patta.vratId!),
+                                          ),
+                                        )
+                                      : onOpen(patta.pujaId!),
                               compact: true,
                               fullWidth: true,
                             ),
@@ -895,6 +912,9 @@ class _Patta {
   /// दोनों `null` हों तो पत्ता खुलता ही नहीं (विधि अभी बनी नहीं)।
   final String? parvId;
 
+  /// कोई विधि नहीं, व्रत-पन्ना खुले — शरद पूर्णिमा (→ D-130)।
+  final String? vratId;
+
   /// "22 मिनट • 9 चरण", या अधूरी पूजा पर "चरण 8 / 9"।
   /// विधि न हो तो `null`।
   final String? samayAurCharan;
@@ -916,6 +936,7 @@ class _Patta {
     required this.samayAurCharan,
     required this.bulawa,
     this.parvId,
+    this.vratId,
     this.canRemoveProgress = false,
     this.samayChihn = Icons.schedule_outlined,
   });

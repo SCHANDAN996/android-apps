@@ -54,6 +54,9 @@ class PujaAvsar {
 
   final AvsarKaKaran karan;
 
+  /// विधि नहीं, पर व्रत-पन्ना (`assets/vrat/`) है — उसकी `id` ([tyoharKaVrat])।
+  final String vratId;
+
   const PujaAvsar({
     required this.tarikh,
     required this.kitneDinBaad,
@@ -61,10 +64,14 @@ class PujaAvsar {
     required this.naam,
     required this.kyon,
     required this.karan,
+    this.vratId = '',
   });
 
   /// इस पूजा का अपना पन्ना ऐप में है या नहीं।
   bool get khulSaktiHai => pujaId.isNotEmpty;
+
+  /// विधि नहीं है, पर व्रत-पन्ना खुलेगा।
+  bool get vratKhulega => pujaId.isEmpty && vratId.isNotEmpty;
 
   /// "आज" · "कल" · "परसों" · "12 दिन बाद"
   String get kabLikha => switch (kitneDinBaad) {
@@ -102,6 +109,13 @@ const Map<String, String> tyoharKiPuja = {
   'छठ पूजा': 'chhath_pooja',
   'पितृ पक्ष आरम्भ': 'shraadh',
   'सर्वपितृ अमावस्या': 'shraadh',
+};
+
+/// त्योहार का नाम → व्रत-पन्ने (`assets/vrat/`) की `id` — जिसकी कदम-दर-कदम
+/// विधि नहीं, पर "क्या करें" वाला पूरा पन्ना है (→ D-130)। होम की पट्टी,
+/// कैलेंडर और "आज" — तीनों से वही पन्ना खुलता है।
+const Map<String, String> tyoharKaVrat = {
+  'शरद पूर्णिमा': 'sharad_purnima',
 };
 
 /// हर महीने वाली पूजा के नीचे की लाइन — पक्ष सहित, और जिस तिथि का अपना
@@ -292,6 +306,7 @@ List<PujaAvsar> aaneWaliPujaayein({
         naam: tyohar.rule.name,
         kyon: 'त्योहार',
         karan: AvsarKaKaran.tyohar,
+        vratId: khulegi.isEmpty ? (tyoharKaVrat[tyohar.rule.name] ?? '') : '',
       ));
     }
   }

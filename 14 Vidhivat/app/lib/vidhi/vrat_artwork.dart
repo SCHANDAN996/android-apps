@@ -77,6 +77,8 @@ abstract final class VratArtwork {
     'pradosh': _pradosh,
     'sankashti': _sankashti,
     'purnima': _purnima,
+    // अपना चित्र बनने तक पूर्णिमा वाला — चाँद और कलश (→ D-130)
+    'sharad_purnima': _purnima,
     'amavasya': _shraadh,
     'masik_shivratri': _pradosh,
     'vinayak_chaturthi': _ganesha,

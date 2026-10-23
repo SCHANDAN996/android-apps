@@ -2987,3 +2987,19 @@ PPLH (ऐतिहासिक), PPLW (नष्ट) — 8,974; एक ज़ि
 | डेटा का लाइसेंस — ODbL, श्रेय «© OpenStreetMap contributors» | `https://www.openstreetmap.org/copyright` |
 | OSM Foundation की privacy policy (यूज़र की privacy policy §4 में इसी का पता) | `https://osmfoundation.org/wiki/Privacy_Policy` |
 | खाने: `format=jsonv2`, `countrycodes=in`, `featureType=settlement`, `addressdetails=1`, `accept-language=hi,en` | `https://nominatim.org/release-docs/latest/api/Search/` |
+
+
+---
+
+## ३९. शरद पूर्णिमा (कोजागर) — दिन का नियम और पन्ना (23 अक्टूबर 2026, → D-130)
+
+| | पुस्तक | स्कैन | छपा पृष्ठ (leaf) | क्या लिया |
+|---|---|---|---|---|
+| **ध** | धर्मसिंधु (§३० वाली प्रति) | <https://archive.org/details/DHARMASINDHU> | 89 (116) | दिन का नियम; लक्ष्मी-इन्द्र पूजन, «ॐ लक्ष्म्यै नमः», «इन्द्राय नमः»; «निशीथे वरदा लक्ष्मीः…» |
+| **नि** | निर्णयसिंधु, भाषाटीका (§३१ वाली प्रति) | <https://archive.org/details/NirnayaSindhuHindi> | 285 (327) | जागरण, लक्ष्मी और ऐरावत पर इन्द्र; «निशीथे वरदा लक्ष्मीः…» (दूसरा गवाह) |
+| **व्र** | व्रत-परिचय, गीताप्रेस (§३१ वाली प्रति) | (§३१) | 160–161 (180–181) | दीपक; गाय के दूध की खीर, आधी रात को अर्पण, चंद्र-पूजन, अगले दिन भोजन; «केचित्» वाला दिन-नियम |
+
+- सब पन्ने **आँख से पढ़े**; OCR सिर्फ़ जगह ढूँढने को। ध की पुष्पांजलि «नमस्ते सर्वदेवानां…» नि में नहीं — ऐप में नहीं दी।
+- **संदर्भ-पंचांग:** दिन-पन्ने `https://www.drikpanchang.com/panchang/day-panchang.html?geoname-id=1273294&date=DD/MM/YYYY`
+  (दिल्ली), 2024–2030 — हर पन्ने की अपनी पर्व-सूची में «Kojagara Puja» और «Sharad Purnima» उसी दिन।
+- करवा चौथ का चंद्रोदय (29/10/2026, दिल्ली): वही पन्ना 08:17 PM; इंजन 20:12 (→ `docs/08` §5.5)।

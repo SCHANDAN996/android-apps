@@ -131,6 +131,10 @@ class VratPanna {
   /// इंजन के `VratNiyam` की id, जिनकी तारीख़ ऐप गिनता है।
   final String? engine;
 
+  /// साल के व्रत में इंजन के त्योहार-नियम की id (`sharad_purnima`,
+  /// `janmashtami`…) — तब पन्ना अगली तारीख़ दिखाता है (→ D-130)।
+  final String? festival;
+
   // ── भाव और माहात्म्य
   final String bhav;
   final String mahatmyaKathan;
@@ -170,6 +174,7 @@ class VratPanna {
     required this.kitniBaar,
     required this.doDin,
     required this.engine,
+    this.festival,
     required this.bhav,
     required this.mahatmyaKathan,
     required this.mahatmyaStrot,
@@ -227,6 +232,7 @@ class VratPanna {
       kitniBaar: _str(file, kab, 'kitniBaar'),
       doDin: _str(file, kab, 'doDin', required: false),
       engine: niyamKab['engine'] as String?,
+      festival: niyamKab['festival'] as String?,
       bhav: _str(file, j, 'bhav'),
       mahatmyaKathan: _str(file, mahatmya, 'kathan'),
       mahatmyaStrot: _str(file, mahatmya, 'strot'),
