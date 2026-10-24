@@ -82,6 +82,8 @@ abstract final class VratArtwork {
     'sankashti': _sankashti,
     'purnima': _purnima,
     'sharad_purnima': _sharadPurnima, // → D-130
+    'tulsi_vivah': DevotionalAssets.tulsi, // → D-140
+    'kartik_purnima': DevotionalAssets.diya, // दीपदान — → D-140
     'amavasya': _shraadh,
     'masik_shivratri': _pradosh,
     'vinayak_chaturthi': _ganesha,

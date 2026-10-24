@@ -560,6 +560,7 @@ app/lib/screens/
 | `app/lib/widgets/vinati_sheet.dart` | `dakshinaVinatiDikhao` — नीचे की पट्टी; पैसा नहीं, बस `DakshinaScreen` खोलती है |
 | `app/lib/main.dart` → `HomeShell.didPopNext` | पट्टी उठने की इकलौती जगह — किसी पन्ने से लौटने पर, दो सेकंड बाद |
 | `engine/tool/kojagar_aazmao.dart` | शरद पूर्णिमा — हर साल पूर्णिमा, आधी रातें, प्रदोष और चुना दिन (संदर्भ से मिलाने को) |
+| `engine/tool/tulsi_aazmao.dart` | तुलसी विवाह, देव दीपावली, कार्तिक पूर्णिमा — हर साल तिथि, सूर्योदय, प्रदोष और चुना दिन (→ D-140) |
 | `app/lib/widgets/katha_khand.dart` | `KathaKhand` — प्लेयर और कथा-पन्ना दोनों |
 | `app/lib/widgets/mantra_khand.dart` | `MantraKhand`, `PaathKeBaareMein` |
 | `tools/jaancho_vrat.py` | कंटेंट की जाँच, बिना Flutter |

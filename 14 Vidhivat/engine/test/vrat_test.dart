@@ -33,15 +33,29 @@ void main() {
           v.tarikh.day,
           dilli,
         );
-        final pakshaKaTithi = (p.tithi.index % 15) + 1;
+        // क्षय तिथि का व्रत उस दिन, जिसके भीतर वह लगती-उतरती है (→ D-140)
+        final index = v.tithiNaam.endsWith('(क्षय)')
+            ? p.kshayaTithiIndex!
+            : p.tithi.index;
+        final pakshaKaTithi = (index % 15) + 1;
 
         expect(pakshaKaTithi, v.niyam.tithi,
             reason: '${v.niyam.naam} ${v.tarikh} पर ग़लत तिथि');
         if (v.niyam.paksha != null) {
-          expect(p.paksha, v.niyam.paksha,
+          expect(index < 15 ? 0 : 1, v.niyam.paksha,
               reason: '${v.niyam.naam} ${v.tarikh} पर ग़लत पक्ष');
         }
       }
+    });
+
+    test('क्षय एकादशी छूटती नहीं — देवउठनी 2026, 20 नवंबर (→ D-140)', () {
+      // 20 नव 07:15 से 21 नव 06:31 — दोनों सूर्योदय (06:47, 06:48) से बाहर।
+      // पहले सूची में यह एकादशी थी ही नहीं।
+      final ekadashi = nikalo(se: DateTime(2026, 11, 15), dinAage: 10)
+          .where((v) => v.niyam.id == 'ekadashi')
+          .toList();
+      expect(ekadashi.map((v) => v.tarikh), [DateTime(2026, 11, 20)]);
+      expect(ekadashi.single.tithiNaam, 'शुक्ल एकादशी (क्षय)');
     });
 
     test('एकादशी दोनों पक्षों में आती है', () {
@@ -63,8 +77,8 @@ void main() {
     test('अमावस्या कृष्ण में, पूर्णिमा शुक्ल में — कभी उल्टा नहीं', () {
       for (final v in nikalo(se: DateTime(2026, 1, 1), dinAage: 120)) {
         if (v.niyam.id != 'purnima' && v.niyam.id != 'amavasya') continue;
-        final p = computePanchang(
-            v.tarikh.year, v.tarikh.month, v.tarikh.day, dilli);
+        final p =
+            computePanchang(v.tarikh.year, v.tarikh.month, v.tarikh.day, dilli);
         expect(p.paksha, v.niyam.id == 'purnima' ? 0 : 1,
             reason: '${v.niyam.naam} ${v.tarikh}');
       }
@@ -75,8 +89,8 @@ void main() {
         if (v.niyam.id != 'sankashti' && v.niyam.id != 'masik_shivratri') {
           continue;
         }
-        final p = computePanchang(
-            v.tarikh.year, v.tarikh.month, v.tarikh.day, dilli);
+        final p =
+            computePanchang(v.tarikh.year, v.tarikh.month, v.tarikh.day, dilli);
         expect(p.paksha, 1, reason: '${v.niyam.naam} ${v.tarikh}');
       }
     });
@@ -101,8 +115,8 @@ void main() {
     test('kitneDinBaad सचमुच उतने ही दिन है', () {
       final se = DateTime(2026, 3, 1);
       for (final v in nikalo(se: se, dinAage: 40)) {
-        expect(v.tarikh.difference(DateTime(2026, 3, 1)).inDays,
-            v.kitneDinBaad);
+        expect(
+            v.tarikh.difference(DateTime(2026, 3, 1)).inDays, v.kitneDinBaad);
       }
     });
 

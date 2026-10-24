@@ -116,6 +116,11 @@ const Map<String, String> tyoharKiPuja = {
 /// कैलेंडर और "आज" — तीनों से वही पन्ना खुलता है।
 const Map<String, String> tyoharKaVrat = {
   'शरद पूर्णिमा': 'sharad_purnima',
+  // → D-140। कार्तिक पूर्णिमा के दो काम (सुबह स्नान-दान, शाम का दीपदान) इंजन में
+  // दो नियम हैं — अक्सर दो दिन; पन्ना एक, जो दोनों बताता है।
+  'तुलसी विवाह': 'tulsi_vivah',
+  'कार्तिक पूर्णिमा': 'kartik_purnima',
+  'देव दीपावली': 'kartik_purnima',
 };
 
 /// हर महीने वाली पूजा के नीचे की लाइन — पक्ष सहित, और जिस तिथि का अपना
@@ -291,6 +296,9 @@ List<PujaAvsar> aaneWaliPujaayein({
     }
   }
 
+  // एक दिन पर एक व्रत-पन्ना एक ही बार — कार्तिक पूर्णिमा और देव दीपावली
+  // अक्सर अलग दिन हैं, पर जिस साल एक ही दिन पड़ें, दो पत्ते एक ही पन्ना खोलते।
+  final vratDin = <String>{};
   for (var i = 0; i <= dinAage; i++) {
     final din = shuru.add(Duration(days: i));
     for (final tyohar in tyoharTarikh[din] ?? const <FestivalDate>[]) {
@@ -299,6 +307,9 @@ List<PujaAvsar> aaneWaliPujaayein({
       // एक पूजा एक ही बार — पितृ पक्ष का आरम्भ और अमावस्या दोनों श्राद्ध
       // खोलते हैं; पहला वाला काफ़ी है।
       if (khulegi.isNotEmpty && !tyoharKiIds.add(khulegi)) continue;
+      final vratId =
+          khulegi.isEmpty ? (tyoharKaVrat[tyohar.rule.name] ?? '') : '';
+      if (vratId.isNotEmpty && !vratDin.add('$din|$vratId')) continue;
       tyoharAvsar.add(PujaAvsar(
         tarikh: din,
         kitneDinBaad: i,
@@ -306,7 +317,7 @@ List<PujaAvsar> aaneWaliPujaayein({
         naam: tyohar.rule.name,
         kyon: 'त्योहार',
         karan: AvsarKaKaran.tyohar,
-        vratId: khulegi.isEmpty ? (tyoharKaVrat[tyohar.rule.name] ?? '') : '',
+        vratId: vratId,
       ));
     }
   }

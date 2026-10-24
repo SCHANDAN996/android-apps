@@ -95,6 +95,10 @@ enum Nirnaya {
   /// शरद पूर्णिमा (कोजागर व्रत) — आधी रात की पूर्णिमा; दोनों दिन हो या किसी दिन
   /// न हो तो दूसरा दिन (→ D-130)
   kojagara,
+
+  /// तुलसी विवाह — एकादशी व्रत के पारण वाला दिन (द्वादशी), रात का पहला भाग
+  /// (→ D-140)
+  paranDin,
 }
 
 extension NirnayaName on Nirnaya {
@@ -103,6 +107,7 @@ extension NirnayaName on Nirnaya {
         Nirnaya.holika => 'भद्रा रहित',
         Nirnaya.raksha => 'उदय के बाद तीन मुहूर्त से अधिक, भद्रा रहित',
         Nirnaya.janmashtami => 'रोहिणी का योग देखकर',
+        Nirnaya.paranDin => 'एकादशी व्रत के पारण वाले दिन, रात के पहले भाग में',
         Nirnaya.vyapini ||
         Nirnaya.ramNavami ||
         Nirnaya.lakshmiPujan ||
@@ -416,6 +421,8 @@ FestivalDate? findFestival(
       Nirnaya.janmashtami => _janmashtami(rule, tithi, place),
       Nirnaya.lakshmiPujan => _lakshmiPujan(rule, tithi, place),
       Nirnaya.kojagara => _kojagara(rule, tithi, place),
+      Nirnaya.paranDin => _paranDin(rule, tithi,
+          _tithiInterval(rule.tithiIndex - 1, month.newMoonJd, place), place),
     };
     if (result != null) return _vaarPehle(rule, result);
   }
@@ -1015,8 +1022,7 @@ FestivalDate? _lakshmiPujan(FestivalRule rule, _Antaral tithi, Place place) {
     final doosra = _aglaDin(pehla, place);
     final chhuaKoi = d.isNotEmpty;
     if (doosra != null) {
-      final saadheTeenPrahar =
-          doosra.ast.difference(doosra.uday) * (3.5 / 4);
+      final saadheTeenPrahar = doosra.ast.difference(doosra.uday) * (3.5 / 4);
       final udayKeBaad = tithi.end.difference(doosra.uday);
       if (udayKeBaad > saadheTeenPrahar) {
         return _nirnit(rule, tithi, null, place,
@@ -1124,6 +1130,76 @@ FestivalDate? _kojagara(FestivalRule rule, _Antaral tithi, Place place) {
       'आधी रात को पूर्णिमा सिर्फ़ दूसरे दिन है'
     else
       'आधी रात को पूर्णिमा किसी दिन नहीं — ऐसे में दूसरा दिन',
+  ]);
+}
+
+/// **तुलसी विवाह** — धर्मसिंधु, कार्तिक मास (पृ. 98; पन्ना आँख से पढ़ा, → D-140):
+///
+/// «एवं तुलसीविवाहस्य नवम्यादिदिनत्रये एकादश्यादिपूर्णिमांते यत्र क्वापि दिने …
+/// विधानादनेककालत्वं तथापि पारणाहे प्रबोधोत्सवकर्मणा सह तंत्रतयैव सर्वत्रानुष्ठीयते
+/// इति सोऽपि पारणाहे पूर्वरात्रौ कार्यः»
+///
+/// — यानी कई दिन लिखे हैं, पर चलन प्रबोधोत्सव के साथ **पारण वाले दिन, रात के पहले
+/// भाग में**। पारण द्वादशी में होता है; वराह पुराण का उत्थापन मंत्र भी यही कहता है —
+/// «इयं तु द्वादशी देव प्रबोधाय विनिर्मिता» (निर्णयसिंधु और व्रत-परिचय, दोनों में)।
+/// द्वादशी न मिले तो भी «पारणाहे» — वही पन्ना: «द्वादश्यभावेऽपि त्रयोदश्यामेव
+/// पारणाहे प्रबोधोत्सव इति देशाचारः»।
+///
+/// इसलिए [FestivalRule.tithi] **द्वादशी** है, और दिन:
+/// - जिस पहले दिन सूर्योदय पर द्वादशी हो (द्वादशी दो सूर्योदय छुए तब भी पहला —
+///   एकादशी का व्रत उससे पिछले दिन था);
+/// - द्वादशी किसी सूर्योदय को न छुए (2025) — वह दिन जिसमें द्वादशी पड़ती है; उसी
+///   दिन एकादशी उतरती है और पारण होता है;
+/// - एकादशी ख़ुद दो सूर्योदय छुए — व्रत दो मत से दो दिन, तो पारण भी दो: पहला चुना,
+///   दूसरा `otherCandidate` में। (2015–2040 में कार्तिक में ऐसा एक भी साल नहीं।)
+///
+/// कई घरों में विवाह एकादशी की शाम को ही होता है — वह घर का चलन है, नियम नहीं
+/// बदलता; व्रत-पन्ना यह बात लिखता है।
+FestivalDate? _paranDin(
+    FestivalRule rule, _Antaral tithi, _Antaral ekadashi, Place place) {
+  List<_Din> udayaMein(_Antaral t) {
+    final mile = <_Din>[];
+    for (_Din? d = _hinduDin(t.start, place);
+        d != null && d.uday.isBefore(t.end);
+        d = _aglaDin(d, place)) {
+      if (!d.uday.isBefore(t.start)) mile.add(d);
+    }
+    return mile;
+  }
+
+  final ekUdaya = udayaMein(ekadashi);
+  final dwUdaya = udayaMein(tithi);
+  final ekLine = 'एकादशी (व्रत) — ${_stamp(ekadashi.start)} से '
+      '${_stamp(ekadashi.end)} तक';
+
+  if (ekUdaya.length > 1) {
+    final paran = ekUdaya[1];
+    final agla = _aglaDin(paran, place);
+    return _nirnit(rule, tithi, null, place,
+        din: paran.din,
+        doosra: agla?.din,
+        kyon: [
+          ekLine,
+          'एकादशी दो सूर्योदय तक रही — व्रत के दो मत, इसलिए पारण के दोनों दिन '
+              'दिखाए हैं',
+        ]);
+  }
+
+  if (dwUdaya.isNotEmpty) {
+    return _nirnit(rule, tithi, null, place, din: dwUdaya.first.din, kyon: [
+      ekLine,
+      if (dwUdaya.length > 1)
+        'द्वादशी दो सूर्योदय तक — पारण पहले दिन'
+      else
+        'सूर्योदय पर द्वादशी — यही पारण का दिन',
+    ]);
+  }
+
+  final din = _hinduDin(tithi.start, place);
+  if (din == null) return null;
+  return _nirnit(rule, tithi, null, place, din: din.din, kyon: [
+    ekLine,
+    'द्वादशी किसी सूर्योदय को नहीं छूती — पारण उसी दिन, जिसमें द्वादशी है',
   ]);
 }
 
@@ -1292,9 +1368,13 @@ String _explain(
   final visheshan = rule.nirnaya.visheshan;
   final lines = <String>[
     '${rule.masaName} ${rule.pakshaName} ${rule.tithiName}',
-    visheshan == null
-        ? rule.vyapini.hindi
-        : '${rule.vyapini.hindi} — $visheshan',
+    if (visheshan == null)
+      rule.vyapini.hindi
+    // पारण वाले दिन की तिथि एकादशी नहीं रहती — «प्रदोष व्यापिनी» लिखना ग़लत होता
+    else if (rule.nirnaya == Nirnaya.paranDin)
+      visheshan
+    else
+      '${rule.vyapini.hindi} — $visheshan',
     '${rule.tithiName} — ${_stamp(tithi.start)} से ${_stamp(tithi.end)} तक',
   ];
 
@@ -1526,6 +1606,39 @@ const List<FestivalRule> festivalRules = [
     // है, संदर्भ-पंचांग 1 नवम्बर लिखता है। सात साल (2024–2030) पर सिर्फ़
     // सूर्योदय ही सातों बार मिला (→ D-117, `tool/vyapini_aazmao.dart`)।
     vyapini: Vyapini.sunrise,
+  ),
+  FestivalRule(
+    id: 'tulsi_vivah',
+    name: 'तुलसी विवाह',
+    masa: 7, // कार्तिक
+    paksha: 0,
+    tithi: 12, // द्वादशी — प्रबोधिनी एकादशी के पारण का दिन
+    // काल = उस दिन का प्रदोष: धर्मसिंधु का «पूर्वरात्रौ»
+    vyapini: Vyapini.pradosha,
+    nirnaya: Nirnaya.paranDin,
+  ),
+  // कार्तिक पूर्णिमा के दो काम, अक्सर दो अलग दिन (2027–2030 में चारों साल):
+  // स्नान-दान सुबह की पूर्णिमा पर, और त्रिपुरोत्सव का दीपदान शाम की पूर्णिमा पर
+  // (→ D-140)। एक ही दिन पड़ें तो होम पर एक पत्ता — इसी क्रम से पहला वाला।
+  FestivalRule(
+    id: 'kartik_purnima',
+    name: 'कार्तिक पूर्णिमा',
+    masa: 7, // कार्तिक
+    paksha: 0,
+    tithi: 15, // पूर्णिमा
+    // स्नान-दान — निर्णयसिंधु (पृ. 311): «कार्तिकी पौर्णमासी परा ग्राह्या।
+    // ‘अमापौर्णमास्यौ परे’ इति दीपिकोक्तेः»
+    vyapini: Vyapini.sunrise,
+  ),
+  FestivalRule(
+    id: 'dev_deepawali',
+    name: 'देव दीपावली',
+    masa: 7, // कार्तिक
+    paksha: 0,
+    tithi: 15, // पूर्णिमा
+    // निर्णयसिंधु (पृ. 312, भार्गवार्चनदीपिका से) और व्रत-परिचय (पृ. 188):
+    // «पौर्णमास्यां तु सन्ध्यायां कर्तव्यस्त्रिपुरोत्सवः»
+    vyapini: Vyapini.pradosha,
   ),
 ];
 

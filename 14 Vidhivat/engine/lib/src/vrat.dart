@@ -162,20 +162,38 @@ List<VratDin> aaneWaleVrat({
       masaSystem: masaSystem,
     );
 
-    // तिथि 0..29 से गिनी जाती है; पक्ष के भीतर 1..15 चाहिए।
-    final pakshaKaTithi = (p.tithi.index % 15) + 1;
+    // सूर्योदय वाली तिथि — और क्षय तिथि भी। क्षय तिथि किसी सूर्योदय को नहीं
+    // छूती, इसलिए सिर्फ़ सूर्योदय देखने पर उसका व्रत ग़ायब हो जाता था (2026 की
+    // देवउठनी एकादशी: 20 नवंबर 07:15 से 21 नवंबर 06:31)। वह इसी दिन के भीतर
+    // लगती और उतरती है, तो व्रत इसी दिन — संदर्भ-पंचांग भी 20 नवंबर (→ D-140)।
+    final kshaya = p.kshayaTithiIndex;
+    final tithiyan = [
+      (index: p.tithi.index, naam: '${p.pakshaName} ${p.tithi.name}'),
+      if (kshaya != null)
+        (
+          index: kshaya,
+          naam: '${pakshaNames[kshaya < 15 ? 0 : 1]} ${tithiNames[kshaya]} '
+              '(क्षय)',
+        ),
+    ];
 
-    for (final niyam in vratNiyam) {
-      if (niyam.tithi != pakshaKaTithi) continue;
-      if (niyam.paksha != null && niyam.paksha != p.paksha) continue;
+    for (final t in tithiyan) {
+      // तिथि 0..29 से गिनी जाती है; पक्ष के भीतर 1..15 चाहिए।
+      final pakshaKaTithi = (t.index % 15) + 1;
+      final paksha = t.index < 15 ? 0 : 1;
 
-      mile.add(VratDin(
-        niyam: niyam,
-        tarikh: din,
-        kitneDinBaad: i,
-        tithiNaam: '${p.pakshaName} ${p.tithi.name}',
-      ));
-      if (mile.length == kitne) break;
+      for (final niyam in vratNiyam) {
+        if (mile.length == kitne) break;
+        if (niyam.tithi != pakshaKaTithi) continue;
+        if (niyam.paksha != null && niyam.paksha != paksha) continue;
+
+        mile.add(VratDin(
+          niyam: niyam,
+          tarikh: din,
+          kitneDinBaad: i,
+          tithiNaam: t.naam,
+        ));
+      }
     }
   }
 

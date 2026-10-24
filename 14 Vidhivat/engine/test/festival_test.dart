@@ -136,6 +136,38 @@ void main() {
         (2029, 11, 11),
         (2030, 11, 1) // अपराह्न वाला नियम 31 अक्टू देता था — संदर्भ में 1 नव
       ],
+      // → D-140: धर्मसिंधु पृ. 98 — प्रबोधिनी के पारण वाले दिन। 2024–2026 कई
+      // पंचांग-पन्नों से, 2027–2030 DekhoPanchang से। 2025 में द्वादशी किसी
+      // सूर्योदय को नहीं छूती — पहला ढाँचा (एकादशी-सूर्योदय + 1) 3 नव देता था।
+      'tulsi_vivah': [
+        (2024, 11, 13),
+        (2025, 11, 2),
+        (2026, 11, 21),
+        (2027, 11, 11),
+        (2028, 10, 29),
+        (2029, 11, 17),
+        (2030, 11, 6)
+      ],
+      // → D-140: प्रदोष वाली पूर्णिमा। 2027 और 2028 Drik के देव दीपावली पन्ने
+      // से (13 नव, 1 नव) — दोनों साल कार्तिक पूर्णिमा से एक दिन पहले।
+      'dev_deepawali': [
+        (2024, 11, 15),
+        (2025, 11, 5),
+        (2026, 11, 24),
+        (2027, 11, 13),
+        (2028, 11, 1),
+        (2029, 11, 20),
+        (2030, 11, 9)
+      ],
+      'kartik_purnima': [
+        (2024, 11, 15),
+        (2025, 11, 5),
+        (2026, 11, 24),
+        (2027, 11, 14),
+        (2028, 11, 2),
+        (2029, 11, 21),
+        (2030, 11, 10)
+      ],
     };
 
     for (final entry in verified.entries) {
@@ -328,7 +360,9 @@ void main() {
     FestivalDate nikalo(String id, int year) => findFestival(
         festivalRules.firstWhere((r) => r.id == id), year, Place.delhi)!;
 
-    test('छहों पर निर्णय लगा है (पाँच D-117, शरद पूर्णिमा D-130), बाक़ी पंद्रह पर नहीं', () {
+    test(
+        'सातों पर निर्णय लगा है (पाँच D-117, शरद पूर्णिमा D-130, तुलसी विवाह D-140), बाक़ी सत्रह पर नहीं',
+        () {
       final nirnayWale = {
         for (final r in festivalRules)
           if (r.nirnaya != Nirnaya.vyapini) r.id: r.nirnaya
@@ -340,6 +374,7 @@ void main() {
         'janmashtami': Nirnaya.janmashtami,
         'diwali': Nirnaya.lakshmiPujan,
         'sharad_purnima': Nirnaya.kojagara,
+        'tulsi_vivah': Nirnaya.paranDin,
       });
       for (final r in festivalRules) {
         final f = findFestival(r, 2027, Place.delhi)!;
@@ -353,9 +388,11 @@ void main() {
     // पहले «काल छुआ नहीं» कहकर पहली रात देता था। ग्रंथकार का मत: दूसरे दिन
     // साढ़े तीन प्रहर से ज़्यादा हो तो दूसरा दिन। उस साल मुंबई में लक्ष्मी पूजा
     // रविवार 3 नवंबर को हुई (उस दिन की छपी ख़बर — JAANCH_SAMASYA_PANJI)।
-    test('दीपावली 2013 मुंबई: दोनों दिन प्रदोष थोड़ा-सा — दूसरा दिन, पहला भी दिखे', () {
-      final f = findFestival(
-          festivalRules.firstWhere((r) => r.id == 'diwali'), 2013, Place.mumbai)!;
+    test(
+        'दीपावली 2013 मुंबई: दोनों दिन प्रदोष थोड़ा-सा — दूसरा दिन, पहला भी दिखे',
+        () {
+      final f = findFestival(festivalRules.firstWhere((r) => r.id == 'diwali'),
+          2013, Place.mumbai)!;
       expect(f.date, DateTime.utc(2013, 11, 3));
       expect(f.otherCandidate, DateTime.utc(2013, 11, 2));
       expect(f.missedKaal, isFalse, reason: 'दोनों दिन प्रदोष को छूती है');
@@ -661,6 +698,49 @@ void main() {
     });
   });
 
+  group('तुलसी विवाह — पारण वाला दिन (→ D-140)', () {
+    final rule = festivalRules.firstWhere((r) => r.id == 'tulsi_vivah');
+
+    test('2025: द्वादशी क्षय — वह दिन जिसमें द्वादशी है, «काल नहीं छुआ» नहीं',
+        () {
+      final f = findFestival(rule, 2025, Place.delhi)!;
+      expect(f.date, DateTime.utc(2025, 11, 2));
+      expect(f.missedKaal, isFalse);
+      expect(f.ambiguous, isFalse);
+      expect(f.explanation, contains('द्वादशी किसी सूर्योदय को नहीं छूती'));
+    });
+
+    test('2028: द्वादशी दो सूर्योदय तक — पहला दिन, एक ही तारीख़', () {
+      final f = findFestival(rule, 2028, Place.delhi)!;
+      expect(f.date, DateTime.utc(2028, 10, 29));
+      expect(f.otherCandidate, isNull);
+      expect(f.explanation, contains('पारण पहले दिन'));
+    });
+
+    test('हिसाब में «प्रदोष व्यापिनी» नहीं — पारण का दिन, और एकादशी का समय',
+        () {
+      final f = findFestival(rule, 2026, Place.delhi)!;
+      expect(f.explanation, isNot(contains('प्रदोष व्यापिनी')));
+      expect(f.explanation, contains('पारण वाले दिन, रात के पहले भाग में'));
+      expect(f.explanation, contains('एकादशी (व्रत) — 20/11'));
+      // काल = उसी दिन का प्रदोष (धर्मसिंधु का «पूर्वरात्रौ»)
+      expect(f.kaalStart.day, 21);
+      expect(f.kaalStart.hour, 17);
+    });
+
+    test(
+        '2015–2040: हमेशा प्रबोधिनी के अगले एक-दो दिन में, कार्तिक पूर्णिमा से पहले',
+        () {
+      final purnima = festivalRules.firstWhere((r) => r.id == 'kartik_purnima');
+      for (var y = 2015; y <= 2040; y++) {
+        final f = findFestival(rule, y, Place.delhi)!;
+        final p = findFestival(purnima, y, Place.delhi)!;
+        final kitne = p.date.difference(f.date).inDays;
+        expect(kitne, inInclusiveRange(2, 4), reason: '$y');
+      }
+    });
+  });
+
   group('किसी भी साल चलता है', () {
     // तारीख़ें हाथ से नहीं भरी गईं, नियम से निकलती हैं — तो किसी भी साल
     // सही मौसम में पड़नी चाहिए। यह जाँच मास-गणना की ग़लती पकड़ती है।
@@ -686,6 +766,9 @@ void main() {
       'karwa_chauth': [10, 11],
       'chhath': [10, 11],
       'sharad_purnima': [9, 10, 11],
+      'tulsi_vivah': [10, 11],
+      'dev_deepawali': [10, 11],
+      'kartik_purnima': [10, 11, 12],
     };
 
     for (var year = 2024; year <= 2032; year++) {
@@ -724,7 +807,12 @@ void main() {
         final found = findFestival(rule, 2026, Place.delhi)!;
 
         expect(found.explanation, contains(rule.tithiName));
-        expect(found.explanation, contains(rule.vyapini.hindi));
+        // पारण वाले दिन तिथि बदल चुकी होती है — वहाँ व्यापिनी नहीं, शर्त (→ D-140)
+        expect(
+            found.explanation,
+            contains(rule.nirnaya == Nirnaya.paranDin
+                ? rule.nirnaya.visheshan!
+                : rule.vyapini.hindi));
         expect(found.explanation, contains('दृक् गणित'));
       }
     });

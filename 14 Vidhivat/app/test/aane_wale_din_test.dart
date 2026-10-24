@@ -449,4 +449,38 @@ void main() {
       expect(maasikKyon(15, 'शुक्ल', 'पूर्णिमा'), 'पूर्णिमा');
     });
   });
+
+  /// विधि नहीं, व्रत-पन्ना खुलता है (→ D-130, D-140)।
+  group('व्रत-पन्ने वाले त्योहार', () {
+    test('हर नाम इंजन का त्योहार है, और हर पन्ना सचमुच है', () {
+      final naam = {for (final r in festivalRules) r.name};
+      for (final e in tyoharKaVrat.entries) {
+        expect(naam, contains(e.key), reason: '"${e.key}" इंजन में नहीं');
+        expect(File('assets/vrat/${e.value}.json').existsSync(), isTrue,
+            reason: '"${e.key}" का पन्ना ${e.value} नहीं है');
+      }
+    });
+
+    test('2026 — तुलसी विवाह 21 नव; 24 नव को एक ही पत्ता, दो नाम होते हुए भी',
+        () {
+      final l = aage(DateTime(2026, 11, 18), kitne: 12, dinAage: 10);
+      final tulsi = l.where((a) => a.vratId == 'tulsi_vivah').single;
+      expect(tulsi.tarikh, DateTime(2026, 11, 21));
+      expect(tulsi.vratKhulega, isTrue);
+      // देव दीपावली और कार्तिक पूर्णिमा, दोनों 24 को — पन्ना एक
+      final kartik = l.where((a) => a.vratId == 'kartik_purnima').toList();
+      expect(kartik, hasLength(1));
+      expect(kartik.single.tarikh, DateTime(2026, 11, 24));
+      expect(kartik.single.naam, 'कार्तिक पूर्णिमा');
+    });
+
+    test('2027 — दीपदान की शाम 13 नव, स्नान-दान 14 नव: दोनों पत्ते', () {
+      final l = aage(DateTime(2027, 11, 12), kitne: 12, dinAage: 5);
+      final kartik = l.where((a) => a.vratId == 'kartik_purnima').toList();
+      expect([for (final a in kartik) (a.tarikh, a.naam)], [
+        (DateTime(2027, 11, 13), 'देव दीपावली'),
+        (DateTime(2027, 11, 14), 'कार्तिक पूर्णिमा'),
+      ]);
+    });
+  });
 }
