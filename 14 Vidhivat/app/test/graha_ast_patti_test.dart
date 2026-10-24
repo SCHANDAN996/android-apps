@@ -102,7 +102,7 @@ void main() {
       await tester.tap(find.text('यह कैसे निकला'));
       await tester.pumpAndSettle();
 
-      expect(find.textContaining('सूर्य से 11 अंश के भीतर'), findsOneWidget);
+      expect(find.textContaining('बीच 11 अंश से कम अंतर'), findsOneWidget);
       expect(find.textContaining('सूर्यसिद्धांत'), findsOneWidget);
       expect(find.textContaining('मुहूर्त चिंतामणि'), findsOneWidget);
       expect(find.textContaining('10 दिन कहते हैं'), findsOneWidget);
@@ -130,7 +130,7 @@ void main() {
           findsOneWidget);
       await tester.tap(find.text('यह कैसे निकला'));
       await tester.pumpAndSettle();
-      expect(find.textContaining('सूर्य से 8 अंश के भीतर'), findsOneWidget);
+      expect(find.textContaining('बीच 8 अंश से कम अंतर'), findsOneWidget);
     });
   });
 
