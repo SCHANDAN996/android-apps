@@ -1,0 +1,14 @@
+{
+  "fixtureRestored": true,
+  "time": "2026-10-25T12:13:35.0324144+05:30",
+  "tests": 57,
+  "analyzer": "No issues found",
+  "hashes": {
+    "../app/assets/paath/ganesh_aarti.json": "80AA30A253780B0DEFDDC4065AF9CFFCA25A056CF978D2767A0EDC7A8D6DE4FE",
+    ".workspace/qa-project/app/assets/vidhi/ganesh_poojan.json": "81A3BFCC22349F47F0448A018784F697A586CC4CDA351E40894FD301BD03696B",
+    "../app/assets/vidhi/ganesh_poojan.json": "81A3BFCC22349F47F0448A018784F697A586CC4CDA351E40894FD301BD03696B"
+  },
+  "fixtureUrl": "http://127.0.0.1:62976",
+  "scope": "Admin v0.2 only; fixture apply/restore with explicitly simulated QA attestations, not printed-source verification",
+  "mainUrl": "http://127.0.0.1:63030"
+}

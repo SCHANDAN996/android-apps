@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#172e2a">
+  <title>विधिवत प्रबंधन</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23172e2a'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='45' fill='%23deb982'%3Eव%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#overview"><span class="brand-mark">व</span><span>विधिवत<small>प्रबंधन कार्यस्थल</small></span></a>
+    <div class="workspace-label"><span class="status-dot"></span> आपका स्थानीय प्रोजेक्ट</div>
+    <nav aria-label="मुख्य नेविगेशन" id="navigation"></nav>
+    <div class="sidebar-bottom"><div class="local-label">आपके कंप्यूटर पर सुरक्षित</div><p>ड्राफ़्ट अलग रहें। हर बदलाव<br>सोच-समझकर आगे बढ़े।</p><button id="workspace-info" class="sidebar-link">प्रोजेक्ट का स्थान देखें <span>↗</span></button></div>
+  </aside>
+  <div class="shell">
+    <header class="topbar"><div class="breadcrumb">विधिवत <span>/</span> <strong id="breadcrumb">मुख्य पन्ना</strong></div><div class="top-actions"><label class="global-search"><span id="search-icon"></span><input id="global-search" type="search" placeholder="सामग्री खोजें…" aria-label="सभी सामग्री खोजें"><kbd>⌕</kbd></label><button id="refresh" class="icon-button" title="प्रोजेक्ट फिर पढ़ें" aria-label="प्रोजेक्ट फिर पढ़ें"></button><div class="owner">व</div></div></header>
+    <main id="main" tabindex="-1"><div class="loading"><div class="spinner"></div><h2>आपका कार्यस्थल खुल रहा है…</h2><p>सामग्री और रिपोर्ट एक जगह लाते हैं।</p></div></main>
+    <footer><span><i class="status-dot"></i> स्थानीय कार्यस्थल · v0.2</span><span id="scan-time"></span></footer>
+  </div>
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden><div class="drawer-top"><div><span class="eyebrow" id="drawer-label">सामग्री</span><h2 id="drawer-title"></h2></div><button id="close-drawer" class="icon-button" aria-label="बन्द करें">×</button></div><div id="drawer-content"></div></aside>
+  <div id="toast" role="status" hidden></div>
+</body></html>
