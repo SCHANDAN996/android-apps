@@ -182,9 +182,9 @@ sunrise moonrise ayanamsa  moon      │
 ⚠️ `needsPanditReview` **हमेशा सच** — संस्कृत के रूप जाँचे नहीं गए (→ D-020)
 
 ### `lib/src/shubh_muhurat.dart`
-🚧 **अधूरा — ऐप में मत दिखाना।** `shubhMuhuratIsReady = false`
+🚧 **ऐप में बंद।** `shubhMuhuratIsReady = false`
 
-गृह प्रवेश, मुंडन, नामकरण, वाहन, भूमि पूजन, विद्यारंभ के शुभ दिन।
+गृह प्रवेश, मुंडन, नामकरण, भूमि पूजन, विद्यारंभ के शुभ दिन — नियम मुहूर्त चिंतामणि और मुहूर्त मार्तण्ड से, जो दिन दोनों में मान्य हो (→ D-148)। वाहन का नियम दोनों में नहीं — सूची ख़ाली।
 
 | नाम | क्या |
 |---|---|
@@ -193,9 +193,9 @@ sunrise moonrise ayanamsa  moon      │
 | `shubhDinList(activity, year, place)` | साल भर के दिन |
 | `shubhMuhuratIsReady` | **false** — देखकर ही दिखाना |
 
-**क्यों अधूरा:** गुरु/शुक्र तारा अस्त नहीं निकल सकता (बृहस्पति-शुक्र का
-देशांतर इंजन में है ही नहीं), और नियम Drik की सूची से उलटकर निकाले गए हैं,
-शास्त्र से नहीं लिए गए। Drik से मिलान **26/37**। (→ D-019)
+**क्यों बंद:** नियम अब ग्रंथ से हैं (`ActivityRule` में मास, अयन, पक्ष, कुम्भ-चक्र, वृषभ-चक्र, पंचक,
+संक्रांति, गुरु-शुक्र अस्त; हर नियम का `strot`)। पर छपी मुहूर्त-सूची से नाप (`docs/30` §५.३) बाक़ी।
+नाप का औज़ार `tool/muhurat_naap.dart`। (→ D-019, D-148)
 
 ### `lib/src/names.dart`
 सारे देवनागरी नाम और **सत्यापित तालिकाएँ**। कोई गणना नहीं, सिर्फ़ डेटा।
@@ -261,7 +261,7 @@ final p = computePanchang(2026, 8, 20, Place.delhi);
 | `test/grahan_test.dart` | चंद्रग्रहण — NASA से समय, Drik से सूतक |
 | `test/surya_grahan_test.dart` | सूर्यग्रहण — NASA से 14 ग्रहण, Drik से 4 शहर |
 | `test/vrat_test.dart` | व्रत की तारीख़ें |
-| `test/shubh_muhurat_test.dart` | शुभ मुहूर्त — 🚧 आज की हालत नाप कर दर्ज |
+| `test/shubh_muhurat_test.dart` | शुभ मुहूर्त — ग्रंथ के नियम बाँधने वाली जाँचें + website सूची से नाप (कसौटी नहीं) |
 | `test/sankalp_test.dart` | संकल्प — सारे मान सही जगह भरते हैं |
 | `test/reference_test.dart` | `reference_dates.json` से मिलान (2 मिनट की छूट) |
 | `test/data/reference_dates.json` | 12 तारीख़ें × 5 शहर, Drik से |
@@ -560,6 +560,7 @@ app/lib/screens/
 | `app/lib/widgets/vinati_sheet.dart` | `dakshinaVinatiDikhao` — नीचे की पट्टी; पैसा नहीं, बस `DakshinaScreen` खोलती है |
 | `app/lib/main.dart` → `HomeShell.didPopNext` | पट्टी उठने की इकलौती जगह — किसी पन्ने से लौटने पर, दो सेकंड बाद |
 | `engine/tool/kojagar_aazmao.dart` | शरद पूर्णिमा — हर साल पूर्णिमा, आधी रातें, प्रदोष और चुना दिन (संदर्भ से मिलाने को) |
+| `engine/tool/muhurat_naap.dart` | शुभ मुहूर्त — हर काम की साल भर की सूची, और website सूची से फ़र्क़ (→ D-148) |
 | `engine/tool/tulsi_aazmao.dart` | तुलसी विवाह, देव दीपावली, कार्तिक पूर्णिमा — हर साल तिथि, सूर्योदय, प्रदोष और चुना दिन (→ D-140) |
 | `tools/mantra_jaanch/` | मंत्र-जाँच (→ D-141): `khoj.py lao/sab/ek` (archive.org का पन्ने-वार OCR), `dhoondo.py` (टुकड़े किस पन्ने पर), `dekho.py`/`jodo.py` (पन्ने से पंक्तियाँ काटकर आँख से), `prishth.py` (n → छपा पृष्ठ), `bahi.py`+`bahi2.py` (64 फ़ैसले), `lagao.py` (विधियों में लिखना), `vikalp_sudhar.py` (`vikalp` खानों के बदलाव, → D-144), `vrat_sudhar.py` (व्रत-पन्नों के मंत्र, सिर्फ़ `mantra` वाला हिस्सा — → D-145), `aarti_jaanch.py` (आरती-पाठ छपी पुस्तकों से, हमेशा D-145 वाले पाठ पर — → D-146), `suchi_24oct.json` (जाँच के समय के 64 पाठ); OCR `MANTRA_SRC` में, repo में नहीं |
 | `app/lib/widgets/katha_khand.dart` | `KathaKhand` — प्लेयर और कथा-पन्ना दोनों |
