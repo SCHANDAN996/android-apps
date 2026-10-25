@@ -18,6 +18,7 @@ import 'screens/home_dashboard_screen.dart';
 import 'screens/more_screen.dart';
 import 'screens/vidhi_list_screen.dart';
 import 'state/settings.dart';
+import 'state/shell_tab.dart';
 import 'state/ancestor_profiles.dart';
 import 'theme.dart';
 import 'widgets/design_system.dart';
@@ -202,6 +203,18 @@ class _HomeShellState extends State<HomeShell> with RouteAware {
   final Set<int> _visitedTabs = {0};
 
   @override
+  void initState() {
+    super.initState();
+    shellTabMaang.addListener(_maangaTab);
+  }
+
+  /// किसी और पन्ने ने tab माँगा — जैसे पूजा पूरी होने पर «होम पर लौटें» (UX-017)।
+  void _maangaTab() {
+    final i = shellTabMaang.lo();
+    if (i != null && mounted && i != _index) _onTabSelected(i);
+  }
+
+  @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     final route = ModalRoute.of(context);
@@ -213,6 +226,7 @@ class _HomeShellState extends State<HomeShell> with RouteAware {
   @override
   void dispose() {
     _vinatiTimer?.cancel();
+    shellTabMaang.removeListener(_maangaTab);
     vinatiRouteObserver.unsubscribe(this);
     super.dispose();
   }

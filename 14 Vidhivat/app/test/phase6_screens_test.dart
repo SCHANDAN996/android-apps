@@ -8,11 +8,13 @@ import 'package:vidhivat/main.dart';
 import 'package:vidhivat/screens/aaj_screen.dart';
 import 'package:vidhivat/screens/calendar_screen.dart';
 import 'package:vidhivat/screens/muhurta_screen.dart';
+import 'package:vidhivat/screens/puja_completion_screen.dart';
 import 'package:vidhivat/screens/sankalp_screen.dart';
 import 'package:vidhivat/screens/settings_screen.dart';
 import 'package:vidhivat/services/osm_khoj.dart';
 import 'package:vidhivat/state/settings.dart';
 import 'package:vidhivat/theme.dart';
+import 'package:vidhivat/vidhi/bhandar.dart';
 import 'package:vidhivat/widgets/common.dart';
 
 void main() {
@@ -314,6 +316,30 @@ void main() {
     await tester.tap(find.text('कैलेंडर'));
     await tester.pumpAndSettle();
     expect(find.text(shiftedHeader), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  // फ़ोन पर पकड़ा गया (UX-017, 25 अक्टू 2026): पूजा «पूजा» tab से शुरू हो तो
+  // पूरी होने पर «होम पर लौटें» दबाने से पूजा-सूची दिखती थी, होम नहीं।
+  testWidgets('पूजा पूरी होने पर «होम पर लौटें» सचमुच होम tab खोलता है',
+      (tester) async {
+    phone(tester, 393);
+    final vidhi = await vidhiBhandar.vidhi('nitya_pooja');
+    await tester.pumpWidget(app(const HomeShell()));
+    await tester.pumpAndSettle();
+
+    final patti = find.byType(NavigationBar);
+    await tester.tap(find.descendant(of: patti, matching: find.text('पूजा')));
+    await tester.pumpAndSettle();
+    expect(tester.widget<NavigationBar>(patti).selectedIndex, 1);
+
+    tester.state<NavigatorState>(find.byType(Navigator).first).push(
+        MaterialPageRoute(builder: (_) => PujaCompletionScreen(vidhi: vidhi)));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('होम पर लौटें'));
+    await tester.pumpAndSettle();
+
+    expect(tester.widget<NavigationBar>(patti).selectedIndex, 0);
     expect(tester.takeException(), isNull);
   });
 }

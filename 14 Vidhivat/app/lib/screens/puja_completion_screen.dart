@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../services/dakshina_service.dart';
+import '../state/shell_tab.dart';
 import '../theme.dart';
 import '../vidhi/devotional_assets.dart';
 import '../vidhi/vidhi.dart';
@@ -27,6 +28,8 @@ class PujaCompletionScreen extends StatelessWidget {
   const PujaCompletionScreen({super.key, required this.vidhi});
 
   void _returnToVidhiHome(BuildContext context) {
+    // सबसे नीचे वाला पन्ना पहले चुना tab याद रखता है — होम ख़ुद माँगो (UX-017)
+    shellTabMaang.maango(homeTab);
     Navigator.of(context).popUntil((route) => route.isFirst);
   }
 
