@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:panchang_engine/panchang_engine.dart';
 
@@ -38,42 +40,90 @@ class HomeDashboardScreen extends StatefulWidget {
   /// "आज" — जाँच में कोई तारीख़ मानकर देखने के लिए। ऐप में `null` (अभी)।
   final DateTime? aaj;
 
+  /// जाँच में चलती घड़ी; ऐप में फ़ोन की वर्तमान घड़ी इस्तेमाल होती है।
+  final DateTime Function()? now;
+
   const HomeDashboardScreen({
     super.key,
     required this.onOpenPujaLibrary,
     this.aaj,
+    this.now,
   });
 
   @override
   State<HomeDashboardScreen> createState() => _HomeDashboardScreenState();
 }
 
-class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
+class _HomeDashboardScreenState extends State<HomeDashboardScreen>
+    with WidgetsBindingObserver {
   late Future<_DashboardData> _data;
+  late DateTime _loadedDay;
+  Timer? _dayTimer;
   String? _resumeIdAtLoad;
   bool _vratSelected = false;
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _refreshData();
   }
 
   @override
   void didUpdateWidget(covariant HomeDashboardScreen oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (_resumeIdAtLoad != settings.latestPlayerProgressPujaId) {
+    if (_resumeIdAtLoad != settings.latestPlayerProgressPujaId ||
+        !DateUtils.isSameDay(_loadedDay, _now())) {
       _refreshData();
     }
   }
 
-  void _refreshData() {
-    _resumeIdAtLoad = settings.latestPlayerProgressPujaId;
-    _data = _loadData();
+  DateTime _now() => widget.aaj ?? widget.now?.call() ?? DateTime.now();
+
+  @override
+  void dispose() {
+    _dayTimer?.cancel();
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
   }
 
-  Future<_DashboardData> _loadData() async {
-    final aaj = widget.aaj ?? DateTime.now();
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      _refreshDay();
+    } else {
+      _dayTimer?.cancel();
+    }
+  }
+
+  void _refreshDay() {
+    if (!mounted) return;
+    if (!DateUtils.isSameDay(_loadedDay, _now())) {
+      setState(_refreshData);
+    } else {
+      _scheduleDayRefresh();
+    }
+  }
+
+  void _scheduleDayRefresh() {
+    _dayTimer?.cancel();
+    if (widget.aaj != null) return;
+    final now = _now();
+    final midnight = DateTime(now.year, now.month, now.day + 1);
+    _dayTimer = Timer(
+      midnight.difference(now) + const Duration(seconds: 1),
+      _refreshDay,
+    );
+  }
+
+  void _refreshData() {
+    _resumeIdAtLoad = settings.latestPlayerProgressPujaId;
+    _loadedDay = _now();
+    _data = _loadData(_loadedDay);
+    _scheduleDayRefresh();
+  }
+
+  Future<_DashboardData> _loadData(DateTime aaj) async {
     final entries = await vidhiBhandar.suchi();
     final ready = entries.where((entry) => entry.taiyar).toList();
     if (ready.isEmpty) {
@@ -176,6 +226,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
     ];
 
     return _DashboardData(
+      day: aaj,
       featuredEntry: featuredEntry,
       featuredVidhi: featuredVidhi,
       popular: popular,
@@ -483,7 +534,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                       onMuhurta: () => _push(const MuhurtaScreen()),
                     ),
                     const SizedBox(height: VidhivatSpacing.xxl),
-                    const _PanchangPanel(),
+                    _PanchangPanel(day: data.day),
                     if (data.paath.isNotEmpty) ...[
                       const SizedBox(height: VidhivatSpacing.xxl),
                       const VidhivatSectionHeader(
@@ -1086,11 +1137,12 @@ class _ReadingGrid extends StatelessWidget {
 }
 
 class _PanchangPanel extends StatelessWidget {
-  const _PanchangPanel();
+  final DateTime day;
+  const _PanchangPanel({required this.day});
 
   @override
   Widget build(BuildContext context) {
-    final p = settings.panchangFor(DateTime.now());
+    final p = settings.panchangFor(day);
     final items = <({String label, String value, IconData icon})>[
       (label: 'तिथि', value: p.tithi.name, icon: Icons.brightness_2_outlined),
       (label: 'सूर्योदय', value: hm(p.sunrise), icon: Icons.wb_sunny_outlined),
@@ -1393,6 +1445,7 @@ class _PopularPujaCard extends StatelessWidget {
 }
 
 class _DashboardData {
+  final DateTime day;
   final VidhiSuchiEntry featuredEntry;
   final Vidhi featuredVidhi;
   final List<VidhiSuchiEntry> popular;
@@ -1409,6 +1462,7 @@ class _DashboardData {
   final Parv navratri;
 
   const _DashboardData({
+    required this.day,
     required this.featuredEntry,
     required this.featuredVidhi,
     required this.popular,

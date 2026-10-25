@@ -63,7 +63,8 @@ void main() {
       double height = 800,
       double scale = 1,
       bool dark = true,
-      DateTime? date}) async {
+      DateTime? date,
+      DateTime Function()? now}) async {
     tester.view.devicePixelRatio = 1;
     tester.view.physicalSize = Size(width, height);
     addTearDown(tester.view.resetDevicePixelRatio);
@@ -82,10 +83,41 @@ void main() {
       home: RepaintBoundary(
           key: boundaryKey,
           child: HomeDashboardScreen(
-              onOpenPujaLibrary: () {}, aaj: date ?? today)),
+              onOpenPujaLibrary: () {},
+              aaj: now == null ? date ?? today : null,
+              now: now)),
     ));
     await tester.pumpAndSettle();
   }
+
+  testWidgets('home refreshes festival day counts while crossing midnight',
+      (tester) async {
+    var now = DateTime(2026, 10, 25, 23, 59, 58);
+    await open(tester, height: 3200, now: () => now);
+    expect(find.text('4 दिन बाद'), findsWidgets);
+    now = DateTime(2026, 10, 26, 0, 0, 2);
+    await tester.pump(const Duration(seconds: 4));
+    await tester.pumpAndSettle();
+    expect(find.text('4 दिन बाद'), findsNothing);
+    expect(find.text('3 दिन बाद'), findsWidgets);
+    expect(find.text(settings.panchangFor(now).tithi.name), findsWidgets);
+    await tester.pumpWidget(const SizedBox.shrink());
+  });
+
+  testWidgets('home refreshes the date after resuming on a new day',
+      (tester) async {
+    var now = DateTime(2026, 10, 25, 23, 0);
+    await open(tester, height: 3200, now: () => now);
+    expect(find.text('4 दिन बाद'), findsWidgets);
+    tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.paused);
+    now = DateTime(2026, 10, 26, 7);
+    tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+    await tester.pumpAndSettle();
+    expect(find.text('4 दिन बाद'), findsNothing);
+    expect(find.text('3 दिन बाद'), findsWidgets);
+    expect(find.text(settings.panchangFor(now).tithi.name), findsWidgets);
+    await tester.pumpWidget(const SizedBox.shrink());
+  });
 
   testWidgets(
       'popular pujas follow upcoming festivals instead of past seasonal cards',
