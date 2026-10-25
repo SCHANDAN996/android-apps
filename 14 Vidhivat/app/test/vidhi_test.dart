@@ -71,7 +71,8 @@ void main() {
     expect(mantra.vikalp, contains('सुप्रभातम्'));
     expect(mantra.vikalp, contains('नौ ग्रहों के अलग-अलग'));
     expect(charan.vivaran, contains('चाहें तो'));
-    expect(mantra.strot, contains('पूजा संग्रह'));
+    // मंत्र-जाँच (→ D-141): छपी पद्धतियाँ, पृष्ठ सहित
+    expect(mantra.strot, contains('नित्यकर्म-पूजाप्रकाश'));
   });
 
   test('सत्यनारायण की तस्वीर पहले रखी जाती है, चरण 9 में आसन अर्पित होता है', () {
