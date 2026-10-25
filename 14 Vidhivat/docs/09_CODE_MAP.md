@@ -561,7 +561,7 @@ app/lib/screens/
 | `app/lib/main.dart` → `HomeShell.didPopNext` | पट्टी उठने की इकलौती जगह — किसी पन्ने से लौटने पर, दो सेकंड बाद |
 | `engine/tool/kojagar_aazmao.dart` | शरद पूर्णिमा — हर साल पूर्णिमा, आधी रातें, प्रदोष और चुना दिन (संदर्भ से मिलाने को) |
 | `engine/tool/tulsi_aazmao.dart` | तुलसी विवाह, देव दीपावली, कार्तिक पूर्णिमा — हर साल तिथि, सूर्योदय, प्रदोष और चुना दिन (→ D-140) |
-| `tools/mantra_jaanch/` | मंत्र-जाँच (→ D-141): `khoj.py lao/sab/ek` (archive.org का पन्ने-वार OCR), `dhoondo.py` (टुकड़े किस पन्ने पर), `dekho.py`/`jodo.py` (पन्ने से पंक्तियाँ काटकर आँख से), `prishth.py` (n → छपा पृष्ठ), `bahi.py`+`bahi2.py` (64 फ़ैसले), `lagao.py` (विधियों में लिखना), `suchi_24oct.json` (जाँच के समय के 64 पाठ); OCR `MANTRA_SRC` में, repo में नहीं |
+| `tools/mantra_jaanch/` | मंत्र-जाँच (→ D-141): `khoj.py lao/sab/ek` (archive.org का पन्ने-वार OCR), `dhoondo.py` (टुकड़े किस पन्ने पर), `dekho.py`/`jodo.py` (पन्ने से पंक्तियाँ काटकर आँख से), `prishth.py` (n → छपा पृष्ठ), `bahi.py`+`bahi2.py` (64 फ़ैसले), `lagao.py` (विधियों में लिखना), `vikalp_sudhar.py` (`vikalp` खानों के बदलाव, → D-144), `suchi_24oct.json` (जाँच के समय के 64 पाठ); OCR `MANTRA_SRC` में, repo में नहीं |
 | `app/lib/widgets/katha_khand.dart` | `KathaKhand` — प्लेयर और कथा-पन्ना दोनों |
 | `app/lib/widgets/mantra_khand.dart` | `MantraKhand`, `PaathKeBaareMein` |
 | `tools/jaancho_vrat.py` | कंटेंट की जाँच, बिना Flutter |
