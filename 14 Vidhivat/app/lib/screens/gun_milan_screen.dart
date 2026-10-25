@@ -104,11 +104,13 @@ class _GunMilanScreenState extends State<GunMilanScreen> {
                 Text(
                   'दोनों की कुंडली चुनिए। जो यहाँ नहीं है, उसकी कुंडली पहले '
                   '"जन्म कुंडली" वाले पन्ने पर बनाइए।',
+                  textAlign: TextAlign.justify,
                   style: type.bodyMedium.copyWith(color: colors.textSecondary),
                 )
               else if (ekHi)
                 Text(
                   'दोनों जगह एक ही कुंडली चुनी है।',
+                  textAlign: TextAlign.justify,
                   style: type.bodyMedium.copyWith(color: colors.textSecondary),
                 )
               else
@@ -163,14 +165,14 @@ class _GunMilanScreenState extends State<GunMilanScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('कुल गुण', style: type.bodyMedium),
+            Text('कुल गुण',
+                textAlign: TextAlign.justify, style: type.bodyMedium),
             const SizedBox(height: VidhivatSpacing.xxs),
             Text.rich(
               TextSpan(children: [
                 TextSpan(text: gunAnk(m.kul), style: type.displayMedium),
                 TextSpan(
-                    text: '  $gunMilanAdhiktam में से',
-                    style: type.bodyLarge),
+                    text: '  $gunMilanAdhiktam में से', style: type.bodyLarge),
               ]),
               key: const ValueKey('kul-gun'),
             ),
@@ -178,12 +180,14 @@ class _GunMilanScreenState extends State<GunMilanScreen> {
             Text(
               '${v.naam} — ${vc.rashiNaam}, ${vc.nakshatraNaam}\n'
               '${k.naam} — ${kc.rashiNaam}, ${kc.nakshatraNaam}',
+              textAlign: TextAlign.justify,
               style: type.bodySmall.copyWith(color: colors.textSecondary),
             ),
             if (purani != null) ...[
               const SizedBox(height: VidhivatSpacing.xs),
               Text(
                 'पुरानी छपी तालिका से जोड़ें तो ${gunAnk(purani)}',
+                textAlign: TextAlign.justify,
                 style: type.bodyMedium,
               ),
             ],
@@ -217,6 +221,7 @@ class _GunMilanScreenState extends State<GunMilanScreen> {
         'योनि, गण और वश्य की तालिकाएँ पुस्तकों में अलग-अलग छपी हैं। इसलिए '
         'किसी और पंचांग या ऐप में कुल एक-दो गुण कम-ज़्यादा मिल सकता है — '
         'वह ग़लती नहीं, दूसरी तालिका है।',
+        textAlign: TextAlign.justify,
         style: type.bodySmall.copyWith(color: colors.textSecondary),
       ),
       const SizedBox(height: VidhivatSpacing.md),

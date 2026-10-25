@@ -28,33 +28,37 @@ class DeviceLocationResult {
           permissionPermanentlyDenied: permissionPermanentlyDenied,
         );
 
-  bool get hasPosition => latitude != null && longitude != null;
+  bool get hasPosition =>
+      latitude != null &&
+      longitude != null &&
+      latitude!.isFinite &&
+      longitude!.isFinite;
 }
 
 class DeviceLocationService {
   const DeviceLocationService();
 
   Future<DeviceLocationResult> getCurrentLocation() async {
-    if (!await Geolocator.isLocationServiceEnabled()) {
-      return const DeviceLocationResult.failed(
-        DeviceLocationFailure.serviceDisabled,
-      );
-    }
-
-    var permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-    }
-    if (permission == LocationPermission.denied ||
-        permission == LocationPermission.deniedForever) {
-      return DeviceLocationResult.failed(
-        DeviceLocationFailure.permissionDenied,
-        permissionPermanentlyDenied:
-            permission == LocationPermission.deniedForever,
-      );
-    }
-
     try {
+      if (!await Geolocator.isLocationServiceEnabled()) {
+        return const DeviceLocationResult.failed(
+          DeviceLocationFailure.serviceDisabled,
+        );
+      }
+
+      var permission = await Geolocator.checkPermission();
+      if (permission == LocationPermission.denied) {
+        permission = await Geolocator.requestPermission();
+      }
+      if (permission == LocationPermission.denied ||
+          permission == LocationPermission.deniedForever) {
+        return DeviceLocationResult.failed(
+          DeviceLocationFailure.permissionDenied,
+          permissionPermanentlyDenied:
+              permission == LocationPermission.deniedForever,
+        );
+      }
+
       final position = await Geolocator.getCurrentPosition(
         locationSettings: const LocationSettings(
           accuracy: LocationAccuracy.medium,

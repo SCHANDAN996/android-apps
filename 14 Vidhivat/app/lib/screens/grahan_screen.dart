@@ -155,6 +155,7 @@ class _GrahanCard extends StatelessWidget {
                     const SizedBox(height: 2),
                     Text(
                       g.prakar.naam,
+                      textAlign: TextAlign.justify,
                       style:
                           type.bodySmall.copyWith(color: colors.textSecondary),
                     ),
@@ -266,6 +267,7 @@ class _GrahanCard extends StatelessWidget {
                 padding: const EdgeInsets.only(top: VidhivatSpacing.sm),
                 child: Text(
                   'उपछाया ग्रहण पर सूतक नहीं माना जाता।',
+                  textAlign: TextAlign.justify,
                   style: type.bodySmall.copyWith(color: colors.textSecondary),
                 ),
               ),

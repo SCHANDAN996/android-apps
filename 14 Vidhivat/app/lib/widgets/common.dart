@@ -119,6 +119,7 @@ class Pankti extends StatelessWidget {
             width: 108,
             child: Text(
               label,
+              textAlign: TextAlign.justify,
               style: type.bodyMedium.copyWith(color: colors.textSecondary),
             ),
           ),
@@ -128,6 +129,7 @@ class Pankti extends StatelessWidget {
               children: [
                 Text(
                   value,
+                  textAlign: TextAlign.justify,
                   style: type.bodyLarge.copyWith(
                     fontWeight: bold ? FontWeight.w600 : FontWeight.w500,
                     color: valueColour,
@@ -136,6 +138,7 @@ class Pankti extends StatelessWidget {
                 if (note != null)
                   Text(
                     note!,
+                    textAlign: TextAlign.justify,
                     style: type.bodySmall.copyWith(color: colors.textTertiary),
                   ),
               ],
@@ -184,6 +187,7 @@ class Chetavni extends StatelessWidget {
               Expanded(
                 child: Text(
                   text,
+                  textAlign: TextAlign.justify,
                   style: VidhivatTheme.typographyOf(context).bodyMedium,
                 ),
               ),

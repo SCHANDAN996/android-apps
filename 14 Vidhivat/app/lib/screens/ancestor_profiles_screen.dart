@@ -96,6 +96,7 @@ class _AncestorProfilesScreenState extends State<AncestorProfilesScreen> {
                   const Center(child: CircularProgressIndicator())
                 else if (ancestorProfiles.items.isEmpty)
                   Text('अभी कोई तिथि नहीं सहेजी गई है।',
+                      textAlign: TextAlign.justify,
                       style: VidhivatTheme.typographyOf(context).bodyMedium)
                 else
                   for (final profile in ancestorProfiles.items) ...[
@@ -308,6 +309,7 @@ class _AncestorFormState extends State<_AncestorForm> {
               Text(
                   'गणना की जगह: ${_deathPlace.name}. '
                   'सही जगह न मिले तो तिथि हाथ से चुनें। समय न पता हो तो अनुमान न लगाएँ।',
+                  textAlign: TextAlign.justify,
                   style: VidhivatTheme.typographyOf(context).bodySmall),
               const SizedBox(height: VidhivatSpacing.md),
               DropdownButtonFormField<int>(
@@ -330,6 +332,7 @@ class _AncestorFormState extends State<_AncestorForm> {
                   _source == 'calculated'
                       ? 'यह चुने समय और स्थान से निकली तिथि है; दूसरे वर्ष या स्थान के पंचांग में फर्क हो सकता है।'
                       : 'यह आपके द्वारा चुनी तिथि है; परिवार की ज्ञात रीति को प्राथमिकता दें।',
+                  textAlign: TextAlign.justify,
                   style: VidhivatTheme.typographyOf(context).bodySmall),
               const SizedBox(height: VidhivatSpacing.lg),
               SwitchListTile(

@@ -5,6 +5,7 @@ import '../vidhi/bhandar.dart';
 import '../vidhi/granth.dart';
 import '../vidhi/paath_assets.dart';
 import '../widgets/common.dart';
+import '../widgets/reading_cards.dart';
 import '../widgets/design_system.dart';
 import 'granth_screen.dart';
 
@@ -75,68 +76,21 @@ class _GranthalayaScreenState extends State<GranthalayaScreen> {
                   const SizedBox(height: VidhivatSpacing.xxl),
                   // सप्तशती `_suchi.json` में नहीं है (उसका पाठ अपने पुराने
                   // फ़ोल्डर में रहा), इसलिए सूची के बाद यहीं जोड़ी जाती है।
-                  for (final g in [...suchi, GranthSuchiEntry.saptashati]) ...[
-                    _GranthTile(granth: g, onTap: () => _kholo(g)),
-                    const SizedBox(height: VidhivatSpacing.sm),
-                  ],
+                  ReadingCardGrid(
+                    gridKey: const Key('granth_catalog_grid'),
+                    children: [
+                      for (final g in [...suchi, GranthSuchiEntry.saptashati])
+                        ReadingArtworkCard(
+                            name: g.naam,
+                            artwork: PaathAssets.forGranthId(g.id).assetPath,
+                            onTap: () => _kholo(g)),
+                    ],
+                  ),
                 ],
               );
             },
           ),
         ),
-      ),
-    );
-  }
-}
-
-class _GranthTile extends StatelessWidget {
-  final GranthSuchiEntry granth;
-  final VoidCallback onTap;
-
-  const _GranthTile({required this.granth, required this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    final type = VidhivatTheme.typographyOf(context);
-    final colors = VidhivatTheme.colorsOf(context);
-    final artwork = PaathAssets.forGranthId(granth.id);
-
-    return VidhivatSurfaceCard(
-      onTap: onTap,
-      child: Row(
-        children: [
-          Container(
-            width: 46,
-            height: 46,
-            decoration: BoxDecoration(
-              color: colors.primaryMuted,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            alignment: Alignment.center,
-            child: Padding(
-              padding: const EdgeInsets.all(3),
-              child: Image.asset(
-                artwork.assetPath,
-                fit: BoxFit.contain,
-                cacheHeight: 92,
-                filterQuality: FilterQuality.medium,
-                excludeFromSemantics: true,
-              ),
-            ),
-          ),
-          const SizedBox(width: VidhivatSpacing.md),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(granth.naam, style: type.cardTitle),
-                const SizedBox(height: 2),
-                Text(granth.ekLine, style: type.bodySmall),
-              ],
-            ),
-          ),
-          Icon(Icons.chevron_right, color: colors.textTertiary),
-        ],
       ),
     );
   }

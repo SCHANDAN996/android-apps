@@ -169,6 +169,7 @@ class _SuryaGrahanCard extends StatelessWidget {
                     const SizedBox(height: 2),
                     Text(
                       dikhega ? darshan.prakar.naam : 'सूर्यग्रहण',
+                      textAlign: TextAlign.justify,
                       style:
                           type.bodySmall.copyWith(color: colors.textSecondary),
                     ),

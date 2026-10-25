@@ -107,6 +107,7 @@ class _EkAst extends StatelessWidget {
                 child: Text(
                   '$naam अस्त — लगभग ${tarikhChhoti(a.astDin)} से '
                   '${tarikhChhoti(a.udayDin)} तक',
+                  textAlign: TextAlign.justify,
                   style: type.bodyMedium,
                 ),
               ),

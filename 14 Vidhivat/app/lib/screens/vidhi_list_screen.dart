@@ -288,6 +288,7 @@ class _VidhiHome extends StatelessWidget {
           const SizedBox(height: VidhivatSpacing.xs),
           Text(
             'आज क्या करना चाहते हैं?',
+            textAlign: TextAlign.justify,
             style: VidhivatTheme.typographyOf(context).bodyMedium,
           ),
           if (data.aaneWali.isNotEmpty) ...[
@@ -458,7 +459,8 @@ class _ParvCard extends StatelessWidget {
                     const SizedBox(height: VidhivatSpacing.sm),
                     Text(parv.naam, style: type.cardTitle),
                     const SizedBox(height: VidhivatSpacing.xxs),
-                    Text(parv.ekLine, style: type.bodySmall),
+                    Text(parv.ekLine,
+                        textAlign: TextAlign.justify, style: type.bodySmall),
                     const SizedBox(height: VidhivatSpacing.sm),
                     Text(
                       'संक्षिप्त पूजा और दिन-प्रतिदिन पूर्ण विधि',

@@ -5,6 +5,7 @@ import '../theme.dart';
 import '../vidhi/bhandar.dart';
 import '../vidhi/granth.dart';
 import '../widgets/common.dart';
+import '../widgets/reading_cards.dart';
 import '../widgets/design_system.dart';
 import 'paath_screen.dart';
 
@@ -149,6 +150,7 @@ class _GranthScreenState extends State<GranthScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('पिछली बार यह पाठ खोला था',
+                              textAlign: TextAlign.justify,
                               style: type.bodySmall),
                           const SizedBox(height: VidhivatSpacing.xxs),
                           Text(kram[pichhlaI].naam, style: type.cardTitle),
@@ -169,16 +171,19 @@ class _GranthScreenState extends State<GranthScreen> {
                     const SizedBox(height: VidhivatSpacing.xl),
                     VidhivatSectionHeader(title: h.shirshak),
                     const SizedBox(height: VidhivatSpacing.sm),
-                    for (final p in h.paath) ...[
-                      _Pankti(
-                        paath: p,
-                        pichhla: p.id == _pichhla,
-                        ekLineDikhao: granth.ekLineDikhao,
-                        gintiNaam: granth.gintiNaam,
-                        onTap: () => _kholo(nav, kram, kram.indexOf(p)),
-                      ),
-                      const SizedBox(height: VidhivatSpacing.sm),
-                    ],
+                    ReadingCardGrid(
+                      gridKey: ValueKey('granth_chapters_${h.shirshak}'),
+                      children: [
+                        for (final p in h.paath)
+                          _Pankti(
+                            paath: p,
+                            pichhla: p.id == _pichhla,
+                            ekLineDikhao: granth.ekLineDikhao,
+                            gintiNaam: granth.gintiNaam,
+                            onTap: () => _kholo(nav, kram, kram.indexOf(p)),
+                          ),
+                      ],
+                    ),
                   ],
                 ],
               );
@@ -209,33 +214,32 @@ class _Pankti extends StatelessWidget {
   Widget build(BuildContext context) {
     final type = VidhivatTheme.typographyOf(context);
     final colors = VidhivatTheme.colorsOf(context);
-    return VidhivatSurfaceCard(
-      onTap: onTap,
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(paath.naam, style: type.cardTitle),
-                if (ekLineDikhao) ...[
-                  const SizedBox(height: 2),
-                  Text(paath.ekLine, style: type.bodySmall),
-                ],
-                const SizedBox(height: 2),
-                Text(
+    return Semantics(
+        button: true,
+        label: paath.naam,
+        onTap: onTap,
+        excludeSemantics: true,
+        child: VidhivatSurfaceCard(
+          onTap: onTap,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(paath.naam,
+                  textAlign: TextAlign.center, style: type.cardTitle),
+              if (ekLineDikhao) ...[
+                const SizedBox(height: VidhivatSpacing.xs),
+                Text(paath.ekLine,
+                    textAlign: TextAlign.center, style: type.bodySmall),
+              ],
+              const SizedBox(height: VidhivatSpacing.xs),
+              Text(
                   '${paath.shlok} ${paath.gintiNaam ?? gintiNaam}'
                   '${pichhla ? ' · पिछली बार खोला था' : ''}',
-                  style: type.bodySmall.copyWith(
-                    color: pichhla ? colors.primary : null,
-                  ),
-                ),
-              ],
-            ),
+                  textAlign: TextAlign.center,
+                  style: type.bodySmall
+                      .copyWith(color: pichhla ? colors.primary : null)),
+            ],
           ),
-          Icon(Icons.chevron_right, color: colors.textTertiary),
-        ],
-      ),
-    );
+        ));
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:ui' show SemanticsAction;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vidhivat/theme.dart';
@@ -82,5 +84,26 @@ void main() {
         isSelected: true,
       ),
     );
+  });
+
+  testWidgets('labelled card can be activated through accessibility',
+      (tester) async {
+    final semantics = tester.ensureSemantics();
+    try {
+      var presses = 0;
+      await tester.pumpWidget(host(VidhivatSurfaceCard(
+        semanticLabel: 'जन्म कुंडली',
+        onTap: () => presses++,
+        child: const Text('कुंडली खोलें'),
+      )));
+      final node = tester.getSemantics(find.byType(VidhivatSurfaceCard));
+      expect(node.getSemanticsData().label, 'जन्म कुंडली');
+      expect(node.getSemanticsData().hasAction(SemanticsAction.tap), isTrue);
+      node.owner!.performAction(node.id, SemanticsAction.tap);
+      await tester.pump();
+      expect(presses, 1);
+    } finally {
+      semantics.dispose();
+    }
   });
 }

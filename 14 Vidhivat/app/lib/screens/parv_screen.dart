@@ -310,7 +310,8 @@ class _MuhuratCard extends StatelessWidget {
                 Text(samay, style: type.numericHighlight),
                 if (sahayak != null) ...[
                   const SizedBox(height: VidhivatSpacing.xs),
-                  Text(sahayak!, style: type.bodySmall),
+                  Text(sahayak!,
+                      textAlign: TextAlign.justify, style: type.bodySmall),
                 ],
               ],
             ),
@@ -376,7 +377,8 @@ class _AajKaCard extends StatelessWidget {
             const SizedBox(height: VidhivatSpacing.xs),
             Text(din.shirshak, style: type.pageTitle),
             const SizedBox(height: VidhivatSpacing.xxs),
-            Text(din.ekLine, style: type.bodyMedium),
+            Text(din.ekLine,
+                textAlign: TextAlign.justify, style: type.bodyMedium),
             const SizedBox(height: VidhivatSpacing.md),
             if (din.vidhiId == null) ...[
               const VidhivatStatusChip(label: 'विधि अभी नहीं'),
@@ -411,6 +413,7 @@ class _AajKaCard extends StatelessWidget {
               const SizedBox(height: VidhivatSpacing.xs),
               Text(
                 'आरम्भ — ${tarikh(aaj.shuruTarikh!)}',
+                textAlign: TextAlign.justify,
                 style: type.bodyMedium.copyWith(color: colors.textSecondary),
               ),
             ],
@@ -423,6 +426,7 @@ class _AajKaCard extends StatelessWidget {
       key: const Key('parv_beet_chuka_card'),
       child: Text(
         '${parv.naam} इस वर्ष बीत चुका है।',
+        textAlign: TextAlign.justify,
         style: type.bodyMedium,
       ),
     );
@@ -583,6 +587,7 @@ class _SankshiptKriya extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(rasta.vivaran,
+              textAlign: TextAlign.justify,
               style: VidhivatTheme.typographyOf(context).bodyMedium),
           const SizedBox(height: VidhivatSpacing.md),
           if (rasta.vidhiId == null) ...[
@@ -697,13 +702,15 @@ class _DinCard extends StatelessWidget {
                         const SizedBox(height: VidhivatSpacing.xxs),
                         Text(
                           tarikhLikhi,
+                          textAlign: TextAlign.justify,
                           style: type.bodySmall.copyWith(
                             color: colors.textSecondary,
                           ),
                         ),
                       ],
                       const SizedBox(height: VidhivatSpacing.xs),
-                      Text(din.ekLine, style: type.bodyMedium),
+                      Text(din.ekLine,
+                          textAlign: TextAlign.justify, style: type.bodyMedium),
                     ],
                   ),
                 ),
@@ -731,6 +738,7 @@ class _DinCard extends StatelessWidget {
                   Expanded(
                     child: Text(
                       'प्रचलित भोग · ${din.bhog}',
+                      textAlign: TextAlign.justify,
                       style: type.bodySmall,
                     ),
                   ),
@@ -857,6 +865,7 @@ class _TithiTippani extends StatelessWidget {
           Expanded(
             child: Text(
               text,
+              textAlign: TextAlign.justify,
               style: VidhivatTheme.typographyOf(context).bodyMedium,
             ),
           ),

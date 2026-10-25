@@ -48,6 +48,7 @@ class PitruScheduleScreen extends StatelessWidget {
                             : item.rule.tithi == 15
                                 ? 'तिथि अज्ञात हो तो सभी ज्ञात-अज्ञात पूर्वजों का स्मरण।'
                                 : 'जिन परिजन की मृत्यु इस चंद्र-तिथि को हुई हो, उनका स्मरण।',
+                        textAlign: TextAlign.justify,
                         style: VidhivatTheme.typographyOf(context).bodySmall,
                       ),
                       if (item.ambiguous && item.otherCandidate != null)

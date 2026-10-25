@@ -136,7 +136,9 @@ class _SankalpScreenState extends State<SankalpScreen> {
                       for (final label in commonPurposes.keys)
                         DropdownMenuItem(
                           value: label,
-                          child: Text(label, style: type.bodyLarge),
+                          child: Text(label,
+                              textAlign: TextAlign.justify,
+                              style: type.bodyLarge),
                         ),
                     ],
                     onChanged: (chuna) {
@@ -165,6 +167,7 @@ class _SankalpScreenState extends State<SankalpScreen> {
                 semanticLabel: 'बना हुआ ${_showFull ? 'पूरा' : 'सरल'} संकल्प',
                 child: SelectableText(
                   text,
+                  textAlign: TextAlign.justify,
                   style: type.mantra.copyWith(
                     fontSize: type.bodyLarge.fontSize,
                     fontWeight: FontWeight.w500,
@@ -278,6 +281,7 @@ class _SankalpVisualIntro extends StatelessWidget {
                     const SizedBox(height: VidhivatSpacing.xs),
                     Text(
                       'नाम, गोत्र और आज के पंचांग को साथ रखकर शांत मन से पाठ करें।',
+                      textAlign: TextAlign.justify,
                       style: type.bodyMedium.copyWith(
                         color: colors.textSecondary,
                       ),
@@ -410,6 +414,7 @@ class _SankalpPeopleManagerState extends State<_SankalpPeopleManager> {
             const SizedBox(height: VidhivatSpacing.xs),
             Text(
               'जिस व्यक्ति का नाम चुनेंगे, संकल्प में वही नाम और गोत्र आएगा।',
+              textAlign: TextAlign.justify,
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: VidhivatSpacing.lg),
@@ -926,6 +931,7 @@ class NaamPoochhoState extends State<NaamPoochho> {
             Text(
               'संकल्प में यही बोला जाता है। एक बार भरिए — फिर हर बार अपने आप '
               'आ जाएगा।\n\nयह सिर्फ़ आपके फ़ोन में रहेगा, कहीं नहीं जाएगा।',
+              textAlign: TextAlign.justify,
               style: theme.textTheme.bodyMedium,
             ),
             const SizedBox(height: VidhivatSpacing.xl),
@@ -981,6 +987,7 @@ class NaamPoochhoState extends State<NaamPoochho> {
             const SizedBox(height: VidhivatSpacing.xxs),
             Text(
               'घर में किसी बड़े से पूछ लीजिए — संकल्प में यही बोला जाता है।',
+              textAlign: TextAlign.justify,
               style: theme.textTheme.bodySmall,
             ),
             const SizedBox(height: VidhivatSpacing.sm),
@@ -1024,6 +1031,7 @@ class NaamPoochhoState extends State<NaamPoochho> {
               _yajaman == Yajaman.stri
                   ? 'संकल्प में "गोत्रोत्पन्ना … नाम्नी अहम्" आएगा।'
                   : 'संकल्प में "गोत्रोत्पन्नः … नामाहम्" आएगा।',
+              textAlign: TextAlign.justify,
               style: theme.textTheme.bodySmall,
             ),
             const SizedBox(height: VidhivatSpacing.sm),
@@ -1046,6 +1054,7 @@ class NaamPoochhoState extends State<NaamPoochho> {
             Text(
               'संकल्प में "${settings.city.name}नाम्नि '
               '${_sthanPrakarShabd(_sthanPrakar)}" आएगा।',
+              textAlign: TextAlign.justify,
               style: theme.textTheme.bodySmall,
             ),
             const SizedBox(height: VidhivatSpacing.sm),
@@ -1126,10 +1135,12 @@ class _GotraPataNahiSamjhao extends StatelessWidget {
           const SizedBox(height: VidhivatSpacing.xs),
           Text(
             'गोत्र न पता हो तो यही चलन है — और इसका शास्त्र-वचन भी है:',
+            textAlign: TextAlign.justify,
             style: theme.textTheme.bodySmall,
           ),
           const SizedBox(height: VidhivatSpacing.xs),
-          Text(gotraAgyaatShloka, style: typography.bodyLarge),
+          Text(gotraAgyaatShloka,
+              textAlign: TextAlign.justify, style: typography.bodyLarge),
           const SizedBox(height: VidhivatSpacing.xxs),
           Text(
             '— $gotraAgyaatShlokaStrot',
@@ -1139,11 +1150,13 @@ class _GotraPataNahiSamjhao extends StatelessWidget {
           Text(
             'भाव — गोत्र का पता न हो तो काश्यप गोत्र कहा जाता है, '
             'क्योंकि श्रुति कहती है कि सारी प्रजा कश्यप से उपजी है।',
+            textAlign: TextAlign.justify,
             style: theme.textTheme.bodySmall,
           ),
           const SizedBox(height: VidhivatSpacing.xs),
           Text(
             'घर में किसी बड़े से पूछकर बाद में बदल सकते हैं।',
+            textAlign: TextAlign.justify,
             style: theme.textTheme.bodySmall
                 ?.copyWith(fontStyle: FontStyle.italic),
           ),

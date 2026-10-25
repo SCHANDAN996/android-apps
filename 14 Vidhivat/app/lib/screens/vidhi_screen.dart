@@ -393,7 +393,8 @@ class _ResumePanel extends StatelessWidget {
             style: type.label,
           ),
           const SizedBox(height: VidhivatSpacing.xxs),
-          Text(step.shirshak, style: type.bodyMedium),
+          Text(step.shirshak,
+              textAlign: TextAlign.justify, style: type.bodyMedium),
           if (onShuruSeKaro != null) ...[
             const SizedBox(height: VidhivatSpacing.sm),
             VidhivatButton(
@@ -562,6 +563,7 @@ class _MaterialsPreview extends StatelessWidget {
                   Expanded(
                     child: Text(
                       preview[index].vastu,
+                      textAlign: TextAlign.justify,
                       style: VidhivatTheme.typographyOf(context).bodyMedium,
                     ),
                   ),
@@ -620,6 +622,7 @@ class _StepsPreview extends StatelessWidget {
                   Expanded(
                     child: Text(
                       preview[index].shirshak,
+                      textAlign: TextAlign.justify,
                       style: VidhivatTheme.typographyOf(context).bodyMedium,
                     ),
                   ),
@@ -663,6 +666,7 @@ class _Questions extends StatelessWidget {
                 ),
                 title: Text(
                   questions[index].sawaal,
+                  textAlign: TextAlign.justify,
                   style: VidhivatTheme.typographyOf(context).bodyMedium,
                 ),
                 children: [

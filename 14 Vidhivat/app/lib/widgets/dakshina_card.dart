@@ -176,6 +176,7 @@ class _DakshinaChunavState extends State<DakshinaChunav> {
             child: Text(
               DakshinaShabd.dhanyavaad,
               key: const Key('dakshina_dhanyavaad'),
+              textAlign: TextAlign.justify,
               style: type.bodyMedium,
             ),
           ),
@@ -189,7 +190,8 @@ class _DakshinaChunavState extends State<DakshinaChunav> {
         key: const Key('dakshina_bahar_khula'),
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(DakshinaShabd.baharKhula(bahar), style: type.bodyMedium),
+          Text(DakshinaShabd.baharKhula(bahar),
+              textAlign: TextAlign.justify, style: type.bodyMedium),
           const SizedBox(height: VidhivatSpacing.xs),
           Text(
             DakshinaShabd.deDiPoochh,
@@ -254,6 +256,7 @@ class _DakshinaChunavState extends State<DakshinaChunav> {
           Text(
             _gadbad!,
             key: const Key('dakshina_gadbad'),
+            textAlign: TextAlign.justify,
             style: type.bodySmall.copyWith(color: colors.textSecondary),
           ),
         ],
@@ -353,9 +356,11 @@ class _DakshinaCardState extends State<DakshinaCard> {
             children: [
               Text(DakshinaShabd.shirshak, style: type.cardTitle),
               const SizedBox(height: VidhivatSpacing.sm),
-              Text(DakshinaShabd.hisaab, style: type.bodySmall),
+              Text(DakshinaShabd.hisaab,
+                  textAlign: TextAlign.justify, style: type.bodySmall),
               const SizedBox(height: VidhivatSpacing.sm),
-              Text(DakshinaShabd.nyota, style: type.bodyMedium),
+              Text(DakshinaShabd.nyota,
+                  textAlign: TextAlign.justify, style: type.bodyMedium),
               const SizedBox(height: VidhivatSpacing.lg),
               const DakshinaChunav(),
               const SizedBox(height: VidhivatSpacing.md),
@@ -397,8 +402,7 @@ class DakshinaDhanyavaadCard extends StatefulWidget {
   const DakshinaDhanyavaadCard({super.key, this.onVistaar});
 
   @override
-  State<DakshinaDhanyavaadCard> createState() =>
-      _DakshinaDhanyavaadCardState();
+  State<DakshinaDhanyavaadCard> createState() => _DakshinaDhanyavaadCardState();
 }
 
 class _DakshinaDhanyavaadCardState extends State<DakshinaDhanyavaadCard> {
@@ -428,7 +432,8 @@ class _DakshinaDhanyavaadCardState extends State<DakshinaDhanyavaadCard> {
                   VidhivatDiyaIcon(bhara: true, color: colors.primary),
                   const SizedBox(width: VidhivatSpacing.sm),
                   Expanded(
-                    child: Text(DakshinaShabd.deChuke, style: type.bodyMedium),
+                    child: Text(DakshinaShabd.deChuke,
+                        textAlign: TextAlign.justify, style: type.bodyMedium),
                   ),
                 ],
               ),

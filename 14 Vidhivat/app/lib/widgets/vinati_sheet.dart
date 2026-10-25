@@ -11,7 +11,8 @@ import 'design_system.dart';
 /// ⚠️ `docs/20_KAMAI_YOJANA.md` §6.4 की मनाही यहाँ भी — `dakshina_test.dart` इस
 /// फ़ाइल का भी पहरा देता है।
 abstract final class VinatiShabd {
-  static const baat = 'विधिवत मुफ़्त है — कोई विज्ञापन नहीं, कोई खाता नहीं। जो आज '
+  static const baat =
+      'विधिवत मुफ़्त है — कोई विज्ञापन नहीं, कोई खाता नहीं। जो आज '
       'इसमें है, वह सबके लिए है और रहेगा। ऐप उपयोगी लगा हो, तो स्वेच्छा से '
       'दक्षिणा दे सकते हैं।';
 
@@ -67,7 +68,8 @@ class _DakshinaVinati extends StatelessWidget {
               style: type.sectionTitle,
             ),
             const SizedBox(height: VidhivatSpacing.md),
-            Text(VinatiShabd.baat, style: type.bodyMedium),
+            Text(VinatiShabd.baat,
+                textAlign: TextAlign.justify, style: type.bodyMedium),
             const SizedBox(height: VidhivatSpacing.lg),
             VidhivatButton(
               key: const Key('vinati_kholo'),
@@ -76,7 +78,8 @@ class _DakshinaVinati extends StatelessWidget {
                 final navigator = Navigator.of(context);
                 navigator.pop();
                 navigator.push(
-                  MaterialPageRoute<void>(builder: (_) => const DakshinaScreen()),
+                  MaterialPageRoute<void>(
+                      builder: (_) => const DakshinaScreen()),
                 );
               },
               fullWidth: true,

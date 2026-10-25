@@ -16,7 +16,6 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -132,12 +131,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
               Text(
                 'आपका नाम, गोत्र और चुनी हुई जगह ऐप की स्थानीय सेटिंग में '
                 'रहते हैं। इनके लिए कोई लॉगिन या ऐप सर्वर नहीं है।',
+                textAlign: TextAlign.justify,
                 style: theme.textTheme.bodySmall,
               ),
               const SizedBox(height: VidhivatSpacing.sm),
               Text(
                 'यह ऐप परंपरागत जानकारी देता है। किसी भी ज़रूरी काम का '
                 'अंतिम निर्णय अपने पंडित जी से ही करें।',
+                textAlign: TextAlign.justify,
                 style: theme.textTheme.bodySmall,
               ),
               const SizedBox(height: VidhivatSpacing.sm),
@@ -145,6 +146,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               // `settings_version_test.dart` उसी पर पहरा देता है।
               Text(
                 'विधिवत · संस्करण $appVersion',
+                textAlign: TextAlign.justify,
                 style: theme.textTheme.bodySmall,
               ),
               // खुले स्रोत के लाइसेंस — Flutter के पैकेज, और गाँवों की सूची का
@@ -296,4 +298,3 @@ class _SettingsScreenState extends State<SettingsScreen> {
     if (mounted) setState(() {});
   }
 }
-

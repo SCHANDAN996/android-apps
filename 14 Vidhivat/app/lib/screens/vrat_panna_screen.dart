@@ -126,7 +126,8 @@ class _Panna extends StatelessWidget {
         // ── २ · कब करें ─────────────────────────────────
         const VidhivatSectionHeader(title: 'कब करें'),
         chhota,
-        Text(panna.kabSaral, style: type.bodyLarge),
+        Text(panna.kabSaral,
+            textAlign: TextAlign.justify, style: type.bodyLarge),
         chhota,
         _Khand(shirshak: 'कब से शुरू करें', text: panna.shuruKab),
         _Khand(shirshak: 'कितनी बार', text: panna.kitniBaar),
@@ -188,7 +189,8 @@ class _Panna extends StatelessWidget {
               children: [
                 Text(b.roop, style: type.cardTitle),
                 const SizedBox(height: VidhivatSpacing.xxs),
-                Text(b.vivaran, style: type.bodyMedium),
+                Text(b.vivaran,
+                    textAlign: TextAlign.justify, style: type.bodyMedium),
               ],
             ),
           ),
@@ -385,7 +387,8 @@ class _TyoharKaDinState extends State<_TyoharKaDin> {
           label: 'अगला: $kab · ${tarikhChhoti(f.date)}'
               '${doosra == null ? '' : ' (कुछ पंचांगों में ${tarikhChhoti(doosra)})'}',
           icon: Icons.event_outlined,
-          tone: baad == 0 ? VidhivatStatusTone.success : VidhivatStatusTone.info,
+          tone:
+              baad == 0 ? VidhivatStatusTone.success : VidhivatStatusTone.info,
         );
       },
     );
@@ -441,8 +444,12 @@ class _Suchi extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('•  ',
+                      textAlign: TextAlign.justify,
                       style: type.bodyMedium.copyWith(color: colors.primary)),
-                  Expanded(child: Text(p, style: type.bodyMedium)),
+                  Expanded(
+                      child: Text(p,
+                          textAlign: TextAlign.justify,
+                          style: type.bodyMedium)),
                 ],
               ),
             ),
@@ -481,7 +488,8 @@ class _Kadam extends StatelessWidget {
               children: [
                 Text(kadam.shirshak, style: type.cardTitle),
                 const SizedBox(height: VidhivatSpacing.xxs),
-                Text(kadam.vivaran, style: type.bodyMedium),
+                Text(kadam.vivaran,
+                    textAlign: TextAlign.justify, style: type.bodyMedium),
               ],
             ),
           ),
@@ -523,6 +531,7 @@ class _KathaKholo extends StatelessWidget {
                     ),
                     Text(
                       '${katha.adhyayKul} अध्याय · लगभग ${katha.minute} मिनट',
+                      textAlign: TextAlign.justify,
                       style: VidhivatTheme.typographyOf(context).bodySmall,
                     ),
                   ],
@@ -615,7 +624,8 @@ class _SawaalState extends State<_Sawaal> {
           ),
           if (_khula) ...[
             const SizedBox(height: VidhivatSpacing.xs),
-            Text(widget.sawaal.jawaab, style: type.bodyMedium),
+            Text(widget.sawaal.jawaab,
+                textAlign: TextAlign.justify, style: type.bodyMedium),
           ],
         ],
       ),
@@ -707,6 +717,7 @@ class _EkadashiVarshScreenState extends State<EkadashiVarshScreen> {
                     'कृष्ण पक्ष की एकादशी पिछले महीने में गिनी जाती है — हर '
                     'एकादशी पर दोनों लिखे हैं। तारीख़ व्रत की सूची में पंचांग '
                     'से आती है।',
+                    textAlign: TextAlign.justify,
                     style: type.bodyMedium,
                   ),
                   const SizedBox(height: VidhivatSpacing.lg),
@@ -741,10 +752,13 @@ class _EkadashiVarshScreenState extends State<EkadashiVarshScreen> {
                                 Text(e.naam, style: type.cardTitle),
                                 Text(
                                   e.kabLikha,
+                                  textAlign: TextAlign.justify,
                                   style: type.bodySmall
                                       .copyWith(color: colors.textSecondary),
                                 ),
-                                Text(e.ekLine, style: type.bodySmall),
+                                Text(e.ekLine,
+                                    textAlign: TextAlign.justify,
+                                    style: type.bodySmall),
                               ],
                             ),
                           ),

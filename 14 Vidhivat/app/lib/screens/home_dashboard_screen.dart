@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:panchang_engine/panchang_engine.dart';
 
 import '../state/settings.dart';
 import '../theme.dart';
@@ -6,19 +7,24 @@ import '../vidhi/aane_wale_din.dart';
 import '../vidhi/bhandar.dart';
 import '../vidhi/devotional_assets.dart';
 import '../vidhi/paath.dart';
+import '../vidhi/granth.dart';
+import '../vidhi/paath_assets.dart';
 import '../vidhi/parv.dart';
 import '../vidhi/parv_aaj.dart';
 import '../vidhi/parv_home.dart';
 import '../vidhi/vidhi.dart';
 import '../vidhi/vrat_artwork.dart';
 import '../widgets/common.dart';
+import '../widgets/reading_cards.dart';
 import '../widgets/design_system.dart';
 import 'muhurta_screen.dart';
+import 'kundali_profiles_screen.dart';
+import 'granth_screen.dart';
+import 'granthalaya_screen.dart';
 import 'paath_list_screen.dart';
 import 'paath_screen.dart';
 import 'parv_kholo.dart';
 import 'sankalp_screen.dart';
-import 'settings_screen.dart';
 import 'vidhi_screen.dart';
 import 'vrat_panna_screen.dart';
 import 'vrat_screen.dart';
@@ -45,6 +51,7 @@ class HomeDashboardScreen extends StatefulWidget {
 class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
   late Future<_DashboardData> _data;
   String? _resumeIdAtLoad;
+  bool _vratSelected = false;
 
   @override
   void initState() {
@@ -150,12 +157,45 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
     final sabPaath = await paathBhandar.suchi();
     final paathReady = sabPaath.where((e) => e.taiyar).toList(growable: false);
 
+    final granth = [
+      ...await granthBhandar.suchi(),
+      GranthSuchiEntry.saptashati
+    ];
+    final homeGranth = <GranthSuchiEntry>[
+      for (final id in [
+        'gita',
+        'sundarkand',
+        'vishnusahasranama',
+        'saptashati'
+      ])
+        ...granth.where((g) => g.id == id),
+    ];
+
     return _DashboardData(
       featuredEntry: featuredEntry,
       featuredVidhi: featuredVidhi,
       popular: popular,
+      granth: homeGranth,
       paath: paathReady.take(4).toList(growable: false),
       navratri: navratri,
+      vratPatte: aaneWaleVrat(
+        place: settings.place,
+        masaSystem: settings.masaSystem,
+        aaj: aaj,
+        dinAage: 60,
+        kitne: 6,
+      )
+          .map((din) => _Patta(
+                upar: '${din.kabLikha} · ${tarikhChhoti(din.tarikh)}',
+                naam: din.niyam.naam,
+                neeche: din.tithiNaam,
+                artwork: VratArtwork.forVratId(din.niyam.id).assetPath,
+                pujaId: null,
+                vratId: din.niyam.id,
+                samayAurCharan: null,
+                bulawa: 'व्रत देखें',
+              ))
+          .toList(growable: false),
       patte: _banaoPatte(
         resumeEntry: resumeEntry,
         resumeVidhi: resumeVidhi,
@@ -171,12 +211,12 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
 
   /// carousel के पत्ते, बाएँ से दाएँ (→ D-046)।
   ///
-  /// क्रम में एक ही बात है — **आज पहले, फिर आगे का।**
+  /// पूजा विकल्प में अधूरी पूजा पहले, फिर आज और आने वाले अवसर।
   ///
   /// 1. अधूरी छूटी पूजा, अगर आज की ही है (`settings` वो ख़ुद जाँचता है)
   /// 2. आज पड़ने वाली पूजा या त्योहार — नवरात्रि चल रही हो तो उसका पत्ता
   ///    सबसे पहले (→ D-074)
-  /// 3. आज कुछ न हो तो **नित्य पूजा** — ताकि पहला पत्ता कभी ख़ाली न रहे
+  /// 3. कोई अवसर न मिले तो नित्य पूजा का उपयोगी विकल्प
   /// 4. आगे के दिन — कल, परसों, बारह दिन बाद…
   ///
   /// जिस त्योहार की विधि अभी नहीं बनी, उसका पत्ता **बनता तो है पर खुलता
@@ -245,6 +285,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
     }
 
     for (final avsar in aage) {
+      if (avsar.vratKhulega) continue;
       // पुराना "शारदीय नवरात्रि — घटस्थापना" पत्ता — अब नवरात्रि का अपना
       // पत्ता है, एक ही चीज़ के दो पत्ते नहीं।
       if (navratri != null && avsar.naam.startsWith('शारदीय नवरात्रि')) {
@@ -278,10 +319,12 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
       patte.add(_Patta(
         upar: avsar.kabLikha,
         naam: avsar.naam,
-        neeche: avsar.kyon,
+        neeche: '${tarikhChhoti(avsar.tarikh)} · ${avsar.kyon}',
         artwork: avsar.vratKhulega
             ? VratArtwork.forVratId(avsar.vratId).assetPath
-            : DevotionalAssets.forVidhiId(avsar.pujaId).assetPath,
+            : avsar.pujaId.isEmpty
+                ? 'assets/images/devotional/home_puja_arrangement_v1.png'
+                : DevotionalAssets.forVidhiId(avsar.pujaId).assetPath,
         pujaId: avsar.khulSaktiHai ? avsar.pujaId : null,
         vratId: avsar.vratKhulega ? avsar.vratId : null,
         samayAurCharan: vidhi == null
@@ -296,18 +339,15 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
     }
     if (navratriPatta != null) patte.add(navratriPatta);
 
-    // आज के लिए कुछ नहीं बना — तब नित्य पूजा सबसे आगे। ऐसा दिन आम है,
-    // और उस दिन भी पहला पत्ता कुछ *करने लायक* होना चाहिए।
-    final aajKaKuchHai = patte.isNotEmpty &&
-        (patte.first.upar == 'जहाँ छोड़ा था' || patte.first.upar == 'आज');
-    if (!aajKaKuchHai && !liyeGaye.contains(nityaEntry.id)) {
+    // कोई अवसर न मिले तो दैनिक पूजा का विकल्प दें।
+    if (patte.isEmpty && !liyeGaye.contains(nityaEntry.id)) {
       patte.insert(
         0,
         _Patta(
           upar: 'आज की सरल शुरुआत',
           naam: nityaEntry.naam,
           neeche: nityaEntry.ekLine,
-          artwork: DevotionalAssets.forVidhiId(nityaEntry.id).assetPath,
+          artwork: 'assets/images/devotional/home_puja_arrangement_v1.png',
           pujaId: nityaEntry.id,
           samayAurCharan: '${nityaVidhi.samayLikha}  •  '
               '${nityaVidhi.charan.length} चरण',
@@ -372,35 +412,39 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                   ),
                   children: [
                     _HomeHeader(
-                      onLocationTap: () => _push(const SettingsScreen()),
-                    ),
-                    const SizedBox(height: VidhivatSpacing.xl),
-                    // ── सबसे ऊपर, स्वाइप होने वाला (→ D-046) ────────
-                    //
-                    // पहले यहाँ एक जमा हुआ कार्ड था और नीचे अलग से
-                    // "आगे क्या आ रहा है" की सूची — वही पाँच पूजाएँ,
-                    // दो बार। अब एक ही पट्टी: आज पहला, फिर आगे के दिन।
-                    _PujaCarousel(
-                      patte: data.patte,
-                      onOpen: _openPuja,
-                      onParvOpen: (_) => kholoNavratri(context, data.navratri),
-                      onRemoveProgress: _removeProgress,
+                      vratSelected: _vratSelected,
+                      onSelect: (vrat) => setState(() => _vratSelected = vrat),
                     ),
                     const SizedBox(height: VidhivatSpacing.lg),
-                    const _PanchangPanel(),
-                    const SizedBox(height: VidhivatSpacing.xl),
-                    // "जल्दी करें" लिखा था — हिंदी में उसका मतलब "hurry
-                    // up" निकलता है, जो पूजा वाले ऐप में उल्टा ही है।
-                    const VidhivatSectionHeader(
-                      title: 'तुरंत खोलें',
-                    ),
-                    const SizedBox(height: VidhivatSpacing.md),
-                    _QuickActionGrid(
-                      onPuja: widget.onOpenPujaLibrary,
-                      onVrat: () => _push(const VratScreen()),
-                      onSankalp: () => _push(const SankalpScreen()),
-                      onMuhurta: () => _push(const MuhurtaScreen()),
-                    ),
+                    if (_vratSelected && data.vratPatte.isEmpty)
+                      const VidhivatStateView(
+                        title: 'अगले दो महीनों में कोई व्रत नहीं मिला',
+                        icon: Icons.event_busy_outlined,
+                      )
+                    else
+                      _PujaCarousel(
+                        key: ValueKey(_vratSelected),
+                        patte: _vratSelected ? data.vratPatte : data.patte,
+                        onOpen: _openPuja,
+                        onParvOpen: (_) =>
+                            kholoNavratri(context, data.navratri),
+                        onRemoveProgress: _removeProgress,
+                      ),
+                    if (_vratSelected &&
+                        data.patte.any((p) => p.canRemoveProgress)) ...[
+                      const SizedBox(height: VidhivatSpacing.md),
+                      SizedBox(
+                        height: 210,
+                        child: _PujaPatta(
+                          patta:
+                              data.patte.firstWhere((p) => p.canRemoveProgress),
+                          onOpen: _openPuja,
+                          onParvOpen: (_) =>
+                              kholoNavratri(context, data.navratri),
+                          onRemoveProgress: _removeProgress,
+                        ),
+                      ),
+                    ],
                     const SizedBox(height: VidhivatSpacing.xxl),
                     const VidhivatSectionHeader(
                       title: 'लोकप्रिय पूजा',
@@ -416,16 +460,6 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                           ? kholoNavratri(context, data.navratri)
                           : _openPuja(id),
                     ),
-                    // ── "सभी देखें" अब सूची के **नीचे** ─────────────
-                    //
-                    // पहले यह शीर्षक के बग़ल में एक फीका text-बटन था, और
-                    // दो-पंक्ति वाले शीर्षक के सामने टेढ़ा भी बैठता था।
-                    // वहाँ पढ़ने का क्रम टूटता है — आदमी शीर्षक पढ़कर
-                    // नीचे चित्रों में उतर जाता है, दाईं तरफ़ देखता ही नहीं।
-                    //
-                    // चारों पूजाएँ देख चुकने के **बाद** ही यह सवाल उठता
-                    // है कि "और क्या है?" — इसलिए बटन ठीक वहीं है, और
-                    // अब पूरी चौड़ाई का है ताकि नज़र में आए।
                     const SizedBox(height: VidhivatSpacing.md),
                     VidhivatButton(
                       label: 'सभी पूजाएँ देखें',
@@ -435,6 +469,19 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                       variant: VidhivatButtonVariant.secondary,
                       fullWidth: true,
                     ),
+                    const SizedBox(height: VidhivatSpacing.xxl),
+                    const VidhivatSectionHeader(
+                      title: 'तुरंत खोलें',
+                    ),
+                    const SizedBox(height: VidhivatSpacing.md),
+                    _QuickActionGrid(
+                      onKundali: () => _push(const KundaliProfilesScreen()),
+                      onVrat: () => _push(const VratScreen()),
+                      onSankalp: () => _push(const SankalpScreen()),
+                      onMuhurta: () => _push(const MuhurtaScreen()),
+                    ),
+                    const SizedBox(height: VidhivatSpacing.xxl),
+                    const _PanchangPanel(),
                     if (data.paath.isNotEmpty) ...[
                       const SizedBox(height: VidhivatSpacing.xxl),
                       const VidhivatSectionHeader(
@@ -456,6 +503,35 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                         fullWidth: true,
                       ),
                     ],
+                    if (data.granth.isNotEmpty) ...[
+                      const SizedBox(height: VidhivatSpacing.xxl),
+                      const VidhivatSectionHeader(
+                        title: 'ग्रंथालय',
+                        supportingText: 'अध्याय और पाठ, अर्थ सहित',
+                      ),
+                      const SizedBox(height: VidhivatSpacing.md),
+                      _ReadingGrid(
+                        gridKey: const Key('home_granth_grid'),
+                        entries: [
+                          for (final g in data.granth)
+                            (
+                              id: g.id,
+                              naam: g.naam,
+                              artwork: PaathAssets.forGranthId(g.id).assetPath,
+                            )
+                        ],
+                        onOpen: (id) => _push(GranthScreen(
+                            granth: data.granth.firstWhere((g) => g.id == id))),
+                      ),
+                      const SizedBox(height: VidhivatSpacing.md),
+                      VidhivatButton(
+                        label: 'पूरा ग्रंथालय देखें',
+                        onPressed: () => _push(const GranthalayaScreen()),
+                        icon: Icons.arrow_forward,
+                        variant: VidhivatButtonVariant.secondary,
+                        fullWidth: true,
+                      ),
+                    ],
                   ],
                 ),
               ),
@@ -466,48 +542,67 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
 }
 
 class _HomeHeader extends StatelessWidget {
-  final VoidCallback onLocationTap;
+  final bool vratSelected;
+  final ValueChanged<bool> onSelect;
 
-  const _HomeHeader({required this.onLocationTap});
+  const _HomeHeader({required this.vratSelected, required this.onSelect});
 
   @override
   Widget build(BuildContext context) {
     final colors = VidhivatTheme.colorsOf(context);
     final type = VidhivatTheme.typographyOf(context);
-    return Column(
+    return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('जय श्री गणेश 🙏', style: type.pageTitle),
-        const SizedBox(height: VidhivatSpacing.xs),
-        Semantics(
-          button: true,
-          label: 'स्थान बदलें। ${settings.city.name}, ${settings.city.state}',
-          child: InkWell(
-            onTap: onLocationTap,
-            borderRadius: VidhivatRadius.small,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: VidhivatSpacing.xs),
-              child: Row(
-                children: [
-                  Icon(Icons.location_on_outlined,
-                      size: VidhivatIconSize.small, color: colors.primary),
-                  const SizedBox(width: VidhivatSpacing.xs),
-                  Expanded(
-                    child: Text(
-                      '${settings.city.name}, ${settings.city.state}',
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style:
-                          type.bodySmall.copyWith(color: colors.textSecondary),
+        for (final vrat in [false, true]) ...[
+          if (vrat) const SizedBox(width: VidhivatSpacing.sm),
+          Expanded(
+            child: Semantics(
+              selected: vratSelected == vrat,
+              button: true,
+              child: Material(
+                color: vratSelected == vrat
+                    ? colors.primary
+                    : colors.backgroundElevated,
+                borderRadius: VidhivatRadius.medium,
+                child: InkWell(
+                  borderRadius: VidhivatRadius.medium,
+                  onTap: () => onSelect(vrat),
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(minHeight: 48),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 8),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                              vrat
+                                  ? Icons.calendar_month_outlined
+                                  : Icons.local_florist_outlined,
+                              size: 18,
+                              color: vratSelected == vrat
+                                  ? colors.background
+                                  : colors.primary),
+                          const SizedBox(width: 6),
+                          Flexible(
+                            child: Text(
+                                vrat ? 'आने वाले व्रत' : 'आने वाली पूजा',
+                                textAlign: TextAlign.center,
+                                style: type.label.copyWith(
+                                    color: vratSelected == vrat
+                                        ? colors.background
+                                        : colors.textPrimary)),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  Icon(Icons.chevron_right,
-                      size: VidhivatIconSize.small, color: colors.textTertiary),
-                ],
+                ),
               ),
             ),
           ),
-        ),
+        ],
       ],
     );
   }
@@ -535,6 +630,7 @@ class _PujaCarousel extends StatefulWidget {
   final Future<void> Function(String id) onRemoveProgress;
 
   const _PujaCarousel({
+    super.key,
     required this.patte,
     required this.onOpen,
     required this.onParvOpen,
@@ -750,7 +846,8 @@ class _PujaPatta extends StatelessWidget {
                   patta.artwork,
                   fit: BoxFit.fitHeight,
                   alignment: Alignment.centerRight,
-                  cacheHeight: (210 * MediaQuery.devicePixelRatioOf(context)).round(),
+                  cacheHeight:
+                      (210 * MediaQuery.devicePixelRatioOf(context)).round(),
                   filterQuality: FilterQuality.high,
                   errorBuilder: (_, __, ___) => const SizedBox.shrink(),
                 ),
@@ -805,6 +902,7 @@ class _PujaPatta extends StatelessWidget {
                           patta.neeche,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.justify,
                           style: type.bodySmall
                               .copyWith(color: colors.textSecondary),
                         ),
@@ -942,11 +1040,7 @@ class _Patta {
   });
 }
 
-/// होम पर चालीसा और आरती — पंक्तियों में, चित्रों में नहीं।
-///
-/// पूजा के कार्ड चित्र-वाले हैं क्योंकि वहाँ देवता की पहचान काम आती है।
-/// पाठ **पढ़ने की चीज़** है — यहाँ नाम और "कब पढ़ें" ज़्यादा काम के हैं,
-/// इसलिए यह हिस्सा पंक्तियों में है (→ D-051)।
+/// चित्र और पूरे नाम के साथ दो स्तंभ; अक्षर बढ़ें तो कार्ड ऊँचा हो सके।
 class _PaathSuchi extends StatelessWidget {
   final List<PaathSuchiEntry> entries;
   final void Function(String id) onOpen;
@@ -954,60 +1048,39 @@ class _PaathSuchi extends StatelessWidget {
   const _PaathSuchi({required this.entries, required this.onOpen});
 
   @override
-  Widget build(BuildContext context) {
-    final colors = VidhivatTheme.colorsOf(context);
-    final type = VidhivatTheme.typographyOf(context);
-
-    return VidhivatSurfaceCard(
-      padding: EdgeInsets.zero,
-      child: Column(
-        children: [
-          for (var i = 0; i < entries.length; i++) ...[
-            if (i > 0)
-              Divider(height: 1, thickness: 1, color: colors.borderSubtle),
-            Semantics(
-              button: true,
-              label: '${entries[i].naam}। ${entries[i].ekLine}',
-              excludeSemantics: true,
-              child: InkWell(
-                onTap: () => onOpen(entries[i].id),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: VidhivatSpacing.lg,
-                    vertical: VidhivatSpacing.md,
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(Icons.menu_book_outlined,
-                          size: VidhivatIconSize.medium, color: colors.primary),
-                      const SizedBox(width: VidhivatSpacing.md),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(entries[i].naam, style: type.cardTitle),
-                            const SizedBox(height: 2),
-                            Text(
-                              entries[i].ekLine,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: type.bodySmall
-                                  .copyWith(color: colors.textSecondary),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Icon(Icons.chevron_right, color: colors.textTertiary),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
+  Widget build(BuildContext context) => _ReadingGrid(
+        gridKey: const Key('home_paath_grid'),
+        entries: [
+          for (final e in entries)
+            (
+              id: e.id,
+              naam: e.naam,
+              artwork: PaathAssets.forPaathId(e.id).assetPath,
+            )
         ],
-      ),
-    );
-  }
+        onOpen: onOpen,
+      );
+}
+
+class _ReadingGrid extends StatelessWidget {
+  final Key gridKey;
+  final List<({String id, String naam, String artwork})> entries;
+  final ValueChanged<String> onOpen;
+  const _ReadingGrid(
+      {required this.gridKey, required this.entries, required this.onOpen});
+
+  @override
+  Widget build(BuildContext context) => ReadingCardGrid(
+        gridKey: gridKey,
+        children: [
+          for (final entry in entries)
+            ReadingArtworkCard(
+              name: entry.naam,
+              artwork: entry.artwork,
+              onTap: () => onOpen(entry.id),
+            )
+        ],
+      );
 }
 
 class _PanchangPanel extends StatelessWidget {
@@ -1112,13 +1185,13 @@ class _PanchangMetric extends StatelessWidget {
 }
 
 class _QuickActionGrid extends StatelessWidget {
-  final VoidCallback onPuja;
+  final VoidCallback onKundali;
   final VoidCallback onVrat;
   final VoidCallback onSankalp;
   final VoidCallback onMuhurta;
 
   const _QuickActionGrid({
-    required this.onPuja,
+    required this.onKundali,
     required this.onVrat,
     required this.onSankalp,
     required this.onMuhurta,
@@ -1127,10 +1200,10 @@ class _QuickActionGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final actions = <({String label, IconData icon, VoidCallback tap})>[
-      (label: 'पूजा विधि', icon: Icons.menu_book_outlined, tap: onPuja),
       (label: 'व्रत', icon: Icons.spa_outlined, tap: onVrat),
       (label: 'संकल्प', icon: Icons.water_drop_outlined, tap: onSankalp),
       (label: 'चौघड़िया', icon: Icons.calendar_month_outlined, tap: onMuhurta),
+      (label: 'जन्म कुंडली', icon: Icons.auto_awesome_outlined, tap: onKundali),
     ];
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -1291,7 +1364,8 @@ class _PopularPujaCard extends StatelessWidget {
                   child: Image.asset(
                     artworkPath,
                     fit: BoxFit.contain,
-                    cacheHeight: (76 * MediaQuery.devicePixelRatioOf(context)).round(),
+                    cacheHeight:
+                        (76 * MediaQuery.devicePixelRatioOf(context)).round(),
                     filterQuality: FilterQuality.high,
                     errorBuilder: (_, __, ___) => Icon(
                       Icons.auto_awesome_outlined,
@@ -1320,12 +1394,14 @@ class _DashboardData {
   final VidhiSuchiEntry featuredEntry;
   final Vidhi featuredVidhi;
   final List<VidhiSuchiEntry> popular;
+  final List<GranthSuchiEntry> granth;
 
   /// होम पर दिखने वाली पहली चार चालीसा/आरती (→ D-051)।
   final List<PaathSuchiEntry> paath;
 
   /// सबसे ऊपर वाली पट्टी के पत्ते — आज पहला, फिर आगे के दिन (→ D-046)।
   final List<_Patta> patte;
+  final List<_Patta> vratPatte;
 
   /// नवरात्रि का पर्व — पत्ता दबाने पर यही पन्ना खुलता है (→ D-074)।
   final Parv navratri;
@@ -1334,8 +1410,10 @@ class _DashboardData {
     required this.featuredEntry,
     required this.featuredVidhi,
     required this.popular,
+    required this.granth,
     required this.paath,
     required this.patte,
+    required this.vratPatte,
     required this.navratri,
   });
 }

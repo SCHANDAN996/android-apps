@@ -199,22 +199,29 @@ void main() {
 
       // बिना स्क्रॉल किए दिखना चाहिए — यही पूरी बात है।
       final patti = tester.getTopLeft(carousel).dy;
-      final panchang = tester.getTopLeft(find.text('आज का पंचांग')).dy;
-      expect(patti, lessThan(panchang));
+      final popular = tester.getTopLeft(find.text('लोकप्रिय पूजा')).dy;
+      expect(patti, lessThan(popular));
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('पहला पत्ता आज का है, या नित्य पूजा', (tester) async {
+    testWidgets('पहला पत्ता आज या आगे का वास्तविक अवसर है', (tester) async {
       phoneNaap(tester);
       await tester.pumpWidget(app(const HomeShell()));
       await tester.pumpAndSettle();
 
       // इनमें से कोई एक पहला पत्ता बनेगा — कौन सा, वो दिन पर निर्भर है।
-      final pehleWale = ['आज', 'आज की सरल शुरुआत', 'जहाँ छोड़ा था'];
+      final pehleWale = [
+        'आज',
+        'कल',
+        'परसों',
+        'आज की सरल शुरुआत',
+        'जहाँ छोड़ा था'
+      ];
       expect(
-        pehleWale.any((upar) => find.text(upar).evaluate().isNotEmpty),
+        pehleWale.any((upar) => find.text(upar).evaluate().isNotEmpty) ||
+            find.textContaining(RegExp(r'\d+ दिन बाद')).evaluate().isNotEmpty,
         isTrue,
-        reason: 'पहला पत्ता आज से जुड़ा होना चाहिए',
+        reason: 'पहला पत्ता वास्तविक आज/आने वाले अवसर से जुड़ा हो',
       );
     });
 
@@ -383,7 +390,8 @@ void main() {
 
     // 18 अक्टूबर 2026, फ़ोन पर: जन्म की तारीख़ चुनते हुए Flutter का अपना डिब्बा
     // "Mon, Jan 1 … Cancel / OK" दिखाता था — ऐप में भाषा तय ही नहीं थी।
-    testWidgets('Flutter के अपने डिब्बे हिंदी में — तारीख़ चुनना', (tester) async {
+    testWidgets('Flutter के अपने डिब्बे हिंदी में — तारीख़ चुनना',
+        (tester) async {
       SharedPreferences.setMockInitialValues({});
       await settings.load();
       await settings.markLocationPermissionPromptSeen();
@@ -433,7 +441,9 @@ void main() {
       await tester.pumpWidget(app(const HomeShell()));
       await tester.pumpAndSettle();
 
-      expect(find.text('जय श्री गणेश 🙏'), findsOneWidget);
+      expect(find.text('जय श्री गणेश 🙏'), findsNothing);
+      expect(find.text('आने वाली पूजा'), findsOneWidget);
+      expect(find.text('आने वाले व्रत'), findsOneWidget);
       // ⚠️ यहाँ पहले `find.text('नित्य पूजा')` लिखा था। carousel आने के
       // बाद वो **तारीख़ पर निर्भर** हो गया — जिस दिन कोई त्योहार पड़ता है
       // उस दिन पहला पत्ता वो होता है, नित्य पूजा नहीं (→ D-046)।
@@ -961,7 +971,8 @@ void main() {
           findsNothing);
     });
 
-    testWidgets('मंत्र भरने के बाद अधूरे पाठ का दावा नहीं दिखता', (tester) async {
+    testWidgets('मंत्र भरने के बाद अधूरे पाठ का दावा नहीं दिखता',
+        (tester) async {
       await kholoSatyanarayan(tester);
       // यह गिनती भी अब उसी ℹ के अंदर है (→ D-056)।
       //

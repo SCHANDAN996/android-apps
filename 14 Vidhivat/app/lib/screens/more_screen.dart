@@ -43,6 +43,7 @@ class MoreScreen extends StatelessWidget {
                 const SizedBox(height: VidhivatSpacing.xs),
                 Text(
                   'पूजा के सहायक साधन और ऐप की सेटिंग',
+                  textAlign: TextAlign.justify,
                   style: VidhivatTheme.typographyOf(context).bodyMedium,
                 ),
                 const SizedBox(height: VidhivatSpacing.xxl),
@@ -94,7 +95,8 @@ class MoreScreen extends StatelessWidget {
                 _MoreItem(
                   icon: Icons.auto_stories_outlined,
                   title: 'ग्रंथालय',
-                  subtitle: 'गीता, उपनिषद, सुंदरकांड, सप्तशती, सहस्रनाम, सूक्त — अर्थ सहित; '
+                  subtitle:
+                      'गीता, उपनिषद, सुंदरकांड, सप्तशती, सहस्रनाम, सूक्त — अर्थ सहित; '
                       'महाभारत का सार; वेद और पुराणों का परिचय',
                   onTap: () => _open(context, const GranthalayaScreen()),
                 ),
@@ -219,6 +221,7 @@ class _MoreItem extends StatelessWidget {
                 const SizedBox(height: VidhivatSpacing.xxs),
                 Text(
                   subtitle,
+                  textAlign: TextAlign.justify,
                   style: type.bodySmall.copyWith(color: colors.textSecondary),
                 ),
               ],

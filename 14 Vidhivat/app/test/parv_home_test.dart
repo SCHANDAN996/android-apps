@@ -144,7 +144,11 @@ void main() {
         (tester) async {
       await kholoHome(tester, DateTime(2026, 10, 15));
 
-      await tester.ensureVisible(find.text('व्रत'));
+      await tester.scrollUntilVisible(find.text('व्रत'), 200,
+          scrollable: find
+              .descendant(
+                  of: find.byType(ListView), matching: find.byType(Scrollable))
+              .first);
       await tester.pumpAndSettle();
       expect(find.text('सामग्री'), findsNothing);
       await tester.tap(find.text('व्रत'));

@@ -82,6 +82,7 @@ class _SamagriScreenState extends State<SamagriScreen> {
               const SizedBox(height: VidhivatSpacing.xs),
               Text(
                 'पूजा शुरू करने से पहले अपनी तैयारी देख लें।',
+                textAlign: TextAlign.justify,
                 style: VidhivatTheme.typographyOf(context).bodyMedium,
               ),
               const SizedBox(height: VidhivatSpacing.lg),
@@ -268,6 +269,7 @@ class _MaterialChecklistTile extends StatelessWidget {
       ),
       title: Text(
         item.vastu,
+        textAlign: TextAlign.justify,
         style: type.bodyLarge.copyWith(
           decoration: selected ? TextDecoration.lineThrough : null,
           color: selected ? colors.textSecondary : colors.textPrimary,
@@ -291,7 +293,8 @@ class _MaterialChecklistTile extends StatelessWidget {
                       tone: VidhivatStatusTone.neutral,
                     ),
                   if (item.note.isNotEmpty)
-                    Text(item.note, style: type.bodySmall),
+                    Text(item.note,
+                        textAlign: TextAlign.justify, style: type.bodySmall),
                 ],
               ),
             )
@@ -355,7 +358,8 @@ class _KyaNahiChadhana extends StatelessWidget {
           ),
           const SizedBox(height: VidhivatSpacing.md),
           for (final v in sab) ...[
-            Text('• ${v.vastu}', style: typography.bodyLarge),
+            Text('• ${v.vastu}',
+                textAlign: TextAlign.justify, style: typography.bodyLarge),
             const SizedBox(height: VidhivatSpacing.xxs),
             Padding(
               padding: const EdgeInsets.only(left: VidhivatSpacing.sm),

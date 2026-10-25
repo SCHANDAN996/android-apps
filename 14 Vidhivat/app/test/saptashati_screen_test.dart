@@ -214,6 +214,8 @@ void main() {
       500,
       scrollable: find.byType(Scrollable).first,
     );
+    await tester.pumpAndSettle();
+    expect(find.text('अध्याय ३ — महिषासुर वध').hitTestable(), findsOneWidget);
     await tester.tap(find.text('अध्याय ३ — महिषासुर वध'));
     await tester.pumpAndSettle();
 

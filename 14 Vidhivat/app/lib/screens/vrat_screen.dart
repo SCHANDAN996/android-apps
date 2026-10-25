@@ -178,6 +178,7 @@ class _VratSuchi extends StatelessWidget {
                             const SizedBox(height: 2),
                             Text(
                               sab[i].tithiNaam,
+                              textAlign: TextAlign.justify,
                               style: type.bodySmall
                                   .copyWith(color: colors.textSecondary),
                             ),

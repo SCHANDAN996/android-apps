@@ -49,7 +49,8 @@ class MantraKhand extends StatelessWidget {
           // वो ठीक उसी जगह चाहिए जहाँ
           // ऐप अपनी कमी मान रहा है — वरना चेतावनी अधूरी रह जाती है।
           if (mantra.vikalp.isNotEmpty)
-            Text(mantra.vikalp, style: type.bodySmall),
+            Text(mantra.vikalp,
+                textAlign: TextAlign.justify, style: type.bodySmall),
           if (mantra.chetavni.isNotEmpty) ...[
             const SizedBox(height: VidhivatSpacing.sm),
             Chetavni(mantra.chetavni),
@@ -70,14 +71,17 @@ class MantraKhand extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // सबसे बड़ा अक्षर पूरे ऐप में — यही बोलकर पढ़ा जाता है।
-              SelectableText(mantra.devanagari, style: type.mantra),
+              SelectableText(mantra.devanagari,
+                  textAlign: TextAlign.justify, style: type.mantra),
               if (mantra.roman.isNotEmpty) ...[
                 const SizedBox(height: VidhivatSpacing.lg),
                 const VidhivatDivider(),
                 const SizedBox(height: VidhivatSpacing.sm),
                 Text('उच्चारण', style: type.label),
                 const SizedBox(height: VidhivatSpacing.xxs),
-                Text(mantra.roman, style: type.mantraTransliteration),
+                Text(mantra.roman,
+                    textAlign: TextAlign.justify,
+                    style: type.mantraTransliteration),
               ],
               if (mantra.arth.isNotEmpty) ...[
                 const SizedBox(height: VidhivatSpacing.lg),
@@ -85,7 +89,8 @@ class MantraKhand extends StatelessWidget {
                 const SizedBox(height: VidhivatSpacing.sm),
                 Text('अर्थ', style: type.label),
                 const SizedBox(height: VidhivatSpacing.xxs),
-                Text(mantra.arth, style: type.mantraMeaning),
+                Text(mantra.arth,
+                    textAlign: TextAlign.justify, style: type.mantraMeaning),
               ],
             ],
           ),

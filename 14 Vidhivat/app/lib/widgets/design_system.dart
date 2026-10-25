@@ -295,6 +295,7 @@ class VidhivatSurfaceCard extends StatelessWidget {
       container: true,
       excludeSemantics: semanticLabel != null,
       button: onTap != null,
+        onTap: semanticLabel != null ? onTap : null,
       selected: variant == VidhivatCardVariant.selectable ? selected : null,
       label: semanticLabel,
       child: Material(
@@ -429,6 +430,7 @@ class VidhivatSectionHeader extends StatelessWidget {
                 const SizedBox(height: VidhivatSpacing.xxs),
                 Text(
                   supportingText!,
+                  textAlign: TextAlign.justify,
                   style: type.bodySmall.copyWith(color: colors.textSecondary),
                 ),
               ],
@@ -972,7 +974,8 @@ class VidhivatSrotButton extends StatelessWidget {
                 const SizedBox(height: VidhivatSpacing.lg),
                 Text(pankti.label, style: type.label),
                 const SizedBox(height: VidhivatSpacing.xxs),
-                Text(pankti.value, style: type.bodyMedium),
+                Text(pankti.value,
+                    textAlign: TextAlign.justify, style: type.bodyMedium),
               ],
             if (antimBaat != null) ...[
               const SizedBox(height: VidhivatSpacing.lg),
@@ -1036,6 +1039,7 @@ class VidhivatSrotButton extends StatelessWidget {
                   constraints: BoxConstraints(maxWidth: labelKiJagah),
                   child: Text(
                     label,
+                    textAlign: TextAlign.justify,
                     style: type.bodySmall.copyWith(color: colors.textSecondary),
                   ),
                 ),

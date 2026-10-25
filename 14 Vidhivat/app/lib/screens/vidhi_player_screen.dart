@@ -535,6 +535,7 @@ class _CharanSuchiSheet extends StatelessWidget {
                     ),
                     title: Text(
                       charan[index].shirshak,
+                      textAlign: TextAlign.justify,
                       style: VidhivatTheme.typographyOf(context).bodyMedium,
                     ),
                     subtitle: Text(status),
@@ -621,6 +622,7 @@ class _SankalpKhandState extends State<_SankalpKhand> {
           semanticLabel: 'बना हुआ ${_pooraRoop ? 'पूरा' : 'सरल'} संकल्प',
           child: SelectableText(
             path,
+            textAlign: TextAlign.justify,
             style: VidhivatTheme.typographyOf(context).mantra.copyWith(
                   fontSize:
                       VidhivatTheme.typographyOf(context).bodyLarge.fontSize,
@@ -632,6 +634,7 @@ class _SankalpKhandState extends State<_SankalpKhand> {
         Text(
           '${tarikh(DateTime.now())} · ${settings.city.name} · '
           '${p.varaName} · ${p.masaFullName} ${p.pakshaName} ${p.tithi.name}',
+          textAlign: TextAlign.justify,
           style: VidhivatTheme.typographyOf(context).bodySmall,
         ),
         // ── यहाँ पहले पद्धति वाली चेतावनी भी छपती थी — अब नहीं ───────

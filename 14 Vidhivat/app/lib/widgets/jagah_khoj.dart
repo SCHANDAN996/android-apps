@@ -14,7 +14,8 @@ import 'design_system.dart';
 ///
 /// गाँव वाली सूची पहली बार खुलने में लगभग एक सेकंड लेती है — [jagahKhojTaiyar]
 /// खोज वाले खाने को छूते ही बुला लो।
-Future<List<JagahMila>> jagahKhojo(String khoj, {int shahar = 4, int gaon = 12}) async {
+Future<List<JagahMila>> jagahKhojo(String khoj,
+    {int shahar = 4, int gaon = 12}) async {
   final q = khoj.trim();
   if (q.isEmpty) return const [];
   final apne = shaharKhojo(q).take(shahar).toList();
@@ -166,7 +167,12 @@ class _JagahKhojSheetState extends State<JagahKhojSheet> {
     });
     final lo = widget.jagahLo ??
         () => const DeviceLocationService().getCurrentLocation();
-    final r = await lo();
+    DeviceLocationResult r;
+    try {
+      r = await lo();
+    } catch (_) {
+      r = const DeviceLocationResult.failed(DeviceLocationFailure.unavailable);
+    }
     if (!mounted) return;
     if (!r.hasPosition) {
       setState(() {
@@ -209,8 +215,8 @@ class _JagahKhojSheetState extends State<JagahKhojSheet> {
 
     if (q == _onlineKhoj) {
       for (final o in _online ?? const <OsmJagah>[]) {
-        jodo(City(o.naam, o.pata.isEmpty ? 'भारत' : o.pata, o.latitude,
-            o.longitude));
+        jodo(City(
+            o.naam, o.pata.isEmpty ? 'भारत' : o.pata, o.latitude, o.longitude));
       }
     }
     shaharKhojo(q).forEach(jodo);
@@ -278,6 +284,7 @@ class _JagahKhojSheetState extends State<JagahKhojSheet> {
             Padding(
               padding: const EdgeInsets.only(top: VidhivatSpacing.xs),
               child: Text(_gpsGalti!,
+                  textAlign: TextAlign.justify,
                   style: type.bodySmall.copyWith(color: colors.textSecondary)),
             ),
           const SizedBox(height: VidhivatSpacing.md),
@@ -315,6 +322,7 @@ class _JagahKhojSheetState extends State<JagahKhojSheet> {
             Padding(
               padding: const EdgeInsets.only(top: VidhivatSpacing.xxs),
               child: Text(_onlineHaal!,
+                  textAlign: TextAlign.justify,
                   style: type.bodySmall.copyWith(color: colors.textSecondary)),
             ),
         ],
@@ -331,7 +339,10 @@ class _JagahKhojSheetState extends State<JagahKhojSheet> {
                 c.state == widget.selectedCity?.state,
             onTap: () => Navigator.of(context).pop(c),
           ),
-        if (sab.isEmpty && likha.length >= 3 && likha == _onlineKhoj && !_onlineChal)
+        if (sab.isEmpty &&
+            likha.length >= 3 &&
+            likha == _onlineKhoj &&
+            !_onlineChal)
           const Padding(
             padding: EdgeInsets.symmetric(vertical: VidhivatSpacing.sm),
             child: Text(
@@ -362,15 +373,19 @@ Future<City?> jagahChuno(
       isScrollControlled: true,
       useSafeArea: true,
       showDragHandle: true,
-      builder: (context) => DraggableScrollableSheet(
-        expand: false,
-        initialChildSize: 0.9,
-        builder: (context, controller) => JagahKhojSheet(
-          controller: controller,
-          selectedCity: selectedCity,
-          shirshak: shirshak,
-          phoneKiJagah: phoneKiJagah,
-          jagahLo: jagahLo,
+      builder: (context) => Padding(
+        padding:
+            EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
+        child: DraggableScrollableSheet(
+          expand: false,
+          initialChildSize: 0.9,
+          builder: (context, controller) => JagahKhojSheet(
+            controller: controller,
+            selectedCity: selectedCity,
+            shirshak: shirshak,
+            phoneKiJagah: phoneKiJagah,
+            jagahLo: jagahLo,
+          ),
         ),
       ),
     );

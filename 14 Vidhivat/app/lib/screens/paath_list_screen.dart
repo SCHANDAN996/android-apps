@@ -5,6 +5,7 @@ import '../vidhi/bhandar.dart';
 import '../vidhi/paath.dart';
 import '../vidhi/paath_assets.dart';
 import '../widgets/common.dart';
+import '../widgets/reading_cards.dart';
 import '../widgets/design_system.dart';
 import 'paath_screen.dart';
 import 'saptashati_screen.dart';
@@ -120,21 +121,24 @@ class _PaathListScreenState extends State<PaathListScreen> {
                     ),
                   ],
                   const SizedBox(height: VidhivatSpacing.xxl),
-                  // दुर्गा सप्तशती — सोलह पाठ, पर सूची में एक ही पंक्ति; वह
-                  // अपना पन्ना खोलती है जहाँ पूरा क्रम है (→ D-084)।
-                  if (_chhanni == null || _chhanni == PaathPrakar.stotra) ...[
-                    _SaptashatiTile(
-                      onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (_) => const SaptashatiScreen()),
-                      ),
-                    ),
-                    const SizedBox(height: VidhivatSpacing.sm),
-                  ],
-                  for (final entry in entries) ...[
-                    _PaathTile(entry: entry, onTap: () => _open(entry)),
-                    const SizedBox(height: VidhivatSpacing.sm),
-                  ],
+                  ReadingCardGrid(
+                    gridKey: const Key('paath_catalog_grid'),
+                    children: [
+                      if (_chhanni == null || _chhanni == PaathPrakar.stotra)
+                        ReadingArtworkCard(
+                            name: 'दुर्गा सप्तशती',
+                            artwork:
+                                PaathAssets.forGranthId('saptashati').assetPath,
+                            onTap: () => Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (_) => const SaptashatiScreen()))),
+                      for (final entry in entries)
+                        ReadingArtworkCard(
+                            name: entry.naam,
+                            artwork: PaathAssets.forPaathId(entry.id).assetPath,
+                            onTap: () => _open(entry)),
+                    ],
+                  ),
                   // ── "और चालीसा आगे जोड़े जाएँगे … अपनी रिकॉर्डिंग के
                   //     साथ" वाली पंक्ति यहाँ थी — अब नहीं ──────────────
                   //
@@ -149,114 +153,6 @@ class _PaathListScreenState extends State<PaathListScreen> {
             },
           ),
         ),
-      ),
-    );
-  }
-}
-
-class _SaptashatiTile extends StatelessWidget {
-  final VoidCallback onTap;
-
-  const _SaptashatiTile({required this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    final type = VidhivatTheme.typographyOf(context);
-    final colors = VidhivatTheme.colorsOf(context);
-    return VidhivatSurfaceCard(
-      onTap: onTap,
-      child: Row(
-        children: [
-          Container(
-            width: 46,
-            height: 46,
-            decoration: BoxDecoration(
-              color: colors.primaryMuted,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            alignment: Alignment.center,
-            child: Padding(
-              padding: const EdgeInsets.all(3),
-              child: Image.asset(
-                PaathAssets.durga.assetPath,
-                fit: BoxFit.contain,
-                cacheHeight: 92,
-                filterQuality: FilterQuality.medium,
-                excludeFromSemantics: true,
-              ),
-            ),
-          ),
-          const SizedBox(width: VidhivatSpacing.md),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('दुर्गा सप्तशती', style: type.cardTitle),
-                const SizedBox(height: 2),
-                Text('तेरह अध्याय — कवच, अर्गला और कीलक सहित',
-                    style: type.bodySmall),
-              ],
-            ),
-          ),
-          Icon(Icons.chevron_right, color: colors.textTertiary),
-        ],
-      ),
-    );
-  }
-}
-
-class _PaathTile extends StatelessWidget {
-  final PaathSuchiEntry entry;
-  final VoidCallback onTap;
-
-  const _PaathTile({required this.entry, required this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    final type = VidhivatTheme.typographyOf(context);
-    final colors = VidhivatTheme.colorsOf(context);
-    final artwork = PaathAssets.forPaathId(entry.id);
-
-    return VidhivatSurfaceCard(
-      onTap: entry.taiyar ? onTap : null,
-      child: Row(
-        children: [
-          Container(
-            width: 46,
-            height: 46,
-            decoration: BoxDecoration(
-              color: colors.primaryMuted,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            alignment: Alignment.center,
-            child: Padding(
-              padding: const EdgeInsets.all(3),
-              child: Image.asset(
-                artwork.assetPath,
-                fit: BoxFit.contain,
-                cacheHeight: 92,
-                filterQuality: FilterQuality.medium,
-                excludeFromSemantics: true,
-              ),
-            ),
-          ),
-          const SizedBox(width: VidhivatSpacing.md),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(entry.naam, style: type.cardTitle),
-                const SizedBox(height: 2),
-                Text(
-                  entry.taiyar ? entry.ekLine : 'जल्द आएगा',
-                  style: type.bodySmall,
-                ),
-              ],
-            ),
-          ),
-          if (entry.taiyar)
-            Icon(Icons.chevron_right, color: colors.textTertiary),
-        ],
       ),
     );
   }

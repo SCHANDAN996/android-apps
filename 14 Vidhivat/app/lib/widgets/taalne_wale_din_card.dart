@@ -80,7 +80,8 @@ class _TaalneWaleDinCardState extends State<TaalneWaleDinCard> {
       builder: (context, snap) {
         if (!snap.hasData) {
           return VidhivatSurfaceCard(
-            child: Text('आगे के दिन देखे जा रहे हैं…', style: type.bodySmall),
+            child: Text('आगे के दिन देखे जा रहे हैं…',
+                textAlign: TextAlign.justify, style: type.bodySmall),
           );
         }
         final sab = snap.data!;
@@ -110,6 +111,7 @@ class _TaalneWaleDinCardState extends State<TaalneWaleDinCard> {
                                   'जिसे पूरा टाला जाता हो।'
                               : 'अगले $taalneKeDin दिनों में $poore दिन ऐसे हैं '
                                   'जिनमें मांगलिक काम नहीं होते।',
+                          textAlign: TextAlign.justify,
                           style: type.bodyMedium,
                         ),
                       ),

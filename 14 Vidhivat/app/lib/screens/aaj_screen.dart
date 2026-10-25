@@ -335,16 +335,19 @@ class _Sirlekh extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: VidhivatSpacing.sm),
             child: Text(
               'पुरुषोत्तम मास — इसमें मांगलिक काम नहीं होते',
+              textAlign: TextAlign.justify,
               style: type.bodySmall.copyWith(color: colors.secondary),
             ),
           ),
         Text(
           'विक्रम संवत् ${p.vikramSamvat} ${p.vikramSamvatsara}   ·   '
           'शक संवत् ${p.shakaSamvat} ${p.shakaSamvatsara}',
+          textAlign: TextAlign.justify,
           style: type.bodySmall,
         ),
         Text(
           '${p.ayanaName} · ${p.rituName} ऋतु · ${p.nakshatra.name} नक्षत्र',
+          textAlign: TextAlign.justify,
           style: type.bodySmall,
         ),
       ]),

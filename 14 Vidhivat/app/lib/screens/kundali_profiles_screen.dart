@@ -12,6 +12,14 @@ import '../widgets/jagah_khoj.dart';
 import 'gun_milan_screen.dart';
 import 'kundali_screen.dart';
 
+// Keep invalid signs/text visible for validation; only normalize Hindi digits.
+final _coordinateFormatter = TextInputFormatter.withFunction((oldValue, value) {
+  const digits = '०१२३४५६७८९';
+  final text = value.text.replaceAllMapped(
+      RegExp('[०-९]'), (match) => digits.indexOf(match[0]!).toString());
+  return value.copyWith(text: text);
+});
+
 /// परिवार की कुंडलियाँ — जन्म का ब्यौरा भरो, कुंडली खोलो (→ D-105)।
 ///
 /// यहाँ से जो खुलता है वह **गणित** है: लग्न, ग्रह, दशा की तारीख़ें। फल,
@@ -102,6 +110,7 @@ class _KundaliProfilesScreenState extends State<KundaliProfilesScreen> {
               else if (kundaliProfiles.items.isEmpty)
                 Text(
                   'अभी कोई कुंडली नहीं बनी। जन्म की तारीख़, समय और जगह चाहिए।',
+                  textAlign: TextAlign.justify,
                   style: type.bodyMedium.copyWith(color: colors.textSecondary),
                 )
               else
@@ -116,6 +125,7 @@ class _KundaliProfilesScreenState extends State<KundaliProfilesScreen> {
                         const SizedBox(height: VidhivatSpacing.xxs),
                         Text(
                           '${tarikh(p.janm)}, ${hm(p.janm)} · ${p.sthanNaam}',
+                          textAlign: TextAlign.justify,
                           style: type.bodySmall
                               .copyWith(color: colors.textSecondary),
                         ),
@@ -153,6 +163,7 @@ class _KundaliProfilesScreenState extends State<KundaliProfilesScreen> {
                 const SizedBox(height: VidhivatSpacing.xxs),
                 Text(
                   'दो कुंडलियों के बीच अष्टकूट के अंक — सिर्फ़ जोड़, फ़ैसला नहीं।',
+                  textAlign: TextAlign.justify,
                   style: type.bodySmall.copyWith(color: colors.textSecondary),
                 ),
               ],
@@ -161,6 +172,7 @@ class _KundaliProfilesScreenState extends State<KundaliProfilesScreen> {
                 'जन्म का ब्यौरा सिर्फ़ इस फ़ोन में रहता है; ऐप इसे कहीं नहीं '
                 'भेजता। फ़ोन का अपना बैकअप चालू हो तो वह इसे आपके खाते में रख '
                 'सकता है। ऐप हटाने पर यह भी मिट जाता है।',
+                textAlign: TextAlign.justify,
                 style: type.bodySmall.copyWith(color: colors.textTertiary),
               ),
             ],
@@ -253,15 +265,16 @@ class _KundaliFormState extends State<KundaliForm> {
     if (t != null && mounted) setState(() => _samay = t);
   }
 
-  void _kaho(String baat) => ScaffoldMessenger.of(context)
-      .showSnackBar(SnackBar(content: Text(baat)));
+  void _kaho(String baat) =>
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(baat)));
 
   Future<void> _jagahChuno() async {
     final c = await jagahChuno(
       context,
       selectedCity: _shahar,
       shirshak: 'जन्म की जगह',
-      phoneKiJagah: 'तभी, जब आप अभी जन्म की जगह पर ही हों · फ़ोन से बाहर नहीं जाती',
+      phoneKiJagah:
+          'तभी, जब आप अभी जन्म की जगह पर ही हों · फ़ोन से बाहर नहीं जाती',
       jagahLo: widget.jagahLo,
     );
     if (c == null || !mounted) return;
@@ -285,10 +298,10 @@ class _KundaliFormState extends State<KundaliForm> {
       final d = double.tryParse(_lon.text.trim());
       if (sthan.isEmpty) return _kaho('जगह का नाम लिखिए।');
       // भारत की सीमा के भीतर — विदेश का जन्म अभी नहीं (घड़ी अलग होती है)
-      if (a == null || a < 6 || a > 37.5) {
+      if (a == null || !a.isFinite || a < 6 || a > 37.5) {
         return _kaho('अक्षांश 6 और 37.5 के बीच का अंक होना चाहिए।');
       }
-      if (d == null || d < 68 || d > 97.5) {
+      if (d == null || !d.isFinite || d < 68 || d > 97.5) {
         return _kaho('देशांतर 68 और 97.5 के बीच का अंक होना चाहिए।');
       }
       lat = a;
@@ -305,8 +318,8 @@ class _KundaliFormState extends State<KundaliForm> {
       id: widget.existing?.id ??
           DateTime.now().microsecondsSinceEpoch.toString(),
       naam: naam,
-      janm: DateTime(_tarikh!.year, _tarikh!.month, _tarikh!.day,
-          _samay!.hour, _samay!.minute),
+      janm: DateTime(_tarikh!.year, _tarikh!.month, _tarikh!.day, _samay!.hour,
+          _samay!.minute),
       sthanNaam: sthan,
       latitude: lat,
       longitude: lon,
@@ -359,6 +372,7 @@ class _KundaliFormState extends State<KundaliForm> {
               'समय जितना ठीक, लग्न उतना ठीक: लग्न लगभग चार मिनट में एक अंश और दो '
               'घंटे में पूरी राशि बदल देता है। समय पता न हो तो अंदाज़ से मत '
               'भरिए — लग्न और भाव ग़लत आएँगे।',
+              textAlign: TextAlign.justify,
               style: type.bodySmall.copyWith(color: colors.textSecondary),
             ),
             if (yuddh) ...[
@@ -386,7 +400,8 @@ class _KundaliFormState extends State<KundaliForm> {
                 child: ListTile(
                   key: const Key('janm_sthan'),
                   leading: const Icon(Icons.location_on_outlined),
-                  title: Text(_shahar == null ? 'जन्म की जगह चुनें *' : _shahar!.name),
+                  title: Text(
+                      _shahar == null ? 'जन्म की जगह चुनें *' : _shahar!.name),
                   subtitle: Text(_shahar == null
                       ? 'गाँव या शहर का नाम लिखें, या फ़ोन की जगह लें'
                       : '${_shahar!.state} · बदलने के लिए दबाएँ'),
@@ -406,10 +421,10 @@ class _KundaliFormState extends State<KundaliForm> {
                   Expanded(
                     child: TextField(
                       controller: _lat,
-                      keyboardType: const TextInputType.numberWithOptions(
-                          decimal: true),
+                      keyboardType:
+                          const TextInputType.numberWithOptions(decimal: true),
                       inputFormatters: [
-                        FilteringTextInputFormatter.allow(RegExp(r'[0-9.]'))
+                        _coordinateFormatter,
                       ],
                       decoration: const InputDecoration(
                           labelText: 'अक्षांश (उत्तर)', hintText: '25.59'),
@@ -419,10 +434,10 @@ class _KundaliFormState extends State<KundaliForm> {
                   Expanded(
                     child: TextField(
                       controller: _lon,
-                      keyboardType: const TextInputType.numberWithOptions(
-                          decimal: true),
+                      keyboardType:
+                          const TextInputType.numberWithOptions(decimal: true),
                       inputFormatters: [
-                        FilteringTextInputFormatter.allow(RegExp(r'[0-9.]'))
+                        _coordinateFormatter,
                       ],
                       decoration: const InputDecoration(
                           labelText: 'देशांतर (पूर्व)', hintText: '85.14'),
@@ -442,6 +457,7 @@ class _KundaliFormState extends State<KundaliForm> {
             ),
             Text(
               'गाँव न मिले तो पास का क़स्बा भी चलेगा।',
+              textAlign: TextAlign.justify,
               style: type.bodySmall.copyWith(color: colors.textSecondary),
             ),
             const SizedBox(height: VidhivatSpacing.xl),

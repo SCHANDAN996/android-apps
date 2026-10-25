@@ -56,55 +56,86 @@ abstract final class PaathAssets {
     semanticLabel: 'विश्वकर्मा जी और शिल्प-औज़ारों का सजावटी चित्र',
   );
 
+  // Each reading entry owns a distinct titled illustration (D-137).
   static const Map<String, DevotionalArtwork> _byPaathId = {
-    'hanuman_chalisa': hanuman,
-    'ganesh_aarti': ganesha,
-    'hanuman_aarti': hanuman,
-    'lakshmi_aarti': lakshmi,
-    'durga_aarti': durga,
-    // दोनों दुर्गा आरतियों का चित्र एक ही — वे एक ही देवी की दो रचनाएँ
-    // हैं, दो अलग चीज़ें नहीं। सूची में नाम से फ़र्क़ साफ़ है।
-    'jagjanani_aarti': durga,
-    'saptashloki_durga': durga,
-    'shiv_aarti': shiva,
-    'satyanarayan_aarti': vishnu,
-    'krishna_aarti': krishna,
-    'ram_aarti': ram,
-    'saraswati_aarti': saraswati,
-    'jagdish_aarti': vishnu,
-    'vishwakarma_sukta': vishwakarma,
+    'hanuman_chalisa': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_p_hanuman_chalisa_v2.webp',
+        semanticLabel: 'श्री हनुमान चालीसा का नाम सहित सजावटी चित्र'),
+    'ganesh_aarti': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_p_ganesh_aarti_v2.webp',
+        semanticLabel: 'श्री गणेश जी की आरती का नाम सहित सजावटी चित्र'),
+    'hanuman_aarti': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_p_hanuman_aarti_v2.webp',
+        semanticLabel: 'श्री हनुमान जी की आरती का नाम सहित सजावटी चित्र'),
+    'lakshmi_aarti': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_p_lakshmi_aarti_v2.webp',
+        semanticLabel: 'श्री लक्ष्मी जी की आरती का नाम सहित सजावटी चित्र'),
+    'durga_aarti': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_p_durga_aarti_v2.webp',
+        semanticLabel: 'श्री दुर्गा जी की आरती का नाम सहित सजावटी चित्र'),
+    'jagjanani_aarti': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_p_jagjanani_aarti_v2.webp',
+        semanticLabel:
+            'श्री देवी जी की आरती — जगजननी जय जय का नाम सहित सजावटी चित्र'),
+    'saptashloki_durga': DevotionalArtwork(
+        assetPath:
+            'assets/images/devotional/reading_p_saptashloki_durga_v2.webp',
+        semanticLabel: 'सप्तश्लोकी दुर्गा का नाम सहित सजावटी चित्र'),
+    'shiv_aarti': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_p_shiv_aarti_v2.webp',
+        semanticLabel: 'श्री शिव जी की आरती का नाम सहित सजावटी चित्र'),
+    'satyanarayan_aarti': DevotionalArtwork(
+        assetPath:
+            'assets/images/devotional/reading_p_satyanarayan_aarti_v2.webp',
+        semanticLabel: 'श्री सत्यनारायण जी की आरती का नाम सहित सजावटी चित्र'),
+    'krishna_aarti': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_p_krishna_aarti_v2.webp',
+        semanticLabel: 'श्री कृष्ण जी की आरती का नाम सहित सजावटी चित्र'),
+    'ram_aarti': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_p_ram_aarti_v2.webp',
+        semanticLabel: 'श्री राम जी की आरती का नाम सहित सजावटी चित्र'),
+    'saraswati_aarti': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_p_saraswati_aarti_v2.webp',
+        semanticLabel: 'श्री सरस्वती जी की आरती का नाम सहित सजावटी चित्र'),
+    'jagdish_aarti': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_p_jagdish_aarti_v2.webp',
+        semanticLabel: 'ॐ जय जगदीश हरे का नाम सहित सजावटी चित्र'),
+    'vishwakarma_sukta': DevotionalArtwork(
+        assetPath:
+            'assets/images/devotional/reading_p_vishwakarma_sukta_v2.webp',
+        semanticLabel: 'विश्वकर्मा सूक्त का नाम सहित सजावटी चित्र'),
+  };
+
+  static const Map<String, DevotionalArtwork> _byGranthId = {
+    'gita': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_g_gita_v2.webp',
+        semanticLabel: 'श्रीमद्भगवद्गीता का नाम सहित सजावटी चित्र'),
+    'sundarkand': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_g_sundarkand_v2.webp',
+        semanticLabel: 'सुंदरकांड का नाम सहित सजावटी चित्र'),
+    'vishnusahasranama': DevotionalArtwork(
+        assetPath:
+            'assets/images/devotional/reading_g_vishnusahasranama_v2.webp',
+        semanticLabel: 'श्री विष्णु सहस्रनाम का नाम सहित सजावटी चित्र'),
+    'sukta': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_g_sukta_v2.webp',
+        semanticLabel: 'वेद के सूक्त का नाम सहित सजावटी चित्र'),
+    'upanishad': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_g_upanishad_v2.webp',
+        semanticLabel: 'उपनिषद का नाम सहित सजावटी चित्र'),
+    'mahabharat': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_g_mahabharat_v2.webp',
+        semanticLabel: 'महाभारत का नाम सहित सजावटी चित्र'),
+    'puran': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_g_puran_v2.webp',
+        semanticLabel: 'वेद और पुराण — परिचय का नाम सहित सजावटी चित्र'),
+    'saptashati': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_g_saptashati_v2.webp',
+        semanticLabel: 'दुर्गा सप्तशती का नाम सहित सजावटी चित्र'),
   };
 
   static DevotionalArtwork forPaathId(String id) =>
       _byPaathId[id] ?? DevotionalAssets.diya;
-
-  /// ग्रंथालय की सूची में ग्रंथ का चित्र — उसी देवता का जिनका वह ग्रंथ है।
-  static const Map<String, DevotionalArtwork> _byGranthId = {
-    'gita': krishna,
-    'saptashati': durga,
-    'sundarkand': DevotionalArtwork(
-      assetPath: 'assets/images/devotional/granth_sundarkand_v2.webp',
-      semanticLabel: 'सुंदरकांड में हनुमान जी का सजावटी चित्र',
-    ),
-    'vishnusahasranama': vishnu,
-    'sukta': DevotionalArtwork(
-      assetPath: 'assets/images/devotional/granth_ved_sukta_v2.webp',
-      semanticLabel: 'वेद सूक्त की पूजा सामग्री का सजावटी चित्र',
-    ),
-    'upanishad': DevotionalArtwork(
-      assetPath: 'assets/images/devotional/granth_upanishad_v2.webp',
-      semanticLabel: 'गुरु-शिष्य संवाद का सजावटी चित्र',
-    ),
-    'mahabharat': DevotionalArtwork(
-      assetPath: 'assets/images/devotional/granth_mahabharat_v2.webp',
-      semanticLabel: 'महाभारत के रथ का सजावटी चित्र',
-    ),
-    'puran': DevotionalArtwork(
-      assetPath: 'assets/images/devotional/granth_ved_puran_v2.webp',
-      semanticLabel: 'वेद और पुराण की पोथियों का सजावटी चित्र',
-    ),
-  };
-
   static DevotionalArtwork forGranthId(String id) =>
       _byGranthId[id] ?? DevotionalAssets.diya;
 }

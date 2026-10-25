@@ -321,6 +321,7 @@ class _MahinaTab extends StatelessWidget {
           child: selectedFestivals.isEmpty
               ? Text(
                   'इस दिन कोई त्योहार या व्रत नहीं पड़ता।',
+                  textAlign: TextAlign.justify,
                   style: VidhivatTheme.typographyOf(context).bodySmall,
                 )
               : Column(
@@ -624,6 +625,7 @@ class _TyoharTabState extends State<_TyoharTab> {
         if (filtered.isEmpty)
           Text(
             'इस श्रेणी में कोई दिन नहीं मिला।',
+            textAlign: TextAlign.justify,
             style: VidhivatTheme.typographyOf(context).bodySmall,
           )
         else
@@ -697,6 +699,7 @@ class _TyoharCard extends StatelessWidget {
                       if (f.ambiguous && f.otherCandidate != null)
                         Text(
                           'या ${tarikhChhoti(f.otherCandidate!)}',
+                          textAlign: TextAlign.justify,
                           style: theme.textTheme.bodySmall,
                         ),
                     ],

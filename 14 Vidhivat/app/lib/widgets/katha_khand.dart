@@ -57,7 +57,8 @@ class _KathaKhandState extends State<KathaKhand> {
           );
         }
         if (!snap.hasData) {
-          return Text('कथा खुल रही है…', style: type.bodySmall);
+          return Text('कथा खुल रही है…',
+              textAlign: TextAlign.justify, style: type.bodySmall);
         }
         final katha = snap.data!;
 
@@ -102,6 +103,7 @@ class _KathaKhandState extends State<KathaKhand> {
                                   const SizedBox(height: VidhivatSpacing.xxs),
                                   Text(
                                     '${a.saar}  ·  लगभग ${a.minute} मिनट',
+                                    textAlign: TextAlign.justify,
                                     style: type.bodySmall.copyWith(
                                       color: colors.textSecondary,
                                     ),

@@ -233,8 +233,8 @@ class _PaathReaderState extends State<PaathReader> {
   /// चौपाइयाँ और छंद हैं — वहाँ "3 श्लोक" लिखना ग़लत होता, इसलिए सब मिलाकर
   /// "पद" (→ D-106)।
   static String _granthGinti(Paath paath) {
-    final padya = paath.khand.any((k) =>
-        k.shirshak.startsWith('चौपाई') || k.shirshak.startsWith('दोहा'));
+    final padya = paath.khand.any(
+        (k) => k.shirshak.startsWith('चौपाई') || k.shirshak.startsWith('दोहा'));
     if (padya) return '${paath.khandKul} पद';
     final shlok =
         paath.khand.where((k) => k.shirshak.startsWith('श्लोक')).length;
@@ -306,6 +306,7 @@ class _PaathReaderState extends State<PaathReader> {
                 Text(
                   '${paath.prakar.naam} · ${paath.devta} · '
                   '${paath.rachnakar} · ${paath.bhasha}',
+                  textAlign: TextAlign.justify,
                   style: type.bodySmall,
                 ),
                 const SizedBox(height: VidhivatSpacing.lg),
@@ -395,8 +396,7 @@ class _PaathReaderState extends State<PaathReader> {
                       : '${paath.padGinti} पद · हल्के रंग वाली पंक्तियाँ '
                           'हर पद के बाद दोहराएँ',
                   // सार में न रोमन है, न अर्थ — बटन का कोई काम नहीं
-                  action: paath.kuchBharaHai &&
-                          paath.prakar != PaathPrakar.saar
+                  action: paath.kuchBharaHai && paath.prakar != PaathPrakar.saar
                       ? VidhivatButton(
                           // जिस पाठ में अर्थ नहीं, सिर्फ़ रोमन है — वहाँ
                           // "अर्थ दिखाएँ" लिखना झूठ होता।
@@ -674,7 +674,8 @@ class _NavdurgaNaamCard extends StatelessWidget {
         children: [
           Text('नवदुर्गा के नौ नाम', style: type.cardTitle),
           const SizedBox(height: VidhivatSpacing.xs),
-          Text(naam.join(' · '), style: type.bodyMedium),
+          Text(naam.join(' · '),
+              textAlign: TextAlign.justify, style: type.bodyMedium),
           const SizedBox(height: VidhivatSpacing.xs),
           Text(
             'देवी कवच · श्लोक ३–५',
@@ -755,20 +756,26 @@ class _KhandCard extends StatelessWidget {
             // scrollable हो जाते हैं, और लंबे पन्ने पर स्क्रॉल उलझता है।
             // (विधि प्लेयर में एक पन्ने पर एक ही मंत्र होता है, इसलिए
             // वहाँ `SelectableText` ठीक है।)
-            Text(khand.dev, style: gadya ? type.bodyLarge : type.mantra),
+            Text(khand.dev,
+                textAlign: TextAlign.justify,
+                style: gadya ? type.bodyLarge : type.mantra),
             if (arthDikhao && khand.roman.isNotEmpty) ...[
               const SizedBox(height: VidhivatSpacing.xs),
-              Text(khand.roman, style: type.mantraTransliteration),
+              Text(khand.roman,
+                  textAlign: TextAlign.justify,
+                  style: type.mantraTransliteration),
             ],
             if (arthDikhao && khand.arth.isNotEmpty) ...[
               const SizedBox(height: VidhivatSpacing.sm),
-              Text(khand.arth, style: type.mantraMeaning),
+              Text(khand.arth,
+                  textAlign: TextAlign.justify, style: type.mantraMeaning),
             ],
             // हर पद के नीचे "जाँच बाकी" लिखना बंद — तैंतालीस पदों पर
             // तैंतालीस बार वही बात, और यूज़र के लिए उसमें कोई काम नहीं।
           ] else
             Text(
               '— अभी नहीं जोड़ा गया —',
+              textAlign: TextAlign.justify,
               style: type.bodyMedium.copyWith(color: colors.textTertiary),
             ),
           if (dohraav != null && dohraav.hasPath && khand.hasPath) ...[
@@ -816,6 +823,7 @@ class _Dohraav extends StatelessWidget {
           children: [
             Text(
               khand.dev,
+              textAlign: TextAlign.justify,
               style: type.mantra.copyWith(
                 color: colors.textSecondary,
                 fontSize: (type.mantra.fontSize ?? 20) * 0.88,
@@ -825,6 +833,7 @@ class _Dohraav extends StatelessWidget {
               const SizedBox(height: VidhivatSpacing.xs),
               Text(
                 khand.roman,
+                textAlign: TextAlign.justify,
                 style: type.mantraTransliteration
                     .copyWith(color: colors.textTertiary),
               ),
@@ -867,7 +876,7 @@ class _Notice extends StatelessWidget {
         children: [
           Text(title, style: type.label.copyWith(color: tone)),
           const SizedBox(height: VidhivatSpacing.xxs),
-          Text(text, style: type.bodySmall),
+          Text(text, textAlign: TextAlign.justify, style: type.bodySmall),
         ],
       ),
     );

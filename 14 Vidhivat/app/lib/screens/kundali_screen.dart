@@ -46,7 +46,9 @@ class KundaliScreen extends StatefulWidget {
   State<KundaliScreen> createState() => _KundaliScreenState();
 }
 
-class _KundaliScreenState extends State<KundaliScreen> {
+class _KundaliScreenState extends State<KundaliScreen>
+    with SingleTickerProviderStateMixin {
+  late final TabController _tabs;
   late final Kundali _k;
   late final GrahaSthiti _spashtRahu;
   late final JanmPanchang _jp;
@@ -61,6 +63,7 @@ class _KundaliScreenState extends State<KundaliScreen> {
   @override
   void initState() {
     super.initState();
+    _tabs = TabController(length: 4, vsync: this)..addListener(_tabBadla);
     final janm = _p.janmUtc;
     final place = _p.place;
     _k = computeKundali(janm, place);
@@ -71,6 +74,15 @@ class _KundaliScreenState extends State<KundaliScreen> {
     _av = avakahada(_k[KundaliGraha.chandra].nirayan);
   }
 
+  void _tabBadla() => setState(() {});
+
+  @override
+  void dispose() {
+    _tabs.removeListener(_tabBadla);
+    _tabs.dispose();
+    super.dispose();
+  }
+
   /// चित्र वाला हिस्सा PNG बनाकर भेजना। PDF नहीं — Dart की PDF लाइब्रेरियाँ
   /// देवनागरी के संयुक्ताक्षर तोड़ती हैं (→ docs/29 §5)।
   Future<void> _bhejo() async {
@@ -79,11 +91,11 @@ class _KundaliScreenState extends State<KundaliScreen> {
     try {
       final boundary = _chitraKey.currentContext?.findRenderObject()
           as RenderRepaintBoundary?;
-      if (boundary == null) return;
+      if (boundary == null) throw StateError('कुंडली का चित्र उपलब्ध नहीं है');
       final image = await boundary.toImage(pixelRatio: 3);
       final data = await image.toByteData(format: ui.ImageByteFormat.png);
       image.dispose();
-      if (data == null) return;
+      if (data == null) throw StateError('कुंडली का चित्र नहीं बन सका');
       await SharePlus.instance.share(ShareParams(
         files: [
           XFile.fromData(Uint8List.sublistView(data),
@@ -95,7 +107,8 @@ class _KundaliScreenState extends State<KundaliScreen> {
     } catch (_) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('चित्र नहीं बन सका। दोबारा कोशिश करें।')),
+          const SnackBar(
+              content: Text('चित्र नहीं बन सका। दोबारा कोशिश करें।')),
         );
       }
     } finally {
@@ -104,37 +117,37 @@ class _KundaliScreenState extends State<KundaliScreen> {
   }
 
   @override
-  Widget build(BuildContext context) => DefaultTabController(
-        length: 4,
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text(_p.naam),
-            actions: [
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: Text(_p.naam),
+          actions: [
+            if (_tabs.index == 0 && !_tabs.indexIsChanging)
               VidhivatIconAction(
                 icon: Icons.share_outlined,
                 tooltip: 'कुंडली का चित्र भेजें',
                 onPressed: _bhejRahe ? null : _bhejo,
               ),
+          ],
+          bottom: TabBar(
+            controller: _tabs,
+            tabs: const [
+              Tab(text: 'कुंडली'),
+              Tab(text: 'ग्रह'),
+              Tab(text: 'दशा'),
+              Tab(text: 'पंचांग'),
             ],
-            bottom: const TabBar(
-              tabs: [
-                Tab(text: 'कुंडली'),
-                Tab(text: 'ग्रह'),
-                Tab(text: 'दशा'),
-                Tab(text: 'पंचांग'),
-              ],
-            ),
           ),
-          body: SafeArea(
-            child: VidhivatSacredBackdrop(
-              child: TabBarView(
-                children: [
-                  _kundaliPatti(context),
-                  _grahaPatti(context),
-                  _dashaPatti(context),
-                  _panchangPatti(context),
-                ],
-              ),
+        ),
+        body: SafeArea(
+          child: VidhivatSacredBackdrop(
+            child: TabBarView(
+              controller: _tabs,
+              children: [
+                _kundaliPatti(context),
+                _grahaPatti(context),
+                _dashaPatti(context),
+                _panchangPatti(context),
+              ],
             ),
           ),
         ),
@@ -183,15 +196,15 @@ class _KundaliScreenState extends State<KundaliScreen> {
                   const SizedBox(height: VidhivatSpacing.xxs),
                   Text(
                     '${tarikh(_p.janm)}, ${hm(_p.janm)} · ${_p.sthanNaam}',
-                    style:
-                        type.bodySmall.copyWith(color: colors.textSecondary),
+                    textAlign: TextAlign.justify,
+                    style: type.bodySmall.copyWith(color: colors.textSecondary),
                   ),
                   Text(
                     'लग्न ${lagna.rashiNaam} ${anshKala(lagna.ansh)} · '
                     'चंद्र ${_k[KundaliGraha.chandra].rashiNaam} · '
                     '${_k[KundaliGraha.chandra].nakshatraNaam}',
-                    style:
-                        type.bodySmall.copyWith(color: colors.textSecondary),
+                    textAlign: TextAlign.justify,
+                    style: type.bodySmall.copyWith(color: colors.textSecondary),
                   ),
                   const SizedBox(height: VidhivatSpacing.sm),
                   KundaliChitra(kundali: _k, aadhar: _aadhar),
@@ -322,12 +335,15 @@ class _KundaliScreenState extends State<KundaliScreen> {
               ],
             ),
             const SizedBox(height: VidhivatSpacing.xxs),
-            Text('${s.rashiNaam} ${anshKala(s.ansh)}', style: type.bodyLarge),
+            Text('${s.rashiNaam} ${anshKala(s.ansh)}',
+                textAlign: TextAlign.justify, style: type.bodyLarge),
             Text(
               '${s.nakshatraNaam}, चरण ${s.charan} · नवमांश ${s.navamshaNaam}',
+              textAlign: TextAlign.justify,
               style: type.bodyMedium.copyWith(color: colors.textSecondary),
             ),
             Text(neeche,
+                textAlign: TextAlign.justify,
                 style: type.bodySmall.copyWith(color: colors.textTertiary)),
           ],
         ),
@@ -412,8 +428,8 @@ class _KundaliScreenState extends State<KundaliScreen> {
                     m == pehli
                         ? 'जन्म से ${_din(m.ant)} तक'
                         : '${_din(m.shuru)} से ${_din(m.ant)} तक',
-                    style:
-                        type.bodySmall.copyWith(color: colors.textSecondary),
+                    textAlign: TextAlign.justify,
+                    style: type.bodySmall.copyWith(color: colors.textSecondary),
                   ),
                   children: [
                     for (final a in vimshottariAntardasha(m))
@@ -543,6 +559,7 @@ class _KundaliScreenState extends State<KundaliScreen> {
         'ये नक्षत्र और राशि की पुरानी तालिकाओं के नाम हैं — बच्चे का नाम '
         'रखने और गुण मिलाने में काम आते हैं। इनसे किसी का स्वभाव तय नहीं '
         'होता, और ऐप इनका कोई फल नहीं बताता।',
+        textAlign: TextAlign.justify,
         style: type.bodySmall.copyWith(color: colors.textSecondary),
       ),
       const SizedBox(height: VidhivatSpacing.sm),

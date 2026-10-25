@@ -185,6 +185,7 @@ class _MuhurtaScreenState extends State<MuhurtaScreen>
                       ),
                       Text(
                         '${hm(abhi.start)} – ${hm(abhi.end)}',
+                        textAlign: TextAlign.justify,
                         style: theme.textTheme.bodyMedium,
                       ),
                       if (abhiHora != null) ...[
@@ -192,6 +193,7 @@ class _MuhurtaScreenState extends State<MuhurtaScreen>
                         Text(
                           '${abhiHora.name} का होरा · '
                           '${hm(abhiHora.start)} – ${hm(abhiHora.end)}',
+                          textAlign: TextAlign.justify,
                           style: theme.textTheme.bodySmall,
                         ),
                       ],
@@ -271,6 +273,7 @@ class _MuhurtaScreenState extends State<MuhurtaScreen>
                       child: Text(
                           'दिन का ${horas.isEmpty ? "—" : horas.first.duration.inMinutes} मिनट, '
                           'रात का ${horas.length > 12 ? horas[12].duration.inMinutes : "—"} मिनट',
+                          textAlign: TextAlign.justify,
                           style: VidhivatTheme.typographyOf(context).bodySmall),
                     ),
                     for (var i = 0; i < horas.length; i++)

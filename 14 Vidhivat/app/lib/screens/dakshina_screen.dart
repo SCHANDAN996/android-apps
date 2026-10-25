@@ -98,6 +98,7 @@ class DakshinaScreen extends StatelessWidget {
                     // दोनों चार लाइन के फ़ासले पर एक साथ पढ़े जा रहे थे (→ D-057)।
                     Text(
                       'कोई खाता नहीं, कोई सदस्यता नहीं। जो आज इसमें है, वह सबके लिए है।',
+                      textAlign: TextAlign.justify,
                       style: type.bodyMedium,
                     ),
                     const SizedBox(height: VidhivatSpacing.lg),
@@ -137,7 +138,9 @@ class DakshinaScreen extends StatelessWidget {
                           ),
                           const SizedBox(width: VidhivatSpacing.sm),
                           Expanded(
-                            child: Text(baat, style: type.bodyMedium),
+                            child: Text(baat,
+                                textAlign: TextAlign.justify,
+                                style: type.bodyMedium),
                           ),
                         ],
                       ),
@@ -160,9 +163,14 @@ class DakshinaScreen extends StatelessWidget {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('•', style: type.bodyMedium),
+                          Text('•',
+                              textAlign: TextAlign.justify,
+                              style: type.bodyMedium),
                           const SizedBox(width: VidhivatSpacing.sm),
-                          Expanded(child: Text(baat, style: type.bodyMedium)),
+                          Expanded(
+                              child: Text(baat,
+                                  textAlign: TextAlign.justify,
+                                  style: type.bodyMedium)),
                         ],
                       ),
                     ],
