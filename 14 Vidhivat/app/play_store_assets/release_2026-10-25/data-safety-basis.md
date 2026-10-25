@@ -16,4 +16,4 @@ https://photon.komoot.io/ — official API/terms।
 https://www.komoot.com/privacy — general policy; 90 days को Photon-specific retention का निश्चित प्रमाण नहीं माना।
 app/lib/services/osm_khoj.dart:105 और 282 — q, fixed India bounding box, User-Agent app version; कोई user GPS/name/DOB नहीं।
 
-घोषणा Console में Save हुई; Publishing overview में समीक्षा के लिए लंबित है। यह Google approval या स्वतंत्र कानूनी certification नहीं है।
+26 अक्टूबर: घोषणा Console में Save करके अंतिम code8, listing और screenshots के साथ Google समीक्षा में भेजी; Changes in review में verified है। यह Google approval या स्वतंत्र कानूनी certification नहीं है।

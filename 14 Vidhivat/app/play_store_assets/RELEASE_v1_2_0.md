@@ -1,13 +1,13 @@
-# Play Store — v1.2.0 (versionCode 7): इस update की हर चीज़ एक जगह
+# Play Store — v1.2.0 (versionCode 8): इस update की हर चीज़ एक जगह
 
 **बना:** 24 अक्टूबर 2026 · **किसके लिए:** डेवलपर — Play Console, Blogger और ASO, सब इसी फ़ाइल से।
-**हालत (25 अक्टूबर, नवीनतम):** उपयोगकर्ता ने अब review/publish तक स्पष्ट अनुमति दी है।
-D-146/D-147/D-148 समेत commit **ac61db7** से सही snapshot AAB/APK बनीं; app1456 + engine629 =
-**2085 pass**, analyzer clean। सभी543inputs Git blobs से मिले;434packagedassets और840signedpayload verified।
-**नई AAB Console पर version7/name1.2.0 के रूप में स्वीकार हुई।** Production, Hindi विवरण/screenshots और Data Safety
-समेत पाँच बदलाव Publishing overview में सहेजे गए हैं। सार्वजनिक Blogger policy25Oct पर Update और verified है।
-अंतिम नई APK फोन पर install हो चुकी; secure-locked फोन के अनलॉक की प्रतीक्षा में smoke test और Send for review बाकी।
-फोन का लॉक bypass नहीं किया जाएगा। पूरा वर्तमान विवरण `docs/RELEASE_READY_2026-10-25.md`।
+**हालत (26 अक्टूबर): Google समीक्षा में सफल सबमिशन।** अंतिम **v1.2.0+8**, source71302b6,
+D-146/D-147/D-148 और midnight/resume date-refresh सुधार शामिल। Production100% rollout, छोटा/पूरा हिंदी
+विवरण, आठ screenshots और Data Safety—पाँच बदलाव **Changes in review** में सत्यापित हैं।
+पुराना code7 final review में नहीं है। Blogger25Oct policy सार्वजनिक Update और verified है।
+**Managed publishing off: Google approval के बाद स्वतः प्रकाशन। अभी live होने की पुष्टि नहीं।**
+Final files `Downloads/Vidhivat_v1.2.0_8_2026-10-26/`; पूरी report `docs/RELEASE_READY_2026-10-25.md`।
+User के कहने पर code8 के बाद और mobile check नहीं किया; midnight regression व संबंधित138tests/analyzer pass।
 
 > Console में markdown नहीं चलता — डिब्बों का पाठ जस का तस चिपकाइए। यह फ़ाइल `listing_v1_2.md` (2–5 अक्टूबर) की जगह लेती है।
 
@@ -57,10 +57,10 @@ Vidhivat: Puja Vidhi Panchang
 Puja vidhi, Panchang, Gita, Vidur Niti, Saptashati arth sahit, Kundali, offline
 ```
 
-### What's new — 373/500
+### What's new — 446/500
 
 ```
-नया ग्रंथालय: गीता, सुंदरकांड, विष्णु सहस्रनाम, उपनिषद, सप्तशती और महाभारत के चुने पाठ, हिंदी अर्थ सहित। जन्म कुंडली में लग्न, ग्रह, दशा और गुण मिलान; फलादेश नहीं। गाँव तक जन्म-स्थान की खोज। होम पर आगामी त्योहारों की पूजा और चित्र वाले चालीसा, आरती व ग्रंथालय कार्ड। तुलसी विवाह और कार्तिक पूर्णिमा के नए चित्र। विधियों और व्रतों के मंत्र छपी पूजा-पुस्तकों से फिर मिलाए गए।
+नया ग्रंथालय: गीता, सुंदरकांड, विष्णु सहस्रनाम, उपनिषद, सप्तशती और महाभारत के चुने पाठ, हिंदी अर्थ सहित। जन्म कुंडली में लग्न, ग्रह, दशा और गुण मिलान; फलादेश नहीं। गाँव तक जन्म-स्थान की खोज। होम पर आगामी त्योहारों की पूजा और चित्र वाले चालीसा, आरती व ग्रंथालय कार्ड। तुलसी विवाह और कार्तिक पूर्णिमा के नए चित्र। विधियों और व्रतों के मंत्र छपी पूजा-पुस्तकों से फिर मिलाए गए। आधी रात के बाद होम की तारीख़ और आगामी पूजा की गिनती ताज़ा रहने का सुधार।
 ```
 
 ### पूरा विवरण — त्योहार के मौसम वाला क्रम — 3713/4000 ← **अभी यही डालें**
@@ -231,8 +231,8 @@ Puja vidhi, panchang, Bhagavad Gita, Vidur Niti, Upanishads, Sundarkand, Vishnu 
 
 ## ३ · वर्तमान विवरण और ASO
 
-25 अक्टूबर के चार सादे पाठ `release_2026-10-25/` में हैं: नाम 29/30,
-छोटा विवरण 79/80, पूरा हिंदी विवरण 3713/4000, रिलीज़ नोट 373/500 अक्षर।
+नाम/छोटा/पूरा विवरण `release_2026-10-25/` में और अंतिम रिलीज़ नोट `release_2026-10-26/whats-new-hi.txt` में हैं: नाम 29/30,
+छोटा विवरण 79/80, पूरा हिंदी विवरण 3713/4000, रिलीज़ नोट 446/500 अक्षर।
 नाम वही रखा है। आगामी त्योहार ऊपर हैं; ग्रंथालय, कुंडली और जगह की खोज स्पष्ट हैं।
 लंबी keyword-list घटाई गई है। फलादेश, पंडित-जाँच या सभी मंत्र पूरे होने का दावा नहीं।
 Console में **default Hindi hi-IN** का छोटा और पूरा विवरण ड्राफ्ट में सहेजा गया है।
@@ -313,23 +313,20 @@ Google के IP/payment/backup FAQ और परिभाषाएँ: https://
 
 ---
 
-## ८ · वर्तमान uploaded AAB
+## ८ · अंतिम submitted AAB
 
-**Source ac61db7bc42a3fc5d70fa152619c8534325493ef**। D-146/D-147/D-148 शामिल;
-बंद शुभ मुहूर्त के flags नहीं खोले। पुरानी9d2candidate उपयोग न करें।
+Source **71302b671a5f9c10044688ae97d5cafb0fad6b39**, version **1.2.0+8**।
+`Downloads/Vidhivat_v1.2.0_8_2026-10-26/Vidhivat_v1.2.0_8_71302b6.aab`
+—86,914,609bytes, SHA256 `a329e775a1ce2bb260fd18ee47bd5d571ea935958bd6cfe29a87a2529d517fc9`।
+APK भी उसी folder में है; `LATEST_ARTIFACTS.json` exact hashes रखता है।
 
-`Downloads/Vidhivat_v1.2.0_7_2026-10-25/Vidhivat_v1.2.0_7_ac61db7.aab`
-—86,915,082bytes, SHA256 `60704b36912f7b924f2dc333f21524aacbf08053bda5890b89a92e378ac59bbf`।
-साथ में89,394,010byte APK, `LATEST_ARTIFACTS.json`, screenshots ZIP और policy/listing प्रतियाँ हैं।
+सभी543sourcefiles Gitblobs से मिले;434packagedassets और840signedpayload verified। SDK36/16KB/nativeELF
+और APKsignature/zipalign पास। ac61full app1456/engine629 baseline; अंतिम midnightfix पर14home+124shell/version
+focusedtests और analyzer pass। Fullsuite फिर नहीं चलाई; userने mobile retest waive की।
 
-App1456/1456, engine629/629; दोनों वर्तमानस्रोतपर। bundletoolvalidate, signature, SDK36,
-PAGE_ALIGNMENT_16K, native64bitELF और APKzipalign पास। Code7Consoleमें स्वीकार हुआ।
-एक warning: per-device download36.4MB, पहलेसे11.7MB अधिक; कोई blocking error नहीं।
-सभी supported devices बरकरार, rollout100%, पुराने target countries वही।
-
-**अगला:** सुरक्षित लॉक वाला फोन अनलॉक हो → उसी नई APK का native smoke test → Publishing overview
-के पाँच बदलाव Submit for review। Managed publishing off है, इसलिए approval के बाद Google स्वतः publish कर सकती है।
-Submission, approval और live publication तीन अलग अवस्थाएँ हैं; दर्ज करते समय न मिलाएँ।
+Console ने code8 स्वीकारा। Internal releaseID7,100%rollout। Submit5changes और Sendchangesforreview के बाद
+**Changes in review** पढ़कर सत्यापित किया। Managedpublishingoff है; approvalपरauto-publication।
+code7 तथा9d2candidateपुराने हैं—नईreleaseकेलिएइस्तेमालनकरें।
 
 ---
 
