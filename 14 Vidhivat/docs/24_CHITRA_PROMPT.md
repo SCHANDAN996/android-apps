@@ -423,3 +423,108 @@ signature or border frame; anything scary.
 **बनने के बाद देखें:** (१) पीछे सचमुच पारदर्शी है (चेकर-बोर्ड दिखे) — सफ़ेद या धूसर नहीं; (२) कहीं कोई अक्षर
 या चिह्न नहीं; (३) चाँद, खीर और दीयों के किनारे साफ़ हैं, कोई चीज़ किनारे से कटी नहीं; (४) PNG सबसे बड़ी नाप में
 उतारें और फ़ाइल का नाम बताकर भेजें।
+
+---
+
+## १० · तुलसी विवाह और कार्तिक पूर्णिमा (25 अक्टूबर 2026 · → D-140)
+
+दोनों व्रत-पन्ने ऐप में हैं; आज तुलसी विवाह पर साधारण तुलसी वाला चित्र और कार्तिक पूर्णिमा पर दीया लगा है
+(`app/lib/vidhi/vrat_artwork.dart`)। नाप-नियम §९ वाले: ChatGPT से **1024 × 1024 PNG, पारदर्शी**, सबसे बड़ी नाप में;
+900 × 900 WebP AI बनाएगा (`python tools/banao_chitra.py <png> <नाम> 900`), फिर `vrat_artwork.dart` में दो entry।
+
+चित्र सजावट है, विधि नहीं — इसलिए इसमें कोई मंत्र, अक्षर या «ऐसे ही करना है» वाली चीज़ नहीं। पारदर्शी न मिले तो
+दूसरी बार जोड़ें: *"Use a flat solid pure green (#00FF00) background instead"*।
+
+### तुलसी विवाह — `vrat_tulsi_vivah_v1.webp` · 900 × 900
+
+तुलसी वाले पुराने चित्र (`tulsi_realistic_v1`) से अलग दिखे: यहाँ **विवाह** है — चुनरी, मंडप, शालिग्राम।
+
+```
+A devotional still-life illustration for the Hindu festival of Tulsi Vivah,
+as a clean cut-out object group on a TRANSPARENT background (PNG with alpha
+channel). Square 1:1 canvas, 1024 x 1024 pixels.
+
+COMPOSITION (centred, symmetrical, everything inside the central 85% of the
+canvas with clear empty margin on all four sides; nothing touches or is cut
+by the edges):
+- CENTRE (the hero): a healthy, bushy holy basil (tulsi) plant growing in a
+  traditional square terracotta tulsi planter (tulsi vrindavan) painted
+  cream and ochre with simple red and yellow border bands. The plant is
+  dressed as a bride: a small sheer red chunri with a gold border draped
+  over its top, a tiny gold-and-red bead necklace, and a few red glass
+  bangles hung on a twig.
+- Over the planter: a small wedding canopy (mandap) made of four tall green
+  sugarcane stalks standing at the corners, their leafy tops tied together
+  above with red mauli thread and a marigold garland.
+- To the right of the planter, on a small polished brass plate: a smooth
+  round black shaligram stone with a tiny marigold garland and a small
+  yellow cloth beside it.
+- In front, in a low symmetrical arc: three to five small lit clay diyas
+  with calm golden flames, a small heap of rice grains (akshat), a brass
+  bowl of red kumkum, loose orange marigolds and rose petals.
+- Behind everything: a soft golden mandala / sun-ray halo ring with fine
+  filigree petals, like a temple aureole.
+
+LIGHTING AND MOOD: warm evening glow, festive and auspicious, gentle golden
+rim light on the brass and leaves. Peaceful and sacred, like a wedding at
+home.
+
+STYLE: Devotional Indian religious illustration, photorealistic 3D render
+blended with classical Indian calendar-art sensibility. Rich warm palette of
+gold, saffron, marigold orange, bridal red and fresh tulsi green. Ultra
+detailed, crisp clean edges suitable for cut-out, consistent with a set of
+festival icons.
+
+STRICTLY AVOID: any background scene, sky, courtyard, floor, table, wall, or
+shadow cast onto a surface; any human or deity figure, hands or faces;
+kalash or coconut; any text, letters, numbers, watermark, signature or
+border frame; anything scary.
+```
+
+### कार्तिक पूर्णिमा / देव दीपावली — `vrat_kartik_purnima_v1.webp` · 900 × 900
+
+पूर्णिमा (चाँद + कलश) और शरद पूर्णिमा (चाँद + खीर) से अलग दिखे: यहाँ **दीपदान** मुख्य है — बहुत से दीये, और पानी
+पर तैरता दीया।
+
+```
+A devotional still-life illustration for the Hindu festival of Kartik
+Purnima and Dev Deepawali (the festival of lamp offerings), as a clean
+cut-out object group on a TRANSPARENT background (PNG with alpha channel).
+Square 1:1 canvas, 1024 x 1024 pixels.
+
+COMPOSITION (centred, symmetrical, everything inside the central 85% of the
+canvas with clear empty margin on all four sides; nothing touches or is cut
+by the edges):
+- CENTRE (the hero): a wide, shallow, polished brass urli bowl filled with
+  clear water. Floating on the water: two or three small lamp-boats made of
+  green leaves (dona), each holding a lit clay diya with a steady golden
+  flame, plus a few floating orange marigold heads and rose petals.
+  Gentle golden reflections of the flames on the water surface.
+- Around and behind the bowl: about eleven small terracotta clay diyas
+  arranged in a neat rising pyramid / tiered arc, every one lit with a
+  calm, steady golden flame — the lamps are the main subject.
+- In front: a small sprig of fresh tulsi leaves on a brass plate, a small
+  heap of rice grains (akshat), a few marigolds.
+- BACK, upper centre, smaller than the lamps: a pale silver-gold full moon
+  disc (not pure white) with a soft glow, inside a delicate golden
+  mandala / sun-ray halo ring.
+
+LIGHTING AND MOOD: sacred festive night, countless warm flames, a cool
+silver moon glow from above balanced by the golden light of the lamps.
+Peaceful, luminous, auspicious.
+
+STYLE: Devotional Indian religious illustration, photorealistic 3D render
+blended with classical Indian calendar-art sensibility. Rich warm palette of
+gold, saffron, marigold orange and terracotta, with moonlit silver accents.
+Ultra detailed, crisp clean edges suitable for cut-out, consistent with a
+set of festival icons.
+
+STRICTLY AVOID: any background scene, river bank, ghat steps, temple,
+buildings, sky, stars, clouds, floor, table, wall, or shadow cast onto a
+surface; any human or deity figure, hands or faces; kalash or coconut;
+fireworks; any text, letters, numbers, watermark, signature or border frame;
+anything scary.
+```
+
+**बनने के बाद देखें:** (१) पीछे सचमुच पारदर्शी है (चेकर-बोर्ड दिखे); (२) कहीं कोई अक्षर या चिह्न नहीं; (३) दीयों
+की लौ और पत्तों के किनारे साफ़, कोई चीज़ किनारे से कटी नहीं; (४) PNG Downloads में रखकर फ़ाइल का नाम बताइए।
