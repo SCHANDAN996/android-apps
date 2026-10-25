@@ -31,11 +31,11 @@ UPAR = """<!--
   विधिवत — गोपनीयता नीति, Blogger में चिपकाने के लिए।
 
   कैसे चढ़ाएँ:
-    1. Blogger → नई पोस्ट
-    2. शीर्षक: विधिवत — गोपनीयता नीति / Vidhivat Privacy Policy
+    1. Blogger → विधिवत की मौजूदा गोपनीयता पोस्ट खोलें (नई पोस्ट नहीं)
+    2. मौजूदा शीर्षक और permalink वही रखें
     3. ऊपर बाएँ "Compose" की जगह "HTML view" चुनिए
-    4. नीचे का सब कुछ वहाँ चिपकाइए, फिर Publish
-    5. जो पता मिले वही Play Console के Privacy policy URL में डालिए
+    4. नीचे का सब कुछ वहाँ चिपकाइए; सार्वजनिक Update अंतिम स्वीकृति पर ही
+    5. Play Console का मौजूदा Privacy policy URL वही रखें
 
   ⚠ यह फ़ाइल अपने आप बनती है — इसे हाथ से मत बदलिए।
     नीति बदलनी हो तो app/play_store_assets/privacy_policy.html बदलिए,

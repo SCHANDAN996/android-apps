@@ -1,0 +1,130 @@
+﻿[
+    {
+        "source":  "C:\\Users\\Admin\\Desktop\\my project\\MASS APP\\14 Vidhivat\\design_sources\\release_2026-10-25\\phone\\final-sankalp.png",
+        "height":  1920,
+        "type":  "24-bit RGB PNG; actual phone UI, OS bars cropped, uniform scale",
+        "outputSha256":  "A0D45AEF91DE902A2920A3A9945DBE77523AB36A33D648B87F40A117401EDD70",
+        "crop":  [
+                     0,
+                     75,
+                     720,
+                     1446
+                 ],
+        "output":  "C:\\Users\\Admin\\Desktop\\my project\\MASS APP\\14 Vidhivat\\app\\play_store_assets\\screenshots\\release_2026-10-25\\01_sankalp.png",
+        "name":  "01_sankalp",
+        "width":  1080,
+        "sourceSha256":  "0F27C54E316DE455E28B32404B7F0110BCBA23B9BE3B3DFCCDCC341AA6C68B4A"
+    },
+    {
+        "source":  "C:\\Users\\Admin\\Desktop\\my project\\MASS APP\\14 Vidhivat\\design_sources\\release_2026-10-25\\phone\\final-home-popular.png",
+        "height":  1920,
+        "type":  "24-bit RGB PNG; actual phone UI, OS bars cropped, uniform scale",
+        "outputSha256":  "4EC111CA504AFF1D0FFAE1BF1C44F6D4EE6052D7727DB1B012DF727C6BA5A481",
+        "crop":  [
+                     0,
+                     75,
+                     720,
+                     1446
+                 ],
+        "output":  "C:\\Users\\Admin\\Desktop\\my project\\MASS APP\\14 Vidhivat\\app\\play_store_assets\\screenshots\\release_2026-10-25\\02_home.png",
+        "name":  "02_home",
+        "width":  1080,
+        "sourceSha256":  "CC12ECA9DF20EB8BA59A3164AD4B1418960FF7172F122D3B38EAA22F9F44842F"
+    },
+    {
+        "source":  "C:\\Users\\Admin\\Desktop\\my project\\MASS APP\\14 Vidhivat\\design_sources\\release_2026-10-25\\phone\\final-library.png",
+        "height":  1920,
+        "type":  "24-bit RGB PNG; actual phone UI, OS bars cropped, uniform scale",
+        "outputSha256":  "E38F3184C61EC0DD061A1C97C7D957F30B1CE59AF6B35FEB5B445168404DB6C7",
+        "crop":  [
+                     0,
+                     75,
+                     720,
+                     1446
+                 ],
+        "output":  "C:\\Users\\Admin\\Desktop\\my project\\MASS APP\\14 Vidhivat\\app\\play_store_assets\\screenshots\\release_2026-10-25\\03_library.png",
+        "name":  "03_library",
+        "width":  1080,
+        "sourceSha256":  "619A1803725E1D9515BF4652267F5EF781D039F5F70B2E252E43775F11BF18B7"
+    },
+    {
+        "source":  "C:\\Users\\Admin\\Desktop\\my project\\MASS APP\\14 Vidhivat\\design_sources\\release_2026-10-25\\phone\\final-reading-meaning.png",
+        "height":  1920,
+        "type":  "24-bit RGB PNG; actual phone UI, OS bars cropped, uniform scale",
+        "outputSha256":  "4FC395D0B83B2626C9D1913EB5F7C694970D00AC4FC75B284080EF4D665E04FE",
+        "crop":  [
+                     0,
+                     75,
+                     720,
+                     1446
+                 ],
+        "output":  "C:\\Users\\Admin\\Desktop\\my project\\MASS APP\\14 Vidhivat\\app\\play_store_assets\\screenshots\\release_2026-10-25\\04_reading.png",
+        "name":  "04_reading",
+        "width":  1080,
+        "sourceSha256":  "ED48871529B3183AF80F0BBD0707E68048588A58FC99719AE66365D2C582D62C"
+    },
+    {
+        "source":  "C:\\Users\\Admin\\Desktop\\my project\\MASS APP\\14 Vidhivat\\design_sources\\release_2026-10-25\\phone\\final-puja.png",
+        "height":  1920,
+        "type":  "24-bit RGB PNG; actual phone UI, OS bars cropped, uniform scale",
+        "outputSha256":  "2F117C7D32F438DCB84DB29EBD34FF092A46A1F5FF7C7A1D6379A1780BCEA6EC",
+        "crop":  [
+                     0,
+                     75,
+                     720,
+                     1446
+                 ],
+        "output":  "C:\\Users\\Admin\\Desktop\\my project\\MASS APP\\14 Vidhivat\\app\\play_store_assets\\screenshots\\release_2026-10-25\\05_puja.png",
+        "name":  "05_puja",
+        "width":  1080,
+        "sourceSha256":  "0601A7AE4577818B980839096A9BAAE9162DBC27E80FC4771BEF29F8143E5684"
+    },
+    {
+        "source":  "C:\\Users\\Admin\\Desktop\\my project\\MASS APP\\14 Vidhivat\\design_sources\\release_2026-10-25\\phone\\final-panchang.png",
+        "height":  1920,
+        "type":  "24-bit RGB PNG; actual phone UI, OS bars cropped, uniform scale",
+        "outputSha256":  "B34A0AD0720AA96D16D61F4FF650C84625F1306115A8EF21F1A2A3A9626D1087",
+        "crop":  [
+                     0,
+                     75,
+                     720,
+                     1446
+                 ],
+        "output":  "C:\\Users\\Admin\\Desktop\\my project\\MASS APP\\14 Vidhivat\\app\\play_store_assets\\screenshots\\release_2026-10-25\\06_panchang.png",
+        "name":  "06_panchang",
+        "width":  1080,
+        "sourceSha256":  "22F116E495C6FD954A1A235581BE41FA357E7B9520EB895933E6E0D083409F98"
+    },
+    {
+        "source":  "C:\\Users\\Admin\\Desktop\\my project\\MASS APP\\14 Vidhivat\\design_sources\\release_2026-10-25\\phone\\final-kundali.png",
+        "height":  1920,
+        "type":  "24-bit RGB PNG; actual phone UI, OS bars cropped, uniform scale",
+        "outputSha256":  "2758FEE1FE36DE4DAAD441E8A911343034922A3F4DE58440CCDC98F45BE7EA9B",
+        "crop":  [
+                     0,
+                     75,
+                     720,
+                     1446
+                 ],
+        "output":  "C:\\Users\\Admin\\Desktop\\my project\\MASS APP\\14 Vidhivat\\app\\play_store_assets\\screenshots\\release_2026-10-25\\07_kundali.png",
+        "name":  "07_kundali",
+        "width":  1080,
+        "sourceSha256":  "A10201DBD59B7C48D06249F6C585AEA8A743589098F2CF403D84CE72C9CB4ECE"
+    },
+    {
+        "source":  "C:\\Users\\Admin\\Desktop\\my project\\MASS APP\\14 Vidhivat\\design_sources\\release_2026-10-25\\phone\\final-location.png",
+        "height":  1920,
+        "type":  "24-bit RGB PNG; actual phone UI, OS bars cropped, uniform scale",
+        "outputSha256":  "D6E4D00B8FF796B0DD4EF5001B8CDB5B64C5EF15FA0C4DCCCEA62F0FB86ED1D2",
+        "crop":  [
+                     0,
+                     75,
+                     720,
+                     1446
+                 ],
+        "output":  "C:\\Users\\Admin\\Desktop\\my project\\MASS APP\\14 Vidhivat\\app\\play_store_assets\\screenshots\\release_2026-10-25\\08_location.png",
+        "name":  "08_location",
+        "width":  1080,
+        "sourceSha256":  "F027CCEA602CE91AFA1BD8F0BF0B81CD8C0711C374EB64E05A1109B61AC1F5BB"
+    }
+]

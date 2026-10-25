@@ -2,24 +2,24 @@
   विधिवत — गोपनीयता नीति, Blogger में चिपकाने के लिए।
 
   कैसे चढ़ाएँ:
-    1. Blogger → नई पोस्ट
-    2. शीर्षक: विधिवत — गोपनीयता नीति / Vidhivat Privacy Policy
+    1. Blogger → विधिवत की मौजूदा गोपनीयता पोस्ट खोलें (नई पोस्ट नहीं)
+    2. मौजूदा शीर्षक और permalink वही रखें
     3. ऊपर बाएँ "Compose" की जगह "HTML view" चुनिए
-    4. नीचे का सब कुछ वहाँ चिपकाइए, फिर Publish
-    5. जो पता मिले वही Play Console के Privacy policy URL में डालिए
+    4. नीचे का सब कुछ वहाँ चिपकाइए; सार्वजनिक Update अंतिम स्वीकृति पर ही
+    5. Play Console का मौजूदा Privacy policy URL वही रखें
 
   ⚠ यह फ़ाइल अपने आप बनती है — इसे हाथ से मत बदलिए।
     नीति बदलनी हो तो app/play_store_assets/privacy_policy.html बदलिए,
     फिर: python tools/banao_blogger_niti.py
 -->
 
-<p><small>आख़िरी बदलाव: 23 अक्टूबर 2026 · ऐप: विधिवत (<code>com.vidhivat</code>)</small></p>
+<p><small>आख़िरी बदलाव: 25 अक्टूबर 2026 · ऐप: विधिवत (<code>com.vidhivat</code>)</small></p>
 
 <blockquote>
   <strong>एक वाक्य में:</strong> विधिवत का अपना कोई सर्वर नहीं है, और जो कुछ
   आप भरते हैं — नाम, गोत्र, कुंडली, पूर्वजों की तिथियाँ — वो आपके फ़ोन में ही
-  रहता है। ऐप से बाहर सिर्फ़ एक चीज़ जाती है: जगह खोजते समय लिखा हुआ नाम,
-  खोज-सेवा को (§4)।
+  सहेजा जाता है। ऑनलाइन जगह-खोज में लिखा हुआ नाम खोज-सेवा को जाता है (§4)।
+  सिस्टम बैकअप और आपके चुने हुए साझा विकल्प §2क में बताए गए हैं।
 </blockquote>
 
 <h2>1. ऐप क्या इकट्ठा करता है</h2>
@@ -33,8 +33,8 @@
 <h2>2. जो आपके फ़ोन में रहता है</h2>
 
 <p>ऐप को चलाने के लिए कुछ बातें फ़ोन में सहेजी जाती हैं। ये
-<strong>सिर्फ़ आपके फ़ोन के अंदर</strong> रहती हैं — न हमें दिखती हैं,
-न किसी और को।</p>
+<strong>ऐप के स्थानीय स्टोर</strong> में रहती हैं — डेवलपर को नहीं दिखतीं।
+सिस्टम बैकअप और आपके चुने साझा विकल्प §2क में हैं।</p>
 
 <table style="border-collapse:collapse;width:100%">
   <tr><th style="border:1px solid #999;padding:6px;text-align:left">क्या</th><th style="border:1px solid #999;padding:6px;text-align:left">किसलिए</th></tr>
@@ -50,8 +50,15 @@
   <tr><td style="border:1px solid #999;padding:6px">जन्म कुंडली के लिए नाम, जन्म की तारीख़, समय और जगह — अगर आप भरें</td><td style="border:1px solid #999;padding:6px">कुंडली का गणित (लग्न, ग्रह, दशा की तारीख़ें) इसी फ़ोन में निकालने के लिए</td></tr>
 </table>
 
-<p>ऐप हटाने पर यह सब आपके फ़ोन से मिट जाता है। आप चाहें तो Android की
-सेटिंग में जाकर ऐप का डेटा कभी भी साफ़ कर सकते हैं।</p>
+<p>Android की सेटिंग से ऐप का स्थानीय डेटा साफ़ कर सकते हैं। ऐप हटाने पर उसकी स्थानीय
+प्रति हटती है; पहले से बने बैकअप या साझा की गई प्रतियाँ अलग हैं।</p>
+<h2>2क. सिस्टम बैकअप और साझा करना</h2>
+<p>Android या फ़ोन निर्माता की बैकअप और नए फ़ोन में डेटा ले जाने की सुविधा, आपकी
+सिस्टम सेटिंग के अनुसार, सहेजा डेटा कॉपी या बहाल कर सकती है। इस संस्करण में ऐप ने
+सिस्टम बैकअप को अलग से बंद नहीं किया है। बैकअप का नियंत्रण और उसे मिटाने के विकल्प
+आपके फ़ोन या बैकअप सेवा की सेटिंग में हैं; डेवलपर उन प्रतियों को नहीं देख सकता।</p>
+<p>आप ख़ुद संकल्प या कुंडली साझा करें तो चुना हुआ पाठ या चित्र आपके चुने ऐप को दिया
+जाता है। उसके बाद उस ऐप की नीति लागू होती है। विधिवत इन्हें अपने आप किसी को नहीं भेजता।</p>
 
 <h2>3. स्थान (location) की अनुमति</h2>
 
@@ -102,7 +109,7 @@
       वरना सिर्फ़ "आज परिवार का स्मरण-दिन है"।</li>
 </ul>
 
-<h2>5. दक्षिणा (in-app purchase)</h2>
+<h2>5. स्वैच्छिक दक्षिणा</h2>
 
 <blockquote>
   <ul>
@@ -125,15 +132,18 @@
 crash-reporting सेवा नहीं, और कोई social login नहीं है। Advertising ID
 का इस्तेमाल नहीं होता।</p>
 
-<p>इकलौता तीसरा पक्ष <strong>PayU</strong> का भुगतान पन्ना है, और वो भी
-सिर्फ़ तब जब आप ख़ुद दक्षिणा देना चुनें — वह ऐप के बाहर, आपके browser या
-UPI ऐप में खुलता है।</p>
+<p>जगह की ऑनलाइन खोज के लिए <strong>Photon (komoot)</strong> (§4), और
+स्वैच्छिक दक्षिणा के लिए <strong>PayU</strong> (§5) की बाहरी सेवाएँ इस्तेमाल होती हैं।
+Photon को खोजा हुआ जगह का नाम, IP पता और ऐप का संस्करण बताने वाला अनुरोध मिलता है;
+आपका सहेजा हुआ व्यक्तिगत या जन्म-विवरण नहीं भेजा जाता। PayU का पन्ना ऐप के बाहर,
+आपके browser या UPI ऐप में खुलता है। इन सेवाओं की अपनी गोपनीयता नीतियाँ लागू होती हैं।
+उनके सर्वर पर जानकारी कितने समय रखी जाती है, इस पर विधिवत का नियंत्रण नहीं है।</p>
 
 <h2>7. बच्चे</h2>
 
 <p>यह ऐप सब उम्र के लोगों के लिए है, पर <strong>बच्चों को लक्ष्य करके नहीं
-बनाया गया</strong>। यह किसी से उम्र नहीं पूछता, क्योंकि यह किसी से कुछ
-पूछता ही नहीं।</p>
+बनाया गया</strong>। कोई ऑनलाइन खाता या उम्र-जाँच नहीं है। संकल्प या कुंडली के लिए
+आप स्वेच्छा से नाम और जन्म-विवरण भर सकते हैं; यह विवरण फ़ोन में ही सहेजा जाता है।</p>
 
 <h2>8. आपके अधिकार</h2>
 
@@ -151,13 +161,13 @@ Android की सेटिंग से ऐप का डेटा साफ़
 <p>कोई सवाल हो तो लिखिए — <a href="mailto:all.chandansingh@gmail.com">all.chandansingh@gmail.com</a></p>
 
 <h1>Vidhivat — Privacy Policy</h1>
-<p><small>Last updated: 23 October 2026 · App: Vidhivat (<code>com.vidhivat</code>)</small></p>
+<p><small>Last updated: 25 October 2026 · App: Vidhivat (<code>com.vidhivat</code>)</small></p>
 
 <blockquote>
   <strong>In one line:</strong> Vidhivat has no server of its own, and
   whatever you enter — names, gotra, birth charts, ancestors' dates — stays on
-  your phone. Only one thing leaves the app: the place name you type while
-  searching for a place, sent to a search service (§4).
+  your phone. Online place search sends the typed place name to a search service (§4).
+  System backup and sharing you choose are explained in §2a.
 </blockquote>
 
 <h2>1. What we collect</h2>
@@ -167,9 +177,9 @@ nowhere for your data to reach us. The one exception: the place name you type
 while searching for a place goes directly to a search service (Photon) — see §4.</p>
 
 <h2>2. What stays on your phone</h2>
-<p>A few things are saved on the device so the app can work. They stay
-<strong>inside your phone only</strong> — we cannot see them, and neither
-can anyone else.</p>
+<p>A few things are saved on the device so the app can work. They are stored
+<strong>locally by the app</strong> and are not visible to the developer.
+System backup and sharing you choose are explained in §2a.</p>
 <table style="border-collapse:collapse;width:100%">
   <tr><th style="border:1px solid #999;padding:6px;text-align:left">What</th><th style="border:1px solid #999;padding:6px;text-align:left">Why</th></tr>
   <tr><td style="border:1px solid #999;padding:6px">Your name and gotra</td><td style="border:1px solid #999;padding:6px">To compose the sankalp sentence</td></tr>
@@ -183,8 +193,16 @@ can anyone else.</p>
   <tr><td style="border:1px solid #999;padding:6px">Ancestors' names, relation, death anniversary (tithi or date) and place — only if you enter them</td><td style="border:1px solid #999;padding:6px">To compute the shraddha tithi and remind you</td></tr>
   <tr><td style="border:1px solid #999;padding:6px">For a birth chart: name, date, time and place of birth — only if you enter them</td><td style="border:1px solid #999;padding:6px">To compute the chart (ascendant, planets, dasha dates) on this phone</td></tr>
 </table>
-<p>Uninstalling the app removes all of it. You can also clear the app's data
-at any time from Android settings.</p>
+<p>You can clear local app data in Android settings. Uninstalling removes the local
+copy; existing system backups and copies you have shared are separate.</p>
+<h2>2a. System backup and sharing</h2>
+<p>Android or your phone manufacturer's backup and device-transfer features may copy
+or restore saved app data according to your system settings. This version does not
+explicitly disable system backup. Manage or delete backup copies through your device
+or backup provider's settings; Vidhivat's developer cannot view them.</p>
+<p>If you choose to share a sankalp or birth chart, the selected text or image is
+passed to the app you choose. Its privacy policy then applies. Vidhivat does not
+send these to anyone automatically.</p>
 
 <h2>3. Location permission</h2>
 <ul>
@@ -229,7 +247,7 @@ chalisa is bundled inside the app. It works fully offline.</p>
       choose so; otherwise just "today is the family's remembrance day".</li>
 </ul>
 
-<h2>5. Dakshina (in-app purchase)</h2>
+<h2>5. Voluntary dakshina</h2>
 <ul>
   <li>Dakshina is <strong>entirely optional</strong>. Giving or not giving
       changes nothing in the app — no puja, no text, no feature is withheld.</li>
@@ -245,15 +263,19 @@ chalisa is bundled inside the app. It works fully offline.</p>
 
 <h2>6. Third parties</h2>
 <p>There is <strong>no advertising SDK</strong>, no analytics, no crash
-reporting service and no social login. The Advertising ID is not used. The
-only third party is <strong>PayU's payment page</strong>, and only if you
-choose to give a dakshina — it opens outside the app, in your browser or UPI
-app.</p>
+reporting service and no social login. The Advertising ID is not used.</p>
+<p>External services are <strong>Photon (komoot)</strong> for online place search
+(§4) and <strong>PayU</strong> for voluntary dakshina (§5). Photon receives the
+place-search text, IP address and a request identifying the app version, not
+your saved personal or birth details. PayU opens outside the app in your browser
+or UPI app. These services have their own privacy policies; Vidhivat does not
+control how long they retain information on their servers.</p>
 
 <h2>7. Children</h2>
 <p>The app is suitable for all ages but is <strong>not directed at
-children</strong>. It never asks anyone's age, because it never asks
-anything.</p>
+children</strong>. There is no online account or age verification. You may
+optionally enter names and birth details for a sankalp or birth chart; those
+details are stored on your phone.</p>
 
 <h2>8. Your rights</h2>
 <p>Since we hold no data about you, there is nothing to request or delete

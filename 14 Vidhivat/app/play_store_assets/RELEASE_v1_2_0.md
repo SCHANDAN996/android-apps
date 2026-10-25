@@ -1,9 +1,13 @@
 # Play Store — v1.2.0 (versionCode 7): इस update की हर चीज़ एक जगह
 
 **बना:** 24 अक्टूबर 2026 · **किसके लिए:** डेवलपर — Play Console, Blogger और ASO, सब इसी फ़ाइल से।
-**हालत:** पाठ, ASO, privacy, जवाब — तैयार। **AAB अभी नहीं बनी** — डेवलपर का फ़ैसला: दूसरे session का UI काम
-(D-135…D-137) भी इसी release में, इसलिए वह commit हो जाए, और उसमें मिला regression **UX-010** (सप्तशती, छोटे फ़ोन पर
-अध्याय-कार्ड) ठीक हो जाए — तब (§८)।
+**हालत (25 अक्टूबर 2026):** UI/चित्र commit हो चुके हैं। सुरक्षित snapshot `9d2c1f1` से
+v1.2.0+7 की signed AAB (86,912,807 bytes) और APK बनी हैं। Snapshot app tests 1456/1456,
+analyzer clean; engine 623/623 का पूर्व पास और स्रोत अपरिवर्तित। Console में आख़िरी code 5 देखा गया।
+फोन पर अंतिम APK लग गई; native smoke test/screenshots जारी हैं। इसके बाद के D-146 कंटेंट बदलाव
+इस candidate में शामिल नहीं हैं। **मालिक के निर्देश: review के लिए भेजने और publishing से पहले रुकना है।**
+मुख्य हिंदी विवरण Console में **Save as draft** किया गया है। Blogger के मौजूदा editor में नई नीति
+तैयार है; सार्वजनिक **Update नहीं दबाया गया**।
 
 > Console में markdown नहीं चलता — डिब्बों का पाठ जस का तस चिपकाइए। यह फ़ाइल `listing_v1_2.md` (2–5 अक्टूबर) की जगह लेती है।
 
@@ -26,7 +30,7 @@
 
 | # | कहाँ | क्या |
 |---|---|---|
-| 1 | **Blogger** — post «https://vidhivatpuja.blogspot.com/2026/09/vidhivat-privacy-policy-root-bg-12151c.html» | post **edit** करें (नई post नहीं — पता वही रहे) → HTML view → `app/play_store_assets/privacy_policy_blogger.html` का पूरा पाठ चिपकाएँ → Update। फिर पता खोलकर देखें कि «आख़िरी बदलाव: 23 अक्टूबर 2026» दिखे (§५) |
+| 1 | **Blogger** — post «https://vidhivatpuja.blogspot.com/2026/09/vidhivat-privacy-policy-root-bg-12151c.html» | post **edit** करें (नई post नहीं — पता वही रहे) → HTML view → `app/play_store_assets/privacy_policy_blogger.html` का पूरा पाठ चिपकाएँ → Update। फिर पता खोलकर देखें कि «आख़िरी बदलाव: 25 अक्टूबर 2026» दिखे (§५) |
 | 2 | Console → App content → **Data safety** | §६ के जवाब |
 | 3 | Console → **Main store listing** | §२: छोटा विवरण, पूरा विवरण (**त्योहार वाला क्रम**), screenshots §४ |
 | 4 | Console → App content → बाक़ी | §७ — ख़ासकर **In-app purchases: No** (पुराने `docs/19` में «हाँ» लिखा था; D-090 के बाद Play पर कोई product नहीं) |
@@ -53,13 +57,13 @@ Vidhivat: Puja Vidhi Panchang
 Puja vidhi, Panchang, Gita, Vidur Niti, Saptashati arth sahit, Kundali, offline
 ```
 
-### What's new — 409/500
+### What's new — 373/500
 
 ```
-नया: ग्रंथालय — गीता, सुंदरकांड, विष्णु सहस्रनाम, नौ उपनिषद, वेद के सूक्त; महाभारत से विदुर नीति, सनत्सुजातीय, यक्ष प्रश्न, भीष्म स्तवराज; गजेन्द्र मोक्ष — हर श्लोक का सरल हिंदी अर्थ। जन्म कुंडली — चित्र, ग्रह, दशा, गुण मिलान; सिर्फ़ गणित, फलादेश नहीं। जगह अब गाँव तक — फ़ोन से, या नाम लिखते ही खोज। शरद पूर्णिमा की पूरी जानकारी। पूजा पूरी होने पर दक्षिणा का हिस्सा हर बार। त्योहारों के नियम सात साल पर जाँचे।
+नया ग्रंथालय: गीता, सुंदरकांड, विष्णु सहस्रनाम, उपनिषद, सप्तशती और महाभारत के चुने पाठ, हिंदी अर्थ सहित। जन्म कुंडली में लग्न, ग्रह, दशा और गुण मिलान; फलादेश नहीं। गाँव तक जन्म-स्थान की खोज। होम पर आगामी त्योहारों की पूजा और चित्र वाले चालीसा, आरती व ग्रंथालय कार्ड। तुलसी विवाह और कार्तिक पूर्णिमा के नए चित्र। विधियों और व्रतों के मंत्र छपी पूजा-पुस्तकों से फिर मिलाए गए।
 ```
 
-### पूरा विवरण — त्योहार के मौसम वाला क्रम — 3989/4000 ← **अभी यही डालें**
+### पूरा विवरण — त्योहार के मौसम वाला क्रम — 3713/4000 ← **अभी यही डालें**
 
 करवा चौथ (29 अक्तू), धनतेरस (6 नव), दीपावली (8 नव), छठ (15 नव) — इन दिनों लोग इन्हीं नामों से खोजते हैं; यह हिस्सा
 दूसरे नंबर पर, और बीत चुकी नवरात्रि नीचे। (`docs/19` §4 की चाल: «त्योहार से पहले उसका नाम ऊपर»।)
@@ -77,7 +81,7 @@ Puja vidhi, Panchang, Gita, Vidur Niti, Saptashati arth sahit, Kundali, offline
 
 ★ करवा चौथ, दीपावली, छठ — तारीख़ अपने आप
 
-सबसे ऊपर — आज और आगे कौन सी पूजा है। शरद पूर्णिमा, करवा चौथ, धनतेरस, दीपावली, छठ, पितृ पक्ष, हरतालिका तीज, वट सावित्री — सबकी तारीख़ व्यापिनी नियम से।
+सबसे ऊपर — आज और आगे कौन सी पूजा है। करवा चौथ, धनतेरस, दीपावली, छठ, तुलसी विवाह, कार्तिक पूर्णिमा, देव दीपावली, पितृ पक्ष, हरतालिका तीज, वट सावित्री — सबकी तारीख़ व्यापिनी नियम से।
 
 
 ★ नया — ग्रंथालय: गीता, सुंदरकांड, विदुर नीति
@@ -92,7 +96,7 @@ Puja vidhi, Panchang, Gita, Vidur Niti, Saptashati arth sahit, Kundali, offline
 
 ★ नया — जन्म कुंडली (सिर्फ़ गणित)
 
-जन्म की तारीख़, समय, जगह भरिए — लग्न, चंद्र और नवमांश कुंडली का चित्र, नौ ग्रहों की राशि-अंश-नक्षत्र, विंशोत्तरी दशा, नाम का अक्षर और जन्म का पंचांग। गुण मिलान के अंक भी। जन्म-स्थान गाँव तक खोजिए। पूरे परिवार की कुंडलियाँ रखिए; चित्र भेजिए। जन्म का ब्यौरा सिर्फ़ आपके फ़ोन में रहता है। ऐप फल, दोष या उपाय नहीं बताता — वह आपके पंडित जी का काम है।
+जन्म की तारीख़, समय, जगह भरिए — लग्न, चंद्र और नवमांश कुंडली का चित्र, नौ ग्रहों की राशि-अंश-नक्षत्र, विंशोत्तरी दशा, नाम का अक्षर और जन्म का पंचांग। गुण मिलान के अंक भी। जन्म-स्थान गाँव तक खोजिए। पूरे परिवार की कुंडलियाँ रखिए; चित्र भेजिए। ऐप जन्म का ब्यौरा स्थानीय रूप से सहेजता है; सिस्टम बैकअप और साझा विकल्प नीति में बताए हैं। ऐप फल, दोष या उपाय नहीं बताता — वह आपके पंडित जी का काम है।
 
 
 ★ 29 पूजा विधि — कदम-दर-कदम
@@ -139,8 +143,7 @@ Puja vidhi, Panchang, Gita, Vidur Niti, Saptashati arth sahit, Kundali, offline
 
 विधिवत सिर्फ़ विधि और समय बताता है। आपके घर या क्षेत्र की परंपरा अलग हो तो वही सही है। किसी भी ज़रूरी काम का अंतिम निर्णय अपने पंडित जी से करें।
 
-
-Puja vidhi, panchang, Bhagavad Gita, Vidur Niti, Upanishads, Sundarkand, Vishnu Sahasranama and Durga Saptashati with Hindi meaning, janam kundali (lagna chart, navamsha, vimshottari dasha, gun milan), Navratri puja vidhi, shradh pitru paksha, karwa chauth, chhath puja, sankalp, choghadiya, shubh muhurat, vrat tyohar, Hanuman Chalisa aur aarti — sab ek jagah, offline. Hindu calendar with tithi, nakshatra, yoga, karana and rahu kaal for your city.
+Puja vidhi, Panchang, Gita, Sundarkand, Saptashati, Kundali, vrat aur tyohar — Hindi mein, offline.
 ```
 
 ### पूरा विवरण — सामान्य क्रम — 3976/4000 (16 नवंबर के बाद)
@@ -226,71 +229,26 @@ Puja vidhi, panchang, Bhagavad Gita, Vidur Niti, Upanishads, Sundarkand, Vishnu 
 
 ---
 
-## ३ · ASO — कौन-सा शब्द कहाँ (script से गिना)
+## ३ · वर्तमान विवरण और ASO
 
-Play का अलग keyword खाना नहीं — नाम, छोटा विवरण और पूरा विवरण ही। हर शब्द हिंदी और रोमन, दोनों रूप गिने:
-
-| शब्द | नाम | छोटा | पूरा (त्योहार क्रम) |
-|---|---|---|---|
-| पूजा विधि · puja vidhi | 1 | 1 | 3 |
-| पंचांग · panchang | 1 | 1 | 6 |
-| संकल्प · sankalp | 0 | 0 | 5 |
-| चौघड़िया · choghadiya | 0 | 0 | 2 |
-| मुहूर्त · muhurat | 0 | 0 | 2 |
-| राहुकाल · rahu kaal | 0 | 0 | 2 |
-| व्रत · vrat | 0 | 0 | 6 |
-| त्योहार · tyohar | 0 | 0 | 3 |
-| कुंडली · kundali | 0 | 1 | 4 |
-| गुण मिलान · gun milan | 0 | 0 | 2 |
-| गीता · gita | 0 | 1 | 3 |
-| सुंदरकांड · sundarkand | 0 | 0 | 3 |
-| विदुर नीति · vidur niti | 0 | 1 | 3 |
-| उपनिषद · upanishad | 0 | 0 | 2 |
-| विष्णु सहस्रनाम · vishnu sahasranama | 0 | 0 | 2 |
-| सप्तशती · saptashati | 0 | 1 | 2 |
-| हनुमान चालीसा · hanuman chalisa | 0 | 0 | 2 |
-| आरती · aarti | 0 | 0 | 3 |
-| सत्यनारायण · satyanarayan | 0 | 0 | 3 |
-| नवरात्रि · navratri | 0 | 0 | 2 |
-| करवा चौथ · karwa chauth | 0 | 0 | 5 |
-| दीपावली · diwali | 0 | 0 | 2 |
-| धनतेरस · dhanteras | 0 | 0 | 2 |
-| छठ · chhath | 0 | 0 | 4 |
-| शरद पूर्णिमा · sharad purnima | 0 | 0 | 1 |
-| श्राद्ध · shradh | 0 | 0 | 2 |
-| ग्रहण · grahan | 0 | 0 | 3 |
-
-**सब शब्द कम से कम एक जगह हैं।**
-
-**नियम (`docs/19` §4, D-105):**
-- **नाम में** «Puja Vidhi» और «Panchang» — सबसे ज़्यादा खोजे जाने वाले दो; बदलें नहीं (नाम बदलने से पुरानी ranking हिलती है)।
-- **छोटे विवरण में** नई बड़ी चीज़ें: Gita, Vidur Niti, Saptashati, Kundali — रोमन में, क्योंकि लोग अंग्रेज़ी keyboard से खोजते हैं।
-- **पूरे विवरण के अंत की अंग्रेज़ी पंक्ति** रोमन-खोज वालों के लिए — उसमें शब्द बस एक बार, ठूँसे नहीं।
-- **कभी नहीं:** राशिफल, भविष्यवाणी, उपाय, टोटका, वशीकरण, मांगलिक, horoscope prediction, astrology remedies — ऐप में
-  नहीं हैं; डालना listing policy तोड़ेगा और uninstall बढ़ाएगा। (विवरण में «राशिफल नहीं देता», «दोष या उपाय नहीं बताता» —
-  सिर्फ़ इनकार में, जैसे पहले।)
-- **कुंडली** अब लिख सकते हैं — सिर्फ़ गणित, फलादेश नहीं (D-105)।
-- किसी वेबसाइट या दूसरे ऐप का नाम नहीं (D-080 का भाव)।
+25 अक्टूबर के चार सादे पाठ `release_2026-10-25/` में हैं: नाम 29/30,
+छोटा विवरण 79/80, पूरा हिंदी विवरण 3713/4000, रिलीज़ नोट 373/500 अक्षर।
+नाम वही रखा है। आगामी त्योहार ऊपर हैं; ग्रंथालय, कुंडली और जगह की खोज स्पष्ट हैं।
+लंबी keyword-list घटाई गई है। फलादेश, पंडित-जाँच या सभी मंत्र पूरे होने का दावा नहीं।
+Console में **default Hindi hi-IN** का छोटा और पूरा विवरण ड्राफ्ट में सहेजा गया है।
+दूसरी भाषाएँ इस पास में नहीं बदली गईं। 16 नवंबर के बाद मौसमी क्रम फिर देखें।
 
 ---
 
-## ४ · Screenshots और चित्र
+## ४ · नए फोन screenshots
 
-**क्रम** (पहले दो सबसे ज़्यादा देखे जाते हैं; नया UI commit होने के बाद फ़ोन से लें — `docs/19` §7):
-
-| # | पन्ना | ऊपर लिखा (overlay) |
-|---|---|---|
-| 1 | संकल्प — बना हुआ पूरा संकल्प | संकल्प अपने आप बनता है |
-| 2 | होम — आने वाले त्योहार (दीपावली/छठ दिखे) | हर त्योहार की तारीख़, आपके शहर से |
-| 3 | ग्रंथालय — चित्र वाले कार्ड | गीता, सुंदरकांड, विदुर नीति — अर्थ सहित |
-| 4 | कोई पाठ «अर्थ दिखाएँ» के साथ (गीता २ या विदुर नीति) | हर श्लोक का सरल हिंदी अर्थ |
-| 5 | विधि प्लेयर — मंत्र वाला कदम | कदम-दर-कदम, बड़े अक्षरों में |
-| 6 | आज का पंचांग | तिथि, नक्षत्र, राहुकाल, चौघड़िया |
-| 7 | जन्म कुंडली का चित्र (**बनावटी नाम और ब्यौरा**) | जन्म कुंडली — सिर्फ़ गणित |
-| 8 | जगह की खोज — कोई गाँव | गाँव तक की जगह |
-
-⛔ दक्षिणा वाली स्क्रीन नहीं; किसी असली व्यक्ति का नाम/जन्म-ब्यौरा नहीं; «दोष» या फ़ैसला दिखाने वाली कोई तस्वीर नहीं।
-**Feature graphic / icon:** `vidhivat_feature_graphic_1024x500.png`, `vidhivat_play_icon_512.png` — वही रहें।
+`app/play_store_assets/screenshots/release_2026-10-25/` में आठ 1080×1920 RGB PNG:
+संकल्प → आगामी पूजा → ग्रंथालय → पाठ और अर्थ → पूजा के चरण → पंचांग → कुंडली → जगह खोज।
+सभी अंतिम snapshot APK से वास्तविक Vivo फोन पर लिए गए हैं। केवल Android status/navigation
+पट्टियाँ हटाई हैं, ऐप समान अनुपात में रखा है और ऊपर प्रचार-पाठ जोड़ा है। कोई नकली UI नहीं।
+नाम रवि और Demo QA केवल स्वीकृत परीक्षण प्रोफ़ाइल थे; दोनों हटा दिए गए।
+पुराने आठ screenshots की जगह ये आठ **Console draft** में इसी क्रम में सहेजे गए हैं।
+आइकन, feature graphic और tablet assets नहीं बदले। प्रकाशन नहीं किया।
 
 ---
 
@@ -298,7 +256,7 @@ Play का अलग keyword खाना नहीं — नाम, छोट
 
 **पता:** https://vidhivatpuja.blogspot.com/2026/09/vidhivat-privacy-policy-root-bg-12151c.html (Console के «Privacy policy URL» में यही — बदलना नहीं)।
 **फ़ाइल:** `app/play_store_assets/privacy_policy_blogger.html` (Blogger के लिए) · `privacy_policy.html` (पूरी प्रति, वही पाठ)।
-**आख़िरी बदलाव:** 23 अक्टूबर 2026।
+**आख़िरी बदलाव:** 25 अक्टूबर 2026।
 
 **इस update में क्या बदला (§4 «इंटरनेट»):**
 - पहले: «इंटरनेट सिर्फ़ दक्षिणा के लिए; ऐप ख़ुद कुछ नहीं भेजता»।
@@ -307,297 +265,13 @@ Play का अलग keyword खाना नहीं — नाम, छोट
   खाता नहीं, कोई विज्ञापन नहीं, पितृ-स्मरण की सूचनाएँ फ़ोन पर ही।
 - ऐप के अंदर «लाइसेंस» पन्ने पर: गाँवों की सूची (GeoNames, CC BY 4.0) और OpenStreetMap (ODbL) का श्रेय।
 
-<details><summary><b>पूरा पाठ — जैसा Blogger पर दिखेगा (हिंदी + English)</b></summary>
+नीति का पूरा पाठ एक ही मूल में रखें: `privacy_policy.html`। Blogger संस्करण
+`python tools/banao_blogger_niti.py` से बनता है; इस फ़ाइल में पुरानी दूसरी प्रति नहीं रखी जाती।
+25 अक्टूबर के सुधार: Photon और PayU दोनों, वास्तविक request metadata, स्वैच्छिक दक्षिणा,
+जन्म-विवरण, Android सिस्टम बैकअप, और उपयोगकर्ता के चुने sharing विकल्प स्पष्ट किए गए हैं।
+स्रोत: `app/lib/services/osm_khoj.dart`, Android merged manifest, और
+https://developer.android.com/identity/data/autobackup ।
 
-```
-आख़िरी बदलाव: 23 अक्टूबर 2026 · ऐप: विधिवत (com.vidhivat)
-
-एक वाक्य में: विधिवत का अपना कोई सर्वर नहीं है, और जो कुछ
-आप भरते हैं — नाम, गोत्र, कुंडली, पूर्वजों की तिथियाँ — वो आपके फ़ोन में ही
-रहता है। ऐप से बाहर सिर्फ़ एक चीज़ जाती है: जगह खोजते समय लिखा हुआ नाम,
-खोज-सेवा को (§4)।
-
-#### 1. ऐप क्या इकट्ठा करता है
-
-हमारे पास कुछ नहीं आता। विधिवत में कोई लॉगिन नहीं, कोई खाता नहीं,
-कोई विज्ञापन नहीं, और कोई analytics नहीं है। ऐप का कोई सर्वर नहीं है,
-इसलिए आपका डेटा हम तक पहुँचने की कोई जगह ही नहीं है। अकेला अपवाद: जगह
-खोजते समय जो नाम आप लिखते हैं, वह सीधे खोज-सेवा (Photon) को जाता है —
-विवरण §4 में।
-
-#### 2. जो आपके फ़ोन में रहता है
-
-ऐप को चलाने के लिए कुछ बातें फ़ोन में सहेजी जाती हैं। ये
-सिर्फ़ आपके फ़ोन के अंदर रहती हैं — न हमें दिखती हैं,
-न किसी और को।
-
-क्या | किसलिए
-
-आपका नाम और गोत्र | संकल्प का वाक्य बनाने के लिए
-
-घर के दूसरे लोगों के नाम, और संकल्प का रूप (पुरुष / स्त्री) | हर सदस्य के लिए उसका अपना संकल्प बनाने के लिए
-
-चुना हुआ शहर या जगह का नाम | सूर्योदय और पंचांग सही निकालने के लिए
-
-जगह का प्रकार (नगर / तीर्थ) | संकल्प में जगह के लिए सही शब्द बोलने के लिए
-
-मास-पद्धति (पूर्णिमांत / अमांत) | आपके क्षेत्र का पंचांग
-
-सामग्री की टिक | तैयारी याद रखने के लिए
-
-पूजा में आप कहाँ तक पहुँचे | बीच से दोबारा शुरू करने के लिए
-
-पाठ में कहाँ तक पढ़ा (जैसे दुर्गा सप्तशती का अध्याय) | अगली बार वहीं से खोलने के लिए
-
-पूर्वजों के नाम, रिश्ता, पुण्यतिथि (तिथि या तारीख़) और जगह — अगर आप भरें | श्राद्ध की तिथि निकालने और याद दिलाने के लिए
-
-जन्म कुंडली के लिए नाम, जन्म की तारीख़, समय और जगह — अगर आप भरें | कुंडली का गणित (लग्न, ग्रह, दशा की तारीख़ें) इसी फ़ोन में निकालने के लिए
-
-ऐप हटाने पर यह सब आपके फ़ोन से मिट जाता है। आप चाहें तो Android की
-सेटिंग में जाकर ऐप का डेटा कभी भी साफ़ कर सकते हैं।
-
-#### 3. स्थान (location) की अनुमति
-
-ऐप स्थान की अनुमति माँगता है, और यह बताना ज़रूरी है कि क्यों।
-
-- किसलिए: सूर्योदय, सूर्यास्त, तिथि और चौघड़िया जगह
-के साथ बदलते हैं। बिना जगह जाने पंचांग ग़लत निकलेगा।
-
-- कब: सिर्फ़ तब जब ऐप खुला हो और आप ख़ुद
-"मेरी जगह अपने आप पहचानें" दबाएँ। पीछे चलते हुए (background)
-ऐप कभी आपका स्थान नहीं लेता।
-
-- कहाँ जाता है: कहीं नहीं। अक्षांश-देशांतर
-सिर्फ़ आपके फ़ोन में रहते हैं और उन्हीं से गणना होती है।
-
-- मना करने पर: ऐप पूरा चलता रहेगा — आप अपना शहर हाथ से
-चुन सकते हैं, या अपनी जगह का नाम ख़ुद लिख सकते हैं।
-
-#### 4. इंटरनेट
-
-पूरी गणना — पंचांग, तिथि, मुहूर्त, ग्रहण, संकल्प — आपके फ़ोन पर
-ही होती है। सारी पूजा-विधियाँ, मंत्र, कथाएँ और चालीसा ऐप के अंदर
-पहले से मौजूद हैं। ऐप बिना इंटरनेट के पूरा चलता है।
-
-इंटरनेट सिर्फ़ दो कामों में लगता है:
-
-- जगह की खोज: शहर, गाँव या जन्म-स्थान का नाम लिखते समय लिखा
-हुआ नाम OpenStreetMap के डेटा पर चलने वाली खोज-सेवा Photon (komoot GmbH) को
-जाता है, ताकि मिलती-जुलती जगहें और उनके अक्षांश-देशांतर दिखें। आपकी जगह (GPS),
-नाम, जन्म का ब्यौरा या कुछ और नहीं जाता। हर इंटरनेट सेवा की तरह वहाँ आपके फ़ोन
-का इंटरनेट पता (IP) दिखता है — उसकी नीति:
-komoot.com/privacy (https://www.komoot.com/privacy)।
-बिना इंटरनेट के भी ऐप के अंदर की सूची (लगभग साढ़े पाँच लाख शहर-गाँव) से खोज होती है।
-
-- दक्षिणा: जब आप ख़ुद स्वेच्छा से दक्षिणा देना चुनें। तब PayU का
-भुगतान पन्ना आपके browser या UPI ऐप में खुलता है (नीचे देखें)।
-
-इनके सिवा ऐप ख़ुद कुछ नहीं भेजता।
-
-#### 4क. याद दिलाने वाली सूचनाएँ (notifications)
-
-- पूर्वजों की पुण्यतिथि (श्राद्ध) याद दिलाने के लिए ऐप सूचना दिखा सकता है —
-सिर्फ़ तब जब आप ख़ुद यह switch चालू करें। तभी Android
-सूचना की अनुमति माँगी जाती है।
-
-- सूचनाएँ आपके फ़ोन पर ही तय होती हैं — किसी सर्वर से
-नहीं आतीं, कहीं नहीं जातीं।
-
-- सूचना में पूर्वज का नाम तभी आता है जब आप ख़ुद चुनें;
-वरना सिर्फ़ "आज परिवार का स्मरण-दिन है"।
-
-#### 5. दक्षिणा (in-app purchase)
-
-- दक्षिणा पूरी तरह वैकल्पिक है। देने या न देने से ऐप
-में कुछ नहीं बदलता — कोई पूजा, कोई पाठ, कोई सुविधा बंद नहीं होती।
-
-- भुगतान PayU (PayU Payments Private Limited) के अपने
-पन्ने पर होता है, विधिवत में नहीं। ऐप को आपके कार्ड, UPI, बैंक या नाम
-का कोई विवरण नहीं मिलता।
-
-- ऐप को यह भी पता नहीं चलता कि भुगतान हुआ या नहीं। लौटकर आप ख़ुद
-"दक्षिणा दे दी" दबाएँ, तो फ़ोन में बस इतना दर्ज होता है — ताकि आपसे
-छह महीने तक दोबारा न पूछा जाए। यह भी फ़ोन से बाहर नहीं जाता।
-
-- भुगतान के पन्ने पर PayU की अपनी नीति लागू होती है:
-payu.in/privacy-policy (https://payu.in/privacy-policy/)
-
-#### 6. तीसरे पक्ष
-
-ऐप में कोई विज्ञापन SDK नहीं, कोई analytics नहीं, कोई
-crash-reporting सेवा नहीं, और कोई social login नहीं है। Advertising ID
-का इस्तेमाल नहीं होता।
-
-इकलौता तीसरा पक्ष PayU का भुगतान पन्ना है, और वो भी
-सिर्फ़ तब जब आप ख़ुद दक्षिणा देना चुनें — वह ऐप के बाहर, आपके browser या
-UPI ऐप में खुलता है।
-
-#### 7. बच्चे
-
-यह ऐप सब उम्र के लोगों के लिए है, पर बच्चों को लक्ष्य करके नहीं
-बनाया गया। यह किसी से उम्र नहीं पूछता, क्योंकि यह किसी से कुछ
-पूछता ही नहीं।
-
-#### 8. आपके अधिकार
-
-चूँकि हमारे पास आपका कोई डेटा है ही नहीं, हमसे कुछ मिटवाने या माँगने की
-ज़रूरत नहीं पड़ती। फ़ोन में रखी हर चीज़ पूरी तरह आपके नियंत्रण में है —
-Android की सेटिंग से ऐप का डेटा साफ़ कीजिए, या ऐप हटा दीजिए।
-
-#### 9. बदलाव
-
-नीति बदलेगी तो ऊपर की तारीख़ बदल जाएगी। कोई बड़ा बदलाव हुआ तो ऐप के
-अपडेट-नोट में भी लिखा जाएगा।
-
-#### 10. संपर्क
-
-कोई सवाल हो तो लिखिए — all.chandansingh@gmail.com (mailto:all.chandansingh@gmail.com)
-
-#### Vidhivat — Privacy Policy
-
-Last updated: 23 October 2026 · App: Vidhivat (com.vidhivat)
-
-In one line: Vidhivat has no server of its own, and
-whatever you enter — names, gotra, birth charts, ancestors' dates — stays on
-your phone. Only one thing leaves the app: the place name you type while
-searching for a place, sent to a search service (§4).
-
-#### 1. What we collect
-
-Nothing reaches us. There is no login, no account, no
-advertising and no analytics in Vidhivat. The app has no server, so there is
-nowhere for your data to reach us. The one exception: the place name you type
-while searching for a place goes directly to a search service (Photon) — see §4.
-
-#### 2. What stays on your phone
-
-A few things are saved on the device so the app can work. They stay
-inside your phone only — we cannot see them, and neither
-can anyone else.
-
-What | Why
-
-Your name and gotra | To compose the sankalp sentence
-
-Names of other family members, and the sankalp form (male / female) | To compose each member's own sankalp
-
-Chosen city or place name | To compute sunrise and the panchang correctly
-
-Type of place (town / tirtha) | To use the right word for the place in the sankalp
-
-Month system (Purnimanta / Amanta) | Regional panchang convention
-
-Material checklist ticks | To remember your preparation
-
-Progress through a puja | To resume where you left off
-
-How far you have read a text (e.g. a Durga Saptashati chapter) | To reopen it at the same place
-
-Ancestors' names, relation, death anniversary (tithi or date) and place — only if you enter them | To compute the shraddha tithi and remind you
-
-For a birth chart: name, date, time and place of birth — only if you enter them | To compute the chart (ascendant, planets, dasha dates) on this phone
-
-Uninstalling the app removes all of it. You can also clear the app's data
-at any time from Android settings.
-
-#### 3. Location permission
-
-- Why: sunrise, sunset, tithi and choghadiya all change
-with place. Without a location the panchang would be wrong.
-
-- When: only while the app is open and only when you tap
-"detect my location" yourself. The app never accesses location in the
-background.
-
-- Where it goes: nowhere. The coordinates
-stay on your phone and are used for the calculation there.
-
-- If you decline: the app works fully. You can pick a city
-by hand, or type your own place name.
-
-#### 4. Internet
-
-All calculation — panchang, tithi, muhurat, eclipses, sankalp — happens
-on your phone. Every puja procedure, mantra, katha and
-chalisa is bundled inside the app. It works fully offline.
-
-The internet is used for two things only:
-
-- Place search: while you type the name of a city, village or
-birth place, the name you typed is sent to Photon (komoot GmbH), a
-search service built on OpenStreetMap data, to suggest matching places and their
-coordinates. Your location (GPS), name, birth details or anything else are
-not sent. Like any internet service it sees your phone's IP address — its
-policy: komoot.com/privacy (https://www.komoot.com/privacy).
-Without the internet, search still works from the list inside the app
-(about 5.4 lakh cities and villages).
-
-- Dakshina: when you choose to offer a voluntary dakshina.
-PayU's payment page then opens in your browser or UPI app.
-
-Apart from these, the app itself sends nothing.
-
-#### 4a. Reminder notifications
-
-- The app can remind you of an ancestor's shraddha day — only if
-you turn this switch on yourself. Only then is Android's
-notification permission requested.
-
-- Reminders are scheduled on your phone — they come from no
-server and go nowhere.
-
-- An ancestor's name appears in the notification only if you
-choose so; otherwise just "today is the family's remembrance day".
-
-#### 5. Dakshina (in-app purchase)
-
-- Dakshina is entirely optional. Giving or not giving
-changes nothing in the app — no puja, no text, no feature is withheld.
-
-- Payment happens on the own page of PayU (PayU Payments
-Private Limited), not inside Vidhivat. The app receives no card,
-UPI, bank or name details.
-
-- The app does not even learn whether a payment was made. If you come back
-and tap "I have given", the phone records only that — so you are not
-asked again for six months. That too stays on the phone.
-
-- PayU's own policy applies on the payment page:
-payu.in/privacy-policy (https://payu.in/privacy-policy/)
-
-#### 6. Third parties
-
-There is no advertising SDK, no analytics, no crash
-reporting service and no social login. The Advertising ID is not used. The
-only third party is PayU's payment page, and only if you
-choose to give a dakshina — it opens outside the app, in your browser or UPI
-app.
-
-#### 7. Children
-
-The app is suitable for all ages but is not directed at
-children. It never asks anyone's age, because it never asks
-anything.
-
-#### 8. Your rights
-
-Since we hold no data about you, there is nothing to request or delete
-from us. Everything on the device is fully under your control — clear the
-app's data from Android settings, or uninstall the app.
-
-#### 9. Changes
-
-If this policy changes, the date at the top changes. Anything significant
-will also be noted in the app's release notes.
-
-#### 10. Contact
-
-all.chandansingh@gmail.com (mailto:all.chandansingh@gmail.com)
-
-विधिवत · Vidhivat
-```
-
-</details>
 
 ---
 
@@ -606,10 +280,10 @@ all.chandansingh@gmail.com (mailto:all.chandansingh@gmail.com)
 | सवाल | जवाब | क्यों |
 |---|---|---|
 | Does your app collect or share any of the required user data types? | **Yes** | जगह की खोज में लिखा नाम ऐप से सीधे Photon सेवा को जाता है (D-129, D-134) |
-| Data type | **App activity → In-app search history** — सिर्फ़ यही | नाम, ईमेल, फ़ोन, संपर्क, फ़ोटो, फ़ाइलें — कुछ नहीं |
-| Location (Approximate / Precise) | **Not collected** | GPS वाली जगह सिर्फ़ फ़ोन पर पंचांग के लिए; कहीं नहीं भेजी जाती |
-| Collected / Shared | **Collected: Yes · Shared: No** | यूज़र के लिखने पर उसी सेवा को, जिससे वह खोज रहा है |
-| Processed ephemerally? | **Yes** | ऐप उसे कहीं नहीं रखता |
+| Data type | **App activity → In-app search history**; अन्य data types का भी वर्तमान व्यवहार से मिलान | नाम, ईमेल, फ़ोन, संपर्क, फ़ोटो, फ़ाइलें — कुछ नहीं |
+| Location (Approximate / Precise) | **GPS नहीं भेजा जाता; IP/खोज से अनुमानित स्थान की handling की पुष्टि बाकी** | Photon को IP और लिखा हुआ जगह का नाम मिलता है; केवल GPS न भेजना पर्याप्त आधार नहीं |
+| Collected / Shared | **Collected: Yes; Shared का जवाब provider/consent की लागू शर्त देखकर** | search-as-you-type है; service-provider या user-initiated exception स्वतः मानकर न भरें |
+| Processed ephemerally? | **सेवा की पुष्टि के बिना Yes न चुनें** | ऐप का न रखना पर्याप्त नहीं; Photon की server-side retention भी जाँचनी है। सामान्य komoot policy में IP logs रखने का उल्लेख है; Photon endpoint की लागू नीति अलग से पक्की करनी है |
 | Required or optional? | **Optional** | बिना इसके ऐप की अपनी सूची से खोज होती है |
 | Purpose | **App functionality** | — |
 | Encrypted in transit? | **Yes** | https |
@@ -617,7 +291,9 @@ all.chandansingh@gmail.com (mailto:all.chandansingh@gmail.com)
 | Financial info / Purchase history | **Not collected** | दक्षिणा PayU के अपने पन्ने पर |
 | Ads / Advertising ID | **No** | ऐप में कोई विज्ञापन नहीं (D-053) |
 
-⚠ Console की भाषा बदलती रहती है — जो खाना ऊपर न दिखे, उसमें "Not collected"।
+⚠ ऊपर के उत्तर भरने से पहले वर्तमान source/service व्यवहार और Console के प्रत्येक data type का मिलान करें। जो खाना इस तालिका में नहीं है, उसमें अपने-आप "Not collected" न भरें। केवल GPS न भेजे जाने से खोज-सेवा की सारी data handling प्रमाणित नहीं होती।
+
+**25 अक्टूबर की release समीक्षा:** Google के अनुसार ephemeral processing में server पर भी डेटा सिर्फ़ request पूरी करने तक memory में रहता है। इसलिए «ऐप उसे नहीं रखता» वाला पुराना आधार अपर्याप्त था। [Google Data safety](https://support.google.com/googleplay/android-developer/answer/10787469?hl=en-EN), [komoot privacy](https://www.komoot.com/privacy) पढ़े। सामान्य komoot policy IP retention बताती है; उसे बिना endpoint-specific पुष्टि के Photon की exact retention का प्रमाण नहीं माना। यह developer के form review का खुला काम है; Console में कोई उत्तर नहीं बदला गया।
 
 ---
 
@@ -637,18 +313,25 @@ all.chandansingh@gmail.com (mailto:all.chandansingh@gmail.com)
 
 ---
 
-## ८ · AAB — कब और कैसे (AI का काम, आपके कहने पर)
+## ८ · बनी हुई AAB और जाँच
 
-1. दूसरा session अपना UI काम commit करे, और **UX-010** ठीक हो (`docs/JAANCH_SAMASYA_PANJI.md`)।
-2. `flutter analyze`, पूरा `flutter test` (अभी 1443 में 1 फ़ेल — वही UX-010), `python tools/jaancho_granth.py`,
-   `python tools/jaancho_vrat.py`, `cd engine && dart test`।
-3. `flutter build appbundle --release` → `app/build/app/outputs/bundle/release/app-release.aab` — upload key
-   (`vidhivat-upload.jks`) से signed, **versionCode 7**।
-4. वही build फ़ोन पर: होम, एक पूरी पूजा (अंत में दक्षिणा का हिस्सा), शरद पूर्णिमा/दीपावली, जगह की खोज, ग्रंथालय।
-5. यह फ़ाइल «AAB बनी: तारीख़, आकार, commit» से अद्यतन।
+**25 अक्टूबर 2026:** snapshot `9d2c1f1360cd9b4ff4e5a31c21b779ee31ad94e3` से
+v1.2.0+7 AAB बनी: **86,912,807 bytes**, SHA-256
+`5b765ea8c57fbc069fceb981df9eab45528b2502c46863d1ea8038a5287b7c06`।
+`docs/RELEASE_READY_2026-10-25.md` में फाइलें और साक्ष्य हैं।
 
-**versionCode 7 क्यों:** 6 वाली AAB 2–8 अक्टूबर में कई बार बनी, पर Play पर चढ़ी या नहीं — repo में दर्ज नहीं। 7 हर हाल में
-सुरक्षित। नाम `1.2.0` ही — Play पर अभी 1.1.0।
+- Snapshot app 1456/1456, analyzer clean; engine के अपरिवर्तित स्रोत पर पूर्व 623/623 पास।
+- Snapshot granth/vrat validators पास। bundletool validate पास, targetSdk36, minSdk24,
+  version7/name1.2.0, PAGE_ALIGNMENT_16K। 840 AAB payload entries का cryptographic signature सत्यापित।
+- 543 source inputs और 434 packaged assets मिले; 12 native ELF जाँचे, आवश्यक 64-bit alignment पास।
+- APK signature v2 और `zipalign -P16` पास। उसी APK को फोन पर install-r किया और मुख्य रास्ते जाँचे।
+- Console bundle explorer में अधिकतम **5 / 1.1.0** देखा; code7 अभी upload नहीं हुआ।
+- Concurrent D-146 और D-147 content commits इस frozen candidate में **नहीं** हैं। उन्हें शामिल करने पर
+  नया snapshot/build, संबंधित जाँच और फोन smoke test दोबारा करना होगा।
+- UX-010 production defect नहीं था; test-only सुधार से resolved है। पुराना “1443 में 1 fail” checkpoint अप्रचलित।
+
+**प्रकाशन से पहले शेष:** Blogger का public Update, Photon की Data safety handling की पुष्टि,
+अंतिम content cutoff चुनना, AAB upload/review/rollout। मालिक के लौटने तक review/publish रोका गया है।
 
 ---
 
