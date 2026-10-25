@@ -16,9 +16,9 @@
     {
       "shirshak": "शुरुआत — हर पद के बाद यही दोहराएँ",
       "dohraav": true,
-      "dev": "ॐ जय शिव ओंकारा, स्वामी जय शिव ओंकारा।\nब्रह्मा विष्णु सदाशिव, अर्द्धांगी धारा॥",
-      "roman": "om jai shiv omkaaraa, svaamee jai shiv omkaaraa |\nbrahmaa vishnu sadaashiv, ardhaangee dhaaraa ||",
-      "arth": "ॐ स्वरूप शिव की जय हो। ब्रह्मा, विष्णु और सदाशिव — तीनों का रूप, जिन्होंने आधा अंग देवी को दिया है।",
+      "dev": "जय शिव ओंकारा, भज शिव ओंकारा।\nब्रह्मा विष्णु सदाशिव, अर्द्धांगी धारा॥",
+      "roman": "jai shiv onkaaraa, bhaj shiv onkaaraa |\nbrahmaa vishnu sadaashiv, arddhaangee dhaaraa ||",
+      "arth": "ओंकार-स्वरूप शिव की जय हो, उन्हीं का भजन करो। ब्रह्मा, विष्णु और सदाशिव — तीनों का रूप, जिन्होंने आधा अंग देवी को दिया है।",
       "audio": "",
       "sthiti": "draft"
     },
@@ -40,9 +40,9 @@
     },
     {
       "shirshak": "पद ३",
-      "dev": "अक्षमाला वनमाला मुंडमाला धारी।\nचंदन मृगमद सोहै भाले शशिधारी॥",
-      "roman": "akshamaalaa vanamaalaa mundamaalaa dhaaree |\nchandan mrigamad sohai bhaale shashidhaaree ||",
-      "arth": "रुद्राक्ष की माला, वनमाला और मुंडमाला धारण करते हैं। माथे पर चंदन और कस्तूरी सजती है, और चंद्रमा धारण करते हैं।",
+      "dev": "अक्षमाला वनमाला रुंडमाला धारी।\nचंदन मृगमद चंदा भाले शुभकारी॥",
+      "roman": "akshamaalaa vanamaalaa rundamaalaa dhaaree |\nchandan mrigamad chandaa bhaale shubhakaaree ||",
+      "arth": "रुद्राक्ष की माला, वनमाला और मुंडों की माला धारण करते हैं। माथे पर चंदन, कस्तूरी और चंद्रमा शुभ शोभा देते हैं।",
       "audio": "",
       "sthiti": "draft"
     },
@@ -56,56 +56,24 @@
     },
     {
       "shirshak": "पद ५",
-      "dev": "कर के मध्य कमंडल चक्र त्रिशूलधारी।\nसुखकारी दुखहारी जगपालनकारी॥",
-      "roman": "kar ke madhya kamandal chakra trishooladhaaree |\nsukhakaaree dukhahaaree jagapaalanakaaree ||",
-      "arth": "हाथ में कमंडल, चक्र और त्रिशूल धारण करते हैं। सुख देने वाले, दुख हरने वाले और जगत का पालन करने वाले हैं।",
+      "dev": "कर मध्ये सुकमंडलु चक्र शूलधारी।\nसुखकारी दुखहारी जगपालनकारी॥",
+      "roman": "kar madhye sukamandalu chakra shooladhaaree |\nsukhakaaree dukhahaaree jagapaalanakaaree ||",
+      "arth": "हाथों में सुंदर कमंडल, चक्र और त्रिशूल धारण करते हैं। सुख देने वाले, दुख हरने वाले और जगत का पालन करने वाले हैं।",
       "audio": "",
       "sthiti": "draft"
     },
     {
       "shirshak": "पद ६",
-      "dev": "ब्रह्मा विष्णु सदाशिव जानत अविवेका।\nप्रणवाक्षर के मध्ये ये तीनों एका॥",
-      "roman": "brahmaa vishnu sadaashiv jaanat avivekaa |\npranavaakshar ke madhye ye teenon ekaa ||",
-      "arth": "जो नासमझ हैं वे ब्रह्मा, विष्णु और सदाशिव को अलग-अलग मानते हैं। पर ॐ के भीतर ये तीनों एक ही हैं।",
+      "dev": "ब्रह्मा विष्णु सदाशिव जानत अविवेका।\nप्रणवाक्षर में शोभित ये तीनों एका॥",
+      "roman": "brahmaa vishnu sadaashiv jaanat avivekaa |\npranavaakshar me shobhit ye teenon ekaa ||",
+      "arth": "जो नासमझ हैं वे ब्रह्मा, विष्णु और सदाशिव को अलग-अलग मानते हैं। पर ॐ अक्षर में शोभित ये तीनों एक ही हैं।",
       "audio": "",
       "sthiti": "draft"
     },
     {
       "shirshak": "पद ७",
-      "dev": "लक्ष्मी व सावित्री पार्वती संगा।\nपार्वती अर्द्धांगी शिवलहरी गंगा॥",
-      "roman": "lakshmee va saavitree paarvatee sangaa |\npaarvatee ardhaangee shivalaharee gangaa ||",
-      "arth": "लक्ष्मी, सावित्री और पार्वती साथ हैं। पार्वती आधे अंग में हैं और शिव की लहर गंगा हैं।",
-      "audio": "",
-      "sthiti": "draft"
-    },
-    {
-      "shirshak": "पद ८",
-      "dev": "पर्वत सोहैं पार्वती, शंकर कैलासा।\nभांग धतूर का भोजन, भस्मी में वासा॥",
-      "roman": "parvat sohain paarvatee, shankar kailaasaa |\nbhaang dhatoor kaa bhojan, bhasmee men vaasaa ||",
-      "arth": "पर्वत पर पार्वती शोभा देती हैं और शंकर कैलास पर। भांग-धतूरा भोजन है और भस्म में निवास।",
-      "audio": "",
-      "sthiti": "draft"
-    },
-    {
-      "shirshak": "पद ९",
-      "dev": "जटा में गंग बहत है, गल मुंडन माला।\nशेषनाग लिपटावत, ओढ़त मृगछाला॥",
-      "roman": "jataa men gang bahat hai, gal mundan maalaa |\nsheshanaag lipataavat, odhat mrigachhaalaa ||",
-      "arth": "जटा में गंगा बहती है और गले में मुंडों की माला है। शेषनाग लिपटे रहते हैं और मृगछाला ओढ़ते हैं।",
-      "audio": "",
-      "sthiti": "draft"
-    },
-    {
-      "shirshak": "पद १०",
-      "dev": "काशी में विराजे विश्वनाथ, नंदी ब्रह्मचारी।\nनित उठ दर्शन पावत, महिमा अति भारी॥",
-      "roman": "kaashee men viraaje vishvanaath, nandee brahmachaaree |\nnit uth darshan paavat, mahimaa ati bhaaree ||",
-      "arth": "काशी में विश्वनाथ विराजते हैं और नंदी ब्रह्मचारी हैं। रोज़ उठकर लोग दर्शन पाते हैं — महिमा बहुत बड़ी है।",
-      "audio": "",
-      "sthiti": "draft"
-    },
-    {
-      "shirshak": "पद ११",
-      "dev": "त्रिगुण स्वामी की आरती जो कोई नर गावे।\nकहत शिवानंद स्वामी मनवांछित फल पावे॥",
-      "roman": "trigun svaamee kee aaratee jo koee nar gaave |\nkahat shivaanand svaamee manavaanchhit phal paave ||",
+      "dev": "त्रिगुण स्वामी की आरती जो कोई नर गावे।\nभनत शिवानंद स्वामी मनवांछित पावे॥",
+      "roman": "trigun svaamee kee aaratee jo koee nar gaave |\nbhanat shivaanand svaamee manavaanchhit paave ||",
       "arth": "अंतिम पद में शिवानंद स्वामी श्रद्धापूर्वक आरती गाने की फलश्रुति कहते हैं। यह आरती की भक्ति-भाषा है, किसी निश्चित परिणाम का दावा नहीं।",
       "audio": "",
       "sthiti": "draft"
@@ -113,9 +81,9 @@
   ],
   "bharosa": "uncha",
   "strot": {
-    "paddhati": "घर में गाई जाने वाली पारंपरिक आरती",
+    "paddhati": "घर में गाई जाने वाली पारंपरिक आरती — छपी आरती-पुस्तकों से मिलाया पाठ",
     "kshetra": "उत्तर भारत",
-    "note": "आरती गाई जाने वाली रचना है — घर-घर में शब्द थोड़े बदलते हैं। जो रूप आपके घर में गाया जाता है, वही आपके लिए सही है।"
+    "note": "पाठ पाँच छपी पुस्तकों से मिलाया गया — श्रीआरती-संग्रह (गीताप्रेस), पृ. 12–13; नित्यकर्म विधि तथा देवपूजा पद्धति (माया प्रसाद शास्त्री), पृ. 103; आरती संग्रह (खेमराज श्रीकृष्णदास, मुंबई), पृ. 8; आरती-चालीसा संग्रह (रणधीर प्रकाशन, हरिद्वार), पृ. 21; आरती संग्रह (हरिदर्शन प्रकाशन, दिल्ली)। इसके दो छपे रूप चलते हैं; हर पंक्ति वही जो कम से कम दो पुस्तकों में है। कुछ घरों में गाए जाने वाले चार और पद (लक्ष्मी-सावित्री, कैलास, गंगा, काशी) किसी छपी पुस्तक में नहीं मिले, इसलिए नहीं दिए।\n\nआरती गाई जाने वाली रचना है — घर-घर में शब्द थोड़े बदलते हैं। जो रूप आपके घर में गाया जाता है, वही आपके लिए सही है।"
   },
   "jaanch": {
     "panditNaam": "",

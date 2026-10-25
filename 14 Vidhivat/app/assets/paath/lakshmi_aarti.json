@@ -16,8 +16,8 @@
     {
       "shirshak": "शुरुआत — हर पद के बाद यही दोहराएँ",
       "dohraav": true,
-      "dev": "ॐ जय लक्ष्मी माता, मैया जय लक्ष्मी माता।\nतुमको निशदिन सेवत, हर विष्णु विधाता॥",
-      "roman": "om jai lakshmee maataa, maiyaa jai lakshmee maataa |\ntumako nishadin sevat, har vishnu vidhaataa ||",
+      "dev": "ॐ जय लक्ष्मी माता, मैया जय लक्ष्मी माता।\nतुमको निशदिन सेवत, हर विष्णु धाता॥",
+      "roman": "jai lakshmee maataa, maiyaa jai lakshmee maataa |\ntumako nishadin sevat, har vishnu dhaataa ||",
       "arth": "लक्ष्मी माता की जय हो। रात-दिन आपकी सेवा शिव, विष्णु और ब्रह्मा करते हैं।",
       "audio": "",
       "sthiti": "draft"
@@ -32,8 +32,8 @@
     },
     {
       "shirshak": "पद २",
-      "dev": "दुर्गा रूप निरंजनी, सुख सम्पत्ति दाता।\nजो कोई तुमको ध्याता, ऋद्धि सिद्धि धन पाता॥",
-      "roman": "durgaa roop niranjanee, sukh sampatti daataa |\njo koee tumako dhyaataa, riddhi siddhi dhan paataa ||",
+      "dev": "दुर्गा रूप निरंजनी, सुख सम्पत्ति दाता।\nजो कोई तुमको ध्यावत, ऋद्धि सिद्धि धन पाता॥",
+      "roman": "durgaa roop niranjanee, sukh sampatti daataa |\njo koee tumako dhyaavat, riddhi siddhi dhan paataa ||",
       "arth": "इस पद में लक्ष्मी जी को दुर्गा का निर्मल रूप और सुख-सम्पत्ति देने वाली कहा गया है; ध्यान करने वाले को ऋद्धि, सिद्धि और धन मिलने की भक्तिपरक फलश्रुति है, ऐप की परिणाम-गारंटी नहीं।",
       "audio": "",
       "sthiti": "draft"
@@ -48,17 +48,17 @@
     },
     {
       "shirshak": "पद ४",
-      "dev": "जिस घर तुम रहती हो, ताँहि में हैं सद्गुण आता।\nसब सम्भव हो जाता, मन नहीं घबराता॥",
-      "roman": "jis ghar tum rahatee ho, taanhi men hain sadgun aataa |\nsab sambhav ho jaataa, man nahee ghabaraataa ||",
+      "dev": "जिस घर तुम रहती, तहँ सब सद्गुण आता।\nसब सम्भव हो जाता, मन नहीं घबराता॥",
+      "roman": "jis ghar tum rahatee, tah sab sadgun aataa |\nsab sambhav ho jaataa, man nahee ghabaraataa ||",
       "arth": "जिस घर में आप रहती हैं, उसमें अच्छे गुण आ जाते हैं। वहाँ सब कुछ सम्भव हो जाता है और मन घबराता नहीं।",
       "audio": "",
       "sthiti": "draft"
     },
     {
       "shirshak": "पद ५",
-      "dev": "तुम बिन यज्ञ न होते, वस्त्र न कोई पाता।\nखान पान का वैभव, सब तुमसे आता॥",
-      "roman": "tum bin yagya na hote, vastra na koee paataa |\nkhaan paan kaa vaibhav, sab tumase aataa ||",
-      "arth": "आपके बिना न यज्ञ होते हैं और न किसी को वस्त्र मिलते हैं। खाने-पीने का सारा वैभव आप ही से आता है।",
+      "dev": "तुम बिन यज्ञ न होते, वस्त्र न हो पाता।\nखान पान का वैभव, सब तुमसे आता॥",
+      "roman": "tum bin yagy na hote, vastra na ho paataa |\nkhaan paan kaa vaibhav, sab tumase aataa ||",
+      "arth": "आपके बिना न यज्ञ होते हैं, न वस्त्र बन पाते हैं। खाने-पीने का सारा वैभव आप ही से आता है।",
       "audio": "",
       "sthiti": "draft"
     },
@@ -79,11 +79,11 @@
       "sthiti": "draft"
     }
   ],
-  "bharosa": "uncha",
+  "bharosa": "madhyam",
   "strot": {
-    "paddhati": "घर में गाई जाने वाली पारंपरिक आरती",
+    "paddhati": "घर में गाई जाने वाली पारंपरिक आरती — छपी आरती-पुस्तकों से मिलाया पाठ",
     "kshetra": "उत्तर भारत",
-    "note": "आरती गाई जाने वाली रचना है — घर-घर में शब्द थोड़े बदलते हैं। जो रूप आपके घर में गाया जाता है, वही आपके लिए सही है।"
+    "note": "पाठ छपी पुस्तकों से पंक्ति-दर-पंक्ति मिलाया गया — श्रीआरती-संग्रह (गीताप्रेस), पृ. 16 (यही पाठ नित्यकर्म-पूजाप्रकाश, पृ. 274 में); आरती संग्रह (हरिदर्शन प्रकाशन, दिल्ली)। «हर विष्णु धाता» खेमराज और माया प्रसाद शास्त्री वाली पुस्तकों में भी इसी तरह छपा है। चौथे पद की पहली पंक्ति दोनों में अलग है — हरिदर्शन में «जिस घर में तुम रहती, सब सद्गुण आता»; यहाँ गीताप्रेस वाली, इसलिए भरोसा मध्यम। लक्ष्मी जी की एक और आरती «ब्रह्माणी रुद्राणी कमला…» वाले पदों के साथ चलती है — वह अलग रूप है।\n\nआरती गाई जाने वाली रचना है — घर-घर में शब्द थोड़े बदलते हैं। जो रूप आपके घर में गाया जाता है, वही आपके लिए सही है।"
   },
   "jaanch": {
     "panditNaam": "",

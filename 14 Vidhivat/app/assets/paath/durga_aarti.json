@@ -48,16 +48,16 @@
     },
     {
       "shirshak": "पद ४",
-      "dev": "कानन कुंडल शोभित, नासाग्रे मोती।\nकोटिक चंद्र दिवाकर, सम राजत ज्योति॥",
-      "roman": "kaanan kundal shobhit, naasaagre motee |\nkotik chandra divaakar, sam raajat jyoti ||",
+      "dev": "कानन कुंडल शोभित, नासाग्रे मोती।\nकोटिक चंद्र दिवाकर, राजत सम ज्योति॥",
+      "roman": "kaanan kundal shobhit, naasaagre motee |\nkotik chandra divaakar, raajat sam jyoti ||",
       "arth": "कानों में कुंडल शोभा देते हैं और नाक पर मोती। करोड़ों चंद्रमा और सूर्य जैसी ज्योति चमकती है।",
       "audio": "",
       "sthiti": "draft"
     },
     {
       "shirshak": "पद ५",
-      "dev": "शुंभ निशुंभ बिडारे, महिषासुर घाती।\nधूम्र विलोचन नैना, निशदिन मदमाती॥",
-      "roman": "shumbh nishumbh bidaare, mahishaasur ghaatee |\ndhoomra vilochan nainaa, nishadin madamaatee ||",
+      "dev": "शुंभ निशुंभ विदारे, महिषासुर घाती।\nधूम्र विलोचन नैना, निशदिन मदमाती॥",
+      "roman": "shumbh nishumbh vidaare, mahishaasur ghaatee |\ndhoomra vilochan nainaa, nishadin madamaatee ||",
       "arth": "शुंभ और निशुंभ का नाश किया और महिषासुर को मारा। धूम्रलोचन का वध किया — आप सदा उल्लास में रहती हैं।",
       "audio": "",
       "sthiti": "draft"
@@ -80,8 +80,8 @@
     },
     {
       "shirshak": "पद ८",
-      "dev": "चौंसठ योगिनि गावत, नृत्य करत भैरों।\nबाजत ताल मृदंगा, अरु बाजत डमरू॥",
-      "roman": "chaunsath yogini gaavat, nritya karat bhairon |\nbaajat taal mridangaa, aru baajat damaroo ||",
+      "dev": "चौंसठ योगिनि गावत, नृत्य करत भैरूँ।\nबाजत ताल मृदंगा, औ बाजत डमरू॥",
+      "roman": "chaunsath yogini gaavat, nritya karat bhairoo |\nbaajat taal mridangaa, au baajat damaroo ||",
       "arth": "चौंसठ योगिनियाँ गाती हैं और भैरव नृत्य करते हैं। ताल, मृदंग और डमरू बजते हैं।",
       "audio": "",
       "sthiti": "draft"
@@ -121,9 +121,9 @@
   ],
   "bharosa": "uncha",
   "strot": {
-    "paddhati": "घर में गाई जाने वाली पारंपरिक आरती",
+    "paddhati": "घर में गाई जाने वाली पारंपरिक आरती — छपी आरती-पुस्तकों से मिलाया पाठ",
     "kshetra": "उत्तर भारत",
-    "note": "आरती गाई जाने वाली रचना है — घर-घर में शब्द थोड़े बदलते हैं। जो रूप आपके घर में गाया जाता है, वही आपके लिए सही है।"
+    "note": "पाठ चार छपी पुस्तकों से पंक्ति-दर-पंक्ति मिलाया गया — श्रीआरती-संग्रह (गीताप्रेस), पृ. 48–49; दुर्गापूजन पद्धति (वेणीराम शर्मा गौड़), पृ. 61–62; आरती-चालीसा संग्रह (रणधीर प्रकाशन, हरिद्वार), पृ. 177–178; आरती संग्रह (हरिदर्शन प्रकाशन, दिल्ली)। हर पंक्ति कम से कम दो में मिली। गीताप्रेस में पाँचवें पद में «सम राजत ज्योती» और रणधीर में नौवें पद में «अरु बाजत डमरू» छपा है।\n\nआरती गाई जाने वाली रचना है — घर-घर में शब्द थोड़े बदलते हैं। जो रूप आपके घर में गाया जाता है, वही आपके लिए सही है।"
   },
   "jaanch": {
     "panditNaam": "",

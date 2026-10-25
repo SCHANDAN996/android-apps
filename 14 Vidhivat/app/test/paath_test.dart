@@ -339,12 +339,13 @@ void main() {
     });
   });
 
-  /// **राम जी की आरती — छह छपे रूपों से मिलाई।**
+  /// **राम जी की आरती — खेमराज की छपी आरती-पुस्तक से (→ D-146)।**
   ///
-  /// 21 सित 2026 तक इस पर भरोसा `kam` था — अकेली आरती जिस पर यह था।
-  /// छहों स्रोतों में टेक और **ठीक पाँच पद** एक जैसे मिले, और ऐप का पाठ
-  /// तीन जगह **छहों से अलग** निकला: "सीतापति सोहे" (स्रोत: "सीता रामजी
-  /// सोहे"), "नामदेव गावै" (स्रोत: "नामदेव जी गावें") और "भावै" ("भावे")।
+  /// सितम्बर (D-082) में जिन "छह छपे रूपों" से मिलाई थी, वे websites
+  /// निकलीं — D-139 के बाद गवाह नहीं। छपी पुस्तकों में यह आरती अभी एक ही
+  /// में मिली (खेमराज, पृ. 23–24): टेक में "राजा रामचंद्र", ठीक पाँच पद,
+  /// "सीताराम को सोहे", "रामजी को भावे", "नामदेव जी गावे"। एक गवाह —
+  /// इसलिए भरोसा मध्यम।
   group('राम जी की आरती', () {
     late Paath p;
     setUpAll(() {
@@ -352,20 +353,20 @@ void main() {
       p = Paath.parse(path, File(path).readAsStringSync());
     });
 
-    test('शुरुआती पंक्तियाँ और पाँच पद, सब भरे, भरोसा ऊँचा', () {
+    test('शुरुआती पंक्तियाँ और पाँच पद, सब भरे, एक गवाह — भरोसा मध्यम', () {
       expect(p.khand.length, 6);
       expect(p.khand.first.dohraav, isTrue);
       expect(p.khand.every((k) => k.hasPath), isTrue);
       expect(p.khand.every((k) => k.roman.trim().isNotEmpty), isTrue);
       expect(p.khand.every((k) => k.arth.trim().isNotEmpty), isTrue);
-      expect(p.bharosa, Bharosa.uncha);
+      expect(p.bharosa, Bharosa.madhyam);
     });
 
-    test('वे तीन जगह जहाँ ऐप छहों स्रोतों से अलग था', () {
-      expect(p.khand[3].dev, contains('सीता रामजी सोहे'));
-      expect(p.khand[3].dev, isNot(contains('सीतापति सोहे')));
-      expect(p.khand[5].dev, contains('नामदेव जी गावें'));
-      expect(p.khand[5].dev, contains('राम को भावे'));
+    test('पाठ छपी पुस्तक वाला है', () {
+      expect(p.khand[0].dev, contains('राजा रामचन्द्र'));
+      expect(p.khand[3].dev, contains('सीताराम को सोहे'));
+      expect(p.khand[5].dev, contains('रामजी को भावे'));
+      expect(p.khand[5].dev, contains('नामदेव जी गावे'));
     });
   });
 
