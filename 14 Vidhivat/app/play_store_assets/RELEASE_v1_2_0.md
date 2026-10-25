@@ -1,13 +1,13 @@
 # Play Store — v1.2.0 (versionCode 7): इस update की हर चीज़ एक जगह
 
 **बना:** 24 अक्टूबर 2026 · **किसके लिए:** डेवलपर — Play Console, Blogger और ASO, सब इसी फ़ाइल से।
-**हालत (25 अक्टूबर 2026):** UI/चित्र commit हो चुके हैं। सुरक्षित snapshot `9d2c1f1` से
-v1.2.0+7 की signed AAB (86,912,807 bytes) और APK बनी हैं। Snapshot app tests 1456/1456,
-analyzer clean; engine 623/623 का पूर्व पास और स्रोत अपरिवर्तित। Console में आख़िरी code 5 देखा गया।
-फोन पर अंतिम APK लग गई; native smoke test/screenshots जारी हैं। इसके बाद के D-146 कंटेंट बदलाव
-इस candidate में शामिल नहीं हैं। **मालिक के निर्देश: review के लिए भेजने और publishing से पहले रुकना है।**
-मुख्य हिंदी विवरण Console में **Save as draft** किया गया है। Blogger के मौजूदा editor में नई नीति
-तैयार है; सार्वजनिक **Update नहीं दबाया गया**।
+**हालत (25 अक्टूबर, नवीनतम):** उपयोगकर्ता ने अब review/publish तक स्पष्ट अनुमति दी है।
+D-146/D-147/D-148 समेत commit **ac61db7** से सही snapshot AAB/APK बनीं; app1456 + engine629 =
+**2085 pass**, analyzer clean। सभी543inputs Git blobs से मिले;434packagedassets और840signedpayload verified।
+**नई AAB Console पर version7/name1.2.0 के रूप में स्वीकार हुई।** Production, Hindi विवरण/screenshots और Data Safety
+समेत पाँच बदलाव Publishing overview में सहेजे गए हैं। सार्वजनिक Blogger policy25Oct पर Update और verified है।
+अंतिम नई APK फोन पर install हो चुकी; secure-locked फोन के अनलॉक की प्रतीक्षा में smoke test और Send for review बाकी।
+फोन का लॉक bypass नहीं किया जाएगा। पूरा वर्तमान विवरण `docs/RELEASE_READY_2026-10-25.md`।
 
 > Console में markdown नहीं चलता — डिब्बों का पाठ जस का तस चिपकाइए। यह फ़ाइल `listing_v1_2.md` (2–5 अक्टूबर) की जगह लेती है।
 
@@ -275,25 +275,25 @@ https://developer.android.com/identity/data/autobackup ।
 
 ---
 
-## ६ · Data safety — जवाब
+## ६ · Data safety — सहेजे गए वर्तमान जवाब
 
-| सवाल | जवाब | क्यों |
-|---|---|---|
-| Does your app collect or share any of the required user data types? | **Yes** | जगह की खोज में लिखा नाम ऐप से सीधे Photon सेवा को जाता है (D-129, D-134) |
-| Data type | **App activity → In-app search history**; अन्य data types का भी वर्तमान व्यवहार से मिलान | नाम, ईमेल, फ़ोन, संपर्क, फ़ोटो, फ़ाइलें — कुछ नहीं |
-| Location (Approximate / Precise) | **GPS नहीं भेजा जाता; IP/खोज से अनुमानित स्थान की handling की पुष्टि बाकी** | Photon को IP और लिखा हुआ जगह का नाम मिलता है; केवल GPS न भेजना पर्याप्त आधार नहीं |
-| Collected / Shared | **Collected: Yes; Shared का जवाब provider/consent की लागू शर्त देखकर** | search-as-you-type है; service-provider या user-initiated exception स्वतः मानकर न भरें |
-| Processed ephemerally? | **सेवा की पुष्टि के बिना Yes न चुनें** | ऐप का न रखना पर्याप्त नहीं; Photon की server-side retention भी जाँचनी है। सामान्य komoot policy में IP logs रखने का उल्लेख है; Photon endpoint की लागू नीति अलग से पक्की करनी है |
-| Required or optional? | **Optional** | बिना इसके ऐप की अपनी सूची से खोज होती है |
-| Purpose | **App functionality** | — |
-| Encrypted in transit? | **Yes** | https |
-| Users can request deletion? | **No** | ऐप के पास कोई खाता या सर्वर नहीं |
-| Financial info / Purchase history | **Not collected** | दक्षिणा PayU के अपने पन्ने पर |
-| Ads / Advertising ID | **No** | ऐप में कोई विज्ञापन नहीं (D-053) |
+पूरा स्रोत-आधार: `release_2026-10-25/data-safety-basis.md`। Console में Save हुआ; review में भेजना बाकी।
 
-⚠ ऊपर के उत्तर भरने से पहले वर्तमान source/service व्यवहार और Console के प्रत्येक data type का मिलान करें। जो खाना इस तालिका में नहीं है, उसमें अपने-आप "Not collected" न भरें। केवल GPS न भेजे जाने से खोज-सेवा की सारी data handling प्रमाणित नहीं होती।
+| सवाल | वर्तमान जवाब |
+|---|---|
+| Collect/share user data | Yes |
+| In-app search history | Collected + Shared, optional, not ephemeral; app functionality |
+| Device or other IDs | IP/network identifier का disclosure: Collected + Shared, optional, not ephemeral; app functionality और security |
+| GPS/location | GPS नहीं भेजा; app IP geolocation नहीं करता; स्थान के नाम की query search history में घोषित |
+| Encrypted in transit | Yes, HTTPS |
+| Account / external login | No / No |
+| Server data deletion request | No; 90-day deletion badge नहीं |
+| Financial / Ads / Advertising ID | ऐप financial details नहीं लेता; PayU बाहरी page; ads/Advertising ID नहीं |
 
-**25 अक्टूबर की release समीक्षा:** Google के अनुसार ephemeral processing में server पर भी डेटा सिर्फ़ request पूरी करने तक memory में रहता है। इसलिए «ऐप उसे नहीं रखता» वाला पुराना आधार अपर्याप्त था। [Google Data safety](https://support.google.com/googleplay/android-developer/answer/10787469?hl=en-EN), [komoot privacy](https://www.komoot.com/privacy) पढ़े। सामान्य komoot policy IP retention बताती है; उसे बिना endpoint-specific पुष्टि के Photon की exact retention का प्रमाण नहीं माना। यह developer के form review का खुला काम है; Console में कोई उत्तर नहीं बदला गया।
+Photon endpoint पर limited request logs का आधिकारिक उत्तर मिला:
+https://github.com/komoot/photon/discussions/539 (lonvia,16Feb2021)। exact वर्तमान दिनों का दावा नहीं;
+इसीलिए ephemeral Yes नहीं चुना। Search q और IP metadata को छिपाया नहीं, sharing exemption बिना प्रमाण नहीं माना।
+Google के IP/payment/backup FAQ और परिभाषाएँ: https://support.google.com/googleplay/android-developer/answer/10787469?hl=en-EN ।
 
 ---
 
@@ -313,25 +313,23 @@ https://developer.android.com/identity/data/autobackup ।
 
 ---
 
-## ८ · बनी हुई AAB और जाँच
+## ८ · वर्तमान uploaded AAB
 
-**25 अक्टूबर 2026:** snapshot `9d2c1f1360cd9b4ff4e5a31c21b779ee31ad94e3` से
-v1.2.0+7 AAB बनी: **86,912,807 bytes**, SHA-256
-`5b765ea8c57fbc069fceb981df9eab45528b2502c46863d1ea8038a5287b7c06`।
-`docs/RELEASE_READY_2026-10-25.md` में फाइलें और साक्ष्य हैं।
+**Source ac61db7bc42a3fc5d70fa152619c8534325493ef**। D-146/D-147/D-148 शामिल;
+बंद शुभ मुहूर्त के flags नहीं खोले। पुरानी9d2candidate उपयोग न करें।
 
-- Snapshot app 1456/1456, analyzer clean; engine के अपरिवर्तित स्रोत पर पूर्व 623/623 पास।
-- Snapshot granth/vrat validators पास। bundletool validate पास, targetSdk36, minSdk24,
-  version7/name1.2.0, PAGE_ALIGNMENT_16K। 840 AAB payload entries का cryptographic signature सत्यापित।
-- 543 source inputs और 434 packaged assets मिले; 12 native ELF जाँचे, आवश्यक 64-bit alignment पास।
-- APK signature v2 और `zipalign -P16` पास। उसी APK को फोन पर install-r किया और मुख्य रास्ते जाँचे।
-- Console bundle explorer में अधिकतम **5 / 1.1.0** देखा; code7 अभी upload नहीं हुआ।
-- Concurrent D-146 और D-147 content commits इस frozen candidate में **नहीं** हैं। उन्हें शामिल करने पर
-  नया snapshot/build, संबंधित जाँच और फोन smoke test दोबारा करना होगा।
-- UX-010 production defect नहीं था; test-only सुधार से resolved है। पुराना “1443 में 1 fail” checkpoint अप्रचलित।
+`Downloads/Vidhivat_v1.2.0_7_2026-10-25/Vidhivat_v1.2.0_7_ac61db7.aab`
+—86,915,082bytes, SHA256 `60704b36912f7b924f2dc333f21524aacbf08053bda5890b89a92e378ac59bbf`।
+साथ में89,394,010byte APK, `LATEST_ARTIFACTS.json`, screenshots ZIP और policy/listing प्रतियाँ हैं।
 
-**प्रकाशन से पहले शेष:** Blogger का public Update, Photon की Data safety handling की पुष्टि,
-अंतिम content cutoff चुनना, AAB upload/review/rollout। मालिक के लौटने तक review/publish रोका गया है।
+App1456/1456, engine629/629; दोनों वर्तमानस्रोतपर। bundletoolvalidate, signature, SDK36,
+PAGE_ALIGNMENT_16K, native64bitELF और APKzipalign पास। Code7Consoleमें स्वीकार हुआ।
+एक warning: per-device download36.4MB, पहलेसे11.7MB अधिक; कोई blocking error नहीं।
+सभी supported devices बरकरार, rollout100%, पुराने target countries वही।
+
+**अगला:** सुरक्षित लॉक वाला फोन अनलॉक हो → उसी नई APK का native smoke test → Publishing overview
+के पाँच बदलाव Submit for review। Managed publishing off है, इसलिए approval के बाद Google स्वतः publish कर सकती है।
+Submission, approval और live publication तीन अलग अवस्थाएँ हैं; दर्ज करते समय न मिलाएँ।
 
 ---
 
