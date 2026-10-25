@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:panchang_engine/panchang_engine.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vidhivat/state/settings.dart';
 
@@ -109,8 +110,15 @@ void main() {
     });
 
     test('अभी-अभी छूटी पूजा दिखती है', () async {
-      await rakhoPuraniProgress(
-          DateTime.now().subtract(const Duration(minutes: 20)));
+      // «20 मिनट पहले» ब्रह्म मुहूर्त के ठीक बाद चलने पर पिछले दिन में जा गिरता था
+      // (26 अक्टू 2026, सुबह 4:59 पर यही जाँच गिरी) — इसलिए अभी वाले दिन के भीतर का पल।
+      final ab = DateTime.now();
+      final din = hinduDin(ab, settings.place)!;
+      final bitaHua = ab.difference(din.aarambh);
+      final kab = bitaHua > const Duration(minutes: 20)
+          ? ab.subtract(const Duration(minutes: 20))
+          : din.aarambh.add(bitaHua ~/ 2);
+      await rakhoPuraniProgress(kab);
 
       expect(
           settings.playerProgressFor('satyanarayan', 14)?.lastReachedStepIndex,
