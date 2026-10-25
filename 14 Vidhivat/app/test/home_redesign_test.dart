@@ -15,6 +15,7 @@ import 'package:vidhivat/screens/vrat_panna_screen.dart';
 import 'package:vidhivat/state/settings.dart';
 import 'package:vidhivat/theme.dart';
 import 'package:vidhivat/vidhi/bhandar.dart';
+import 'package:vidhivat/vidhi/devotional_assets.dart';
 import 'package:vidhivat/vidhi/paath_assets.dart';
 
 void main() {
@@ -61,7 +62,8 @@ void main() {
       {double width = 360,
       double height = 800,
       double scale = 1,
-      bool dark = true}) async {
+      bool dark = true,
+      DateTime? date}) async {
     tester.view.devicePixelRatio = 1;
     tester.view.physicalSize = Size(width, height);
     addTearDown(tester.view.resetDevicePixelRatio);
@@ -79,10 +81,57 @@ void main() {
           child: child!),
       home: RepaintBoundary(
           key: boundaryKey,
-          child: HomeDashboardScreen(onOpenPujaLibrary: () {}, aaj: today)),
+          child: HomeDashboardScreen(
+              onOpenPujaLibrary: () {}, aaj: date ?? today)),
     ));
     await tester.pumpAndSettle();
   }
+
+  testWidgets(
+      'popular pujas follow upcoming festivals instead of past seasonal cards',
+      (tester) async {
+    await open(tester, height: 3200, date: DateTime(2026, 10, 25));
+    final grid = find.byWidgetPredicate(
+        (w) => w.runtimeType.toString() == '_PopularPujaGrid');
+    final images = tester.widgetList<Image>(
+        find.descendant(of: grid, matching: find.byType(Image)));
+    expect(images.map(assetPath).toList(), [
+      for (final id in [
+        'karwa_chauth',
+        'dhanteras',
+        'lakshmi_poojan',
+        'govardhan_annakut'
+      ])
+        DevotionalAssets.forVidhiId(id).assetPath,
+    ]);
+    expect(find.descendant(of: grid, matching: find.text('शारदीय नवरात्रि')),
+        findsNothing);
+    expect(
+        find.descendant(of: grid, matching: find.text('पितृ पक्ष — श्राद्ध')),
+        findsNothing);
+  });
+
+  testWidgets('popular pujas remove Diwali cards after the festival window',
+      (tester) async {
+    await open(tester, height: 3200, date: DateTime(2026, 11, 26));
+    final grid = find.byWidgetPredicate(
+        (w) => w.runtimeType.toString() == '_PopularPujaGrid');
+    final paths = tester
+        .widgetList<Image>(
+            find.descendant(of: grid, matching: find.byType(Image)))
+        .map(assetPath)
+        .toList();
+    expect(paths, hasLength(4));
+    expect(paths.toSet(), hasLength(4));
+    for (final id in [
+      'dhanteras',
+      'lakshmi_poojan',
+      'govardhan_annakut',
+      'bhai_dooj_pooja'
+    ]) {
+      expect(paths, isNot(contains(DevotionalAssets.forVidhiId(id).assetPath)));
+    }
+  });
 
   Future<void> capture(WidgetTester tester, String name) async {
     if (previewDir.isEmpty) return;

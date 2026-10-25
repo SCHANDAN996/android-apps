@@ -103,25 +103,6 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
     final featuredVidhi =
         resumeVidhi ?? await vidhiBhandar.vidhi(featuredEntry.id);
 
-    // गृह प्रवेश और वाहन पूजा की जगह नवरात्रि और पितृ पक्ष — डेवलपर का
-    // फ़ैसला (22 सित 2026)। नवरात्रि का कार्ड कलश स्थापना की विधि नहीं,
-    // पूरा पर्व-पन्ना खोलता है; पितृ पक्ष का कार्ड श्राद्ध की विधि।
-    const preferredPopular = [
-      'ganesh_poojan',
-      'satyanarayan',
-      'kalash_sthapana',
-      'shraadh',
-    ];
-    final popular = <VidhiSuchiEntry>[];
-    for (final id in preferredPopular) {
-      final matches = ready.where((entry) => entry.id == id);
-      if (matches.isNotEmpty) popular.add(matches.first);
-    }
-    for (final entry in ready) {
-      if (popular.length == 4) break;
-      if (!popular.any((item) => item.id == entry.id)) popular.add(entry);
-    }
-
     // ── आगे कौन सी पूजा कब है ──
     //
     // पूरी सूची पंचांग से बनती है — त्योहार इंजन के व्यापिनी नियम से,
@@ -149,6 +130,29 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
       aaj: navratriAaj(aaj: aaj, place: settings.place),
       aajKiTarikh: aaj,
     );
+    // बीते पर्व स्थायी कार्ड नहीं हैं। उन्हीं स्थानीय अवसरों से चुनें
+    // जिनसे ऊपर की पट्टी बनती है; बाकी जगह नित्य पूजाओं से भरें।
+    final popular = <VidhiSuchiEntry>[];
+    void addPopular(String id) {
+      if (popular.length == 4 || popular.any((entry) => entry.id == id)) return;
+      final matches = ready.where((entry) => entry.id == id);
+      if (matches.isNotEmpty) popular.add(matches.first);
+    }
+
+    if (navratriAvsar != null) addPopular('kalash_sthapana');
+    for (final avsar in aage) {
+      if (avsar.karan == AvsarKaKaran.tyohar && avsar.kitneDinBaad >= 0) {
+        addPopular(avsar.pujaId);
+      }
+    }
+    for (final id in [
+      'ganesh_poojan',
+      'satyanarayan',
+      'nitya_pooja',
+      'rudrabhishek'
+    ]) {
+      addPopular(id);
+    }
     // ── चालीसा और आरती — होम पर अपना हिस्सा ────────────────────
     //
     // ये पूजा नहीं हैं (→ D-039), इसलिए पूजा की सूची में नहीं घुसाए
@@ -448,9 +452,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                     const SizedBox(height: VidhivatSpacing.xxl),
                     const VidhivatSectionHeader(
                       title: 'लोकप्रिय पूजा',
-                      // "सभी विधियाँ मौजूदा पूजा भंडार से" लिखा था —
-                      // "भंडार" हमारा अंदरूनी शब्द है, यूज़र का नहीं।
-                      supportingText: 'घरों में सबसे ज़्यादा की जाने वाली',
+                      supportingText: 'आगामी त्योहार और रोज़ की पूजाएँ',
                     ),
                     const SizedBox(height: VidhivatSpacing.md),
                     _PopularPujaGrid(

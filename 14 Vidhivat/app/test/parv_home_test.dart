@@ -186,14 +186,14 @@ void main() {
     // पंद्रह दिन से दूर — पहले यह पत्ता "घटस्थापना" बनकर सीधे कलश स्थापना
     // की विधि खोलता था, जबकि पूजा section का नवरात्रि कार्ड पूरा पर्व-पन्ना।
     // डेवलपर ने फ़ोन पर पकड़ा (22 सित 2026): दोनों एक ही जगह ले जाएँ।
-    // लोकप्रिय पूजा — गृह प्रवेश और वाहन पूजा की जगह (डेवलपर, 22 सित 2026)
-    testWidgets(
-        'लोकप्रिय पूजा में नवरात्रि और पितृ पक्ष; नवरात्रि पर्व-पन्ना खोलता है',
+    // पर्व का कार्ड सिर्फ़ उसके आने/चलने के समय; पुराना पर्व स्थायी नहीं।
+    testWidgets('लोकप्रिय पूजा में चलती नवरात्रि का कार्ड पर्व-पन्ना खोलता है',
         (tester) async {
-      // जून — ऊपर की पट्टी में नवरात्रि नहीं, ताकि नाम एक ही जगह हो
-      await kholoHome(tester, DateTime(2026, 6, 1));
-
-      final navratri = find.text('शारदीय नवरात्रि');
+      await kholoHome(tester, DateTime(2026, 10, 11));
+      final grid = find.byWidgetPredicate(
+          (w) => w.runtimeType.toString() == '_PopularPujaGrid');
+      final navratri =
+          find.descendant(of: grid, matching: find.text('शारदीय नवरात्रि'));
       // होम की सूची आलसी है — नीचे का कार्ड स्क्रॉल करने पर ही बनता है
       await tester.scrollUntilVisible(navratri, 200,
           scrollable: find
@@ -202,7 +202,9 @@ void main() {
               .first);
       await tester.pumpAndSettle();
       expect(navratri, findsOneWidget);
-      expect(find.text('पितृ पक्ष — श्राद्ध'), findsOneWidget);
+      expect(
+          find.descendant(of: grid, matching: find.text('पितृ पक्ष — श्राद्ध')),
+          findsNothing);
       expect(find.text('गृह प्रवेश'), findsNothing);
       expect(find.text('वाहन पूजा'), findsNothing);
 
