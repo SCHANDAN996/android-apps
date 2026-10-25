@@ -64,6 +64,13 @@ abstract final class VratArtwork {
       assetPath: 'assets/images/devotional/vrat_sharad_purnima_v1.webp',
       semanticLabel:
           'शरद पूर्णिमा में पूरे चाँद के नीचे खीर, दीपक और कमल का सजावटी चित्र');
+  static const _tulsiVivah = DevotionalArtwork(
+      assetPath: 'assets/images/devotional/vrat_tulsi_vivah_v1.webp',
+      semanticLabel:
+          'तुलसी विवाह में मंडप के नीचे सजी तुलसी और शालिग्राम का सजावटी चित्र');
+  static const _kartikPurnima = DevotionalArtwork(
+      assetPath: 'assets/images/devotional/vrat_kartik_purnima_v1.webp',
+      semanticLabel: 'कार्तिक पूर्णिमा में दीपदान के जलते दीयों का सजावटी चित्र');
   static const _janmashtami = DevotionalArtwork(
       assetPath: 'assets/images/devotional/vrat_janmashtami_v2.webp',
       semanticLabel: 'जन्माष्टमी में लड्डू गोपाल का सजावटी चित्र');
@@ -82,8 +89,8 @@ abstract final class VratArtwork {
     'sankashti': _sankashti,
     'purnima': _purnima,
     'sharad_purnima': _sharadPurnima, // → D-130
-    'tulsi_vivah': DevotionalAssets.tulsi, // → D-140
-    'kartik_purnima': DevotionalAssets.diya, // दीपदान — → D-140
+    'tulsi_vivah': _tulsiVivah,
+    'kartik_purnima': _kartikPurnima,
     'amavasya': _shraadh,
     'masik_shivratri': _pradosh,
     'vinayak_chaturthi': _ganesha,
