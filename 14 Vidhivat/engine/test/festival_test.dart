@@ -181,6 +181,42 @@ void main() {
         (2029, 11, 21),
         (2030, 11, 10)
       ],
+      // → D-151: धर्मसिंधु पृ. 38 का युगादि-नियम। सब Drik (दिल्ली) के पन्नों से।
+      // 2021, 2022, 2023 और 2026 में दूसरे दिन तीन मुहूर्त से कम — पहला दिन;
+      // निर्णयसिंधु का सीधा «परैव» चारों में एक दिन आगे होता।
+      'akshaya_tritiya': [
+        (2021, 5, 14),
+        (2022, 5, 3),
+        (2023, 4, 22),
+        (2024, 5, 10),
+        (2025, 4, 30),
+        (2026, 4, 19),
+        (2027, 5, 9),
+        (2028, 4, 27),
+        (2029, 5, 16),
+        (2030, 5, 5)
+      ],
+      // 2025 — दोनों दिन पूर्वाह्ण, दूसरे दिन तीन मुहूर्त से ज़्यादा: दूसरा दिन
+      'akshaya_navami': [
+        (2024, 11, 10),
+        (2025, 10, 31),
+        (2026, 11, 18),
+        (2027, 11, 7),
+        (2028, 10, 26),
+        (2029, 11, 14),
+        (2030, 11, 3)
+      ],
+      // 2021 में अष्टमी किसी सूर्योदय को नहीं छूती — जिस दिन ज़्यादा देर
+      'gopashtami': [
+        (2021, 11, 11),
+        (2024, 11, 9),
+        (2025, 10, 30),
+        (2026, 11, 17),
+        (2027, 11, 6),
+        (2028, 10, 25),
+        (2029, 11, 13),
+        (2030, 11, 2)
+      ],
     };
 
     for (final entry in verified.entries) {
@@ -193,6 +229,23 @@ void main() {
         });
       }
     }
+
+    test('युगादि: दोनों दिन पूर्वाह्ण हो तो वजह में तीन मुहूर्त का हिसाब (→ D-151)',
+        () {
+      FestivalDate nikalo(String id, int year) => findFestival(
+          festivalRules.firstWhere((r) => r.id == id), year, Place.delhi)!;
+      expect(nikalo('akshaya_tritiya', 2026).explanation,
+          contains('तीन मुहूर्त (2 घंटे 35 मिनट) से कम: पहला दिन'));
+      expect(nikalo('akshaya_tritiya', 2027).explanation,
+          contains('से ज़्यादा: दूसरा दिन'));
+      expect(nikalo('akshaya_navami', 2025).explanation,
+          contains('से ज़्यादा: दूसरा दिन'));
+      // पूर्वाह्ण = दिन का पहला आधा
+      final k = kaalWindow(Vyapini.purvahna, 2026, 4, 19, Place.delhi)!;
+      final rs = sunriseSunset(2026, 4, 19, Place.delhi);
+      final din = rs.sunset!.difference(rs.sunrise!);
+      expect(k.end.difference(k.start).inSeconds, (din * 0.5).inSeconds);
+    });
 
     test('वरलक्ष्मी व्रत हमेशा शुक्रवार, और श्रावण पूर्णिमा से पहले या उसी दिन',
         () {
@@ -374,8 +427,8 @@ void main() {
         festivalRules.firstWhere((r) => r.id == id), year, Place.delhi)!;
 
     test(
-        'आठों पर निर्णय लगा है (पाँच D-117, शरद पूर्णिमा D-130, तुलसी विवाह D-140, '
-        'नरक चतुर्दशी D-150), बाक़ी सत्रह पर नहीं',
+        'दसों पर निर्णय लगा है (पाँच D-117, शरद पूर्णिमा D-130, तुलसी विवाह D-140, '
+        'नरक चतुर्दशी D-150, दो युगादि D-151), बाक़ी अठारह पर नहीं',
         () {
       final nirnayWale = {
         for (final r in festivalRules)
@@ -390,6 +443,8 @@ void main() {
         'sharad_purnima': Nirnaya.kojagara,
         'tulsi_vivah': Nirnaya.paranDin,
         'narak_chaturdashi': Nirnaya.narakChaturdashi,
+        'akshaya_tritiya': Nirnaya.yugadi,
+        'akshaya_navami': Nirnaya.yugadi,
       });
       for (final r in festivalRules) {
         final f = findFestival(r, 2027, Place.delhi)!;
@@ -785,6 +840,9 @@ void main() {
       'tulsi_vivah': [10, 11],
       'dev_deepawali': [10, 11],
       'kartik_purnima': [10, 11, 12],
+      'akshaya_tritiya': [4, 5],
+      'gopashtami': [10, 11],
+      'akshaya_navami': [10, 11],
     };
 
     for (var year = 2024; year <= 2032; year++) {

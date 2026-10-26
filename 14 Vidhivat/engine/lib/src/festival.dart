@@ -35,6 +35,10 @@ enum Vyapini {
   /// (तीन मुहूर्त की शर्त के साथ, [Nirnaya.raksha])
   sunrise,
 
+  /// पूर्वाह्ण (दिन का पहला आधा) — शुक्ल युगादि: अक्षय तृतीया, आँवला नवमी
+  /// ([Nirnaya.yugadi], → D-151)
+  purvahna,
+
   /// मध्याह्न (दिन का तीसरा पंचमांश) — राम नवमी, गणेश चतुर्थी
   madhyahna,
 
@@ -54,6 +58,7 @@ enum Vyapini {
 extension VyapiniName on Vyapini {
   String get hindi => switch (this) {
         Vyapini.sunrise => 'सूर्योदय व्यापिनी',
+        Vyapini.purvahna => 'पूर्वाह्ण व्यापिनी',
         Vyapini.madhyahna => 'मध्याह्न व्यापिनी',
         Vyapini.aparahna => 'अपराह्न व्यापिनी',
         Vyapini.pradosha => 'प्रदोष व्यापिनी',
@@ -63,6 +68,7 @@ extension VyapiniName on Vyapini {
 
   String get kaalName => switch (this) {
         Vyapini.sunrise => 'सूर्योदय',
+        Vyapini.purvahna => 'पूर्वाह्ण',
         Vyapini.madhyahna => 'मध्याह्न',
         Vyapini.aparahna => 'अपराह्न',
         Vyapini.pradosha => 'प्रदोष',
@@ -103,6 +109,10 @@ enum Nirnaya {
   /// नरक चतुर्दशी — भोर के चंद्रोदय वाली चतुर्दशी; किसी दिन न हो तो ग्रंथ के
   /// तीन पक्ष (→ D-150)
   narakChaturdashi,
+
+  /// शुक्ल युगादि (अक्षय तृतीया, आँवला नवमी) — पूर्वाह्ण; दोनों दिन थोड़ा-थोड़ा
+  /// हो तो दूसरे दिन तीन मुहूर्त से ज़्यादा होने पर ही दूसरा (→ D-151)
+  yugadi,
 }
 
 extension NirnayaName on Nirnaya {
@@ -113,6 +123,7 @@ extension NirnayaName on Nirnaya {
         Nirnaya.janmashtami => 'रोहिणी का योग देखकर',
         Nirnaya.paranDin => 'एकादशी व्रत के पारण वाले दिन, रात के पहले भाग में',
         Nirnaya.narakChaturdashi => 'सूर्योदय से पहले के चंद्रोदय पर',
+        Nirnaya.yugadi => 'दोनों दिन हो तो दूसरे दिन तीन मुहूर्त की शर्त',
         Nirnaya.vyapini ||
         Nirnaya.ramNavami ||
         Nirnaya.lakshmiPujan ||
@@ -229,6 +240,8 @@ class FestivalDate {
 /// किसी स्थानीय दिन के पाँचों काल, स्थानीय समय में।
 ///
 /// परिभाषाएँ:
+/// - **पूर्वाह्ण** — दिन के दो भाग, पहला (धर्मसिंधु पृ. 38:
+///   «द्वेधा विभक्तदिनपूर्वार्द्ध»)
 /// - **मध्याह्न** — दिन (सूर्योदय→सूर्यास्त) के पाँच भाग, तीसरा
 /// - **अपराह्न** — वही पाँच भाग, चौथा
 /// - **प्रदोष** — सूर्यास्त से 2 घंटे 24 मिनट (तीन मुहूर्त)
@@ -257,6 +270,9 @@ class FestivalDate {
         start: sunriseLocal,
         end: sunriseLocal.add(const Duration(minutes: 1))
       );
+
+    case Vyapini.purvahna:
+      return (start: sunriseLocal, end: sunriseLocal.add(dayLength * 0.5));
 
     case Vyapini.madhyahna:
       return (
@@ -429,6 +445,7 @@ FestivalDate? findFestival(
       Nirnaya.paranDin => _paranDin(rule, tithi,
           _tithiInterval(rule.tithiIndex - 1, month.newMoonJd, place), place),
       Nirnaya.narakChaturdashi => _narakChaturdashi(rule, tithi, place),
+      Nirnaya.yugadi => _yugadi(rule, tithi, place),
     };
     if (result != null) return _vaarPehle(rule, result);
   }
@@ -1279,6 +1296,62 @@ FestivalDate? _narakChaturdashi(
       ]);
 }
 
+/// **शुक्ल युगादि — अक्षय तृतीया, आँवला (अक्षय) नवमी** — धर्मसिंधु, वैशाख,
+/// अक्षय्यतृतीयानिर्णय (पृ. 38–39):
+///
+/// «अत्र शुक्लयुगादिकृत्यं पूर्वाह्णे कार्यम्। तत्रासंभवेऽपराह्णेऽपि। …
+/// द्वेधा विभक्तदिनपूर्वार्द्धैकदेशव्यापिनी दिनद्वये चेत्त्रिमुहूर्ताधिकव्याप्तिसत्त्वे
+/// परा। त्रिमुहूर्तन्यूनत्वे पूर्वा। … अयं निर्णयः सर्वयुगादौ ज्ञेयः»
+///
+/// कार्तिक शुक्ल नवमी पर वही ग्रंथ (पृ. 96): «इयं युगादिरपि। … अत्र निर्णयो
+/// वैशाखप्रकरणे उक्तः»। दूसरे गवाह: निर्णयसिंधु (पृ. 134) — अक्षय तृतीया
+/// «पूर्वाह्णव्यापिनी ग्राह्या»; व्रत-परिचय (पृ. 179) — नवमी «पूर्वाह्णव्यापिनी»।
+///
+/// ⚠️ दोनों दिन थोड़ा-थोड़ा छुए तो दोनों गवाह धर्मसिंधु से अलग कहते हैं —
+/// निर्णयसिंधु «दिनद्वयेऽपि तद्व्याप्तौ परैव», व्रत-परिचय नवमी में «पूर्वविद्धा»।
+/// यहाँ धर्मसिंधु वाला (तीन मुहूर्त) — वही ठीक वे दो कठिन साल भी देता है जो
+/// संदर्भ-पंचांग में हैं: अक्षय तृतीया 2026 (दूसरे दिन 1 घंटा 37 मिनट → पहला)
+/// और 2027 (3 घंटे 28 मिनट → दूसरा), आँवला नवमी 2025 (3 घंटे 31 मिनट → दूसरा)।
+///
+/// मुहूर्त = दिनमान का पंद्रहवाँ भाग, दूसरे दिन का।
+FestivalDate? _yugadi(FestivalRule rule, _Antaral tithi, Place place) {
+  final d = _dawedar(Vyapini.purvahna, tithi, place);
+
+  if (d.length == 1) {
+    return _nirnit(rule, tithi, null, place,
+        din: d.single.din.din, kyon: const []);
+  }
+
+  if (d.length >= 2) {
+    final pehla = d.first;
+    final doosra = d.last;
+    final teenMuhurt = doosra.din.ast.difference(doosra.din.uday) * (3 / 15);
+    final para = doosra.chhua > teenMuhurt;
+    // पहले दिन पूरा पूर्वाह्ण हो तो ग्रंथ का «एकदेशव्यापिनी दिनद्वये» वाला पक्ष
+    // नहीं बनता — तब भी तीन मुहूर्त से फ़ैसला, पर दूसरा दिन भी दिखे।
+    final pehlaPoora =
+        pehla.chhua >= pehla.kaalEnd.difference(pehla.kaalStart);
+    return _nirnit(rule, tithi, null, place,
+        din: para ? doosra.din.din : pehla.din.din,
+        doosra: para && pehlaPoora ? pehla.din.din : null,
+        kyon: [
+          '${rule.tithiName} दोनों दिन पूर्वाह्ण में — दूसरे दिन '
+              '${_avadhi(doosra.chhua)}, तीन मुहूर्त (${_avadhi(teenMuhurt)}) से '
+              '${para ? 'ज़्यादा: दूसरा दिन' : 'कम: पहला दिन'}',
+        ]);
+  }
+
+  // किसी दिन पूर्वाह्ण नहीं — «तत्रासंभवेऽपराह्णेऽपि»: जिस दिन तिथि लगी
+  final din = _hinduDin(tithi.start, place);
+  if (din == null) return _pickDay(rule, tithi, null, place);
+  return _nirnit(rule, tithi, null, place,
+      din: din.din,
+      kaalChhuta: true,
+      kyon: [
+        '${rule.tithiName} किसी दिन पूर्वाह्ण को नहीं छूती — उसी दिन, अपराह्ण में',
+      ]);
+}
+
 /// **जन्माष्टमी** — धर्मसिंधु, जन्माष्टमीव्रत (पृ. 56–59)। आठ-दस पक्षों के बाद
 /// ग्रंथ का अपना निचोड़ (पृ. 58, «संक्षेपेण निर्णयसंग्रहः»):
 ///
@@ -1725,6 +1798,39 @@ const List<FestivalRule> festivalRules = [
     // निर्णयसिंधु (पृ. 312, भार्गवार्चनदीपिका से) और व्रत-परिचय (पृ. 188):
     // «पौर्णमास्यां तु सन्ध्यायां कर्तव्यस्त्रिपुरोत्सवः»
     vyapini: Vyapini.pradosha,
+  ),
+
+  // ── 26 अक्टू 2026 — दो युगादि और गोपाष्टमी (→ D-151) ─────────────────
+  //
+  // तीनों के सात साल (2024–2030, दिल्ली) Drik के पन्नों से मिले।
+  FestivalRule(
+    id: 'akshaya_tritiya',
+    name: 'अक्षय तृतीया',
+    masa: 1, // वैशाख
+    paksha: 0,
+    tithi: 3,
+    vyapini: Vyapini.purvahna,
+    nirnaya: Nirnaya.yugadi,
+  ),
+  FestivalRule(
+    id: 'gopashtami',
+    name: 'गोपाष्टमी',
+    masa: 7, // कार्तिक
+    paksha: 0,
+    tithi: 8,
+    // व्रत-परिचय (पृ. 179): «कार्तिक शुक्ल अष्टमीको प्रातःकालके समय गौओंको
+    // स्नान करावे»; निर्णयसिंधु (पृ. 49): «व्रतमात्रेऽष्टमी कृष्णा पूर्वा
+    // शुक्लाष्टमी परा» — नवमी से जुड़ी, यानी सूर्योदय वाली अष्टमी
+    vyapini: Vyapini.sunrise,
+  ),
+  FestivalRule(
+    id: 'akshaya_navami',
+    name: 'आँवला नवमी',
+    masa: 7, // कार्तिक
+    paksha: 0,
+    tithi: 9, // त्रेता युगादि — व्रत-परिचय में «अक्षयनवमी», «धात्रीनवमी»
+    vyapini: Vyapini.purvahna,
+    nirnaya: Nirnaya.yugadi,
   ),
 ];
 
