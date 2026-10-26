@@ -1,3 +1,4 @@
+import 'grahan.dart';
 import 'julian.dart';
 import 'moonrise.dart';
 import 'names.dart';
@@ -847,8 +848,12 @@ FestivalDate _nirnit(
 ///
 /// ⚠️ उसी पन्ने का ग्रहण वाला वाक्य («ग्रस्तोदये परदिने प्रदोषे पूर्णिमासत्त्वे
 /// ग्रहणमध्य एव कार्यम्। अन्यथा पूर्वदिने») यहाँ **नहीं** लगाया गया: 2026 में
-/// वह 2 मार्च कहता, संदर्भ-पंचांग 3 मार्च लिखता है। 2027–2030 में फाल्गुन
-/// पूर्णिमा पर भारत में दिखने वाला कोई ग्रहण नहीं है।
+/// वह 2 मार्च कहता, संदर्भ-पंचांग 3 मार्च लिखता है। दिल्ली पर 2024–2060 में
+/// फाल्गुन पूर्णिमा का ग्रस्तोदय सिर्फ़ 2026 और 2043 में है, और 2043 में
+/// अगले दिन प्रदोष में पूर्णिमा रहती है — दिन वही (`tool/holika_grahan_aazmao.dart`)।
+/// जिस साल पूर्णिमा पर यहाँ से ग्रहण दिखे, «यह कैसे निकला» में यह बात साफ़
+/// लिखी जाती है ([_holikaGrahan]) — वरना वहाँ «धर्मसिंधु के अनुसार» अधूरा
+/// सच होता (J-002)।
 FestivalDate? _holika(
   FestivalRule rule,
   _Antaral tithi,
@@ -856,10 +861,12 @@ FestivalDate? _holika(
   Place place,
 ) {
   final d = _dawedar(Vyapini.pradosha, tithi, place);
+  final grahan = _holikaGrahan(tithi, place);
 
   if (d.length >= 2) {
     return _nirnit(rule, tithi, bhadra, place, din: d.last.din.din, kyon: [
       'पूर्णिमा दोनों दिन प्रदोष को छूती है — दूसरा दिन, क्योंकि पहले दिन भद्रा है',
+      ...grahan,
     ]);
   }
 
@@ -871,6 +878,7 @@ FestivalDate? _holika(
         kaalChhuta: true,
         kyon: [
           'पूर्णिमा किसी दिन प्रदोष को नहीं छूती — दहन उसी रात, जिस रात पूर्णिमा लगी',
+          ...grahan,
         ]);
   }
 
@@ -878,12 +886,13 @@ FestivalDate? _holika(
   if (bhadra == null ||
       _chhua(bhadra.start, bhadra.end, c.kaalStart, c.kaalEnd) ==
           Duration.zero) {
-    return _nirnit(rule, tithi, bhadra, place, din: c.din.din, kyon: const []);
+    return _nirnit(rule, tithi, bhadra, place, din: c.din.din, kyon: grahan);
   }
 
   if (bhadra.end.isBefore(_aadhiRaat(c.din))) {
     return _nirnit(rule, tithi, bhadra, place, din: c.din.din, kyon: [
       'भद्रा आधी रात से पहले छूट जाती है — दहन उसी रात, भद्रा के बाद',
+      ...grahan,
     ]);
   }
 
@@ -902,6 +911,7 @@ FestivalDate? _holika(
           kyon: [
             'भद्रा आधी रात के बाद तक है, और अगले दिन पूर्णिमा साढ़े तीन प्रहर '
                 'से ज़्यादा रहती है — इसलिए दहन अगले दिन प्रदोष में',
+            ...grahan,
           ]);
     }
     if (udayKeBaad >= saadheTeenPrahar) {
@@ -911,7 +921,32 @@ FestivalDate? _holika(
 
   return _nirnit(rule, tithi, bhadra, place, din: c.din.din, kyon: [
     'भद्रा आधी रात के बाद तक है, पर $kami — दहन उसी रात, भद्रा का मुख छोड़कर',
+    ...grahan,
   ]);
+}
+
+/// फाल्गुन पूर्णिमा पर इस जगह से दिखने वाला (खंडग्रास या खग्रास) चंद्रग्रहण
+/// हो तो «यह कैसे निकला» की एक पंक्ति — कि धर्मसिंधु का ग्रहण वाला वाक्य ऐप
+/// नहीं लगाता। उपछाया ग्रहण आँख से नहीं दिखता, उस पर कुछ नहीं।
+List<String> _holikaGrahan(_Antaral tithi, Place place) {
+  final tz = place.timeZoneOffset;
+  // पूर्णिमा का अंत ही पूरे चाँद का पल है — ग्रहण उसी के आस-पास होता है
+  final ant = tithi.end.subtract(tz);
+  for (final g in chandraGrahan(
+      se: ant.subtract(const Duration(days: 2)),
+      tak: ant.add(const Duration(days: 2)))) {
+    if (g.prakar == GrahanPrakar.upachhaya) continue;
+    if (g.madhya.difference(ant).abs() > const Duration(days: 1)) continue;
+    final darshan = dekhaJayega(g, place);
+    final shuru = darshan.sthaniyaShuru;
+    if (!darshan.dikhega || shuru == null) continue;
+    return [
+      'पूर्णिमा पर ${g.prakar.naam} — यहाँ ${_stamp(shuru.add(tz))} से दिखेगा। '
+          'ग्रहण वाले साल के लिए धर्मसिंधु में एक अलग वाक्य है, जो ऐप नहीं '
+          'लगाता — इस साल दिन अपने पंचांग से मिला लें',
+    ];
+  }
+  return const [];
 }
 
 /// **रक्षाबंधन** — धर्मसिंधु, श्रावण पूर्णिमा (पृ. 56):
