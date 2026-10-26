@@ -49,6 +49,7 @@ PANNE = {
     5: {'GP': list(range(105, 144, 2)), 'GP_arth': list(range(106, 145, 2)), 'SV': list(range(77, 107))},
     6: {'GP': [145, 147, 149], 'GP_arth': [146, 148, 150], 'SV': list(range(106, 111))},
     7: {'GP': [151, 153, 155], 'GP_arth': [152, 154, 156], 'SV': list(range(110, 115))},
+    8: {'GP': list(range(157, 178, 2)), 'GP_arth': list(range(158, 179, 2)), 'SV': list(range(114, 133))},
 }
 
 SVAR = {0x0951, 0x0952, 0x0953, 0x0954, 0x1CDA}
