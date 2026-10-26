@@ -99,6 +99,10 @@ enum Nirnaya {
   /// तुलसी विवाह — एकादशी व्रत के पारण वाला दिन (द्वादशी), रात का पहला भाग
   /// (→ D-140)
   paranDin,
+
+  /// नरक चतुर्दशी — भोर के चंद्रोदय वाली चतुर्दशी; किसी दिन न हो तो ग्रंथ के
+  /// तीन पक्ष (→ D-150)
+  narakChaturdashi,
 }
 
 extension NirnayaName on Nirnaya {
@@ -108,6 +112,7 @@ extension NirnayaName on Nirnaya {
         Nirnaya.raksha => 'उदय के बाद तीन मुहूर्त से अधिक, भद्रा रहित',
         Nirnaya.janmashtami => 'रोहिणी का योग देखकर',
         Nirnaya.paranDin => 'एकादशी व्रत के पारण वाले दिन, रात के पहले भाग में',
+        Nirnaya.narakChaturdashi => 'सूर्योदय से पहले के चंद्रोदय पर',
         Nirnaya.vyapini ||
         Nirnaya.ramNavami ||
         Nirnaya.lakshmiPujan ||
@@ -423,6 +428,7 @@ FestivalDate? findFestival(
       Nirnaya.kojagara => _kojagara(rule, tithi, place),
       Nirnaya.paranDin => _paranDin(rule, tithi,
           _tithiInterval(rule.tithiIndex - 1, month.newMoonJd, place), place),
+      Nirnaya.narakChaturdashi => _narakChaturdashi(rule, tithi, place),
     };
     if (result != null) return _vaarPehle(rule, result);
   }
@@ -1203,6 +1209,76 @@ FestivalDate? _paranDin(
   ]);
 }
 
+/// **नरक चतुर्दशी** (अभ्यंग स्नान) — धर्मसिंधु, आश्विन कृष्ण नरकचतुर्दशी (पृ. 92):
+///
+/// «आश्विनकृष्णचतुर्दश्यां चन्द्रोदयव्यापिन्यां नरकभीरुभिस्तिलतैलेनाभ्यंगस्नानं
+/// कार्यम्॥ … तत्र पूर्वदिने एव चंद्रोदयव्याप्तौ पूर्वा॥ परत्रैव तद्व्याप्तौ परा॥ …
+/// दिनद्वये चंद्रोदयव्याप्तौ पूर्वा॥ दिनद्वये चंद्रोदयाव्याप्तौ पक्षत्रयं संभवति॥
+/// पूर्वत्र चंद्रोदयोत्तरमुषःकालं सूर्योदयं च व्याप्य प्रवृत्ता चतुर्दशी परत्र
+/// चंद्रोदयात्पूर्वं समाप्ता॥ … अस्मिन्प्रथमपक्षे उषःकालैकदेशे चतुर्दशीयुक्तेऽभ्यंगस्नानं
+/// कार्यम्॥ अथ पूर्वत्र सूर्योदयमात्रं व्याप्य प्रवृत्ता परत्र चंद्रोदयात्पूर्वं समाप्ता॥
+/// अथवा सूर्योदयास्पर्शेन क्षय एव चतुर्दश्याः॥ … अत्र पक्षद्वये परत्र चंद्रोदयेऽभ्यंगस्नानम्»
+///
+/// व्रत-परिचय (गीताप्रेस) पृ. 168 भी: «जिस दिन चन्द्रोदयके समय चतुर्दशी हो उस दिन
+/// प्रभात समयमें …»। यहाँ चंद्रोदय = कृष्ण चतुर्दशी का **भोर वाला** चंद्रोदय,
+/// सूर्योदय से पहले।
+///
+/// ग्रंथ के उदाहरण में पहला पक्ष (उषःकाल का हिस्सा) तब है जब चतुर्दशी सूर्योदय से
+/// लगभग 28 मिनट पहले लगी (त्रयोदशी 58 घड़ी 50 पल), और दूसरा (सिर्फ़ सूर्योदय) तब
+/// जब 24 सेकंड पहले (59 घड़ी 59 पल) — बीच की सीमा यहाँ दो मिनट रखी है।
+FestivalDate? _narakChaturdashi(
+    FestivalRule rule, _Antaral tithi, Place place) {
+  ({DateTime uday, DateTime? chand}) bhor(DateTime din) {
+    final rs = sunriseSunset(din.year, din.month, din.day, place);
+    final uday = rs.sunrise?.add(place.timeZoneOffset);
+    final chand = moonriseMoonset(din.year, din.month, din.day, place).moonrise;
+    return (uday: uday ?? din, chand: chand);
+  }
+
+  bool bhitar(DateTime pal) =>
+      !pal.isBefore(tithi.start) && pal.isBefore(tithi.end);
+
+  final pehla = DateTime.utc(tithi.start.year, tithi.start.month, tithi.start.day);
+  final dawedar = <DateTime>[];
+  for (var i = -1; i <= 2; i++) {
+    final din = pehla.add(Duration(days: i));
+    final b = bhor(din);
+    final chand = b.chand;
+    if (chand != null && chand.isBefore(b.uday) && bhitar(chand)) {
+      dawedar.add(din);
+    }
+  }
+
+  if (dawedar.isNotEmpty) {
+    return _nirnit(rule, tithi, null, place, din: dawedar.first, kyon: [
+      if (dawedar.length > 1)
+        'दोनों दिन भोर के चंद्रोदय पर चतुर्दशी — पहला दिन'
+      else
+        'भोर के चंद्रोदय पर चतुर्दशी — इसी दिन अभ्यंग स्नान',
+    ]);
+  }
+
+  // किसी दिन भोर के चंद्रोदय पर नहीं — ग्रंथ के तीन पक्ष
+  final b = bhor(pehla);
+  if (tithi.start.isBefore(b.uday)) {
+    if (!tithi.start.isAfter(b.uday.subtract(const Duration(minutes: 2)))) {
+      return _nirnit(rule, tithi, null, place, din: pehla, kaalChhuta: true, kyon: [
+        'चतुर्दशी चंद्रोदय के बाद, उषःकाल में लगी और अगले चंद्रोदय से पहले ख़त्म — '
+            'स्नान उसी भोर, चतुर्दशी वाले हिस्से में',
+      ]);
+    }
+  }
+  return _nirnit(rule, tithi, null, place,
+      din: pehla.add(const Duration(days: 1)),
+      kaalChhuta: true,
+      kyon: [
+        tithi.start.isBefore(b.uday)
+            ? 'चतुर्दशी सिर्फ़ सूर्योदय को छूकर अगले चंद्रोदय से पहले ख़त्म — स्नान अगले '
+                'दिन चंद्रोदय पर'
+            : 'चतुर्दशी किसी सूर्योदय को नहीं छूती (क्षय) — स्नान अगले दिन चंद्रोदय पर',
+      ]);
+}
+
 /// **जन्माष्टमी** — धर्मसिंधु, जन्माष्टमीव्रत (पृ. 56–59)। आठ-दस पक्षों के बाद
 /// ग्रंथ का अपना निचोड़ (पृ. 58, «संक्षेपेण निर्णयसंग्रहः»):
 ///
@@ -1475,6 +1551,16 @@ const List<FestivalRule> festivalRules = [
     paksha: 0,
     tithi: 1,
     vyapini: Vyapini.sunrise,
+  ),
+  // → D-150: धर्मसिंधु पृ. 92, व्रत-परिचय पृ. 168 — भोर के चंद्रोदय वाली चतुर्दशी
+  FestivalRule(
+    id: 'narak_chaturdashi',
+    name: 'नरक चतुर्दशी',
+    masa: 7, // कार्तिक (पूर्णिमांत) = आश्विन कृष्ण (अमांत)
+    paksha: 1,
+    tithi: 14,
+    vyapini: Vyapini.chandrodaya,
+    nirnaya: Nirnaya.narakChaturdashi,
   ),
   FestivalRule(
     id: 'diwali',

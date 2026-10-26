@@ -195,6 +195,21 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen>
         addPopular(avsar.pujaId);
       }
     }
+    // ऊपर की पट्टी पाँच पर रुकती है, और उसमें बिना-पूजा वाले त्योहार (जैसे नरक
+    // चतुर्दशी, होलिका दहन) भी जगह लेते हैं — उनसे पूजा वाला त्योहार यहाँ से न छूटे
+    // (→ D-150)। उसी पैंतालीस दिन की खिड़की के बाक़ी त्योहार-पूजाएँ, तारीख़ से।
+    if (popular.length < 4) {
+      final aajDin = DateTime(aaj.year, aaj.month, aaj.day);
+      final agle = agliTyoharTarikh(place: settings.place, aaj: aaj)
+          .entries
+          .where((e) => e.value.difference(aajDin).inDays <= 45)
+          .toList()
+        ..sort((a, b) => a.value.compareTo(b.value));
+      for (final e in agle) {
+        if (e.key == 'kalash_sthapana' && navratriAvsar == null) continue;
+        addPopular(e.key);
+      }
+    }
     for (final id in [
       'ganesh_poojan',
       'satyanarayan',

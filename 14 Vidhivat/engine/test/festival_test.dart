@@ -139,6 +139,19 @@ void main() {
       // → D-140: धर्मसिंधु पृ. 98 — प्रबोधिनी के पारण वाले दिन। 2024–2026 कई
       // पंचांग-पन्नों से, 2027–2030 DekhoPanchang से। 2025 में द्वादशी किसी
       // सूर्योदय को नहीं छूती — पहला ढाँचा (एकादशी-सूर्योदय + 1) 3 नव देता था।
+      // → D-150: धर्मसिंधु पृ. 92 — भोर के चंद्रोदय वाली चतुर्दशी। सातों साल
+      // DekhoPanchang और Drik (दिल्ली) के पन्नों से। 2030 में चतुर्दशी क्षय —
+      // Drik 26 अक्टू (ग्रंथ का «परत्र चंद्रोदये»), DekhoPanchang 25 (त्रयोदशी
+      // के चंद्रोदय वाला मत, जिसे धर्मसिंधु «अयुक्त» कहता है)।
+      'narak_chaturdashi': [
+        (2024, 10, 31),
+        (2025, 10, 20),
+        (2026, 11, 8),
+        (2027, 10, 28),
+        (2028, 10, 17),
+        (2029, 11, 5),
+        (2030, 10, 26)
+      ],
       'tulsi_vivah': [
         (2024, 11, 13),
         (2025, 11, 2),
@@ -361,7 +374,8 @@ void main() {
         festivalRules.firstWhere((r) => r.id == id), year, Place.delhi)!;
 
     test(
-        'सातों पर निर्णय लगा है (पाँच D-117, शरद पूर्णिमा D-130, तुलसी विवाह D-140), बाक़ी सत्रह पर नहीं',
+        'आठों पर निर्णय लगा है (पाँच D-117, शरद पूर्णिमा D-130, तुलसी विवाह D-140, '
+        'नरक चतुर्दशी D-150), बाक़ी सत्रह पर नहीं',
         () {
       final nirnayWale = {
         for (final r in festivalRules)
@@ -375,6 +389,7 @@ void main() {
         'diwali': Nirnaya.lakshmiPujan,
         'sharad_purnima': Nirnaya.kojagara,
         'tulsi_vivah': Nirnaya.paranDin,
+        'narak_chaturdashi': Nirnaya.narakChaturdashi,
       });
       for (final r in festivalRules) {
         final f = findFestival(r, 2027, Place.delhi)!;
@@ -753,6 +768,7 @@ void main() {
       'ganesh_chaturthi': [8, 9],
       'navratri_ghatasthapana': [9, 10],
       'diwali': [10, 11],
+      'narak_chaturdashi': [10, 11],
       'dhanteras': [10, 11],
       'govardhan_puja': [10, 11],
       'bhai_dooj': [10, 11],
