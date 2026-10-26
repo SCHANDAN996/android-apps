@@ -28,7 +28,7 @@
 
 prompt: `docs/24_CHITRA_PROMPT.md` §१० (दोनों अंग्रेज़ी डिब्बे हूबहू ChatGPT में)।
 
-**26 अक्टूबर — तीन और (→ D-154):** `vrat_narak_chaturdashi_v1.webp`, `vrat_gopashtami_v1.webp`, `vrat_akshaya_navami_v1.webp` — prompt `docs/24` §११; तीनों पन्नों पर आज दीया है। क़दम नीचे वाले ही, `vrat_artwork.dart` में तीन entry।
+**26 अक्टूबर — तीन और (→ D-154):** `vrat_narak_chaturdashi_v1.webp`, `vrat_gopashtami_v1.webp`, `vrat_akshaya_navami_v1.webp` — prompt `docs/24` §११; तीनों पन्नों पर आज दीया है। क़दम नीचे वाले ही, `vrat_artwork.dart` में तीन entry। **और दो (→ D-155):** `vrat_holika_dahan_v1.webp`, `vrat_akshaya_tritiya_v1.webp` — prompt `docs/24` §१२।
 
 | फ़ाइल | किस पन्ने पर | आज वहाँ क्या है |
 |---|---|---|

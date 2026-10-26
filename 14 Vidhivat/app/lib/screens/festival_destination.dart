@@ -9,11 +9,17 @@ import 'granth_screen.dart';
 import 'vidhi_screen.dart';
 import 'vrat_panna_screen.dart';
 
+/// पर्व के हिस्से वाले त्योहार की अपनी विधि — दशहरा नवरात्रि पर्व का दसवाँ
+/// दिन है (→ D-074), इसलिए «आने वाले» में उसका अलग पत्ता नहीं बनता; पर कैलेंडर
+/// और "आज" पर वह अपने नाम से दिखता है, और वहाँ से विजयादशमी की विधि खुले
+/// (→ D-155)। `tyoharKiPuja` में नहीं, क्योंकि वह सूची `_suchi` की पूजाएँ माँगती है।
+const Map<String, String> parvDinKiVidhi = {'दशहरा': 'vijayadashami'};
+
 /// अपना पन्ना न हो तो event केवल तारीख़ की तरह दिखे, नक़ली विधि न खुले।
 /// विधि न हो पर व्रत-पन्ना हो (शरद पूर्णिमा), तो वह (→ D-130); वह भी न हो पर
 /// ग्रंथ हो (गीता जयंती), तो ग्रंथ (→ D-153)।
 Widget? festivalDestination(String name) {
-  final vidhiId = tyoharKiPuja[name];
+  final vidhiId = tyoharKiPuja[name] ?? parvDinKiVidhi[name];
   if (vidhiId != null) return VidhiScreen(id: vidhiId);
   final vratId = tyoharKaVrat[name];
   if (vratId != null) return VratPannaScreen(id: vratId);

@@ -29,6 +29,8 @@
     { "id": "ekadashi_varsh", "naam": "साल की एकादशियाँ और उनकी कथाएँ", "samuh": "ekadashi_varsh", "devta": "भगवान विष्णु", "faail": "_ekadashi_varsh.json", "charan": 3, "taiyar": true, "paas": false },
 
     { "id": "hartalika", "naam": "हरितालिका तीज", "samuh": "varshik", "devta": "शिव-पार्वती", "vidhiId": "hartalika_teej", "charan": 4, "taiyar": true, "paas": false },
+    { "id": "holika_dahan", "naam": "होलिका दहन", "samuh": "varshik", "devta": "होलिका", "charan": 4, "taiyar": true, "paas": false },
+    { "id": "akshaya_tritiya", "naam": "अक्षय तृतीया", "samuh": "varshik", "devta": "भगवान विष्णु — नर-नारायण, परशुराम और हयग्रीव", "charan": 4, "taiyar": true, "paas": false },
     { "id": "sharad_purnima", "naam": "शरद पूर्णिमा", "samuh": "varshik", "devta": "माँ लक्ष्मी, इन्द्र देव और चंद्रमा", "charan": 4, "taiyar": true, "paas": false },
     { "id": "karwa_chauth", "naam": "करवा चौथ", "samuh": "varshik", "devta": "शिव-पार्वती, गणेश और चंद्र", "vidhiId": "karwa_chauth", "charan": 4, "taiyar": true, "paas": false },
     { "id": "narak_chaturdashi", "naam": "नरक चतुर्दशी", "samuh": "varshik", "devta": "यमराज", "charan": 4, "taiyar": true, "paas": false },

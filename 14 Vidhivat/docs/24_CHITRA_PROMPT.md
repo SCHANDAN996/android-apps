@@ -646,3 +646,80 @@ STRICTLY AVOID: any background scene, ground, garden, soil landscape or
 shadow cast onto a surface; any human or deity figure, hands or faces; any
 text, letters, numbers, watermark, signature or border frame.
 ```
+
+## १२ · होलिका दहन और अक्षय तृतीया (26 अक्टूबर 2026 · → D-155)
+
+नाप-नियम §९–§११ वाले (1024 × 1024 PNG पारदर्शी → `python -P tools/banao_chitra.py <png> <नाम> 900` →
+`vrat_artwork.dart`)। दोनों पन्नों पर आज दीया है।
+
+### होलिका दहन — `vrat_holika_dahan_v1.webp` · 900 × 900
+
+```
+A devotional still-life illustration for the Hindu festival of Holika Dahan
+(the bonfire on the night before Holi), as a clean cut-out object group on a
+TRANSPARENT background (PNG with alpha channel). Square 1:1 canvas,
+1024 x 1024 pixels.
+
+COMPOSITION (centred, everything inside the central 85% of the canvas with
+clear empty margin on all four sides; nothing touches or is cut by the
+edges):
+- CENTRE (the hero): a neat conical stack of dry wood logs and round cow-dung
+  cakes (upla) with a tall straight wooden pole standing in the middle,
+  wrapped with raw white cotton thread; warm controlled golden-orange flames
+  rising from the base of the stack, with soft glowing sparks.
+- Front-left: a few green stalks of wheat and barley with ripe ears, and a
+  small bunch of green chickpea plants, ready to be roasted.
+- Front-right: a small brass plate with a lit clay diya, a heap of rice
+  grains, a small bowl of red kumkum, a few marigolds and a coconut.
+- Behind: a soft golden mandala / sun-ray halo ring, subtle.
+
+LIGHTING AND MOOD: night, warm firelight glow, joyful and auspicious, safe
+and controlled — not a wildfire.
+
+STYLE: Devotional Indian religious illustration, photorealistic 3D render
+blended with classical Indian calendar-art sensibility. Palette of warm
+orange, gold, ember red, wheat yellow and fresh green. Ultra detailed, crisp
+clean edges suitable for cut-out, consistent with a set of festival icons.
+
+STRICTLY AVOID: any human, demon or deity figure (no Holika, no Prahlad), no
+hands or faces, no burning person, no smoke clouds covering the scene, no
+background scene, ground or sky; no colours/gulal; any text, letters,
+numbers, watermark, signature or border frame; anything scary.
+```
+
+### अक्षय तृतीया — `vrat_akshaya_tritiya_v1.webp` · 900 × 900
+
+```
+A devotional still-life illustration for the Hindu festival of Akshaya
+Tritiya (the day of imperishable charity in early summer), as a clean
+cut-out object group on a TRANSPARENT background (PNG with alpha channel).
+Square 1:1 canvas, 1024 x 1024 pixels.
+
+COMPOSITION (centred, symmetrical, everything inside the central 85% of the
+canvas with clear empty margin on all four sides; nothing touches or is cut
+by the edges):
+- CENTRE (the hero): a round earthen water pot (matka / dharmaghat) filled
+  with water, a few rounds of raw white cotton thread wound around its neck,
+  a small red-and-gold cloth tied on it, mango leaves and a small coconut on
+  its mouth; tiny drops of condensation on the clay.
+- Around it on brass plates, in a low arc: a heap of golden barley grains, a
+  small bowl of sattu (roasted gram flour), two fresh tender cucumbers, a
+  bowl of soaked yellow chana dal, a small bowl of curd-rice, and a stalk of
+  sugarcane.
+- Front centre: a lit clay diya and a few sandalwood-paste (chandan) tilak
+  marks on a small brass plate, with fresh jasmine flowers.
+- Behind: a soft golden mandala / sun-ray halo ring.
+
+LIGHTING AND MOOD: bright, fresh early-summer morning light; pure, generous
+and auspicious.
+
+STYLE: Devotional Indian religious illustration, photorealistic 3D render
+blended with classical Indian calendar-art sensibility. Palette of earthen
+terracotta, gold, cream, fresh green and sandalwood. Ultra detailed, crisp
+clean edges suitable for cut-out, consistent with a set of festival icons.
+
+STRICTLY AVOID: gold jewellery, coins or shopping imagery; any human or
+deity figure, hands or faces; any background scene, ground or shadow cast
+onto a surface; any text, letters, numbers, watermark, signature or border
+frame.
+```

@@ -526,6 +526,22 @@ void main() {
       expect(gopa.vratKhulega && aanwla.vratKhulega, isTrue);
     });
 
+    // → D-155
+    test('2027 — होलिका दहन 21 मार्च, अक्षय तृतीया 9 मई: व्रत-पन्ने खुलते हैं',
+        () {
+      final holi = aage(DateTime(2027, 3, 18), kitne: 12, dinAage: 5)
+          .where((a) => a.naam == 'होलिका दहन')
+          .single;
+      expect(
+          (holi.tarikh, holi.vratId), (DateTime(2027, 3, 21), 'holika_dahan'));
+      final akshaya = aage(DateTime(2027, 5, 6), kitne: 12, dinAage: 5)
+          .where((a) => a.naam == 'अक्षय तृतीया')
+          .single;
+      expect((akshaya.tarikh, akshaya.vratId),
+          (DateTime(2027, 5, 9), 'akshaya_tritiya'));
+      expect(holi.vratKhulega && akshaya.vratKhulega, isTrue);
+    });
+
     test('2027 — दीपदान की शाम 13 नव, स्नान-दान 14 नव: दोनों पत्ते', () {
       final l = aage(DateTime(2027, 11, 12), kitne: 12, dinAage: 5);
       final kartik = l.where((a) => a.vratId == 'kartik_purnima').toList();

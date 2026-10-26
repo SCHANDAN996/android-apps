@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vidhivat/screens/vidhi_screen.dart';
+import 'package:vidhivat/screens/vrat_panna_screen.dart';
 import 'package:vidhivat/screens/vidhi_player_screen.dart';
 import 'package:vidhivat/screens/pitru_schedule_screen.dart';
 import 'package:vidhivat/screens/ancestor_profiles_screen.dart';
@@ -31,7 +32,8 @@ void main() {
 
   setUp(() async {
     // जगह की खोज लिखते ही इंटरनेट पर जाती है (→ D-134) — जाँच में नक़ली सर्वर
-    osmKhoj = OsmKhoj(laao: (_) async => const OsmJawab(200, '{"features":[]}'));
+    osmKhoj =
+        OsmKhoj(laao: (_) async => const OsmJawab(200, '{"features":[]}'));
     SharedPreferences.setMockInitialValues({});
     await settings.load();
   });
@@ -202,7 +204,17 @@ void main() {
     final route = festivalDestination('पितृ पक्ष आरम्भ');
     expect(route, isA<VidhiScreen>());
     expect((route as VidhiScreen).id, 'shraadh');
-    expect(festivalDestination('होलिका दहन'), isNull);
+    // जिसका कोई पन्ना नहीं, वह कुछ नहीं खोलता (होलिका दहन का पन्ना अब है → D-155)
+    expect(festivalDestination('दत्तात्रेय जयंती'), isNull);
+  });
+
+  test('होलिका दहन व्रत-पन्ना, दशहरा विजयादशमी की विधि खोलता है (→ D-155)', () {
+    final holi = festivalDestination('होलिका दहन');
+    expect(holi, isA<VratPannaScreen>());
+    expect((holi as VratPannaScreen).id, 'holika_dahan');
+    final dashahara = festivalDestination('दशहरा');
+    expect(dashahara, isA<VidhiScreen>());
+    expect((dashahara as VidhiScreen).id, 'vijayadashami');
   });
 
   for (final event in [
@@ -270,7 +282,8 @@ void main() {
 
   // → D-133: पूर्वज की जगह भी वही खोज-पन्ना — शहर, गाँव, इंटरनेट
   // (गाँव वाली सूची isolate में खुलती है, widget-test में अटकती है — उसकी जाँच gaon_test में)
-  testWidgets('मृत्यु की जगह: खोज-पन्ना खुलता है; «Delhi» से दिल्ली चुनी जाती है',
+  testWidgets(
+      'मृत्यु की जगह: खोज-पन्ना खुलता है; «Delhi» से दिल्ली चुनी जाती है',
       (tester) async {
     tester.view.physicalSize = const Size(400, 900);
     tester.view.devicePixelRatio = 1;
@@ -292,7 +305,8 @@ void main() {
     // पूर्वज की जगह में «फ़ोन की अभी की जगह» नहीं — उसका यहाँ कोई मतलब नहीं
     expect(find.byKey(const Key('phone_ki_jagah')), findsNothing);
     await tester.enterText(find.byKey(const Key('jagah_khoj')), 'Delhi');
-    await tester.pump(const Duration(seconds: 1)); // लिखना रुका — इंटरनेट-खोज (नक़ली)
+    await tester
+        .pump(const Duration(seconds: 1)); // लिखना रुका — इंटरनेट-खोज (नक़ली)
     await tester.pumpAndSettle();
 
     // फ़ॉर्म का अपना खाना भी पहले से «दिल्ली» दिखाता है — पत्ता पन्ने के अंदर से

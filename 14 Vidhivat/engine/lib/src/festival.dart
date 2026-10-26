@@ -1828,7 +1828,7 @@ const List<FestivalRule> festivalRules = [
     name: 'आँवला नवमी',
     masa: 7, // कार्तिक
     paksha: 0,
-    tithi: 9, // त्रेता युगादि — व्रत-परिचय में «अक्षयनवमी», «धात्रीनवमी»
+    tithi: 9, // युगादि — व्रत-परिचय में «अक्षयनवमी», «धात्रीनवमी»
     vyapini: Vyapini.purvahna,
     nirnaya: Nirnaya.yugadi,
   ),
