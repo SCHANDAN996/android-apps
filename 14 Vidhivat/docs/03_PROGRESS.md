@@ -4979,3 +4979,8 @@ slider का नियम तारीख़ें बदलकर चलाय
 ### 26 अक्टूबर 2026 — गीता जयंती से गीता (→ D-153)
 
 - `tyoharKaGranth` + `PujaAvsar.granthId`; `GranthIdSe` (`festival_destination.dart`); होम और पूजा-सूची की पट्टियाँ «पाठ करें»।
+
+### 26 अक्टूबर 2026 — नरक चतुर्दशी, गोपाष्टमी, आँवला नवमी के व्रत-पन्ने (→ D-154)
+
+- `assets/vrat/narak_chaturdashi.json`, `gopashtami.json`, `akshaya_navami.json` + `_suchi` + `tyoharKaVrat`; तीनों मंत्र दो छपे
+  ग्रंथों में अक्षरशः; अपामार्ग का श्लोक (दो अक्षर अलग) नहीं। चित्रों के prompt `docs/24` §११।

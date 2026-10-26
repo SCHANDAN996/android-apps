@@ -504,6 +504,28 @@ void main() {
       expect(kartik.single.naam, 'कार्तिक पूर्णिमा');
     });
 
+    // → D-154: 2026 में नरक चतुर्दशी और दीपावली एक ही दिन (8 नव)
+    test('2026 — नरक चतुर्दशी 8 नव, उसका पत्ता व्रत-पन्ना खोलता है', () {
+      final l = aage(DateTime(2026, 11, 5), kitne: 12, dinAage: 5);
+      final narak = l.where((a) => a.naam == 'नरक चतुर्दशी').single;
+      expect(narak.tarikh, DateTime(2026, 11, 8));
+      expect(narak.vratId, 'narak_chaturdashi');
+      expect(narak.vratKhulega, isTrue);
+    });
+
+    test(
+        '2026 — गोपाष्टमी 17 नव, आँवला नवमी 18 नव: दोनों पत्ते व्रत-पन्ने खोलते हैं',
+        () {
+      final l = aage(DateTime(2026, 11, 15), kitne: 12, dinAage: 5);
+      final gopa = l.where((a) => a.naam == 'गोपाष्टमी').single;
+      final aanwla = l.where((a) => a.naam == 'आँवला नवमी').single;
+      expect(
+          (gopa.tarikh, gopa.vratId), (DateTime(2026, 11, 17), 'gopashtami'));
+      expect((aanwla.tarikh, aanwla.vratId),
+          (DateTime(2026, 11, 18), 'akshaya_navami'));
+      expect(gopa.vratKhulega && aanwla.vratKhulega, isTrue);
+    });
+
     test('2027 — दीपदान की शाम 13 नव, स्नान-दान 14 नव: दोनों पत्ते', () {
       final l = aage(DateTime(2027, 11, 12), kitne: 12, dinAage: 5);
       final kartik = l.where((a) => a.vratId == 'kartik_purnima').toList();

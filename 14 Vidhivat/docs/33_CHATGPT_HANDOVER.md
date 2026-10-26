@@ -28,6 +28,8 @@
 
 prompt: `docs/24_CHITRA_PROMPT.md` §१० (दोनों अंग्रेज़ी डिब्बे हूबहू ChatGPT में)।
 
+**26 अक्टूबर — तीन और (→ D-154):** `vrat_narak_chaturdashi_v1.webp`, `vrat_gopashtami_v1.webp`, `vrat_akshaya_navami_v1.webp` — prompt `docs/24` §११; तीनों पन्नों पर आज दीया है। क़दम नीचे वाले ही, `vrat_artwork.dart` में तीन entry।
+
 | फ़ाइल | किस पन्ने पर | आज वहाँ क्या है |
 |---|---|---|
 | `vrat_tulsi_vivah_v1.webp` | व्रत-पन्ना «तुलसी विवाह» (+ होम/सूची की «आने वाले» पट्टी) | साधारण तुलसी (`DevotionalAssets.tulsi`) |

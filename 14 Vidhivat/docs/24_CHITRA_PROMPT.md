@@ -528,3 +528,121 @@ anything scary.
 
 **बनने के बाद देखें:** (१) पीछे सचमुच पारदर्शी है (चेकर-बोर्ड दिखे); (२) कहीं कोई अक्षर या चिह्न नहीं; (३) दीयों
 की लौ और पत्तों के किनारे साफ़, कोई चीज़ किनारे से कटी नहीं; (४) PNG Downloads में रखकर फ़ाइल का नाम बताइए।
+
+## ११ · नरक चतुर्दशी, गोपाष्टमी, आँवला नवमी (26 अक्टूबर 2026 · → D-154)
+
+तीनों व्रत-पन्ने ऐप में हैं; आज तीनों पर साधारण दीया लगा है (`VratArtwork.forVratId` का fallback)। नाप-नियम §९
+वाले: ChatGPT से **1024 × 1024 PNG, पारदर्शी**; 900 × 900 WebP AI बनाएगा (`python -P tools/banao_chitra.py <png>
+<नाम> 900`), फिर `app/lib/vidhi/vrat_artwork.dart` में तीन entry। पारदर्शी न मिले तो दूसरी बार जोड़ें:
+*"Use a flat solid pure green (#00FF00) background instead"*। चित्र सजावट है — कोई अक्षर, मंत्र, देव-आकृति नहीं।
+
+### नरक चतुर्दशी — `vrat_narak_chaturdashi_v1.webp` · 900 × 900
+
+कार्तिक पूर्णिमा (बहुत से दीये + पानी) से अलग दिखे: यहाँ **भोर** और **चार बत्तियों वाला एक दीपक** मुख्य है।
+
+```
+A devotional still-life illustration for the Hindu festival of Narak
+Chaturdashi (Roop Chaudas, the dawn before Diwali), as a clean cut-out object
+group on a TRANSPARENT background (PNG with alpha channel). Square 1:1 canvas,
+1024 x 1024 pixels.
+
+COMPOSITION (centred, symmetrical, everything inside the central 85% of the
+canvas with clear empty margin on all four sides; nothing touches or is cut
+by the edges):
+- CENTRE (the hero): one large terracotta clay lamp with FOUR wicks pointing
+  in four directions, all four lit with calm steady golden flames, standing
+  on a small polished brass plate.
+- Left: a small brass bowl of golden sesame oil and a small brass bowl of
+  yellow-orange ubtan paste (turmeric and gram flour), with a few white and
+  black sesame seeds scattered in front.
+- Right: a small bunch of apamarg (prickly chaff-flower) twigs with their
+  long thin spikes, and a small dried bottle-gourd (tumbi), placed neatly.
+- Front, in a low arc: a few small lit clay diyas, loose orange marigolds.
+- BACK, upper centre, small and soft: a thin pale crescent moon low on a
+  hint of deep-blue pre-dawn glow, inside a soft golden mandala halo ring.
+
+LIGHTING AND MOOD: early dawn before sunrise, deep blue fading to warm gold
+around the lamp, quiet and purifying.
+
+STYLE: Devotional Indian religious illustration, photorealistic 3D render
+blended with classical Indian calendar-art sensibility. Palette of deep
+indigo, warm gold, saffron and terracotta. Ultra detailed, crisp clean edges
+suitable for cut-out, consistent with a set of festival icons.
+
+STRICTLY AVOID: any background scene, sky landscape, floor, table, wall, or
+shadow cast onto a surface; any human or deity figure, demon, Yama or
+skeleton, hands or faces; firecrackers or explosions; any text, letters,
+numbers, watermark, signature or border frame; anything scary.
+```
+
+### गोपाष्टमी — `vrat_gopashtami_v1.webp` · 900 × 900
+
+गोवर्धन वाले चित्र (पर्वत, अन्नकूट) से अलग दिखे: यहाँ **सजी हुई गाय और बछड़ा** ही मुख्य हैं।
+
+```
+A devotional illustration for the Hindu festival of Gopashtami (worship of
+cows), as a clean cut-out group on a TRANSPARENT background (PNG with alpha
+channel). Square 1:1 canvas, 1024 x 1024 pixels.
+
+COMPOSITION (centred, everything inside the central 85% of the canvas with
+clear empty margin on all four sides; nothing touches or is cut by the
+edges):
+- CENTRE (the hero): a gentle white Indian cow (Gir or Tharparkar look)
+  standing calmly, three-quarter view, decorated for worship: a marigold
+  garland around the neck, a red-and-gold embroidered cloth on her back,
+  small brass bells, a dot of red kumkum and turmeric on the forehead, horns
+  lightly painted with soft ochre bands.
+- Beside her, close to her side: a small light-brown calf with a tiny
+  marigold garland, looking up at the mother.
+- Front, in a low arc: a small brass plate with a lit clay diya, a heap of
+  fresh green fodder, a small piece of jaggery and two plain rotis, loose
+  marigolds.
+- Behind: a soft golden mandala / sun-ray halo ring.
+
+LIGHTING AND MOOD: soft warm morning light, peaceful, tender and auspicious.
+
+STYLE: Devotional Indian religious illustration, photorealistic 3D render
+blended with classical Indian calendar-art sensibility. Palette of white,
+cream, marigold orange, red and fresh green. Ultra detailed, crisp clean
+edges suitable for cut-out, consistent with a set of festival icons.
+
+STRICTLY AVOID: any background scene, field, cowshed, ground or shadow cast
+onto a surface; any human or deity figure, cowherd, hands or faces; ropes
+tying the cow, injury or thinness; any text, letters, numbers, watermark,
+signature or border frame.
+```
+
+### आँवला नवमी — `vrat_akshaya_navami_v1.webp` · 900 × 900
+
+```
+A devotional still-life illustration for the Hindu festival of Amla Navami
+(Akshaya Navami, worship of the Indian gooseberry tree), as a clean cut-out
+object group on a TRANSPARENT background (PNG with alpha channel). Square 1:1
+canvas, 1024 x 1024 pixels.
+
+COMPOSITION (centred, symmetrical, everything inside the central 85% of the
+canvas with clear empty margin on all four sides; nothing touches or is cut
+by the edges):
+- CENTRE (the hero): a short young amla (Indian gooseberry) tree trunk with
+  a lush rounded canopy of fine feathery leaves and clusters of round pale
+  green amla fruits; several rounds of raw white cotton thread (kachcha
+  soot) wound neatly around the trunk, with a red mauli knot, and a small
+  dot of kumkum on the bark.
+- At the foot of the trunk: a small brass lota pouring a thin stream of
+  milk onto the roots, collecting in a small clay basin around the trunk.
+- Front, in a low arc: a lit clay diya, a small brass plate with a few amla
+  fruits, rice grains and marigolds, and a small ripe yellow pumpkin
+  (kushmanda) with a red thread tied on it.
+- Behind: a soft golden mandala / sun-ray halo ring.
+
+LIGHTING AND MOOD: clear warm morning light, fresh, calm and auspicious.
+
+STYLE: Devotional Indian religious illustration, photorealistic 3D render
+blended with classical Indian calendar-art sensibility. Palette of fresh
+green, pale lime, white, gold and marigold orange. Ultra detailed, crisp
+clean edges suitable for cut-out, consistent with a set of festival icons.
+
+STRICTLY AVOID: any background scene, ground, garden, soil landscape or
+shadow cast onto a surface; any human or deity figure, hands or faces; any
+text, letters, numbers, watermark, signature or border frame.
+```
