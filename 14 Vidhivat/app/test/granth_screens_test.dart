@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vidhivat/screens/festival_destination.dart';
 import 'package:vidhivat/screens/granth_screen.dart';
 import 'package:vidhivat/screens/granthalaya_screen.dart';
 import 'package:vidhivat/screens/more_screen.dart';
@@ -77,7 +78,8 @@ void main() {
 
     testWidgets('सूची वाली गीता वही है जो कोड की जाँचों में मानी गई है',
         (tester) async {
-      final g = (await granthBhandar.suchi()).singleWhere((g) => g.id == 'gita');
+      final g =
+          (await granthBhandar.suchi()).singleWhere((g) => g.id == 'gita');
       expect(g.naam, gita.naam);
       expect(g.chhotaNaam, gita.chhotaNaam);
       expect(g.ikai, gita.ikai);
@@ -183,7 +185,8 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('"अर्थ दिखाएँ" दबाने पर श्लोक का अर्थ दिखता है', (tester) async {
+    testWidgets('"अर्थ दिखाएँ" दबाने पर श्लोक का अर्थ दिखता है',
+        (tester) async {
       lambaPhone(tester);
       await tester.pumpWidget(app(const PaathScreen(id: 'gita_12')));
       await tester.pumpAndSettle();
@@ -220,7 +223,8 @@ void main() {
       await tester.pumpAndSettle();
       expect(
           tester
-              .widget<VidhivatButton>(find.widgetWithText(VidhivatButton, 'अगला'))
+              .widget<VidhivatButton>(
+                  find.widgetWithText(VidhivatButton, 'अगला'))
               .onPressed,
           isNull);
     });
@@ -324,8 +328,8 @@ void main() {
           .first);
       expect(scroll.position.pixels, greaterThan(3000));
       final prefs = await SharedPreferences.getInstance();
-      expect(prefs.getInt('gita_aakhri_khand_gita_02'),
-          greaterThanOrEqualTo(38));
+      expect(
+          prefs.getInt('gita_aakhri_khand_gita_02'), greaterThanOrEqualTo(38));
     });
   });
 
@@ -363,6 +367,36 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.byType(GranthScreen), findsOneWidget);
       expect(find.text('अध्याय १ — अर्जुनविषादयोग'), findsOneWidget);
+    });
+  });
+
+  // → D-153: त्योहार के पत्ते से ग्रंथ — होम, पूजा-सूची, "आज" और कैलेंडर चारों
+  // यही रास्ता लेते हैं।
+  group('त्योहार से ग्रंथ', () {
+    testWidgets('गीता जयंती दबाने पर गीता का पन्ना खुलता है', (tester) async {
+      phone(tester);
+      final manzil = festivalDestination('गीता जयंती');
+      expect(manzil, isA<GranthIdSe>());
+      await tester.pumpWidget(app(manzil!));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(GranthScreen), findsOneWidget);
+      expect(find.text('अध्याय १ — अर्जुनविषादयोग'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('सूची में न मिले तो साफ़ संदेश, घूमता पहिया नहीं',
+        (tester) async {
+      phone(tester);
+      await tester.pumpWidget(app(const GranthIdSe(id: 'aisa_koi_nahin')));
+      await tester.pumpAndSettle();
+
+      expect(find.text('यह ग्रंथ खुल नहीं सका'), findsOneWidget);
+      expect(find.byType(GranthScreen), findsNothing);
+    });
+
+    test('बिना पन्ने वाला त्योहार कुछ नहीं खोलता', () {
+      expect(festivalDestination('दत्तात्रेय जयंती'), isNull);
     });
   });
 }

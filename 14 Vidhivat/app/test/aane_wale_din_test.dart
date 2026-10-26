@@ -450,6 +450,36 @@ void main() {
     });
   });
 
+  /// न विधि, न व्रत-पन्ना — ग्रंथालय का ग्रंथ खुलता है (→ D-153)।
+  group('ग्रंथ वाले त्योहार', () {
+    test(
+        'हर नाम इंजन का त्योहार है, हर ग्रंथ सचमुच है, और विधि/व्रत से टकराव नहीं',
+        () {
+      final naam = {for (final r in festivalRules) r.name};
+      for (final e in tyoharKaGranth.entries) {
+        expect(naam, contains(e.key), reason: '"${e.key}" इंजन में नहीं');
+        expect(Directory('assets/granth/${e.value}').existsSync(), isTrue,
+            reason: '"${e.key}" का ग्रंथ ${e.value} नहीं है');
+        // विधि या व्रत-पन्ना हो तो वही खुलता है — ग्रंथ वाला नक़्शा बेकार रहता
+        expect(tyoharKiPuja.containsKey(e.key), isFalse, reason: e.key);
+        expect(tyoharKaVrat.containsKey(e.key), isFalse, reason: e.key);
+      }
+    });
+
+    test('2026 — गीता जयंती 20 दिसंबर, और उसका पत्ता गीता खोलता है', () {
+      final l = aage(DateTime(2026, 12, 15), kitne: 12, dinAage: 10);
+      final g = l.where((a) => a.naam == 'गीता जयंती').single;
+      expect(g.tarikh, DateTime(2026, 12, 20));
+      expect(g.granthKhulega, isTrue);
+      expect(g.granthId, 'gita');
+      expect(g.khulSaktiHai, isFalse);
+      expect(g.vratKhulega, isFalse);
+      // बिना पन्ने वाला त्योहार वैसे ही रहे — खुलता नहीं
+      final datta = l.where((a) => a.naam == 'दत्तात्रेय जयंती').single;
+      expect(datta.granthKhulega, isFalse);
+    });
+  });
+
   /// विधि नहीं, व्रत-पन्ना खुलता है (→ D-130, D-140)।
   group('व्रत-पन्ने वाले त्योहार', () {
     test('हर नाम इंजन का त्योहार है, और हर पन्ना सचमुच है', () {
@@ -477,7 +507,9 @@ void main() {
     test('2027 — दीपदान की शाम 13 नव, स्नान-दान 14 नव: दोनों पत्ते', () {
       final l = aage(DateTime(2027, 11, 12), kitne: 12, dinAage: 5);
       final kartik = l.where((a) => a.vratId == 'kartik_purnima').toList();
-      expect([for (final a in kartik) (a.tarikh, a.naam)], [
+      expect([
+        for (final a in kartik) (a.tarikh, a.naam)
+      ], [
         (DateTime(2027, 11, 13), 'देव दीपावली'),
         (DateTime(2027, 11, 14), 'कार्तिक पूर्णिमा'),
       ]);

@@ -24,6 +24,7 @@ import 'kundali_profiles_screen.dart';
 import 'granth_screen.dart';
 import 'granthalaya_screen.dart';
 import 'paath_list_screen.dart';
+import 'festival_destination.dart';
 import 'paath_screen.dart';
 import 'parv_kholo.dart';
 import 'sankalp_screen.dart';
@@ -392,11 +393,14 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen>
         neeche: '${tarikhChhoti(avsar.tarikh)} · ${avsar.kyon}',
         artwork: avsar.vratKhulega
             ? VratArtwork.forVratId(avsar.vratId).assetPath
-            : avsar.pujaId.isEmpty
-                ? 'assets/images/devotional/home_puja_arrangement_v1.png'
-                : DevotionalAssets.forVidhiId(avsar.pujaId).assetPath,
+            : avsar.granthKhulega
+                ? PaathAssets.forGranthId(avsar.granthId).assetPath
+                : avsar.pujaId.isEmpty
+                    ? 'assets/images/devotional/home_puja_arrangement_v1.png'
+                    : DevotionalAssets.forVidhiId(avsar.pujaId).assetPath,
         pujaId: avsar.khulSaktiHai ? avsar.pujaId : null,
         vratId: avsar.vratKhulega ? avsar.vratId : null,
+        granthId: avsar.granthKhulega ? avsar.granthId : null,
         samayAurCharan: vidhi == null
             ? null
             : '${vidhi.samayLikha}  •  ${vidhi.charan.length} चरण',
@@ -404,7 +408,9 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen>
             ? 'विधि देखें'
             : avsar.vratKhulega
                 ? 'व्रत देखें'
-                : 'विधि अभी नहीं',
+                : avsar.granthKhulega
+                    ? 'पाठ करें'
+                    : 'विधि अभी नहीं',
       ));
     }
     if (navratriPatta != null) patte.add(navratriPatta);
@@ -864,8 +870,10 @@ class _PujaPatta extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = VidhivatTheme.colorsOf(context);
     final type = VidhivatTheme.typographyOf(context);
-    final khulSaktaHai =
-        patta.pujaId != null || patta.parvId != null || patta.vratId != null;
+    final khulSaktaHai = patta.pujaId != null ||
+        patta.parvId != null ||
+        patta.vratId != null ||
+        patta.granthId != null;
 
     return Semantics(
       container: true,
@@ -1008,7 +1016,14 @@ class _PujaPatta extends StatelessWidget {
                                                 id: patta.vratId!),
                                           ),
                                         )
-                                      : onOpen(patta.pujaId!),
+                                      : patta.granthId != null
+                                          ? Navigator.of(context).push(
+                                              MaterialPageRoute<void>(
+                                                builder: (_) => GranthIdSe(
+                                                    id: patta.granthId!),
+                                              ),
+                                            )
+                                          : onOpen(patta.pujaId!),
                               compact: true,
                               fullWidth: true,
                             ),
@@ -1081,6 +1096,9 @@ class _Patta {
   /// कोई विधि नहीं, व्रत-पन्ना खुले — शरद पूर्णिमा (→ D-130)।
   final String? vratId;
 
+  /// न विधि, न व्रत-पन्ना — ग्रंथ खुले: गीता जयंती पर गीता (→ D-153)।
+  final String? granthId;
+
   /// "22 मिनट • 9 चरण", या अधूरी पूजा पर "चरण 8 / 9"।
   /// विधि न हो तो `null`।
   final String? samayAurCharan;
@@ -1103,6 +1121,7 @@ class _Patta {
     required this.bulawa,
     this.parvId,
     this.vratId,
+    this.granthId,
     this.canRemoveProgress = false,
     this.samayChihn = Icons.schedule_outlined,
   });

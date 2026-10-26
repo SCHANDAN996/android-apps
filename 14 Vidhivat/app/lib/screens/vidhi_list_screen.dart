@@ -13,6 +13,8 @@ import '../vidhi/vidhi.dart';
 import '../vidhi/vrat_artwork.dart';
 import '../widgets/common.dart';
 import '../widgets/design_system.dart';
+import '../vidhi/paath_assets.dart';
+import 'festival_destination.dart';
 import 'vidhi_screen.dart';
 import 'vrat_panna_screen.dart';
 import 'parv_kholo.dart';
@@ -156,9 +158,12 @@ class _VidhiListScreenState extends State<VidhiListScreen> {
             : '${avsar.kyon} · ${tarikhChhoti(avsar.tarikh)}',
         artwork: avsar.vratKhulega
             ? VratArtwork.forVratId(avsar.vratId).assetPath
-            : DevotionalAssets.forVidhiId(avsar.pujaId).assetPath,
+            : avsar.granthKhulega
+                ? PaathAssets.forGranthId(avsar.granthId).assetPath
+                : DevotionalAssets.forVidhiId(avsar.pujaId).assetPath,
         pujaId: avsar.khulSaktiHai ? avsar.pujaId : null,
         vratId: avsar.vratKhulega ? avsar.vratId : null,
+        granthId: avsar.granthKhulega ? avsar.granthId : null,
         parv: false,
         kitneDinBaad: avsar.kitneDinBaad,
       ));
@@ -497,6 +502,9 @@ class _AaneWali {
 
   /// विधि नहीं, व्रत-पन्ना खुले — शरद पूर्णिमा (→ D-130)।
   final String? vratId;
+
+  /// न विधि, न व्रत-पन्ना — ग्रंथ खुले: गीता जयंती पर गीता (→ D-153)।
+  final String? granthId;
   final int kitneDinBaad;
 
   const _AaneWali({
@@ -508,9 +516,11 @@ class _AaneWali {
     required this.parv,
     required this.kitneDinBaad,
     this.vratId,
+    this.granthId,
   });
 
-  bool get khulta => parv || pujaId != null || vratId != null;
+  bool get khulta =>
+      parv || pujaId != null || vratId != null || granthId != null;
 }
 
 /// आने वाली पूजाएँ — बग़ल में खिसकने वाली पट्टी (→ D-086)।
@@ -557,9 +567,16 @@ class _AaneWaliPatti extends StatelessWidget {
                                             VratPannaScreen(id: sab[i].vratId!),
                                       ),
                                     )
-                                : sab[i].pujaId == null
-                                    ? null
-                                    : () => onOpenId(sab[i].pujaId!),
+                                : sab[i].granthId != null
+                                    ? () => Navigator.of(context).push(
+                                          MaterialPageRoute<void>(
+                                            builder: (_) => GranthIdSe(
+                                                id: sab[i].granthId!),
+                                          ),
+                                        )
+                                    : sab[i].pujaId == null
+                                        ? null
+                                        : () => onOpenId(sab[i].pujaId!),
                       ),
                     ),
                   ],
@@ -590,7 +607,7 @@ class _AaneWaliCard extends StatelessWidget {
       variant: VidhivatCardVariant.elevated,
       semanticLabel: avsar.khulta
           ? '${avsar.upar}: ${avsar.naam}, ${avsar.neeche}। '
-              '${avsar.vratId != null ? 'व्रत देखें' : 'विधि देखें'}'
+              '${avsar.vratId != null ? 'व्रत देखें' : avsar.granthId != null ? 'पाठ करें' : 'विधि देखें'}'
           : '${avsar.upar}: ${avsar.naam}, ${avsar.neeche}। विधि अभी नहीं',
       padding: const EdgeInsets.all(VidhivatSpacing.sm),
       child: Column(

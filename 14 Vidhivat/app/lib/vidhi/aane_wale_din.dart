@@ -57,6 +57,9 @@ class PujaAvsar {
   /// विधि नहीं, पर व्रत-पन्ना (`assets/vrat/`) है — उसकी `id` ([tyoharKaVrat])।
   final String vratId;
 
+  /// विधि और व्रत-पन्ना दोनों नहीं, पर ग्रंथालय का ग्रंथ है ([tyoharKaGranth])।
+  final String granthId;
+
   const PujaAvsar({
     required this.tarikh,
     required this.kitneDinBaad,
@@ -65,6 +68,7 @@ class PujaAvsar {
     required this.kyon,
     required this.karan,
     this.vratId = '',
+    this.granthId = '',
   });
 
   /// इस पूजा का अपना पन्ना ऐप में है या नहीं।
@@ -72,6 +76,10 @@ class PujaAvsar {
 
   /// विधि नहीं है, पर व्रत-पन्ना खुलेगा।
   bool get vratKhulega => pujaId.isEmpty && vratId.isNotEmpty;
+
+  /// न विधि, न व्रत-पन्ना — ग्रंथ खुलेगा (गीता जयंती पर गीता)।
+  bool get granthKhulega =>
+      pujaId.isEmpty && vratId.isEmpty && granthId.isNotEmpty;
 
   /// "आज" · "कल" · "परसों" · "12 दिन बाद"
   String get kabLikha => switch (kitneDinBaad) {
@@ -121,6 +129,12 @@ const Map<String, String> tyoharKaVrat = {
   'तुलसी विवाह': 'tulsi_vivah',
   'कार्तिक पूर्णिमा': 'kartik_purnima',
   'देव दीपावली': 'kartik_purnima',
+};
+
+/// त्योहार का नाम → ग्रंथालय के ग्रंथ की `id` — जिसकी न विधि है न व्रत-पन्ना,
+/// पर जिस दिन का काम ही उस ग्रंथ का पाठ है (→ D-153)।
+const Map<String, String> tyoharKaGranth = {
+  'गीता जयंती': 'gita',
 };
 
 /// हर महीने वाली पूजा के नीचे की लाइन — पक्ष सहित, और जिस तिथि का अपना
@@ -318,6 +332,9 @@ List<PujaAvsar> aaneWaliPujaayein({
         kyon: 'त्योहार',
         karan: AvsarKaKaran.tyohar,
         vratId: vratId,
+        granthId: khulegi.isEmpty && vratId.isEmpty
+            ? (tyoharKaGranth[tyohar.rule.name] ?? '')
+            : '',
       ));
     }
   }
