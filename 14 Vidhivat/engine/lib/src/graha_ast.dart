@@ -227,36 +227,61 @@ List<GrahaAst> grahaAstKaal(
   Place place, {
   AstGanana ganana = AstGanana.ansh,
 }) {
+  final seDin = DateTime.utc(se.year, se.month, se.day);
+  final takDin = DateTime.utc(tak.year, tak.month, tak.day);
+
   // शुक्र की लंबी अस्त तीन महीने से ऊपर जा सकती है — इतना आगे-पीछे देखो
   const haashiya = Duration(days: 130);
-  final shuru = DateTime.utc(se.year, se.month, se.day).subtract(haashiya);
-  final ant = DateTime.utc(tak.year, tak.month, tak.day).add(haashiya);
+  var shuru = seDin.subtract(haashiya);
+  var ant = takDin.add(haashiya);
+
+  // किनारे पर ग्रह तब भी अस्त हो तो उस अस्त का सिरा खिड़की से बाहर है, और
+  // वह अस्त छूट जाती। ध्रुव के पास, जहाँ महीनों सूर्योदय नहीं होता, कालांश
+  // की अस्त डेढ़ साल तक खिंच जाती है (J-024)। इसलिए किनारा तब तक खिसकाओ
+  // जब तक उस दिन ग्रह दिखता हुआ न मिले — तीन साल तक।
+  bool dikhta(DateTime d) => ganana == AstGanana.ansh
+      ? _anshGap(g, _sthaniyaAadhiRaat(d, place)) >= 0
+      : _kalanshDin(g, d, place)?.ast == false;
+  const ekDin = Duration(days: 1);
+  for (var i = 0; i < _kinaraHad && !dikhta(shuru); i++) {
+    shuru = shuru.subtract(ekDin);
+  }
+  for (var i = 0; i < _kinaraHad && !dikhta(ant); i++) {
+    ant = ant.add(ekDin);
+  }
 
   final sab = ganana == AstGanana.ansh
       ? _anshSe(g, shuru, ant, place)
       : _kalanshSe(g, shuru, ant, place);
 
-  final seDin = DateTime.utc(se.year, se.month, se.day);
-  final takDin = DateTime.utc(tak.year, tak.month, tak.day);
   return [
     for (final a in sab)
       if (!a.udayDin.isBefore(seDin) && !a.astDin.isAfter(takDin)) a,
   ];
 }
 
+/// किनारा खिसकाने की हद, दिनों में (→ [grahaAstKaal])।
+const _kinaraHad = 1100;
+
 // ─────────────────────────────────────────────────────────────
 // अंश से — देशांतर का अंतर
 // ─────────────────────────────────────────────────────────────
 
+/// धन = अस्त नहीं (कालांश से बाहर)।
+double _anshGap(Graha g, double jdUt) {
+  final jde = toEphemerisTime(jdUt);
+  return grahaSuryaAntar(g, jde).abs() -
+      astKalansh(g, vakri: grahaVakri(g, jde));
+}
+
+/// [d] (स्थानीय तारीख़) की आधी रात का जूलियन दिन, UT में।
+double _sthaniyaAadhiRaat(DateTime d, Place place) =>
+    julianDay(d.year, d.month, d.day.toDouble()) -
+    place.timeZoneOffset.inSeconds / 86400.0;
+
 List<GrahaAst> _anshSe(Graha g, DateTime shuru, DateTime ant, Place place) {
   DateTime local(double jd) => utcFromJulianDay(jd).add(place.timeZoneOffset);
-
-  // धन = अस्त नहीं (कालांश से बाहर)
-  double gap(double jdUt) {
-    final jde = toEphemerisTime(jdUt);
-    return grahaSuryaAntar(g, jde).abs() -
-        astKalansh(g, vakri: grahaVakri(g, jde));
-  }
+  double gap(double jdUt) => _anshGap(g, jdUt);
 
   double paar(double lo, double hi) {
     final loAst = gap(lo) < 0;
@@ -273,9 +298,8 @@ List<GrahaAst> _anshSe(Graha g, DateTime shuru, DateTime ant, Place place) {
   }
 
   final mile = <GrahaAst>[];
-  final tzDin = place.timeZoneOffset.inSeconds / 86400.0;
-  var jd = julianDay(shuru.year, shuru.month, shuru.day.toDouble()) - tzDin;
-  final antJd = julianDay(ant.year, ant.month, ant.day.toDouble()) - tzDin;
+  var jd = _sthaniyaAadhiRaat(shuru, place);
+  final antJd = _sthaniyaAadhiRaat(ant, place);
 
   var pichlaAst = gap(jd) < 0;
   double? astJd;
@@ -307,6 +331,48 @@ List<GrahaAst> _anshSe(Graha g, DateTime shuru, DateTime ant, Place place) {
 // कालांश से — उदय/अस्त के समय का अंतर (सूर्यसिद्धांत ९.५)
 // ─────────────────────────────────────────────────────────────
 
+/// कालांश से [d] (स्थानीय तारीख़) का हाल। null — उस दिन सूर्योदय या
+/// सूर्यास्त नहीं होता (ध्रुव के पास)।
+({
+  bool ast,
+  double antar,
+  double uJd,
+  double aJd,
+  double? gUday,
+  double? gAst,
+  int kalansh,
+})? _kalanshDin(Graha g, DateTime d, Place place) {
+  final rs = sunriseSunset(d.year, d.month, d.day, place);
+  if (rs.sunrise == null || rs.sunset == null) return null;
+  final uJd = julianDayFromUtc(rs.sunrise!);
+  final aJd = julianDayFromUtc(rs.sunset!);
+  final jde = toEphemerisTime(aJd);
+  final antar = grahaSuryaAntar(g, jde);
+
+  var ast = false;
+  double? gUday, gAst;
+  var kalansh = 0;
+  // सूर्य से 30° से दूर ग्रह अस्त नहीं हो सकता — वहाँ उदय-अस्त मत निकालो
+  if (antar.abs() < 30.0) {
+    kalansh = astKalansh(g, vakri: grahaVakri(g, jde));
+    final had = kalansh * _ekKalanshDin;
+    gUday = _kshitijPaar(g, uJd, place, uday: true);
+    gAst = _kshitijPaar(g, aJd, place, uday: false);
+    final shaamDikha = gAst != null && gAst - aJd >= had;
+    final subahDikha = gUday != null && uJd - gUday >= had;
+    ast = !(shaamDikha || subahDikha);
+  }
+  return (
+    ast: ast,
+    antar: antar,
+    uJd: uJd,
+    aJd: aJd,
+    gUday: gUday,
+    gAst: gAst,
+    kalansh: kalansh,
+  );
+}
+
 List<GrahaAst> _kalanshSe(Graha g, DateTime shuru, DateTime ant, Place place) {
   DateTime local(double jd) => utcFromJulianDay(jd).add(place.timeZoneOffset);
 
@@ -318,26 +384,17 @@ List<GrahaAst> _kalanshSe(Graha g, DateTime shuru, DateTime ant, Place place) {
   var astKalanshMaan = 0;
 
   for (var d = shuru; !d.isAfter(ant); d = d.add(const Duration(days: 1))) {
-    final rs = sunriseSunset(d.year, d.month, d.day, place);
-    if (rs.sunrise == null || rs.sunset == null) continue;
-    final uJd = julianDayFromUtc(rs.sunrise!);
-    final aJd = julianDayFromUtc(rs.sunset!);
-    final jde = toEphemerisTime(aJd);
-    final antar = grahaSuryaAntar(g, jde);
-
-    var abAst = false;
-    double? gUday, gAst;
-    var kalansh = 0;
-    // सूर्य से 30° से दूर ग्रह अस्त नहीं हो सकता — वहाँ उदय-अस्त मत निकालो
-    if (antar.abs() < 30.0) {
-      kalansh = astKalansh(g, vakri: grahaVakri(g, jde));
-      final had = kalansh * _ekKalanshDin;
-      gUday = _kshitijPaar(g, uJd, place, uday: true);
-      gAst = _kshitijPaar(g, aJd, place, uday: false);
-      final shaamDikha = gAst != null && gAst - aJd >= had;
-      final subahDikha = gUday != null && uJd - gUday >= had;
-      abAst = !(shaamDikha || subahDikha);
-    }
+    final din = _kalanshDin(g, d, place);
+    if (din == null) continue;
+    final (
+      ast: abAst,
+      :antar,
+      :uJd,
+      :aJd,
+      :gUday,
+      :gAst,
+      :kalansh,
+    ) = din;
 
     if (!pehlaDin) {
       if (abAst && !pichlaAst) {

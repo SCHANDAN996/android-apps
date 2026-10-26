@@ -195,6 +195,29 @@ void main() {
         expect(a.uday.hour, inInclusiveRange(4, 6), reason: '${a.uday}');
       }
     });
+
+    // J-024 — ध्रुव के पास महीनों सूर्योदय नहीं होता; कालांश की अस्त डेढ़ साल
+    // खिंचती है। पहले छोटी खिड़की उसे खो देती थी, क्योंकि उसका सिरा 130 दिन
+    // के हाशिये से बाहर था।
+    test('ध्रुव के पास डेढ़ साल की अस्त — छोटी खिड़की भी पकड़ती है', () {
+      const dhruv = Place(
+          name: '89° उत्तर',
+          latitude: 89,
+          longitude: 0,
+          timeZoneOffset: Duration.zero);
+      List<(DateTime, DateTime)> dekho(DateTime a, DateTime b) => [
+            for (final x in grahaAstKaal(Graha.shukra, a, b, dhruv,
+                ganana: AstGanana.kalansh))
+              (x.astDin, x.udayDin)
+          ];
+
+      final teenSaal = dekho(din(2025, 1, 1), din(2027, 12, 31));
+      final lambi = teenSaal.firstWhere((p) => p.$1 == din(2025, 3, 16));
+      expect(lambi.$2, din(2026, 9, 23));
+
+      expect(dekho(din(2026, 1, 1), din(2026, 12, 31)), contains(lambi));
+      expect(dekho(din(2026, 7, 1), din(2026, 7, 31)), [lambi]);
+    });
   });
 
   group('⚠ संदर्भ-पंचांग से फ़र्क़ — दर्ज है, मिटाया नहीं गया', () {
