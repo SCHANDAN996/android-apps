@@ -121,7 +121,10 @@ abstract final class PaathAssets {
         assetPath: 'assets/images/devotional/reading_g_sukta_v2.webp',
         semanticLabel: 'वेद के सूक्त का नाम सहित सजावटी चित्र'),
     // रुद्राष्टाध्यायी का अपना चित्र नहीं — रुद्राभिषेक वाला शिवलिंग (→ D-156)
-    'rudri': DevotionalAssets.rudrabhishek,
+    'rudri': DevotionalArtwork(
+        assetPath: 'assets/images/devotional/reading_g_rudri_v2.webp',
+        semanticLabel:
+            'रुद्राष्टाध्यायी की पुस्तक, शिवलिंग और दीपक का सजावटी चित्र'),
     'upanishad': DevotionalArtwork(
         assetPath: 'assets/images/devotional/reading_g_upanishad_v2.webp',
         semanticLabel: 'उपनिषद का नाम सहित सजावटी चित्र'),

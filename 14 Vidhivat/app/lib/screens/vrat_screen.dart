@@ -253,10 +253,10 @@ class _SabVratState extends State<_SabVrat> {
                 LayoutBuilder(
                   builder: (context, constraints) {
                     final width =
-                        (constraints.maxWidth - VidhivatSpacing.sm) / 2;
+                        (constraints.maxWidth - VidhivatSpacing.md) / 2;
                     return Wrap(
-                      spacing: VidhivatSpacing.sm,
-                      runSpacing: VidhivatSpacing.sm,
+                      spacing: VidhivatSpacing.md,
+                      runSpacing: VidhivatSpacing.md,
                       children: [
                         for (final e in sab.where((e) => e.samuh == samuh))
                           SizedBox(
@@ -329,47 +329,43 @@ class _VratGridCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = VidhivatTheme.colorsOf(context);
     final type = VidhivatTheme.typographyOf(context);
-    final textScale = MediaQuery.textScalerOf(context).scale(1);
-    final cardHeight = 214 + ((textScale - 1).clamp(0.0, 1.0) * 96);
     return VidhivatSurfaceCard(
+      key: ValueKey('vrat-card-${entry.id}'),
       onTap: onOpen,
       variant: VidhivatCardVariant.elevated,
       semanticLabel: '${entry.naam} का व्रत पन्ना खोलें',
       padding: const EdgeInsets.all(VidhivatSpacing.md),
-      child: SizedBox(
-        height: cardHeight,
-        child: Column(
-          children: [
-            Expanded(
-                child: Center(child: _VratThumbnail(id: entry.id, size: 108))),
-            Text(
-              entry.naam,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.center,
-              style: type.cardTitle,
-            ),
-            const SizedBox(height: 2),
-            Text(
-              entry.devta,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.center,
-              style: type.caption.copyWith(color: colors.textSecondary),
-            ),
-            const SizedBox(height: VidhivatSpacing.sm),
-            // Card भी tap हो सकता है, पर action को सिर्फ़ hint या chevron
-            // पर नहीं छोड़ा: dark UI में यह साफ़ filled button दिखता है।
-            VidhivatButton(
-              label: 'व्रत देखें',
-              icon: Icons.arrow_forward_rounded,
-              variant: VidhivatButtonVariant.secondary,
-              compact: true,
-              fullWidth: true,
-              onPressed: onOpen,
-            ),
-          ],
-        ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          LayoutBuilder(builder: (context, box) {
+            final side = box.maxWidth.clamp(0.0, 136.0).toDouble();
+            return Center(child: _VratThumbnail(id: entry.id, size: side));
+          }),
+          const SizedBox(height: VidhivatSpacing.sm),
+          Text(
+            entry.naam,
+            textAlign: TextAlign.center,
+            style: type.cardTitle,
+          ),
+          const SizedBox(height: 2),
+          Text(
+            entry.devta,
+            textAlign: TextAlign.center,
+            style: type.caption.copyWith(color: colors.textSecondary),
+          ),
+          const SizedBox(height: VidhivatSpacing.sm),
+          // Card भी tap हो सकता है, पर action को सिर्फ़ hint या chevron
+          // पर नहीं छोड़ा: dark UI में यह साफ़ filled button दिखता है।
+          VidhivatButton(
+            label: 'व्रत देखें',
+            icon: Icons.arrow_forward_rounded,
+            variant: VidhivatButtonVariant.secondary,
+            compact: true,
+            fullWidth: true,
+            onPressed: onOpen,
+          ),
+        ],
       ),
     );
   }

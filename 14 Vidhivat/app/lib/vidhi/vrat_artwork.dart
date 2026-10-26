@@ -56,7 +56,8 @@ abstract final class VratArtwork {
       semanticLabel: 'एकादशी में शालिग्राम और तुलसी का सजावटी चित्र');
   static const _sankashti = DevotionalArtwork(
       assetPath: 'assets/images/devotional/vrat_sankashti_v2.webp',
-      semanticLabel: 'संकष्टी में चंद्रमा और गणेश पूजन की सामग्री का सजावटी चित्र');
+      semanticLabel:
+          'संकष्टी में चंद्रमा और गणेश पूजन की सामग्री का सजावटी चित्र');
   static const _purnima = DevotionalArtwork(
       assetPath: 'assets/images/devotional/vrat_purnima_v2.webp',
       semanticLabel: 'पूर्णिमा में चंद्रमा और कलश का सजावटी चित्र');
@@ -70,12 +71,38 @@ abstract final class VratArtwork {
           'तुलसी विवाह में मंडप के नीचे सजी तुलसी और शालिग्राम का सजावटी चित्र');
   static const _kartikPurnima = DevotionalArtwork(
       assetPath: 'assets/images/devotional/vrat_kartik_purnima_v1.webp',
-      semanticLabel: 'कार्तिक पूर्णिमा में दीपदान के जलते दीयों का सजावटी चित्र');
+      semanticLabel:
+          'कार्तिक पूर्णिमा में दीपदान के जलते दीयों का सजावटी चित्र');
   static const _janmashtami = DevotionalArtwork(
       assetPath: 'assets/images/devotional/vrat_janmashtami_v2.webp',
       semanticLabel: 'जन्माष्टमी में लड्डू गोपाल का सजावटी चित्र');
 
+  static const _narakChaturdashi = DevotionalArtwork(
+      assetPath: 'assets/images/devotional/vrat_narak_chaturdashi_v1.webp',
+      semanticLabel:
+          'नरक चतुर्दशी में चौमुखी दीपक और अभ्यंग सामग्री का सजावटी चित्र');
+  static const _gopashtami = DevotionalArtwork(
+      assetPath: 'assets/images/devotional/vrat_gopashtami_v1.webp',
+      semanticLabel:
+          'गोपाष्टमी में सजी गाय, बछड़े और पूजन सामग्री का सजावटी चित्र');
+  static const _akshayaNavami = DevotionalArtwork(
+      assetPath: 'assets/images/devotional/vrat_akshaya_navami_v1.webp',
+      semanticLabel:
+          'आँवला नवमी में आँवले के वृक्ष और पूजन सामग्री का सजावटी चित्र');
+  static const _holikaDahan = DevotionalArtwork(
+      assetPath: 'assets/images/devotional/vrat_holika_dahan_v1.webp',
+      semanticLabel:
+          'होलिका दहन में लकड़ियों की होली और पूजन सामग्री का सजावटी चित्र');
+  static const _akshayaTritiya = DevotionalArtwork(
+      assetPath: 'assets/images/devotional/vrat_akshaya_tritiya_v1.webp',
+      semanticLabel: 'अक्षय तृतीया में जलघट और दान सामग्री का सजावटी चित्र');
+
   static const Map<String, DevotionalArtwork> _byVratId = {
+    'narak_chaturdashi': _narakChaturdashi,
+    'gopashtami': _gopashtami,
+    'akshaya_navami': _akshayaNavami,
+    'holika_dahan': _holikaDahan,
+    'akshaya_tritiya': _akshayaTritiya,
     'somvar': DevotionalAssets.shiva,
     'mangalvar': DevotionalAssets.hanuman,
     'brihaspativar': _vishnu,

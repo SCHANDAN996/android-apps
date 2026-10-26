@@ -49,23 +49,27 @@ class ReadingArtworkCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Center(
-                  child: Container(
-                width: 112,
-                height: 112,
-                decoration: BoxDecoration(shape: BoxShape.circle, boxShadow: [
-                  BoxShadow(
-                      color: colors.primary.withValues(alpha: .20),
-                      blurRadius: 34,
-                      spreadRadius: 2),
-                ]),
-                child: Image.asset(artwork,
-                    fit: BoxFit.contain,
-                    cacheHeight:
-                        (112 * MediaQuery.devicePixelRatioOf(context)).round(),
-                    filterQuality: FilterQuality.high,
-                    excludeFromSemantics: true),
-              )),
+              LayoutBuilder(builder: (context, box) {
+                final side = box.maxWidth.clamp(0.0, 160.0).toDouble();
+                return Center(
+                    child: Container(
+                  width: side,
+                  height: side,
+                  decoration: BoxDecoration(shape: BoxShape.circle, boxShadow: [
+                    BoxShadow(
+                        color: colors.primary.withValues(alpha: .20),
+                        blurRadius: 34,
+                        spreadRadius: 2),
+                  ]),
+                  child: Image.asset(artwork,
+                      fit: BoxFit.contain,
+                      cacheHeight:
+                          (side * MediaQuery.devicePixelRatioOf(context))
+                              .round(),
+                      filterQuality: FilterQuality.high,
+                      excludeFromSemantics: true),
+                ));
+              }),
               const SizedBox(height: VidhivatSpacing.sm),
               Text(name, textAlign: TextAlign.center, style: type.cardTitle),
             ],

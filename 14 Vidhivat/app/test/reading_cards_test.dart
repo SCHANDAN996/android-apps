@@ -21,20 +21,15 @@ void main() {
     await settings.load();
   });
 
-  // जिन ग्रंथों का अपना चित्र अभी बनना है — तब तक मिलता-जुलता पूजा-चित्र
-  // (रुद्राष्टाध्यायी पर रुद्राभिषेक वाला शिवलिंग, → D-156; prompt `docs/24` §१३)।
-  // चित्र आ जाए तो यहाँ से हटाओ — यह सूची बढ़नी नहीं चाहिए।
-  const chitraBaaki = {'rudri'};
+  const chitraBaaki = <String>{};
 
-  test('चित्र-बाक़ी वाले ग्रंथ पर दीया नहीं, असली पूजा-चित्र है', () async {
-    for (final id in chitraBaaki) {
-      final path = PaathAssets.forGranthId(id).assetPath;
-      expect(path, isNot(contains('diya')), reason: id);
-      expect(File(path).existsSync(), isTrue, reason: path);
-    }
+  test('रुद्राष्टाध्यायी का अपना चित्र उपलब्ध है', () {
+    final path = PaathAssets.forGranthId('rudri').assetPath;
+    expect(path, endsWith('reading_g_rudri_v2.webp'));
+    expect(File(path).existsSync(), isTrue);
   });
 
-  test('all 22 reading entries have distinct existing image files', () async {
+  test('all 23 reading entries have distinct existing image files', () async {
     final p = (await paathBhandar.suchi()).where((e) => e.taiyar);
     final g = [...await granthBhandar.suchi(), GranthSuchiEntry.saptashati]
         .where((e) => !chitraBaaki.contains(e.id));
@@ -42,8 +37,8 @@ void main() {
       for (final e in p) PaathAssets.forPaathId(e.id).assetPath,
       for (final e in g) PaathAssets.forGranthId(e.id).assetPath
     ];
-    expect(paths.length, 22);
-    expect(paths.toSet().length, 22);
+    expect(paths.length, 23);
+    expect(paths.toSet().length, 23);
     final content = <String>{};
     for (final path in paths) {
       expect(path, endsWith('_v2.webp'));
@@ -51,7 +46,7 @@ void main() {
       expect(file.existsSync(), isTrue, reason: path);
       content.add(base64Encode(file.readAsBytesSync()));
     }
-    expect(content.length, 22,
+    expect(content.length, 23,
         reason: 'renamed copies must not pass as new art');
   });
 
