@@ -206,6 +206,7 @@ class GranthBhandar {
     'sundarkand',
     'vishnusahasranama',
     'sukta',
+    'rudri',
     'upanishad',
     'mahabharat',
     'puran',

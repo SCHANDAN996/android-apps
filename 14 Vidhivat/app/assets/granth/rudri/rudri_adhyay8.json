@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "id": "rudri_adhyay8",
+  "naam": "रुद्राष्टाध्यायी — आठवाँ अध्याय (चमक)",
+  "upnaam": [
+    "रुद्री अध्याय ८",
+    "चमक",
+    "वाजश्च मे",
+    "वसोर्धारा"
+  ],
+  "prakar": "granth",
+  "devta": "रुद्र (भगवान शिव)",
+  "rachnakar": "शुक्ल यजुर्वेद, माध्यन्दिन शाखा",
+  "bhasha": "वैदिक संस्कृत",
+  "parichay": "उनतीस मंत्र — शुक्ल यजुर्वेद का अठारहवाँ अध्याय (१–२९)। हर मंत्र चीज़ों की लंबी सूची है — अन्न, प्राण, बल, सत्य, श्रद्धा, सुख, धन, अनाज, धातुएँ, देवता, यज्ञ के पात्र, संख्याएँ, पशु — और हर बार अंत में «यज्ञेन कल्पन्ताम्»: ये सब मेरे यज्ञ से सिद्ध हों। अंतिम मंत्र वसोर्धारा की आहुति है।",
+  "kabPadhein": "रुद्राभिषेक में — शिवलिंग पर जल, दूध या पंचामृत चढ़ाते हुए; सावन के सोमवार, महाशिवरात्रि और प्रदोष पर; या रोज़ के पाठ में।",
+  "kaisePadhein": "वेद-मंत्र परंपरा में स्वर (उदात्त-अनुदात्त) के साथ पढ़े जाते हैं। यहाँ बिना स्वर-चिह्न का पाठ है — स्वर सहित पढ़ना किसी जानकार से सीखा हो तो वैसे पढ़ें, नहीं तो साफ़ और धीमा उच्चारण रखें। कुछ परंपराओं में वेद-मंत्र गुरु से सीखकर ही पढ़े जाते हैं; अपनी परंपरा देखिए।\n\nरुद्राभिषेक में आठों अध्याय एक बार पढ़ना «रुद्री» कहलाता है। ग्यारह बार (एकादशिनी) पढ़ते समय पाँचवाँ अध्याय बीच-बीच में दोहराया जाता है — छपी पुस्तकों में आठवें अध्याय के भीतर «(न॰)» इसी का चिह्न है।\n\nनीचे \"अर्थ दिखाएँ\" दबाएँ — हर मंत्र के नीचे उसका रोमन और सरल हिंदी अर्थ दिखेगा। रोमन सिर्फ़ पढ़ने की सहायता है, शुद्ध उच्चारण का नियम नहीं।",
+  "khand": [
+    {
+      "shirshak": "मंत्र १",
+      "dev": "वाजश्च मे प्रसवश्च मे प्रयतिश्च मे प्रसितिश्च मे\nधीतिश्च मे क्रतुश्च मे स्वरश्च मे श्लोकश्च मे\nश्रवश्च मे श्रुतिश्च मे ज्योतिश्च मे स्वश्च मे\nयज्ञेन कल्पन्ताम्॥",
+      "roman": "vaajashcha me prasavashcha me prayatishcha me prasitishcha me\ndheetishcha me kratushcha me svarashcha me shlokashcha me\nshravashcha me shrutishcha me jyotishcha me svashcha me\nyajnena kalpantaam ||",
+      "arth": "अन्न, अन्न की अनुमति, शुद्धि, अन्न की चाह, ध्यान, संकल्प, सुंदर वाणी, स्तुति की शक्ति, वेद-मंत्र, सुनने की शक्ति, प्रकाश और स्वर्ग — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २",
+      "dev": "प्राणश्च मेऽपानश्च मे व्यानश्च मेऽसुश्च मे चित्तं च\nम आधीतं च मे वाक् च मे मनश्च मे चक्षुश्च मे श्रोत्रं च\nमे दक्षश्च मे बलं च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "praanashcha me'paanashcha me vyaanashcha me'sushcha me chittam cha\nma aadheetam cha me vaak cha me manashcha me chakshushcha me shrotram cha\nme dakshashcha me balam cha me yajnena kalpantaam ||",
+      "arth": "प्राण, अपान, व्यान और जीवन-वायु, चित्त, बाहरी विषयों का ज्ञान, वाणी, मन, आँखें, कान, इंद्रियों की कुशलता और बल — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ३",
+      "dev": "ओजश्च मे सहश्च म आत्मा च मे तनूश्च मे शर्म च मे\nवर्म च मेऽङ्गानि च मेऽस्थीनि च मे परूंषि च मे\nशरीराणि च म आयुश्च मे जरा च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "ojashcha me sahashcha ma aatmaa cha me tanooshcha me sharma cha me\nvarma cha me'ngaani cha me'stheeni cha me paroomshi cha me\nshareeraani cha ma aayushcha me jaraa cha me yajnena kalpantaam ||",
+      "arth": "ओज, सहनशक्ति, आत्मा, शरीर, सुख, कवच, अंग, हड्डियाँ, जोड़, निरोग शरीर, आयु और (पूरी) वृद्धावस्था — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ४",
+      "dev": "ज्यैष्ठ्यं च म आधिपत्यं च मे मन्युश्च मे भामश्च मेऽमश्च मेऽम्भश्च मे\nजेमा च मे महिमा च मे वरिमा च मे प्रथिमा च मे वर्षिमा च\nमे द्राघिमा च मे वृद्धं च मे वृद्धिश्च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "jyaishthyam cha ma aadhipatyam cha me manyushcha me bhaamashcha me'mashcha me'mbhashcha me\njemaa cha me mahimaa cha me varimaa cha me prathimaa cha me varshimaa cha\nme draaghimaa cha me vriddham cha me vriddhishcha me yajnena kalpantaam ||",
+      "arth": "श्रेष्ठता, स्वामित्व, दोष पर क्रोध, अपराध पर रोष, अपार बल, जल, जीतने की शक्ति, महिमा, विस्तार, यश, लंबी आयु, वंश की निरंतरता, समृद्धि और गुणों की वृद्धि — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ५",
+      "dev": "सत्यं च मे श्रद्धा च मे जगच्च मे धनं च मे विश्वं च\nमे महश्च मे क्रीडा च मे मोदश्च मे जातं च मे जनिष्यमाणं च\nमे सूक्तं च मे सुकृतं च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "satyam cha me shraddhaa cha me jagachcha me dhanam cha me vishvam cha\nme mahashcha me kreedaa cha me modashcha me jaatam cha me janishyamaanam cha\nme sooktam cha me sukritam cha me yajnena kalpantaam ||",
+      "arth": "सत्य, श्रद्धा, चल-अचल संपत्ति, धन, सब कुछ, यश, क्रीड़ा, आनंद, हो चुकी संतान, होने वाली संतान, शुभ ऋचाएँ और उनके पाठ का शुभ फल — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ६",
+      "dev": "ऋतं च मेऽमृतं च मेऽयक्ष्मं च मेऽनामयच्च मे जीवातुश्च मे\nदीर्घायुत्वं च मेऽनमित्रं च मेऽभयं च मे सुखं च\nमे शयनं च मे सूषाश्च मे सुदिनं च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "ritam cha me'mritam cha me'yakshmam cha me'naamayachcha me jeevaatushcha me\ndeerghaayutvam cha me'namitram cha me'bhayam cha me sukham cha\nme shayanam cha me sooshaashcha me sudinam cha me yajnena kalpantaam ||",
+      "arth": "यज्ञ-कर्म और उसका फल, रोगों का न होना, आरोग्य, जीवन के साधन, लंबी आयु, शत्रुओं का न होना, निर्भयता, सुख, अच्छी शय्या, अच्छी सुबह और अच्छा दिन — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ७",
+      "dev": "यन्ता च मे धर्त्ता च मे क्षेमश्च मे धृतिश्च मे\nविश्वं च मे महश्च मे संविच्च मे ज्ञात्रं च मे\nसूश्च मे प्रसूश्च मे सीरं च मे लयश्च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "yantaa cha me dharttaa cha me kshemashcha me dhritishcha me\nvishvam cha me mahashcha me samvichcha me jnaatram cha me\nsooshcha me prasooshcha me seeram cha me layashcha me yajnena kalpantaam ||",
+      "arth": "नियंत्रण की शक्ति, पालन की शक्ति, कुशल-क्षेम, धैर्य, सबकी अनुकूलता, सम्मान, ज्ञान, विज्ञान, प्रेरित करने और उत्पन्न करने की शक्ति, हल से खेती, और खेती के विघ्नों का नाश — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ८",
+      "dev": "शं च मे मयश्च मे प्रियं च मेऽनुकामश्च मे कामश्च मे\nसौमनसश्च मे भगश्च मे द्रविणं च मे भद्रं च मे श्रेयश्च मे\nवसीयश्च मे यशश्च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "sham cha me mayashcha me priyam cha me'nukaamashcha me kaamashcha me\nsaumanasashcha me bhagashcha me dravinam cha me bhadram cha me shreyashcha me\nvaseeyashcha me yashashcha me yajnena kalpantaam ||",
+      "arth": "इस लोक का सुख, परलोक का सुख, प्रिय वस्तु, आसानी से मिलने वाली वस्तु, इच्छित भोग, मन को प्रसन्न रखने वाले बंधु, सौभाग्य, धन, कल्याण, श्रेय, बसने योग्य घर और यश — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ९",
+      "dev": "ऊर्क् च मे सूनृता च मे पयश्च मे रसश्च मे घृतं च\nमे मधु च मे सग्धिश्च मे सपीतिश्च मे कृषिश्च मे\nवृष्टिश्च मे जैत्रं च म औद्भिद्यं च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "oork cha me soonritaa cha me payashcha me rasashcha me ghritam cha\nme madhu cha me sagdhishcha me sapeetishcha me krishishcha me\nvrishtishcha me jaitram cha ma audbhidyam cha me yajnena kalpantaam ||",
+      "arth": "अन्न, सच्ची और प्रिय वाणी, दूध, रस, घी, शहद, अपनों के साथ खाना-पीना, खेती, वर्षा, विजय, और पेड़-पौधों का उगना — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १०",
+      "dev": "रयिश्च मे रायश्च मे पुष्टं च मे पुष्टिश्च मे विभु च\nमे प्रभु च मे पूर्णं च मे पूर्णतरं च मे कुयवं च\nमेऽक्षितं च मेऽन्नं च मेऽक्षुच्च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "rayishcha me raayashcha me pushtam cha me pushtishcha me vibhu cha\nme prabhu cha me poornam cha me poornataram cha me kuyavam cha\nme'kshitam cha me'nnam cha me'kshuchcha me yajnena kalpantaam ||",
+      "arth": "रत्न, धन की प्रचुरता, शरीर की पुष्टि, व्यापकता, ऐश्वर्य, भरपूरता, और उससे भी अधिक भरपूरता, साधारण अन्न, कभी न घटने वाला अन्न, पका भोजन और उसे पचाने की शक्ति — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र ११",
+      "dev": "वित्तं च मे वेद्यं च मे भूतं च मे भविष्यच्च मे\nसुगं च मे सुपथ्यं च म ऋद्धं च म ऋद्धिश्च म क्लृप्तं च\nमे क्लृप्तिश्च मे मतिश्च मे सुमतिश्च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "vittam cha me vedyam cha me bhootam cha me bhavishyachcha me\nsugam cha me supathyam cha ma riddham cha ma riddhishcha ma klriptam cha\nme klriptishcha me matishcha me sumatishcha me yajnena kalpantaam ||",
+      "arth": "पहले से मिला धन, मिलने वाला धन, पहले से मिली संपत्ति, आगे मिलने वाली संपत्ति, सुगम मार्ग, हितकारी चीज़ें, समृद्ध फल, समृद्धि, काम के साधन, काम कर पाने की शक्ति, बुद्धि और उत्तम बुद्धि — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १२",
+      "dev": "व्रीहयश्च मे यवाश्च मे माषाश्च मे तिलाश्च मे मुद्गाश्च मे\nखल्वाश्च मे प्रियङ्गवश्च मेऽणवश्च मे श्यामाकाश्च मे\nनीवाराश्च मे गोधूमाश्च मे मसूराश्च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "vreehayashcha me yavaashcha me maashaashcha me tilaashcha me mudgaashcha me\nkhalvaashcha me priyangavashcha me'navashcha me shyaamaakaashcha me\nneevaaraashcha me godhoomaashcha me masooraashcha me yajnena kalpantaam ||",
+      "arth": "धान, जौ, उड़द, तिल, मूँग, चना, प्रियंगु, अणु (छोटा अन्न), साँवा, नीवार, गेहूँ और मसूर — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १३",
+      "dev": "अश्मा च मे मृत्तिका च मे गिरयश्च मे पर्वताश्च मे\nसिकताश्च मे वनस्पतयश्च मे हिरण्यं च मेऽयश्च मे\nश्यामं च मे लोहं च मे सीसं च मे त्रपु च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "ashmaa cha me mrittikaa cha me girayashcha me parvataashcha me\nsikataashcha me vanaspatayashcha me hiranyam cha me'yashcha me\nshyaamam cha me loham cha me seesam cha me trapu cha me yajnena kalpantaam ||",
+      "arth": "पत्थर, मिट्टी, छोटे पहाड़, बड़े पर्वत, रेत, वनस्पतियाँ, सोना, लोहा, ताँबा, काँसा, सीसा और राँगा — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १४",
+      "dev": "अग्निश्च म आपश्च मे वीरुधश्च म ओषधयश्च मे कृष्टपच्याश्च मेऽकृष्टपच्याश्च मे\nग्राम्याश्च मे पशव आरण्याश्च मे वित्तञ्च मे वित्तिश्च मे\nभूतञ्च मे भूतिश्च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "agnishcha ma aapashcha me veerudhashcha ma oshadhayashcha me krishtapachyaashcha me'krishtapachyaashcha me\ngraamyaashcha me pashava aaranyaashcha me vittancha me vittishcha me\nbhootancha me bhootishcha me yajnena kalpantaam ||",
+      "arth": "अग्नि, जल, लताएँ, औषधियाँ, जोतकर उगने वाले और बिना जोते उगने वाले अन्न, गाँव के और वन के पशु, पाया हुआ और पाने योग्य धन, संतान और ऐश्वर्य — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १५",
+      "dev": "वसु च मे वसतिश्च मे कर्म च मे शक्तिश्च मेऽर्थश्च म\nएमश्च म इत्या च मे गतिश्च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "vasu cha me vasatishcha me karma cha me shaktishcha me'rthashcha ma\nemashcha ma ityaa cha me gatishcha me yajnena kalpantaam ||",
+      "arth": "धन, रहने का घर, कर्म, कर्म करने की शक्ति, इच्छित वस्तु, पाने योग्य वस्तु, पाने का उपाय और उसकी प्राप्ति — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १६",
+      "dev": "अग्निश्च म इन्द्रश्च मे सोमश्च म इन्द्रश्च मे\nसविता च म इन्द्रश्च मे सरस्वती च म इन्द्रश्च मे\nपूषा च म इन्द्रश्च मे बृहस्पतिश्च म इन्द्रश्च मे\nयज्ञेन कल्पन्ताम्॥",
+      "roman": "agnishcha ma indrashcha me somashcha ma indrashcha me\nsavitaa cha ma indrashcha me sarasvatee cha ma indrashcha me\npooshaa cha ma indrashcha me brihaspatishcha ma indrashcha me\nyajnena kalpantaam ||",
+      "arth": "अग्नि और इन्द्र, सोम और इन्द्र, सविता और इन्द्र, सरस्वती और इन्द्र, पूषा और इन्द्र, बृहस्पति और इन्द्र — ये सब मेरे इस यज्ञ से मुझ पर प्रसन्न हों।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १७",
+      "dev": "मित्रश्च म इन्द्रश्च मे वरुणश्च म इन्द्रश्च मे\nधाता च म इन्द्रश्च मे त्वष्टा च म इन्द्रश्च मे\nमरुतश्च म इन्द्रश्च मे विश्वे च मे देवा इन्द्रश्च मे\nयज्ञेन कल्पन्ताम्॥",
+      "roman": "mitrashcha ma indrashcha me varunashcha ma indrashcha me\ndhaataa cha ma indrashcha me tvashtaa cha ma indrashcha me\nmarutashcha ma indrashcha me vishve cha me devaa indrashcha me\nyajnena kalpantaam ||",
+      "arth": "मित्र और इन्द्र, वरुण और इन्द्र, धाता और इन्द्र, त्वष्टा और इन्द्र, मरुद्गण और इन्द्र, विश्वेदेव और इन्द्र — ये सब मेरे इस यज्ञ से मुझ पर प्रसन्न हों।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १८",
+      "dev": "पृथिवी च म इन्द्रश्च मेऽन्तरिक्षं च म इन्द्रश्च मे\nद्यौश्च म इन्द्रश्च मे समाश्च म इन्द्रश्च मे नक्षत्राणि च\nम इन्द्रश्च मे दिशश्च म इन्द्रश्च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "prithivee cha ma indrashcha me'ntariksham cha ma indrashcha me\ndyaushcha ma indrashcha me samaashcha ma indrashcha me nakshatraani cha\nma indrashcha me dishashcha ma indrashcha me yajnena kalpantaam ||",
+      "arth": "पृथ्वी और इन्द्र, अंतरिक्ष और इन्द्र, द्युलोक और इन्द्र, वर्ष के देवता और इन्द्र, नक्षत्र और इन्द्र, दिशाएँ और इन्द्र — ये सब मेरे इस यज्ञ से मुझ पर प्रसन्न हों।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र १९",
+      "dev": "अंशुश्च मे रश्मिश्च मेऽदाभ्यश्च मेऽधिपतिश्च म\nउपांशुश्च मेऽन्तर्यामश्च म ऐन्द्रवायवश्च मे मैत्रावरुणश्च म\nआश्विनश्च मे प्रतिप्रस्थानश्च मे शुक्रश्च मे मन्थी च\nमे यज्ञेन कल्पन्ताम्॥",
+      "roman": "amshushcha me rashmishcha me'daabhyashcha me'dhipatishcha ma\nupaamshushcha me'ntaryaamashcha ma aindravaayavashcha me maitraavarunashcha ma\naashvinashcha me pratiprasthaanashcha me shukrashcha me manthee cha\nme yajnena kalpantaam ||",
+      "arth": "अंशु, रश्मि, अदाभ्य, अधिपति, उपांशु, अंतर्याम, ऐन्द्रवायव, मैत्रावरुण, आश्विन, प्रतिप्रस्थान, शुक्र और मन्थी — सोम-यज्ञ के ये सब पात्र (ग्रह) मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २०",
+      "dev": "आग्रयणश्च मे वैश्वदेवश्च मे ध्रुवश्च मे वैश्वानरश्च म\nऐन्द्राग्नश्च मे महावैश्वदेवश्च मे मरुत्वतीयाश्च मे\nनिष्केवल्यश्च मे सावित्रश्च मे सारस्वतश्च मे पात्नीवतश्च मे\nहारियोजनश्च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "aagrayanashcha me vaishvadevashcha me dhruvashcha me vaishvaanarashcha ma\naindraagnashcha me mahaavaishvadevashcha me marutvateeyaashcha me\nnishkevalyashcha me saavitrashcha me saarasvatashcha me paatneevatashcha me\nhaariyojanashcha me yajnena kalpantaam ||",
+      "arth": "आग्रयण, वैश्वदेव, ध्रुव, वैश्वानर, ऐन्द्राग्न, महावैश्वदेव, मरुत्वतीय, निष्केवल्य, सावित्र, सारस्वत, पात्नीवत और हारियोजन — ये यज्ञ-पात्र (ग्रह) मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २१",
+      "dev": "स्रुचश्च मे चमसाश्च मे वायव्यानि च मे द्रोणकलशश्च मे\nग्रावाणश्च मेऽधिषवणे च मे पूतभृच्च म आधवनीयश्च मे\nवेदिश्च मे बर्हिश्च मेऽवभृथश्च मे स्वगाकारश्च मे\nयज्ञेन कल्पन्ताम्॥",
+      "roman": "sruchashcha me chamasaashcha me vaayavyaani cha me dronakalashashcha me\ngraavaanashcha me'dhishavane cha me pootabhrichcha ma aadhavaneeyashcha me\nvedishcha me barhishcha me'vabhrithashcha me svagaakaarashcha me\nyajnena kalpantaam ||",
+      "arth": "स्रुवा-स्रुच, चमस, वायव्य पात्र, द्रोणकलश, सोम कूटने के पत्थर, उनके तख़्ते, पूतभृत्, आधवनीय, वेदी, कुशा, यज्ञांत स्नान (अवभृथ) और अंतिम वचन — ये सब यज्ञ की सामग्री मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २२",
+      "dev": "अग्निश्च मे घर्मश्च मेऽर्कश्च मे सूर्यश्च मे प्राणश्च मेऽश्वमेधश्च मे\nपृथिवी च मेऽदितिश्च मे दितिश्च मे द्यौश्च मेऽङ्गुलयः शक्वरयो दिशश्च मे\nयज्ञेन कल्पन्ताम्॥",
+      "roman": "agnishcha me gharmashcha me'rkashcha me sooryashcha me praanashcha me'shvamedhashcha me\nprithivee cha me'ditishcha me ditishcha me dyaushcha me'ngulayah shakvarayo dishashcha me\nyajnena kalpantaam ||",
+      "arth": "अग्नि, प्रवर्ग्य, सूर्य-संबंधी हवि, सूर्य, प्राण, अश्वमेध, पृथ्वी, अदिति, दिति, द्युलोक, विराट के अंग, शक्तियाँ और दिशाएँ — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २३",
+      "dev": "व्रतं च म ऋतवश्च मे तपश्च मे संवत्सरश्च मेऽहोरात्रे ऊर्वष्ठीवे बृहद्रथन्तरे च\nमे यज्ञेन कल्पन्ताम्॥",
+      "roman": "vratam cha ma ritavashcha me tapashcha me samvatsarashcha me'horaatre oorvashtheeve brihadrathantare cha\nme yajnena kalpantaam ||",
+      "arth": "व्रत, ऋतुएँ, तप, संवत्सर, दिन-रात, जंघा और घुटने (शरीर के अंग), और बृहत् तथा रथंतर साम — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २४",
+      "dev": "एका च मे तिस्रश्च मे तिस्रश्च मे पञ्च च मे पञ्च च\nमे सप्त च मे सप्त च मे नव च मे नव च म एकादश च\nम एकादश च मे त्रयोदश च मे त्रयोदश च मे पञ्चदश च\nमे पञ्चदश च मे सप्तदश च मे सप्तदश च मे नवदश च\nमे नवदश च म एकविंशतिश्च म एकविंशतिश्च मे त्रयोविंशतिश्च मे\nत्रयोविंशतिश्च मे पञ्चविंशतिश्च मे पञ्चविंशतिश्च मे\nसप्तविंशतिश्च मे सप्तविंशतिश्च मे नवविंशतिश्च मे\nनवविंशतिश्च म एकत्रिंशच्च म एकत्रिंशच्च मे त्रयस्त्रिंशच्च मे\nयज्ञेन कल्पन्ताम्॥",
+      "roman": "ekaa cha me tisrashcha me tisrashcha me pancha cha me pancha cha\nme sapta cha me sapta cha me nava cha me nava cha ma ekaadasha cha\nma ekaadasha cha me trayodasha cha me trayodasha cha me panchadasha cha\nme panchadasha cha me saptadasha cha me saptadasha cha me navadasha cha\nme navadasha cha ma ekavimshatishcha ma ekavimshatishcha me trayovimshatishcha me\ntrayovimshatishcha me panchavimshatishcha me panchavimshatishcha me\nsaptavimshatishcha me saptavimshatishcha me navavimshatishcha me\nnavavimshatishcha ma ekatrimshachcha ma ekatrimshachcha me trayastrimshachcha me\nyajnena kalpantaam ||",
+      "arth": "एक और तीन, तीन और पाँच, पाँच और सात — इसी तरह विषम संख्याओं के जोड़े तैंतीस तक — इन सब संख्याओं से कहे जाने वाले श्रेष्ठ पदार्थ मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २५",
+      "dev": "चतस्रश्च मेऽष्टौ च मेऽष्टौ च मे द्वादश च मे द्वादश च\nमे षोडश च मे षोडश च मे विंशतिश्च मे विंशतिश्च मे\nचतुर्विंशतिश्च मे चतुर्विंशतिश्च मेऽष्टाविंशतिश्च मेऽष्टाविंशतिश्च मे\nद्वात्रिंशच्च मे द्वात्रिंशच्च मे षट्त्रिंशच्च मे\nषट्त्रिंशच्च मे चत्वारिंशच्च मे चत्वारिंशच्च मे\nचतुश्चत्वारिंशच्च मे चतुश्चत्वारिंशच्च मेऽष्टाचत्वारिंशच्च मे\nयज्ञेन कल्पन्ताम्॥",
+      "roman": "chatasrashcha me'shtau cha me'shtau cha me dvaadasha cha me dvaadasha cha\nme shodasha cha me shodasha cha me vimshatishcha me vimshatishcha me\nchaturvimshatishcha me chaturvimshatishcha me'shtaavimshatishcha me'shtaavimshatishcha me\ndvaatrimshachcha me dvaatrimshachcha me shattrimshachcha me\nshattrimshachcha me chatvaarimshachcha me chatvaarimshachcha me\nchatushchatvaarimshachcha me chatushchatvaarimshachcha me'shtaachatvaarimshachcha me\nyajnena kalpantaam ||",
+      "arth": "चार और आठ, आठ और बारह, बारह और सोलह — इसी तरह चार-चार बढ़ती संख्याओं के जोड़े अड़तालीस तक — इन सब संख्याओं से कहे जाने वाले श्रेष्ठ पदार्थ मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २६",
+      "dev": "त्र्यविश्च मे त्र्यवी च मे दित्यवाट् च मे दित्यौही च\nमे पञ्चाविश्च मे पञ्चावी च मे त्रिवत्सश्च मे त्रिवत्सा च\nमे तुर्यवाट् च मे तुर्यौही च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "tryavishcha me tryavee cha me dityavaat cha me dityauhee cha\nme panchaavishcha me panchaavee cha me trivatsashcha me trivatsaa cha\nme turyavaat cha me turyauhee cha me yajnena kalpantaam ||",
+      "arth": "डेढ़ वर्ष के बछड़ा-बछिया, दो वर्ष के, ढाई वर्ष के, तीन वर्ष के और साढ़े तीन वर्ष के बैल और गाय — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २७",
+      "dev": "पष्ठवाट् च मे पष्ठौही च म उक्षा च मे वशा च म ऋषभश्च मे\nवेहच्च मेऽनड्वाँश्च मे धेनुश्च मे यज्ञेन कल्पन्ताम्॥",
+      "roman": "pashthavaat cha me pashthauhee cha ma ukshaa cha me vashaa cha ma rishabhashcha me\nvehachcha me'nadvaanshcha me dhenushcha me yajnena kalpantaam ||",
+      "arth": "चार वर्ष के बैल और गाय, सींचने में समर्थ बैल, बाँझ गाय, तरुण बैल, गर्भ गिरा चुकी गाय, बोझ ढोने वाला बैल और नई ब्याई गाय — ये सब मेरे इस यज्ञ के फल-रूप में मुझे मिलें।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २८",
+      "dev": "वाजाय स्वाहा प्रसवाय स्वाहाऽपिजाय स्वाहा क्रतवे स्वाहा\nवसवे स्वाहाऽहर्पतये स्वाहाह्ने मुग्धाय स्वाहा\nमुग्धाय वैनंशिनाय स्वाहा विनंशिन आन्त्यायनाय स्वाहान्त्याय भौवनाय स्वाहा\nभुवनस्य पतये स्वाहाधिपतये स्वाहा प्रजापतये स्वाहा।\nइयं ते राण्मित्राय यन्तासि यमन ऊर्जे त्वा वृष्ट्यै त्वा प्रजानां त्वाधिपत्याय॥",
+      "roman": "vaajaaya svaahaa prasavaaya svaahaa'pijaaya svaahaa kratave svaahaa\nvasave svaahaa'harpataye svaahaahne mugdhaaya svaahaa\nmugdhaaya vainamshinaaya svaahaa vinamshina aantyaayanaaya svaahaantyaaya bhauvanaaya svaahaa\nbhuvanasya pataye svaahaadhipataye svaahaa prajaapataye svaahaa |\niyam te raanmitraaya yantaasi yamana oorje tvaa vrishtyai tvaa prajaanaam tvaadhipatyaaya ||",
+      "arth": "गीताप्रेस के अनुवाद के अनुसार ये बारह महीनों (चैत्र से फाल्गुन तक) और उनके स्वामी प्रजापति के लिए आहुतियाँ हैं — हर नाम के साथ «यह आहुति समर्पित»। फिर अग्नि से: यह (यज्ञ-स्थान) आपका राज्य है, आप यजमान के मित्र और नियंता हैं; अन्न के लिए, वर्षा के लिए और प्रजाओं पर प्रभुता के लिए मैं आपका अभिषेक करता हूँ।",
+      "audio": "",
+      "sthiti": "draft"
+    },
+    {
+      "shirshak": "मंत्र २९",
+      "dev": "आयुर्यज्ञेन कल्पतां प्राणो यज्ञेन कल्पतां चक्षुर्यज्ञेन कल्पतां\nश्रोत्रं यज्ञेन कल्पतां वाग्यज्ञेन कल्पतां मनो यज्ञेन कल्पतामात्मा यज्ञेन कल्पतां\nब्रह्मा यज्ञेन कल्पतां ज्योतिर्यज्ञेन कल्पतां\nस्वर्यज्ञेन कल्पतां पृष्ठं यज्ञेन कल्पतां यज्ञो यज्ञेन कल्पताम्।\nस्तोमश्च यजुश्च ऋक् च साम च बृहच्च रथन्तरञ्च।\nस्वर्देवा अगन्मामृता अभूम प्रजापतेः प्रजा अभूम वेट् स्वाहा॥",
+      "roman": "aayuryajnena kalpataam praano yajnena kalpataam chakshuryajnena kalpataam\nshrotram yajnena kalpataam vaagyajnena kalpataam mano yajnena kalpataamaatmaa yajnena kalpataam\nbrahmaa yajnena kalpataam jyotiryajnena kalpataam\nsvaryajnena kalpataam prishtham yajnena kalpataam yajno yajnena kalpataam |\nstomashcha yajushcha rik cha saama cha brihachcha rathantarancha |\nsvardevaa aganmaamritaa abhooma prajaapateh prajaa abhooma vet svaahaa ||",
+      "arth": "यज्ञ से मेरी आयु बढ़े; प्राण, आँखें, कान, वाणी, मन और आत्मा यज्ञ से समर्थ हों; यज्ञ से वेद, ज्योति, स्वर्ग, सुख और स्वयं यज्ञ सिद्ध हो। स्तोम, यजुष्, ऋचा, साम, बृहत् और रथंतर (हम पर कृपा करें)। हे देवताओ, हम स्वर्ग पहुँचें, अमर हों, प्रजापति की प्रजा बनें — यह आहुति समर्पित।",
+      "audio": "",
+      "sthiti": "draft"
+    }
+  ],
+  "bharosa": "uncha",
+  "strot": {
+    "paddhati": "शुक्ल यजुर्वेद (माध्यन्दिन) — अध्याय १८, मंत्र १–२९",
+    "kshetra": "उत्तर भारत की रुद्राभिषेक-पद्धति",
+    "note": "उनतीसों मंत्र दो छपी पुस्तकों (गीताप्रेस, «शिवपूजा विधि — रुद्री सहित») के पन्नों से मिलाए गए। पुस्तकों में बीच-बीच में «(न॰)» छपा है — ग्यारह बार पाठ में वहाँ पाँचवाँ अध्याय दोहराने का चिह्न; संहिता का हिस्सा नहीं, यहाँ नहीं छापा।\n\nअट्ठाईसवें मंत्र का अर्थ गीताप्रेस की व्याख्या (बारह महीनों के नाम) पर है; दूसरे भाष्यकार इन शब्दों को अलग पढ़ते हैं।\n\nअर्थ सरल शब्दों में है, शब्दशः अनुवाद नहीं।"
+  },
+  "jaanch": {
+    "panditNaam": "",
+    "tarikh": "",
+    "paas": false
+  }
+}

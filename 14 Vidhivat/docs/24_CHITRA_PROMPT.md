@@ -723,3 +723,40 @@ deity figure, hands or faces; any background scene, ground or shadow cast
 onto a surface; any text, letters, numbers, watermark, signature or border
 frame.
 ```
+
+## १३ · ग्रंथालय — रुद्राष्टाध्यायी (26 अक्टूबर 2026 · → D-156)
+
+ग्रंथालय के बाक़ी कार्ड (`reading_g_*_v2.webp`, 640 × 640, पारदर्शी) जैसा — नीचे लाल-सुनहरी पट्टी पर ग्रंथ का नाम देवनागरी में।
+आज रुद्राष्टाध्यायी पर रुद्राभिषेक वाला चित्र लगा है, और `app/test/reading_cards_test.dart` में `chitraBaaki = {'rudri'}` का
+अपवाद है — चित्र आए तो `paath_assets.dart` की entry बदलो और वह अपवाद हटाओ। **नाम की वर्तनी ज़रूर जाँचें** — AI देवनागरी
+अक्सर बिगाड़ता है; ग़लत हो तो पट्टी बिना नाम के माँगें और नाम बाद में जोड़ें।
+
+### `reading_g_rudri_v2.webp` · 640 × 640
+
+```
+A devotional title-card illustration for the Hindu scripture
+"Rudrashtadhyayi" (the Vedic hymns recited during Rudrabhishek), as a clean
+cut-out object group on a TRANSPARENT background (PNG with alpha channel).
+Square 1:1 canvas, 1024 x 1024 pixels, matching a set of scripture cards.
+
+COMPOSITION (centred, everything inside the central 90% of the canvas):
+- UPPER PART (the hero): an open old palm-leaf / hand-bound manuscript
+  resting on a carved wooden book-stand with gold trim, exactly in the
+  style of a scripture card.
+- In front of the stand, slightly left: a small black stone Shiva lingam on
+  a brass base, with a thin stream of milk being poured on it from a small
+  copper lota held by no one (the lota is simply tilted on a stand), three
+  fresh green bilva (bael) leaves on top of the lingam.
+- Right: a small brass diya with a calm golden flame and a rudraksha mala.
+- LOWER PART: an ornate maroon-and-gold title banner with scrolls at both
+  ends, carrying the title in large clear golden Devanagari letters:
+  "रुद्राष्टाध्यायी" (spell exactly: र ु द ् र ा ष ् ट ा ध ् य ा य ी).
+
+STYLE: Devotional Indian illustration, photorealistic 3D render with
+calendar-art warmth, rich copper, gold, maroon and fresh green; crisp clean
+edges suitable for cut-out; same look as a set of scripture title cards.
+
+STRICTLY AVOID: any human or deity figure, hands or faces; snakes; skulls;
+background scene; any extra text, letters or numbers other than the one
+title; watermark; signature.
+```

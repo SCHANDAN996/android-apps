@@ -21,9 +21,23 @@ void main() {
     await settings.load();
   });
 
+  // जिन ग्रंथों का अपना चित्र अभी बनना है — तब तक मिलता-जुलता पूजा-चित्र
+  // (रुद्राष्टाध्यायी पर रुद्राभिषेक वाला शिवलिंग, → D-156; prompt `docs/24` §१३)।
+  // चित्र आ जाए तो यहाँ से हटाओ — यह सूची बढ़नी नहीं चाहिए।
+  const chitraBaaki = {'rudri'};
+
+  test('चित्र-बाक़ी वाले ग्रंथ पर दीया नहीं, असली पूजा-चित्र है', () async {
+    for (final id in chitraBaaki) {
+      final path = PaathAssets.forGranthId(id).assetPath;
+      expect(path, isNot(contains('diya')), reason: id);
+      expect(File(path).existsSync(), isTrue, reason: path);
+    }
+  });
+
   test('all 22 reading entries have distinct existing image files', () async {
     final p = (await paathBhandar.suchi()).where((e) => e.taiyar);
-    final g = [...await granthBhandar.suchi(), GranthSuchiEntry.saptashati];
+    final g = [...await granthBhandar.suchi(), GranthSuchiEntry.saptashati]
+        .where((e) => !chitraBaaki.contains(e.id));
     final paths = [
       for (final e in p) PaathAssets.forPaathId(e.id).assetPath,
       for (final e in g) PaathAssets.forGranthId(e.id).assetPath
