@@ -2,7 +2,7 @@ name: vidhivat
 description: "विधिवत — पूजा विधि, पंचांग, मुहूर्त। 100% ऑफलाइन।"
 publish_to: 'none'
 
-version: 1.2.0+8
+version: 1.2.0+9
 
 environment:
   sdk: ^3.5.0
