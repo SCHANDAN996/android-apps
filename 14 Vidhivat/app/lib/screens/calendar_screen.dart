@@ -57,6 +57,24 @@ class _CalendarScreenState extends State<CalendarScreen>
     });
   }
 
+  Future<void> _chooseDate() async {
+    final day = await showDatePicker(
+      context: context,
+      initialDate: _selectedDay,
+      firstDate: DateTime(_selectedDay.year < 1900 ? _selectedDay.year : 1900),
+      lastDate:
+          DateTime(_selectedDay.year > 2100 ? _selectedDay.year : 2100, 12, 31),
+      helpText: 'तारीख़ चुनें',
+      cancelText: 'वापस',
+      confirmText: 'देखें',
+    );
+    if (day == null || !mounted) return;
+    setState(() {
+      _month = DateTime(day.year, day.month);
+      _selectedDay = day;
+    });
+  }
+
   List<FestivalDate> _festivalsForYear(int year) {
     final key = '$year|${settings.city.cacheKey}';
     final cached = _festivalCache[key];
@@ -103,6 +121,14 @@ class _CalendarScreenState extends State<CalendarScreen>
     return Scaffold(
       appBar: AppBar(
         title: const Text('कैलेंडर'),
+        actions: [
+          IconButton(
+            key: const Key('calendar_choose_date'),
+            tooltip: 'तारीख़ पर जाएँ',
+            icon: const Icon(Icons.date_range_outlined),
+            onPressed: _chooseDate,
+          ),
+        ],
         bottom: TabBar(
           controller: _tabs,
           tabs: const [Tab(text: 'महीना'), Tab(text: 'त्योहार')],
@@ -140,7 +166,17 @@ class _CalendarScreenState extends State<CalendarScreen>
                 },
                 onSelect: (day) => setState(() => _selectedDay = day),
               ),
-              _TyoharTab(year: _month.year, festivals: festivals),
+              _TyoharTab(
+                year: _month.year,
+                festivals: festivals,
+                onDay: (day) {
+                  setState(() {
+                    _month = DateTime(day.year, day.month);
+                    _selectedDay = day;
+                  });
+                  _tabs.animateTo(0);
+                },
+              ),
             ],
           ),
         ),
@@ -191,39 +227,51 @@ class _MahinaTab extends StatelessWidget {
           child: VidhivatSurfaceCard(
             variant: VidhivatCardVariant.highlight,
             padding: const EdgeInsets.symmetric(horizontal: VidhivatSpacing.xs),
-            child: Row(
+            child: Column(
               children: [
-                VidhivatIconAction(
-                  key: const Key('calendar_previous_month'),
-                  onPressed: () => onShift(-1),
-                  icon: Icons.chevron_left,
-                  tooltip: 'पिछला महीना',
-                ),
-                Expanded(
+                Padding(
+                  padding: const EdgeInsets.only(top: VidhivatSpacing.sm),
                   child: Text(
                     tarikh(month).split(' ').skip(1).join(' '),
                     textAlign: TextAlign.center,
                     style: VidhivatTheme.typographyOf(context).sectionTitle,
                   ),
                 ),
-                VidhivatButton(
-                  label: 'आज',
-                  icon: Icons.today_outlined,
-                  compact: true,
-                  variant: VidhivatButtonVariant.text,
-                  onPressed: onToday,
-                ),
-                VidhivatIconAction(
-                  key: const Key('calendar_next_month'),
-                  onPressed: () => onShift(1),
-                  icon: Icons.chevron_right,
-                  tooltip: 'अगला महीना',
-                ),
+                Row(children: [
+                  VidhivatIconAction(
+                    key: const Key('calendar_previous_month'),
+                    onPressed: () => onShift(-1),
+                    icon: Icons.chevron_left,
+                    tooltip: 'पिछला महीना',
+                  ),
+                  const Spacer(),
+                  VidhivatButton(
+                    label: 'आज',
+                    icon: Icons.today_outlined,
+                    compact: true,
+                    variant: VidhivatButtonVariant.text,
+                    onPressed: onToday,
+                  ),
+                  const Spacer(),
+                  VidhivatIconAction(
+                    key: const Key('calendar_next_month'),
+                    onPressed: () => onShift(1),
+                    icon: Icons.chevron_right,
+                    tooltip: 'अगला महीना',
+                  ),
+                ]),
               ],
             ),
           ),
         ),
         const SizedBox(height: VidhivatSpacing.md),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: VidhivatSpacing.sm),
+          child: Text(
+            '${settings.city.name} · सूर्योदय की तिथि',
+            style: VidhivatTheme.typographyOf(context).caption,
+          ),
+        ),
         _WeekdayHeader(),
         const SizedBox(height: VidhivatSpacing.xs),
         GridView.builder(
@@ -231,9 +279,10 @@ class _MahinaTab extends StatelessWidget {
           primary: false,
           physics: const NeverScrollableScrollPhysics(),
           itemCount: leadingEmptyCells + lastDay,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 7,
-            mainAxisExtent: VidhivatSpacing.massive,
+            mainAxisExtent:
+                MediaQuery.textScalerOf(context).scale(14) > 21 ? 94 : 80,
           ),
           itemBuilder: (context, index) {
             if (index < leadingEmptyCells) {
@@ -249,11 +298,24 @@ class _MahinaTab extends StatelessWidget {
               selected: _sameDay(day, selectedDay),
               today: _sameDay(day, today),
               festivals: dayFestivals,
-              festivalLabel:
-                  dayFestivals.isEmpty ? null : dayFestivals.first.rule.name,
               onTap: () => onSelect(day),
             );
           },
+        ),
+        Padding(
+          padding: const EdgeInsets.all(VidhivatSpacing.sm),
+          child: Wrap(
+            spacing: VidhivatSpacing.md,
+            runSpacing: VidhivatSpacing.xs,
+            children: [
+              _CalendarLegend(Icons.check_box_outline_blank, 'चुना दिन',
+                  VidhivatTheme.colorsOf(context).primary),
+              _CalendarLegend(Icons.today_outlined, 'आज',
+                  VidhivatTheme.colorsOf(context).info),
+              _CalendarLegend(Icons.event_outlined, 'त्योहार / व्रत',
+                  VidhivatTheme.colorsOf(context).primary),
+            ],
+          ),
         ),
         const SizedBox(height: VidhivatSpacing.xxl),
         const Padding(
@@ -405,6 +467,25 @@ class _WeekdayHeader extends StatelessWidget {
       );
 }
 
+class _CalendarLegend extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final Color color;
+  const _CalendarLegend(this.icon, this.label, this.color);
+
+  @override
+  Widget build(BuildContext context) => Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 16, color: color),
+          const SizedBox(width: 4),
+          Flexible(
+              child: Text(label,
+                  style: VidhivatTheme.typographyOf(context).caption)),
+        ],
+      );
+}
+
 class _PanchangChip extends StatelessWidget {
   final String label;
   final String value;
@@ -437,7 +518,6 @@ class _CalendarDay extends StatelessWidget {
   final bool selected;
   final bool today;
   final List<FestivalDate> festivals;
-  final String? festivalLabel;
   final VoidCallback onTap;
 
   const _CalendarDay({
@@ -446,7 +526,6 @@ class _CalendarDay extends StatelessWidget {
     required this.selected,
     required this.today,
     required this.festivals,
-    required this.festivalLabel,
     required this.onTap,
   });
 
@@ -522,22 +601,26 @@ class _CalendarDay extends StatelessWidget {
                       ),
                     ),
                   ),
-                  if (festivalLabel != null)
-                    Flexible(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: VidhivatSpacing.xxs,
-                        ),
+                  Flexible(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: VidhivatSpacing.xxs,
+                      ),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
                         child: Text(
-                          festivalLabel!,
+                          tithi.tithiName,
                           maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
                           style: VidhivatTheme.typographyOf(context)
                               .caption
-                              .copyWith(color: colors.primary),
+                              .copyWith(
+                                  color: festivals.isNotEmpty
+                                      ? colors.primary
+                                      : colors.textSecondary),
                         ),
                       ),
                     ),
+                  ),
                   SizedBox(
                     height: VidhivatSpacing.sm,
                     child: Row(
@@ -573,8 +656,10 @@ class _CalendarDay extends StatelessWidget {
 class _TyoharTab extends StatefulWidget {
   final int year;
   final List<FestivalDate> festivals;
+  final ValueChanged<DateTime> onDay;
 
-  const _TyoharTab({required this.year, required this.festivals});
+  const _TyoharTab(
+      {required this.year, required this.festivals, required this.onDay});
 
   @override
   State<_TyoharTab> createState() => _TyoharTabState();
@@ -582,14 +667,31 @@ class _TyoharTab extends StatefulWidget {
 
 class _TyoharTabState extends State<_TyoharTab> {
   _FestivalFilter _filter = _FestivalFilter.all;
+  String _query = '';
+  bool _upcomingOnly = false;
+  final _search = TextEditingController();
+
+  @override
+  void dispose() {
+    _search.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final filtered = widget.festivals
-        .where((festival) => _matchesFestivalFilter(festival, _filter))
-        .toList(growable: false);
     final today = DateTime.now();
     final todayStart = DateTime(today.year, today.month, today.day);
+    final filtered = widget.festivals.where((festival) {
+      final dates = [
+        festival.date,
+        if (festival.ambiguous && festival.otherCandidate != null)
+          festival.otherCandidate!
+      ];
+      return _matchesFestivalFilter(festival, _filter) &&
+          festival.rule.name.contains(_query.trim()) &&
+          (!_upcomingOnly || dates.any((day) => !day.isBefore(todayStart)));
+    }).toList()
+      ..sort((a, b) => a.date.compareTo(b.date));
     FestivalDate? next;
     for (final festival in widget.festivals) {
       if (!festival.date.isBefore(todayStart)) {
@@ -606,9 +708,52 @@ class _TyoharTabState extends State<_TyoharTab> {
         if (next != null) ...[
           const VidhivatSectionHeader(title: 'अगला महत्वपूर्ण दिन'),
           const SizedBox(height: VidhivatSpacing.sm),
-          _TyoharCard(f: next),
+          VidhivatSurfaceCard(
+            variant: VidhivatCardVariant.highlight,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(next.rule.name,
+                    style: VidhivatTheme.typographyOf(context).cardTitle),
+                Text(tarikh(next.date)),
+                TextButton.icon(
+                  onPressed: () => widget.onDay(next!.date),
+                  icon: const Icon(Icons.calendar_month_outlined),
+                  label: const Text('कैलेंडर में देखें'),
+                ),
+              ],
+            ),
+          ),
           const SizedBox(height: VidhivatSpacing.lg),
         ],
+        TextField(
+          key: const Key('calendar_festival_search'),
+          controller: _search,
+          onChanged: (value) => setState(() => _query = value),
+          decoration: InputDecoration(
+            labelText: 'त्योहार या व्रत खोजें',
+            hintText: 'जैसे एकादशी, दीपावली',
+            prefixIcon: const Icon(Icons.search_rounded),
+            suffixIcon: _query.isEmpty
+                ? null
+                : IconButton(
+                    tooltip: 'खोज साफ़ करें',
+                    icon: const Icon(Icons.close_rounded),
+                    onPressed: () => setState(() {
+                      _search.clear();
+                      _query = '';
+                    }),
+                  ),
+            border: const OutlineInputBorder(),
+          ),
+        ),
+        const SizedBox(height: VidhivatSpacing.sm),
+        FilterChip(
+          label: const Text('केवल आने वाले दिन'),
+          selected: _upcomingOnly,
+          onSelected: (value) => setState(() => _upcomingOnly = value),
+        ),
+        const SizedBox(height: VidhivatSpacing.sm),
         Wrap(
           spacing: VidhivatSpacing.xs,
           runSpacing: VidhivatSpacing.xs,
@@ -622,14 +767,31 @@ class _TyoharTabState extends State<_TyoharTab> {
           ],
         ),
         const SizedBox(height: VidhivatSpacing.lg),
+        Text('${filtered.length} दिन मिले',
+            key: const Key('calendar_result_count'),
+            style: VidhivatTheme.typographyOf(context).caption),
+        const SizedBox(height: VidhivatSpacing.sm),
         if (filtered.isEmpty)
           Text(
-            'इस श्रेणी में कोई दिन नहीं मिला।',
+            'कोई दिन नहीं मिला। खोज या चुनी हुई श्रेणी बदलकर देखें।',
             textAlign: TextAlign.justify,
             style: VidhivatTheme.typographyOf(context).bodySmall,
           )
         else
-          for (final f in filtered) _TyoharCard(f: f),
+          for (var i = 0; i < filtered.length; i++) ...[
+            if (i == 0 || filtered[i].date.month != filtered[i - 1].date.month)
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: VidhivatSpacing.sm),
+                child: VidhivatSectionHeader(
+                  title: tarikh(DateTime(widget.year, filtered[i].date.month))
+                      .split(' ')
+                      .skip(1)
+                      .join(' '),
+                ),
+              ),
+            _TyoharCard(f: filtered[i]),
+          ],
       ],
     );
   }

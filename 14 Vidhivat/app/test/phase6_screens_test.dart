@@ -20,7 +20,8 @@ import 'package:vidhivat/widgets/common.dart';
 void main() {
   setUp(() async {
     // जगह की खोज लिखते ही इंटरनेट पर जाती है (→ D-134) — जाँच में नक़ली सर्वर
-    osmKhoj = OsmKhoj(laao: (_) async => const OsmJawab(200, '{"features":[]}'));
+    osmKhoj =
+        OsmKhoj(laao: (_) async => const OsmJawab(200, '{"features":[]}'));
     SharedPreferences.setMockInitialValues({});
     await settings.load();
     await settings.setYajman(name: 'चन्दन', gotra: 'कश्यप');
@@ -137,6 +138,10 @@ void main() {
     await tester.ensureVisible(festivalDay);
     await tester.tap(festivalDay);
     await tester.pump();
+    // Grid में तिथि और पूरा festival semantic है; नाम चयन के नीचे खुलता है।
+    await tester.scrollUntilVisible(find.text(festival.rule.name), 160,
+        scrollable: find.byWidgetPredicate((widget) =>
+            widget is Scrollable && widget.axisDirection == AxisDirection.down).first);
     expect(find.text(festival.rule.name), findsWidgets);
 
     expect(tester.takeException(), isNull);
