@@ -759,7 +759,10 @@ void main() {
 
       expect(find.text('आज क्या करना चाहते हैं?'), findsOneWidget);
       await scrollTak(tester, find.text('त्योहार'));
-      expect(find.text('सत्यनारायण पूजा'), findsWidgets);
+      // आने वाली पूजाओं/पर्व के कारण पहला card viewport से नीचे हो सकता है।
+      // Section heading दिखना सभी lazy children बन जाने का प्रमाण नहीं है।
+      await scrollTak(tester, suchiMein('सत्यनारायण पूजा'));
+      expect(suchiMein('सत्यनारायण पूजा'), findsOneWidget);
     });
 
     testWidgets('नई खोज-परतें बिना overflow के दिखती हैं', (tester) async {
