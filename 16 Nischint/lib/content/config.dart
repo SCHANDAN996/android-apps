@@ -3,6 +3,7 @@ class AppConfig {
   AppConfig._();
 
   static const String appName = 'निश्चिंत';
+  static const String partnerAppName = 'निश्चिंत पार्टनर';
   static const String tagline = 'घर का हर काम, आप निश्चिंत।';
   static const String vendorLine = 'आप पैनल लगाइए, मेंटेनेंस हम संभाल लेंगे।';
   static const String version = '0.1.0';

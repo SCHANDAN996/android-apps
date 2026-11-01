@@ -77,7 +77,7 @@ class ContactService {
       if (c.portalComplaintId.isNotEmpty) 'पोर्टल शिकायत नंबर: ${c.portalComplaintId}',
       if (c.note.isNotEmpty) 'नोट: ${c.note}',
       '',
-      '(${AppConfig.appName} ऐप से भेजा गया)',
+      '(${AppConfig.partnerAppName} ऐप से भेजा गया)',
     ];
     return lines.join('\n');
   }
@@ -93,5 +93,6 @@ class ContactService {
   /// वेंडर का मुफ़्त पायलट के बारे में पूछना।
   static String pilotMessage(VendorProfile v) =>
       'नमस्ते, मैं ${v.firmName.isEmpty ? 'एक सोलर वेंडर' : v.firmName} से। '
-      'आपके मेंटेनेंस और शिकायत सर्विस के मुफ़्त पायलट के बारे में बात करनी है।';
+      'आपके मेंटेनेंस और शिकायत सर्विस के मुफ़्त पायलट के बारे में बात करनी है।\n'
+      '(${AppConfig.partnerAppName} ऐप से)';
 }
