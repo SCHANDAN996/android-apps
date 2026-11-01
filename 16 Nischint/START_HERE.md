@@ -47,6 +47,7 @@
 │   ├── 02_VENDOR_SALES_PLAYBOOK.md    ← वेंडर की ज़िम्मेदारी, उसकी कमाई, हमारा मॉडल, मैसेज, स्क्रिप्ट, आपत्तियाँ
 │   ├── 03_VENDORS_VARANASI.md         ← वाराणसी के वेंडर: समूह A/B (39, मोबाइल के साथ) + इंटरनेट से मिले नाम
 │   ├── 04_VENDORS_JAIPUR.md           ← Jaipur के 193 वेंडर (पहले का शहर, आगे के लिए)
+│   ├── 05_TECHNICIAN_HIRING.md        ← टेक्नीशियन कहाँ से खोजें, किसे रखें, पैसा, ट्रेनिंग
 │   └── Varanasi_vendor_call_tracker.xlsx ← 468 वेंडर, प्राथमिकता, WhatsApp लिंक, कॉल-स्थिति कॉलम
 ├── packages/nischint_core/      ← साझा: थीम, रेट (catalog.dart), मॉडल, स्टोरेज, WhatsApp, साझा विजेट, मदद स्क्रीन
 ├── apps/customer/               ← निश्चिंत (ग्राहक ऐप)
@@ -83,8 +84,9 @@
 1. **वेंडर कॉल:** `Varanasi_vendor_call_tracker.xlsx` में समूह A (19) — रोज़ 4–5 कॉल; फिर समूह B (20); C/D को WhatsApp (दिन में 20–30 से ज़्यादा नहीं)। मैसेज और स्क्रिप्ट: `02_VENDOR_SALES_PLAYBOOK.md`।
 2. **पायलट के लिए सबसे सही वेंडर:** Arpit Solar Shop, Shree Ganesha Enterprises, Patel Solar Power System, Abhishek Electronic (100–150 प्लांट, छोटी टीम)। 50 घर, 1 महीना मुफ़्त।
 3. **अड्डा:** Shivpur–Pandeypur–Sarnath इलाका (सबसे ज़्यादा वेंडर यहीं)।
-4. 1–2 टेक्नीशियन, औज़ार, 90 दिन का प्लान: `01_WORKING_PLAN_VARANASI.md` ("90 दिन का लॉन्च प्लान")।
-5. पोर्टल पर नए वेंडर हर महीने देखें: https://pmsuryaghar.gov.in/#/registered-vendors (UP → Varanasi)।
+4. **टेक्नीशियन:** सूर्य मित्र प्रशिक्षित युवा, ITI करौंदी, जॉब ऐप — पूरा तरीका, पैसा और ट्रेनिंग: `05_TECHNICIAN_HIRING.md`। 15 नवंबर तक 1 टेक्नीशियन + 1 हेल्पर।
+5. औज़ार और 90 दिन का प्लान: `01_WORKING_PLAN_VARANASI.md` ("90 दिन का लॉन्च प्लान")।
+6. पोर्टल पर नए वेंडर हर महीने देखें: https://pmsuryaghar.gov.in/#/registered-vendors (UP → Varanasi)।
 
 ### ऐप
 1. असली WhatsApp और कॉल नंबर → `config.dart`, नया APK।
