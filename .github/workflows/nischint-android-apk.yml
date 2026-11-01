@@ -1,0 +1,61 @@
+name: Nischint Android APK
+
+on:
+  push:
+    paths:
+      - "16 Nischint/**"
+      - ".github/workflows/nischint-android-apk.yml"
+  pull_request:
+    paths:
+      - "16 Nischint/**"
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Analyze, test and build debug APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: "16 Nischint"
+    steps:
+      - name: Check out the source
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Generate the Android project
+        run: |
+          flutter create --platforms=android --org com.schandan996 --project-name nischint .
+          # flutter create must not replace our own code
+          git checkout -- lib test pubspec.yaml analysis_options.yaml
+          sed -i 's/android:label="nischint"/android:label="निश्चिंत"/' android/app/src/main/AndroidManifest.xml
+
+      - name: Get packages
+        run: flutter pub get
+
+      - name: Analyze
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+
+      - name: Test
+        run: flutter test
+
+      - name: Build debug APK
+        run: flutter build apk --debug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: nischint-debug-apk
+          path: "16 Nischint/build/app/outputs/flutter-apk/app-debug.apk"
+          if-no-files-found: error
