@@ -84,7 +84,7 @@
 1. **वेंडर कॉल:** `Varanasi_vendor_call_tracker.xlsx` में समूह A (19) — रोज़ 4–5 कॉल; फिर समूह B (20); C/D को WhatsApp (दिन में 20–30 से ज़्यादा नहीं)। मैसेज और स्क्रिप्ट: `02_VENDOR_SALES_PLAYBOOK.md`।
 2. **पायलट के लिए सबसे सही वेंडर:** Arpit Solar Shop, Shree Ganesha Enterprises, Patel Solar Power System, Abhishek Electronic (100–150 प्लांट, छोटी टीम)। 50 घर, 1 महीना मुफ़्त।
 3. **अड्डा:** Shivpur–Pandeypur–Sarnath इलाका (सबसे ज़्यादा वेंडर यहीं)।
-4. **टेक्नीशियन:** सूर्य मित्र प्रशिक्षित युवा, ITI करौंदी, जॉब ऐप — पूरा तरीका, पैसा और ट्रेनिंग: `05_TECHNICIAN_HIRING.md`। 15 नवंबर तक 1 टेक्नीशियन + 1 हेल्पर।
+4. **टेक्नीशियन:** सूर्य मित्र प्रशिक्षित युवा, ITI करौंदी, जॉब ऐप — पूरा तरीका, पैसा और ट्रेनिंग: `05_TECHNICIAN_HIRING.md`। 15 नवंबर तक 1 टेक्नीशियन + ज़रूरत पर पार्ट-टाइम हेल्पर (₹100/विज़िट)।
 5. औज़ार और 90 दिन का प्लान: `01_WORKING_PLAN_VARANASI.md` ("90 दिन का लॉन्च प्लान")।
 6. पोर्टल पर नए वेंडर हर महीने देखें: https://pmsuryaghar.gov.in/#/registered-vendors (UP → Varanasi)।
 
