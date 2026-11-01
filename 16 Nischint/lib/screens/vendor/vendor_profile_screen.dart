@@ -7,6 +7,7 @@ import '../../content/config.dart';
 import '../../models/profiles.dart';
 import '../../utils/format.dart';
 import '../../widgets/common.dart';
+import 'widgets/partner_brand.dart';
 
 /// वेंडर की फ़र्म की जानकारी।
 /// [firstTime] true हो तो यह ऐप की पहली स्क्रीन है (RootGate से), कोई "वापस" नहीं।
@@ -69,8 +70,12 @@ class _VendorProfileScreenState extends State<VendorProfileScreen> {
   }
 
   Future<void> _save() async {
+    FocusScope.of(context).unfocus();
     setState(() => _triedSave = true);
-    final ok = _formKey.currentState?.validate() ?? false;
+    final formOk = _formKey.currentState?.validate() ?? false;
+    final ok = formOk &&
+        _validateFirm(_firmController.text) == null &&
+        _validateMobile(_mobileController.text) == null;
     if (!ok) return;
 
     setState(() => _saving = true);
@@ -90,88 +95,73 @@ class _VendorProfileScreenState extends State<VendorProfileScreen> {
     Navigator.of(context).pop();
   }
 
-  void _chooseCustomer() {
-    AppScope.read(context).setRole(AppRole.customer);
-  }
-
   @override
   Widget build(BuildContext context) {
     final firstTime = widget.firstTime;
     return Scaffold(
       appBar: firstTime ? null : AppBar(title: const Text('फ़र्म की जानकारी')),
+      // ListView नहीं: वह स्क्रीन से बाहर के खाने हटा देता है और तब उनकी जाँच नहीं होती।
       body: SafeArea(
-        child: Form(
-          key: _formKey,
-          autovalidateMode: _triedSave ? AutovalidateMode.onUserInteraction : AutovalidateMode.disabled,
-          child: ListView(
-            padding: const EdgeInsets.fromLTRB(AppSpace.l, AppSpace.l, AppSpace.l, AppSpace.xl),
-            children: [
-              if (firstTime) const _WelcomeHeader() else const _EditIntro(),
-              const SizedBox(height: AppSpace.xl),
-              TextFormField(
-                controller: _firmController,
-                textCapitalization: TextCapitalization.words,
-                textInputAction: TextInputAction.next,
-                style: AppText.body,
-                decoration: const InputDecoration(
-                  labelText: 'फ़र्म का नाम *',
-                  hintText: 'जैसे: शिव सोलर एनर्जी',
-                  border: OutlineInputBorder(),
-                  prefixIcon: Icon(Icons.business),
-                ),
-                validator: _validateFirm,
-              ),
-              const SizedBox(height: AppSpace.l),
-              TextFormField(
-                controller: _personController,
-                textCapitalization: TextCapitalization.words,
-                textInputAction: TextInputAction.next,
-                style: AppText.body,
-                decoration: const InputDecoration(
-                  labelText: 'संपर्क व्यक्ति (वैकल्पिक)',
-                  hintText: 'आपका नाम',
-                  border: OutlineInputBorder(),
-                  prefixIcon: Icon(Icons.person_outline),
-                ),
-              ),
-              const SizedBox(height: AppSpace.l),
-              TextFormField(
-                controller: _mobileController,
-                keyboardType: TextInputType.phone,
-                textInputAction: TextInputAction.done,
-                style: AppText.body,
-                inputFormatters: [
-                  FilteringTextInputFormatter.digitsOnly,
-                  LengthLimitingTextInputFormatter(10),
-                ],
-                decoration: const InputDecoration(
-                  labelText: 'मोबाइल नंबर *',
-                  hintText: '10 अंक का नंबर',
-                  helperText: 'इसी नंबर पर हम विज़िट की जानकारी देंगे',
-                  border: OutlineInputBorder(),
-                  prefixIcon: Icon(Icons.phone_outlined),
-                ),
-                validator: _validateMobile,
-                onFieldSubmitted: (_) => _save(),
-              ),
-              if (firstTime) ...[
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.fromLTRB(AppSpace.l, AppSpace.l, AppSpace.l, AppSpace.xl),
+          child: Form(
+            key: _formKey,
+            autovalidateMode: _triedSave ? AutovalidateMode.onUserInteraction : AutovalidateMode.disabled,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                if (firstTime) const _WelcomeHeader() else const _EditIntro(),
                 const SizedBox(height: AppSpace.xl),
-                const Text(
-                  'ग़लती से वेंडर चुन लिया?',
-                  textAlign: TextAlign.center,
-                  style: AppText.muted,
+                TextFormField(
+                  controller: _firmController,
+                  textCapitalization: TextCapitalization.words,
+                  textInputAction: TextInputAction.next,
+                  style: AppText.body,
+                  decoration: const InputDecoration(
+                    labelText: 'फ़र्म का नाम *',
+                    hintText: 'जैसे: शिव सोलर एनर्जी',
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.business),
+                  ),
+                  validator: _validateFirm,
                 ),
-                Center(
-                  child: TextButton(
-                    onPressed: _saving ? null : _chooseCustomer,
-                    child: const Text(
-                      'मैं घर वाला हूँ',
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-                    ),
+                const SizedBox(height: AppSpace.l),
+                TextFormField(
+                  controller: _personController,
+                  textCapitalization: TextCapitalization.words,
+                  textInputAction: TextInputAction.next,
+                  style: AppText.body,
+                  decoration: const InputDecoration(
+                    labelText: 'संपर्क व्यक्ति (वैकल्पिक)',
+                    hintText: 'आपका नाम',
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.person_outline),
                   ),
                 ),
+                const SizedBox(height: AppSpace.l),
+                TextFormField(
+                  controller: _mobileController,
+                  keyboardType: TextInputType.phone,
+                  textInputAction: TextInputAction.done,
+                  style: AppText.body,
+                  inputFormatters: [
+                    FilteringTextInputFormatter.digitsOnly,
+                    LengthLimitingTextInputFormatter(10),
+                  ],
+                  decoration: const InputDecoration(
+                    labelText: 'मोबाइल नंबर *',
+                    hintText: '10 अंक का नंबर',
+                    helperText: 'इसी नंबर पर हम विज़िट की जानकारी देंगे',
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.phone_outlined),
+                  ),
+                  validator: _validateMobile,
+                  onFieldSubmitted: (_) {
+                    if (!_saving) _save();
+                  },
+                ),
               ],
-            ],
+            ),
           ),
         ),
       ),
@@ -202,7 +192,7 @@ class _WelcomeHeader extends StatelessWidget {
           child: const Icon(Icons.solar_power, size: 32, color: Colors.white),
         ),
         const SizedBox(height: AppSpace.l),
-        const Text('नमस्ते! ${AppConfig.appName} में स्वागत है', style: AppText.h1),
+        const Text('नमस्ते! $partnerAppName में स्वागत है', style: AppText.h1),
         const SizedBox(height: AppSpace.s),
         const Text(
           AppConfig.vendorLine,
