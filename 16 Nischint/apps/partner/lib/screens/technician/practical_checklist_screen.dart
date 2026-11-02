@@ -73,7 +73,7 @@ class _PracticalChecklistScreenState extends State<PracticalChecklistScreen> {
       label = 'सर्टिफ़िकेट देखें';
       onPressed = _openCertificate;
     } else if (!allDone) {
-      label = '$doneCount / ${practicalItems.length} काम पास — सब होने पर ट्रेनिंग पूरी';
+      label = '${practicalItems.length} में से $doneCount काम पास हुए';
       onPressed = null;
     } else if (!quizzesOk) {
       label = 'पहले दिन 1–${trainingDays.length} की सारी क्विज़ पास करें';
@@ -198,7 +198,7 @@ class _PracticalCard extends StatelessWidget {
                     ? TextButton(onPressed: onToggle, child: const Text('वापस करें'))
                     : FilledButton.icon(
                         onPressed: onToggle,
-                        icon: const Icon(Icons.lock_outline, size: 18),
+                        icon: const Icon(Icons.verified_outlined, size: 18),
                         label: const Text('पास करें'),
                       ),
             ],
@@ -270,10 +270,7 @@ class _SupervisorCodeDialogState extends State<_SupervisorCodeDialog> {
               obscureText: true,
               keyboardType: TextInputType.number,
               textInputAction: TextInputAction.done,
-              inputFormatters: [
-                FilteringTextInputFormatter.digitsOnly,
-                LengthLimitingTextInputFormatter(8),
-              ],
+              inputFormatters: [LengthLimitingTextInputFormatter(12)],
               style: const TextStyle(fontSize: 22, letterSpacing: 6, color: AppColors.text),
               decoration: InputDecoration(
                 labelText: 'सुपरवाइज़र कोड',

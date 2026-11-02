@@ -160,6 +160,15 @@ class _VendorProfileScreenState extends State<VendorProfileScreen> {
                     if (!_saving) _save();
                   },
                 ),
+                if (firstTime) ...[
+                  const SizedBox(height: AppSpace.l),
+                  Center(
+                    child: TextButton(
+                      onPressed: () => AppScope.read(context).clearRole(),
+                      child: const Text('ग़लत भूमिका चुनी? वापस जाएँ'),
+                    ),
+                  ),
+                ],
               ],
             ),
           ),

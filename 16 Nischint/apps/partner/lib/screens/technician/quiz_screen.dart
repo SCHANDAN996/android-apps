@@ -32,6 +32,30 @@ class _QuizScreenState extends State<QuizScreen> {
   int _percent = 0;
   bool _saving = false;
 
+  final _scroll = ScrollController();
+
+  @override
+  void dispose() {
+    _scroll.dispose();
+    super.dispose();
+  }
+
+  /// अगले फ़्रेम के बाद स्क्रॉल: जवाब के बाद नीचे (वजह दिखे), नए सवाल पर ऊपर।
+  void _scrollAfterFrame({required bool toBottom}) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || !_scroll.hasClients) return;
+      if (toBottom) {
+        _scroll.animateTo(
+          _scroll.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      } else {
+        _scroll.jumpTo(0);
+      }
+    });
+  }
+
   void _select(int i) {
     if (_checked) return;
     setState(() => _selected = i);
@@ -44,15 +68,18 @@ class _QuizScreenState extends State<QuizScreen> {
       _checked = true;
       if (selected == q.correctIndex) _correct++;
     });
+    _scrollAfterFrame(toBottom: true);
   }
 
   Future<void> _next(TrainingDay day) async {
+    if (_finished) return;
     if (_index + 1 < day.quiz.length) {
       setState(() {
         _index++;
         _selected = null;
         _checked = false;
       });
+      _scrollAfterFrame(toBottom: false);
       return;
     }
     // आख़िरी सवाल: नतीजा।
@@ -63,6 +90,7 @@ class _QuizScreenState extends State<QuizScreen> {
       _percent = percent;
       _saving = true;
     });
+    _scrollAfterFrame(toBottom: false);
     await AppScope.read(context).saveQuizScore(day.id, percent);
     if (!mounted) return;
     setState(() => _saving = false);
@@ -77,6 +105,7 @@ class _QuizScreenState extends State<QuizScreen> {
       _finished = false;
       _percent = 0;
     });
+    _scrollAfterFrame(toBottom: false);
   }
 
   @override
@@ -117,6 +146,7 @@ class _QuizScreenState extends State<QuizScreen> {
     return Scaffold(
       appBar: AppBar(title: Text('दिन ${day.number} की क्विज़')),
       body: ListView(
+        controller: _scroll,
         padding: const EdgeInsets.fromLTRB(AppSpace.l, AppSpace.l, AppSpace.l, AppSpace.xl),
         children: [
           Row(
@@ -135,7 +165,14 @@ class _QuizScreenState extends State<QuizScreen> {
               color: AppColors.primary,
             ),
           ),
-          const SizedBox(height: AppSpace.xl),
+          const SizedBox(height: AppSpace.s),
+          Text(
+            passPercentFor(day.id) >= 100
+                ? 'पास होने के लिए 100% — सुरक्षा में हर जवाब सही होना चाहिए'
+                : 'पास होने के लिए ${passPercentFor(day.id)}% चाहिए',
+            style: AppText.small,
+          ),
+          const SizedBox(height: AppSpace.l),
           Text(
             q.question,
             style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w700, color: AppColors.text, height: 1.4),
@@ -203,6 +240,7 @@ class _QuizScreenState extends State<QuizScreen> {
     return Scaffold(
       appBar: AppBar(title: Text('दिन ${day.number} का नतीजा')),
       body: ListView(
+        controller: _scroll,
         padding: const EdgeInsets.fromLTRB(AppSpace.l, AppSpace.xl, AppSpace.l, AppSpace.xl),
         children: [
           Center(
