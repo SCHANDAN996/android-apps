@@ -93,6 +93,13 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// भूमिका हटाना (पार्टनर ऐप में "ग़लत भूमिका चुनी? वापस जाएँ")।
+  Future<void> clearRole() async {
+    _role = null;
+    await _prefs?.remove(_kRole);
+    notifyListeners();
+  }
+
   Future<void> saveCustomer(CustomerProfile profile) async {
     _customer = profile;
     await _prefs?.setString(_kCustomer, jsonEncode(profile.toJson()));
