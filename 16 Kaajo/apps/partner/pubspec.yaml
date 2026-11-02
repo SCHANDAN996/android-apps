@@ -1,0 +1,25 @@
+name: kaajo_partner
+description: "काजो पार्टनर — सोलर वेंडरों के लिए: ग्राहक की शिकायत 48 घंटे में, फ़ोटो सबूत के साथ।"
+publish_to: 'none'
+
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  kaajo_core:
+    path: ../../packages/kaajo_core
+  shared_preferences: ^2.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true

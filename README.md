@@ -25,9 +25,9 @@ Some other directories contain plans or work in progress. They are not presented
 
 The projects are independent Flutter packages, **not** one Flutter app at the repository root. Dependencies and SDK requirements vary by project.
 
-## Work in progress: Nischint (निश्चिंत)
+## Work in progress: Kaajo (काजो)
 
-Home-services booking apps for Varanasi (rooftop-solar cleaning, inspection and vendor complaint handling), as two Flutter apps built from one codebase: **Nischint** (customers) and **Nischint Partner** (solar vendors, later technicians). Business plan, vendor lists and the full roadmap live next to the code. **Start with [16 Nischint/START_HERE.md](16%20Nischint/START_HERE.md).**
+Home-services booking apps for Varanasi (rooftop-solar cleaning, inspection and vendor complaint handling), as two Flutter apps built from one codebase: **Kaajo** (customers) and **Kaajo Partner** (solar vendors, later technicians). Business plan, vendor lists and the full roadmap live next to the code. **Start with [16 Kaajo/START_HERE.md](16%20Kaajo/START_HERE.md).**
 
 ## Run a project
 
