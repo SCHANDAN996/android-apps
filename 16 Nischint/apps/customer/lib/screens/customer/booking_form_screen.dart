@@ -430,7 +430,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
             const SizedBox(height: AppSpace.m),
           ],
           OptionChips(
-            options: Catalog.timeSlots,
+            options: _isCleaning ? Catalog.cleaningTimeSlots : Catalog.timeSlots,
             selected: _timeSlot,
             onChanged: (t) => setState(() {
               _timeSlot = t;

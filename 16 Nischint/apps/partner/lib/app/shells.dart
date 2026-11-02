@@ -43,7 +43,7 @@ class _VendorShellState extends State<VendorShell> {
         return Scaffold(
           body: IndexedStack(
             index: index,
-            children: const [VendorHomeScreen(), RateCardScreen(), HelpScreen()],
+            children: const [VendorHomeScreen(), RateCardScreen(), HelpScreen(faqs: vendorFaqs)],
           ),
           bottomNavigationBar: NavigationBar(
             selectedIndex: index,
@@ -86,7 +86,7 @@ class _TechnicianShellState extends State<TechnicianShell> {
         return Scaffold(
           body: IndexedStack(
             index: index,
-            children: const [TrainingHomeScreen(), TechnicianJobsScreen(), HelpScreen()],
+            children: const [TrainingHomeScreen(), TechnicianJobsScreen(), HelpScreen(faqs: technicianFaqs)],
           ),
           bottomNavigationBar: NavigationBar(
             selectedIndex: index,

@@ -168,54 +168,58 @@ class _CustomerProfileFormState extends State<_CustomerProfileForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('आपकी जानकारी')),
+      // ListView नहीं: वह स्क्रीन से बाहर के खाने हटा देता है और तब उनकी जाँच नहीं होती।
       body: Form(
         key: _formKey,
-        child: ListView(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(AppSpace.l),
-          children: [
-            TextFormField(
-              controller: _name,
-              textCapitalization: TextCapitalization.words,
-              decoration: const InputDecoration(labelText: 'नाम', border: OutlineInputBorder()),
-              validator: (v) => (v == null || v.trim().isEmpty) ? 'नाम लिखें' : null,
-            ),
-            const SizedBox(height: AppSpace.l),
-            TextFormField(
-              controller: _mobile,
-              keyboardType: TextInputType.phone,
-              maxLength: 10,
-              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              decoration: const InputDecoration(labelText: 'मोबाइल नंबर', border: OutlineInputBorder()),
-              validator: (v) => isValidMobile(v ?? '') ? null : 'सही 10 अंक का मोबाइल नंबर लिखें',
-            ),
-            const SizedBox(height: AppSpace.s),
-            TextFormField(
-              controller: _address,
-              minLines: 2,
-              maxLines: 4,
-              decoration: const InputDecoration(labelText: 'पूरा पता', border: OutlineInputBorder()),
-              validator: (v) => (v == null || v.trim().length < 5) ? 'पूरा पता लिखें' : null,
-            ),
-            const SizedBox(height: AppSpace.l),
-            TextFormField(
-              controller: _landmark,
-              decoration: const InputDecoration(labelText: 'लैंडमार्क (वैकल्पिक)', border: OutlineInputBorder()),
-            ),
-            const SizedBox(height: AppSpace.l),
-            AreaField(
-              value: _area,
-              errorText: _areaMissing ? 'इलाका चुनें' : null,
-              onChanged: (a) => setState(() {
-                _area = a;
-                _areaMissing = false;
-              }),
-            ),
-            const SizedBox(height: AppSpace.xl),
-            const Text('सोलर सिस्टम कितने kW का है?', style: AppText.h3),
-            const SizedBox(height: AppSpace.s),
-            KwSelector(value: _kw, onChanged: (kw) => setState(() => _kw = kw)),
-            const SizedBox(height: AppSpace.xl),
-          ],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              TextFormField(
+                controller: _name,
+                textCapitalization: TextCapitalization.words,
+                decoration: const InputDecoration(labelText: 'नाम', border: OutlineInputBorder()),
+                validator: (v) => (v == null || v.trim().isEmpty) ? 'नाम लिखें' : null,
+              ),
+              const SizedBox(height: AppSpace.l),
+              TextFormField(
+                controller: _mobile,
+                keyboardType: TextInputType.phone,
+                maxLength: 10,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                decoration: const InputDecoration(labelText: 'मोबाइल नंबर', border: OutlineInputBorder()),
+                validator: (v) => isValidMobile(v ?? '') ? null : 'सही 10 अंक का मोबाइल नंबर लिखें',
+              ),
+              const SizedBox(height: AppSpace.s),
+              TextFormField(
+                controller: _address,
+                minLines: 2,
+                maxLines: 4,
+                decoration: const InputDecoration(labelText: 'पूरा पता', border: OutlineInputBorder()),
+                validator: (v) => (v == null || v.trim().length < 5) ? 'पूरा पता लिखें' : null,
+              ),
+              const SizedBox(height: AppSpace.l),
+              TextFormField(
+                controller: _landmark,
+                decoration: const InputDecoration(labelText: 'लैंडमार्क (वैकल्पिक)', border: OutlineInputBorder()),
+              ),
+              const SizedBox(height: AppSpace.l),
+              AreaField(
+                value: _area,
+                errorText: _areaMissing ? 'इलाका चुनें' : null,
+                onChanged: (a) => setState(() {
+                  _area = a;
+                  _areaMissing = false;
+                }),
+              ),
+              const SizedBox(height: AppSpace.xl),
+              const Text('सोलर सिस्टम कितने kW का है?', style: AppText.h3),
+              const SizedBox(height: AppSpace.s),
+              KwSelector(value: _kw, onChanged: (kw) => setState(() => _kw = kw)),
+              const SizedBox(height: AppSpace.xl),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomActionBar(

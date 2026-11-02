@@ -224,6 +224,8 @@ class _QuizScreenState extends State<QuizScreen> {
     final passed = _percent >= pass;
     final best = AppScope.of(context).training.quizBest[day.id];
     final isLastDay = day.id == trainingDays.last.id;
+    // पहले ही पास कर चुका है; कम नंबर वाली दोबारा कोशिश से दिन बंद नहीं होता।
+    final alreadyPassed = !passed && (best ?? 0) >= pass;
     final color = passed ? AppColors.success : AppColors.danger;
     final soft = passed ? AppColors.successSoft : AppColors.dangerSoft;
 
@@ -232,6 +234,9 @@ class _QuizScreenState extends State<QuizScreen> {
       message = isLastDay
           ? 'अब फ़ील्ड ट्रायल खुल गया है — मालिक के सामने असली काम।'
           : 'दिन ${day.number + 1} के पाठ खुल गए हैं।';
+    } else if (alreadyPassed) {
+      message = 'आप यह दिन पहले ही पास कर चुके हैं (सबसे अच्छा: ${best ?? 0}%)। '
+          'इस बार के नंबर से कुछ नहीं बदलता — आगे के पाठ खुले रहेंगे।';
     } else {
       message = 'पास होने के लिए कम से कम $pass% चाहिए। पाठ दोबारा पढ़ें और फिर से क्विज़ दें — '
           'जितनी बार चाहें।';
@@ -261,7 +266,7 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
           const SizedBox(height: AppSpace.l),
           Text(
-            passed ? 'पास! शाबाश 🎉' : 'अभी पास नहीं',
+            passed ? 'पास! शाबाश 🎉' : (alreadyPassed ? 'यह दिन पहले से पास है' : 'अभी पास नहीं'),
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 26, fontWeight: FontWeight.w800, color: color, height: 1.3),
           ),

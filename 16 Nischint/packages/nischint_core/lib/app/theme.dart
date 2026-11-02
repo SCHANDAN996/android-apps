@@ -51,8 +51,8 @@ ThemeData buildAppTheme() {
     surface: AppColors.card,
     error: AppColors.danger,
   );
+  // Material 3 Flutter 3.16 से डिफ़ॉल्ट है, इसलिए useMaterial3 फ़्लैग नहीं लिखा (वर्ज़न बदलने पर टूट न जाए)।
   final base = ThemeData(
-    useMaterial3: true,
     colorScheme: scheme,
     scaffoldBackgroundColor: AppColors.background,
     visualDensity: VisualDensity.standard,

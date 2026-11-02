@@ -7,8 +7,8 @@ import '../../services/contact_service.dart';
 import '../../widgets/common.dart';
 import 'widgets/info_row.dart';
 
-/// अक्सर पूछे सवाल। घर वाले और वेंडर, दोनों के लिए सही बैठें।
-const List<Faq> _faqs = [
+/// घर वालों के सवाल (ग्राहक ऐप, डिफ़ॉल्ट)।
+const List<Faq> customerFaqs = [
   Faq(
     'पैसा कब देना है?',
     'काम पूरा होने के बाद। UPI या नकद, जो आपको आसान लगे। पहले से कोई पैसा नहीं लगता।',
@@ -31,9 +31,68 @@ const List<Faq> _faqs = [
   ),
 ];
 
+/// सोलर वेंडरों के सवाल (पार्टनर ऐप, वेंडर)। रेट कार्ड (`Catalog.vendorRates`) से मेल खाएँ।
+const List<Faq> vendorFaqs = [
+  Faq(
+    'पैसा कब और कैसे देना है?',
+    'हर शिकायत-विज़िट का पैसा काम के बाद, हफ़्ते या महीने के बिल में। ₹500 से ऊपर के पार्ट पर पहले आपकी हाँ ली जाती है।',
+  ),
+  Faq(
+    'आपके ग्राहक से पैसा कौन लेगा?',
+    'आपकी शिकायत वाली विज़िट पर हम ग्राहक से कोई पैसा नहीं लेते। बिल सिर्फ़ आपको आता है।',
+  ),
+  Faq(
+    'शिकायत कितने समय में निपटेगी?',
+    'शिकायत मिलते ही हम ग्राहक को कॉल करके समय पक्का करते हैं, और 48 घंटे के अंदर विज़िट की कोशिश करते हैं।',
+  ),
+  Faq(
+    'काम का सबूत कैसे मिलेगा?',
+    'हर विज़िट से पहले और बाद की फ़ोटो आपके WhatsApp पर — शिकायत निपटने का सबूत।',
+  ),
+  Faq(
+    'वारंटी वाला पैनल या इन्वर्टर ख़राब हो तो?',
+    'पार्ट कंपनी से आएगा। हम सिर्फ़ लगाने की मेहनत लेते हैं, और कंपनी से बात करने में मदद करते हैं।',
+  ),
+  Faq(
+    'वाराणसी से बाहर सेवा मिलेगी?',
+    'अभी सिर्फ़ ${AppConfig.serviceArea} में। आसपास के ज़िलों में जल्द शुरू होगी।',
+  ),
+];
+
+/// टेक्नीशियन के सवाल (पार्टनर ऐप, टेक्नीशियन)।
+const List<Faq> technicianFaqs = [
+  Faq(
+    'मेरा पैसा कब मिलेगा?',
+    'हर हफ़्ते। हर विज़िट का पैसा और पेट्रोल "काम" टैब के हिसाब में दिखता है।',
+  ),
+  Faq(
+    'ग्राहक से नकद मिला तो?',
+    'उसी दिन कंपनी को जमा करें। काम के हिसाब में "कंपनी को जमा" की रकम दिखती है।',
+  ),
+  Faq(
+    'क्विज़ में पास नहीं हुआ तो?',
+    'पाठ दोबारा पढ़ें और फिर से क्विज़ दें — जितनी बार चाहें। सुरक्षा वाले दिन (दिन 2) में सब सही ज़रूरी है।',
+  ),
+  Faq(
+    'फ़ील्ड ट्रायल कैसे होगा?',
+    'मालिक या सीनियर के सामने 7 असली काम। हर काम ठीक होने पर वे अपना सुपरवाइज़र कोड डालकर उसे पास करेंगे।',
+  ),
+  Faq(
+    'छत पर ख़तरा लगे तो?',
+    'काम रोकें, फ़ोटो लें और मालिक को फ़ोन करें। असुरक्षित छत पर काम मना करना आपका हक़ है — इस पर कोई सज़ा नहीं।',
+  ),
+  Faq(
+    'कुछ समझ न आए तो?',
+    'अंदाज़े से काम न करें। रुकें और मालिक को कॉल या WhatsApp करें।',
+  ),
+];
+
 /// मदद टैब: कॉल, WhatsApp, काम का समय, सेवा क्षेत्र और सवाल-जवाब।
+/// [faqs] हर भूमिका के अपने सवाल (डिफ़ॉल्ट: घर वाले)।
 class HelpScreen extends StatelessWidget {
-  const HelpScreen({super.key});
+  const HelpScreen({super.key, this.faqs = customerFaqs});
+
+  final List<Faq> faqs;
 
   Future<void> _call(BuildContext context) async {
     final opened = await ContactService.call();
@@ -85,7 +144,7 @@ class HelpScreen extends StatelessWidget {
             padding: EdgeInsets.zero,
             child: Column(
               children: [
-                for (var i = 0; i < _faqs.length; i++) ...[
+                for (var i = 0; i < faqs.length; i++) ...[
                   if (i > 0) const Divider(height: 1),
                   ExpansionTile(
                     tilePadding: const EdgeInsets.symmetric(horizontal: AppSpace.l, vertical: 2),
@@ -93,8 +152,8 @@ class HelpScreen extends StatelessWidget {
                     expandedCrossAxisAlignment: CrossAxisAlignment.start,
                     shape: const Border(),
                     collapsedShape: const Border(),
-                    title: Text(_faqs[i].question, style: AppText.h3),
-                    children: [Text(_faqs[i].answer, style: AppText.body)],
+                    title: Text(faqs[i].question, style: AppText.h3),
+                    children: [Text(faqs[i].answer, style: AppText.body)],
                   ),
                 ],
               ],

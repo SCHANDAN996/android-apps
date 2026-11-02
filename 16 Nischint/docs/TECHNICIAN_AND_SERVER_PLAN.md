@@ -65,7 +65,10 @@ create table profiles (
 
 -- एक काम = ग्राहक की बुकिंग या वेंडर की शिकायत
 create table jobs (
-  id text primary key,                 -- NB-0211-4821 / VC-0211-1934 (ऐप वाले नंबर)
+  id uuid primary key default gen_random_uuid(),
+  ref_code text unique not null,       -- NB-0211-4821 / VC-0211-1934 (ऐप वाले नंबर; दिखाने के लिए)
+  -- ध्यान: ऐप वाले नंबर में साल नहीं और सिर्फ़ 4 रैंडम अंक हैं — कई फ़ोन से एक ही नंबर बन सकता है।
+  -- इसलिए primary key uuid; ref_code सर्वर पर बनाएँ (साल + क्रम संख्या, जैसे VC-26-000123) या टकराने पर नया बनाएँ।
   source text check (source in ('customer','vendor')) not null,
   service_id text not null,            -- solar_cleaning / solar_repair / solar_amc / vendor_complaint
   customer_name text, customer_phone text, address text, landmark text, area text,
@@ -87,7 +90,7 @@ create table jobs (
 
 create table job_photos (
   id bigserial primary key,
-  job_id text references jobs on delete cascade,
+  job_id uuid references jobs on delete cascade,
   kind text check (kind in ('before','after','part','other')),
   url text not null,                   -- Supabase Storage या चंदन के सर्वर का URL
   taken_at timestamptz default now(),
@@ -95,7 +98,7 @@ create table job_photos (
 );
 
 create table part_requests (
-  id bigserial primary key, job_id text references jobs,
+  id bigserial primary key, job_id uuid references jobs,
   part_name text, amount int, photo_url text,
   status text check (status in ('pending','approved','rejected')) default 'pending',
   approved_by uuid references profiles, created_at timestamptz default now()

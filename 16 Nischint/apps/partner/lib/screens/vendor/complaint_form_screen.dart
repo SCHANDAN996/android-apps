@@ -122,7 +122,12 @@ class _ComplaintFormScreenState extends State<ComplaintFormScreen> {
       note: _noteController.text.trim(),
     );
 
-    await app.addComplaint(complaint);
+    // पहले फ़ोन में सेव, ताकि WhatsApp न खुले तब भी शिकायत सूची में रहे।
+    try {
+      await app.addComplaint(complaint);
+    } catch (_) {
+      // फ़ोन में सेव न हो पाए तब भी WhatsApp पर भेजने की कोशिश करें।
+    }
     final opened = await ContactService.whatsApp(ContactService.complaintMessage(complaint, app.vendor));
     if (!mounted) return;
 
