@@ -1,0 +1,21 @@
+name: nischint_core
+description: "निश्चिंत ऐप्स का साझा हिस्सा: थीम, रेट, मॉडल, स्टोरेज, WhatsApp, साझा विजेट।"
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: ^2.3.2
+  url_launcher: ^6.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
